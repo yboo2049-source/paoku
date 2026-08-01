@@ -92,11 +92,9 @@ export class ThreeRenderer {
     }
 
     // Player Mesh
-    const playerGeo = new THREE.BoxGeometry(10, 15, 10);
-    const faceMat = new THREE.MeshLambertMaterial({ map: textures.playerFace });
-    const shirtMat = new THREE.MeshLambertMaterial({ map: textures.playerShirtBlue });
-    const pMats = [shirtMat, shirtMat, shirtMat, shirtMat, shirtMat, faceMat];
-    this.playerMesh = new THREE.Mesh(playerGeo, pMats);
+    const playerGeo = new THREE.PlaneGeometry(15, 15);
+    const playerMat = new THREE.MeshLambertMaterial({ map: textures.playerSprite, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
+    this.playerMesh = new THREE.Mesh(playerGeo, playerMat);
     this.playerMesh.castShadow = true;
     this.scene.add(this.playerMesh);
 
@@ -205,23 +203,23 @@ export class ThreeRenderer {
         mesh.rotation.x = Math.PI / 2;
         break;
       case 'MAGNET_ITEM':
-        geo = new THREE.BoxGeometry(entity.width, entity.height, entity.length);
-        mat = new THREE.MeshStandardMaterial({ color: 0xaa22ff, metalness: 0.5, roughness: 0.1 });
+        geo = new THREE.PlaneGeometry(10, 10);
+        mat = new THREE.MeshLambertMaterial({ map: textures.magnet, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
         mesh = new THREE.Mesh(geo, mat);
         break;
       case 'SHIELD_ITEM':
-        geo = new THREE.SphereGeometry(entity.width / 2, 16, 16);
-        mat = new THREE.MeshStandardMaterial({ color: 0x22ffaa, metalness: 0.3, roughness: 0.2, transparent: true, opacity: 0.8 });
+        geo = new THREE.PlaneGeometry(10, 10);
+        mat = new THREE.MeshLambertMaterial({ map: textures.shield, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
         mesh = new THREE.Mesh(geo, mat);
         break;
       case 'DOUBLE_SCORE_ITEM':
-        geo = new THREE.BoxGeometry(entity.width, entity.height, entity.length);
-        mat = new THREE.MeshStandardMaterial({ color: 0xffaa00, metalness: 0.8, roughness: 0.1 });
+        geo = new THREE.PlaneGeometry(10, 10);
+        mat = new THREE.MeshLambertMaterial({ map: textures.doubleScore, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
         mesh = new THREE.Mesh(geo, mat);
         break;
       case 'JETPACK_ITEM':
-        geo = new THREE.CylinderGeometry(entity.width / 2, entity.width / 2, entity.height, 8);
-        mat = new THREE.MeshStandardMaterial({ color: 0xff4500, metalness: 0.6, roughness: 0.3 });
+        geo = new THREE.PlaneGeometry(10, 10);
+        mat = new THREE.MeshLambertMaterial({ map: textures.jetpack, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
         mesh = new THREE.Mesh(geo, mat);
         break;
       case 'RAMP':
@@ -231,18 +229,18 @@ export class ThreeRenderer {
         mesh.rotation.x = Math.atan2(entity.height, entity.length); // Positive angle for correct slope
         break;
       case 'LOW_OBSTACLE':
-        geo = new THREE.BoxGeometry(entity.width, entity.height, entity.length || 2);
-        mat = new THREE.MeshLambertMaterial({ color: 0x654321 }); // Fence look
+        geo = new THREE.PlaneGeometry(entity.width, entity.height);
+        mat = new THREE.MeshLambertMaterial({ map: textures.hurdle, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
         mesh = new THREE.Mesh(geo, mat);
         break;
       case 'HIGH_OBSTACLE':
-        geo = new THREE.BoxGeometry(entity.width, entity.height, entity.length || 2);
-        mat = new THREE.MeshLambertMaterial({ color: 0xffa500 }); // Bright orange signboard
+        geo = new THREE.PlaneGeometry(entity.width, entity.height);
+        mat = new THREE.MeshLambertMaterial({ map: textures.barrier, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
         mesh = new THREE.Mesh(geo, mat);
         break;
       case 'SUPER_SNEAKERS_ITEM':
-        geo = new THREE.BoxGeometry(entity.width, entity.height, entity.length || 5);
-        mat = new THREE.MeshStandardMaterial({ color: 0xff00ff, metalness: 0.8, roughness: 0.2 }); // Shiny pink sneakers
+        geo = new THREE.PlaneGeometry(10, 10);
+        mat = new THREE.MeshLambertMaterial({ map: textures.sneakers, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
         mesh = new THREE.Mesh(geo, mat);
         break;
       default:
@@ -327,13 +325,7 @@ export class ThreeRenderer {
     }
 
     if (player.skinColor) {
-      const mats = this.playerMesh.material as THREE.MeshLambertMaterial[];
-      if (Array.isArray(mats) && mats.length >= 5) {
-        const newShirt = player.skinColor === 'red' ? textures.playerShirtRed : textures.playerShirtBlue;
-        for (let i = 0; i < 5; i++) {
-           mats[i].map = newShirt;
-        }
-      }
+      // Skin color changes are baked into the SVG.
     }
 
     // Hoverboard & Jetpack

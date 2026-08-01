@@ -11,5 +11,10 @@ export default defineConfig({
         theme_color: '#ffffff',
       }
     })
-  ]
+  ],
+  server: {
+    host: true,
+    port: 5174,
+    strictPort: true
+  }
 });

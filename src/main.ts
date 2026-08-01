@@ -10,6 +10,7 @@ import { ThreeRenderer } from './render/three';
 import { loadSaveData, saveSaveData } from './core/storage';
 import { playJump, playCoin, playCrash, playPowerup } from './core/audio';
 import { submitScore } from './core/leaderboard';
+import { logMetric, logEvent } from './core/telemetry';
 import './style.css';
 
 function createInitialState(): GameContext {
@@ -35,7 +36,11 @@ function createInitialState(): GameContext {
         superSneakersTimer: 0,
         hoverboardCount: 0
       },
-      skinColor: saveData.unlockedSkins.includes('red') ? 'red' : saveData.unlockedSkins[0]
+      skinColor: saveData.unlockedSkins.includes('red') ? 'red' : saveData.unlockedSkins[0],
+      lastLane: 1,
+      lastLaneChangeTime: 0,
+      stumbleCount: 0,
+      lastStumbleTime: 0
     },
     entities: [],
     saveData
@@ -64,7 +69,16 @@ if (autopilotBtn) {
     context = createInitialState();
     context.state = 'PLAYING';
     autopilot = true;
+    logEvent('bot_started', { mode: 'button' });
   });
+}
+
+// Auto-start bot via URL
+if (new URLSearchParams(window.location.search).get('bot') === 'true') {
+  context = createInitialState();
+  context.state = 'PLAYING';
+  autopilot = true;
+  logEvent('bot_started', { mode: 'url' });
 }
 
 function onCommand(command: InputCommand) {
@@ -111,6 +125,10 @@ function loop(currentTime: number) {
     currentFps = frameCount;
     frameCount = 0;
     lastFpsTime = currentTime;
+    logMetric('fps', currentFps);
+    if (context.state === 'PLAYING') {
+      logMetric('distance', context.player.y);
+    }
   }
   
   let transitionedToGameOver = false;
@@ -143,6 +161,7 @@ function loop(currentTime: number) {
     if ((context.state as any) === 'GAMEOVER') {
       transitionedToGameOver = true;
       autopilot = false;
+      logEvent('gameover', { distance: context.player.y, score: context.score });
     }
   }
 
@@ -153,9 +172,9 @@ function loop(currentTime: number) {
     
     // Detect danger in current lane
     const danger = context.entities.find(e => 
-      (e.type === 'OBSTACLE' || e.type === 'MOVING_TRAIN' || e.type === 'LOW_OBSTACLE' || e.type === 'HIGH_OBSTACLE') &&
+      (e.type === 'OBSTACLE' || e.type === 'MOVING_TRAIN' || e.type === 'STATIC_TRAIN' || e.type === 'LOW_OBSTACLE' || e.type === 'HIGH_OBSTACLE') &&
       e.lane === context.player.lane &&
-      e.y > playerY &&
+      (e.y + (e.length || 0)) > playerY &&
       (e.y - playerY) < safeDistance &&
       !e.isCollected
     );
@@ -164,15 +183,19 @@ function loop(currentTime: number) {
       if (danger.type === 'HIGH_OBSTACLE') {
         // Roll under it
         onCommand('DOWN');
+      } else if (danger.type === 'LOW_OBSTACLE') {
+        // Jump over it
+        if (context.player.state !== 'JUMPING') onCommand('UP');
       } else {
-        // Find a safe lane
+        // Find a safe lane (one without a train or high obstacle)
         let targetLane = -1;
         for (let l = 0; l <= 2; l++) {
           if (l === context.player.lane) continue;
+          // Check if this lane has an unjumpable threat
           const threat = context.entities.find(e => 
-            (e.type === 'OBSTACLE' || e.type === 'MOVING_TRAIN' || e.type === 'LOW_OBSTACLE' || e.type === 'HIGH_OBSTACLE') &&
+            (e.type === 'OBSTACLE' || e.type === 'MOVING_TRAIN' || e.type === 'STATIC_TRAIN' || e.type === 'HIGH_OBSTACLE') &&
             e.lane === l &&
-            e.y > playerY &&
+            (e.y + (e.length || 0)) > playerY &&
             (e.y - playerY) < safeDistance &&
             !e.isCollected
           );
@@ -186,7 +209,7 @@ function loop(currentTime: number) {
           if (targetLane < context.player.lane) onCommand('LEFT');
           if (targetLane > context.player.lane) onCommand('RIGHT');
         } else {
-          // No safe lane, attempt a jump
+          // No safe lane, attempt a jump (maybe we can squeeze or double jump later)
           if (context.player.state !== 'JUMPING') onCommand('UP');
         }
       }
@@ -202,9 +225,9 @@ function loop(currentTime: number) {
       if (goodItem) {
         // Check if moving to that lane is safe
         const threat = context.entities.find(e => 
-          (e.type === 'OBSTACLE' || e.type === 'MOVING_TRAIN' || e.type === 'LOW_OBSTACLE' || e.type === 'HIGH_OBSTACLE') &&
+          (e.type === 'OBSTACLE' || e.type === 'MOVING_TRAIN' || e.type === 'STATIC_TRAIN' || e.type === 'LOW_OBSTACLE' || e.type === 'HIGH_OBSTACLE') &&
           e.lane === goodItem.lane &&
-          e.y > playerY &&
+          (e.y + (e.length || 0)) > playerY &&
           (e.y - playerY) < safeDistance &&
           !e.isCollected
         );

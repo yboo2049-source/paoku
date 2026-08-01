@@ -23,6 +23,10 @@ export interface Player {
   stateTimer: number;
   buffs: PlayerBuffs;
   skinColor: string;
+  lastLane: Lane;
+  lastLaneChangeTime: number;
+  stumbleCount: number;
+  lastStumbleTime: number;
 }
 
 export type EntityType = 'OBSTACLE' | 'COIN' | 'MAGNET_ITEM' | 'SHIELD_ITEM' | 'DOUBLE_SCORE_ITEM' | 'JETPACK_ITEM' | 'MOVING_TRAIN' | 'STATIC_TRAIN' | 'RAMP' | 'LOW_OBSTACLE' | 'HIGH_OBSTACLE' | 'SUPER_SNEAKERS_ITEM' | 'HOVERBOARD_ITEM';

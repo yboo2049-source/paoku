@@ -1,4 +1,141 @@
 import type { GameContext, EntityType, Lane, GameEntity } from '../types';
+import { logEvent } from '../core/telemetry';
+
+interface TrackSegment {
+  name: string;
+  length: number;
+  spawn: (startY: number, entities: GameEntity[], safeLane: Lane) => void;
+}
+
+const segments: TrackSegment[] = [
+  {
+    name: 'Pattern_ZigZag_Trains',
+    length: 840,
+    spawn: (startY, entities, safeLane) => {
+      const trainLanes = [0, 1, 2].filter(l => l !== safeLane) as Lane[];
+      trainLanes.forEach(lane => {
+        entities.push(createEntity('RAMP', lane, startY));
+        entities.push(createEntity('STATIC_TRAIN', lane, startY + 420));
+      });
+      // Zig-zag line of 40 coins bouncing between the two train roofs
+      for (let i = 0; i < 40; i++) {
+        const coinLane = trainLanes[i % 2];
+        entities.push(createEntity('COIN', coinLane, startY + 30 + i * 20, 25));
+      }
+      // The third lane has a low obstacle and some coins
+      entities.push(createEntity('LOW_OBSTACLE', safeLane, startY + 50));
+      for (let i = 0; i < 5; i++) {
+        entities.push(createEntity('COIN', safeLane, startY + 150 + i * 40));
+      }
+    }
+  },
+  {
+    name: 'Pattern_Under_Over',
+    length: 500,
+    spawn: (startY, entities, safeLane) => {
+      const allLanes = [0, 1, 2] as Lane[];
+      for (let i = 0; i < 4; i++) {
+        const lane = allLanes[i % 3];
+        const isHigh = i % 2 === 0;
+        entities.push(createEntity(isHigh ? 'HIGH_OBSTACLE' : 'LOW_OBSTACLE', lane, startY + i * 100, isHigh ? 10 : 0));
+        // Coins guide the player
+        if (isHigh) {
+            // Coins underneath
+            entities.push(createEntity('COIN', lane, startY + i * 100, 0));
+        } else {
+            // Coins above
+            entities.push(createEntity('COIN', lane, startY + i * 100, 20));
+        }
+      }
+      // random powerup in safelane
+      if (Math.random() < 0.3) {
+          entities.push(createEntity(getRandomPowerup(), safeLane, startY + 400));
+      }
+    }
+  },
+  {
+    name: 'Pattern_Moving_Rush',
+    length: 820,
+    spawn: (startY, entities, safeLane) => {
+      const trainLanes = [0, 1, 2].filter(l => l !== safeLane) as Lane[];
+      // 50% chance to only have 1 moving train instead of 2
+      if (Math.random() < 0.5) {
+        trainLanes.pop();
+      }
+      trainLanes.forEach(lane => {
+        entities.push(createEntity('MOVING_TRAIN', lane, startY));
+      });
+      // safe lane is filled with a perfect line of coins and powerups
+      for (let i = 0; i < 15; i++) {
+        const type = (i === 7 && Math.random() < 0.5) ? getRandomPowerup() : 'COIN';
+        entities.push(createEntity(type, safeLane, startY + i * 50));
+      }
+    }
+  },
+  {
+    name: 'Pattern_Slalom',
+    length: 600,
+    spawn: (startY, entities, _safeLane) => {
+      [0, 1, 2].forEach((lane, i) => {
+        entities.push(createEntity('LOW_OBSTACLE', lane as Lane, startY + i * 200));
+      });
+      // coins leading between them diagonally
+      for (let i = 0; i < 10; i++) {
+         const progress = i / 9;
+         const lane = Math.round(progress * 2) as Lane;
+         entities.push(createEntity('COIN', lane, startY + 50 + i * 40));
+      }
+    }
+  },
+  {
+    name: 'Pattern_Coin_Frenzy',
+    length: 500,
+    spawn: (startY, entities, safeLane) => {
+      const allLanes = [0, 1, 2] as Lane[];
+      allLanes.forEach(lane => {
+        if (lane !== safeLane && Math.random() < 0.5) {
+          // Add a hurdle to break the monotony in non-safe lanes
+          entities.push(createEntity('LOW_OBSTACLE', lane, startY + 250));
+        }
+        for (let i = 0; i < 10; i++) {
+          // Don't place coins inside the hurdle
+          if (lane !== safeLane && (i === 4 || i === 5 || i === 6)) continue;
+          entities.push(createEntity('COIN', lane, startY + i * 50));
+        }
+      });
+      if (Math.random() < 0.4) {
+          entities.push(createEntity(getRandomPowerup(), safeLane, startY + 250));
+      }
+    }
+  },
+  {
+    name: 'Pattern_Single_Train',
+    length: 840,
+    spawn: (startY, entities, safeLane) => {
+      // Pick exactly one lane for the train
+      const trainLane = safeLane > 0 ? (safeLane - 1) as Lane : 2;
+      entities.push(createEntity('RAMP', trainLane, startY));
+      entities.push(createEntity('STATIC_TRAIN', trainLane, startY + 420));
+      
+      // Coins on top of the train
+      for (let i = 0; i < 15; i++) {
+        entities.push(createEntity('COIN', trainLane, startY + 100 + i * 40, 25));
+      }
+      
+      // Hurdles on the ground in the other lanes to force jumping
+      const allLanes = [0, 1, 2] as Lane[];
+      allLanes.forEach(lane => {
+        if (lane !== trainLane) {
+          entities.push(createEntity('LOW_OBSTACLE', lane, startY + 200));
+          entities.push(createEntity('LOW_OBSTACLE', lane, startY + 600));
+          for (let i = 0; i < 5; i++) {
+            entities.push(createEntity('COIN', lane, startY + 300 + i * 40));
+          }
+        }
+      });
+    }
+  }
+];
 
 let lastSpawnY = 0;
 let currentSafeLane: Lane = 1;
@@ -29,8 +166,10 @@ export function updateSpawner(context: GameContext): void {
   const isJetpackActive = context.player.buffs.jetpackTimer > 0;
 
   if (lastSpawnY < player.y + renderDistance - 100) {
-    let startY = lastSpawnY + 100;
-    if (startY < player.y + 500) startY = player.y + 500;
+    // Stick closely to the last spawned Y to avoid massive empty gaps.
+    let startY = lastSpawnY + 20; // very small padding between segments
+    // Ensure we don't spawn behind the player if they somehow outran the queue
+    if (startY < player.y + 200) startY = player.y + 200;
 
     if (isJetpackActive) {
       for (let i = 0; i < 5; i++) {
@@ -40,7 +179,7 @@ export function updateSpawner(context: GameContext): void {
     } else {
       chunksSinceLaneChange++;
 
-      if (chunksSinceLaneChange > 3 && Math.random() < 0.3) {
+      if (chunksSinceLaneChange > 2 && Math.random() < 0.3) {
          const possibleLanes: Lane[] = [];
          if (currentSafeLane > 0) possibleLanes.push((currentSafeLane - 1) as Lane);
          if (currentSafeLane < 2) possibleLanes.push((currentSafeLane + 1) as Lane);
@@ -54,60 +193,10 @@ export function updateSpawner(context: GameContext): void {
          return; 
       }
 
-      const availableLanes = [0, 1, 2].filter(l => l !== currentSafeLane) as Lane[];
-      const chunkType = Math.random();
-      
-      if (chunkType < 0.25) {
-        // Put the RAMP + STATIC_TRAIN combo IN the safe lane!
-        // This guarantees no MOVING_TRAIN will ever sweep backward over it.
-        const lane = currentSafeLane;
-        entities.push(createEntity('RAMP', lane, startY));
-        
-        // Train length is 300. Ramp ends at startY + 20. 
-        // Train starts at startY + 20, ends at startY + 320. Center is startY + 170.
-        entities.push(createEntity('STATIC_TRAIN', lane, startY + 170));
-        
-        // Coins on the train
-        for (let i = 0; i < 16; i++) {
-           entities.push(createEntity('COIN', lane, startY + 30 + i * 18, 25));
-        }
-        
-        // 50% chance to spawn an adjacent parallel train for roof-jumping
-        if (Math.random() < 0.5) {
-           const adjacentLane = availableLanes[Math.floor(Math.random() * availableLanes.length)];
-           entities.push(createEntity('STATIC_TRAIN', adjacentLane, startY + 170));
-           for (let i = 0; i < 16; i++) {
-               entities.push(createEntity('COIN', adjacentLane, startY + 30 + i * 18, 25));
-           }
-        }
-        
-        // Add a minor distraction in one of the dangerous lanes
-        entities.push(createEntity('LOW_OBSTACLE', availableLanes[0], startY + 20));
-        lastSpawnY = startY + 340;
-      } else if (chunkType < 0.50) {
-        const lane = availableLanes[Math.floor(Math.random() * availableLanes.length)];
-        entities.push(createEntity('LOW_OBSTACLE', lane, startY + 20));
-        entities.push(createEntity('COIN', lane, startY - 10, 5));
-        entities.push(createEntity('COIN', lane, startY + 20, 20));
-        entities.push(createEntity('COIN', lane, startY + 50, 5));
-        
-        entities.push(createEntity('COIN', currentSafeLane, startY + 20));
-        lastSpawnY = startY + 80;
-      } else if (chunkType < 0.75 || chunksSinceLaneChange < 3) {
-        const lane = availableLanes[Math.floor(Math.random() * availableLanes.length)];
-        entities.push(createEntity('HIGH_OBSTACLE', lane, startY, 10));
-        
-        const type = Math.random() < 0.2 ? getRandomPowerup() : 'COIN';
-        entities.push(createEntity(type, currentSafeLane, startY));
-        lastSpawnY = startY + 50;
-      } else {
-        entities.push(createEntity('MOVING_TRAIN', availableLanes[0], startY));
-        entities.push(createEntity('MOVING_TRAIN', availableLanes[1], startY));
-        
-        const type = Math.random() < 0.2 ? getRandomPowerup() : 'COIN';
-        entities.push(createEntity(type, currentSafeLane, startY));
-        lastSpawnY = startY + 320;
-      }
+      const segment = segments[Math.floor(Math.random() * segments.length)];
+      segment.spawn(startY, entities, currentSafeLane);
+      logEvent('spawn_segment', { name: segment.name, startY });
+      lastSpawnY = startY + segment.length;
     }
   }
 
@@ -133,8 +222,8 @@ function createEntity(type: EntityType | string, lane: Lane, y: number, z: numbe
   if (type === 'OBSTACLE') { width = 10; length = 10; height = 20; }
   else if (type === 'HIGH_OBSTACLE') { width = 10; length = 10; height = 5; }
   else if (type === 'LOW_OBSTACLE') { width = 10; length = 10; height = 5; }
-  else if (type === 'MOVING_TRAIN') { width = 10; length = 300; height = 20; }
-  else if (type === 'STATIC_TRAIN') { width = 10; length = 300; height = 20; }
+  else if (type === 'MOVING_TRAIN') { width = 10; length = 800; height = 20; }
+  else if (type === 'STATIC_TRAIN') { width = 10; length = 800; height = 20; }
   else if (type === 'RAMP') { width = 10; length = 40; height = 20; }
   else if (type === 'COIN') { width = 5; length = 5; height = 5; }
   else { width = 8; length = 8; height = 8; }

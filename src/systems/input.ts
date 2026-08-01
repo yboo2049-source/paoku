@@ -7,10 +7,20 @@ export function handleInput(context: GameContext, command: InputCommand): void {
 
   switch (command) {
     case 'LEFT':
-      if (player.lane > 0) player.lane = (player.lane - 1) as Lane;
+      if (context.time - player.lastLaneChangeTime < 0.15) break;
+      if (player.lane > 0) {
+        player.lastLane = player.lane;
+        player.lastLaneChangeTime = context.time;
+        player.lane = (player.lane - 1) as Lane;
+      }
       break;
     case 'RIGHT':
-      if (player.lane < 2) player.lane = (player.lane + 1) as Lane;
+      if (context.time - player.lastLaneChangeTime < 0.15) break;
+      if (player.lane < 2) {
+        player.lastLane = player.lane;
+        player.lastLaneChangeTime = context.time;
+        player.lane = (player.lane + 1) as Lane;
+      }
       break;
     case 'UP':
       if (player.state === 'RUNNING') {

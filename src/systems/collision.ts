@@ -1,4 +1,5 @@
 import type { GameContext } from '../types';
+import { logEvent } from '../core/telemetry';
 
 export function checkCollisions(context: GameContext): void {
   const { player, entities } = context;
@@ -62,14 +63,29 @@ export function checkCollisions(context: GameContext): void {
         }
 
         if (crash) {
-          if (player.buffs.shield) {
-            player.buffs.shield = false;
-            entity.isCollected = true;
-          } else if (player.buffs.hoverboardTimer > 0) {
-            player.buffs.hoverboardTimer = 0;
-            entity.isCollected = true;
-          } else {
-            context.state = 'GAMEOVER';
+          const isSideCollision = (context.time - player.lastLaneChangeTime) < 0.2;
+          
+          if (isSideCollision) {
+            player.lane = player.lastLane;
+            player.stumbleCount = (player.stumbleCount || 0) + 1;
+            player.lastStumbleTime = context.time;
+            logEvent('player_stumble', { obstacle: entity.type, lane: entity.lane, count: player.stumbleCount });
+            crash = (player.stumbleCount >= 3);
+          }
+
+          if (crash) {
+            if (player.buffs.shield) {
+              player.buffs.shield = false;
+              entity.isCollected = true;
+              logEvent('shield_broken', { obstacle: entity.type });
+            } else if (player.buffs.hoverboardTimer > 0) {
+              player.buffs.hoverboardTimer = 0;
+              entity.isCollected = true;
+              logEvent('hoverboard_broken', { obstacle: entity.type });
+            } else {
+              logEvent('player_crash', { obstacle: entity.type, distance: player.y });
+              context.state = 'GAMEOVER';
+            }
           }
         }
       }

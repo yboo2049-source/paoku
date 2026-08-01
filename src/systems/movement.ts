@@ -11,6 +11,11 @@ export function updateMovement(context: GameContext, deltaTime: number): void {
   if (player.buffs.hoverboardTimer > 0) player.buffs.hoverboardTimer -= deltaTime;
   if (player.buffs.superSneakersTimer > 0) player.buffs.superSneakersTimer -= deltaTime;
 
+  if (player.stumbleCount > 0 && (context.time - player.lastStumbleTime) > 5.0) {
+    player.stumbleCount -= 1;
+    player.lastStumbleTime = context.time;
+  }
+
   for (const entity of entities) {
     if (entity.type === 'MOVING_TRAIN') {
       entity.y -= context.speed * 0.5 * deltaTime;

@@ -30,6 +30,7 @@ export class ThreeRenderer {
   
   private lastHoverboardTimer: number = 0;
   private lastState: string = 'MENU';
+  private lastStumbleCount: number = 0;
 
   // Particle Geometries
   private dustGeo = new THREE.BoxGeometry(2, 2, 2);
@@ -266,8 +267,26 @@ export class ThreeRenderer {
       this.shakeTime = 0.4;
       this.spawnBurstParticles(this.playerMesh.position.x, this.playerMesh.position.y, this.playerMesh.position.z, 0xff0055);
     }
+    
+    // Stumble detection for animation
+    if (player.stumbleCount > this.lastStumbleCount) {
+      this.shakeTime = 0.3;
+      // Stumble wobble effect (using squash mechanics temporarily)
+      this.squashTime = 0.3;
+      // Red particles to indicate damage
+      this.spawnBurstParticles(this.playerMesh.position.x, this.playerMesh.position.y + 10, this.playerMesh.position.z, 0xff0000);
+      
+      // Make player briefly flash red
+      if (this.playerMesh.material && !Array.isArray(this.playerMesh.material)) {
+        const mat = this.playerMesh.material as THREE.MeshLambertMaterial;
+        mat.color.setHex(0xffaaaa);
+        setTimeout(() => mat.color.setHex(0xffffff), 200);
+      }
+    }
+    
     this.lastState = context.state;
     this.lastHoverboardTimer = player.buffs.hoverboardTimer;
+    this.lastStumbleCount = player.stumbleCount;
 
     // 1. Update Player with Elastic Easing
     const targetX = this.laneToX(player.lane);

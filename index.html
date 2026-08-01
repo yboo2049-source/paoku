@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subway Surfer V1 (Harness)</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <canvas id="game-canvas" width="800" height="600"></canvas>
+      
+      <div id="ui-layer">
+        <div id="score-board" style="display: none;">Score: <span id="score">0</span></div>
+        
+        <div id="menu-screen" class="screen">
+          <h1>Subway Surfer V1</h1>
+          <p>Controls: WASD or Arrow Keys</p>
+          <p>Left/Right to switch lanes, Up to Jump, Down to Roll</p>
+          <div id="menu-stats" class="stats">
+            <p>High Score: <span id="menu-high-score">0</span></p>
+            <p>Total Coins: <span id="menu-total-coins">0</span></p>
+          </div>
+          <button id="start-btn">Start Game</button>
+          <button id="autopilot-btn">🤖 AI Autopilot</button>
+          <button id="open-shop-btn">Shop</button>
+        </div>
+        
+        <div id="shop-screen" class="screen" style="display: none;">
+          <h1>Shop</h1>
+          <div class="stats">
+            <p>Your Coins: <span id="shop-total-coins">0</span></p>
+          </div>
+          <button id="buy-red-skin-btn">Buy Red Skin (100 Coins)</button>
+          <button id="close-shop-btn">Back to Menu</button>
+        </div>
+
+        <div id="paused-screen" class="screen" style="display: none;">
+          <h1>PAUSED</h1>
+          <p>Press ESC to Resume</p>
+        </div>
+
+        <div id="game-over-screen" class="screen" style="display: none;">
+          <h1>Game Over!</h1>
+          <p>Final Score: <span id="final-score">0</span></p>
+          <button id="restart-btn">Restart Game</button>
+        </div>
+      </div>
+      
+      <pre id="debug-panel"></pre>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import type { GameContext, GameEntity, Lane } from '../types';
+import { textures } from './textures';
 
 interface Particle {
   mesh: THREE.Mesh;
@@ -92,8 +93,10 @@ export class ThreeRenderer {
 
     // Player Mesh
     const playerGeo = new THREE.BoxGeometry(10, 15, 10);
-    const playerMat = new THREE.MeshLambertMaterial({ color: 0xffffff });
-    this.playerMesh = new THREE.Mesh(playerGeo, playerMat);
+    const faceMat = new THREE.MeshLambertMaterial({ map: textures.playerFace });
+    const shirtMat = new THREE.MeshLambertMaterial({ map: textures.playerShirtBlue });
+    const pMats = [shirtMat, shirtMat, shirtMat, shirtMat, shirtMat, faceMat];
+    this.playerMesh = new THREE.Mesh(playerGeo, pMats);
     this.playerMesh.castShadow = true;
     this.scene.add(this.playerMesh);
 
@@ -173,27 +176,31 @@ export class ThreeRenderer {
   private createEntityMesh(entity: GameEntity): THREE.Object3D {
     let mesh: THREE.Mesh;
     let geo: THREE.BufferGeometry;
-    let mat: THREE.Material;
+    let mat: any;
 
     switch (entity.type) {
       case 'OBSTACLE':
         geo = new THREE.BoxGeometry(entity.width, entity.height, entity.length);
-        mat = new THREE.MeshLambertMaterial({ color: 0xff4444 });
+        mat = new THREE.MeshLambertMaterial({ map: textures.crate });
         mesh = new THREE.Mesh(geo, mat);
         break;
       case 'MOVING_TRAIN':
         geo = new THREE.BoxGeometry(entity.width, entity.height, entity.length);
-        mat = new THREE.MeshLambertMaterial({ color: 0xff0000 });
+        const mtSide = new THREE.MeshLambertMaterial({ map: textures.movingTrainSide });
+        const mtFront = new THREE.MeshLambertMaterial({ map: textures.movingTrainFront });
+        mat = [mtSide, mtSide, textures.movingTrainTop, textures.movingTrainTop, mtFront, mtFront];
         mesh = new THREE.Mesh(geo, mat);
         break;
       case 'STATIC_TRAIN':
         geo = new THREE.BoxGeometry(entity.width, entity.height, entity.length);
-        mat = new THREE.MeshLambertMaterial({ color: 0x0000ff }); // Blue train
+        const stSide = new THREE.MeshLambertMaterial({ map: textures.staticTrainSide });
+        const stFront = new THREE.MeshLambertMaterial({ map: textures.staticTrainFront });
+        mat = [stSide, stSide, textures.staticTrainTop, textures.staticTrainTop, stFront, stFront];
         mesh = new THREE.Mesh(geo, mat);
         break;
       case 'COIN':
-        geo = new THREE.CylinderGeometry(entity.width / 2, entity.width / 2, entity.height, 16);
-        mat = new THREE.MeshStandardMaterial({ color: 0xffd700, metalness: 1.0, roughness: 0.2 });
+        geo = new THREE.CylinderGeometry(3, 3, 1, 16);
+        mat = new THREE.MeshLambertMaterial({ map: textures.coin });
         mesh = new THREE.Mesh(geo, mat);
         mesh.rotation.x = Math.PI / 2;
         break;
@@ -221,7 +228,7 @@ export class ThreeRenderer {
         geo = new THREE.BoxGeometry(entity.width, 1, Math.hypot(entity.length, entity.height));
         mat = new THREE.MeshLambertMaterial({ color: 0x8b4513 }); // Brown wooden ramp
         mesh = new THREE.Mesh(geo, mat);
-        mesh.rotation.x = -Math.atan2(entity.height, entity.length); // Negative angle to slope upwards into -Z
+        mesh.rotation.x = Math.atan2(entity.height, entity.length); // Positive angle for correct slope
         break;
       case 'LOW_OBSTACLE':
         geo = new THREE.BoxGeometry(entity.width, entity.height, entity.length || 2);
@@ -320,7 +327,13 @@ export class ThreeRenderer {
     }
 
     if (player.skinColor) {
-      (this.playerMesh.material as THREE.MeshLambertMaterial).color.setStyle(player.skinColor);
+      const mats = this.playerMesh.material as THREE.MeshLambertMaterial[];
+      if (Array.isArray(mats) && mats.length >= 5) {
+        const newShirt = player.skinColor === 'red' ? textures.playerShirtRed : textures.playerShirtBlue;
+        for (let i = 0; i < 5; i++) {
+           mats[i].map = newShirt;
+        }
+      }
     }
 
     // Hoverboard & Jetpack
@@ -377,7 +390,9 @@ export class ThreeRenderer {
       // Hovering
       if (entity.type === 'COIN' || entity.type.endsWith('_ITEM')) {
         mesh.rotation.y += 0.05;
-        if (entity.type === 'COIN') mesh.rotation.z += 0.05;
+        if (entity.type === 'COIN') {
+          mesh.rotation.z += 0.05;
+        }
         ey += Math.sin(Date.now() / 200 + ex) * 2;
       }
 

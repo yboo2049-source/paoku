@@ -18,6 +18,14 @@ export function updateMagnet(context: GameContext, deltaTime: number): void {
       } else if (entity.y < player.y) {
         entity.y = Math.min(player.y, entity.y + pullSpeed);
       }
+      
+      const targetZ = player.z + 5;
+      const coinZ = entity.z || 5;
+      if (coinZ > targetZ) {
+        entity.z = Math.max(targetZ, coinZ - pullSpeed);
+      } else if (coinZ < targetZ) {
+        entity.z = Math.min(targetZ, coinZ + pullSpeed);
+      }
     }
   }
 }

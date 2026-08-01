@@ -62,14 +62,28 @@ export function updateSpawner(context: GameContext): void {
         // This guarantees no MOVING_TRAIN will ever sweep backward over it.
         const lane = currentSafeLane;
         entities.push(createEntity('RAMP', lane, startY));
-        entities.push(createEntity('STATIC_TRAIN', lane, startY + 35));
-        entities.push(createEntity('COIN', lane, startY + 30, 25));
-        entities.push(createEntity('COIN', lane, startY + 45, 25));
-        entities.push(createEntity('COIN', lane, startY + 60, 25));
+        
+        // Train length is 120. Ramp ends at startY + 20. 
+        // Train starts at startY + 20, ends at startY + 140. Center is startY + 80.
+        entities.push(createEntity('STATIC_TRAIN', lane, startY + 80));
+        
+        // Coins on the train
+        for (let i = 0; i < 6; i++) {
+           entities.push(createEntity('COIN', lane, startY + 30 + i * 18, 25));
+        }
+        
+        // 50% chance to spawn an adjacent parallel train for roof-jumping
+        if (Math.random() < 0.5) {
+           const adjacentLane = availableLanes[Math.floor(Math.random() * availableLanes.length)];
+           entities.push(createEntity('STATIC_TRAIN', adjacentLane, startY + 80));
+           for (let i = 0; i < 6; i++) {
+               entities.push(createEntity('COIN', adjacentLane, startY + 30 + i * 18, 25));
+           }
+        }
         
         // Add a minor distraction in one of the dangerous lanes
         entities.push(createEntity('LOW_OBSTACLE', availableLanes[0], startY + 20));
-        lastSpawnY = startY + 100;
+        lastSpawnY = startY + 160;
       } else if (chunkType < 0.50) {
         const lane = availableLanes[Math.floor(Math.random() * availableLanes.length)];
         entities.push(createEntity('LOW_OBSTACLE', lane, startY + 20));
@@ -119,7 +133,8 @@ function createEntity(type: EntityType | string, lane: Lane, y: number, z: numbe
   if (type === 'OBSTACLE') { width = 10; length = 10; height = 20; }
   else if (type === 'HIGH_OBSTACLE') { width = 10; length = 10; height = 5; }
   else if (type === 'LOW_OBSTACLE') { width = 10; length = 10; height = 5; }
-  else if (type === 'MOVING_TRAIN' || type === 'STATIC_TRAIN') { width = 10; length = 30; height = 20; }
+  else if (type === 'MOVING_TRAIN') { width = 10; length = 30; height = 20; }
+  else if (type === 'STATIC_TRAIN') { width = 10; length = 120; height = 20; }
   else if (type === 'RAMP') { width = 10; length = 40; height = 20; }
   else if (type === 'COIN') { width = 5; length = 5; height = 5; }
   else { width = 8; length = 8; height = 8; }

@@ -13,9 +13,9 @@ export function handleInput(context: GameContext, command: InputCommand): void {
       if (player.lane < 2) player.lane = (player.lane + 1) as Lane;
       break;
     case 'UP':
-      if (player.z <= 0.1 || player.state !== 'JUMPING') { // Allow jump if on ground or running
+      if (player.state === 'RUNNING') {
         player.state = 'JUMPING';
-        player.velocityZ = player.buffs.superSneakersTimer > 0 ? 120 : 80;
+        player.velocityZ = (player.buffs.superSneakersTimer > 0) ? 180 : 120;
       }
       break;
     case 'DOWN':

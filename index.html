@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
+    <!-- 强制清除 PWA 缓存的脚本 -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for(let registration of registrations) {
+            registration.unregister();
+            console.log('ServiceWorker unregistered to clear cache.');
+          }
+        });
+      }
+    </script>
     <div id="game-container">
       <canvas id="game-canvas" width="800" height="600"></canvas>
       

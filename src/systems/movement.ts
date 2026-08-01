@@ -56,8 +56,8 @@ export function updateMovement(context: GameContext, deltaTime: number): void {
           const eLength = entity.length || 10;
           if (Math.abs(player.y - entity.y) < eLength / 2 + 5) {
             const entityTop = (entity.z || 0) + entity.height;
-            // Lenient check: if player is near or above the top surface
-            if (player.z >= entityTop - 8) {
+            // Strict check: if player is near or above the top surface
+            if (player.z >= entityTop - 2) {
                if (entityTop > floorZ) {
                  floorZ = entityTop;
                }

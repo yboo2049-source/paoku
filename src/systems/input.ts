@@ -15,7 +15,7 @@ export function handleInput(context: GameContext, command: InputCommand): void {
     case 'UP':
       if (player.state === 'RUNNING') {
         player.state = 'JUMPING';
-        player.velocityZ = (player.buffs.superSneakersTimer > 0) ? 180 : 120;
+        player.velocityZ = (player.buffs.superSneakersTimer > 0) ? 130 : 80;
       }
       break;
     case 'DOWN':

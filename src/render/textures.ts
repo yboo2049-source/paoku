@@ -60,16 +60,23 @@ const shirtSvg = (color: string) => `<svg xmlns="http://www.w3.org/2000/svg" wid
 </svg>`;
 
 const playerSpriteSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-  <path d="M 40 50 L 88 50 L 96 90 L 32 90 Z" fill="#4169E1"/>
-  <circle cx="64" cy="35" r="20" fill="#FFA07A"/>
-  <path d="M 44 25 Q 64 10 84 25 L 84 35 L 44 35 Z" fill="#DC143C"/>
-  <path d="M 80 25 L 95 30 L 84 35 Z" fill="#DC143C"/>
-  <path d="M 40 50 L 25 80" stroke="#FFA07A" stroke-width="8" stroke-linecap="round"/>
-  <path d="M 88 50 L 103 80" stroke="#FFA07A" stroke-width="8" stroke-linecap="round"/>
-  <path d="M 45 90 L 45 115" stroke="#FFA07A" stroke-width="10" stroke-linecap="round"/>
-  <path d="M 83 90 L 83 115" stroke="#FFA07A" stroke-width="10" stroke-linecap="round"/>
-  <ellipse cx="45" cy="120" rx="8" ry="5" fill="#333"/>
-  <ellipse cx="83" cy="120" rx="8" ry="5" fill="#333"/>
+  <path d="M 40 50 L 88 50 L 96 90 L 32 90 Z" fill="#EAEAEA"/>
+  <path d="M 40 50 L 50 90 L 32 90 Z" fill="#2E5090"/>
+  <path d="M 88 50 L 78 90 L 96 90 Z" fill="#2E5090"/>
+  <circle cx="64" cy="35" r="20" fill="#FFCDB2"/>
+  <path d="M 44 25 Q 64 10 84 25 L 84 35 L 44 35 Z" fill="#E63946"/>
+  <path d="M 80 25 L 95 30 L 84 35 Z" fill="#E63946"/>
+  <path d="M 40 35 A 25 25 0 0 1 88 35" fill="none" stroke="#333" stroke-width="4"/>
+  <rect x="35" y="30" width="10" height="15" rx="5" fill="#FFB703"/>
+  <rect x="83" y="30" width="10" height="15" rx="5" fill="#FFB703"/>
+  <path d="M 40 50 L 25 80" stroke="#FFCDB2" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 88 50 L 103 80" stroke="#FFCDB2" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 45 90 L 45 115" stroke="#2E5090" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 83 90 L 83 115" stroke="#2E5090" stroke-width="12" stroke-linecap="round"/>
+  <ellipse cx="45" cy="120" rx="9" ry="6" fill="#F1FAEE"/>
+  <ellipse cx="83" cy="120" rx="9" ry="6" fill="#F1FAEE"/>
+  <path d="M 36 120 L 54 120" stroke="#E63946" stroke-width="2"/>
+  <path d="M 74 120 L 92 120" stroke="#E63946" stroke-width="2"/>
 </svg>`;
 
 const hurdleSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="128" height="64" viewBox="0 0 128 64">

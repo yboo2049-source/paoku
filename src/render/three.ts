@@ -1,4 +1,7 @@
 import * as THREE from 'three';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 import type { GameContext, GameEntity, Lane } from '../types';
 import { textures } from './textures';
 
@@ -10,12 +13,14 @@ interface Particle {
 
 export class ThreeRenderer {
   private canvas: HTMLCanvasElement;
-  private renderer: THREE.WebGLRenderer;
   private scene: THREE.Scene;
   private camera: THREE.PerspectiveCamera;
+  private renderer: THREE.WebGLRenderer;
+  private composer!: EffectComposer;
   
   private playerMesh: THREE.Mesh;
   private groundMesh: THREE.Mesh;
+  private trackGroup: THREE.Group;
   private entityMeshes: Map<string, THREE.Object3D> = new Map();
   private hoverboardMesh: THREE.Mesh;
   private jetpackMesh: THREE.Group;
@@ -30,6 +35,7 @@ export class ThreeRenderer {
   
   private lastHoverboardTimer: number = 0;
   private lastState: string = 'MENU';
+  private lastPlayerState: string = 'RUNNING';
   private lastStumbleCount: number = 0;
 
   // Particle Geometries
@@ -43,45 +49,144 @@ export class ThreeRenderer {
     
     // Setup Scene
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(0x87ceeb); // Sky blue
-    this.scene.fog = new THREE.Fog(0x87ceeb, 100, 1000);
+    this.scene.background = new THREE.Color(0x050511); // Cyberpunk night
+    this.scene.fog = new THREE.Fog(0x050511, 100, 1000);
 
     // Setup Camera
-    this.camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
+    const container = canvas.parentElement!;
+    const width = container.clientWidth;
+    const height = container.clientHeight;
 
-    // Setup Renderer
-    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true });
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 2000); // Wider FOV for speed sense
+    
+    // Renderer
+    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true, alpha: true });
+    this.renderer.setSize(width, height);
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Better shadows
+
+    // Setup Post-Processing
+    this.composer = new EffectComposer(this.renderer);
+    const renderPass = new RenderPass(this.scene, this.camera);
+    this.composer.addPass(renderPass);
+    
+    // Bloom Pass parameters: resolution, strength, radius, threshold
+    const bloomPass = new UnrealBloomPass(new THREE.Vector2(width, height), 0.8, 0.4, 0.85);
+    // Adjusted strength for neon pop without blinding glare
+    bloomPass.strength = 0.8;
+    bloomPass.radius = 0.5;
+    bloomPass.threshold = 0.85;
+    this.composer.addPass(bloomPass);
 
     // Lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-    this.scene.add(ambientLight);
+    const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.6); // Sky color, ground color, intensity
+    hemiLight.position.set(0, 200, 0);
+    this.scene.add(hemiLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-    directionalLight.position.set(100, 200, 50);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.2);
+    directionalLight.position.set(100, 200, 150); // Angled for dramatic shadows
     directionalLight.castShadow = true;
     
     // Configure shadow camera and resolution for larger area
     directionalLight.shadow.mapSize.width = 2048;
     directionalLight.shadow.mapSize.height = 2048;
     directionalLight.shadow.camera.near = 0.5;
-    directionalLight.shadow.camera.far = 500;
-    directionalLight.shadow.camera.left = -100;
-    directionalLight.shadow.camera.right = 100;
-    directionalLight.shadow.camera.top = 200;
-    directionalLight.shadow.camera.bottom = -200;
+    directionalLight.shadow.camera.far = 1000;
+    directionalLight.shadow.camera.left = -150;
+    directionalLight.shadow.camera.right = 150;
+    directionalLight.shadow.camera.top = 300;
+    directionalLight.shadow.camera.bottom = -300;
+    directionalLight.shadow.bias = -0.0005; // Reduce shadow acne
     
     this.scene.add(directionalLight);
 
-    // Ground
+    // Ground & Tracks
+    this.trackGroup = new THREE.Group();
+    
+    // Base gravel ground
     const groundGeometry = new THREE.PlaneGeometry(150, 3000);
-    const groundMaterial = new THREE.MeshLambertMaterial({ color: 0x555555 });
+    const groundMaterial = new THREE.MeshStandardMaterial({ 
+      color: 0x3a3a3a, // Darker gravel color
+      roughness: 0.9,
+      metalness: 0.1
+    });
     this.groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
     this.groundMesh.rotation.x = -Math.PI / 2;
     this.groundMesh.receiveShadow = true;
-    this.scene.add(this.groundMesh);
+    this.trackGroup.add(this.groundMesh);
+
+    // 3D Metal Rails
+    const railGeo = new THREE.BoxGeometry(0.5, 1, 3000);
+    const railMat = new THREE.MeshStandardMaterial({ color: 0xcccccc, metalness: 0.8, roughness: 0.2 });
+    const lanes = [-20, 0, 20];
+    lanes.forEach(laneX => {
+      // Left rail of lane
+      const railL = new THREE.Mesh(railGeo, railMat);
+      railL.position.set(laneX - 3, 0.5, 0);
+      railL.castShadow = true;
+      railL.receiveShadow = true;
+      this.trackGroup.add(railL);
+      // Right rail of lane
+      const railR = new THREE.Mesh(railGeo, railMat);
+      railR.position.set(laneX + 3, 0.5, 0);
+      railR.castShadow = true;
+      railR.receiveShadow = true;
+      this.trackGroup.add(railR);
+    });
+
+    // Side Walls for speed parallax
+    const wallGeo = new THREE.BoxGeometry(10, 50, 3000);
+    const wallMat = new THREE.MeshStandardMaterial({ color: 0x050511, roughness: 0.9 });
+    const wallL = new THREE.Mesh(wallGeo, wallMat);
+    wallL.position.set(-60, 25, 0);
+    wallL.receiveShadow = true;
+    this.trackGroup.add(wallL);
+    
+    const wallR = new THREE.Mesh(wallGeo, wallMat);
+    wallR.position.set(60, 25, 0);
+    wallR.receiveShadow = true;
+    this.trackGroup.add(wallR);
+
+    // Neon Strips on the walls
+    const neonGeo = new THREE.BoxGeometry(1, 2, 3000);
+    const neonMatL = new THREE.MeshStandardMaterial({ color: 0x00ffff, emissive: 0x00ffff, emissiveIntensity: 2 });
+    const neonMatR = new THREE.MeshStandardMaterial({ color: 0xff00ff, emissive: 0xff00ff, emissiveIntensity: 2 });
+    
+    const neonL = new THREE.Mesh(neonGeo, neonMatL);
+    neonL.position.set(-54.5, 30, 0);
+    this.trackGroup.add(neonL);
+    
+    const neonR = new THREE.Mesh(neonGeo, neonMatR);
+    neonR.position.set(54.5, 30, 0);
+    this.trackGroup.add(neonR);
+
+    // Procedural Skyline
+    const buildingMat = new THREE.MeshStandardMaterial({ color: 0x020205, roughness: 0.9, metalness: 0.1 });
+    const windowMat = new THREE.MeshStandardMaterial({ color: 0x00ffff, emissive: 0x00ffff, emissiveIntensity: 1.5 });
+    
+    for (let i = 0; i < 40; i++) {
+      // Left skyline
+      const hL = 50 + Math.random() * 150;
+      const bL = new THREE.Mesh(new THREE.BoxGeometry(20 + Math.random() * 20, hL, 50 + Math.random() * 50), buildingMat);
+      bL.position.set(-80 - Math.random() * 50, hL / 2, -1500 + Math.random() * 3000);
+      this.trackGroup.add(bL);
+      
+      // Right skyline
+      const hR = 50 + Math.random() * 150;
+      const bR = new THREE.Mesh(new THREE.BoxGeometry(20 + Math.random() * 20, hR, 50 + Math.random() * 50), buildingMat);
+      bR.position.set(80 + Math.random() * 50, hR / 2, -1500 + Math.random() * 3000);
+      this.trackGroup.add(bR);
+      
+      // Random neon signs on some buildings
+      if (Math.random() > 0.5) {
+        const sign = new THREE.Mesh(new THREE.BoxGeometry(2, 20, 20), windowMat);
+        sign.position.set(bR.position.x - 11, bR.position.y, bR.position.z);
+        this.trackGroup.add(sign);
+      }
+    }
+
+    this.scene.add(this.trackGroup);
 
     for (let i = -1; i <= 1; i += 2) {
       const lineGeo = new THREE.PlaneGeometry(0.5, 3000);
@@ -94,7 +199,7 @@ export class ThreeRenderer {
 
     // Player Mesh
     const playerGeo = new THREE.PlaneGeometry(15, 15);
-    const playerMat = new THREE.MeshLambertMaterial({ map: textures.playerSprite, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
+    const playerMat = new THREE.MeshLambertMaterial({ map: textures.playerSprite, transparent: true, side: THREE.DoubleSide });
     this.playerMesh = new THREE.Mesh(playerGeo, playerMat);
     this.playerMesh.castShadow = true;
     this.scene.add(this.playerMesh);
@@ -130,13 +235,20 @@ export class ThreeRenderer {
     this.jetpackMesh.visible = false;
     this.playerMesh.add(this.jetpackMesh);
 
-    window.addEventListener('resize', this.onWindowResize.bind(this));
+    window.addEventListener('resize', () => {
+      this.handleResize();
+    });
   }
 
-  private onWindowResize() {
-    this.camera.aspect = window.innerWidth / window.innerHeight;
+  public handleResize() {
+    const container = this.canvas.parentElement;
+    if (!container) return;
+    const w = container.clientWidth;
+    const h = container.clientHeight;
+    this.renderer.setSize(w, h);
+    if (this.composer) this.composer.setSize(w, h);
+    this.camera.aspect = w / h;
     this.camera.updateProjectionMatrix();
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
   private laneToX(lane: Lane): number {
@@ -173,55 +285,68 @@ export class ThreeRenderer {
   }
 
   private createEntityMesh(entity: GameEntity): THREE.Object3D {
-    let mesh: THREE.Mesh;
+    let mesh: THREE.Object3D;
     let geo: THREE.BufferGeometry;
     let mat: any;
 
     switch (entity.type) {
       case 'OBSTACLE':
         geo = new THREE.BoxGeometry(entity.width, entity.height, entity.length);
-        mat = new THREE.MeshLambertMaterial({ map: textures.crate });
+        mat = new THREE.MeshStandardMaterial({ map: textures.crate, roughness: 0.8 });
         mesh = new THREE.Mesh(geo, mat);
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
         break;
       case 'MOVING_TRAIN':
         geo = new THREE.BoxGeometry(entity.width, entity.height, entity.length);
-        const mtSide = new THREE.MeshLambertMaterial({ map: textures.movingTrainSide });
-        const mtFront = new THREE.MeshLambertMaterial({ map: textures.movingTrainFront });
-        mat = [mtSide, mtSide, textures.movingTrainTop, textures.movingTrainTop, mtFront, mtFront];
+        const mtSide = new THREE.MeshStandardMaterial({ map: textures.movingTrainSide, roughness: 0.4, metalness: 0.6 });
+        const mtFront = new THREE.MeshStandardMaterial({ map: textures.movingTrainFront, roughness: 0.4, metalness: 0.6 });
+        const mtTop = new THREE.MeshStandardMaterial({ color: 0x992222, roughness: 0.4, metalness: 0.6 });
+        mat = [mtSide, mtSide, mtTop, mtTop, mtFront, mtFront];
         mesh = new THREE.Mesh(geo, mat);
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
         break;
       case 'STATIC_TRAIN':
         geo = new THREE.BoxGeometry(entity.width, entity.height, entity.length);
-        const stSide = new THREE.MeshLambertMaterial({ map: textures.staticTrainSide });
-        const stFront = new THREE.MeshLambertMaterial({ map: textures.staticTrainFront });
-        mat = [stSide, stSide, textures.staticTrainTop, textures.staticTrainTop, stFront, stFront];
+        const stSide = new THREE.MeshStandardMaterial({ map: textures.staticTrainSide, roughness: 0.4, metalness: 0.6 });
+        const stFront = new THREE.MeshStandardMaterial({ map: textures.staticTrainFront, roughness: 0.4, metalness: 0.6 });
+        const stTop = new THREE.MeshStandardMaterial({ color: 0x222299, roughness: 0.4, metalness: 0.6 });
+        mat = [stSide, stSide, stTop, stTop, stFront, stFront];
         mesh = new THREE.Mesh(geo, mat);
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
         break;
       case 'COIN':
         geo = new THREE.CylinderGeometry(3, 3, 1, 16);
-        mat = new THREE.MeshLambertMaterial({ map: textures.coin });
+        mat = new THREE.MeshStandardMaterial({ color: 0xffd700, metalness: 1.0, roughness: 0.2 });
         mesh = new THREE.Mesh(geo, mat);
-        mesh.rotation.x = Math.PI / 2;
+        mesh.rotation.x = Math.PI / 2; // Coins stand up
+        mesh.castShadow = true;
         break;
       case 'MAGNET_ITEM':
         geo = new THREE.PlaneGeometry(10, 10);
-        mat = new THREE.MeshLambertMaterial({ map: textures.magnet, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
+        mat = new THREE.MeshLambertMaterial({ map: textures.magnet, transparent: true, side: THREE.DoubleSide });
         mesh = new THREE.Mesh(geo, mat);
+        mesh.rotation.x = -Math.PI / 2;
         break;
       case 'SHIELD_ITEM':
         geo = new THREE.PlaneGeometry(10, 10);
-        mat = new THREE.MeshLambertMaterial({ map: textures.shield, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
+        mat = new THREE.MeshLambertMaterial({ map: textures.shield, transparent: true, side: THREE.DoubleSide });
         mesh = new THREE.Mesh(geo, mat);
+        mesh.rotation.x = -Math.PI / 2;
         break;
       case 'DOUBLE_SCORE_ITEM':
         geo = new THREE.PlaneGeometry(10, 10);
-        mat = new THREE.MeshLambertMaterial({ map: textures.doubleScore, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
+        mat = new THREE.MeshLambertMaterial({ map: textures.doubleScore, transparent: true, side: THREE.DoubleSide });
         mesh = new THREE.Mesh(geo, mat);
+        mesh.rotation.x = -Math.PI / 2;
         break;
       case 'JETPACK_ITEM':
         geo = new THREE.PlaneGeometry(10, 10);
-        mat = new THREE.MeshLambertMaterial({ map: textures.jetpack, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
+        mat = new THREE.MeshLambertMaterial({ map: textures.jetpack, transparent: true, side: THREE.DoubleSide });
         mesh = new THREE.Mesh(geo, mat);
+        mesh.rotation.x = -Math.PI / 2;
         break;
       case 'RAMP':
         geo = new THREE.BoxGeometry(entity.width, 1, Math.hypot(entity.length, entity.height));
@@ -229,20 +354,61 @@ export class ThreeRenderer {
         mesh = new THREE.Mesh(geo, mat);
         mesh.rotation.x = Math.atan2(entity.height, entity.length); // Positive angle for correct slope
         break;
-      case 'LOW_OBSTACLE':
-        geo = new THREE.PlaneGeometry(entity.width, entity.height);
-        mat = new THREE.MeshLambertMaterial({ map: textures.hurdle, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
-        mesh = new THREE.Mesh(geo, mat);
+      case 'LOW_OBSTACLE': {
+        mesh = new THREE.Group();
+        // Group center ey = 2.5. Ground is at -2.5. Top is at 2.5.
+        const postGeo = new THREE.CylinderGeometry(1, 1, 5);
+        const barGeo = new THREE.BoxGeometry(entity.width, 2.5, 2);
+        const obsMat = new THREE.MeshStandardMaterial({ color: 0xff4444, metalness: 0.3, roughness: 0.7 }); // Red hurdle
+        const postMat = new THREE.MeshStandardMaterial({ color: 0xdddddd, metalness: 0.8, roughness: 0.2 });
+        
+        const leftPost = new THREE.Mesh(postGeo, postMat);
+        leftPost.position.set(-entity.width / 2 + 1, 0, 0);
+        leftPost.castShadow = true;
+        
+        const rightPost = new THREE.Mesh(postGeo, postMat);
+        rightPost.position.set(entity.width / 2 - 1, 0, 0);
+        rightPost.castShadow = true;
+        
+        const bar = new THREE.Mesh(barGeo, obsMat);
+        bar.position.set(0, 1.25, 0); // Near the top
+        bar.castShadow = true;
+        
+        mesh.add(leftPost, rightPost, bar);
         break;
-      case 'HIGH_OBSTACLE':
-        geo = new THREE.PlaneGeometry(entity.width, entity.height);
-        mat = new THREE.MeshLambertMaterial({ map: textures.barrier, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
-        mesh = new THREE.Mesh(geo, mat);
+      }
+      case 'HIGH_OBSTACLE': {
+        mesh = new THREE.Group();
+        // Group center ey = 12.5. Ground is at -12.5. Top is at 2.5.
+        const postGeo = new THREE.CylinderGeometry(1, 1, 15);
+        const topBarGeo = new THREE.BoxGeometry(entity.width, 4, 3); // Thicker bar
+        const obsMat = new THREE.MeshStandardMaterial({ color: 0x4444ff, metalness: 0.3, roughness: 0.7 }); // Blue overhead sign
+        const postMat = new THREE.MeshStandardMaterial({ color: 0xdddddd, metalness: 0.8, roughness: 0.2 });
+        
+        const leftPost = new THREE.Mesh(postGeo, postMat);
+        leftPost.position.set(-entity.width / 2 + 1, -5, 0); // Shift down to reach ground
+        leftPost.castShadow = true;
+        
+        const rightPost = new THREE.Mesh(postGeo, postMat);
+        rightPost.position.set(entity.width / 2 - 1, -5, 0);
+        rightPost.castShadow = true;
+        
+        const topBar = new THREE.Mesh(topBarGeo, obsMat);
+        topBar.position.set(0, 0.5, 0); // Top of the arch
+        topBar.castShadow = true;
+        
+        mesh.add(leftPost, rightPost, topBar);
         break;
+      }
       case 'SUPER_SNEAKERS_ITEM':
         geo = new THREE.PlaneGeometry(10, 10);
-        mat = new THREE.MeshLambertMaterial({ map: textures.sneakers, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
+        mat = new THREE.MeshLambertMaterial({ map: textures.sneakers, transparent: true, side: THREE.DoubleSide });
         mesh = new THREE.Mesh(geo, mat);
+        mesh.rotation.x = -Math.PI / 2;
+        break;
+      case 'GROUND':
+        // The track system (gravel/rails) is static and infinite, so we don't render these logical ground blocks
+        mesh = new THREE.Group();
         break;
       default:
         geo = new THREE.BoxGeometry(entity.width, entity.height, entity.length);
@@ -267,6 +433,15 @@ export class ThreeRenderer {
       this.shakeTime = 0.4;
       this.spawnBurstParticles(this.playerMesh.position.x, this.playerMesh.position.y, this.playerMesh.position.z, 0xff0055);
     }
+
+    // Jump & Land Dust
+    if (player.state === 'JUMPING' && this.lastPlayerState !== 'JUMPING') {
+      this.spawnBurstParticles(this.visualPlayerX, player.z + 5, -player.y, 0xffffff);
+    }
+    if (player.state === 'RUNNING' && this.lastPlayerState === 'JUMPING') {
+      this.spawnBurstParticles(this.visualPlayerX, player.z + 5, -player.y, 0xaaaaaa);
+    }
+    this.lastPlayerState = player.state;
     
     // Stumble detection for animation
     if (player.stumbleCount > this.lastStumbleCount) {
@@ -347,6 +522,17 @@ export class ThreeRenderer {
       // Skin color changes are baked into the SVG.
     }
 
+    if (Math.random() < 0.05) {
+      console.log('DEBUG PLAYER_MESH:', {
+        pos: this.playerMesh.position.toArray(),
+        scale: this.playerMesh.scale.toArray(),
+        visible: this.playerMesh.visible,
+        mat: (this.playerMesh.material as THREE.Material).opacity,
+        z: player.z,
+        state: player.state
+      });
+    }
+
     // Hoverboard & Jetpack
     this.hoverboardMesh.visible = player.buffs.hoverboardTimer > 0;
     this.jetpackMesh.visible = player.buffs.jetpackTimer > 0;
@@ -357,7 +543,7 @@ export class ThreeRenderer {
     }
 
     // 2. Camera with FOV and Shake
-    this.camera.position.x = THREE.MathUtils.lerp(this.camera.position.x, this.visualPlayerX * 0.3, 0.1);
+    this.camera.position.x = THREE.MathUtils.lerp(this.camera.position.x, this.visualPlayerX, 0.1);
     this.camera.position.y = THREE.MathUtils.lerp(this.camera.position.y, playerY + 35, 0.1);
     this.camera.position.z = playerZ + 60;
     
@@ -375,8 +561,9 @@ export class ThreeRenderer {
 
     this.camera.lookAt(this.camera.position.x, playerY * 0.8, playerZ - 40);
 
-    // 3. Ground
-    this.groundMesh.position.z = playerZ;
+    // 3. Ground & Tracks
+    // Snap to 100-unit intervals so solid rails/walls appear infinite without moving continuously
+    this.trackGroup.position.z = Math.floor(playerZ / 100) * 100 - 500;
 
     // 4. Entities
     const currentEntityIds = new Set<string>();
@@ -398,12 +585,13 @@ export class ThreeRenderer {
       const ex = this.laneToX(entity.lane);
       const ez = -entity.y;
 
-      // Hovering
-      if (entity.type === 'COIN' || entity.type.endsWith('_ITEM')) {
-        mesh.rotation.y += 0.05;
-        if (entity.type === 'COIN') {
-          mesh.rotation.z += 0.05;
-        }
+      // Animations
+      if (entity.type === 'COIN') {
+        mesh.rotation.y += 0.05; // Spin coins
+        mesh.rotation.z += 0.05;
+        ey += Math.sin(Date.now() / 200 + ex) * 2;
+      } else if (entity.type.endsWith('_ITEM')) {
+        mesh.rotation.y += 0.03; // Spin powerups slowly
         ey += Math.sin(Date.now() / 200 + ex) * 2;
       }
 
@@ -435,6 +623,6 @@ export class ThreeRenderer {
     this.updateParticles();
 
     // 6. Render
-    this.renderer.render(this.scene, this.camera);
+    this.composer.render();
   }
 }

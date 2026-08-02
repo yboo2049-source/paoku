@@ -137,6 +137,21 @@ const segments: TrackSegment[] = [
         }
       });
     }
+  },
+  {
+    name: 'Pattern_Gap_Jumps',
+    length: 800,
+    spawn: (startY, entities, safeLane) => {
+      const allLanes = [0, 1, 2] as Lane[];
+      
+      allLanes.forEach(lane => {
+        entities.push(createEntity('GROUND', lane, startY + 400, 0, 800));
+      });
+      
+      for (let i = 0; i < 4; i++) {
+        entities.push(createEntity('COIN', safeLane, startY + 200 + i * 25));
+      }
+    }
   }
 ];
 
@@ -152,11 +167,15 @@ export function updateSpawner(context: GameContext): void {
     lastSpawnY = player.y;
     currentSafeLane = 1;
     chunksSinceLaneChange = 0;
+    
+    [0, 1, 2].forEach(lane => {
+      entities.push(createEntity('GROUND', lane as Lane, 1000, 0, 2000));
+    });
   }
   
   let maxY = player.y;
   for (const e of entities) {
-    if (e.y > maxY) maxY = e.y;
+    if (e.type !== 'GROUND' && e.y > maxY) maxY = e.y;
   }
   
   if (lastSpawnY < player.y) {
@@ -175,6 +194,9 @@ export function updateSpawner(context: GameContext): void {
     if (startY < player.y + 200) startY = player.y + 200;
 
     if (isJetpackActive) {
+      [0, 1, 2].forEach(lane => {
+        entities.push(createEntity('GROUND', lane as Lane, startY + 125, 0, 250));
+      });
       for (let i = 0; i < 5; i++) {
         entities.push(createEntity('COIN', currentSafeLane, startY + i * 50, 50));
       }
@@ -189,6 +211,10 @@ export function updateSpawner(context: GameContext): void {
          currentSafeLane = possibleLanes[Math.floor(Math.random() * possibleLanes.length)];
          chunksSinceLaneChange = 0;
          
+         [0, 1, 2].forEach(lane => {
+           entities.push(createEntity('GROUND', lane as Lane, startY + 420, 0, 840));
+         });
+         
          const blockedLanes = [0, 1, 2].filter(l => l !== currentSafeLane) as Lane[];
          blockedLanes.forEach(lane => {
            entities.push(createEntity('STATIC_TRAIN', lane, startY + 420));
@@ -202,6 +228,11 @@ export function updateSpawner(context: GameContext): void {
       }
 
       const segment = segments[Math.floor(Math.random() * segments.length)];
+      if (segment.name !== 'Pattern_Gap_Jumps') {
+        [0, 1, 2].forEach(lane => {
+          entities.push(createEntity('GROUND', lane as Lane, startY + segment.length / 2, 0, segment.length));
+        });
+      }
       segment.spawn(startY, entities, currentSafeLane);
       logEvent('spawn_segment', { name: segment.name, startY });
       lastSpawnY = startY + segment.length;
@@ -210,7 +241,7 @@ export function updateSpawner(context: GameContext): void {
 
   for (let i = entities.length - 1; i >= 0; i--) {
     const entity = entities[i];
-    if (player.y - entity.y > 200 || entity.isCollected) {
+    if (player.y - (entity.y + (entity.length || 0) / 2) > 200 || entity.isCollected) {
       entities.splice(i, 1);
     }
   }
@@ -225,15 +256,18 @@ function getRandomPowerup(): EntityType {
   return 'SUPER_SNEAKERS_ITEM';
 }
 
-function createEntity(type: EntityType | string, lane: Lane, y: number, z: number = 0): GameEntity {
+export function createEntity(type: EntityType | string, lane: Lane, y: number, z: number = 0, lengthOverride?: number): GameEntity {
   let width = 5, length = 5, height = 5;
+  let finalZ = z || 0;
+  
   if (type === 'OBSTACLE') { width = 10; length = 10; height = 20; }
-  else if (type === 'HIGH_OBSTACLE') { width = 10; length = 10; height = 5; }
-  else if (type === 'LOW_OBSTACLE') { width = 10; length = 10; height = 5; }
+  else if (type === 'HIGH_OBSTACLE') { width = 10; length = 10; height = 5; finalZ = 10; } // Physics: bottom is at z=10, top is at z=15. Player must roll (top=5) to clear.
+  else if (type === 'LOW_OBSTACLE') { width = 10; length = 10; height = 5; finalZ = 0; } // Physics: bottom is at z=0, top is at z=5. Player must jump to clear.
   else if (type === 'MOVING_TRAIN') { width = 10; length = 800; height = 20; }
   else if (type === 'STATIC_TRAIN') { width = 10; length = 800; height = 20; }
   else if (type === 'RAMP') { width = 10; length = 40; height = 20; }
   else if (type === 'COIN') { width = 5; length = 5; height = 5; }
+  else if (type === 'GROUND') { width = 10; length = lengthOverride || 10; height = 1; }
   else { width = 8; length = 8; height = 8; }
 
   const entity: any = {
@@ -241,13 +275,14 @@ function createEntity(type: EntityType | string, lane: Lane, y: number, z: numbe
     type: type as EntityType,
     lane,
     y,
+    z: finalZ,
     width,
     length,
     height,
     isCollected: false
   };
   
-  if (z !== 0) {
+  if (z !== 0 && !finalZ) {
     entity.z = z;
   }
   

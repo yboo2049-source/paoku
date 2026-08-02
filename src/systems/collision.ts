@@ -4,6 +4,12 @@ import { logEvent } from '../core/telemetry';
 export function checkCollisions(context: GameContext): void {
   const { player, entities } = context;
   
+  if (player.z < -20 && context.state === 'PLAYING') {
+    logEvent('player_fall', { distance: player.y });
+    context.state = 'GAMEOVER';
+    return;
+  }
+  
   const playerLength = 10;
   const playerHeight = player.state === 'ROLLING' ? 5 : 15; 
   

@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 
 const createTexture = (svg: string, repeatX = 1, repeatY = 1) => {
-    const blob = new Blob([svg], { type: 'image/svg+xml' });
-    const url = URL.createObjectURL(blob);
+    // Base64 is the most bulletproof way to load SVGs as WebGL textures across all browsers
+    const url = 'data:image/svg+xml;base64,' + btoa(svg);
     const loader = new THREE.TextureLoader();
     const texture = loader.load(url);
     texture.colorSpace = THREE.SRGBColorSpace;

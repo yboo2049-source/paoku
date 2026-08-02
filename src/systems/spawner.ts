@@ -24,6 +24,8 @@ const segments: TrackSegment[] = [
       }
       // The third lane has a low obstacle and some coins
       entities.push(createEntity('LOW_OBSTACLE', safeLane, startY + 50));
+      entities.push(createEntity('HIGH_OBSTACLE', safeLane, startY + 350));
+      entities.push(createEntity('LOW_OBSTACLE', safeLane, startY + 650));
       for (let i = 0; i < 5; i++) {
         entities.push(createEntity('COIN', safeLane, startY + 150 + i * 40));
       }
@@ -34,7 +36,7 @@ const segments: TrackSegment[] = [
     length: 500,
     spawn: (startY, entities, safeLane) => {
       const allLanes = [0, 1, 2] as Lane[];
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 5; i++) {
         const lane = allLanes[i % 3];
         const isHigh = i % 2 === 0;
         entities.push(createEntity(isHigh ? 'HIGH_OBSTACLE' : 'LOW_OBSTACLE', lane, startY + i * 100, isHigh ? 10 : 0));
@@ -55,7 +57,7 @@ const segments: TrackSegment[] = [
   },
   {
     name: 'Pattern_Moving_Rush',
-    length: 820,
+    length: 1000,
     spawn: (startY, entities, safeLane) => {
       const trainLanes = [0, 1, 2].filter(l => l !== safeLane) as Lane[];
       // 50% chance to only have 1 moving train instead of 2
@@ -63,13 +65,15 @@ const segments: TrackSegment[] = [
         trainLanes.pop();
       }
       trainLanes.forEach(lane => {
-        entities.push(createEntity('MOVING_TRAIN', lane, startY));
+        entities.push(createEntity('MOVING_TRAIN', lane, startY + 400));
+        entities.push(createEntity('LOW_OBSTACLE', lane, startY + 850));
       });
       // safe lane is filled with a perfect line of coins and powerups
-      for (let i = 0; i < 15; i++) {
-        const type = (i === 7 && Math.random() < 0.5) ? getRandomPowerup() : 'COIN';
+      for (let i = 0; i < 20; i++) {
+        const type = (i === 10 && Math.random() < 0.5) ? getRandomPowerup() : 'COIN';
         entities.push(createEntity(type, safeLane, startY + i * 50));
       }
+      entities.push(createEntity('HIGH_OBSTACLE', safeLane, startY + 850));
     }
   },
   {
@@ -77,35 +81,33 @@ const segments: TrackSegment[] = [
     length: 600,
     spawn: (startY, entities, _safeLane) => {
       [0, 1, 2].forEach((lane, i) => {
-        entities.push(createEntity('LOW_OBSTACLE', lane as Lane, startY + i * 200));
+        entities.push(createEntity('LOW_OBSTACLE', lane as Lane, startY + i * 150));
+        entities.push(createEntity('HIGH_OBSTACLE', lane as Lane, startY + 450 - i * 150));
       });
       // coins leading between them diagonally
-      for (let i = 0; i < 10; i++) {
-         const progress = i / 9;
+      for (let i = 0; i < 12; i++) {
+         const progress = i / 11;
          const lane = Math.round(progress * 2) as Lane;
-         entities.push(createEntity('COIN', lane, startY + 50 + i * 40));
+         entities.push(createEntity('COIN', lane, startY + i * 50));
       }
     }
   },
   {
-    name: 'Pattern_Coin_Frenzy',
-    length: 500,
+    name: 'Pattern_Train_Tunnel',
+    length: 840,
     spawn: (startY, entities, safeLane) => {
-      const allLanes = [0, 1, 2] as Lane[];
-      allLanes.forEach(lane => {
-        if (lane !== safeLane && Math.random() < 0.5) {
-          // Add a hurdle to break the monotony in non-safe lanes
-          entities.push(createEntity('LOW_OBSTACLE', lane, startY + 250));
-        }
-        for (let i = 0; i < 10; i++) {
-          // Don't place coins inside the hurdle
-          if (lane !== safeLane && (i === 4 || i === 5 || i === 6)) continue;
-          entities.push(createEntity('COIN', lane, startY + i * 50));
-        }
+      const trainLanes = [0, 1, 2].filter(l => l !== safeLane) as Lane[];
+      trainLanes.forEach(lane => {
+        entities.push(createEntity('STATIC_TRAIN', lane, startY + 420));
       });
-      if (Math.random() < 0.4) {
-          entities.push(createEntity(getRandomPowerup(), safeLane, startY + 250));
+      for (let i = 0; i < 16; i++) {
+        entities.push(createEntity('COIN', safeLane, startY + i * 50));
       }
+      if (Math.random() < 0.5) {
+          entities.push(createEntity(getRandomPowerup(), safeLane, startY + 400));
+      }
+      entities.push(createEntity('LOW_OBSTACLE', safeLane, startY + 200));
+      entities.push(createEntity('HIGH_OBSTACLE', safeLane, startY + 600));
     }
   },
   {
@@ -127,6 +129,7 @@ const segments: TrackSegment[] = [
       allLanes.forEach(lane => {
         if (lane !== trainLane) {
           entities.push(createEntity('LOW_OBSTACLE', lane, startY + 200));
+          entities.push(createEntity('HIGH_OBSTACLE', lane, startY + 400));
           entities.push(createEntity('LOW_OBSTACLE', lane, startY + 600));
           for (let i = 0; i < 5; i++) {
             entities.push(createEntity('COIN', lane, startY + 300 + i * 40));
@@ -179,17 +182,22 @@ export function updateSpawner(context: GameContext): void {
     } else {
       chunksSinceLaneChange++;
 
-      if (chunksSinceLaneChange > 2 && Math.random() < 0.3) {
+      if (chunksSinceLaneChange > 2 && Math.random() < 0.5) {
          const possibleLanes: Lane[] = [];
          if (currentSafeLane > 0) possibleLanes.push((currentSafeLane - 1) as Lane);
          if (currentSafeLane < 2) possibleLanes.push((currentSafeLane + 1) as Lane);
          currentSafeLane = possibleLanes[Math.floor(Math.random() * possibleLanes.length)];
          chunksSinceLaneChange = 0;
          
-         for (let i = 0; i < 3; i++) {
-           entities.push(createEntity('COIN', currentSafeLane, startY + i * 40));
+         const blockedLanes = [0, 1, 2].filter(l => l !== currentSafeLane) as Lane[];
+         blockedLanes.forEach(lane => {
+           entities.push(createEntity('STATIC_TRAIN', lane, startY + 420));
+         });
+         
+         for (let i = 0; i < 16; i++) {
+           entities.push(createEntity('COIN', currentSafeLane, startY + i * 50));
          }
-         lastSpawnY = startY + 120;
+         lastSpawnY = startY + 840;
          return; 
       }
 

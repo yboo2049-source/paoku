@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "=================================================="
+echo "🚧 [Harness Engineering] Running pre-commit checks..."
+echo "=================================================="
+
+# Check if node is available, but the sandbox might not have node. In real environment, developers will have node.
+# The user's repo implies using typescript and vitest, which need node.
+npm run build && npm run test
+
+if [ $? -ne 0 ]; then
+  echo "❌ Pre-commit checks failed! Please fix the errors before committing."
+  exit 1
+fi
+
+echo "✅ All checks passed! Proceeding with commit."

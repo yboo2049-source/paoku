@@ -1,290 +1,268 @@
-import type { GameContext, EntityType, Lane, GameEntity } from '../types';
-import { logEvent } from '../core/telemetry';
+import type { ObstacleEntity, CoinEntity, PowerUpEntity } from '../types';
+import { CONSTANTS } from '../types';
 
-interface TrackSegment {
-  name: string;
-  length: number;
-  spawn: (startY: number, entities: GameEntity[], safeLane: Lane) => void;
-}
+export type PatternType = 'ZigZag_Trains' | 'Under_Over' | 'Moving_Rush' | 'Coin_Frenzy';
 
-const segments: TrackSegment[] = [
-  {
-    name: 'Pattern_ZigZag_Trains',
-    length: 840,
-    spawn: (startY, entities, safeLane) => {
-      const trainLanes = [0, 1, 2].filter(l => l !== safeLane) as Lane[];
-      trainLanes.forEach(lane => {
-        entities.push(createEntity('RAMP', lane, startY));
-        entities.push(createEntity('STATIC_TRAIN', lane, startY + 420));
-      });
-      // Zig-zag line of 40 coins bouncing between the two train roofs
-      for (let i = 0; i < 40; i++) {
-        const coinLane = trainLanes[i % 2];
-        entities.push(createEntity('COIN', coinLane, startY + 30 + i * 20, 25));
-      }
-      // The third lane has a low obstacle and some coins
-      entities.push(createEntity('LOW_OBSTACLE', safeLane, startY + 50));
-      entities.push(createEntity('HIGH_OBSTACLE', safeLane, startY + 350));
-      entities.push(createEntity('LOW_OBSTACLE', safeLane, startY + 650));
-      for (let i = 0; i < 5; i++) {
-        entities.push(createEntity('COIN', safeLane, startY + 150 + i * 40));
+export class SpawnerSystem {
+  private lastSpawnZ: number = 30;
+
+  update(
+    playerZ: number,
+    obstacles: ObstacleEntity[],
+    coins: CoinEntity[],
+    powerUps: PowerUpEntity[]
+  ): void {
+    // 保持前方有足够生成的区块
+    while (this.lastSpawnZ - playerZ < 150) {
+      this.spawnPattern(this.lastSpawnZ, obstacles, coins, powerUps);
+      this.lastSpawnZ += 40;
+    }
+
+    // 清理落后于玩家身后的物体
+    for (let i = obstacles.length - 1; i >= 0; i--) {
+      if (obstacles[i].z < playerZ - 15) {
+        obstacles.splice(i, 1);
       }
     }
-  },
-  {
-    name: 'Pattern_Under_Over',
-    length: 500,
-    spawn: (startY, entities, safeLane) => {
-      const allLanes = [0, 1, 2] as Lane[];
-      for (let i = 0; i < 5; i++) {
-        const lane = allLanes[i % 3];
-        const isHigh = i % 2 === 0;
-        entities.push(createEntity(isHigh ? 'HIGH_OBSTACLE' : 'LOW_OBSTACLE', lane, startY + i * 100, isHigh ? 10 : 0));
-        // Coins guide the player
-        if (isHigh) {
-            // Coins underneath
-            entities.push(createEntity('COIN', lane, startY + i * 100, 0));
-        } else {
-            // Coins above
-            entities.push(createEntity('COIN', lane, startY + i * 100, 20));
-        }
-      }
-      // random powerup in safelane
-      if (Math.random() < 0.3) {
-          entities.push(createEntity(getRandomPowerup(), safeLane, startY + 400));
+
+    for (let i = coins.length - 1; i >= 0; i--) {
+      if (coins[i].z < playerZ - 15) {
+        coins.splice(i, 1);
       }
     }
-  },
-  {
-    name: 'Pattern_Moving_Rush',
-    length: 1000,
-    spawn: (startY, entities, safeLane) => {
-      const trainLanes = [0, 1, 2].filter(l => l !== safeLane) as Lane[];
-      // 50% chance to only have 1 moving train instead of 2
-      if (Math.random() < 0.5) {
-        trainLanes.pop();
-      }
-      trainLanes.forEach(lane => {
-        entities.push(createEntity('MOVING_TRAIN', lane, startY + 400));
-        entities.push(createEntity('LOW_OBSTACLE', lane, startY + 850));
-      });
-      // safe lane is filled with a perfect line of coins and powerups
-      for (let i = 0; i < 20; i++) {
-        const type = (i === 10 && Math.random() < 0.5) ? getRandomPowerup() : 'COIN';
-        entities.push(createEntity(type, safeLane, startY + i * 50));
-      }
-      entities.push(createEntity('HIGH_OBSTACLE', safeLane, startY + 850));
-    }
-  },
-  {
-    name: 'Pattern_Slalom',
-    length: 600,
-    spawn: (startY, entities, _safeLane) => {
-      [0, 1, 2].forEach((lane, i) => {
-        entities.push(createEntity('LOW_OBSTACLE', lane as Lane, startY + i * 150));
-        entities.push(createEntity('HIGH_OBSTACLE', lane as Lane, startY + 450 - i * 150));
-      });
-      // coins leading between them diagonally
-      for (let i = 0; i < 12; i++) {
-         const progress = i / 11;
-         const lane = Math.round(progress * 2) as Lane;
-         entities.push(createEntity('COIN', lane, startY + i * 50));
-      }
-    }
-  },
-  {
-    name: 'Pattern_Train_Tunnel',
-    length: 840,
-    spawn: (startY, entities, safeLane) => {
-      const trainLanes = [0, 1, 2].filter(l => l !== safeLane) as Lane[];
-      trainLanes.forEach(lane => {
-        entities.push(createEntity('STATIC_TRAIN', lane, startY + 420));
-      });
-      for (let i = 0; i < 16; i++) {
-        entities.push(createEntity('COIN', safeLane, startY + i * 50));
-      }
-      if (Math.random() < 0.5) {
-          entities.push(createEntity(getRandomPowerup(), safeLane, startY + 400));
-      }
-      entities.push(createEntity('LOW_OBSTACLE', safeLane, startY + 200));
-      entities.push(createEntity('HIGH_OBSTACLE', safeLane, startY + 600));
-    }
-  },
-  {
-    name: 'Pattern_Single_Train',
-    length: 840,
-    spawn: (startY, entities, safeLane) => {
-      // Pick exactly one lane for the train
-      const trainLane = safeLane > 0 ? (safeLane - 1) as Lane : 2;
-      entities.push(createEntity('RAMP', trainLane, startY));
-      entities.push(createEntity('STATIC_TRAIN', trainLane, startY + 420));
-      
-      // Coins on top of the train
-      for (let i = 0; i < 15; i++) {
-        entities.push(createEntity('COIN', trainLane, startY + 100 + i * 40, 25));
-      }
-      
-      // Hurdles on the ground in the other lanes to force jumping
-      const allLanes = [0, 1, 2] as Lane[];
-      allLanes.forEach(lane => {
-        if (lane !== trainLane) {
-          entities.push(createEntity('LOW_OBSTACLE', lane, startY + 200));
-          entities.push(createEntity('HIGH_OBSTACLE', lane, startY + 400));
-          entities.push(createEntity('LOW_OBSTACLE', lane, startY + 600));
-          for (let i = 0; i < 5; i++) {
-            entities.push(createEntity('COIN', lane, startY + 300 + i * 40));
-          }
-        }
-      });
-    }
-  },
-  {
-    name: 'Pattern_Gap_Jumps',
-    length: 800,
-    spawn: (startY, entities, safeLane) => {
-      const allLanes = [0, 1, 2] as Lane[];
-      
-      allLanes.forEach(lane => {
-        entities.push(createEntity('GROUND', lane, startY + 400, 0, 800));
-      });
-      
-      for (let i = 0; i < 4; i++) {
-        entities.push(createEntity('COIN', safeLane, startY + 200 + i * 25));
+
+    for (let i = powerUps.length - 1; i >= 0; i--) {
+      if (powerUps[i].z < playerZ - 15) {
+        powerUps.splice(i, 1);
       }
     }
   }
-];
 
-let lastSpawnY = 0;
-let currentSafeLane: Lane = 1;
-let chunksSinceLaneChange = 0;
+  reset(): void {
+    this.lastSpawnZ = 30;
+  }
 
-export function updateSpawner(context: GameContext): void {
-  const { player, entities } = context;
-  const renderDistance = 1000;
-  
-  if (entities.length === 0 && player.y < 100) {
-    lastSpawnY = player.y;
-    currentSafeLane = 1;
-    chunksSinceLaneChange = 0;
-    
-    [0, 1, 2].forEach(lane => {
-      entities.push(createEntity('GROUND', lane as Lane, 1000, 0, 2000));
+  spawnPattern(
+    spawnZ: number,
+    obstacles: ObstacleEntity[],
+    coins: CoinEntity[],
+    _powerUps: PowerUpEntity[],
+    forcedPattern?: PatternType
+  ): void {
+    const patterns: PatternType[] = ['ZigZag_Trains', 'Under_Over', 'Moving_Rush', 'Coin_Frenzy'];
+    const pattern = forcedPattern || patterns[Math.floor(Math.random() * patterns.length)];
+
+    switch (pattern) {
+      case 'ZigZag_Trains':
+        this.spawnZigZagTrains(spawnZ, obstacles, coins);
+        break;
+      case 'Under_Over':
+        this.spawnUnderOver(spawnZ, obstacles, coins);
+        break;
+      case 'Moving_Rush':
+        this.spawnMovingRush(spawnZ, obstacles, coins);
+        break;
+      case 'Coin_Frenzy':
+        this.spawnCoinFrenzy(spawnZ, coins);
+        break;
+    }
+
+    // 25% 概率在跑道中央放置一个随机 PowerUp 道具
+    if (Math.random() < 0.35) {
+      const pTypes: PowerUpEntity['type'][] = ['MAGNET', 'DOUBLE_SCORE', 'SUPER_SNEAKERS', 'HOVERBOARD'];
+      const randomType = pTypes[Math.floor(Math.random() * pTypes.length)];
+      const randomLane = Math.floor(Math.random() * 3);
+
+      _powerUps.push({
+        id: `powerup_${spawnZ}_${Date.now()}`,
+        type: randomType,
+        lane: randomLane,
+        x: CONSTANTS.LANE_X[randomLane],
+        y: 1.0,
+        z: spawnZ + 20,
+        collected: false,
+      });
+    }
+  }
+
+  private spawnZigZagTrains(spawnZ: number, obstacles: ObstacleEntity[], coins: CoinEntity[]): void {
+    // 交错的火车 + 斜坡(RAMP)与金币
+    // 车道0 (左): RAMP at spawnZ, 火车顶部有金币
+    obstacles.push({
+      id: `obs_ramp_${spawnZ}_0`,
+      type: 'RAMP',
+      lane: 0,
+      x: CONSTANTS.LANE_X[0],
+      y: 0,
+      z: spawnZ,
+      width: 2.4,
+      height: 3.0,
+      depth: 6.0,
+    });
+    obstacles.push({
+      id: `obs_train_${spawnZ}_0`,
+      type: 'STATIC_TRAIN',
+      lane: 0,
+      x: CONSTANTS.LANE_X[0],
+      y: 0,
+      z: spawnZ + 9,
+      width: 2.4,
+      height: 3.0,
+      depth: 12.0,
+    });
+    for (let i = 0; i < 4; i++) {
+      coins.push({
+        id: `coin_${spawnZ}_0_${i}`,
+        lane: 0,
+        x: CONSTANTS.LANE_X[0],
+        y: 3.8,
+        z: spawnZ + 4 + i * 3,
+        collected: false,
+      });
+    }
+
+    // 车道1 (中): STATIC_TRAIN at spawnZ + 15
+    obstacles.push({
+      id: `obs_train_${spawnZ}_1`,
+      type: 'STATIC_TRAIN',
+      lane: 1,
+      x: CONSTANTS.LANE_X[1],
+      y: 0,
+      z: spawnZ + 15,
+      width: 2.4,
+      height: 3.0,
+      depth: 12.0,
+    });
+
+    // 车道2 (右): RAMP at spawnZ + 20
+    obstacles.push({
+      id: `obs_ramp_${spawnZ}_2`,
+      type: 'RAMP',
+      lane: 2,
+      x: CONSTANTS.LANE_X[2],
+      y: 0,
+      z: spawnZ + 20,
+      width: 2.4,
+      height: 3.0,
+      depth: 6.0,
     });
   }
-  
-  let maxY = player.y;
-  for (const e of entities) {
-    if (e.type !== 'GROUND' && e.y > maxY) maxY = e.y;
-  }
-  
-  if (lastSpawnY < player.y) {
-    lastSpawnY = player.y;
-  }
-  if (maxY > lastSpawnY) {
-    lastSpawnY = maxY;
+
+  private spawnUnderOver(spawnZ: number, obstacles: ObstacleEntity[], coins: CoinEntity[]): void {
+    // 组合高空与低矮障碍
+    // 车道 0: HIGH_OBSTACLE (需翻滚)
+    obstacles.push({
+      id: `obs_high_${spawnZ}_0`,
+      type: 'HIGH_OBSTACLE',
+      lane: 0,
+      x: CONSTANTS.LANE_X[0],
+      y: 1.2,
+      z: spawnZ + 5,
+      width: 2.2,
+      height: 1.8,
+      depth: 0.5,
+    });
+    coins.push({
+      id: `coin_${spawnZ}_0_0`,
+      lane: 0,
+      x: CONSTANTS.LANE_X[0],
+      y: 0.8,
+      z: spawnZ + 5,
+      collected: false,
+    });
+
+    // 车道 1: LOW_OBSTACLE (需跳跃)
+    obstacles.push({
+      id: `obs_low_${spawnZ}_1`,
+      type: 'LOW_OBSTACLE',
+      lane: 1,
+      x: CONSTANTS.LANE_X[1],
+      y: 0,
+      z: spawnZ + 15,
+      width: 2.2,
+      height: 1.0,
+      depth: 0.5,
+    });
+    coins.push({
+      id: `coin_${spawnZ}_1_0`,
+      lane: 1,
+      x: CONSTANTS.LANE_X[1],
+      y: 2.0,
+      z: spawnZ + 15,
+      collected: false,
+    });
+
+    // 车道 2: HIGH_OBSTACLE
+    obstacles.push({
+      id: `obs_high_${spawnZ}_2`,
+      type: 'HIGH_OBSTACLE',
+      lane: 2,
+      x: CONSTANTS.LANE_X[2],
+      y: 1.2,
+      z: spawnZ + 25,
+      width: 2.2,
+      height: 1.8,
+      depth: 0.5,
+    });
   }
 
-  const isJetpackActive = context.player.buffs.jetpackTimer > 0;
+  private spawnMovingRush(spawnZ: number, obstacles: ObstacleEntity[], coins: CoinEntity[]): void {
+    // 迎面驶来的动态火车
+    obstacles.push({
+      id: `obs_mov_${spawnZ}_0`,
+      type: 'MOVING_TRAIN',
+      lane: 0,
+      x: CONSTANTS.LANE_X[0],
+      y: 0,
+      z: spawnZ + 30,
+      width: 2.4,
+      height: 3.0,
+      depth: 12.0,
+      speedZ: -10,
+    });
 
-  if (lastSpawnY < player.y + renderDistance - 100) {
-    // Stick closely to the last spawned Y to avoid massive empty gaps.
-    let startY = lastSpawnY + 20; // very small padding between segments
-    // Ensure we don't spawn behind the player if they somehow outran the queue
-    if (startY < player.y + 200) startY = player.y + 200;
+    obstacles.push({
+      id: `obs_mov_${spawnZ}_2`,
+      type: 'MOVING_TRAIN',
+      lane: 2,
+      x: CONSTANTS.LANE_X[2],
+      y: 0,
+      z: spawnZ + 10,
+      width: 2.4,
+      height: 3.0,
+      depth: 12.0,
+      speedZ: -12,
+    });
 
-    if (isJetpackActive) {
-      [0, 1, 2].forEach(lane => {
-        entities.push(createEntity('GROUND', lane as Lane, startY + 125, 0, 250));
+    // 安全车道 1 放置金币
+    for (let i = 0; i < 6; i++) {
+      coins.push({
+        id: `coin_${spawnZ}_1_${i}`,
+        lane: 1,
+        x: CONSTANTS.LANE_X[1],
+        y: 0.8,
+        z: spawnZ + i * 5,
+        collected: false,
       });
+    }
+  }
+
+  private spawnCoinFrenzy(spawnZ: number, coins: CoinEntity[]): void {
+    // 密集金币阵列
+    for (let lane = 0; lane < 3; lane++) {
       for (let i = 0; i < 5; i++) {
-        entities.push(createEntity('COIN', currentSafeLane, startY + i * 50, 50));
-      }
-      lastSpawnY = startY + 4 * 50;
-    } else {
-      chunksSinceLaneChange++;
-
-      if (chunksSinceLaneChange > 2 && Math.random() < 0.5) {
-         const possibleLanes: Lane[] = [];
-         if (currentSafeLane > 0) possibleLanes.push((currentSafeLane - 1) as Lane);
-         if (currentSafeLane < 2) possibleLanes.push((currentSafeLane + 1) as Lane);
-         currentSafeLane = possibleLanes[Math.floor(Math.random() * possibleLanes.length)];
-         chunksSinceLaneChange = 0;
-         
-         [0, 1, 2].forEach(lane => {
-           entities.push(createEntity('GROUND', lane as Lane, startY + 420, 0, 840));
-         });
-         
-         const blockedLanes = [0, 1, 2].filter(l => l !== currentSafeLane) as Lane[];
-         blockedLanes.forEach(lane => {
-           entities.push(createEntity('STATIC_TRAIN', lane, startY + 420));
-         });
-         
-         for (let i = 0; i < 16; i++) {
-           entities.push(createEntity('COIN', currentSafeLane, startY + i * 50));
-         }
-         lastSpawnY = startY + 840;
-         return; 
-      }
-
-      const segment = segments[Math.floor(Math.random() * segments.length)];
-      if (segment.name !== 'Pattern_Gap_Jumps') {
-        [0, 1, 2].forEach(lane => {
-          entities.push(createEntity('GROUND', lane as Lane, startY + segment.length / 2, 0, segment.length));
+        coins.push({
+          id: `coin_frenzy_${spawnZ}_${lane}_${i}`,
+          lane,
+          x: CONSTANTS.LANE_X[lane],
+          y: 0.8,
+          z: spawnZ + i * 4,
+          collected: false,
         });
       }
-      segment.spawn(startY, entities, currentSafeLane);
-      logEvent('spawn_segment', { name: segment.name, startY });
-      lastSpawnY = startY + segment.length;
-    }
-  }
-
-  for (let i = entities.length - 1; i >= 0; i--) {
-    const entity = entities[i];
-    if (player.y - (entity.y + (entity.length || 0) / 2) > 200 || entity.isCollected) {
-      entities.splice(i, 1);
     }
   }
 }
 
-function getRandomPowerup(): EntityType {
-  const r = Math.random();
-  if (r < 0.2) return 'MAGNET_ITEM';
-  if (r < 0.4) return 'SHIELD_ITEM';
-  if (r < 0.6) return 'DOUBLE_SCORE_ITEM';
-  if (r < 0.8) return 'JETPACK_ITEM';
-  return 'SUPER_SNEAKERS_ITEM';
-}
+export const spawnerSystem = new SpawnerSystem();
 
-export function createEntity(type: EntityType | string, lane: Lane, y: number, z: number = 0, lengthOverride?: number): GameEntity {
-  let width = 5, length = 5, height = 5;
-  let finalZ = z || 0;
-  
-  if (type === 'OBSTACLE') { width = 10; length = 10; height = 20; }
-  else if (type === 'HIGH_OBSTACLE') { width = 10; length = 10; height = 5; finalZ = 10; } // Physics: bottom is at z=10, top is at z=15. Player must roll (top=5) to clear.
-  else if (type === 'LOW_OBSTACLE') { width = 10; length = 10; height = 5; finalZ = 0; } // Physics: bottom is at z=0, top is at z=5. Player must jump to clear.
-  else if (type === 'MOVING_TRAIN') { width = 10; length = 800; height = 20; }
-  else if (type === 'STATIC_TRAIN') { width = 10; length = 800; height = 20; }
-  else if (type === 'RAMP') { width = 10; length = 40; height = 20; }
-  else if (type === 'COIN') { width = 5; length = 5; height = 5; }
-  else if (type === 'GROUND') { width = 10; length = lengthOverride || 10; height = 1; }
-  else { width = 8; length = 8; height = 8; }
-
-  const entity: any = {
-    id: `ent_${Date.now()}_${Math.random()}`,
-    type: type as EntityType,
-    lane,
-    y,
-    z: finalZ,
-    width,
-    length,
-    height,
-    isCollected: false
-  };
-  
-  if (z !== 0 && !finalZ) {
-    entity.z = z;
-  }
-  
-  return entity as GameEntity;
-}

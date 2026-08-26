@@ -1,112 +1,104 @@
-import type { GameContext, Lane } from '../types';
+import type { PlayerEntity, PowerUpType } from '../types';
+import { CONSTANTS } from '../types';
+import { eventBus } from '../core/eventBus';
 
-export type InputCommand = 'LEFT' | 'RIGHT' | 'UP' | 'DOWN' | 'DOUBLE_TAP';
+/**
+ * AC-PRD-05: SUPER_SNEAKERS 超级跑鞋
+ * 纯函数抽取：根据是否激活 SUPER_SNEAKERS 返回起跳初速度。
+ * 激活时为 1.5x JUMP_VELOCITY（20.25），否则为基础 JUMP_VELOCITY（13.5）。
+ */
+export function computeJumpVelocity(activePowerUps: Map<PowerUpType, number> | undefined): number {
+  const isSuperSneakers = (activePowerUps?.get('SUPER_SNEAKERS') || 0) > 0;
+  return isSuperSneakers ? CONSTANTS.SUPER_JUMP_VELOCITY : CONSTANTS.JUMP_VELOCITY;
+}
 
-export function handleInput(context: GameContext, command: InputCommand): void {
-  const { player } = context;
+export class InputSystem {
+  private touchStartX: number = 0;
+  private touchStartY: number = 0;
 
-  switch (command) {
-    case 'LEFT':
-      if (context.time - player.lastLaneChangeTime < 0.15) break;
-      if (player.lane > 0) {
-        player.lastLane = player.lane;
-        player.lastLaneChangeTime = context.time;
-        player.lane = (player.lane - 1) as Lane;
+  init(player: PlayerEntity): void {
+    window.addEventListener('keydown', (e) => this.handleKeyDown(e, player));
+    window.addEventListener('touchstart', (e) => this.handleTouchStart(e));
+    window.addEventListener('touchend', (e) => this.handleTouchEnd(e, player));
+  }
+
+  private handleKeyDown(e: KeyboardEvent, player: PlayerEntity): void {
+    switch (e.key) {
+      case 'ArrowLeft':
+      case 'a':
+      case 'A':
+        this.moveLane(player, -1);
+        break;
+      case 'ArrowRight':
+      case 'd':
+      case 'D':
+        this.moveLane(player, 1);
+        break;
+      case 'ArrowUp':
+      case 'w':
+      case 'W':
+      case ' ':
+        this.jump(player);
+        break;
+      case 'ArrowDown':
+      case 's':
+      case 'S':
+        this.roll(player);
+        break;
+    }
+  }
+
+  private handleTouchStart(e: TouchEvent): void {
+    if (e.touches.length > 0) {
+      this.touchStartX = e.touches[0].clientX;
+      this.touchStartY = e.touches[0].clientY;
+    }
+  }
+
+  private handleTouchEnd(e: TouchEvent, player: PlayerEntity): void {
+    if (e.changedTouches.length === 0) return;
+    const dx = e.changedTouches[0].clientX - this.touchStartX;
+    const dy = e.changedTouches[0].clientY - this.touchStartY;
+
+    if (Math.abs(dx) > Math.abs(dy)) {
+      if (Math.abs(dx) > 30) {
+        this.moveLane(player, dx > 0 ? 1 : -1);
       }
-      break;
-    case 'RIGHT':
-      if (context.time - player.lastLaneChangeTime < 0.15) break;
-      if (player.lane < 2) {
-        player.lastLane = player.lane;
-        player.lastLaneChangeTime = context.time;
-        player.lane = (player.lane + 1) as Lane;
+    } else {
+      if (Math.abs(dy) > 30) {
+        if (dy < 0) this.jump(player);
+        else this.roll(player);
       }
-      break;
-    case 'UP':
-      if (player.state === 'RUNNING') {
-        player.state = 'JUMPING';
-        player.velocityZ = (player.buffs.superSneakersTimer > 0) ? 130 : 80;
+    }
+  }
+
+  private moveLane(player: PlayerEntity, direction: number): void {
+    const newLane = Math.max(0, Math.min(2, player.lane + direction));
+    if (newLane !== player.lane) {
+      player.lane = newLane;
+      player.targetX = CONSTANTS.LANE_X[newLane];
+      eventBus.emit('PLAYER_ACTION', { action: 'CHANGE_LANE', lane: newLane, direction });
+    }
+  }
+
+  private jump(player: PlayerEntity): void {
+    if (!player.isJumping) {
+      player.isJumping = true;
+      player.vy = computeJumpVelocity(player.activePowerUps);
+      eventBus.emit('PLAYER_ACTION', { action: 'JUMP' });
+    }
+  }
+
+  private roll(player: PlayerEntity): void {
+    if (!player.isRolling) {
+      player.isRolling = true;
+      player.rollTimer = CONSTANTS.ROLL_DURATION;
+      if (player.isJumping) {
+        player.vy = -CONSTANTS.JUMP_VELOCITY * 1.5;
       }
-      break;
-    case 'DOWN':
-      if (player.z > 0) {
-        // Fast fall
-        player.velocityZ = -150;
-      } else {
-        // Roll
-        player.state = 'ROLLING';
-        player.stateTimer = 0.5; // 0.5 秒翻滚时间
-      }
-      break;
-    case 'DOUBLE_TAP':
-      // Check and consume hoverboard
-      if (player.buffs.hoverboardCount > 0) {
-        player.buffs.hoverboardCount -= 1;
-        player.buffs.hoverboardTimer = 10;
-      }
-      break;
+      eventBus.emit('PLAYER_ACTION', { action: 'ROLL' });
+    }
   }
 }
 
-export function bindTouchControls(element: HTMLElement, callback: (cmd: InputCommand) => void): void {
-  let startX = 0;
-  let startY = 0;
-  let lastTapTime = 0;
-  let lastKey = '';
-
-  element.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-  }, { passive: true });
-
-  element.addEventListener('touchend', (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const endY = e.changedTouches[0].clientY;
-
-    const diffX = endX - startX;
-    const diffY = endY - startY;
-
-    if (Math.abs(diffX) > Math.abs(diffY)) {
-      if (Math.abs(diffX) > 30) {
-        if (diffX > 0) {
-          callback('RIGHT');
-        } else {
-          callback('LEFT');
-        }
-      }
-    } else {
-      if (Math.abs(diffY) > 30) {
-        if (diffY > 0) {
-          callback('DOWN');
-        } else {
-          callback('UP');
-        }
-      } else if (Math.abs(diffX) < 10 && Math.abs(diffY) < 10) {
-        // Detect touch double tap
-        const now = Date.now();
-        if (now - lastTapTime < 300) {
-          callback('DOUBLE_TAP');
-          lastTapTime = 0;
-        } else {
-          lastTapTime = now;
-        }
-      }
-    }
-  }, { passive: true });
-
-  // Add keyboard double-tap detection for Up arrow and Spacebar
-  window.addEventListener('keydown', (e) => {
-    if (e.key === ' ' || e.key === 'ArrowUp') {
-      const now = Date.now();
-      if (now - lastTapTime < 300 && lastKey === e.key) {
-        callback('DOUBLE_TAP');
-        lastTapTime = 0;
-      } else {
-        lastTapTime = now;
-        lastKey = e.key;
-      }
-    } else {
-      lastKey = '';
-    }
-  });
-}
+export const inputSystem = new InputSystem();

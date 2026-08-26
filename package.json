@@ -14,7 +14,6 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",
-    "@types/three": "^0.185.1",
     "husky": "^9.0.11",
     "typescript": "~6.0.2",
     "vite": "^8.2.0",
@@ -22,6 +21,7 @@
     "vitest": "^4.1.10"
   },
   "dependencies": {
-    "three": "^0.185.1"
+    "@babylonjs/core": "^9.19.0",
+    "@babylonjs/loaders": "^9.19.0"
   }
 }

@@ -1,70 +1,128 @@
 # 网页版《地铁跑酷》产品需求文档 (Master PRD)
 
-> **范式说明**：本项目严格遵循 [Harness Engineering](https://github.com/deusyu/harness-engineering) 范式。主 Agent 仅作为**任务调度者 (Dispatcher)** 与系统边界约束者。具体的 3D 渲染、物理引擎、UI 逻辑与测试由职责单一的独立 **Subagent** 协作完成。
+> **范式说明**：本项目严格遵循 [Superpowers Framework & Harness Engineering](https://github.com/obra/superpowers) 范式。主 Agent 仅作为**任务调度者 (Dispatcher)** 与系统边界约束者。具体的 3D 渲染、物理引擎、UI 逻辑与测试由职责单一的独立 **Subagent** 协作完成。
+
+---
 
 ## 0. 版本与架构规划声明
-本项目旨在构建一款具备商业大作标准的无尽 Web 3D 跑酷游戏。在经历了从 V1 的基础 2D 骨架到 V4 的立体多维跑酷的演进后，现已确立了“数据与渲染解耦”的终极架构。游戏基于 Vite + Vanilla TypeScript 开发，底层采用极简纯函数进行逻辑状态（State）计算，而视觉表现完全交由 Three.js 驱动真正的 WebGL 3D 渲染器进行呈现，实现读写分离的强大。
+本项目旨在构建一款具备商业大作标准的无尽 Web 3D 跑酷游戏。数据与渲染完全解耦：底层采用极简纯函数进行逻辑状态（State）计算，视觉表现交由商业级 3D 引擎 **Babylon.js** 驱动，实现具有 GlowLayer 辉光、PBR 湿滑金属反射与高精阴影的专业级渲染表现。
 
 ---
 
-## 1. 核心业务边界与架构意图
+## 1. 数据模型与契约规范 (Data Schemas)
 
-### 1.1 系统架构限制 (Tech Stack Guardrails)
-*   **脚手架**：Vite + Vanilla TypeScript (无框架原生开发)。
-*   **类型检查**：启用严格模式 (`"strict": true`)，必须为所有 State 和 Entity 显式声明类型，严禁使用 `any`。
-*   **渲染层**：纯 Three.js 绘制 3D 几何图形，与业务逻辑层完全剥离。
-*   **状态管理**：使用纯对象单例（Context）维护全局游戏数据，不使用重型状态管理框架。
-*   **目录约束**：严格区分 `/core` (系统核心/循环), `/entities` (纯数据), `/systems` (修改状态的纯函数集合), `/render` (渲染层), `/ui` (DOM UI 操作层)。
+```typescript
+export type GameState = 'MENU' | 'PLAYING' | 'PAUSED' | 'GAMEOVER' | 'SHOP';
 
----
+export type ObstacleType = 'LOW_OBSTACLE' | 'HIGH_OBSTACLE' | 'STATIC_TRAIN' | 'MOVING_TRAIN' | 'RAMP';
 
-## 2. 核心玩法机制 (Core Gameplay Mechanics)
+export type PowerUpType = 'MAGNET' | 'DOUBLE_SCORE' | 'SUPER_SNEAKERS' | 'HOVERBOARD';
 
-### 2.1 游戏状态与核心循环 (State Machine)
-*   游戏包含如下核心状态：`MENU` (菜单), `PLAYING` (游戏中), `GAMEOVER` (游戏结束/结算), `PAUSED` (暂停, 可按 ESC 触发), `SHOP` (商店)。
-*   随着游戏存活时间（跑动距离）的增加，全局环境速度 `speed` 将基于动态缩放曲线逐渐上升，直至上限，提供递进的刺激体验。
+export interface PlayerEntity {
+  lane: number;          // 跑道编号: 0(左), 1(中), 2(右)
+  targetX: number;       // 目标 X 轴世界坐标
+  x: number;             // 当前 X 轴世界坐标
+  y: number;             // 当前 Y 轴高度 (0 表示地面/车顶)
+  z: number;             // 当前 Z 轴纵深位置
+  vy: number;            // Y 轴垂直速度 (重力模拟)
+  isJumping: boolean;    // 是否处于跳跃状态
+  isRolling: boolean;    // 是否处于翻滚状态
+  rollTimer: number;     // 翻滚剩余帧数/时间
+  activePowerUps: Map<PowerUpType, number>; // 生效中的道具及剩余时间
+}
 
-### 2.2 立体轨道与交互维度
-玩家拥有固定的三条跑道（左 0，中 1，右 2），除了基础的左右变道之外，引入了高度（Z 轴）维度：
-*   **障碍物分类精确化**：
-    *   `LOW_OBSTACLE` (低矮障碍)：如栏杆，**只能**通过跳跃 (Jump) 跨越，翻滚无效。
-    *   `HIGH_OBSTACLE` (高空障碍)：如路牌，底部镂空，**只能**通过翻滚 (Roll) 穿过，跳跃会撞头。
-*   **多层立体跑道 (车顶跑酷)**：
-    *   `RAMP` (斜坡)：玩家碰触斜坡后，Z 轴高度平滑上升，使玩家顺滑地到达火车顶部。
-    *   `STATIC_TRAIN` / `MOVING_TRAIN`：静态或迎面驶来的火车，不可平地穿透，必须躲开或利用斜坡跑上车顶。
-
-### 2.3 动态场景生成引擎 (Pattern-Based PCG)
-抛弃纯随机掉落的 Spawner，采用**预设区块拼接 (Modular Segments)** 系统，结合 `RAMP` 与 `TRAIN`：
-*   **区块列表**：例如 `ZigZag_Trains` (双车顶横跳)、`Under_Over` (高低栏杆交错)、`Moving_Rush` (双列高速迎面火车)、`Slalom` (蛇形走位)、`Coin_Frenzy` (纯金币区) 等。
-*   **金币路径引导**：金币不仅是分数奖励，还是“路标 (Breadcrumbing)”。金币与障碍物绑定成块，永远顺着最安全优雅的跑酷路线上排列生成。
-
----
-
-## 3. 道具与辅助机制 (Power-Ups)
-
-玩家拾取后可以在一定时间内改变物理法则或获得高收益：
-*   **`MAGNET` (磁铁)**：限时自动吸附全跑道一定距离内的金币至玩家身上，基于距离阈值的吸附寻路算法实现。
-*   **`DOUBLE_SCORE` (双倍积分)**：限时状态下，获得的任何分数均翻倍。
-*   **`SUPER_SNEAKERS` (超级跑鞋)**：限时内大幅增加跳跃高度与滞空时间，允许直接平地越过普通静态火车。
-*   **`HOVERBOARD` (悬浮滑板)**：主动防御道具。拾取滑板不再立刻触发，而是存入库存。玩家可以通过**双击屏幕 (Double Tap)** 主动激活，激活后获得一次免死机会并在破裂时产生范围粒子。
+export interface ObstacleEntity {
+  id: string;
+  type: ObstacleType;
+  lane: number;
+  z: number;
+  width: number;
+  height: number;
+  depth: number;
+  speedZ?: number; // 针对动态驶来的火车 MOVING_TRAIN
+}
+```
 
 ---
 
-## 4. 局外系统与商业化 (Meta Game)
+## 2. 核心数值与物理公式 (Quantitative Formulas)
 
-*   **数据持久化**：玩家的历史最高分（HighScore）、累积金币总数（Total Coins）与已解锁资产持久化保存在浏览器 `localStorage` 中。
-*   **商店与皮肤 (Shop)**：从主菜单进入商店，玩家可以消耗跨局累积的金币来购买并更换不同颜色的 Player Skin。
-*   **任务引擎 (Missions)**：监控单局各项隐性数据（如单局收集金币数、跳跃次数）。完成特定任务后赋予奖励。
-*   **排行榜 (Leaderboard)**：异步的排行榜系统，展示全球最高分天梯。
+### 2.1 基础物理常数
+*   **跑道间距 (`LANE_WIDTH`)**: `3.0` 单位世界距离。跑道 X 坐标分别对应 `-3.0`, `0.0`, `3.0`。
+*   **重力加速度 (`GRAVITY`)**: `-38.0` 单位/秒²。
+*   **基础跳跃初速度 (`JUMP_VELOCITY`)**: `13.5` 单位/秒。
+*   **翻滚持续时间 (`ROLL_DURATION`)**: `0.8` 秒。翻滚时包围盒高度从 `1.8` 缩减为 `0.9`。
+
+### 2.2 动态加速曲线
+游戏速度 $V(t)$ 随着奔跑时间 $t$（秒）线性上升，达到上限后保持匀速：
+$$V(t) = \min(V_{\text{base}} + a \cdot t, V_{\text{max}})$$
+*   $V_{\text{base}} = 18.0$ （初始基础速度）
+*   $a = 0.25$ （加速度，单位/秒²）
+*   $V_{\text{max}} = 45.0$ （最大限制速度）
 
 ---
 
-## 5. 跨端体验与视听引擎 (Audio-Visual & PWA)
+## 3. 核心玩法机制与 Acceptance Criteria (AC)
 
-*   **多端输入支持**：
-    *   PC端：键盘操作（WASD/方向键控制移动，ESC暂停，双击空格使用滑板）。
-    *   Mobile端：PWA 架构加持，支持离线与添加桌面。全局触控滑动（Swipe）控制跳跃、翻滚和切道，双击触发滑板。
-*   **极致视效 (Particles & Weather)**：
-    *   纯手工打造的粒子发射器，处理金币拾取、护盾破裂和高速奔跑时的气流拖尾。
-    *   `DayNight Cycle` (日夜交替)：随着游戏时间推移，全局光照平滑地在清晨、正午、黄昏和午夜之间过渡，结合天气特效粒子营造真实氛围。
-*   **音频系统 (Audio System)**：基于 Web Audio API 构建音频单例。负责监听状态并独立触发反馈音效（如跳跃、金币、碰撞）。音效系统严格作为消费者存在，绝不影响反向物理逻辑。
+### 3.1 立体轨道与障碍物交互
+*   **AC-PRD-01 (低矮障碍)**：玩家翻滚无法避开 `LOW_OBSTACLE`，唯有跳跃（`y > 1.2`）可以通过。
+*   **AC-PRD-02 (高空障碍)**：玩家跳跃会碰撞 `HIGH_OBSTACLE`，唯有翻滚（`isRolling === true`）可以通过。
+*   **AC-PRD-03 (斜坡与车顶)**：踏上 `RAMP` 后玩家平滑过渡到 Z 轴高度 `y = 3.0`（火车顶部）；在车顶跑动时下落重力平面更新为 `y = 3.0`。
+
+### 3.2 道具系统 (Power-Ups)
+*   **AC-PRD-04 (磁铁吸附)**：激活 `MAGNET` 时，半径 `15.0` 单位范围内的所有金币以 $25.0$ 单位/秒的速度平滑吸向玩家。
+*   **AC-PRD-05 (超级跑鞋)**：激活 `SUPER_SNEAKERS` 时，跳跃初速度提升至 $1.5 \times JUMP\_VELOCITY$ ($20.25$ 单位/秒)，起跳更高更远。
+*   **AC-PRD-06 (双倍得分)**：激活 `DOUBLE_SCORE` 时，奔跑过程中得分累计速度翻倍 ($2.0 \times$).
+*   **AC-PRD-07 (悬浮滑板免死护盾)**：激活 `HOVERBOARD` 后，玩家获得一层抵御死亡碰撞的免死护盾；发生致命碰撞时消耗滑板，并触发粒子护盾破裂特效与短暂停顿保护。
+
+### 3.3 Web Audio 音频引擎 (Web Audio Sound Engine)
+*   **AC-PRD-08 (合成音效与BGM)**：使用 Web Audio API 生成单例音频系统，包含背景音乐 (BGM) 循环，以及跳跃 (JUMP)、翻滚 (ROLL)、金币收集 (COIN)、道具拾取 (POWERUP)、滑板护盾破裂 (SHIELD_BREAK)、撞击 GameOver (CRASH) 等内置音效。支持静音与音量调节。
+
+### 3.4 任务与成就系统 (Missions & Achievements)
+*   **AC-PRD-09 (任务监控与奖励)**：系统提供单局任务监控（例如：“单局拾取 50 个金币”、“完成 10 次跳跃”），达成后触发任务完成通知弹窗，并实时结算给予奖励金币。
+
+### 3.5 赛博视效与动态环境美化 (Cyber Visuals & Dynamic Environment)
+*   **AC-PRD-10 (赛博城市背景与质感升级)**：跑道两侧构建高低错落的赛博朋克大楼天际线剪影与全景渐变天空盒；铁轨材质加入真实光泽与枕木线条细节；速度提升时动态微调镜头 FOV 视角产生冲击感。
+*   **AC-PRD-11 (3D 骨骼角色与动态动作)**：使用 Babylon.js 的 SceneLoader 加载高精度 3D 动漫/赛博角色模型以及骨骼动画网格 (Skeletal Mesh)，角色形象包含头身结构、运动服装与肢体；实现奔跑 (Run)、跳跃 (Jump)、翻滚下蹲 (Roll/Slide) 动作的平滑过渡与视觉跟随。
+
+*   **AC-PRD-12 (3D 场景组件精细化重塑)**：
+    - **火车 (TRAIN)**：包含立体车头、发光前照车灯、车身黄色警示线条、车顶风口与立体车轮细节。
+    - **斜坡 (RAMP)**：含有双侧发光加固轨与高亮 Yellow 冲刺指示箭头。
+    - **障碍栅栏 (OBSTACLE)**：增加双侧红/黄闪烁警示灯与黄黑斜纹拉线。
+    - **立体金币 (COIN)**：包含凹凸五角星标与发光外环，悬浮旋转并伴随吸收光斑。
+
+*   **AC-PRD-13 (地铁轨旁多元环境元素升级 Trackside Elements)**：
+    - **跨轨龙门架与高压电缆 (Catenary Gantries & Cables)**：轨顶架设立体网架龙门架，附带发光绝缘子与沿轨道纵深延伸的高压接触网电缆。
+    - **轨旁信号灯杆与控制箱 (Signal Lights & Control Cabinets)**：跑道侧边布设带红/黄/绿 LED 镜头与高光发光罩的信号灯杆，以及带有黑黄防撞斜纹与状态灯的轨旁控制柜。
+    - **巨型工业通风管道与隔音墙 (Ventilation Ducts & Noise Barrier Walls)**：轨旁沿线构建弧形顶盖、霓虹发光拉线隔音板以及高光泽金属通风巨管。
+    - **弧形赛博霓虹路灯与配电箱体 (Cyber Neon Streetlamps & Utility Boxes)**：轨旁两侧延伸高杆弯曲路灯，投射柔和补光，并摆放危险提示贴牌与配电控制箱。
+
+*   **AC-PRD-14 (镜头切道侧倾与落地震屏 Camera Bank Tilt & Shake)**：切道动作触发摄像机 15° 侧倾角与 0.15s 平滑延迟；起跳落地与撞击触发瞬间镜头下沉震屏。
+*   **AC-PRD-15 (速度感风阻粒子与光条 Speedline Particles)**：奔跑加速与冲刺状态下，屏幕四周生成向后飞逝的高速白色/彩色风阻拉线粒子。
+*   **AC-PRD-16 (果冻挤压拉伸与受击摔倒 Squash & Stretch)**：起跳起飞纵向拉伸，重重落地与铲地下蹲触发形态挤压弹回。
+*   **AC-PRD-17 (经典警官与恶犬追赶 Inspector & Dog Chase)**：角色身后保持跟随 3D 警官与警犬追捕实体，失误切道或绊脚时警官紧逼贴身。
+*   **AC-PRD-18 (后处理 Bloom 辉光与高精管线 Advanced Post-Processing Pipeline)**：集成 DefaultRenderingPipeline，开启 GlowLayer、Bloom 散致辉光与 FXAA 抗锯齿。
+*   **AC-PRD-19 (3D 展台与主菜单 3D 环绕镜头 3D Stage & Menu Orbiting Camera)**：主菜单模式下，角色与警官位于发光赛博展台之上，摄像机以 3D 轨迹围绕展台进行 360° 动态平滑旋转视角。
+*   **AC-PRD-20 (3D 金币飞入 UI 轨迹与拾取爆裂 3D Coin Attraction Trail)**：吃金币瞬间产生 3D 贝塞尔曲线轨迹，金币在空中划出平滑弧线飞向镜头左上角 HUD 金币槽。
+*   **AC-PRD-21 (3D 地铁隧道入口与火花粒子 3D Tunnel Portal Arch & Sparks)**：轨旁每隔 250 米布设拱形地铁隧道入口与“METRO STATION 01”发光标牌，动态列车车轮触发熔铁火花粒子。
+*   **AC-PRD-22 (3D 喷气飞行模式与滑板破裂碎片 Jetpack Flight & Hoverboard Shatter)**：拾取 Jetpack 后升至 y=8.0 高空并喷射彩虹粒子尾焰；滑板碰撞破裂时触发 12 块 3D 晶体碎片向外爆炸飞散。
+*   **AC-PRD-23 (弯曲世界 World Bending Curvature Shader)**：通过 $Z$ 轴深度二次方下沉公式，使远方地形、列车与建筑呈经典球形弧线下沉视效。
+*   **AC-PRD-24 (全套 3D 骨骼动画状态机 Skeletal Animation State Machine)**：基于纯代码驱动与 3D GLB 资源，实现 Idle（站立待机）、Run（高速奔跑）、Jump（高空跳跃）、Slide/Roll（下蹲翻滚）与 Stumble（受击绊倒）的平滑过渡与实时按键响应。
+
+---
+
+## 4. 前端视听与测试传感器 (Sensors Guardrails)
+
+系统必须暴露隐藏调试变量 `window.__GAME_SENSOR__` 供 Playwright / Subagent 进行自动化断言：
+```typescript
+window.__GAME_SENSOR__ = {
+  getGameState: () => string,
+  getPlayerPos: () => { x: number; y: number; z: number },
+  getScore: () => number,
+  getCoins: () => number,
+  getActiveObstaclesCount: () => number,
+};
+```
+
+
+

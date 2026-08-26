@@ -44,6 +44,38 @@
   - **五大预设关卡阵型**：新增 `ZigZag_Trains`（Z字横跳）、`Under_Over`（高低钻跳）、`Moving_Rush`（死神移动列车）、`Slalom`（蛇形走位）、`Coin_Frenzy`（金币海）五种手工编排的高手感关卡模块。
   - **金币寻路 (Breadcrumbing)**：金币不再盲目铺设，而是沿着最优越行路线摆放，完美引导玩家跑酷心流。
 
+### 第三阶段：地铁轨旁多元环境视效重构 (Phase 3: Trackside Environment Richness)
+- ✅ **轨旁多元组件实装 (Trackside Elements)**：
+  - **跨轨龙门架与高压电缆**：轨顶立体桁架 + 绝缘子 + 3条高压接触线。
+  - **轨旁信号灯杆与控制箱**：红黄绿三色 LED 信号灯 + 黑黄斜纹轨旁继电箱。
+  - **通风大管与发光隔音墙**：两侧支撑钢立柱 + 巨型镀锌风管 + 霓虹边框隔音屏障。
+  - **赛博弯弧路灯与配电箱**：弧形霓虹高杆灯 + 危险警示配电箱。
+
+### 第四阶段：商业级手感与全套动效重塑 (Phase 4: Mobile-Grade Polish)
+- ✅ **高阶视效与运动学系统**：
+  - **镜头切道侧倾与落地震屏 (Camera Bank Tilt & Landing Shake)**
+  - **极速风阻拉线粒子 (Speedline Particles)**
+  - **果冻挤压拉伸与翻滚动画 (Squash & Stretch Mechanics)**
+  - **经典警官与恶犬追赶实体 (Inspector & Dog Chase System)**
+  - **DefaultRenderingPipeline 后处理 Bloom 辉光与抗锯齿**
+
+### 第五阶段：全 3D 展台、金币轨迹与地铁隧道入口 (Phase 5: Full 3D Environment & Stage)
+- ✅ **高阶 3D 场景与动效**：
+  - **3D 发光展台与主菜单 360° 环绕镜头 (3D Stage & Menu Orbiting Camera)**
+  - **3D 金币飞入 UI 轨迹动画 (3D Coin Attraction Bezier Trail)**
+  - **3D 地铁拱形隧道入口与列车火花粒子 (3D Metro Tunnel Portals & Spark FX)**
+  - **3D 喷气高空飞行模式与滑板爆裂碎片 (Jetpack Flight & Board Shatter)**
+  - **弯曲世界 Shader (World Bending Curvature Shader)**
+
+### 第六阶段：纯代码与 GLB 3D 骨骼动画状态机 (Phase 6: Code-Driven Skeletal Animation State Machine)
+- 🚧 **全套动作状态融合 (Full Action Blending)**：
+  - **Idle (展台站立休闲动画)**
+  - **Run (极速奔跑骨骼循环)**
+  - **Jump (空中高跳帧过渡)**
+  - **Slide/Roll (下蹲翻滚平滑插值)**
+  - **Stumble (受击跌倒缓冲)**
+
+
 ### 💡 教训与反思 (Failures & Refinements)
 - **发现**：开发环境中使用了 `vite-plugin-pwa` 的自动更新机制，但缺乏客户端提示。导致玩家浏览器端长久锁死在旧版 JavaScript 构建上，对热更新毫无反应。
 - **优化方案**：开发阶段最好关闭 PWA 缓存，或在入口页添加硬刷新/清理 SW 的机制。

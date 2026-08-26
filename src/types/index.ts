@@ -1,62 +1,105 @@
-export type GameState = 'MENU' | 'PLAYING' | 'GAMEOVER' | 'PAUSED' | 'SHOP';
+export type GameState = 'MENU' | 'PLAYING' | 'PAUSED' | 'GAMEOVER' | 'SHOP';
 
-export type Lane = 0 | 1 | 2; 
+export type ObstacleType = 'LOW_OBSTACLE' | 'HIGH_OBSTACLE' | 'STATIC_TRAIN' | 'MOVING_TRAIN' | 'RAMP';
 
-export type PlayerState = 'RUNNING' | 'JUMPING' | 'ROLLING';
+export type PowerUpType = 'MAGNET' | 'DOUBLE_SCORE' | 'SUPER_SNEAKERS' | 'HOVERBOARD';
 
-export interface PlayerBuffs {
-  magnetTimer: number;
-  shield: boolean;
-  doubleScoreTimer: number;
-  jetpackTimer: number;
-  hoverboardTimer: number;
-  superSneakersTimer: number;
-  hoverboardCount: number;
-}
-
-export interface Player {
-  lane: Lane;
-  y: number; 
-  z: number; 
-  velocityZ: number;
-  state: PlayerState;
-  stateTimer: number;
-  buffs: PlayerBuffs;
-  skinColor: string;
-  lastLane: Lane;
-  lastLaneChangeTime: number;
-  stumbleCount: number;
-  lastStumbleTime: number;
-}
-
-export type EntityType = 'OBSTACLE' | 'COIN' | 'MAGNET_ITEM' | 'SHIELD_ITEM' | 'DOUBLE_SCORE_ITEM' | 'JETPACK_ITEM' | 'MOVING_TRAIN' | 'STATIC_TRAIN' | 'RAMP' | 'LOW_OBSTACLE' | 'HIGH_OBSTACLE' | 'SUPER_SNEAKERS_ITEM' | 'HOVERBOARD_ITEM' | 'GROUND';
-
-export interface GameEntity {
+export interface Mission {
   id: string;
-  type: EntityType;
-  lane: Lane;
-  y: number; 
-  width: number;
-  length: number; 
-  height: number; 
-  z?: number;
-  isCollected?: boolean; 
+  title: string;
+  description: string;
+  target: number;
+  current: number;
+  rewardCoins: number;
+  completed: boolean;
+  type: 'COLLECT_COINS' | 'JUMP_TIMES' | 'ROLL_TIMES' | 'SCORE_REACH';
 }
 
-export interface GlobalSaveData {
-  highScore: number;
-  totalCoins: number;
-  unlockedSkins: string[];
+export interface PlayerEntity {
+  lane: number;          // 0: 左, 1: 中, 2: 右
+  x: number;             // X 世界坐标
+  targetX: number;       // 目标 X 坐标
+  y: number;             // Y 世界坐标 (高度)
+  z: number;             // Z 世界坐标 (奔跑深度)
+  vy: number;            // 垂直方向速度
+  isJumping: boolean;
+  isRolling: boolean;
+  rollTimer: number;
+  hasHoverboard: boolean;
+  hoverboardActive: boolean;
+  invulnerableTimer: number; // 护盾抵扣后的短暂停顿无敌保护帧
+  activePowerUps: Map<PowerUpType, number>;
+}
+
+export interface ObstacleEntity {
+  id: string;
+  type: ObstacleType;
+  lane: number;
+  x: number;
+  y: number;
+  z: number;
+  width: number;
+  height: number;
+  depth: number;
+  speedZ?: number;
+}
+
+export interface CoinEntity {
+  id: string;
+  lane: number;
+  x: number;
+  y: number;
+  z: number;
+  collected: boolean;
+}
+
+export interface PowerUpEntity {
+  id: string;
+  type: PowerUpType;
+  lane: number;
+  x: number;
+  y: number;
+  z: number;
+  collected: boolean;
+}
+
+export interface ChaseState {
+  /** 警员与玩家之间的 Z 向追逐距离（近：1.5 / 常规：2.8） */
+  distance: number;
+  /** 警员是否贴近玩家（护盾破裂后的短暂逼近） */
+  isNear: boolean;
 }
 
 export interface GameContext {
   state: GameState;
   score: number;
-  time: number;
+  highScore: number;
+  coins: number;
+  totalCoins: number;
   speed: number;
-  
-  player: Player;
-  entities: GameEntity[];
-  
-  saveData: GlobalSaveData;
+  distance: number;
+  player: PlayerEntity;
+  obstacles: ObstacleEntity[];
+  coinEntities: CoinEntity[];
+  powerUpEntities: PowerUpEntity[];
+  missions: Mission[];
+  /** 追逐状态（由逻辑层计算，供渲染层与音频层共用，避免跨层读渲染状态） */
+  chase: ChaseState;
 }
+
+export const CONSTANTS = {
+  LANE_WIDTH: 3.0,
+  LANE_X: [-3.0, 0.0, 3.0],
+  GRAVITY: -38.0,
+  JUMP_VELOCITY: 13.5,
+  SUPER_JUMP_VELOCITY: 20.25,
+  ROLL_DURATION: 0.8,
+  BASE_SPEED: 18.0,
+  ACCELERATION: 0.25,
+  MAX_SPEED: 45.0,
+  PLAYER_HEIGHT: 1.8,
+  PLAYER_WIDTH: 0.8,
+  PLAYER_DEPTH: 0.8,
+  MAGNET_RADIUS: 15.0,
+  MAGNET_SPEED: 25.0,
+};

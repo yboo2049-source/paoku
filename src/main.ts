@@ -1,261 +1,239 @@
 import type { GameContext } from './types';
-import { handleInput, bindTouchControls } from './systems/input';
-import type { InputCommand } from './systems/input';
-import { updateMovement } from './systems/movement';
-import { checkCollisions } from './systems/collision';
-import { updateSpawner } from './systems/spawner';
-import { updateMagnet } from './systems/magnet';
+import { CONSTANTS } from './types';
+import { eventBus } from './core/eventBus';
+import { GameLoop } from './core/gameLoop';
+import { updatePhysics } from './systems/physics';
+import { accumulateScore } from './systems/scoring';
+import { inputSystem } from './systems/input';
+import { spawnerSystem } from './systems/spawner';
+import { audioEngine } from './systems/audio';
+import { missionSystem } from './systems/mission';
+import { BabylonRenderEngine } from './render/babylon';
 import { UIManager } from './ui/dom';
-import { ThreeRenderer } from './render/three';
-import { loadSaveData, saveSaveData } from './core/storage';
-import { playJump, playCoin, playCrash, playPowerup } from './core/audio';
-import { submitScore } from './core/leaderboard';
-import { logMetric, logEvent } from './core/telemetry';
-import './style.css';
 
-function createInitialState(): GameContext {
-  const saveData = loadSaveData();
-  return {
-    state: 'MENU',
-    score: 0,
-    time: 0,
-    speed: 300,
-    player: {
-      lane: 1,
-      y: 0,
-      z: 0,
-      velocityZ: 0,
-      state: 'RUNNING',
-      stateTimer: 0,
-      buffs: {
-        magnetTimer: 0,
-        shield: false,
-        doubleScoreTimer: 0,
-        jetpackTimer: 0,
-        hoverboardTimer: 0,
-        superSneakersTimer: 0,
-        hoverboardCount: 0
-      },
-      skinColor: saveData.unlockedSkins.includes('red') ? 'red' : saveData.unlockedSkins[0],
-      lastLane: 1,
-      lastLaneChangeTime: 0,
-      stumbleCount: 0,
-      lastStumbleTime: 0
-    },
-    entities: [],
-    saveData
-  };
-}
+const appEl = document.getElementById('game-container') || document.body;
 
-let context = createInitialState();
-let lastTime = performance.now();
-let frameCount = 0;
-let lastFpsTime = performance.now();
-let currentFps = 0;
+// 1. 初始化 GameContext 状态单例
+const ctx: GameContext = {
+  state: 'MENU',
+  score: 0,
+  highScore: 0,
+  coins: 0,
+  totalCoins: 0,
+  speed: CONSTANTS.BASE_SPEED,
+  distance: 0,
+  player: {
+    lane: 1,
+    x: 0,
+    targetX: 0,
+    y: 0,
+    z: 0,
+    vy: 0,
+    isJumping: false,
+    isRolling: false,
+    rollTimer: 0,
+    hasHoverboard: false,
+    hoverboardActive: false,
+    invulnerableTimer: 0,
+    activePowerUps: new Map(),
+  },
+  obstacles: [],
+  coinEntities: [],
+  powerUpEntities: [],
+  missions: missionSystem.initMissions(),
+  chase: { distance: 2.8, isNear: false },
+};
 
-let autopilot = false;
+// 2. 实例化子系统
+const renderEngine = new BabylonRenderEngine(appEl);
+const uiManager = new UIManager(appEl);
+inputSystem.init(ctx.player);
 
-const canvas = document.getElementById('game-canvas') as HTMLCanvasElement;
-const renderer = new ThreeRenderer(canvas);
-const ui = new UIManager(() => {
-  context = createInitialState();
-  context.state = 'PLAYING';
-  autopilot = false;
+// 3. 事件总线监听 (整合音效与任务系统)
+eventBus.on('START_GAME', () => {
+  ctx.state = 'PLAYING';
+  ctx.score = 0;
+  ctx.coins = 0;
+  ctx.speed = CONSTANTS.BASE_SPEED;
+  ctx.player.z = 0;
+  ctx.player.x = 0;
+  ctx.player.targetX = 0;
+  ctx.player.lane = 1;
+  ctx.player.y = 0;
+  ctx.player.vy = 0;
+  ctx.player.isJumping = false;
+  ctx.player.isRolling = false;
+  ctx.player.hasHoverboard = false;
+  ctx.player.hoverboardActive = false;
+  ctx.player.invulnerableTimer = 0;
+  ctx.player.activePowerUps.clear();
+  ctx.obstacles = [];
+  ctx.coinEntities = [];
+  ctx.powerUpEntities = [];
+  ctx.chase = { distance: 2.8, isNear: false };
+
+  spawnerSystem.reset();
+  missionSystem.resetMissions(ctx.missions);
+  audioEngine.startBGM();
 });
 
-const autopilotBtn = document.getElementById('autopilot-btn');
-if (autopilotBtn) {
-  autopilotBtn.addEventListener('click', () => {
-    context = createInitialState();
-    context.state = 'PLAYING';
-    autopilot = true;
-    logEvent('bot_started', { mode: 'button' });
-  });
-}
+eventBus.on('RESTART', () => {
+  eventBus.emit('START_GAME');
+});
 
-// Auto-start bot via URL
-if (new URLSearchParams(window.location.search).get('bot') === 'true') {
-  context = createInitialState();
-  context.state = 'PLAYING';
-  autopilot = true;
-  logEvent('bot_started', { mode: 'url' });
-}
-
-function onCommand(command: InputCommand) {
-  if (context.state !== 'PLAYING') return;
-  const prevState = context.player.state;
-  handleInput(context, command);
-  if (context.player.state === 'JUMPING' && prevState !== 'JUMPING') {
-    playJump();
-  }
-}
-
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    if (context.state === 'PLAYING') {
-      context.state = 'PAUSED';
-    } else if (context.state === 'PAUSED') {
-      context.state = 'PLAYING';
-      lastTime = performance.now();
-    }
-    return;
-  }
-  
-  let command: InputCommand | null = null;
-  switch (e.key) {
-    case 'ArrowLeft': case 'a': case 'A': command = 'LEFT'; break;
-    case 'ArrowRight': case 'd': case 'D': command = 'RIGHT'; break;
-    case 'ArrowUp': case 'w': case 'W': command = 'UP'; break;
-    case 'ArrowDown': case 's': case 'S': command = 'DOWN'; break;
-  }
-  
-  if (command) {
-    onCommand(command);
+eventBus.on('TOGGLE_PAUSE', () => {
+  if (ctx.state === 'PLAYING') {
+    ctx.state = 'PAUSED';
+    audioEngine.stopBGM();
+  } else if (ctx.state === 'PAUSED') {
+    ctx.state = 'PLAYING';
+    audioEngine.startBGM();
   }
 });
 
-bindTouchControls(document.body, onCommand);
+eventBus.on('TOGGLE_AUDIO', () => {
+  audioEngine.toggleMute();
+});
 
-function loop(currentTime: number) {
-  const deltaTime = Math.min((currentTime - lastTime) / 1000, 0.1); 
-  lastTime = currentTime;
-  
-  frameCount++;
-  if (currentTime - lastFpsTime >= 1000) {
-    currentFps = frameCount;
-    frameCount = 0;
-    lastFpsTime = currentTime;
-    logMetric('fps', currentFps);
-    if (context.state === 'PLAYING') {
-      logMetric('distance', context.player.y);
-    }
+eventBus.on('PLAYER_ACTION', (payload: any) => {
+  if (ctx.state !== 'PLAYING') return;
+
+  if (payload?.action === 'JUMP') {
+    audioEngine.playJump();
+    missionSystem.trackAction(ctx.missions, 'JUMP');
+  } else if (payload?.action === 'ROLL') {
+    audioEngine.playRoll();
+    missionSystem.trackAction(ctx.missions, 'ROLL');
+  } else if (payload?.action === 'CHANGE_LANE') {
+    audioEngine.playLaneChange(payload?.direction === 1 ? 1 : -1);
   }
-  
-  let transitionedToGameOver = false;
-  
-  if (context.state === 'PLAYING') {
-    context.time += deltaTime;
-    context.speed = Math.min(1000, 150 + context.player.y * 0.015);
-    
-    updateMagnet(context, deltaTime);
-    updateMovement(context, deltaTime);
-    updateSpawner(context);
+});
 
-    const prevScore = context.score;
-    const prevMagnet = context.player.buffs.magnetTimer;
-    const prevShield = context.player.buffs.shield;
-    const prevDouble = context.player.buffs.doubleScoreTimer;
+eventBus.on('PLAYER_LANDED', () => {
+  audioEngine.playLanding();
+});
 
-    checkCollisions(context);
-    
-    if (context.score > prevScore) playCoin();
-    
-    if (
-      (context.player.buffs.magnetTimer > 0 && prevMagnet <= 0) ||
-      (context.player.buffs.shield && !prevShield) ||
-      (context.player.buffs.doubleScoreTimer > 0 && prevDouble <= 0)
-    ) {
-      playPowerup();
-    }
+eventBus.on('COIN_COLLECTED', () => {
+  audioEngine.playCoin();
+});
 
-    if ((context.state as any) === 'GAMEOVER') {
-      transitionedToGameOver = true;
-      autopilot = false;
-      logEvent('gameover', { distance: context.player.y, score: context.score });
-    }
-  }
+eventBus.on('POWERUP_ACTIVATED', () => {
+  audioEngine.playPowerUp();
+});
 
-  // --- AI Autopilot Logic ---
-  if (autopilot && context.state === 'PLAYING') {
-    const safeDistance = 300 + context.speed * 0.4;
-    const playerY = context.player.y;
-    
-    // Detect danger in current lane
-    const danger = context.entities.find(e => 
-      (e.type === 'OBSTACLE' || e.type === 'MOVING_TRAIN' || e.type === 'STATIC_TRAIN' || e.type === 'LOW_OBSTACLE' || e.type === 'HIGH_OBSTACLE') &&
-      e.lane === context.player.lane &&
-      (e.y + (e.length || 0)) > playerY &&
-      (e.y - playerY) < safeDistance &&
-      !e.isCollected
+eventBus.on('HOVERBOARD_SHIELD_SHATTER', () => {
+  audioEngine.playShieldBreak();
+});
+
+eventBus.on('COLLISION', () => {
+  audioEngine.playCrash();
+  audioEngine.stopBGM();
+});
+
+// 4. 主逻辑更新
+// QA 传感器可冻结生成器，构造确定性无碰撞环境
+let spawnerFrozen = false;
+
+const update = (dt: number) => {
+  if (ctx.state === 'PLAYING') {
+    // 匀加速上升
+    ctx.speed = Math.min(
+      ctx.speed + CONSTANTS.ACCELERATION * dt,
+      CONSTANTS.MAX_SPEED
     );
 
-    if (danger) {
-      if (danger.type === 'HIGH_OBSTACLE') {
-        // Roll under it
-        onCommand('DOWN');
-      } else if (danger.type === 'LOW_OBSTACLE') {
-        // Jump over it
-        if (context.player.state !== 'JUMPING') onCommand('UP');
-      } else {
-        // Find a safe lane (one without a train or high obstacle)
-        let targetLane = -1;
-        for (let l = 0; l <= 2; l++) {
-          if (l === context.player.lane) continue;
-          // Check if this lane has an unjumpable threat
-          const threat = context.entities.find(e => 
-            (e.type === 'OBSTACLE' || e.type === 'MOVING_TRAIN' || e.type === 'STATIC_TRAIN' || e.type === 'HIGH_OBSTACLE') &&
-            e.lane === l &&
-            (e.y + (e.length || 0)) > playerY &&
-            (e.y - playerY) < safeDistance &&
-            !e.isCollected
-          );
-          if (!threat) {
-            targetLane = l;
-            break; // Found safe lane
-          }
-        }
-        
-        if (targetLane !== -1) {
-          if (targetLane < context.player.lane) onCommand('LEFT');
-          if (targetLane > context.player.lane) onCommand('RIGHT');
-        } else {
-          // No safe lane, attempt a jump (maybe we can squeeze or double jump later)
-          if (context.player.state !== 'JUMPING') onCommand('UP');
-        }
-      }
-    } else {
-      // Seek coins if safe
-      const goodItem = context.entities.find(e => 
-        (e.type === 'COIN' || e.type.endsWith('_ITEM')) &&
-        e.lane !== context.player.lane &&
-        e.y > playerY &&
-        (e.y - playerY) < safeDistance &&
-        !e.isCollected
+    ctx.player.z += ctx.speed * dt;
+
+    // AC-PRD-06: DOUBLE_SCORE 逻辑（纯函数抽取至 scoring.ts，便于单测）
+    ctx.score = accumulateScore(ctx.score, ctx.speed, dt, ctx.player.activePowerUps);
+
+    updatePhysics(ctx, dt);
+    if (!spawnerFrozen) {
+      spawnerSystem.update(
+        ctx.player.z,
+        ctx.obstacles,
+        ctx.coinEntities,
+        ctx.powerUpEntities
       );
-      if (goodItem) {
-        // Check if moving to that lane is safe
-        const threat = context.entities.find(e => 
-          (e.type === 'OBSTACLE' || e.type === 'MOVING_TRAIN' || e.type === 'STATIC_TRAIN' || e.type === 'LOW_OBSTACLE' || e.type === 'HIGH_OBSTACLE') &&
-          e.lane === goodItem.lane &&
-          (e.y + (e.length || 0)) > playerY &&
-          (e.y - playerY) < safeDistance &&
-          !e.isCollected
-        );
-        if (!threat) {
-          if (goodItem.lane < context.player.lane) onCommand('LEFT');
-          if (goodItem.lane > context.player.lane) onCommand('RIGHT');
-        }
-      }
+    }
+    missionSystem.update(ctx);
+
+    // 追逐状态：护盾破裂后警员短暂逼近，供渲染层与音频层（警笛距离衰减）共用
+    const isChasingNear = ctx.player.invulnerableTimer > 0;
+    const chaseDistance = isChasingNear ? 1.5 : 2.8;
+    if (ctx.chase.isNear !== isChasingNear) {
+      ctx.chase.isNear = isChasingNear;
+      ctx.chase.distance = chaseDistance;
+      eventBus.emit('CHASE_STATE_CHANGED', { distance: chaseDistance, isNear: isChasingNear });
+    } else {
+      ctx.chase.distance = chaseDistance;
     }
   }
-  // --------------------------
 
-  if (transitionedToGameOver) {
-    playCrash();
-    submitScore(context.score).catch(console.error);
-  }
-    
-  if (context.state === 'GAMEOVER') {
-    if (context.score > context.saveData.highScore) {
-      context.saveData.highScore = context.score;
-      saveSaveData(context.saveData);
-    }
-  }
-  
-  renderer.render(context);
-  ui.update(context, currentFps);
-  
-  requestAnimationFrame(loop);
-}
+  renderEngine.render(ctx);
+  uiManager.update(ctx);
+};
 
-requestAnimationFrame(loop);
+// 5. 启动 GameLoop
+const gameLoop = new GameLoop(update);
+gameLoop.start();
+
+// 6. 挂载 Superpowers 机械化传感器
+const isQaMode = () => (window as any).__QA_MODE__ === true;
+
+(window as any).__GAME_SENSOR__ = {
+  // —— 只读（生产与测试均可用，无害）——
+  getGameState: () => ctx.state,
+  getPlayerPos: () => ({ x: ctx.player.x, y: ctx.player.y, z: ctx.player.z }),
+  getScore: () => ctx.score,
+  getCoins: () => ctx.coins,
+  getSpeed: () => ctx.speed,
+  getPlayerState: () => ({
+    lane: ctx.player.lane,
+    isJumping: ctx.player.isJumping,
+    isRolling: ctx.player.isRolling,
+    invulnerableTimer: ctx.player.invulnerableTimer,
+  }),
+  getActiveObstaclesCount: () => ctx.obstacles.length,
+  getMissions: () =>
+    ctx.missions.map((m) => ({
+      type: m.type,
+      current: m.current,
+      target: m.target,
+      completed: m.completed,
+    })),
+  getChaseState: () => ({ ...ctx.chase }),
+
+  // —— 写控制面（仅 __QA_MODE__ 门控，避免污染生产暴露面）——
+  setPlayerPos: (x: number, y: number, z: number) => {
+    if (!isQaMode()) return;
+    ctx.player.x = x;
+    ctx.player.targetX = x;
+    ctx.player.y = y;
+    ctx.player.z = z;
+    ctx.player.vy = 0;
+    ctx.player.isJumping = false;
+    ctx.player.isRolling = false;
+  },
+  setPlayerLane: (lane: number) => {
+    if (!isQaMode()) return;
+    const l = Math.max(0, Math.min(2, lane));
+    ctx.player.lane = l;
+    ctx.player.targetX = CONSTANTS.LANE_X[l];
+    ctx.player.x = CONSTANTS.LANE_X[l];
+  },
+  clearWorld: () => {
+    if (!isQaMode()) return;
+    ctx.obstacles.length = 0;
+    ctx.coinEntities.length = 0;
+    ctx.powerUpEntities.length = 0;
+  },
+  grantInvulnerable: (sec: number) => {
+    if (!isQaMode()) return;
+    ctx.player.invulnerableTimer = sec;
+  },
+  freezeSpawner: (frozen: boolean) => {
+    if (!isQaMode()) return;
+    spawnerFrozen = frozen;
+  },
+};

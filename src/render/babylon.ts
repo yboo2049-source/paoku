@@ -543,8 +543,9 @@ export class BabylonRenderEngine {
       // 缩到 ~2cm（“白盒”根因之一），此处显式归一为 1.0。
       glbPlayer.scaling.set(1, 1, 1);
 
-      // 轴向修复：模型为 Y-up 站立、面朝 +Z（与玩家前进方向一致），无需旋转。
-      // 旧代码 rotation.y = Math.PI 会令角色背对前进方向倒退跑，已移除。
+      // 轴向修复：模型为 Y-up 站立、实际面朝 -Z（朝向相机）。玩家前进方向为 +Z（远离相机），
+      // 故需绕 Y 轴旋转 π，让角色背对相机朝 +Z 前进；不旋转则面朝 -Z 呈"倒着跑"。
+      glbPlayer.rotation.y = Math.PI;
 
       // 隐藏程序化几何部件（含背包，避免残留几何与骨骼模型叠加显示）
       ['torso', 'armor', 'head', 'visor', 'armLeft', 'armRight', 'legLeft', 'legRight', 'pack'].forEach((name) => {

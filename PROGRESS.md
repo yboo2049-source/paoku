@@ -68,16 +68,60 @@
   - **弯曲世界 Shader (World Bending Curvature Shader)**
 
 ### 第六阶段：纯代码与 GLB 3D 骨骼动画状态机 (Phase 6: Code-Driven Skeletal Animation State Machine)
-- 🚧 **全套动作状态融合 (Full Action Blending)**：
+- ✅ **全套动作状态融合 (Full Action Blending)**：
   - **Idle (展台站立休闲动画)**
   - **Run (极速奔跑骨骼循环)**
   - **Jump (空中高跳帧过渡)**
   - **Slide/Roll (下蹲翻滚平滑插值)**
   - **Stumble (受击跌倒缓冲)**
 
+---
+
+## 📅 [2026-09-07] 确定性 Bug 全面排查与闭环修复 (Code Review Polish)
+
+### 🎯 目标 (Objective)
+全面审计核心循环、状态机流转、音频总线、渲染管线与输入层中的确定性 Bug，并通过单测与 Playwright E2E 实施机械化门禁验证。
+
+### 🚧 进度 (Status)
+- [x] **Bug 1 (追逐音效残留与泄露)**：修复碰撞死亡或暂停时警笛与犬吠持续播放的 Bug。在 `AudioEngine` 中实装 `stopChase()`，并绑定 `COLLISION`、`TOGGLE_PAUSE`、`GO_MENU` 与 `START_GAME` 全生命周期。
+- [x] **Bug 2 (菜单与商店展台空载)**：修复从 GameOver 或 Pause 返回主菜单/打开商店时角色留在跑道远端（z=450）导致 3D 展台为空的 Bug。在 `main.ts` 中补充 `resetToPodium()`，监听 `GO_MENU` 与 `OPEN_SHOP` 重置实体与摄像机锚点。
+- [x] **Bug 3 (GameOver 状态下角色依然奔跑)**：在 `babylon.ts` 中修正骨骼动画状态机，`GAMEOVER` 状态下显式切换至 `stumble`（受击跌倒/失落）姿态，`PAUSED` 下切换至 `idle`。
+- [x] **Bug 4 (滑板破裂 3D 碎片未触发)**：在 `main.ts` 的 `HOVERBOARD_SHIELD_SHATTER` 事件中补充调用 `renderEngine.triggerShatterFX(pos)`，恢复 12 块 3D 晶体爆破动效。
+- [x] **Bug 5 (商店换肤 3D 材质未响应)**：在 `BabylonRenderEngine` 中接入 `SKIN_CHANGED` 事件与 `applySkin()` 方法，支持过程化材质与 GLB 蒙皮材质的实时换色与异步加载自动应用。
+- [x] **Bug 6 (非游戏状态输入泄露)**：在 `InputSystem` 中增加 `canAct` 门禁，彻底杜绝在暂停、菜单、结算状态下切道、跳跃等污染玩家状态的静默操作。
+- [x] **Bug 7 (警官与恶犬同道遮挡主角视角)**：修复警官在玩家正后方同道（`chaseX = player.x`）追逐时，因位于摄像机（z=-9）与角色（z=0）视线正中导致主角在奔跑中被完全遮挡的严重视角 Bug。在 `babylon.ts` 中优化为侧翼跟随（Flank）并加入恶犬摆头动效，菜单与商店展台置于侧后方，角色始终 100% 清晰居中。
+- [x] **Bug 8 (跳跃与翻滚动作被受击状态强行覆盖)**：修正骨骼动画状态机优先级，优先响应主动动作（`isJumping` / `isRolling`），避免在无敌保护帧内起跳仍呈现跌倒垂头姿态。
+- [x] **Bug 9 (单局奔跑里程未累加与重置)**：补齐 `ctx.distance` 在主更新循环中的里程累加以及 `resetToPodium()` 中的清零重置与 `renderEngine.reset()` 调用。
+- [x] **传感器与测试网**：在 `tests/unit/powerups.test.ts` 与 `tests/unit/audio.test.ts` 中补充输入门禁与追逐音效单元测试（51 个用例全绿），Playwright 6 个 E2E 场景 100% 通过并完成全量视觉截图自验。
 
 ### 💡 教训与反思 (Failures & Refinements)
-- **发现**：开发环境中使用了 `vite-plugin-pwa` 的自动更新机制，但缺乏客户端提示。导致玩家浏览器端长久锁死在旧版 JavaScript 构建上，对热更新毫无反应。
-- **优化方案**：开发阶段最好关闭 PWA 缓存，或在入口页添加硬刷新/清理 SW 的机制。
-- **发现**：判定坐标时使用的“游戏体验容错值（例如玩家比障碍物低 8 也能自动爬上去）”直接打破了重力系统的平衡。
-- **优化方案**：严谨的数学验证先于代码提交。跳跃极值 `h = 12.8` 时，碰撞容错不应使其能触及 `20` 的屋顶。
+- **发现**：追逐物体的 3D 相对坐标若恰巧位于摄像机视锥中心线上，即使处于物理“后方”，在透视投影下也会完全遮挡位于前方的主体。
+- **优化方案**：越肩跟随的动态实体（追捕者、僚机、宠物）必须采用侧翼 Flank 算法偏置，避开相机至主体的视线走廊。
+
+---
+
+## 📅 [2026-09-30] 红队对抗式深度代码审查与系统化工程修复
+
+### 🎯 目标 (Objective)
+针对代码库实施红队对抗审计，深度挖掘“单测全绿、但生产极端场景必挂”的并发竞争、生命周期泄漏、时序断裂与状态一致性盲区，并进行系统化闭环修复与双重门禁验证。
+
+### 🚧 进度 (Status)
+- [x] **P0-1 (GameLoop 并发循环与负 dt)**：在 `src/core/gameLoop.ts` 中补齐 `cancelAnimationFrame(this.animId)` 消除多重循环并发，并增加 `Math.max(0, ...)` 防御时钟回拨。
+- [x] **P0-2 (EventBus 迭代中重入与跳序)**：在 `src/core/eventBus.ts` 的 `emit()` 中使用浅拷贝解耦遍历，彻底杜绝回调中注销导致后续监听被漏执行。
+- [x] **P0-3 (Web Audio 节点与定时器暴涨泄漏)**：在 `src/systems/audio.ts` 中对所有音效节点绑定 `osc.onended` 显式调用 `disconnect()`，实现 `stopChase()` 幂等停止警笛定时器与啸叫。
+- [x] **P0-4 (Jump-Roll 互斥漏洞与空中免死)**：在 `src/systems/input.ts` 中实现起跳时强制重置 `isRolling = false; rollTimer = 0`，杜绝空中起跳继承滑铲免死包围盒穿透高空路障；触摸增加 `isTouching` 配对校验；增加 `dispose()` 销毁。
+- [x] **P0-5 (RAMP 上冲列车车顶缝隙猝死)**：在 `src/systems/physics.ts` 中增加冲上车顶（`player.y >= trainTopY - 0.35`）的碰撞豁免，杜绝斜坡与车头交接缝处的误死判定。
+- [x] **P0-6 (极速/掉帧物理隧道穿模)**：在 `src/main.ts` 与 `src/render/babylon.ts` 中实施 `dt = Math.min(dt, 0.05)` 硬封顶，消除卡顿或切后台切回时物理跳跃穿透障碍。
+- [x] **P0-7 (1200m 跌落深渊与无尽赛道断层)**：在 `src/render/babylon.ts` 中将所有环境要素（枕木、龙门架、信号灯、隔音墙、路灯、拱门）按 600m 的公约数统一周期参数，静态网格合并挂载至 `this.envRoot`，在每帧 `player.z - envRoot.position.z > 600` 时无缝平移，实现真正的数学级无尽跑道。
+- [x] **P0-8 (外部素材拉线网络断连/CORS 报错)**：将 `initSpeedlines()` 中硬编码的外部 GitHub Raw 图片链接彻底替换为本地纯代码生成的 `DynamicTexture` 渐变贴图，消除弱网与离线断连隐患。
+- [x] **P1-1 (持久化脏数据 NPE 击穿 UI 线程)**：在 `src/ui/dom.ts` 的 `loadPersistence()` 中增加 `unlockedSkinIds` 数组有效性校验，损坏时安全重置，杜绝白屏卡死。
+- [x] **P1-2 (按钮连点抖动与按键穿透)**：在 `src/ui/dom.ts` 中为关键按钮增加点击后 `blur()` 并增加防抖，避免按空格键重复触发激活按钮。
+- [x] **P1-3 (返回主菜单金币未结算保存)**：在 `src/ui/dom.ts` 的 `backToMenu` 中补齐当局拾取金币入账结算并持久化。
+- [x] **P1-4 (多成就同时触发 Toast 穿模)**：在 `src/ui/dom.ts` 中加入动态垂直偏移排队机制。
+- [x] **P1-5 (Babylon.js 动态实体阴影与碎片引用残留)**：在 `src/render/babylon.ts` 中清理障碍物时同步调用 `removeShadowCaster`，并在 `reset()` 中全面清理活动碎片与实体网格。
+- [x] **自动化测试与视觉全闭环**：
+  - 新增 `tests/unit/redteam_fixes.test.ts` 专项单测用例；
+  - 单元测试 56/56 全绿（`npm test`）；
+  - TypeScript 类型检查 0 报错（`npx tsc --noEmit`）；
+  - 生产构建完成（`npm run build`）；
+  - Playwright E2E 测试全通过（6/6 passed）并完成最新视觉截图自验。

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { updatePhysics } from '../../src/systems/physics';
-import { computeJumpVelocity } from '../../src/systems/input';
+import { computeJumpVelocity, InputSystem } from '../../src/systems/input';
 import { computeScoreMultiplier, accumulateScore } from '../../src/systems/scoring';
 import { CONSTANTS } from '../../src/types';
 import type { GameContext, PlayerEntity, PowerUpType } from '../../src/types';
@@ -202,5 +202,85 @@ describe('AC-PRD-07 (HOVERBOARD 护盾)', () => {
 
     updatePhysics(ctx, 0.1);
     expect(ctx.state).toBe('GAMEOVER');
+  });
+});
+
+describe('InputSystem (Deterministic Guards & Controls)', () => {
+  it('should ignore key actions when canAct returns false (PAUSED / MENU / GAMEOVER)', () => {
+    const listeners: Record<string, (e: any) => void> = {};
+    (globalThis as any).window = {
+      addEventListener: (type: string, fn: (e: any) => void) => {
+        listeners[type] = fn;
+      },
+      removeEventListener: () => {},
+    };
+
+    const input = new InputSystem();
+    const player = createPlayer();
+    let isPlaying = false;
+    input.init(player, () => isPlaying);
+
+    // 在非 PLAYING 状态下按按键
+    listeners['keydown']({ key: 'ArrowLeft' });
+    expect(player.lane).toBe(1); // 车道不应被改变
+
+    listeners['keydown']({ key: ' ' });
+    expect(player.isJumping).toBe(false); // 不应起跳
+
+    listeners['keydown']({ key: 's' });
+    expect(player.isRolling).toBe(false); // 不应翻滚
+
+    // 切入 PLAYING 状态后应正常响应
+    isPlaying = true;
+    listeners['keydown']({ key: 'a' });
+    expect(player.lane).toBe(0);
+    expect(player.targetX).toBe(CONSTANTS.LANE_X[0]);
+
+    listeners['keydown']({ key: 'w' });
+    expect(player.isJumping).toBe(true);
+  });
+
+  it('should clamp lane changes within [0, 2]', () => {
+    const listeners: Record<string, (e: any) => void> = {};
+    (globalThis as any).window = {
+      addEventListener: (type: string, fn: (e: any) => void) => {
+        listeners[type] = fn;
+      },
+      removeEventListener: () => {},
+    };
+
+    const input = new InputSystem();
+    const player = createPlayer({ lane: 0, targetX: CONSTANTS.LANE_X[0] });
+    input.init(player, () => true);
+
+    listeners['keydown']({ key: 'ArrowLeft' });
+    expect(player.lane).toBe(0);
+
+    listeners['keydown']({ key: 'd' });
+    expect(player.lane).toBe(1);
+    listeners['keydown']({ key: 'd' });
+    expect(player.lane).toBe(2);
+
+    listeners['keydown']({ key: 'ArrowRight' });
+    expect(player.lane).toBe(2);
+  });
+
+  it('should trigger fast descent when rolling mid-air', () => {
+    const listeners: Record<string, (e: any) => void> = {};
+    (globalThis as any).window = {
+      addEventListener: (type: string, fn: (e: any) => void) => {
+        listeners[type] = fn;
+      },
+      removeEventListener: () => {},
+    };
+
+    const input = new InputSystem();
+    const player = createPlayer({ isJumping: true, vy: 10 });
+    input.init(player, () => true);
+
+    listeners['keydown']({ key: 'ArrowDown' });
+    expect(player.isRolling).toBe(true);
+    expect(player.rollTimer).toBe(CONSTANTS.ROLL_DURATION);
+    expect(player.vy).toBeLessThan(0);
   });
 });

@@ -151,4 +151,17 @@ describe('AudioEngine (AC-PRD-08 Web Audio)', () => {
     expect(engine.getBgmEnabled()).toBe(false);
     expect(engine.getSfxEnabled()).toBe(false);
   });
+
+  it('should start and stop chase sounds via setChaseState and stopChase', () => {
+    const engine = new AudioEngine();
+    engine.setChaseState(1.5, true);
+    // 追逐已启动，应创建警笛节点
+    expect(ctxInstances.length).toBe(1);
+    expect(ctxInstances[0].createOscillator).toHaveBeenCalled();
+
+    // 终止追逐
+    engine.stopChase();
+    // 再次调用 stopChase 应保持幂等无报错
+    expect(() => engine.stopChase()).not.toThrow();
+  });
 });

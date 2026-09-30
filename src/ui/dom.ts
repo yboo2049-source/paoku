@@ -125,7 +125,13 @@ export class UIManager {
 
       const unlocked = localStorage.getItem(STORAGE_KEYS.UNLOCKED_SKINS);
       if (unlocked) {
-        this.unlockedSkinIds = JSON.parse(unlocked);
+        const parsed = JSON.parse(unlocked);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          this.unlockedSkinIds = parsed;
+        }
+      }
+      if (!this.unlockedSkinIds.includes('cyan')) {
+        this.unlockedSkinIds.unshift('cyan');
       }
     } catch (e) {
       console.warn('Failed to load persistence from localStorage', e);
@@ -351,23 +357,33 @@ export class UIManager {
     this.skinsGridEl = document.getElementById('skins-grid')!;
 
     // Bind Event Listeners
-    document.getElementById('start-btn')?.addEventListener('click', () => {
+    let isTransitioning = false;
+    const triggerRestart = (e: MouseEvent) => {
+      (e.currentTarget as HTMLElement)?.blur();
+      if (isTransitioning) return;
+      isTransitioning = true;
+      eventBus.emit('RESTART');
+      setTimeout(() => { isTransitioning = false; }, 300);
+    };
+
+    document.getElementById('start-btn')?.addEventListener('click', (e) => {
+      (e.currentTarget as HTMLElement)?.blur();
+      if (isTransitioning) return;
+      isTransitioning = true;
       eventBus.emit('START_GAME');
+      setTimeout(() => { isTransitioning = false; }, 300);
     });
 
-    document.getElementById('restart-btn')?.addEventListener('click', () => {
-      eventBus.emit('RESTART');
-    });
+    document.getElementById('restart-btn')?.addEventListener('click', triggerRestart);
+    document.getElementById('pause-restart-btn')?.addEventListener('click', triggerRestart);
 
-    document.getElementById('pause-restart-btn')?.addEventListener('click', () => {
-      eventBus.emit('RESTART');
-    });
-
-    document.getElementById('hud-pause-btn')?.addEventListener('click', () => {
+    document.getElementById('hud-pause-btn')?.addEventListener('click', (e) => {
+      (e.currentTarget as HTMLElement)?.blur();
       eventBus.emit('TOGGLE_PAUSE');
     });
 
-    document.getElementById('audio-toggle-btn')?.addEventListener('click', () => {
+    document.getElementById('audio-toggle-btn')?.addEventListener('click', (e) => {
+      (e.currentTarget as HTMLElement)?.blur();
       eventBus.emit('TOGGLE_AUDIO');
     });
 
@@ -377,11 +393,13 @@ export class UIManager {
       audioEngine.playMissionComplete();
     });
 
-    document.getElementById('resume-btn')?.addEventListener('click', () => {
+    document.getElementById('resume-btn')?.addEventListener('click', (e) => {
+      (e.currentTarget as HTMLElement)?.blur();
       eventBus.emit('TOGGLE_PAUSE');
     });
 
-    const openShop = () => {
+    const openShop = (e: MouseEvent) => {
+      (e.currentTarget as HTMLElement)?.blur();
       this.pendingState = 'SHOP';
       eventBus.emit('OPEN_SHOP');
     };
@@ -389,7 +407,15 @@ export class UIManager {
     document.getElementById('open-shop-btn')?.addEventListener('click', openShop);
     document.getElementById('go-shop-btn')?.addEventListener('click', openShop);
 
-    const backToMenu = () => {
+    const backToMenu = (e: MouseEvent) => {
+      (e.currentTarget as HTMLElement)?.blur();
+      if (this.lastState === 'PAUSED' || this.lastState === 'PLAYING') {
+        const hudCoins = parseInt(this.hudCoinsEl.textContent || '0', 10);
+        if (hudCoins > 0) {
+          this.savedTotalCoins += hudCoins;
+          this.savePersistence();
+        }
+      }
       this.pendingState = 'MENU';
       eventBus.emit('GO_MENU');
     };
@@ -400,6 +426,7 @@ export class UIManager {
 
     this.bindAudioSettings();
 
+    this.shopCoinsEl.textContent = this.savedTotalCoins.toString();
     this.renderShop();
   }
 
@@ -634,8 +661,12 @@ export class UIManager {
    * 动态显示 Cyber 风格任务 Toast 通知
    */
   public showToast(message: string): void {
+    const existing = this.container.querySelectorAll('.cyber-toast');
+    const offsetTop = 80 + existing.length * 48;
+
     const toast = document.createElement('div');
     toast.className = 'cyber-toast animate-pop';
+    toast.style.top = `${offsetTop}px`;
     toast.setAttribute('role', 'status');
     toast.setAttribute('aria-live', 'polite');
     toast.innerHTML = `

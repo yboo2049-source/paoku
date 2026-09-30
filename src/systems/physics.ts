@@ -57,8 +57,8 @@ export function isPlayerOverlappingObstacleZ(player: PlayerEntity, obs: Obstacle
 }
 
 export function checkObstacleCollision(player: PlayerEntity, obs: ObstacleEntity): boolean {
-  // 无敌保护帧处理
-  if (player.invulnerableTimer > 0) return false;
+  // 无敌保护帧处理（含 QA 上帝模式保护）
+  if (player.invulnerableTimer > 0 || (player as any).godMode) return false;
 
   const pBox = getPlayerBoundingBox(player);
   const oBox: BoundingBox = {
@@ -92,6 +92,13 @@ export function checkObstacleCollision(player: PlayerEntity, obs: ObstacleEntity
 
   if (obs.type === 'RAMP') {
     return false;
+  }
+
+  if (obs.type === 'STATIC_TRAIN' || obs.type === 'MOVING_TRAIN') {
+    const trainTopY = obs.y + obs.height;
+    if (player.y >= trainTopY - 0.35) {
+      return false;
+    }
   }
 
   return true;

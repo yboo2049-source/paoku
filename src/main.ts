@@ -1,3 +1,4 @@
+import { Vector3 } from '@babylonjs/core';
 import type { GameContext } from './types';
 import { CONSTANTS } from './types';
 import { eventBus } from './core/eventBus';
@@ -47,14 +48,9 @@ const ctx: GameContext = {
 // 2. 实例化子系统
 const renderEngine = new BabylonRenderEngine(appEl);
 const uiManager = new UIManager(appEl);
-inputSystem.init(ctx.player);
+inputSystem.init(ctx.player, () => ctx.state === 'PLAYING');
 
-// 3. 事件总线监听 (整合音效与任务系统)
-eventBus.on('START_GAME', () => {
-  ctx.state = 'PLAYING';
-  ctx.score = 0;
-  ctx.coins = 0;
-  ctx.speed = CONSTANTS.BASE_SPEED;
+function resetToPodium(): void {
   ctx.player.z = 0;
   ctx.player.x = 0;
   ctx.player.targetX = 0;
@@ -70,9 +66,23 @@ eventBus.on('START_GAME', () => {
   ctx.obstacles = [];
   ctx.coinEntities = [];
   ctx.powerUpEntities = [];
+  ctx.distance = 0;
   ctx.chase = { distance: 2.8, isNear: false };
 
   spawnerSystem.reset();
+  renderEngine.reset();
+  audioEngine.stopBGM();
+  audioEngine.stopChase();
+}
+
+// 3. 事件总线监听 (整合音效与任务系统)
+eventBus.on('START_GAME', () => {
+  resetToPodium();
+  ctx.state = 'PLAYING';
+  ctx.score = 0;
+  ctx.coins = 0;
+  ctx.speed = CONSTANTS.BASE_SPEED;
+
   missionSystem.resetMissions(ctx.missions);
   audioEngine.startBGM();
 });
@@ -81,13 +91,27 @@ eventBus.on('RESTART', () => {
   eventBus.emit('START_GAME');
 });
 
+eventBus.on('GO_MENU', () => {
+  ctx.state = 'MENU';
+  resetToPodium();
+});
+
+eventBus.on('OPEN_SHOP', () => {
+  ctx.state = 'SHOP';
+  resetToPodium();
+});
+
 eventBus.on('TOGGLE_PAUSE', () => {
   if (ctx.state === 'PLAYING') {
     ctx.state = 'PAUSED';
     audioEngine.stopBGM();
+    audioEngine.stopChase();
   } else if (ctx.state === 'PAUSED') {
     ctx.state = 'PLAYING';
     audioEngine.startBGM();
+    if (ctx.chase.isNear) {
+      audioEngine.setChaseState(ctx.chase.distance, true);
+    }
   }
 });
 
@@ -121,13 +145,19 @@ eventBus.on('POWERUP_ACTIVATED', () => {
   audioEngine.playPowerUp();
 });
 
-eventBus.on('HOVERBOARD_SHIELD_SHATTER', () => {
+eventBus.on('HOVERBOARD_SHIELD_SHATTER', (payload: any) => {
   audioEngine.playShieldBreak();
+  if (payload?.position) {
+    renderEngine.triggerShatterFX(
+      new Vector3(payload.position.x, payload.position.y, payload.position.z)
+    );
+  }
 });
 
 eventBus.on('COLLISION', () => {
   audioEngine.playCrash();
   audioEngine.stopBGM();
+  audioEngine.stopChase();
 });
 
 // 4. 主逻辑更新
@@ -135,6 +165,7 @@ eventBus.on('COLLISION', () => {
 let spawnerFrozen = false;
 
 const update = (dt: number) => {
+  dt = Math.min(dt, 0.05);
   if (ctx.state === 'PLAYING') {
     // 匀加速上升
     ctx.speed = Math.min(
@@ -142,7 +173,9 @@ const update = (dt: number) => {
       CONSTANTS.MAX_SPEED
     );
 
-    ctx.player.z += ctx.speed * dt;
+    const deltaDist = ctx.speed * dt;
+    ctx.player.z += deltaDist;
+    ctx.distance += deltaDist;
 
     // AC-PRD-06: DOUBLE_SCORE 逻辑（纯函数抽取至 scoring.ts，便于单测）
     ctx.score = accumulateScore(ctx.score, ctx.speed, dt, ctx.player.activePowerUps);
@@ -231,6 +264,10 @@ const isQaMode = () => (window as any).__QA_MODE__ === true;
   grantInvulnerable: (sec: number) => {
     if (!isQaMode()) return;
     ctx.player.invulnerableTimer = sec;
+  },
+  setGodMode: (god: boolean) => {
+    if (!isQaMode()) return;
+    (ctx.player as any).godMode = god;
   },
   freezeSpawner: (frozen: boolean) => {
     if (!isQaMode()) return;

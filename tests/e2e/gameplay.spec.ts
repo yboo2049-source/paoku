@@ -23,7 +23,7 @@ async function startRunDeterministic(page: Page): Promise<void> {
     S.freezeSpawner(true);
     S.clearWorld();
     S.setPlayerPos(0, 0, 0);
-    S.grantInvulnerable(999);
+    S.setGodMode(true);
   });
 }
 
@@ -121,6 +121,7 @@ test.describe('截图回放（确定性）', () => {
     // 5. 空中跳跃与全景透视
     await page.keyboard.press('w');
     await expect.poll(() => getPlayerState(page).then((s) => s.isJumping)).toBe(true);
+    await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getPlayerPos().y > 0.8);
     await page.screenshot({ path: 'screenshot_5_jump_action.png', fullPage: true });
 
     // 6. 暂停界面（确定性无 GAMEOVER，Escape 必然进入 PAUSED）

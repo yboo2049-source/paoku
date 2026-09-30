@@ -76,6 +76,10 @@ export class AudioEngine {
     eventBus.on('CHASE_STATE_CHANGED', (payload: any) => {
       this.setChaseState(payload?.distance ?? 2.8, payload?.isNear === true);
     });
+    // 碰撞/游戏结束时，立即终止追逐警笛与警犬吠
+    eventBus.on('COLLISION', () => {
+      this.stopChase();
+    });
     // 移动端/后台：页面隐藏时暂停调度，恢复时续排（避免后台节流造成空隙/跑拍）
     if (typeof document !== 'undefined') {
       document.addEventListener('visibilitychange', () => {
@@ -154,7 +158,11 @@ export class AudioEngine {
   public ensureContext(): void {
     this.initCtx();
     if (this.ctx && this.ctx.state === 'suspended') {
-      this.ctx.resume();
+      this.ctx.resume().then(() => {
+        if (this.isBgmPlaying && this.ctx) {
+          this.nextBgmNoteTime = this.ctx.currentTime + 0.05;
+        }
+      });
     }
   }
 
@@ -286,6 +294,13 @@ export class AudioEngine {
     dest.connect(this.sfxBus);
     osc.start(startTime);
     osc.stop(startTime + duration + 0.02);
+    osc.onended = () => {
+      try {
+        osc.disconnect();
+        gain.disconnect();
+        if (pan !== 0) (dest as StereoPannerNode).disconnect();
+      } catch {}
+    };
   }
 
   // ===== SFX 音效 =====
@@ -310,6 +325,12 @@ export class AudioEngine {
 
     osc.start(now);
     osc.stop(now + 0.18);
+    osc.onended = () => {
+      try {
+        osc.disconnect();
+        gain.disconnect();
+      } catch {}
+    };
   }
 
   public playRoll(): void {
@@ -332,6 +353,12 @@ export class AudioEngine {
 
     osc.start(now);
     osc.stop(now + 0.2);
+    osc.onended = () => {
+      try {
+        osc.disconnect();
+        gain.disconnect();
+      } catch {}
+    };
   }
 
   /** 切道 whoosh（带左右 pan） */
@@ -367,6 +394,14 @@ export class AudioEngine {
 
     source.start(now);
     source.stop(now + 0.2);
+    source.onended = () => {
+      try {
+        source.disconnect();
+        filter.disconnect();
+        gain.disconnect();
+        panner.disconnect();
+      } catch {}
+    };
   }
 
   /** 落地闷响 */
@@ -391,6 +426,12 @@ export class AudioEngine {
 
     osc.start(now);
     osc.stop(now + 0.16);
+    osc.onended = () => {
+      try {
+        osc.disconnect();
+        gain.disconnect();
+      } catch {}
+    };
   }
 
   public playCoin(): void {
@@ -471,6 +512,13 @@ export class AudioEngine {
 
     noise.start(now);
     noise.stop(now + 0.32);
+    noise.onended = () => {
+      try {
+        noise.disconnect();
+        filter.disconnect();
+        gain.disconnect();
+      } catch {}
+    };
 
     this.duckBgm(0.3);
   }
@@ -496,6 +544,12 @@ export class AudioEngine {
 
     osc.start(now);
     osc.stop(now + 0.45);
+    osc.onended = () => {
+      try {
+        osc.disconnect();
+        gain.disconnect();
+      } catch {}
+    };
   }
 
   // ===== 追逐音（警官警笛 loop + 警犬吠） =====
@@ -516,6 +570,15 @@ export class AudioEngine {
       this.stopBarkTimer();
     } else if (isNear && this.isChasing) {
       this.updateChaseDistance(distance);
+    }
+  }
+
+  /** 强制终止追逐警笛与警犬吠（撞击/暂停/返回菜单/重启时调用） */
+  public stopChase(): void {
+    if (this.isChasing) {
+      this.isChasing = false;
+      this.stopSiren();
+      this.stopBarkTimer();
     }
   }
 
@@ -589,9 +652,9 @@ export class AudioEngine {
       if (!this.isChasing) return;
       this.playBark();
       const delay = 700 + Math.random() * 900; // 0.7~1.6s 随机间隔
-      this.barkTimerId = window.setTimeout(scheduleNext, delay);
+      this.barkTimerId = setTimeout(scheduleNext, delay) as unknown as number;
     };
-    this.barkTimerId = window.setTimeout(scheduleNext, 200);
+    this.barkTimerId = setTimeout(scheduleNext, 200) as unknown as number;
   }
 
   private stopBarkTimer(): void {
@@ -629,6 +692,13 @@ export class AudioEngine {
 
     src.start(now);
     src.stop(now + 0.18);
+    src.onended = () => {
+      try {
+        src.disconnect();
+        filter.disconnect();
+        gain.disconnect();
+      } catch {}
+    };
   }
 
   // ===== BGM 采样级调度 =====
@@ -657,7 +727,7 @@ export class AudioEngine {
 
   private startBgmScheduler(): void {
     if (this.bgmSchedulerId !== null) return;
-    this.bgmSchedulerId = window.setInterval(() => this.scheduleBgm(), SCHEDULER_INTERVAL_MS);
+    this.bgmSchedulerId = setInterval(() => this.scheduleBgm(), SCHEDULER_INTERVAL_MS) as unknown as number;
   }
 
   private pauseBgmScheduler(): void {
@@ -669,7 +739,7 @@ export class AudioEngine {
 
   /** 前瞻调度：用 AudioContext 时钟排期，消除 setInterval 抖动/后台跑拍 */
   private scheduleBgm(): void {
-    if (!this.isBgmPlaying || !this.ctx || !this.bgmBus) return;
+    if (!this.isBgmPlaying || !this.ctx || !this.bgmBus || this.ctx.state === 'suspended') return;
     while (this.nextBgmNoteTime < this.ctx.currentTime + BGM_LOOKAHEAD) {
       this.scheduleBgmNote(this.nextBgmNoteTime, this.bgmStep % BGM_BASS_NOTES.length);
       this.nextBgmNoteTime += BGM_STEP_DURATION;
@@ -700,6 +770,10 @@ export class AudioEngine {
     this.bgmActiveSources.add(osc);
     osc.onended = () => {
       this.bgmActiveSources.delete(osc);
+      try {
+        osc.disconnect();
+        gain.disconnect();
+      } catch {}
     };
   }
 }

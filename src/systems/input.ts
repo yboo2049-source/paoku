@@ -15,14 +15,36 @@ export function computeJumpVelocity(activePowerUps: Map<PowerUpType, number> | u
 export class InputSystem {
   private touchStartX: number = 0;
   private touchStartY: number = 0;
+  private isTouching: boolean = false;
+  private canAct?: () => boolean;
+  private boundKeyDown?: (e: KeyboardEvent) => void;
+  private boundTouchStart?: (e: TouchEvent) => void;
+  private boundTouchEnd?: (e: TouchEvent) => void;
 
-  init(player: PlayerEntity): void {
-    window.addEventListener('keydown', (e) => this.handleKeyDown(e, player));
-    window.addEventListener('touchstart', (e) => this.handleTouchStart(e));
-    window.addEventListener('touchend', (e) => this.handleTouchEnd(e, player));
+  init(player: PlayerEntity, canAct?: () => boolean): void {
+    this.dispose();
+    this.canAct = canAct;
+    this.boundKeyDown = (e) => this.handleKeyDown(e, player);
+    this.boundTouchStart = (e) => this.handleTouchStart(e);
+    this.boundTouchEnd = (e) => this.handleTouchEnd(e, player);
+
+    window.addEventListener('keydown', this.boundKeyDown);
+    window.addEventListener('touchstart', this.boundTouchStart);
+    window.addEventListener('touchend', this.boundTouchEnd);
+  }
+
+  dispose(): void {
+    if (this.boundKeyDown) window.removeEventListener('keydown', this.boundKeyDown);
+    if (this.boundTouchStart) window.removeEventListener('touchstart', this.boundTouchStart);
+    if (this.boundTouchEnd) window.removeEventListener('touchend', this.boundTouchEnd);
   }
 
   private handleKeyDown(e: KeyboardEvent, player: PlayerEntity): void {
+    if (this.canAct && !this.canAct()) return;
+    if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', ' '].includes(e.key)) {
+      e.preventDefault?.();
+    }
+
     switch (e.key) {
       case 'ArrowLeft':
       case 'a':
@@ -52,11 +74,14 @@ export class InputSystem {
     if (e.touches.length > 0) {
       this.touchStartX = e.touches[0].clientX;
       this.touchStartY = e.touches[0].clientY;
+      this.isTouching = true;
     }
   }
 
   private handleTouchEnd(e: TouchEvent, player: PlayerEntity): void {
-    if (e.changedTouches.length === 0) return;
+    if (this.canAct && !this.canAct()) return;
+    if (!this.isTouching || e.changedTouches.length === 0) return;
+    this.isTouching = false;
     const dx = e.changedTouches[0].clientX - this.touchStartX;
     const dy = e.changedTouches[0].clientY - this.touchStartY;
 
@@ -84,6 +109,8 @@ export class InputSystem {
   private jump(player: PlayerEntity): void {
     if (!player.isJumping) {
       player.isJumping = true;
+      player.isRolling = false;
+      player.rollTimer = 0;
       player.vy = computeJumpVelocity(player.activePowerUps);
       eventBus.emit('PLAYER_ACTION', { action: 'JUMP' });
     }

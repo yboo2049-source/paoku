@@ -17,13 +17,14 @@ import {
   TransformNode,
   DefaultRenderingPipeline,
   ParticleSystem,
-  Texture,
+  DynamicTexture,
   Scalar,
   SceneLoader,
   AnimationGroup,
 } from '@babylonjs/core';
 import type { GameContext } from '../types';
 import { CONSTANTS } from '../types';
+import { eventBus } from '../core/eventBus';
 
 export class BabylonRenderEngine {
   private canvas: HTMLCanvasElement;
@@ -31,11 +32,18 @@ export class BabylonRenderEngine {
   private scene: Scene;
   private camera: TargetCamera;
 
+  private envRoot: TransformNode | null = null;
   private playerRoot: TransformNode;
   private playerBodyMesh: Mesh;
   private hoverboardMesh: Mesh;
   private inspectorRoot: TransformNode;
   private dogRoot: TransformNode;
+
+  // 玩家材质与皮肤状态引用
+  private suitMat: PBRMaterial | null = null;
+  private armorMat: PBRMaterial | null = null;
+  private visorMat: StandardMaterial | null = null;
+  private currentSkin: { color: string; secondaryColor: string } | null = null;
 
   private shadowGenerator: ShadowGenerator;
   private glowLayer: GlowLayer;
@@ -131,6 +139,13 @@ export class BabylonRenderEngine {
     // 9. 初始化极速风阻拉线粒子系统
     this.speedlineSystem = this.initSpeedlines();
 
+    // 10. 监听皮肤切换事件
+    eventBus.on('SKIN_CHANGED', (skin: any) => {
+      if (skin?.color && skin?.secondaryColor) {
+        this.applySkin(skin);
+      }
+    });
+
     // 监听窗口 Resize
     window.addEventListener('resize', () => this.engine.resize());
   }
@@ -179,8 +194,8 @@ export class BabylonRenderEngine {
         rail.receiveShadows = true;
       }
 
-      // 轨道连结枕木 (每 3 米一根)
-      for (let z = -40; z < trackLength - 50; z += 3.5) {
+      // 轨道连结枕木 (每 3 米一根，对齐 600m 步长整数倍)
+      for (let z = -50; z < trackLength - 50; z += 3.0) {
         const sleeper = MeshBuilder.CreateBox(`sleeper_${idx}_${z}`, { width: 2.5, height: 0.06, depth: 0.35 }, this.scene);
         sleeper.position.set(laneX, 0.03, z);
         sleeper.material = sleeperMat;
@@ -232,8 +247,8 @@ export class BabylonRenderEngine {
       wire.material = wireMat;
     });
 
-    // 跨轨龙门架 (每 45 米一座，提升至 y = 8.8 高度)
-    for (let z = -20; z < trackLength - 50; z += 45) {
+    // 跨轨龙门架 (每 50 米一座，对齐 600m 步长)
+    for (let z = 0; z < trackLength - 50; z += 50) {
       // 左右立柱
       [-5.2, 5.2].forEach((xPos) => {
         const pillar = MeshBuilder.CreateBox(`gPillar_${z}_${xPos}`, { width: 0.4, height: 9.0, depth: 0.4 }, this.scene);
@@ -277,8 +292,8 @@ export class BabylonRenderEngine {
     const cabinetStripeMat = new StandardMaterial('cabStripeMat', this.scene);
     cabinetStripeMat.emissiveColor = new Color3(1.0, 0.85, 0);
 
-    for (let z = -10; z < trackLength - 50; z += 35) {
-      const side = (z % 70 === 0) ? -5.0 : 5.0;
+    for (let z = 15; z < trackLength - 50; z += 30) {
+      const side = (z % 60 === 15) ? -5.0 : 5.0;
 
       // 信号灯杆
       const pole = MeshBuilder.CreateCylinder(`sigPole_${z}`, { diameter: 0.12, height: 3.6 }, this.scene);
@@ -344,8 +359,8 @@ export class BabylonRenderEngine {
     const lampHeadMat = new StandardMaterial('lampHeadMat', this.scene);
     lampHeadMat.emissiveColor = new Color3(0, 0.95, 1.0);
 
-    for (let z = 0; z < trackLength - 50; z += 45) {
-      const xSide = (z % 90 === 0) ? -7.8 : 7.8;
+    for (let z = 0; z < trackLength - 50; z += 50) {
+      const xSide = (z % 100 === 0) ? -7.8 : 7.8;
       const innerDir = xSide > 0 ? -1 : 1;
 
       // 灯杆主干
@@ -395,7 +410,7 @@ export class BabylonRenderEngine {
     const portalSignMat = new StandardMaterial('portalSignMat', this.scene);
     portalSignMat.emissiveColor = new Color3(0, 0.95, 1.0);
 
-    for (let pz = -10; pz < trackLength - 50; pz += 250) {
+    for (let pz = 100; pz < trackLength - 50; pz += 300) {
       // 洞口左右门柱与拱顶横梁
       [-6.5, 6.5].forEach((px) => {
         const pPillar = MeshBuilder.CreateBox(`portalPillar_${pz}_${px}`, { width: 0.8, height: 6.5, depth: 1.2 }, this.scene);
@@ -423,10 +438,12 @@ export class BabylonRenderEngine {
    * 将场景中所有静态环境 Mesh 按材质分组合并。
    */
   private mergeStaticEnvironment(): void {
+    this.envRoot = new TransformNode('envRoot', this.scene);
     const batches = new Map<string, Mesh[]>();
     for (const abstractMesh of this.scene.meshes.slice()) {
       if (!(abstractMesh instanceof Mesh)) continue;
       const mesh = abstractMesh;
+      if (mesh.name === 'menuPodium' || mesh.name === 'podiumRing') continue; // 展台保持在世界原点
       const key = mesh.material?.name ?? '_noMaterial';
       let arr = batches.get(key);
       if (!arr) {
@@ -441,6 +458,7 @@ export class BabylonRenderEngine {
       const merged = Mesh.MergeMeshes(meshes, true, true, undefined, false, true);
       if (merged) {
         merged.name = `env_${key}`;
+        merged.parent = this.envRoot;
         merged.receiveShadows = receiveShadows;
         merged.isPickable = false;
         merged.freezeWorldMatrix();
@@ -458,15 +476,18 @@ export class BabylonRenderEngine {
     suitMat.albedoColor = new Color3(0, 0.95, 1.0);
     suitMat.metallic = 0.5;
     suitMat.roughness = 0.3;
+    this.suitMat = suitMat;
 
     const armorMat = new PBRMaterial('armorMat', this.scene);
     armorMat.albedoColor = new Color3(0.08, 0.12, 0.2);
     armorMat.metallic = 0.9;
     armorMat.roughness = 0.2;
+    this.armorMat = armorMat;
 
     const visorMat = new StandardMaterial('visorMat', this.scene);
     visorMat.diffuseColor = new Color3(0, 0.95, 1.0);
     visorMat.emissiveColor = new Color3(0, 0.8, 1.0);
+    this.visorMat = visorMat;
 
     const skinMat = new StandardMaterial('skinMat', this.scene);
     skinMat.diffuseColor = new Color3(1.0, 0.8, 0.65);
@@ -528,8 +549,8 @@ export class BabylonRenderEngine {
 
     // 尝试载入 3D 骨骼 GLB 模型 (/models/player.glb)
     SceneLoader.ImportMeshAsync('', '/models/', 'player.glb', this.scene).then((result) => {
-      if (!result.meshes || result.meshes.length === 0) {
-        console.warn('[GLB] 骨骼模型加载结果为空，保留过程化几何');
+      if (this.scene.isDisposed || !result.meshes || result.meshes.length === 0) {
+        console.warn('[GLB] 骨骼模型加载结果为空或场景已释放，保留过程化几何');
         return;
       }
 
@@ -547,11 +568,23 @@ export class BabylonRenderEngine {
       // 故需绕 Y 轴旋转 π，让角色背对相机朝 +Z 前进；不旋转则面朝 -Z 呈"倒着跑"。
       glbPlayer.rotation.y = Math.PI;
 
+      // 阴影投射配置：将骨骼蒙皮网格注册至阴影投射器
+      result.meshes.forEach((m) => {
+        if (m instanceof Mesh && this.shadowGenerator) {
+          this.shadowGenerator.addShadowCaster(m, true);
+        }
+      });
+
       // 隐藏程序化几何部件（含背包，避免残留几何与骨骼模型叠加显示）
       ['torso', 'armor', 'head', 'visor', 'armLeft', 'armRight', 'legLeft', 'legRight', 'pack'].forEach((name) => {
         const m = this.scene.getMeshByName(name);
         if (m) m.isVisible = false;
       });
+
+      // 若已有选定皮肤，立即应用到 GLB 蒙皮网格
+      if (this.currentSkin) {
+        this.applySkin(this.currentSkin);
+      }
 
       // 缓存并管理骨骼动画组
       if (result.animationGroups && result.animationGroups.length > 0) {
@@ -567,6 +600,36 @@ export class BabylonRenderEngine {
     });
 
     return rootMesh;
+  }
+
+  /**
+   * 动态应用皮肤配色至 3D 角色（过程化材质与 GLB 蒙皮网格）
+   */
+  public applySkin(skin: { color: string; secondaryColor: string }): void {
+    this.currentSkin = skin;
+    const primaryColor = Color3.FromHexString(skin.color);
+    const secondaryColor = Color3.FromHexString(skin.secondaryColor);
+
+    if (this.suitMat) {
+      this.suitMat.albedoColor = primaryColor;
+    }
+    if (this.visorMat) {
+      this.visorMat.diffuseColor = primaryColor;
+      this.visorMat.emissiveColor = primaryColor;
+    }
+    if (this.armorMat) {
+      this.armorMat.albedoColor = secondaryColor;
+    }
+
+    const surfaceMesh = this.scene.getMeshByName('Beta_Surface');
+    if (surfaceMesh && surfaceMesh.material instanceof PBRMaterial) {
+      surfaceMesh.material.albedoColor = primaryColor;
+      surfaceMesh.material.emissiveColor = primaryColor.scale(0.2);
+    }
+    const jointsMesh = this.scene.getMeshByName('Beta_Joints');
+    if (jointsMesh && jointsMesh.material instanceof PBRMaterial) {
+      jointsMesh.material.albedoColor = secondaryColor;
+    }
   }
 
   // 语义动作关键字 → GLB 内实际动画名映射。
@@ -728,7 +791,17 @@ export class BabylonRenderEngine {
    */
   private initSpeedlines(): ParticleSystem {
     const ps = new ParticleSystem('speedlines', 120, this.scene);
-    ps.particleTexture = new Texture('https://raw.githubusercontent.com/PatrickNode/assets/main/line.png', this.scene);
+    const dt = new DynamicTexture('speedlineTex', 64, this.scene, false);
+    const ctx = dt.getContext();
+    const grad = ctx.createLinearGradient(0, 0, 0, 64);
+    grad.addColorStop(0, 'rgba(255,255,255,0)');
+    grad.addColorStop(0.5, 'rgba(255,255,255,1)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(28, 0, 8, 64);
+    dt.hasAlpha = true;
+    dt.update();
+    ps.particleTexture = dt;
     ps.emitter = this.playerBodyMesh;
     ps.minEmitBox = new Vector3(-8, -4, 4);
     ps.maxEmitBox = new Vector3(8, 4, 12);
@@ -749,8 +822,13 @@ export class BabylonRenderEngine {
    * 每帧渲染与动态视觉同步逻辑
    */
   public render(ctx: GameContext): void {
-    const dt = this.engine.getDeltaTime() / 1000;
+    const dt = Math.min(this.engine.getDeltaTime() / 1000, 0.05);
     this.totalTime += dt;
+
+    // 0. 无尽跑道按 600m 步长无缝平移 (所有环境要素均对齐 600m 周期)
+    if (this.envRoot && ctx.player.z - this.envRoot.position.z > 600) {
+      this.envRoot.position.z += 600;
+    }
 
     // 1. 同步玩家位置与动作
     this.playerRoot.position.set(ctx.player.x, ctx.player.y, ctx.player.z);
@@ -790,12 +868,16 @@ export class BabylonRenderEngine {
     // 根据游戏与玩家状态自动管理并切算 3D 骨骼 AnimationGroup (Idle / Run / Jump / Slide / Stumble)
     if (ctx.state === 'MENU' || ctx.state === 'SHOP') {
       this.playSkeletalAnimation('idle', true, 1.0);
-    } else if (ctx.player.invulnerableTimer > 0) {
-      this.playSkeletalAnimation('stumble', false, 1.2);
+    } else if (ctx.state === 'GAMEOVER') {
+      this.playSkeletalAnimation('stumble', false, 1.0);
+    } else if (ctx.state === 'PAUSED') {
+      this.playSkeletalAnimation('idle', true, 1.0);
     } else if (ctx.player.isJumping) {
       this.playSkeletalAnimation('jump', false, 1.0);
     } else if (ctx.player.isRolling) {
       this.playSkeletalAnimation('slide', false, 1.2);
+    } else if (ctx.player.invulnerableTimer > 0) {
+      this.playSkeletalAnimation('stumble', false, 1.2);
     } else {
       this.playSkeletalAnimation('run', true, ctx.speed / 20.0);
     }
@@ -813,17 +895,28 @@ export class BabylonRenderEngine {
     const isBoardActive = ctx.player.hoverboardActive || ctx.player.hasHoverboard;
     this.hoverboardMesh.isVisible = isBoardActive;
 
-    // 3. 追捕警官与警犬动态跟随 (Inspector & Dog Chase System)
+    // 3. 追捕警官与警犬动态跟随 (Inspector & Dog Chase System, AC-PRD-17 & AC-PRD-19)
     // 追逐距离由逻辑层维护（ctx.chase），渲染层只读，避免逻辑散落在视觉层
-    const chaseDistance = ctx.chase.distance;
-    const chaseZ = ctx.player.z - chaseDistance;
-    const chaseX = Scalar.Lerp(this.inspectorRoot.position.x, ctx.player.x, dt * 8.0);
-    
-    this.inspectorRoot.position.set(chaseX, ctx.player.y * 0.5, chaseZ);
-    this.dogRoot.position.set(chaseX + 0.6, ctx.player.y * 0.5, chaseZ + 0.2);
+    if (ctx.state === 'MENU' || ctx.state === 'SHOP') {
+      // 菜单与商店状态：警官与警犬站在 3D 展台上侧后方，不遮挡角色且在 360° 环视中清晰可见
+      this.inspectorRoot.position.set(1.2, 0, -1.8);
+      this.dogRoot.position.set(1.75, 0, -1.5);
+    } else {
+      // 奔跑中：警官沿相邻侧翼（Flank）追逐，避免恰好位于摄像机与角色之间造成严重遮挡
+      const sideOffset = ctx.player.x >= 1.0 ? -1.25 : 1.25;
+      const targetOfficerX = ctx.player.x + sideOffset;
+      const chaseDistance = ctx.chase.distance;
+      const chaseZ = ctx.player.z - chaseDistance;
+      const chaseX = Scalar.Lerp(this.inspectorRoot.position.x, targetOfficerX, dt * 8.0);
+      
+      this.inspectorRoot.position.set(chaseX, ctx.player.y * 0.5, chaseZ);
+      this.dogRoot.position.set(chaseX + (sideOffset > 0 ? 0.55 : -0.55), ctx.player.y * 0.5, chaseZ + 0.2);
+    }
 
     const officerTorso = this.scene.getMeshByName('officerTorso');
     if (officerTorso) officerTorso.rotation.y = Math.sin(this.totalTime * animSpeed) * 0.15;
+    const dogHead = this.scene.getMeshByName('dogHead');
+    if (dogHead) dogHead.rotation.x = Math.sin(this.totalTime * animSpeed * 1.5) * 0.1;
 
     // 4. 摄像机切道倾斜 (Bank Tilt) & 落地震屏 (Landing Shake)
     const targetRoll = (ctx.player.targetX - ctx.player.x) * -0.06;
@@ -1026,6 +1119,11 @@ export class BabylonRenderEngine {
 
     this.obstacleMeshes.forEach((node, id) => {
       if (!activeIds.has(id)) {
+        node.getChildMeshes().forEach((m) => {
+          if (m instanceof Mesh && this.shadowGenerator) {
+            this.shadowGenerator.removeShadowCaster(m);
+          }
+        });
         node.dispose();
         this.obstacleMeshes.delete(id);
       }
@@ -1124,4 +1222,40 @@ export class BabylonRenderEngine {
       }
     });
   }
+
+  /**
+   * 重置渲染管线内部动态视效与实体锚点
+   */
+  public reset(): void {
+    this.currentCameraRoll = 0;
+    this.lastPlayerY = 0;
+    this.landingShakeTime = 0;
+    if (this.envRoot) {
+      this.envRoot.position.z = 0;
+    }
+    this.inspectorRoot.position.set(1.2, 0, -1.8);
+    this.dogRoot.position.set(1.75, 0, -1.5);
+
+    // 清理残留破碎特效碎片
+    this.activeFragments.forEach((f) => f.mesh.dispose());
+    this.activeFragments = [];
+
+    // 清理残留实体网格与阴影投射引用
+    this.obstacleMeshes.forEach((node) => {
+      node.getChildMeshes().forEach((m) => {
+        if (m instanceof Mesh && this.shadowGenerator) {
+          this.shadowGenerator.removeShadowCaster(m);
+        }
+      });
+      node.dispose();
+    });
+    this.obstacleMeshes.clear();
+
+    this.coinMeshes.forEach((mesh) => mesh.dispose());
+    this.coinMeshes.clear();
+
+    this.powerUpMeshes.forEach((node) => node.dispose());
+    this.powerUpMeshes.clear();
+  }
 }
+

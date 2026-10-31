@@ -1,0 +1,23 @@
+﻿
+> app@0.0.0 test:e2e
+> playwright test --config docs/evidence/PAO-8/regression.config.ts
+
+
+Running 6 tests using 1 worker
+
+npm.cmd : (node:2024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+所在位置 行:2 字符: 82
++ ... w(); $log = & npm.cmd run test:e2e -- --config docs/evidence/PAO-8/re ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:2024) War... env being set.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\gameplay.spec.ts:50:3 › 状态机（确定性） › MENU → PLAYING via start button (2.6s)
+  ok 2 tests\e2e\gameplay.spec.ts:56:3 › 状态机（确定性） › PLAYING → 切道（左/右 + 边界钳制） (2.1s)
+  ok 3 tests\e2e\gameplay.spec.ts:73:3 › 状态机（确定性） › PLAYING → 跳跃（isJumping=true） (3.3s)
+  ok 4 tests\e2e\gameplay.spec.ts:79:3 › 状态机（确定性） › PLAYING → 翻滚（isRolling=true） (2.6s)
+  ok 5 tests\e2e\gameplay.spec.ts:85:3 › 状态机（确定性） › PLAYING → PAUSED via Escape，再 resume 回到 PLAYING (6.0s)
+  ok 6 tests\e2e\gameplay.spec.ts:98:3 › 截图回放（确定性） › 捕获 6 张高保真截图（无 GAMEOVER 风险） (3.6s)
+
+  6 passed (21.4s)

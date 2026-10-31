@@ -1,0 +1,33 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/sweptCollision.test.ts -t exact tick-end
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-12
+
+ ❯ tests/unit/sweptCollision.test.ts (36 tests | 1 failed | 35 skipped) 8ms
+     × checks the standing box at the exact tick-end roll expiry 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > checks the standing box at the exact tick-end roll expiry
+AssertionError: expected 'PLAYING' to be 'GAMEOVER' // Object.is equality
+
+Expected: "GAMEOVER"
+Received: "PLAYING"
+
+ ❯ tests/unit/sweptCollision.test.ts:160:23
+    158|     advance(ctx, .2);
+    159|     expect(ctx.player.isRolling).toBe(false);
+    160|     expect(ctx.state).toBe('GAMEOVER');
+       |                       ^
+    161|   });
+    162|   it('detects actual side entry irrespective of target lane', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 35 skipped (36)
+   Start at  02:57:03
+   Duration  361ms (transform 115ms, setup 0ms, import 144ms, tests 8ms, environment 0ms)

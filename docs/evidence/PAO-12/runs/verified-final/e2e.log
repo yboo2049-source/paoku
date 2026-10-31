@@ -1,0 +1,40 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config docs/evidence/PAO-12/playwright.config.ts
+
+[WebServer] (node:40972) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 25 tests using 1 worker
+
+(node:38096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\gameplay.spec.ts:50:3 › 状态机（确定性） › MENU → PLAYING via start button (2.9s)
+  ok  2 tests\e2e\gameplay.spec.ts:56:3 › 状态机（确定性） › PLAYING → 切道（左/右 + 边界钳制） (2.6s)
+  ok  3 tests\e2e\gameplay.spec.ts:73:3 › 状态机（确定性） › PLAYING → 跳跃（isJumping=true） (2.4s)
+  ok  4 tests\e2e\gameplay.spec.ts:79:3 › 状态机（确定性） › PLAYING → 翻滚（isRolling=true） (2.4s)
+  ok  5 tests\e2e\gameplay.spec.ts:85:3 › 状态机（确定性） › PLAYING → PAUSED via Escape，再 resume 回到 PLAYING (2.4s)
+  ok  6 tests\e2e\gameplay.spec.ts:98:3 › 截图回放（确定性） › 捕获 6 张高保真截图（无 GAMEOVER 风险） (4.1s)
+  ok  7 tests\e2e\pao10-review-fixes.spec.ts:35:1 › native-menu-slider-and-start-space (2.0s)
+  ok  8 tests\e2e\pao10-review-fixes.spec.ts:48:1 › paused-rejects-motion-and-resume-space (3.1s)
+  ok  9 tests\e2e\pao10-review-fixes.spec.ts:67:1 › playing-interactive-arrows-do-not-move-player (2.4s)
+  ok 10 tests\e2e\pao10-simulation.spec.ts:29:1 › N-desktop-production-keyboard-flow (10.9s)
+  ok 11 tests\e2e\pao10-simulation.spec.ts:67:1 › N-mobile-production-touch (4.2s)
+  ok 12 tests\e2e\pao10-simulation.spec.ts:97:1 › F-lifecycle-clears-input-and-hidden-time (3.8s)
+  ok 13 tests\e2e\pao11-surfaces.spec.ts:95:3 › F-desktop-keyboard-ground-ramp-roof-jump-ground (6.0s)
+  ok 14 tests\e2e\pao11-surfaces.spec.ts:95:3 › F-portrait-touch-ground-ramp-roof-jump-ground (5.9s)
+  ok 15 tests\e2e\pao11-surfaces.spec.ts:124:1 › F-high-base-ramp-5-to-8-continuous-roof (3.9s)
+  ok 16 tests\e2e\pao11-surfaces.spec.ts:142:1 › N-production-input-and-supported-snapshot (3.0s)
+  ok 17 tests\e2e\pao12-collision.spec.ts:79:1 › F-desktop-relative-high-speed-thin-train-terminal-once (4.5s)
+  ok 18 tests\e2e\pao12-collision.spec.ts:119:1 › F-portrait-same-tick-shield-multi-hit-single-consumption (2.9s)
+  ok 19 tests\e2e\pao12-collision.spec.ts:144:1 › F-desktop-airborne-roll-uses-actual-height-box (3.3s)
+  ok 20 tests\e2e\pao12-collision.spec.ts:167:1 › F-browser-isolated-highest-speed-large-step-and-pose-matrix (2.0s)
+  ok 21 tests\e2e\pao12-collision.spec.ts:201:1 › F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position (3.9s)
+  ok 22 tests\e2e\pao6-baseline.spec.ts:64:1 › ramp-roof-jump-land (6.3s)
+  ok 23 tests\e2e\pao6-baseline.spec.ts:76:1 › obstacles-failure-restart (7.0s)
+  ok 24 tests\e2e\pao6-baseline.spec.ts:86:1 › powerups-shield-missions (9.2s)
+  ok 25 tests\e2e\pao6-baseline.spec.ts:98:1 › mobile-touch-layout (4.6s)
+
+  25 passed (1.8m)
+
+exitCode=0

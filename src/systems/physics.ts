@@ -1,7 +1,19 @@
-import type { PlayerEntity, ObstacleEntity, CoinEntity, PowerUpEntity, GameContext } from '../types';
+import type { PlayerEntity, ObstacleEntity, CoinEntity, PowerUpEntity, GameContext, PhysicsStepStart } from '../types';
 import { CONSTANTS } from '../types';
 import { eventBus } from '../core/eventBus';
 import { GROUND, obstacleSurface, resolveSupport, sampleSurface, SURFACE_EPSILON } from './surfaces';
+import { compareContacts, sweepAABB } from './contacts';
+import type { SweptContact } from './contacts';
+
+/** Called only by run/QA discontinuity owners, never by presentation. */
+export function resetPhysicsContacts(player: PlayerEntity): void {
+  player.collisionEnded = false;
+  player.supportSurfaceId = null;
+  player.contact = 'AIRBORNE';
+  delete player.supportSample;
+  player.supportDeparture = null;
+  player.supportRampExit = null;
+}
 
 export interface BoundingBox {
   x: number;
@@ -75,22 +87,6 @@ export function checkObstacleCollision(player: PlayerEntity, obs: ObstacleEntity
     return false;
   }
 
-  // AC-PRD-01: LOW_OBSTACLE
-  if (obs.type === 'LOW_OBSTACLE') {
-    if (player.y > 1.2) {
-      return false;
-    }
-    return true;
-  }
-
-  // AC-PRD-02: HIGH_OBSTACLE
-  if (obs.type === 'HIGH_OBSTACLE') {
-    if (player.isRolling) {
-      return false;
-    }
-    return true;
-  }
-
   if (obs.type === 'RAMP') {
     return false;
   }
@@ -121,7 +117,8 @@ export function checkObstacleCollision(player: PlayerEntity, obs: ObstacleEntity
 export function updatePhysics(
   playerOrCtx: PlayerEntity | GameContext,
   dt: number,
-  obstaclesOverride?: ObstacleEntity[]
+  obstaclesOverride?: ObstacleEntity[] | PhysicsStepStart,
+  stepStart?: PhysicsStepStart,
 ): void {
   let player: PlayerEntity;
   let obstacles: ObstacleEntity[];
@@ -135,10 +132,17 @@ export function updatePhysics(
     obstacles = playerOrCtx.obstacles;
     coins = playerOrCtx.coinEntities || [];
     powerUps = playerOrCtx.powerUpEntities || [];
+    if (ctx.state === 'GAMEOVER') return;
   } else {
     player = playerOrCtx;
-    obstacles = obstaclesOverride || [];
+    obstacles = Array.isArray(obstaclesOverride) ? obstaclesOverride : [];
   }
+
+  const from = stepStart ?? (!Array.isArray(obstaclesOverride) ? obstaclesOverride : undefined) ??
+    { x: player.x, y: player.y, z: player.z };
+  const beforePlayer = { ...player, ...from };
+  const obstacleStarts = obstacles.map(o => ({ ...o }));
+  const rollingDuration = player.isRolling ? Math.max(0, player.rollTimer) : 0;
 
   // 确保 player.activePowerUps 初始化
   if (!player.activePowerUps) {
@@ -184,6 +188,54 @@ export function updatePhysics(
     }
   }
 
+  // Pure geometric contacts precede pickups and damage. Stance is piecewise
+  // constant: rolling until its timer boundary, then standing for the remainder.
+  const contacts: { contact: SweptContact; obstacle: ObstacleEntity; position: PhysicsStepStart }[] = [];
+  const departures: { contact: SweptContact; departure: NonNullable<PlayerEntity['supportDeparture']> }[] = [];
+  const lerp = (a: PhysicsStepStart, b: PhysicsStepStart, t: number): PhysicsStepStart => ({
+    x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t, z: a.z + (b.z - a.z) * t,
+  });
+  const rollEnd = beforePlayer.isRolling && rollingDuration > 0 ? (dt > 0 ? Math.min(rollingDuration / dt, 1) : 1) : 0;
+  const phases = rollEnd > 0 ? [{ start: 0, end: rollEnd, rolling: true }] : [];
+  if (rollEnd < 1) phases.push({ start: rollEnd, end: 1, rolling: false });
+  // Expiry exactly at t=1 still changes the committed pose at that endpoint.
+  else if (!player.isRolling) phases.push({ start: 1, end: 1, rolling: false });
+  for (let i = 0; i < obstacles.length; i++) {
+    const obs = obstacles[i], obs0 = obstacleStarts[i];
+    if (obs.type === 'RAMP') continue;
+    // An accepted top-edge contact can continue within later stance segments,
+    // but one obstacle must not mutate another obstacle's query inputs.
+    const afterForObstacle = { ...player };
+    for (const phase of phases) {
+      const start = lerp(from, player, phase.start), end = lerp(from, player, phase.end);
+      const obstacle0 = { ...obs0, ...lerp(obs0, obs, phase.start) };
+      const obstacle1 = { ...obs, ...lerp(obs0, obs, phase.end) };
+      const p0 = getPlayerBoundingBox({ ...player, ...start, isRolling: phase.rolling });
+      const p1 = { ...p0, ...end };
+      const local = sweepAABB(p0, p1, obstacle0, obstacle1, obs.id);
+      if (!local) continue;
+      const time = phase.start + local.time * (phase.end - phase.start);
+      const position = lerp(from, player, time);
+      const atObstacle = { ...obs, ...lerp(obs0, obs, time) };
+      if (isSupportSweep(beforePlayer, afterForObstacle, position, atObstacle, local, obs.z - obs0.z)) {
+        const departure = afterForObstacle.supportDeparture;
+        if (departure && departure !== player.supportDeparture &&
+            player.x - CONSTANTS.PLAYER_WIDTH / 2 < obs.x + obs.width / 2 &&
+            player.x + CONSTANTS.PLAYER_WIDTH / 2 > obs.x - obs.width / 2 &&
+            player.z - CONSTANTS.PLAYER_DEPTH / 2 < obs.z + obs.depth / 2 &&
+            player.z + CONSTANTS.PLAYER_DEPTH / 2 > obs.z - obs.depth / 2) {
+          departures.push({ contact: { ...local, time }, departure });
+        }
+        continue;
+      }
+      contacts.push({ contact: { ...local, time }, obstacle: obs, position });
+      break;
+    }
+  }
+  contacts.sort((a, b) => compareContacts(a.contact, b.contact));
+  departures.sort((a, b) => compareContacts(a.contact, b.contact));
+  if (departures[0]) player.supportDeparture = departures[0].departure;
+
   // 6. AC-PRD-04: 磁铁 (MAGNET) 寻路吸附
   const isMagnetActive = (player.activePowerUps.get('MAGNET') || 0) > 0;
   for (const coin of coins) {
@@ -213,7 +265,7 @@ export function updatePhysics(
   }
 
   // 7. 道具 (PowerUp) 拾取判定
-  for (const p of powerUps) {
+  for (const p of [...powerUps].sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0)) {
     if (p.collected) continue;
 
     if (Math.abs(player.x - p.x) < 1.5 && Math.abs(player.z - p.z) < 1.5 && Math.abs(player.y - p.y) < 2.0) {
@@ -231,8 +283,10 @@ export function updatePhysics(
   }
 
   // 8. 障碍物碰撞与滑板免死护盾 (Shield Protection)
-  for (const obs of obstacles) {
-    if (checkObstacleCollision(player, obs)) {
+  if ((ctx ? ctx.state !== 'GAMEOVER' : !player.collisionEnded) &&
+      !(player.invulnerableTimer > 0) && !(player as PlayerEntity & { godMode?: boolean }).godMode) {
+    const hit = contacts[0];
+    if (hit) {
       if (player.hoverboardActive || player.hasHoverboard) {
         // 抵扣滑板，免除死亡！
         player.hoverboardActive = false;
@@ -240,15 +294,47 @@ export function updatePhysics(
         player.invulnerableTimer = 1.2; // 给予 1.2 秒无敌闪烁 protection
 
         eventBus.emit('HOVERBOARD_SHIELD_SHATTER', {
-          position: { x: player.x, y: player.y + 0.8, z: player.z },
+          position: { x: hit.position.x, y: hit.position.y + 0.8, z: hit.position.z },
         });
-        break;
       } else {
         // 游戏结束！
         if (ctx) ctx.state = 'GAMEOVER';
-        eventBus.emit('COLLISION', { targetType: obs.type, position: { x: player.x, y: player.y, z: player.z } });
-        break;
+        else player.collisionEnded = true;
+        eventBus.emit('COLLISION', { targetType: hit.obstacle.type, position: { ...hit.position },
+          obstacleId: hit.obstacle.id, time: hit.contact.time, normal: hit.contact.normal });
       }
     }
   }
+}
+
+/** Support exceptions are geometric at the contact, never based on final height alone. */
+function isSupportSweep(before: PlayerEntity, after: PlayerEntity, at: PhysicsStepStart,
+  obstacle: ObstacleEntity, contact: SweptContact, obstacleDeltaZ: number): boolean {
+  if (obstacle.type !== 'STATIC_TRAIN' && obstacle.type !== 'MOVING_TRAIN') return false;
+  const top = obstacle.y + obstacle.height;
+  // A downward top contact (including departure gravity) is support, not damage.
+  if (contact.normal.y === 1 && at.y >= top - SURFACE_EPSILON) {
+    // A jump can cross the finite roof's top plane just outside its foot bounds
+    // while the trailing body still overlaps. Remember only that proven top
+    // contact, not arbitrary initial overlaps, until this body separates.
+    const side = at.z > obstacle.z + obstacle.depth / 2 && after.z - before.z >= obstacleDeltaZ ? 'REAR' :
+      at.x < obstacle.x - obstacle.width / 2 && after.x <= before.x ? 'LEFT' :
+      at.x > obstacle.x + obstacle.width / 2 && after.x >= before.x ? 'RIGHT' : null;
+    if (side) after.supportDeparture = { ownerEntityId: obstacle.id, side, y: top };
+    return true;
+  }
+  for (const p of [before, after]) {
+    const departure = p.supportDeparture;
+    if (departure?.ownerEntityId === obstacle.id && at.y <= departure.y + SURFACE_EPSILON && (
+      (departure.side === 'REAR' && at.z > obstacle.z + obstacle.depth / 2 && after.z - before.z >= obstacleDeltaZ) ||
+      (departure.side === 'LEFT' && at.x < obstacle.x - obstacle.width / 2 && after.x <= before.x) ||
+      (departure.side === 'RIGHT' && at.x > obstacle.x + obstacle.width / 2 && after.x >= before.x))) return true;
+    const exit = p.supportRampExit;
+    if (p.contact === 'SUPPORTED' && exit &&
+      Math.abs(exit.z - (obstacle.z - obstacle.depth / 2)) <= SURFACE_EPSILON &&
+      Math.abs(exit.y - top) <= SURFACE_EPSILON && at.z <= exit.z &&
+      at.x >= Math.max(exit.xMin, obstacle.x - obstacle.width / 2) &&
+      at.x <= Math.min(exit.xMax, obstacle.x + obstacle.width / 2)) return true;
+  }
+  return false;
 }

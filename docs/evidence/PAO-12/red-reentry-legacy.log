@@ -1,0 +1,72 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/sweptCollision.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-12
+
+ ❯ tests/unit/sweptCollision.test.ts (33 tests | 3 failed) 29ms
+     × uses standing height at a zero-duration expired roll boundary 5ms
+     × does not exempt inward reentry merely because departure still names that roof 1ms
+     × honours legacy standalone callers without an explicit invulnerability timer 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > uses standing height at a zero-duration expired roll boundary
+AssertionError: expected 'PLAYING' to be 'GAMEOVER' // Object.is equality
+
+Expected: "GAMEOVER"
+Received: "PLAYING"
+
+ ❯ tests/unit/sweptCollision.test.ts:152:23
+    150|     ctx.obstacles = [obstacle({ type: 'HIGH_OBSTACLE', y: 1.2, z: 0 })…
+    151|     advance(ctx, 0);
+    152|     expect(ctx.state).toBe('GAMEOVER');
+       |                       ^
+    153|   });
+    154|   it('detects actual side entry irrespective of target lane', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > does not exempt inward reentry merely because departure still names that roof
+AssertionError: expected 'PLAYING' to be 'GAMEOVER' // Object.is equality
+
+Expected: "GAMEOVER"
+Received: "PLAYING"
+
+ ❯ tests/unit/sweptCollision.test.ts:237:23
+    235|     ctx.obstacles = [obstacle({ id: 'roof', type: 'STATIC_TRAIN', z: 0…
+    236|     advance(ctx, .1);
+    237|     expect(ctx.state).toBe('GAMEOVER');
+       |                       ^
+    238|   });
+    239|   it('honours legacy standalone callers without an explicit invulnerab…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > honours legacy standalone callers without an explicit invulnerability timer
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/sweptCollision.test.ts:243:22
+    241|     Reflect.deleteProperty(p, 'invulnerableTimer');
+    242|     updatePhysics(p, 0, [obstacle({ z: 0 })]);
+    243|     expect(received).toHaveLength(1);
+       |                      ^
+    244|   }));
+    245| });
+ ❯ events tests/unit/sweptCollision.test.ts:18:9
+ ❯ tests/unit/sweptCollision.test.ts:239:91
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 30 passed (33)
+   Start at  02:55:48
+   Duration  423ms (transform 124ms, setup 0ms, import 158ms, tests 29ms, environment 0ms)

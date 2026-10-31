@@ -1,0 +1,55 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/sweptCollision.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-12
+
+ ❯ tests/unit/sweptCollision.test.ts (35 tests | 2 failed) 30ms
+     × does not duplicate terminal notification when a synchronous pickup listener reenters 7ms
+     × does not exempt rear reentry when a moving former support catches the player 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > does not duplicate terminal notification when a synchronous pickup listener reenters
+AssertionError: expected [ { …(5) }, { …(5) } ] to have a length of 1 but got 2
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/unit/sweptCollision.test.ts:250:45
+    248|     const listener = () => advance(ctx, 0);
+    249|     eventBus.on('POWERUP_ACTIVATED', listener);
+    250|     try { advance(ctx, 0); expect(received).toHaveLength(1); }
+       |                                             ^
+    251|     finally { eventBus.off('POWERUP_ACTIVATED', listener); }
+    252|   }));
+ ❯ events tests/unit/sweptCollision.test.ts:18:9
+ ❯ tests/unit/sweptCollision.test.ts:245:100
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > does not exempt rear reentry when a moving former support catches the player
+AssertionError: expected 'PLAYING' to be 'GAMEOVER' // Object.is equality
+
+Expected: "GAMEOVER"
+Received: "PLAYING"
+
+ ❯ tests/unit/sweptCollision.test.ts:259:23
+    257|     ctx.obstacles = [obstacle({ id: 'roof', type: 'MOVING_TRAIN', z: 0…
+    258|     advance(ctx, .1);
+    259|     expect(ctx.state).toBe('GAMEOVER');
+       |                       ^
+    260|   });
+    261| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 33 passed (35)
+   Start at  02:56:26
+   Duration  401ms (transform 124ms, setup 0ms, import 156ms, tests 30ms, environment 0ms)

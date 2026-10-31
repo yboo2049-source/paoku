@@ -1,5 +1,6 @@
 ﻿import type { GameContext } from '../types';
 import { CONSTANTS } from '../types';
+import type { PhysicsStepStart } from '../types';
 import type { RunPhase, SimSnapshot, VersionedRng } from '../types/contracts';
 import { InputQueue } from './inputQueue';
 import { immutableCopy, interpolateSnapshots } from './snapshot';
@@ -22,7 +23,7 @@ export function createSeededRng(seed: number): VersionedRng {
 }
 interface SimulationOptions {
   runId: string; seed: number; stepSec?: number; rng?: VersionedRng;
-  physics?: (ctx: GameContext, dt: number) => void;
+  physics?: (ctx: GameContext, dt: number, stepStart?: PhysicsStepStart) => void;
   afterStep?: (ctx: GameContext, dt: number, rng: VersionedRng) => void;
 }
 
@@ -94,11 +95,13 @@ export class Simulation {
       this.lastSequence = command.sequence; this.inputLog.push({ ...command });
     }
     const ctx = this.context, dt = this.stepSec;
+    // A value local to this tick: QA changes/restarts cannot leave a stale sweep origin.
+    const stepStart: PhysicsStepStart = { x: ctx.player.x, y: ctx.player.y, z: ctx.player.z };
     ctx.speed = Math.min(ctx.speed + CONSTANTS.ACCELERATION * dt, CONSTANTS.MAX_SPEED);
     const deltaDistanceM = ctx.speed * dt;
     ctx.player.z += deltaDistanceM; ctx.distance += deltaDistanceM;
     ctx.score = accumulateScore(ctx.score, ctx.speed, dt, ctx.player.activePowerUps);
-    this.options.physics?.(ctx, dt);
+    this.options.physics?.(ctx, dt, stepStart);
     this.options.afterStep?.(ctx, dt, this.rng);
     } finally { this.stepping = false; }
     this.syncPhase(); this.commit();

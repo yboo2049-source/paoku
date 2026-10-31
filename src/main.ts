@@ -3,7 +3,7 @@ import type { GameContext } from './types';
 import { CONSTANTS } from './types';
 import { eventBus } from './core/eventBus';
 import { GameLoop } from './core/gameLoop';
-import { updatePhysics } from './systems/physics';
+import { resetPhysicsContacts, updatePhysics } from './systems/physics';
 import { Simulation } from './core/simulation';
 import { immutableCopy } from './core/snapshot';
 import { inputSystem } from './systems/input';
@@ -50,13 +50,15 @@ const initialContext: GameContext = {
 const renderEngine = new BabylonRenderEngine(appEl);
 const uiManager = new UIManager(appEl);
 const simulation = new Simulation(initialContext, {
-  runId: 'podium', seed: 0x50414f10, physics: updatePhysics,
+  runId: 'podium', seed: 0x50414f10,
+  physics: (ctx, dt, stepStart) => updatePhysics(ctx, dt, undefined, stepStart),
   afterStep: ctx => updateLegacySystems(ctx),
 });
 inputSystem.initQueue(simulation.queue, () => simulation.tick);
 let runSequence = 0;
 
 function resetToPodium(ctx: GameContext): void {
+  resetPhysicsContacts(ctx.player);
   ctx.player.z = 0;
   ctx.player.x = 0;
   ctx.player.targetX = 0;
@@ -300,6 +302,7 @@ const isQaMode = () => (window as any).__QA_MODE__ === true;
   setPlayerPos: (x: number, y: number, z: number) => {
     if (!isQaMode()) return;
     simulation.change(ctx => {
+      resetPhysicsContacts(ctx.player);
       ctx.player.x = x;
       ctx.player.targetX = x;
       ctx.player.y = y;
@@ -312,6 +315,7 @@ const isQaMode = () => (window as any).__QA_MODE__ === true;
   setPlayerLane: (lane: number) => {
     if (!isQaMode()) return;
     simulation.change(ctx => {
+      resetPhysicsContacts(ctx.player);
       const l = Math.max(0, Math.min(2, lane));
       ctx.player.lane = l;
       ctx.player.targetX = CONSTANTS.LANE_X[l];
@@ -321,6 +325,7 @@ const isQaMode = () => (window as any).__QA_MODE__ === true;
   clearWorld: () => {
     if (!isQaMode()) return;
     simulation.change(ctx => {
+      resetPhysicsContacts(ctx.player);
       ctx.obstacles.length = 0;
       ctx.coinEntities.length = 0;
       ctx.powerUpEntities.length = 0;

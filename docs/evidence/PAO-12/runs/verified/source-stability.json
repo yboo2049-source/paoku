@@ -1,0 +1,23 @@
+{
+  "unchanged": true,
+  "before": {
+    "src/main.ts": "018501c25aba621df28eaa4d568d56e9fca16d79237116d9f75c76cccb23852c",
+    "src/core/simulation.ts": "bb36c8dffe8e3e4f5fbee0c148e00a740bb907b56c37f721bdf6e92d97a96351",
+    "src/systems/input.ts": "407c7cc8e5184f87756de0c2f847779b565976a5d2fe74d54e4ad11cd45853e9",
+    "src/systems/physics.ts": "51525a36ee1d94100ec8ca593fbef71e77f7e3189634956210ce88b8be195bc5",
+    "src/systems/contacts.ts": "9224acf743796ee9cbcd9f3b22a53a744aedb5cc330f27f979ea45c82484a5ce",
+    "src/systems/surfaces.ts": "14a734e726e1b2aadcb9add9e96207fbb29e3680a08e762682fa6ece73846484",
+    "src/types/index.ts": "fb59a6cc18628bfd29e6d76a1faab770e528c522f43c6d82188604e29a72e629",
+    "src/types/contracts.ts": "da7f1c8cd8cd32c77a17cc4c96676a9d0495b7b7054816973914aeb61fa0b514"
+  },
+  "after": {
+    "src/main.ts": "018501c25aba621df28eaa4d568d56e9fca16d79237116d9f75c76cccb23852c",
+    "src/core/simulation.ts": "bb36c8dffe8e3e4f5fbee0c148e00a740bb907b56c37f721bdf6e92d97a96351",
+    "src/systems/input.ts": "407c7cc8e5184f87756de0c2f847779b565976a5d2fe74d54e4ad11cd45853e9",
+    "src/systems/physics.ts": "51525a36ee1d94100ec8ca593fbef71e77f7e3189634956210ce88b8be195bc5",
+    "src/systems/contacts.ts": "9224acf743796ee9cbcd9f3b22a53a744aedb5cc330f27f979ea45c82484a5ce",
+    "src/systems/surfaces.ts": "14a734e726e1b2aadcb9add9e96207fbb29e3680a08e762682fa6ece73846484",
+    "src/types/index.ts": "fb59a6cc18628bfd29e6d76a1faab770e528c522f43c6d82188604e29a72e629",
+    "src/types/contracts.ts": "da7f1c8cd8cd32c77a17cc4c96676a9d0495b7b7054816973914aeb61fa0b514"
+  }
+}

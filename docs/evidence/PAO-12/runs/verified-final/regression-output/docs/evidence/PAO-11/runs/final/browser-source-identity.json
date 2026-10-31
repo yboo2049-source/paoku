@@ -1,0 +1,16 @@
+{
+  "cwd": "D:\\worker\\paoku-sessions\\pao-12",
+  "baseURL": "http://127.0.0.1:5182",
+  "sources": [
+    {
+      "source": "src/main.ts",
+      "sha256": "018501c25aba621df28eaa4d568d56e9fca16d79237116d9f75c76cccb23852c",
+      "exactRawSourceMatch": true
+    },
+    {
+      "source": "src/systems/physics.ts",
+      "sha256": "0eddeb1ae8e47638c5b139dc484aefd4f22696fa5b2be6ac8a76d07cab4fbce6",
+      "exactRawSourceMatch": true
+    }
+  ]
+}

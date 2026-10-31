@@ -4,6 +4,13 @@ export type ObstacleType = 'LOW_OBSTACLE' | 'HIGH_OBSTACLE' | 'STATIC_TRAIN' | '
 
 export type PowerUpType = 'MAGNET' | 'DOUBLE_SCORE' | 'SUPER_SNEAKERS' | 'HOVERBOARD';
 
+/** Tick-local foot position captured after input, before forward integration. */
+export interface PhysicsStepStart {
+  readonly x: number;
+  readonly y: number;
+  readonly z: number;
+}
+
 export interface Mission {
   id: string;
   title: string;
@@ -16,6 +23,8 @@ export interface Mission {
 }
 
 export interface PlayerEntity {
+  /** Standalone physics callers' terminal notification latch; reset at run/QA boundaries. */
+  collisionEnded?: boolean;
   /** Transitional support state owned by physics, included in simulation snapshots. */
   supportSurfaceId?: string | null;
   contact?: 'SUPPORTED' | 'AIRBORNE';

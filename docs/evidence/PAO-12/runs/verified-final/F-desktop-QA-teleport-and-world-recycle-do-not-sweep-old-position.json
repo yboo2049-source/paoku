@@ -1,0 +1,428 @@
+{
+  "title": "F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "browserVersion": "151.0.7922.34",
+  "errors": [],
+  "states": [
+    {
+      "name": "F-desktop-teleport-recycled",
+      "snapshot": {
+        "contractVersion": 1,
+        "runId": "run-1",
+        "tick": 22,
+        "timeSec": 0.36666666666666664,
+        "stepSec": 0.016666666666666666,
+        "phase": "RUNNING",
+        "seed": 1346457360,
+        "rngState": 1346457360,
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "simulationVersion": "pao10-fixed-v1",
+        "configId": "legacy-18-45-v1",
+        "contentRevision": "legacy-unseeded-spawner",
+        "lastInputSequence": 0,
+        "discontinuity": false,
+        "context": {
+          "state": "PLAYING",
+          "score": 0.6617569444444443,
+          "highScore": 0,
+          "coins": 0,
+          "totalCoins": 0,
+          "speed": 18.09166666666666,
+          "distance": 6.6175694444444435,
+          "player": {
+            "lane": 0,
+            "x": -3,
+            "targetX": -3,
+            "y": 0,
+            "z": 3.0121527777777772,
+            "vy": 0,
+            "isJumping": false,
+            "isRolling": false,
+            "rollTimer": 0,
+            "hasHoverboard": false,
+            "hoverboardActive": false,
+            "invulnerableTimer": 0,
+            "activePowerUps": {},
+            "collisionEnded": false,
+            "supportSurfaceId": "ground",
+            "contact": "SUPPORTED",
+            "supportDeparture": null,
+            "supportRampExit": null,
+            "supportSample": {
+              "x": -3,
+              "y": 0,
+              "z": 3.0121527777777772
+            }
+          },
+          "obstacles": [],
+          "coinEntities": [],
+          "powerUpEntities": [],
+          "missions": [
+            {
+              "id": "m1",
+              "title": "COIN COLLECTOR",
+              "description": "Collect 30 coins in a single run",
+              "target": 30,
+              "current": 0,
+              "rewardCoins": 50,
+              "completed": false,
+              "type": "COLLECT_COINS"
+            },
+            {
+              "id": "m2",
+              "title": "HIGH JUMPER",
+              "description": "Perform 10 jumps in a single run",
+              "target": 10,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "JUMP_TIMES"
+            },
+            {
+              "id": "m3",
+              "title": "SLIDER PRO",
+              "description": "Perform 8 rolls under obstacles",
+              "target": 8,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "ROLL_TIMES"
+            },
+            {
+              "id": "m4",
+              "title": "SCORE RUNNER",
+              "description": "Reach a score of 500 in a single run",
+              "target": 500,
+              "current": 0,
+              "rewardCoins": 100,
+              "completed": false,
+              "type": "SCORE_REACH"
+            }
+          ],
+          "chase": {
+            "distance": 2.8,
+            "isNear": false
+          }
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "type": "PLAYER_LANDED",
+      "payload": {
+        "y": 0
+      }
+    },
+    {
+      "type": "PLAYER_LANDED",
+      "payload": {
+        "y": 0
+      }
+    }
+  ],
+  "trace": [
+    {
+      "tick": 2,
+      "x": 0,
+      "y": 0,
+      "z": 40,
+      "isRolling": false,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 3,
+      "x": 0,
+      "y": 0,
+      "z": 40.30020833333333,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 4,
+      "x": 0,
+      "y": 0,
+      "z": 40.60048611111111,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 5,
+      "x": 0,
+      "y": 0,
+      "z": 40.90083333333333,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 6,
+      "x": 0,
+      "y": 0,
+      "z": 41.201249999999995,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 7,
+      "x": 0,
+      "y": 0,
+      "z": 41.50173611111111,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 8,
+      "x": 0,
+      "y": 0,
+      "z": 41.80229166666666,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 9,
+      "x": 0,
+      "y": 0,
+      "z": 42.10291666666666,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 10,
+      "x": 0,
+      "y": 0,
+      "z": 42.403611111111104,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 11,
+      "x": 0,
+      "y": 0,
+      "z": 42.70437499999999,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 12,
+      "x": 0,
+      "y": 0,
+      "z": 43.00520833333333,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 12,
+      "x": -3,
+      "y": 0,
+      "z": 0,
+      "isRolling": false,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 12,
+      "x": -3,
+      "y": 0,
+      "z": 0,
+      "isRolling": false,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 13,
+      "x": -3,
+      "y": 0,
+      "z": 0.30090277777777774,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 15,
+      "x": -3,
+      "y": 0,
+      "z": 0.9029166666666666,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 15,
+      "x": -3,
+      "y": 0,
+      "z": 0.9029166666666666,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 16,
+      "x": -3,
+      "y": 0,
+      "z": 1.2040277777777777,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 17,
+      "x": -3,
+      "y": 0,
+      "z": 1.5052083333333333,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 18,
+      "x": -3,
+      "y": 0,
+      "z": 1.806458333333333,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 19,
+      "x": -3,
+      "y": 0,
+      "z": 2.1077777777777773,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 20,
+      "x": -3,
+      "y": 0,
+      "z": 2.4091666666666662,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 21,
+      "x": -3,
+      "y": 0,
+      "z": 2.7106249999999994,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 22,
+      "x": -3,
+      "y": 0,
+      "z": 3.0121527777777772,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 23,
+      "x": -3,
+      "y": 0,
+      "z": 3.3137499999999993,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 24,
+      "x": -3,
+      "y": 0,
+      "z": 3.615416666666666,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 25,
+      "x": -3,
+      "y": 0,
+      "z": 3.917152777777777,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 26,
+      "x": -3,
+      "y": 0,
+      "z": 4.218958333333332,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 27,
+      "x": -3,
+      "y": 0,
+      "z": 4.520833333333332,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 28,
+      "x": -3,
+      "y": 0,
+      "z": 4.822777777777777,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 29,
+      "x": -3,
+      "y": 0,
+      "z": 5.124791666666665,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 30,
+      "x": -3,
+      "y": 0,
+      "z": 5.426874999999998,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 31,
+      "x": -3,
+      "y": 0,
+      "z": 5.729027777777776,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 32,
+      "x": -3,
+      "y": 0,
+      "z": 6.031249999999998,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    }
+  ],
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+  "devicePixelRatio": 1
+}

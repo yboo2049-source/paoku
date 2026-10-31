@@ -1,0 +1,25 @@
+{
+  "capturedAt": "2026-10-31T09:01:38.211Z",
+  "timezone": "Asia/Shanghai",
+  "browser": "151.0.7922.34",
+  "type": "Native SVG design concept preview, not gameplay or 3D asset validation",
+  "url": "http://127.0.0.1:5177/concept.svg",
+  "source": "docs/art/pao-7-same-screen-concept.svg",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 720,
+      "height": 500
+    }
+  ],
+  "result": {
+    "parserErrors": 0,
+    "external": 0,
+    "viewBox": "0 0 1440 1000",
+    "title": "PAO-7 明亮城市轨道同屏风格概念 v0.1"
+  },
+  "logs": []
+}

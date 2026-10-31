@@ -1,0 +1,8 @@
+4d19f68de3d2f33662b13f6cbd119928c3daf2785bc585f9947c9cf97c76851d  docs/art/rebuild-style-guide.md
+4a4309cad1cd97dcfa6bcefaaf85da8a29fad88c419fbe82683b9a8fc50d8aa5  docs/art/pao-7-asset-register.md
+89474217968f4aa3b7d95a9ad912851ee0573b8a77c6ce8fe480b79fe49183c2  docs/art/pao-7-integration-notes.md
+35c01b3879889717b4a3f81dfc4ceb34fe0bfde08eccd21f61c439e48cf58dde  docs/art/pao-7-same-screen-concept.svg
+6a131324e28c1efcc09051436c2e62f8e264e7eea94f6d0f83245e8dc26eb9c8  docs/evidence/PAO-7/README.md
+783d15bc01daeab36717beb6dadf118ad8d9f3c0f4954300315d2ef8289563a0  docs/evidence/PAO-7/concept-preview.json
+49e6f1145d7a4ee4e46a048d185f6de3ff7f5627131253a2477d8e6193eb8981  docs/evidence/PAO-7/concept-desktop.png
+88e03337786fd4d33f2f72384ea1d0089ee8a371d7a662e6522076f351b7e325  docs/evidence/PAO-7/concept-thumbnail.png

@@ -4,6 +4,18 @@
 
 ## 最新进展 (Latest Updates)
 
+### PAO-7 商业级 3D 资产库全量交付与轻量化入库 (2026-11-01)
+*   **全套 21 款标准 3D 模型 (.glb) 100% 交付入库**：全部模型统一部署至 `public/models/`，彻底替换原有的临时几何体占位符：
+    *   **角色系统 (3款)**：主角跑酷少年 (`character_runner.glb`)、追捕警官 (`character_police.glb`)、警犬 (`character_dog.glb`)。
+    *   **核心玩法道具 (8款)**：纯金跑酷币 (`prop_coin.glb`)、吸金马蹄磁铁 (`prop_magnet.glb`)、赛博悬浮滑板 (`prop_hoverboard.glb`)、弹跳厚底跑鞋 (`prop_sneakers.glb`)、双筒喷气背包 (`prop_jetpack.glb`)、2X 双倍得分牌 (`prop_multiplier_2x.glb`)、能量气泡护盾 (`prop_shield.glb`)、神秘问号宝箱 (`prop_mystery_box.glb`)。
+    *   **列车与大型结构 (4款)**：地铁车厢/车头 (`train_metro.glb`)、斜坡工程爬坡车 (`train_ramp_or_car.glb`)、跨轨钢架龙门架 (`env_gantry.glb`)、霓虹通透隧道拱门 (`env_tunnel_arch.glb`)。
+    *   **轨道障碍与环境 (6款)**：矮跨栏木路障 (`obstacle_hurdle_barrier.glb`)、限高下滑警示门架 (`obstacle_slide_barrier.glb`)、铁路三色信号机 (`obstacle_signal_light.glb`)、轨旁电力配电箱 (`obstacle_utility_box.glb`)、铁轨死路防撞缓冲墩 (`obstacle_buffer_stop.glb`)、轨道施工交通警示锥 (`obstacle_traffic_cone.glb`)。
+*   **工业级格式转换与无损减面轻量化**：
+    *   将 5 款 FBX 资产统一转换打包为标准二进制 `.glb`（PBR 纹理内嵌）。
+    *   通过 Blender 批量拓扑减面优化，将 11 款超密高模（原单个 60MB、200 万顶点）优化至游戏运行面数，**总包体积从 684.8 MB 缩减至 149.5 MB（降低 78.2%）**，单文件最大不超过 17MB，杜绝 GitHub 拒推与网页加载卡顿。
+    *   保持 100% 纯原生 glTF 2.0 规范，无需客户端额外依赖 Draco 解码库。
+*   **概念原画归档**：20 张皮克斯/盲盒潮玩级高清参考原画全量归档至 `docs/assets/pao7_visual_assets/`。
+
 ### Superpowers 驱动重构 + 质量守护闭环 (obra/superpowers Overhaul) - 2026-08-19
 *   **方法论落地**：基于 `obra/superpowers` v6.3.0（14 个 skill 已安装至 `~/.workbuddy/skills/`），按 `brainstorming → writing-plans → TDD → verification` 标准闭环完成本轮全部交付。
 *   **文档体系对齐实际代码**：`AGENTS.md` 全面重写 —— 修正引擎事实（**Three.js → Babylon.js**）、修正文件路径（`src/render/three.ts → babylon.ts`、`src/systems/collision.ts → physics.ts`）、修正导航表（删除不存在的 `V4_PRODUCT_DOCUMENT.md`、新增 `SUPERPOWERS_WORKFLOW.md`）、新增 **Superpowers Skill ↔ Subagent 角色映射表**（14 skill 显式绑定到 5 Subagent + Dispatcher）、新增第 8 条方法论门禁（`brainstorming` HARD-GATE）。

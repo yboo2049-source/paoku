@@ -101,6 +101,8 @@ test('mobile-touch-layout', async ({ page, context }) => {
   async function swipe(x: number, y: number, nx: number, ny: number) { await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x, y }] }); await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: nx, y: ny }] }); await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] }); }
   await swipe(220, 600, 100, 600); await expect.poll(() => page.evaluate(() => (window as any).__GAME_SENSOR__.getPlayerState().lane)).toBe(0); await pause(page); await snap(page, 'mobile-left');
   await resume(page); await swipe(180, 650, 180, 450); await page.waitForTimeout(150); await pause(page); expect((await snap(page, 'mobile-jump')).player.isJumping).toBe(true);
-  await resume(page); await swipe(180, 450, 180, 650); await pause(page); expect((await snap(page, 'mobile-roll')).player.isRolling).toBe(true);
+  await resume(page); await swipe(180, 450, 180, 650);
+  await expect.poll(() => page.evaluate(() => (window as any).__GAME_SENSOR__.getPlayerState().isRolling)).toBe(true);
+  await pause(page); expect((await snap(page, 'mobile-roll')).player.isRolling).toBe(true);
   await page.click('#pause-menu-btn'); await snap(page, 'mobile-menu'); await page.click('#open-shop-btn'); await snap(page, 'mobile-shop'); expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });

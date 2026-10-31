@@ -1,0 +1,49 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config docs/evidence/PAO-10/playwright.config.ts
+
+[WebServer] (node:32640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 13 tests using 1 worker
+
+(node:33636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\gameplay.spec.ts:50:3 › 状态机（确定性） › MENU → PLAYING via start button (2.8s)
+  ok  2 tests\e2e\gameplay.spec.ts:56:3 › 状态机（确定性） › PLAYING → 切道（左/右 + 边界钳制） (2.7s)
+  ok  3 tests\e2e\gameplay.spec.ts:73:3 › 状态机（确定性） › PLAYING → 跳跃（isJumping=true） (2.6s)
+  ok  4 tests\e2e\gameplay.spec.ts:79:3 › 状态机（确定性） › PLAYING → 翻滚（isRolling=true） (3.0s)
+  ok  5 tests\e2e\gameplay.spec.ts:85:3 › 状态机（确定性） › PLAYING → PAUSED via Escape，再 resume 回到 PLAYING (3.2s)
+  ok  6 tests\e2e\gameplay.spec.ts:98:3 › 截图回放（确定性） › 捕获 6 张高保真截图（无 GAMEOVER 风险） (4.1s)
+  ok  7 tests\e2e\pao10-simulation.spec.ts:28:1 › N-desktop-production-keyboard-flow (6.5s)
+  ok  8 tests\e2e\pao10-simulation.spec.ts:66:1 › N-mobile-production-touch (5.0s)
+  ok  9 tests\e2e\pao10-simulation.spec.ts:92:1 › F-lifecycle-clears-input-and-hidden-time (3.8s)
+  ok 10 tests\e2e\pao6-baseline.spec.ts:64:1 › ramp-roof-jump-land (6.5s)
+  ok 11 tests\e2e\pao6-baseline.spec.ts:76:1 › obstacles-failure-restart (7.8s)
+  ok 12 tests\e2e\pao6-baseline.spec.ts:86:1 › powerups-shield-missions (9.7s)
+  x  13 tests\e2e\pao6-baseline.spec.ts:98:1 › mobile-touch-layout (3.7s)
+
+
+  1) tests\e2e\pao6-baseline.spec.ts:98:1 › mobile-touch-layout ────────────────────────────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      102 |   await swipe(220, 600, 100, 600); await expect.poll(() => page.evaluate(() => (window as any).__GAME_SENSOR__.getPlayerState().lane)).toBe(0); await pause(page); await snap(page, 'mobile-left');
+      103 |   await resume(page); await swipe(180, 650, 180, 450); await page.waitForTimeout(150); await pause(page); expect((await snap(page, 'mobile-jump')).player.isJumping).toBe(true);
+    > 104 |   await resume(page); await swipe(180, 450, 180, 650); await pause(page); expect((await snap(page, 'mobile-roll')).player.isRolling).toBe(true);
+          |                                                                                                                                      ^
+      105 |   await page.click('#pause-menu-btn'); await snap(page, 'mobile-menu'); await page.click('#open-shop-btn'); await snap(page, 'mobile-shop'); expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+      106 | });
+      107 |
+        at D:\worker\paoku-sessions\pao-10\tests\e2e\pao6-baseline.spec.ts:104:134
+
+    Error Context: docs\evidence\PAO-10\e2e-results\pao6-baseline-mobile-touch-layout\error-context.md
+
+  1 failed
+    tests\e2e\pao6-baseline.spec.ts:98:1 › mobile-touch-layout ─────────────────────────────────────
+  12 passed (1.1m)
+
+exitCode=1

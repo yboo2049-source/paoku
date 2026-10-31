@@ -1,0 +1,72 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao10-main.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-10
+
+ ❯ tests/unit/pao10-main.test.ts (3 tests | 3 failed) 118ms
+   × exposes immutable committed diagnostics/snapshots while real input waits for the next production tick 112ms
+   × clears pending real input on blur and resumes without accumulating hidden wall time 3ms
+   × disposes its event bus subscriptions as well as input and rAF before a replacement entry is loaded 1ms
+node.exe :
+所在位置 行:1 字符: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao10-main.test.ts > exposes immutable committed diagnostics/snapshots while real input waits for the
+ next production tick
+AssertionError: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ tests/unit/pao10-main.test.ts:39:44
+     37| it('exposes immutable committed diagnostics/snapshots while real input…
+     38|   const app = await boot();
+     39|   expect(app.sensor.getSimulationSnapshot).toBeTypeOf('function');
+       |                                            ^
+     40|   expect(app.sensor.getSimulationDiagnostics).toBeTypeOf('function');
+     41|   expect(app.sensor.getInputLog).toBeTypeOf('function');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/pao10-main.test.ts > clears pending real input on blur and resumes without accumulating hidden wall t
+ime
+TypeError: app.sensor.getSimulationSnapshot is not a function
+ ❯ tests/unit/pao10-main.test.ts:66:21
+     64|   expect(app.sensor.getGameState()).toBe('PAUSED');
+     65|   app.frame(10_000); app.frame(20_000);
+     66|   expect(app.sensor.getSimulationSnapshot().tick).toBe(0);
+       |                     ^
+     67|   app.eventBus.emit('TOGGLE_PAUSE');
+     68|   app.frame(30_000); app.frame(30_000 + 1000 / 60);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/pao10-main.test.ts > disposes its event bus subscriptions as well as input and rAF before a replaceme
+nt entry is loaded
+AssertionError: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ tests/unit/pao10-main.test.ts:77:32
+     75| it('disposes its event bus subscriptions as well as input and rAF befo…
+     76|   const app = await boot();
+     77|   expect(app.main.disposeGame).toBeTypeOf('function');
+       |                                ^
+     78|   app.eventBus.emit('START_GAME'); app.frame(0); app.frame(1000 / 60);
+     79|   const before = app.sensor.getSimulationSnapshot();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  20:07:00
+   Duration  388ms (transform 120ms, setup 0ms, import 48ms, tests 118ms, environment 0ms)

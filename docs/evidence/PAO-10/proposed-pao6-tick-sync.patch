@@ -1,0 +1,7 @@
+--- a/tests/e2e/pao6-baseline.spec.ts
++++ b/tests/e2e/pao6-baseline.spec.ts
+@@
+-  await resume(page); await swipe(180, 450, 180, 650); await pause(page); expect((await snap(page, 'mobile-roll')).player.isRolling).toBe(true);
++  await resume(page); await swipe(180, 450, 180, 650);
++  await expect.poll(() => page.evaluate(() => (window as any).__GAME_SENSOR__.getPlayerState().isRolling)).toBe(true);
++  await pause(page); expect((await snap(page, 'mobile-roll')).player.isRolling).toBe(true);

@@ -1,0 +1,28 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config docs/evidence/PAO-10/playwright.config.ts
+
+[WebServer] (node:33372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 13 tests using 1 worker
+
+(node:31400) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\gameplay.spec.ts:50:3 › 状态机（确定性） › MENU → PLAYING via start button (3.3s)
+  ok  2 tests\e2e\gameplay.spec.ts:56:3 › 状态机（确定性） › PLAYING → 切道（左/右 + 边界钳制） (2.6s)
+  ok  3 tests\e2e\gameplay.spec.ts:73:3 › 状态机（确定性） › PLAYING → 跳跃（isJumping=true） (2.3s)
+  ok  4 tests\e2e\gameplay.spec.ts:79:3 › 状态机（确定性） › PLAYING → 翻滚（isRolling=true） (2.5s)
+  ok  5 tests\e2e\gameplay.spec.ts:85:3 › 状态机（确定性） › PLAYING → PAUSED via Escape，再 resume 回到 PLAYING (2.5s)
+  ok  6 tests\e2e\gameplay.spec.ts:98:3 › 截图回放（确定性） › 捕获 6 张高保真截图（无 GAMEOVER 风险） (4.0s)
+  ok  7 tests\e2e\pao10-simulation.spec.ts:29:1 › N-desktop-production-keyboard-flow (13.7s)
+  ok  8 tests\e2e\pao10-simulation.spec.ts:67:1 › N-mobile-production-touch (6.3s)
+  ok  9 tests\e2e\pao10-simulation.spec.ts:97:1 › F-lifecycle-clears-input-and-hidden-time (4.4s)
+  ok 10 tests\e2e\pao6-baseline.spec.ts:64:1 › ramp-roof-jump-land (6.5s)
+  ok 11 tests\e2e\pao6-baseline.spec.ts:76:1 › obstacles-failure-restart (6.7s)
+  ok 12 tests\e2e\pao6-baseline.spec.ts:86:1 › powerups-shield-missions (9.2s)
+  ok 13 tests\e2e\pao6-baseline.spec.ts:98:1 › mobile-touch-layout (5.1s)
+
+  13 passed (1.2m)
+
+exitCode=0

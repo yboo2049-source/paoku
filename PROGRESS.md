@@ -2,6 +2,15 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-10-31] 全面重构规划
+
+- 已确认用户要求整体改造，覆盖场景、角色动作、渲染、全 UI、斜坡、火车和道具。
+- 已完成渲染、物理/生成、UI 三个职责域的只读初查；采用 brainstorming、art-direction、game-designer、game-ui-support，并结合 art-3d-production、art-animation-vfx 的交付规范。
+- 已产出 [整体重构设计稿 v0.1](docs/superpowers/specs/2026-10-31-paoku-complete-rebuild-design.md)：现状证据、三种改造路线、三种风格候选、动作/镜头/资产目标、数据契约、M0–M4 路线图和验收矩阵。
+- 状态：待用户评审；未批准实施，未修改游戏代码。浏览器试玩基线、目标设备性能、GLB 质量仍待 M0 验证，本文不宣称已完成视觉验收。
+- 建议：整体设计逐段替换，先完成含角色、坡道、火车、道具、HUD 与结算的完整可玩样板，再扩大内容。
+- 本轮为纯文档交付，按项目规则进行内容审查及 git diff --check；不为文档修改运行游戏测试。提交推送结果以本轮交付说明为准。
+
 ---
 
 ## 📅 [2026-08-01] Harness 架构重构

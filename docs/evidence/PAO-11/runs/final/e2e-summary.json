@@ -1,0 +1,11 @@
+{
+  "note": "Original wrapper cleanup encountered transient Windows UNKNOWN. Full Playwright report retained in e2e-results.json. Durable backups restored and checked against initial baseline.",
+  "stats": {
+    "startTime": "2026-10-31T17:29:05.261Z",
+    "duration": 101142.312,
+    "expected": 19,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

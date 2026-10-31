@@ -1,6 +1,7 @@
 import type { PlayerEntity, ObstacleEntity, CoinEntity, PowerUpEntity, GameContext } from '../types';
 import { CONSTANTS } from '../types';
 import { eventBus } from '../core/eventBus';
+import { GROUND, obstacleSurface, resolveSupport, sampleSurface, SURFACE_EPSILON } from './surfaces';
 
 export interface BoundingBox {
   x: number;
@@ -96,7 +97,20 @@ export function checkObstacleCollision(player: PlayerEntity, obs: ObstacleEntity
 
   if (obs.type === 'STATIC_TRAIN' || obs.type === 'MOVING_TRAIN') {
     const trainTopY = obs.y + obs.height;
-    if (player.y >= trainTopY - 0.35) {
+    // A supported foot on a ramp can overlap the next car's front with its
+    // body before reaching the common endpoint. Exempt only that exact seam.
+    const departure = player.supportDeparture;
+    if (departure?.ownerEntityId === obs.id && player.y <= departure.y+SURFACE_EPSILON && (
+      (departure.side === 'REAR' && player.z > obs.z+obs.depth/2) ||
+      (departure.side === 'LEFT' && player.x < obs.x-obs.width/2) ||
+      (departure.side === 'RIGHT' && player.x > obs.x+obs.width/2))) return false;
+    const exit = player.supportRampExit;
+    if (player.contact === 'SUPPORTED' && exit &&
+        Math.abs(exit.z - (obs.z - obs.depth / 2)) <= SURFACE_EPSILON &&
+        Math.abs(exit.y - trainTopY) <= SURFACE_EPSILON &&
+        player.x >= Math.max(exit.xMin, obs.x-obs.width/2) &&
+        player.x <= Math.min(exit.xMax, obs.x+obs.width/2) && player.z <= exit.z) return false;
+    if (player.y >= trainTopY - SURFACE_EPSILON) {
       return false;
     }
   }
@@ -143,57 +157,24 @@ export function updatePhysics(
     player.invulnerableTimer = Math.max(0, player.invulnerableTimer - dt);
   }
 
-  // 1. 动态移动障碍物 (MOVING_TRAIN)
-  for (const obs of obstacles) {
-    if (obs.type === 'MOVING_TRAIN' && obs.speedZ) {
-      obs.z += obs.speedZ * dt;
-    }
-  }
-
-  // 2. 左右切道插值
   player.x += (player.targetX - player.x) * Math.min(dt * 15, 1.0);
-
-  // 3. 确定当前脚下的支撑面高度 targetGroundY (地面 0 或 火车顶部 3.0 或 RAMP 平滑过渡)
-  let targetGroundY = 0;
-
+  const surfacesBefore = [GROUND, ...obstacles.map(obstacleSurface).filter(s => s !== null)];
+  const support = surfacesBefore.find(s => s.id === player.supportSurfaceId);
+  const oldSample = player.supportSample;
+  const carrier = support && obstacles.find(o => o.id === support.ownerEntityId);
+  if (carrier?.type === 'MOVING_TRAIN' && oldSample && player.vy <= 0 && !player.isJumping &&
+      Math.abs(player.y - oldSample.y) <= SURFACE_EPSILON &&
+      sampleSurface(support!, oldSample.x, oldSample.z) !== null &&
+      sampleSurface(support!, player.x, player.z) !== null) {
+    player.z += (carrier.speedZ ?? 0) * dt;
+  }
   for (const obs of obstacles) {
-    if (
-      Math.abs(player.x - obs.x) < obs.width / 2 + CONSTANTS.PLAYER_WIDTH / 2 &&
-      isPlayerOverlappingObstacleZ(player, obs)
-    ) {
-      if (obs.type === 'STATIC_TRAIN' || obs.type === 'MOVING_TRAIN') {
-        const trainTopY = obs.y + obs.height;
-        if (player.y >= trainTopY - 0.2) {
-          targetGroundY = Math.max(targetGroundY, trainTopY);
-        }
-      } else if (obs.type === 'RAMP') {
-        const rampStartZ = obs.z - obs.depth / 2;
-        const rampEndZ = obs.z + obs.depth / 2;
-        const progress = Math.max(0, Math.min(1, (player.z - rampStartZ) / (rampEndZ - rampStartZ)));
-        const rampY = progress * obs.height;
-        targetGroundY = Math.max(targetGroundY, rampY);
-      }
-    }
+    if (obs.type === 'MOVING_TRAIN') obs.z += (obs.speedZ ?? 0) * dt;
   }
 
-  // 4. 垂直重力与地面/车顶平面响应
-  if (player.isJumping || player.y > targetGroundY || player.vy !== 0) {
-    player.vy += CONSTANTS.GRAVITY * dt;
-    player.y += player.vy * dt;
-
-    if (player.y <= targetGroundY) {
-      const didLand = player.isJumping;
-      player.y = targetGroundY;
-      player.vy = 0;
-      player.isJumping = false;
-      if (didLand) {
-        eventBus.emit('PLAYER_LANDED', { y: player.y });
-      }
-    }
-  } else {
-    player.y = targetGroundY;
-  }
-
+  const surfacesAfter = [GROUND, ...obstacles.map(obstacleSurface).filter(s => s !== null)];
+  const didLand = resolveSupport(player, dt, surfacesBefore, surfacesAfter);
+  if (didLand) eventBus.emit('PLAYER_LANDED', { y: player.y });
   // 5. 翻滚计时器
   if (player.isRolling) {
     player.rollTimer -= dt;

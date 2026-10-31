@@ -1,0 +1,31 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/surfaces.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-11
+
+ ❯ tests/unit/surfaces.test.ts (19 tests | 1 failed) 26ms
+   × uses relative normal motion when world vy is upward but ramp overtakes feet 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/surfaces.test.ts > uses relative normal motion when world vy is upward but ramp overtakes feet
+AssertionError: expected 6.6048 to be 6.75 // Object.is equality
+
+- Expected
++ Received
+
+- 6.75
++ 6.6048
+
+ ❯ tests/unit/surfaces.test.ts:57:214
+
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 18 passed (19)
+   Start at  01:29:20
+   Duration  385ms (transform 75ms, setup 0ms, import 99ms, tests 26ms, environment 0ms)

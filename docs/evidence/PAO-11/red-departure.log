@@ -1,0 +1,31 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/surfaces.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-11
+
+ ❯ tests/unit/surfaces.test.ts (18 tests | 1 failed) 17ms
+   × does not carry on the tick lateral interpolation exits 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/surfaces.test.ts > does not carry on the tick lateral interpolation exits
+AssertionError: expected 110.4 to be 110 // Object.is equality
+
+- Expected
++ Received
+
+- 110
++ 110.4
+
+ ❯ tests/unit/surfaces.test.ts:33:225
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 17 passed (18)
+   Start at  01:28:38
+   Duration  288ms (transform 59ms, setup 0ms, import 77ms, tests 17ms, environment 0ms)

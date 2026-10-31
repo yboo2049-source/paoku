@@ -16,6 +16,12 @@ export interface Mission {
 }
 
 export interface PlayerEntity {
+  /** Transitional support state owned by physics, included in simulation snapshots. */
+  supportSurfaceId?: string | null;
+  contact?: 'SUPPORTED' | 'AIRBORNE';
+  supportSample?: { x: number; y: number; z: number };
+  supportDeparture?: { ownerEntityId: string; side: 'REAR' | 'LEFT' | 'RIGHT'; y: number } | null;
+  supportRampExit?: { xMin: number; xMax: number; z: number; y: number } | null;
   lane: number;          // 0: 左, 1: 中, 2: 右
   x: number;             // X 世界坐标
   targetX: number;       // 目标 X 坐标

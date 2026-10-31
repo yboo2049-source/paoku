@@ -1,0 +1,36 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/surfaces.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-11
+
+ ❯ tests/unit/surfaces.test.ts (23 tests | 1 failed) 25ms
+   × keeps an upward departure on a zero-time physics update 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/surfaces.test.ts > keeps an upward departure on a zero-time physics update
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/surfaces.test.ts:105:23
+    103|   a.isJumping = true;
+    104|   updatePhysics(a, 0, [roof()]);
+    105|   expect(a.isJumping).toBe(true);
+       |                       ^
+    106|   expect(a.vy).toBe(13.5);
+    107|   expect(a.supportSurfaceId).toBeNull();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 22 passed (23)
+   Start at  01:30:56
+   Duration  323ms (transform 64ms, setup 0ms, import 85ms, tests 25ms, environment 0ms)

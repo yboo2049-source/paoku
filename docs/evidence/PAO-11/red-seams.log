@@ -1,0 +1,38 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/surfaces.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-11
+
+ ❯ tests/unit/surfaces.test.ts (14 tests | 2 failed) 13ms
+   × continuous fixed ticks at 18 m/s do not die at ramp/roof seam 6ms
+   × continuous fixed ticks at 45 m/s do not die at ramp/roof seam 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/surfaces.test.ts > continuous fixed ticks at 18 m/s do not die at ramp/roof seam
+ FAIL  tests/unit/surfaces.test.ts > continuous fixed ticks at 45 m/s do not die at ramp/roof seam
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/surfaces.test.ts:22:120
+     20| it.each([18,45])('continuous fixed ticks at %s m/s do not die at ramp/…
+     21|  const a=p({z:93});const o=[ramp(0),roof({y:0})];updatePhysics(a,1/60,…
+     22|  for(let i=0;i<120;i++){a.z+=speed/60;updatePhysics(a,1/60,o);for(cons…
+       |                                                                                                                        ^
+     23|  expect(a.z).toBeGreaterThan(124);
+     24| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 12 passed (14)
+   Start at  01:27:16
+   Duration  310ms (transform 68ms, setup 0ms, import 91ms, tests 13ms, environment 0ms)

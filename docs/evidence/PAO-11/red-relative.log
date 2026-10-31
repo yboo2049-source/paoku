@@ -1,0 +1,51 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/surfaces.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-11
+
+ ❯ tests/unit/surfaces.test.ts (16 tests | 2 failed) 22ms
+   × continuous fixed ticks at 18 m/s do not die at ramp/roof seam 10ms
+   × lands on a rising ramp by relative crossing while descending 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/surfaces.test.ts > continuous fixed ticks at 18 m/s do not die at ramp/roof seam
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/surfaces.test.ts:22:120
+     20| it.each([18,45])('continuous fixed ticks at %s m/s do not die at ramp/…
+     21|  const a=p({z:93});const o=[ramp(0),roof({y:0})];updatePhysics(a,1/60,…
+     22|  for(let i=0;i<120;i++){a.z+=speed/60;updatePhysics(a,1/60,o);for(cons…
+       |                                                                                                                        ^
+     23|  expect(a.z).toBeGreaterThan(124);
+     24| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/surfaces.test.ts > lands on a rising ramp by relative crossing while descending
+AssertionError: expected 6.5648 to be 6.75 // Object.is equality
+
+- Expected
++ Received
+
+- 6.75
++ 6.5648
+
+ ❯ tests/unit/surfaces.test.ts:31:196
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 14 passed (16)
+   Start at  01:28:07
+   Duration  329ms (transform 65ms, setup 0ms, import 87ms, tests 22ms, environment 0ms)

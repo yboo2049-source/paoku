@@ -1,0 +1,185 @@
+{
+  "stats": {
+    "startTime": "2026-10-31T17:31:47.944Z",
+    "duration": 94887.31,
+    "expected": 20,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "sourceUnchanged": true,
+  "historyAllVerified": true,
+  "historicalFileCount": 233,
+  "changedHistoryFiles": 60,
+  "evidence": [
+    {
+      "title": "F-desktop-keyboard-ground-ramp-roof-jump-ground",
+      "errors": [],
+      "traceSamples": 177,
+      "states": [
+        {
+          "name": "F-desktop-ramp",
+          "tick": 56,
+          "position": {
+            "x": 0,
+            "y": 1.0026041666666652,
+            "z": 16.01041666666666
+          },
+          "supportSurfaceId": "route-ramp:ramp",
+          "contact": "SUPPORTED"
+        },
+        {
+          "name": "F-desktop-roof",
+          "tick": 83,
+          "position": {
+            "x": 0,
+            "y": 3,
+            "z": 24.241666666666653
+          },
+          "supportSurfaceId": "route-roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "name": "F-desktop-jump",
+          "tick": 114,
+          "position": {
+            "x": 0,
+            "y": 3.418333333333333,
+            "z": 33.75479166666664
+          },
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "name": "F-desktop-land",
+          "tick": 165,
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 49.55062499999995
+          },
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        }
+      ]
+    },
+    {
+      "title": "F-portrait-touch-ground-ramp-roof-jump-ground",
+      "errors": [],
+      "traceSamples": 178,
+      "states": [
+        {
+          "name": "F-portrait-ramp",
+          "tick": 55,
+          "position": {
+            "x": 0,
+            "y": 1.0016840277777765,
+            "z": 16.006736111111106
+          },
+          "supportSurfaceId": "route-ramp:ramp",
+          "contact": "SUPPORTED"
+        },
+        {
+          "name": "F-portrait-roof",
+          "tick": 82,
+          "position": {
+            "x": 0,
+            "y": 3,
+            "z": 24.236111111111097
+          },
+          "supportSurfaceId": "route-roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "name": "F-portrait-jump",
+          "tick": 120,
+          "position": {
+            "x": 0,
+            "y": 3.418333333333333,
+            "z": 35.90395833333331
+          },
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "name": "F-portrait-land",
+          "tick": 171,
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 51.7210416666666
+          },
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        }
+      ]
+    },
+    {
+      "title": "F-high-base-ramp-5-to-8-continuous-roof",
+      "errors": [],
+      "traceSamples": 62,
+      "states": [
+        {
+          "name": "F-high-base-ramp",
+          "tick": 32,
+          "position": {
+            "x": 0,
+            "y": 6.259114583333339,
+            "z": 99.03645833333336
+          },
+          "supportSurfaceId": "route-ramp:ramp",
+          "contact": "SUPPORTED"
+        },
+        {
+          "name": "F-high-base-roof",
+          "tick": 56,
+          "position": {
+            "x": 0,
+            "y": 8,
+            "z": 106.310625
+          },
+          "supportSurfaceId": "route-roof:roof",
+          "contact": "SUPPORTED"
+        }
+      ]
+    },
+    {
+      "title": "N-production-input-and-supported-snapshot",
+      "errors": [],
+      "traceSamples": 0,
+      "states": [
+        {
+          "name": "N-desktop-menu",
+          "tick": 0,
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "name": "N-desktop-jump",
+          "tick": 11,
+          "position": {
+            "x": -0.731689453125,
+            "y": 0.41833333333333333,
+            "z": 3.3045833333333334
+          },
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "name": "N-desktop-paused",
+          "tick": 22,
+          "position": {
+            "x": -0.03090300358599052,
+            "y": 1.964444444444445,
+            "z": 6.6175694444444435
+          },
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        }
+      ]
+    }
+  ]
+}

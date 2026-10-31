@@ -9,6 +9,7 @@ export class InputQueue {
   private accepting = true;
   private runId: string;
   constructor(runId: string) { this.runId = runId; }
+  get isAccepting(): boolean { return this.accepting; }
   reset(runId: string): void {
     this.clear(); this.runId = runId; this.seen.clear(); this.sequence = 0;
     this.consumedSequence = 0; this.consumedTick = 0; this.accepting = true;

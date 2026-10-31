@@ -1,0 +1,42 @@
+{
+  "stats": {
+    "startTime": "2026-10-31T16:49:32.309Z",
+    "duration": 81625.339,
+    "expected": 16,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "newCaseErrors": [
+    {
+      "test": "native-menu-slider-and-start-space",
+      "errors": []
+    },
+    {
+      "test": "paused-rejects-motion-and-resume-space",
+      "errors": []
+    },
+    {
+      "test": "playing-interactive-arrows-do-not-move-player",
+      "errors": []
+    }
+  ],
+  "history": {
+    "checked": 152,
+    "changed": 52,
+    "mismatches": []
+  },
+  "source": {
+    "cwd": "D:\\worker\\paoku-sessions\\pao-10",
+    "url": "http://127.0.0.1:5180",
+    "source": "src/systems/input.ts",
+    "sha256": "8877afa9d36f110a8b72c5d2f9deffba4be4dce0f1e48dbae416fe09567937d6",
+    "exactRawSourceMatch": true
+  },
+  "viewed": [
+    "screenshots/final-desktop-native-start.png",
+    "screenshots/final-desktop-interactive-arrow.png",
+    "screenshots/final-portrait-native-resume.png",
+    "screenshots/final-portrait-stable-paused.png"
+  ]
+}

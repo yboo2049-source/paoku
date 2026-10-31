@@ -23,8 +23,8 @@ export function immutableCopy<T>(value: T): DeepReadonly<T> {
 type Position = { x: number; y: number; z: number };
 type SpatialContext = { player: Position; obstacles?: readonly (Position & { id: string })[]; coinEntities?: readonly (Position & { id: string })[]; powerUpEntities?: readonly (Position & { id: string })[] };
 /** Accepts a legacy value frame as well as the metadata envelope. No physics consumes this. */
-export function interpolateSnapshots<T extends { runId: string; discontinuity?: boolean }>(previous: T | null, current: T, alpha: number): DeepReadonly<T> {
-  if (!previous || previous.runId !== current.runId || current.discontinuity) return immutableCopy(current);
+export function interpolateSnapshots<T extends { runId: string; discontinuity?: boolean; phase?: string }>(previous: T | null, current: T, alpha: number): DeepReadonly<T> {
+  if (!previous || previous.runId !== current.runId || current.discontinuity || (current.phase !== undefined && current.phase !== 'RUNNING')) return immutableCopy(current);
   const t = Number.isFinite(alpha) ? Math.max(0, Math.min(1, alpha)) : 1;
   const before = ('context' in previous ? previous.context : previous) as SpatialContext;
   const latest = ('context' in current ? current.context : current) as SpatialContext;

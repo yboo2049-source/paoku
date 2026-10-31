@@ -1,0 +1,9 @@
+# PAO-10 P2 review revisions
+
+Continue clean `feat/pao-10-sim-core` at `014b6f6` in the same worktree. Linear review comment `80289790-4112-4c0d-a5a7-9cdff7faa22d` reproduces native keyboard cancellation outside gameplay and terminal interpolation drift. User explicitly authorizes these bounded repairs; no new product design, branch, upstream integration or other issue work.
+
+Before production changes, add regression tests and save actual failing output under `docs/evidence/PAO-10/review-fixes/`. Input handling must cancel native arrow/space behavior only when motion is actionable and the event does not originate in an interactive control. Inactive motion remains rejected; native slider/button keys remain available. Use a small queue acceptance query or necessary main predicate rather than change UI. Keep existing paused-input diagnostics and all prior tests meaningful.
+
+Snapshots must use the final committed positions for every interpolation alpha whenever phase is non-RUNNING. Running same-run interpolation remains unchanged, including continuous entities and latest discrete fields. Test a simulation tick that transitions to GAMEOVER, plus direct non-running snapshot interpolation and normal running interpolation. No renderer or physics changes.
+
+Isolate core/input implementation and unit regression from browser regression ownership. Browser tests first reproduce MENU volume arrows/start Space and PAUSED resume Space, then verify native controls and rejected paused movement after repair. Save real RED/GREEN, screenshot and console evidence in a new revision subdirectory; preserve prior PAO-10 and PAO-6 evidence. Run build, all unit tests and all 13 existing E2E plus new regression cases on exclusive port5180; view real desktop/portrait images. Review, normal hooks, commit/push this branch, write Linear evidence and return to In Review, never Done.

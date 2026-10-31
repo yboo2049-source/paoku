@@ -29,6 +29,18 @@ function drive(pattern: number[]) {
   return sim.snapshot;
 }
 describe('PAO-10 reproducible controlled simulation (legacy spawner excluded)', () => {
+  it('shows the final committed position for every alpha after a tick ends the run', () => {
+    const { Simulation } = api();
+    const sim = new Simulation(initial(), { runId: 'terminal', seed: 123,
+      afterStep: (ctx: any) => { ctx.state = 'GAMEOVER'; } });
+    sim.step();
+    expect(sim.snapshot.phase).toBe('ENDED');
+    expect(sim.snapshot.context.player.z).toBeGreaterThan(0);
+    for (const alpha of [0, 0.25, 0.5, 0.75, 1]) {
+      expect(sim.presentation(alpha).context.player.z).toBe(sim.snapshot.context.player.z);
+      expect(sim.presentation(alpha).context.score).toBe(sim.snapshot.context.score);
+    }
+  });
   it('same seed and effective inputs at 30/60/120Hz and irregular cadence agree at tick600', () => {
     const reference = drive([1 / 60]);
     for (const p of [[1 / 30], [1 / 120], [1 / 240, 1 / 80, 1 / 60]]) {

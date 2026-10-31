@@ -65,10 +65,20 @@ export class InputSystem {
   }
 
   private handleKeyDown(e: KeyboardEvent, player: PlayerEntity | undefined): void {
-    if (e.repeat || (this.canAct && !this.canAct())) return;
-    if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', ' '].includes(e.key)) {
+    // Native controls retain their keys even during gameplay. The composed
+    // path also identifies controls inside a shadow tree.
+    const interactive = (e.composedPath?.() ?? [e.target]).some(target => {
+      const element = target as HTMLElement | null;
+      return element?.isContentEditable || element?.closest?.('input, button, select, textarea, a[href], summary, [contenteditable]:not([contenteditable="false"]), [role="button"], [role="slider"]');
+    });
+    if (interactive || e.repeat) return;
+    const actionable = this.queue ? this.queue.isAccepting : !this.canAct || this.canAct();
+    if (!this.queue && !actionable) return;
+    if (actionable && ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', ' '].includes(e.key)) {
       e.preventDefault?.();
     }
+    // Inactive queued motion still reaches rejection diagnostics, without
+    // cancelling native defaults or being retained for resume.
 
     switch (e.key) {
       case 'ArrowLeft':

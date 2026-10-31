@@ -54,3 +54,16 @@ it('detaches object Map keys as deeply read-only values', () => {
   expect(copiedKey.position.x).toBe(1);
   expect(() => { copiedKey.position.x = 5; }).toThrow();
 });
+it('uses final positions at every alpha for all non-running phases', () => {
+  const { interpolateSnapshots } = api();
+  const previous = frame('a', 0, 1);
+  for (const phase of ['PAUSED', 'ENDED', 'ABANDONED']) {
+    const current = { ...frame('a', 10, 2), phase };
+    for (const alpha of [-1, 0, 0.25, 0.75, 1, 2, NaN, Infinity]) {
+      const shown = interpolateSnapshots(previous, current, alpha);
+      expect(shown.player).toMatchObject(current.player);
+      expect(shown.coinEntities).toEqual(current.coinEntities);
+      expect(shown).toMatchObject({ tick: 2, phase, score: 2, coins: 2 });
+    }
+  }
+});

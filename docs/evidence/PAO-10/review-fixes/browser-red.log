@@ -1,0 +1,100 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config docs/evidence/PAO-10/review-fixes/playwright.config.ts pao10-review-fixes.spec.ts
+
+[WebServer] (node:10588) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 3 tests using 1 worker
+
+(node:21156) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\pao10-review-fixes.spec.ts:29:1 › native-menu-slider-and-start-space (5.2s)
+(node:26240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 tests\e2e\pao10-review-fixes.spec.ts:42:1 › paused-rejects-motion-and-resume-space (4.5s)
+(node:29840) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  3 tests\e2e\pao10-review-fixes.spec.ts:61:1 › playing-interactive-arrows-do-not-move-player (3.7s)
+
+
+  1) tests\e2e\pao10-review-fixes.spec.ts:29:1 › native-menu-slider-and-start-space ────────────────
+
+    Error: MENU slider ArrowRight must retain native behavior
+
+    expect(received).toBeGreaterThan(expected)
+
+    Expected: > 60
+    Received:   60
+
+      31 |   await slider.focus(); const before = Number(await slider.inputValue());
+      32 |   await page.keyboard.press('ArrowRight');
+    > 33 |   expect.soft(Number(await slider.inputValue()), 'MENU slider ArrowRight must retain native behavior').toBeGreaterThan(before);
+         |                                                                                                        ^
+      34 |   await page.locator('#start-btn').focus();
+      35 |   await page.keyboard.press('Space');
+      36 |   await expect.poll(async () => (await snapshot(page)).phase, { timeout: 2000 }).toBe('RUNNING');
+        at D:\worker\paoku-sessions\pao-10\tests\e2e\pao10-review-fixes.spec.ts:33:104
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "RUNNING"
+    Received: "ABANDONED"
+
+    Call Log:
+    - Timeout 2000ms exceeded while waiting on the predicate
+
+      34 |   await page.locator('#start-btn').focus();
+      35 |   await page.keyboard.press('Space');
+    > 36 |   await expect.poll(async () => (await snapshot(page)).phase, { timeout: 2000 }).toBe('RUNNING');
+         |                                                                                  ^
+      37 |   // Native button activation must not also enqueue a gameplay jump.
+      38 |   expect((await snapshot(page)).context.player.isJumping).toBe(false);
+      39 |   await capture(page, 'desktop-native-start');
+        at D:\worker\paoku-sessions\pao-10\tests\e2e\pao10-review-fixes.spec.ts:36:82
+
+    Error Context: docs\evidence\PAO-10\review-fixes\red-results\pao10-review-fixes-native-menu-slider-and-start-space\error-context.md
+
+  2) tests\e2e\pao10-review-fixes.spec.ts:42:1 › paused-rejects-motion-and-resume-space ────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "RUNNING"
+    Received: "PAUSED"
+
+    Call Log:
+    - Timeout 2000ms exceeded while waiting on the predicate
+
+      51 |   expect(await snapshot(page)).toEqual(before);
+      52 |   await page.locator('#resume-btn').focus(); await page.keyboard.press('Space');
+    > 53 |   await expect.poll(async () => (await snapshot(page)).phase, { timeout: 2000 }).toBe('RUNNING');
+         |                                                                                  ^
+      54 |   expect((await snapshot(page)).context.player.lane).toBe(before.context.player.lane);
+      55 |   expect((await snapshot(page)).context.player.isJumping).toBe(false);
+      56 |   await capture(page, 'portrait-native-resume');
+        at D:\worker\paoku-sessions\pao-10\tests\e2e\pao10-review-fixes.spec.ts:53:82
+
+    Error Context: docs\evidence\PAO-10\review-fixes\red-results\pao10-review-fixes-paused-rejects-motion-and-resume-space\error-context.md
+
+  3) tests\e2e\pao10-review-fixes.spec.ts:61:1 › playing-interactive-arrows-do-not-move-player ─────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      64 |   await page.locator('#hud-pause-btn').focus(); await page.keyboard.press('ArrowLeft');
+      65 |   await page.waitForTimeout(150);
+    > 66 |   expect((await snapshot(page)).context.player.lane).toBe(before.context.player.lane);
+         |                                                      ^
+      67 |   expect(await page.evaluate(() => (window as any).__GAME_SENSOR__.getInputLog())).toEqual([]);
+      68 |   await capture(page, 'desktop-interactive-arrow');
+      69 | });
+        at D:\worker\paoku-sessions\pao-10\tests\e2e\pao10-review-fixes.spec.ts:66:54
+
+    Error Context: docs\evidence\PAO-10\review-fixes\red-results\pao10-review-fixes-playing-3ca7d-e-arrows-do-not-move-player\error-context.md
+
+  3 failed
+    tests\e2e\pao10-review-fixes.spec.ts:29:1 › native-menu-slider-and-start-space ─────────────────
+    tests\e2e\pao10-review-fixes.spec.ts:42:1 › paused-rejects-motion-and-resume-space ─────────────
+    tests\e2e\pao10-review-fixes.spec.ts:61:1 › playing-interactive-arrows-do-not-move-player ──────

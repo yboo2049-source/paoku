@@ -11,6 +11,50 @@ const command = (sequence: number, tick = 1, runId = 'run-a') =>
   ({ runId, tick, sequence, action: 'LEFT', source: 'REPLAY' });
 
 describe('PAO-10 tick input', () => {
+  it('leaves inactive native arrow/space keys available while diagnosing rejected movement', () => {
+    const q = queue(); q.setAccepting(false);
+    const listeners = new Map<string, Function>();
+    vi.stubGlobal('window', { addEventListener: (k: string, f: Function) => listeners.set(k, f), removeEventListener: vi.fn() });
+    const input = new InputSystem(); input.initQueue(q, () => 0);
+    try {
+      for (const key of ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', ' ']) {
+        const preventDefault = vi.fn();
+        listeners.get('keydown')!({ key, preventDefault });
+        expect(preventDefault).not.toHaveBeenCalled();
+      }
+      expect(q.consume(1)).toEqual([]);
+      expect(q.diagnostics.paused).toBe(5);
+    } finally { input.dispose(); vi.unstubAllGlobals(); }
+  });
+  it('keeps native control keys out of gameplay even while the run accepts movement', () => {
+    const q = queue();
+    const listeners = new Map<string, Function>();
+    vi.stubGlobal('window', { addEventListener: (k: string, f: Function) => listeners.set(k, f), removeEventListener: vi.fn() });
+    const input = new InputSystem(); input.initQueue(q, () => 0);
+    try {
+      for (const tag of ['input', 'button', 'select', 'textarea', 'contenteditable']) {
+        const preventDefault = vi.fn();
+        const target = { closest: (selector: string) => selector.includes(tag) ? {} : null };
+        listeners.get('keydown')!({ key: tag === 'input' ? 'ArrowRight' : ' ', target, preventDefault });
+        expect(preventDefault, tag).not.toHaveBeenCalled();
+      }
+      expect(q.consume(1)).toEqual([]);
+    } finally { input.dispose(); vi.unstubAllGlobals(); }
+  });
+  it('still consumes actionable canvas arrows and space immediately into the next tick', () => {
+    const q = queue();
+    const listeners = new Map<string, Function>();
+    vi.stubGlobal('window', { addEventListener: (k: string, f: Function) => listeners.set(k, f), removeEventListener: vi.fn() });
+    const input = new InputSystem(); input.initQueue(q, () => 0);
+    try {
+      for (const key of ['ArrowRight', ' ']) {
+        const preventDefault = vi.fn();
+        listeners.get('keydown')!({ key, target: { closest: () => null }, preventDefault });
+        expect(preventDefault).toHaveBeenCalledOnce();
+      }
+      expect(q.consume(1).map((c: any) => c.action)).toEqual(['RIGHT', 'JUMP']);
+    } finally { input.dispose(); vi.unstubAllGlobals(); }
+  });
   it('consumes opposite lane commands in sequence order, never arrival order', () => {
     const q = queue();
     q.enqueue(command(3), 0); q.enqueue({ ...command(1), action: 'RIGHT' }, 0); q.enqueue(command(2), 0);

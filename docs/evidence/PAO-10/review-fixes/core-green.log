@@ -1,0 +1,12 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/inputQueue.test.ts tests/unit/snapshot.test.ts tests/unit/simulation.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-10
+
+
+ Test Files  3 passed (3)
+      Tests  22 passed (22)
+   Start at  00:49:06
+   Duration  460ms (transform 180ms, setup 0ms, import 248ms, tests 56ms, environment 0ms)

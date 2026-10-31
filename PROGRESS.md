@@ -2,6 +2,15 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-10-31] PAO-7/8/9 一致性审查与下一批派发规划
+
+- 已读取三个独立工作树的固定提交ea6867d/be6c7d5/2eac04b、Linear正文/送审评论和PAO-6至26的原生依赖。PAO-6为Done，PAO-7/8/9保持In Review；交付完成不等于最终人工冻结。
+- [审查报告](docs/reviews/2026-10-31-pao-7-8-9-consistency.md)：限定PAO-10技术工作go；4条预算/原点/写权差异按职责裁定。贴图预算归PAO-8、Q0另配LOD、坡道边界转换一次、PAO-10/14入口串行；色板、机型和玩法假设不代替用户决定。
+- 文档先行：已同步主架构和系统工作流的M1有效口径与权威来源，旧示例不再作为本批实现契约。目标为固定步长、输入tick/sequence、模拟单写与深只读插值快照；步长/补步上限需任务测试验证，保持兼容玩法。
+- 机器计划输出至`D:/worker/paoku-sessions/harness/dispatch-plan.json`；仅安排PAO-10在`D:/worker/paoku-sessions/pao-10`独立工作树执行，max_parallel=2但本批只有一个入口写方。PAO-14因main.ts/types共享延期；11/12/13按前置等待，正式资产待人工冻结。
+- 派发基线使用本轮文档固定提交，避免main缺少PAO-6及审查材料；不合并三个送审分支。只生成计划，本Dispatcher未启动实现、未修改游戏代码，也不宣称PAO-10已完成。
+- 验证：纯文档内容/引用审查、git diff --check及JSON解析与约束校验；提交正常hooks，构建/测试及推送结果以本轮交付日志与JSON notes为准。执行者仍须先失败测试，再通过build/test/e2e并查看真实截图，最后提交push并送In Review。
+
 ## [2026-10-31] 全面重构规划
 
 - 已确认用户要求整体改造，覆盖场景、角色动作、渲染、全 UI、斜坡、火车和道具。

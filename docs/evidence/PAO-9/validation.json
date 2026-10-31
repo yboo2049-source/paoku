@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-31T09:02:20.110Z",
+  "file": "docs/architecture/rebuild-contracts.md",
+  "sha256NormalizedLf": "052a12255183e6b32c8fed16e71b2928f60968c78eea910dfdec64f0b65c08bd",
+  "localLinkCount": 4,
+  "missingLocalLinks": [],
+  "missingRequiredTerms": [],
+  "speedExample": {
+    "mps": 18,
+    "kmh": 64.8
+  },
+  "coinExample": {
+    "pickupCount": 30,
+    "pickupCoins": 30,
+    "rewardCoins": 50,
+    "earnedCoins": 80
+  },
+  "status": "PASS",
+  "limitations": "Static document checks only; no new browser evidence or implementation acceptance."
+}

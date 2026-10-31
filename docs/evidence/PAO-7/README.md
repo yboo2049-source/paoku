@@ -1,5 +1,7 @@
 # PAO-7 规划交付与验证报告
 
+> v0.2 一致性修订入口：[本轮修订与校验清单](revision-consistency.md)、[规范复算记录](revision-validation.json)。下文保留初次 v0.1 交付与浏览器预览的历史记录；当前贴图/LOD/坡道导入要求以风格规格 v0.2 为准，本轮未重采游戏或概念截图。SHA256SUMS 对应当前文件版本。
+
 日期：2026-10-31（Asia/Shanghai）。工作目录：`D:\worker\paoku-sessions\pao-7`。任务分支：`docs/pao-7-planning`。起始提交：`e8d3101`。Linear 目标状态：In Review，等待人类同屏小样评审；本报告不代表最终风格冻结。
 
 ## 交付范围

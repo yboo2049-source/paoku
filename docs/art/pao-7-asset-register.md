@@ -1,6 +1,6 @@
 # PAO-7 资产、制作来源与许可登记
 
-> v0.1 ｜ 2026-10-31（Asia/Shanghai）｜ 规划清单，待评审；配套 [风格与制作规格](rebuild-style-guide.md)。
+> v0.2 ｜ 2026-10-31（Asia/Shanghai）｜ 规划清单，待评审；配套 [风格与制作规格](rebuild-style-guide.md)。
 
 本表区分“现有表现有基线记录”“计划制作”“本次概念文档”。没有据文件名、历史完成声明或下载可用性推断资产权利；PAO-6并未完成逐件许可证审核，本次也没有审核现有模型二进制或源文件。P0=缺少会阻塞玩法样板验收，P1=体验明显下降，P2=装饰扩展。本表不代表新的游戏功能或其他Linear任务已被执行。
 
@@ -12,7 +12,7 @@
 | runner_motion / 13个具名clip | P0：跑跳滑铲换道受击及失败 | 保留动作能力，替换正式动作；细项见规格表（jump与slide拆段） | 原创手工关键帧/经授权动作精修；拟交同一角色源与clip事件表 | 统一骨架、30fps、原地动作；未交付，外部动作若采用须独立授权 |
 | chaser / 1角色族 | P1：追捕反馈与取景完整性 | PAO-6记录追捕实体局部出框；需独立构图复核 | 优先原创同骨架变体，`source/chaser/`，不复制现实执法标识 | GLB＋动作复用清单；未制作，许可待登记 |
 | train_head / 1；train_car / 1 | P0：完整列车和可站车顶验收 | 基线有程序化部件；按新家族重做，不删玩法能力 | 原创模块化建模，`source/train/`，共用图集 | 头/厢完整结构、LOD0/1/2、支撑/碰撞/遮挡代理说明；未制作 |
-| ramp / 1可参数化样板 | P0：地面→坡→车顶连通 | PAO-6固定夹具坡中躯干被坡体遮住；需替换盒体表现 | 原创真实斜面，`source/ramp/`；几何数据接口依PAO-9 | 顶面、侧面、边缘及连接点，不能交平盒；未制作 |
+| ramp / 1可参数化样板 | P0：地面→坡→车顶连通 | PAO-6固定夹具坡中躯干被坡体遮住；需替换盒体表现 | 原创真实斜面，`source/ramp/`；几何数据接口依PAO-9 | 坡脚资产原点→逻辑底面中心显式矩阵及单次应用状态；顶面、侧面、端点与代理；不能交平盒；未制作 |
 | obstacle_low / 1；obstacle_high / 1 | P0：跳跃/滑铲语义 | 保留高低障碍类型，新造型区分横杆高度 | 原创模型 `source/obstacles/`，共用危险图集 | GLB＋独立代理；每类独特剪影与红色斜纹；未制作 |
 | coin / 1 | P0：奖励识别与拾取反馈 | 基线有金币；替换强发光与标识 | 原创圆币与凹印，`source/collectibles/` | 低面数GLB、共享材质、拾取挂点；未制作 |
 | powerup_magnet / 1 | P0：磁铁识别与激活 | 基线为类型立方体表现，F有激活证据 | 原创U形磁铁，`source/powerups/` | 模型＋同形HUD图标＋拾取/持续/结束视觉约定；未制作 |
@@ -63,10 +63,37 @@
 
 作者源包含模型/骨架/分层贴图/动作，导出包包含低模GLB、必要纹理、每个LOD和clip/挂点清单；单独存许可证与原始凭证。没有授权证据的角色/动画/音频不能因模型可打开而放行。字体优先系统字体回退；引入网络或打包字体须新增来源与授权行。音频迁移仍需另案审核，此任务不制作或授予其许可。
 
+### v0.2技术元数据与分档交接
+
+以下是未来生产登记要求，本轮没有产生这些模型/贴图文件，也没有实施资源加载器。美术色板、比例、模型品质和设备覆盖仍待人工冻结。分档上限沿用 [PAO-8固定提交§4](https://github.com/yboo2049-source/paoku/blob/be6c7d52dc02bb9aeb9e5f42114ab7b7e8ef4f89/docs/performance/target-device-budget.md#4-候选预算及计算口径)，坐标交接沿用 [PAO-9修订固定提交§2.1–2.3及§3](https://github.com/yboo2049-source/paoku/blob/59fc682c33623150343f414b706e9771b8b6cbb4/docs/architecture/rebuild-contracts.md#21-坡脚资产原点到逻辑底面中心的交接)。
+
+| 交付项 | 每件必填元数据 | 门禁与责任 |
+|---|---|---|
+| GPU唯一贴图 | `textureResourceId, contentHash, qualityTier, dimensions, format, mipLevels, layers, channelMeaning, colorSpace, sharedBy, gpuObjectCount, estimatedResidentBytes, fallbackFormat, unloadOwner` | 按真实GPU对象去重，不把共享引用当多张；相同内容若重复上传则重复计；PAO-15/16/19提交，表现/资源层复核 |
+| 分档几何 | `assetId, lodId, sourceTriangles, visibleInstances, mainPassDrawIndexCount, submeshRanges, repeatFactor, transitionOverlap, shadowPassTriangles, fxPassTriangles` | Q0同屏实体不删、危险剪影不缩，按实际主pass提交含实例/重复倍数≤80k；阴影/FXpass另报但不豁免总draw call；PAO-16/17采集 |
+| 原点与归一化 | `assetId, revision, sourceAxes, sourceUnits, N, assetOrigin, logicalOrigin, localForward, unitScale, dimensions(D/H), cA, T_asset_to_logic, transformConvention, appliedAt, appliedCount, bakedOrChildTransform, definitionRevision, endpointMarkers` | N后再重基，appliedCount=1；模型导入所有者负责；逻辑B/Surface/代理不另保存可写美术偏移 |
+| 资源交接 | `residentBefore, candidateSet, residentAtPeak, sharedRefCounts, disposeCompletion, residentAfter, fallbackResult` | 当前驻留＋候选新套同时计峰值，仅一套PBR或一个atlas串行替换，确认释放再下一套；不得按未来卸载提前扣账 |
+
+唯一贴图清单固定为8套PBR（24张）＋UI/FX各1张，共26张；组别、分辨率和逐项MiB以风格规格§6.2为唯一分配表，不因实例/LOD/动作或多面板增生副本。角色2套、车1套、坡/障碍1套、金币/四道具1套、近景2套、远景1套；天空纯参数，无skybox/environment/reflection/IBL纹理，DOM系统字体无额外WebGL字形图集，四FX同用一个atlas。新增贴图（包括字形、立方体、白色占位或额外FX）必须在分配表中替换/重分配后才能入库。
+
+| 档位 | 保守RGBA8+mip稳态MiB | 最大一套PBR/atlas交接预留MiB | 同档串行当前常驻＋候选新套峰值MiB | PAO-8上限MiB |
+|---|---:|---:|---:|---:|
+| Q2 | 110.6667 | 16 | 126.6667 | 128 |
+| Q1 | 45.6667 | 16 | 61.6667 | 64 |
+| Q0 | 24.6667 | 4 | 28.6667 | 32 |
+
+按表列分辨率RGBA8 fallback本身可通过算术分配，不依赖ASTC/ETC2/BC压缩才能过限；实际压缩仍按块另算并记录。只常驻当前主题和一个装备外观，共享资源引用归零才卸载；不得全量预加载多主题/多皮肤或把Q2+Q0整套并存。交接时旧套仍占内存，候选新套上传完成后换引用，再释放旧套；同一预留不能被换装、主题切换和atlas更新各花一次。无余量时延后可选加载并核验释放，不删除路线必需资产。RT/深度/阴影附件另按PAO-8分配，贴图估算不是总显存或实测。
+
+表内峰值用于同档交接；跨档逐步复算并登记 `sourceTier / targetTier / transitionBudgetTier / targetActivationTime`。降档在源档上限内过渡，旧资源清退且≤目标档上限、目标资源与读路就绪后才宣告目标生效；Q2→Q0过程不能以≤128MiB冒充≤32MiB。升级只在设备允许目标档后按目标上限串行交接。无法承受源档的设备首次直接请求目标档或安全卸载后启动，不先载高档；记录旧/混合资源和新候选的真实峰值，不能漏算过渡。
+
+Q0几何登记保留源LOD0对照114,400面，同时交出风格规格§6.1的相同数量LOD方案：角色24,000、列车12,000、坡/障碍6,400、金币/道具10,000、近景12,000、远景4,000、主pass效果2,000，共70,400，实际主pass额外提交共用9,600余量。不能以源文件加总代替最密集帧引擎采样；所有危险/奖励/道具保留，减面只减细节。每件LOD需交轮廓/支撑边缘保持说明、切换策略与实际提交证据；没有证据时状态仍为规划候选。
+
+坡道算例统一为D=12/H=3，资产A沿+Z上坡、坡脚0；坡脚→逻辑底面中心向量 `cA=(0,0,+6)`，同一点A→L重基为 `T_asset_to_logic=Translate(0,0,-6)`，不能把向量直接当放置偏移。逻辑B=(0,5,100)时，坡脚世界(0,5,94)、坡中(0,6.5,100)、坡顶(0,8,106)；相邻3m高18m深列车底面中心(0,5,115)，车顶入口(0,8,106)。源模型/代理若在A中，导入一次转到L；Surface与契约代理已经在L中，运行时仅加B，不再套资产矩阵。作者源烘焙和模型子节点变换二选一，不能同时应用；逻辑不得补偿。导入验收要求模型通行面、Surface与代理声明的脚/中/顶和车顶入口共同端点一致（AABB仅检查包围，不用水平顶面充当坡面），建议接缝误差1e-4m待PAO-11/12确认；对应PAO-9 RAMP-01~04的运行验证尚未进行。
+
 ## 4. 样板交接次序与待评审项
 
 1. 评审同屏概念、六语义、比例和本规格；结果写评审人/日期/版本/提交号，当前保持待评审。
-2. PAO-8确认设备与预算，PAO-9确认尺寸/坐标/支撑几何/事件；此处仅列依赖，不操作其他任务。
+2. 按PAO-8分档上限与PAO-9修订§2.1–2.3准备资源manifest，核对唯一驻留/交接峰值、Q0实际提交、坡脚重基及接缝端点；设备与具体美术仍待冻结，此处仅列依赖，不操作其他任务。
 3. 先交角色白模＋车/坡/障碍的一套完整灰盒，检查剪影、坡面和脚底；本轮没有制作灰盒。
 4. 单主题目标品质样板在引擎里验证，再扩充动作、道具、HUD与主题；正式资产每件完成技术及来源审核后才标记“可入库”。
 

@@ -1,6 +1,6 @@
 # 网页版《地铁跑酷》产品需求文档 (Master PRD)
 
-> 2026-10-31 规划补充：用户要求全面重构，范围覆盖场景、人物动作、渲染、完整 UI、斜坡、火车及道具和底层系统。目标、现状证据、候选风格、数据契约草案、M0–M4 路线图及 R-01–R-10 验收见 [整体重构设计稿](superpowers/specs/2026-10-31-paoku-complete-rebuild-design.md)。该稿待评审，尚未成为实施基线；下文旧版功能条款不代表新方案已验收。正式批准后逐项同步替换，尤其统一 Y 高度/Z 前进、支撑面和事件契约。
+> 2026-10-31 规划补充：用户已批准全面重构总体方案及明亮风格化城市轨道方向，范围覆盖场景、人物动作、渲染、完整 UI、斜坡、火车及道具和底层系统。目标、现状证据、数据契约草案、M0–M4 路线图及 R-01–R-10 验收见 [整体重构设计稿](superpowers/specs/2026-10-31-paoku-complete-rebuild-design.md)，[Linear 任务索引](plans/2026-10-31-paoku-rebuild-linear-plan.md)记录全部待办。本轮仅方案和任务管理；下文旧版功能条款不代表新方案已验收。执行 PAO-9 时统一 Y 高度/Z 前进、支撑面和事件契约并逐项替换旧口径。
 
 > **范式说明**：本项目严格遵循 [Superpowers Framework & Harness Engineering](https://github.com/obra/superpowers) 范式。主 Agent 仅作为**任务调度者 (Dispatcher)** 与系统边界约束者。具体的 3D 渲染、物理引擎、UI 逻辑与测试由职责单一的独立 **Subagent** 协作完成。
 

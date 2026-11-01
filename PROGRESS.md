@@ -2,6 +2,12 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-01] PAO-13验收与PAO-14派发准备
+
+- 独立验收a4486a2：build、178/178单测、完整28/28 E2E通过；已查看真实桌面/竖屏截图并复核代码边界、服务源码身份与历史证据恢复，未发现本批阻塞问题。有限关卡目录验收通过，GLB仍为未标定数据绑定，不代表新美术已接入。
+- [验收与交接记录](docs/reviews/2026-11-01-pao-13-review.md)说明物理抽样盲区及旧视觉限制；PAO-13可设Done。
+- 已从a4486a2准备PAO-14工作树及codex/pao-14-application分支，npm ci成功；仅准备，保持Backlog，由用户在该目录聊天触发实施。范围为应用状态、幂等结算、商店/存档服务及最小适配，完整约束回写Linear，不重做美术/渲染。
+
 ## [2026-11-01] 远程GLB交付检查与关卡任务交接
 
 - 已fetch origin/main至622e7da，在独立glb-review工作树检查新增21个GLB，未合并或覆盖PAO-13的M1代码。

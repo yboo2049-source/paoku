@@ -1,0 +1,2937 @@
+{
+  "schema": "paoku/glb-manifest@1",
+  "generated_at": "2026-11-01T12:43:46+08:00",
+  "scope": "public/models 下 22 个 GLB（622e7da 新增 21 个 + 旧 player.glb）。仅整理资产说明，未修改模型、贴图、游戏实现。",
+  "source": {
+    "repo": "https://github.com/yboo2049-source/paoku.git",
+    "asset_commit": "622e7da",
+    "asset_commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+    "read_only_worktree": "D:/worker/paoku-sessions/glb-review (detached HEAD, clean)",
+    "statistics_reexamined_from": "docs/evidence/glb-handoff-2026-11-01/metadata.json",
+    "statistics_reuse_rule": "仅当 SHA-256 与既有统计记录的资产一致才复用；本轮 22/22 文件的三角面、MiB、包围盒、贴图尺寸、skins/animations 与 metadata.json 逐字段一致，故统计整体复用。",
+    "hash_note": "既有 metadata.json 未记录文件哈希；本轮首次为 22 个文件计算 SHA-256，并以该值作为资产版本标识（预览、统计均绑定此值）。",
+    "evidence_doc": "docs/assets/2026-11-01-glb-handoff-review.md",
+    "notes_doc": "docs/assets/glb-visual-notes.md"
+  },
+  "method": {
+    "parse": "GLB 容器解析：JSON/BIN 直读，按节点变换累计 POSITION 包围盒；三角面按 indices/3 统计；贴图尺寸解码自内嵌图像。",
+    "colors": "仅采样材质 baseColorTexture 对应图像的 96px 缩略 5 色量化结果，用于判断主体配色，非视觉验收。",
+    "preview": "复用已有关闭态 Babylon.js 导入截图（见各资产 previews），本轮未重新渲染、未调用生图。",
+    "not_accepted_by_this_file": [
+      "视觉验收",
+      "米制尺寸",
+      "碰撞代理",
+      "骨骼/动画完整性",
+      "真机性能与显存"
+    ]
+  },
+  "conventions": {
+    "status_enum": {
+      "semantics.preview-confirmed": "语义与外观均有真实导入截图支撑（仍不代表游戏内品质验收）",
+      "semantics.preview-partial": "仅有部分角度预览，未覆盖正反面",
+      "semantics.parsed-only": "仅由 GLB 解析（几何比例 + 贴图配色）推断，未经预览核对",
+      "unverified": "无数据支撑，禁止据文件名或常识补全",
+      "pending-calibration": "已解析但未与逻辑米制契约对齐"
+    },
+    "units_warning": "bounds 为 glTF 原始单位（约 1 单位归一化），不是米；不得直接作为碰撞代理或宽度/高度。",
+    "logical_targets_m": {
+      "LANE_WIDTH": 3.0,
+      "PLAYER_HEIGHT": 1.8,
+      "TRAIN_WIDTH": 2.4,
+      "TRAIN_HEIGHT": 3.0,
+      "LOW_OBSTACLE": [
+        2.2,
+        1.0
+      ],
+      "HIGH_OBSTACLE": [
+        2.2,
+        1.8
+      ],
+      "RAMP": [
+        2.4,
+        3.0
+      ]
+    },
+    "runtime_today": "运行时仅加载 /models/player.glb（src/render/babylon.ts），其余 21 个新资产尚未接线。"
+  },
+  "summary": {
+    "asset_count_total": 22,
+    "asset_count_new": 21,
+    "bytes_new_total": 156708500,
+    "MiB_new_total": 149.45,
+    "triangles_new_total": 1430582,
+    "images_new_total": 41,
+    "all_images_4096": true,
+    "skins_new_total": 0,
+    "animations_new_total": 0,
+    "long_axis_distribution_new": {
+      "X": 10,
+      "Y": 10,
+      "Z": 1
+    },
+    "preview_confirmed_assets": [
+      "train_metro",
+      "train_ramp_or_car"
+    ],
+    "preview_partial_assets": [
+      "character_runner"
+    ],
+    "preview_missing_count": 19
+  },
+  "known_issues_global": [
+    "622e7da 新增 21 个 GLB 均无 skins / animations（本轮复核仍成立，0 骨骼 0 动画），角色类不能直接播放跑跳滑。",
+    "41 张内嵌贴图全部为 4096×4096，无分档、无 Draco/meshoptimizer 压缩；按 RGBA8 + 完整 mip 估算单张约 85.33 MiB（既有报告估算口径，非 GPU 实测）。",
+    "22 个资产均无具名 collision/collider/proxy/socket/support/pivot 节点（named_proxy_nodes 全为空）。",
+    "长轴方向不统一：X 轴 10 个、Y 轴 10 个、Z 轴 1 个，说明归一化导出未统一朝向轴；火车/车厢均为 X 长轴，沿 Z 前进需旋转 ±90°。",
+    "运行时仍只加载 player.glb，21 个新资产未接线；“文件已入库”不等于“游戏内已替换”。",
+    "全部材质为单材质单贴图集、alphaMode=OPAQUE、无 emissive；信号灯、护盾、金币的发光/透明表现需运行时另做。",
+    "文件名与内容不符 2 例：train_metro.glb 实为带黄色坡道的工程车，train_ramp_or_car.glb 实为客运车厢/头车（均经预览确认）。"
+  ],
+  "unverified_global": [
+    "视觉验收：21 个新资产中 18 个无任何预览；2 个预览仅单角度，1 个（角色跑者）只有背面。",
+    "米制尺寸与统一缩放：未与 3.0m 车道、2.4×3.0m 火车、1.0/1.8m 障碍标定。",
+    "朝向：前进方向、正反面、坡道/门架横跨轴均未运行时验证。",
+    "可走面与端点：车顶、坡脚、坡顶、门架净空、隧道洞口净宽均无标定数据。",
+    "骨骼与动画：新资产一律无；旧 player.glb 缺 jump/slide/stumble。",
+    "性能：显存、draw call、真机帧率未测。",
+    "版权与来源许可：未随资产提供作者/许可证记录。"
+  ],
+  "next_steps": [
+    "导入转换一次并写入注册表：朝向（含火车 ±90°）、原点、统一缩放、逻辑尺寸映射。",
+    "碰撞与支撑沿用简化代理/已验收逻辑几何，禁止用 GLB 原始包围盒当碰撞体。",
+    "按档位减面与贴图分档（同一批 4096 贴图是全库成本主因），并补 LOD。",
+    "组合段（带坡工程车）只保留一个视觉根，坡道端点待标定后再替换逻辑几何视觉。",
+    "角色资产另交绑定与动画，不得按旧 player.glb 动画名假设。",
+    "首屏分批加载：149.45 MiB 不可全量入首局。",
+    "补齐来源、作者与许可证记录。"
+  ],
+  "assets": [
+    {
+      "id": "character_dog",
+      "path": "public/models/character_dog.glb",
+      "sha256": "43a5351457c1cee6e78c5d1966dc25ca06a4295eb5bb3b0baef58f9d04af457f",
+      "bytes": 2335700,
+      "MiB": 2.23,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "四足犬类（警犬）静态网格",
+        "real_content": "单网格犬形模型，棕色系贴图，站立姿态；无骨骼、无动画。名称与内容不冲突，但“可跑动”的追捕语义无数据支撑。",
+        "suggested_use": "追捕方静像 / 远景摆件；不可作为跑动警犬直接接入",
+        "gameplay_binding": null
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "棕褐毛色系",
+        "palette_sampled_hex": [
+          "#4a2716",
+          "#c97232",
+          "#662a1a",
+          "#945027"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "长 1.00、高 0.91（长轴 Z）；四足/躯干/头部为按包围盒与贴图推断，未预览"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 10396,
+        "vertices": 9551,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_mat_048b3cec-f758-4c2b-bd99-6d6adbbe5727"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Tripo",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.2756,
+          0.0,
+          -0.4998
+        ],
+        "max": [
+          0.2756,
+          0.9106,
+          0.4998
+        ],
+        "size": [
+          0.5513,
+          0.9106,
+          0.9995
+        ],
+        "long_axis": "Z",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_048b3cec-f758-4c2b-bd99-6d6adbbe5727"
+        ],
+        "parts": [
+          "整体单一网格，无部件拆分"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "无 skins、无 animations：无法直接播放追捕跑动",
+        "贴图 4096×4096、10,396 三角面，未做 LOD"
+      ],
+      "unverified": [
+        "头朝向（+Z/-Z）",
+        "正面外观",
+        "四肢是否独立可动"
+      ],
+      "integration_requirements": [
+        "若需动态追捕，须另交绑定与动画；仅作静态剪影时建议减面至 ≤3k 并配 LOD"
+      ]
+    },
+    {
+      "id": "character_police",
+      "path": "public/models/character_police.glb",
+      "sha256": "ca0b85b1e1581d49d45720aa106f027e2560ca7733fe872d51156265809d9f47",
+      "bytes": 14794364,
+      "MiB": 14.11,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "直立人形警官静态网格",
+        "real_content": "单网格人形，深藏青制服 + 肤色面部贴图，直立 A/T 姿态；无骨骼、无动画。14.11 MiB、147,371 三角面，为全库单文件面数最高。",
+        "suggested_use": "追捕警官视觉（静态）；需要跑动动画时另交绑定",
+        "gameplay_binding": null
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "深藏青（#1f2747/#171d2d）+ 肤色（#f3a97d）",
+        "palette_sampled_hex": [
+          "#1f2747",
+          "#171d2d",
+          "#f3a97d",
+          "#0e162f"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "0.60 × 0.98 × 0.24（长轴 Y、Z 向很薄），按比例属直立人形；部位细节未预览"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 147371,
+        "vertices": 227913,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_mat_b707bb1a-6d7c-4b59-a819-0da7e175a4c3"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/png",
+            "slot": "normal"
+          },
+          {
+            "index": 1,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          },
+          {
+            "index": 2,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "metallicRoughness"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.2977,
+          -0.0008,
+          -0.1183
+        ],
+        "max": [
+          0.2974,
+          0.9789,
+          0.1175
+        ],
+        "size": [
+          0.5951,
+          0.9798,
+          0.2358
+        ],
+        "long_axis": "Y",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_b707bb1a-6d7c-4b59-a819-0da7e175a4c3"
+        ],
+        "parts": [
+          "整体单一网格，无部件拆分"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "147,371 三角面 + 3 张 4096 贴图，同为最大单文件之一",
+        "无 skins/animations",
+        "材质 metallicRoughness 贴图配色异常（第三张图为饱和黄/红），是否误打包待验证"
+      ],
+      "unverified": [
+        "正面外观",
+        "面部/徽章细节",
+        "第三张贴图的实际槽位语义"
+      ],
+      "integration_requirements": [
+        "必须先减面与贴图分档；作为追捕者需单独绑定，不能按旧 player.glb 动画名套用"
+      ]
+    },
+    {
+      "id": "character_runner",
+      "path": "public/models/character_runner.glb",
+      "sha256": "0f475ed22a2abfbbb9b4cb3069f5c9b131110847b23bd68fbcdff4b3baa797d9",
+      "bytes": 8098880,
+      "MiB": 7.72,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "直立人形跑者（橙色连帽卫衣）",
+        "real_content": "35 节点 / 34 部件的人形模型，橙色卫衣 + 深蓝长裤 + 白绿运动鞋，双臂自然下垂；无骨骼（34 部件为独立网格而非蒙皮）。",
+        "suggested_use": "主角视觉体候选；当前无可直接播放的跑跳滑动画",
+        "gameplay_binding": null
+      },
+      "appearance": {
+        "status": "semantics.preview-partial",
+        "colors": "橙红上身（#e46f51/#b15e49）、深蓝下身（#222a45）、浅肤色（#b88e7e）",
+        "palette_sampled_hex": [
+          "#222a45",
+          "#e46f51",
+          "#b15e49",
+          "#703833"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "兜帽、卫衣、长裤、成对运动鞋；0.61 × 0.98 × 0.19（长轴 Y，直立）"
+      },
+      "previews": [
+        {
+          "path": "docs/evidence/glb-handoff-2026-11-01/character_runner-front.png",
+          "view": "back",
+          "status": "preview-partial",
+          "asset_version_sha256": "0f475ed22a2abfbbb9b4cb3069f5c9b131110847b23bd68fbcdff4b3baa797d9",
+          "file_sha256": "55e2cbe3721aa3ee91cf0ea3f811a0d81cbf38fa8793c2a770905921c4efbf28",
+          "note": "文件名写 front，实际为背面视角；正面未验证"
+        }
+      ],
+      "parse": {
+        "triangles": 26268,
+        "vertices": 26372,
+        "meshes": 34,
+        "primitives": 34,
+        "materials": 1,
+        "material_names": [
+          "Material"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "normal"
+          },
+          {
+            "index": 1,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Tripo",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.3056,
+          0.0,
+          -0.0947
+        ],
+        "max": [
+          0.3055,
+          0.9791,
+          0.0944
+        ],
+        "size": [
+          0.611,
+          0.9791,
+          0.1891
+        ],
+        "long_axis": "Y",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "仅确认了预览角度可见的朝向；前进方向/正反面未做运行时验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 35,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "ParentNode"
+        ],
+        "parts": [
+          "ParentNode 下 34 个 tripo_part_N 子网格（无序号语义，需人工标注部位）"
+        ],
+        "splittable_by_part": true,
+        "visual_root_recommendation": "34 个部件共用一个视觉根，需按部件建映射后才能做局部动画",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "无 skins/animations，34 部件非蒙皮，不能直接按骨骼驱动",
+        "部件命名无语义（tripo_part_0..33），程序化肢体动画需先建映射",
+        "7.72 MiB / 26,268 三角面 / 2 张 4096 贴图"
+      ],
+      "unverified": [
+        "正面与面部（现有预览仅为背面）",
+        "部件与肢体的对应关系",
+        "手指等细节几何质量"
+      ],
+      "integration_requirements": [
+        "要么按部件映射做简单肢体摆动，要么另交绑定；两种路径都需先确认正面朝向"
+      ]
+    },
+    {
+      "id": "env_gantry",
+      "path": "public/models/env_gantry.glb",
+      "sha256": "88be31b77e98e840640640844bc802296341ec245c87b59b14bd0dcf0313381e",
+      "bytes": 9967888,
+      "MiB": 9.51,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "跨轨金属门架",
+        "real_content": "中性灰金属门架体块，0.98 × 0.67 × 0.14（长轴 X、Z 向很薄），符合“单片门架”而非整跨结构；无碰撞/支撑节点。",
+        "suggested_use": "环境装饰、远景重复件（thinInstance 复用）",
+        "gameplay_binding": null
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "中性灰（#adb1b7/#c0c3c8/#9498a0）",
+        "palette_sampled_hex": [
+          "#adb1b7",
+          "#c0c3c8",
+          "#9498a0",
+          "#9fa3aa"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "0.98 × 0.67 × 0.14 的片状体，按比例推断为门形框体；厚度仅 0.138 单位（未预览）"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 109871,
+        "vertices": 129578,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_mat_4ea410a3-6b4a-41b9-8d8d-bba8dfcf1569"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/png",
+            "slot": "normal"
+          },
+          {
+            "index": 1,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.4902,
+          -0.0006,
+          -0.0691
+        ],
+        "max": [
+          0.4902,
+          0.6672,
+          0.0689
+        ],
+        "size": [
+          0.9803,
+          0.6678,
+          0.138
+        ],
+        "long_axis": "X",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_4ea410a3-6b4a-41b9-8d8d-bba8dfcf1569"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "109,871 三角面为环境件最高，与“远景重复件”定位冲突，必须减面 + LOD",
+        "无碰撞体",
+        "Z 向仅 0.138，若期望整跨门架需确认是否只导出单片"
+      ],
+      "unverified": [
+        "实际装配朝向（面向 +Z 还是 +X）",
+        "是否含霓虹灯带（材质无 emissive）"
+      ],
+      "integration_requirements": [
+        "按远景 LOD 处理，不要每帧重复绘制；不可通行，不参与碰撞"
+      ]
+    },
+    {
+      "id": "env_tunnel_arch",
+      "path": "public/models/env_tunnel_arch.glb",
+      "sha256": "353a5b37281ec1a19262926626180361474192cccb1a4b332d464a144f70dfca",
+      "bytes": 18020724,
+      "MiB": 17.19,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "隧道拱门体块",
+        "real_content": "灰褐色隧道口体块，0.86 × 0.98 × 0.85（近立方），17.19 MiB 为全库最大文件；无具名洞口/通道节点。",
+        "suggested_use": "隧道入口遮挡与远景氛围",
+        "gameplay_binding": null
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "灰褐（#817972/#565554/#9a9a9c）+ 浅灰（#d0d0d1）",
+        "palette_sampled_hex": [
+          "#817972",
+          "#565554",
+          "#9a9a9c",
+          "#bababc"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "0.86 × 0.98 × 0.85 近立方体块，推断含拱形洞口与两侧墙体；洞口形态未预览"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 130478,
+        "vertices": 231561,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_mat_a0b694c4-ccb0-420d-89b2-6fa975061d68"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/png",
+            "slot": "normal"
+          },
+          {
+            "index": 1,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.4315,
+          -0.0032,
+          -0.4227
+        ],
+        "max": [
+          0.4309,
+          0.9806,
+          0.4229
+        ],
+        "size": [
+          0.8624,
+          0.9838,
+          0.8456
+        ],
+        "long_axis": "Y",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_a0b694c4-ccb0-420d-89b2-6fa975061d68"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "130,478 三角面 + 2 张 4096 贴图，首屏成本最高",
+        "洞口净宽/净高未标定，可能小于 3 条车道（车道宽 3.0m）",
+        "无碰撞体"
+      ],
+      "unverified": [
+        "洞口实际净宽与中空程度",
+        "是否为可穿越结构",
+        "顶部与地面接缝"
+      ],
+      "integration_requirements": [
+        "接入前必须实测洞口净宽 ≥ 车道总宽，否则仅作远景不参与通行"
+      ]
+    },
+    {
+      "id": "obstacle_buffer_stop",
+      "path": "public/models/obstacle_buffer_stop.glb",
+      "sha256": "6da940e05b660e05e0757f2e1360a2dc23a51d5be68da700cc93bc29f4046930",
+      "bytes": 12034648,
+      "MiB": 11.48,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "轨道端部缓冲止挡墩",
+        "real_content": "深灰蓝 + 锈棕 + 橙红警示色的缓冲墩体块，1.00 × 0.87 × 0.87；与“轨道尽头防撞”语义一致。",
+        "suggested_use": "死路/端部封闭的视觉件",
+        "gameplay_binding": null
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "深灰蓝（#2b3b4c）、锈棕（#9e683c）、橙红警示（#ff766e/#ffa705）",
+        "palette_sampled_hex": [
+          "#2b3b4c",
+          "#9e683c",
+          "#956038",
+          "#6c493d"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "正立面约 1.0 × 0.87 的块状体，带警示配色面（推断，未预览）"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 115890,
+        "vertices": 98961,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_material_d9077f78-951c-4518-9b03-c40e0f997a44"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/png",
+            "slot": "normal"
+          },
+          {
+            "index": 1,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          },
+          {
+            "index": 2,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "metallicRoughness"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0.0,
+          -0.434
+        ],
+        "max": [
+          0.5001,
+          0.8742,
+          0.434
+        ],
+        "size": [
+          1.0001,
+          0.8741,
+          0.8679
+        ],
+        "long_axis": "X",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_d9077f78-951c-4518-9b03-c40e0f997a44"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "115,890 三角面 + 3 张 4096 贴图，对单件障碍明显超预算",
+        "无碰撞体；与物理端部判定无绑定"
+      ],
+      "unverified": [
+        "警示面朝向",
+        "是否含反光条几何"
+      ],
+      "integration_requirements": [
+        "作为 LOW_OBSTACLE/端部视觉替代前需先减面，并与逻辑端部位置对齐"
+      ]
+    },
+    {
+      "id": "obstacle_hurdle_barrier",
+      "path": "public/models/obstacle_hurdle_barrier.glb",
+      "sha256": "4f8d4756dcf150b086f8cad14a531305cae61caa0996872af291128d099306c4",
+      "bytes": 2899972,
+      "MiB": 2.77,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "低矮跨栏路障",
+        "real_content": "灰色低矮栏杆，1.00 × 0.76 × 0.27（长轴 X），贴图含少量砖红点缀；与“需跳跃的低障碍”语义一致。",
+        "suggested_use": "LOW_OBSTACLE 视觉（跳跃栏）",
+        "gameplay_binding": "LOW_OBSTACLE（逻辑 2.2 × 1.0）"
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "中灰（#676667/#828284）+ 砖红（#6d4044）",
+        "palette_sampled_hex": [
+          "#676667",
+          "#757577",
+          "#828284",
+          "#6d4044"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "1.00 × 0.76 × 0.27 的横向薄体，推断为栏杆 + 支腿（未预览）"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 8894,
+        "vertices": 10132,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_mat_342f97d3-02fb-4047-8588-0f1edd5101e9"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Tripo",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.4998,
+          0.0,
+          -0.137
+        ],
+        "max": [
+          0.4998,
+          0.7642,
+          0.137
+        ],
+        "size": [
+          0.9995,
+          0.7642,
+          0.2739
+        ],
+        "long_axis": "X",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_342f97d3-02fb-4047-8588-0f1edd5101e9"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "无碰撞体；厚度与逻辑障碍深度需对齐",
+        "8,894 三角面（全库第二低），规格相对友好"
+      ],
+      "unverified": [
+        "栏杆高度与 1.0m 逻辑高度对应关系",
+        "支腿是否穿地"
+      ],
+      "integration_requirements": [
+        "接入时按逻辑 2.2 宽 × 1.0 高 做等比缩放并复用同一材质实例"
+      ]
+    },
+    {
+      "id": "obstacle_signal_light",
+      "path": "public/models/obstacle_signal_light.glb",
+      "sha256": "7189e9141cd207de6788cd7d0df9876ec5ffd0509e06e70266d6e2c24112b705",
+      "bytes": 10312252,
+      "MiB": 9.83,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "轨旁信号灯柱",
+        "real_content": "细高灯柱，0.21 × 0.98 × 0.22（长轴 Y），灰青金属色；材质无 emissive，三色灯在模型中不发光。",
+        "suggested_use": "环境信号机装饰（非玩法语义）",
+        "gameplay_binding": null
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "灰青（#4a6668/#364d4f）+ 深色（#1f3333）",
+        "palette_sampled_hex": [
+          "#4a6668",
+          "#364d4f",
+          "#1f3333",
+          "#6b877f"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "0.21 × 0.98 × 0.22 的细高体，推断为灯柱 + 灯箱（未预览）"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 117376,
+        "vertices": 77834,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_material_70af8adf-0cc2-4e4a-a6b0-87cfe33f6841"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/png",
+            "slot": "normal"
+          },
+          {
+            "index": 1,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          },
+          {
+            "index": 2,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "metallicRoughness"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.1025,
+          -0.0,
+          -0.1095
+        ],
+        "max": [
+          0.1025,
+          0.9806,
+          0.1095
+        ],
+        "size": [
+          0.205,
+          0.9806,
+          0.2191
+        ],
+        "long_axis": "Y",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_70af8adf-0cc2-4e4a-a6b0-87cfe33f6841"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "117,376 三角面 + 3 张 4096 贴图，对细柱严重超预算",
+        "无 emissive：三色灯需运行时补发光或替换灯片",
+        "第三张贴图（饱和品红）槽位语义待验证"
+      ],
+      "unverified": [
+        "三色灯的几何位置",
+        "灯片是否独立材质"
+      ],
+      "integration_requirements": [
+        "若承担可读的红/绿通行提示，必须补形状冗余（旧审计 R15），不能只靠颜色"
+      ]
+    },
+    {
+      "id": "obstacle_slide_barrier",
+      "path": "public/models/obstacle_slide_barrier.glb",
+      "sha256": "471b24a3a1cc6a25cc18bac7cfcfd5cad36e61ce3e7088fd75f9dfbe99379d0a",
+      "bytes": 3120136,
+      "MiB": 2.98,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "限高下滑门架",
+        "real_content": "蓝 + 暗紫 + 黄色的门架件，高 0.9995 但 X 向仅 0.125、Z 向 0.631——形体极薄，若作横跨门架必须绕 Y 旋转 90°，否则只能覆盖单侧。",
+        "suggested_use": "HIGH_OBSTACLE 视觉（需翻滚通过的门架）",
+        "gameplay_binding": "HIGH_OBSTACLE（逻辑 2.2 宽 × 1.8 高）"
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "蓝（#3447a1）、暗紫（#8b5e78）、黄（#eabf31）、米白（#f1e7d1）",
+        "palette_sampled_hex": [
+          "#3447a1",
+          "#8b5e78",
+          "#eabf31",
+          "#f1e7d1"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "高 1.00、厚仅 0.125 的薄片体，推断为门框/牌面（未预览）"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 9711,
+        "vertices": 8716,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "a36ab175_e746_47e4_b179_3b1bbc3e490e"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [
+          "KHR_materials_specular"
+        ],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.0627,
+          -0.0,
+          -0.3157
+        ],
+        "max": [
+          0.0627,
+          0.9995,
+          0.3157
+        ],
+        "size": [
+          0.1255,
+          0.9995,
+          0.6313
+        ],
+        "long_axis": "Y",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "a36ab175_e746_47e4_b179_3b1bbc3e490e"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "朝向/轴向未验证，直接导入很可能横放（关键待解决项）",
+        "无碰撞体",
+        "9,711 三角面，规格友好"
+      ],
+      "unverified": [
+        "门架横跨方向",
+        "是否含可下滑净空",
+        "与 1.8m 逻辑高度的对应"
+      ],
+      "integration_requirements": [
+        "导入时必须先确认横跨轴并写死旋转，禁止按原始包围盒直接设 width/height"
+      ]
+    },
+    {
+      "id": "obstacle_traffic_cone",
+      "path": "public/models/obstacle_traffic_cone.glb",
+      "sha256": "f4bc094be2a40118bdd9af5c28c5372bf4d0620584a7e9c6a5c3ce42b3025f8e",
+      "bytes": 7577024,
+      "MiB": 7.23,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "交通警示锥",
+        "real_content": "橙 + 白色反光带的锥形路障，包围盒近似 0.98 × 1.00 × 0.98（含底盘），与施工警示语义一致。",
+        "suggested_use": "轨道施工警示装饰 / 低矮障碍点缀",
+        "gameplay_binding": null
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "橙（#fc5507/#fc6e27）+ 米白反光带（#fdf2e8）",
+        "palette_sampled_hex": [
+          "#fc5507",
+          "#fdf2e8",
+          "#fc5406",
+          "#fd6e27"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "底宽约 1.0 × 0.98 的竖向体，推断为锥体 + 底盘（未预览）"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 119424,
+        "vertices": 75206,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_material_57dd384b-46a3-410e-8f5a-94f3b61df386"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/png",
+            "slot": "normal"
+          },
+          {
+            "index": 1,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          },
+          {
+            "index": 2,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "metallicRoughness"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.4879,
+          -0.0,
+          -0.4879
+        ],
+        "max": [
+          0.4879,
+          1.0,
+          0.4879
+        ],
+        "size": [
+          0.9757,
+          1.0,
+          0.9758
+        ],
+        "long_axis": "Y",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_57dd384b-46a3-410e-8f5a-94f3b61df386"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "119,424 三角面用于一个锥体严重冗余（合理值 ≤2k），必须减面",
+        "无碰撞体"
+      ],
+      "unverified": [
+        "底盘是否独立几何",
+        "反光带是否靠贴图而非几何"
+      ],
+      "integration_requirements": [
+        "减面后再谈接入；作为纯装饰时可合并进批次实例"
+      ]
+    },
+    {
+      "id": "obstacle_utility_box",
+      "path": "public/models/obstacle_utility_box.glb",
+      "sha256": "d9e94576dddccdcb7efa907402c253dcbd6889611bb2122e803de3c3d6e66ad2",
+      "bytes": 1922588,
+      "MiB": 1.83,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "轨旁配电箱",
+        "real_content": "灰绿配电柜，0.79 × 1.00 × 0.65，颜色偏军绿灰；与“轨旁电力箱”一致。",
+        "suggested_use": "轨旁环境件（不可通行装饰）",
+        "gameplay_binding": null
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "灰绿（#62775e/#84a48a/#77947b）",
+        "palette_sampled_hex": [
+          "#62775e",
+          "#84a48a",
+          "#77947b",
+          "#566853"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "0.79 × 1.00 × 0.65 的箱状体，推断含底座（未预览）"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 9352,
+        "vertices": 8298,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_4957cda7_c570_4810_b9d5_eb10e147a894"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [
+          "KHR_materials_specular"
+        ],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.3943,
+          -0.0,
+          -0.3259
+        ],
+        "max": [
+          0.3943,
+          0.9995,
+          0.3259
+        ],
+        "size": [
+          0.7886,
+          0.9995,
+          0.6519
+        ],
+        "long_axis": "Y",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_4957cda7_c570_4810_b9d5_eb10e147a894"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "无碰撞体；若作为“不可通行”障碍需补代理",
+        "9,352 三角面，规格友好"
+      ],
+      "unverified": [
+        "柜门/散热孔是否为几何",
+        "正面朝向"
+      ],
+      "integration_requirements": [
+        "若参与碰撞，使用简化 AABB，不要用原始网格"
+      ]
+    },
+    {
+      "id": "player",
+      "path": "public/models/player.glb",
+      "sha256": "002f8d269de68e5dce3d25195caf390d1aa359bbfaae3fcf4c8dc78ec36c3ba5",
+      "bytes": 2930032,
+      "MiB": 2.79,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": false
+      },
+      "content": {
+        "subject": "旧版 Mixamo 蒙皮人形（当前运行时唯一加载的 GLB）",
+        "real_content": "2 网格、67 关节、7 段动画（agree/headShake/idle/run/sad_pose/sneak_pose/walk），无贴图（纯色 PBR）；节点带极小缩放，原始包围盒仅 0.018 单位。",
+        "suggested_use": "当前线上主角（src/render/babylon.ts 仅导入该文件）",
+        "gameplay_binding": "玩家角色（运行时唯一已接线资产）"
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "肤色/橙红（baseColorFactor 0.33/0.12/0.10 与 0.84/0.30/0.26，无贴图）",
+        "palette_sampled_hex": [],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "Mixamo 骨架 + 两段蒙皮网格；包围盒 0.018 × 0.018 × 0.003（长轴 X，绑定姿态平躺）"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 49112,
+        "vertices": 28374,
+        "meshes": 2,
+        "primitives": 2,
+        "materials": 2,
+        "material_names": [
+          "Beta_Joints_MAT",
+          "asdf1:Beta_HighLimbsGeoSG2"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [],
+        "image_sizes": [],
+        "skins": 1,
+        "skin_joints": [
+          67
+        ],
+        "animations": [
+          "agree",
+          "headShake",
+          "idle",
+          "run",
+          "sad_pose",
+          "sneak_pose",
+          "walk"
+        ],
+        "animation_count": 7,
+        "generator": "Khronos glTF Blender I/O v1.1.46",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.009,
+          -0.0,
+          -0.0014
+        ],
+        "max": [
+          0.009,
+          0.0181,
+          0.0018
+        ],
+        "size": [
+          0.0181,
+          0.0181,
+          0.0032
+        ],
+        "long_axis": "X",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 70,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "Armature"
+        ],
+        "parts": [
+          "Mesh、Mesh.001 两段蒙皮网格；单一 Armature 根"
+        ],
+        "splittable_by_part": true,
+        "visual_root_recommendation": "单一视觉根（蒙皮网格 2 段，共用同一骨架）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "动画缺 jump/slide/stumble，状态机会静默回退到 agree（旧审计 R1）",
+        "绑定姿态 Y 向近乎扁平 + 节点缩放，轴向与尺度仍未标定（R3）",
+        "49,112 三角面超预算（R2）"
+      ],
+      "unverified": [
+        "世界中实际站立高度",
+        "修正后的朝向",
+        "与 1.8m 逻辑身高的缩放系数"
+      ],
+      "integration_requirements": [
+        "新角色替换前，它是唯一已验证加载路径；替换时不要沿用其动画名假设"
+      ]
+    },
+    {
+      "id": "prop_coin",
+      "path": "public/models/prop_coin.glb",
+      "sha256": "b725ade8553e81b375c2265db5fb00078e3f994bce2505ada76360f0af3b27dd",
+      "bytes": 1795036,
+      "MiB": 1.71,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "金币（圆盘薄片）",
+        "real_content": "金黄圆盘，直径 1.00、厚 0.16（薄轴 Z），贴图主色稳定为金色系；与金币语义一致（几何 + 配色双证据）。",
+        "suggested_use": "金币视觉替换候选",
+        "gameplay_binding": "COIN（当前为程序化 cylinder）"
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "金黄（#eebd4f/#f2c153/#fbd870）",
+        "palette_sampled_hex": [
+          "#eebd4f",
+          "#ecbb4d",
+          "#f2c153",
+          "#fbd870"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "1.00 × 1.00 × 0.16 的圆盘状薄片（薄轴 Z），边缘细节未预览"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 9767,
+        "vertices": 8213,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_mat_52ab1e58-2330-428c-bb9e-f12568823f3e"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Tripo",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.4998,
+          0.0,
+          -0.0813
+        ],
+        "max": [
+          0.4998,
+          0.9995,
+          0.0813
+        ],
+        "size": [
+          0.9995,
+          0.9995,
+          0.1626
+        ],
+        "long_axis": "X",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_52ab1e58-2330-428c-bb9e-f12568823f3e"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "9,767 三角面对高频同屏金币偏重，建议减面 + 实例化",
+        "无自发光，需运行时补发光/描边"
+      ],
+      "unverified": [
+        "币面浮雕图案内容",
+        "正反面是否不同"
+      ],
+      "integration_requirements": [
+        "同屏金币数量大，必须走实例化 + 单一材质，不能每币新建材质（旧审计 R9）"
+      ]
+    },
+    {
+      "id": "prop_hoverboard",
+      "path": "public/models/prop_hoverboard.glb",
+      "sha256": "2e35d1da74d3ad328dc3537cf10e09d9f68725f3407b9e6039ccf41b6c1f1114",
+      "bytes": 11834532,
+      "MiB": 11.29,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "悬浮滑板",
+        "real_content": "扁平板体，长 0.98、厚 0.17、宽 0.37，配色珊瑚红/灰/米白 + 青色点缀；与 hoverboard 语义一致。",
+        "suggested_use": "滑板道具视觉（需挂到玩家脚下，位置与朝向未标定）",
+        "gameplay_binding": "POWERUP hoverboard（当前为程序化 box）"
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "珊瑚红（#e56c4e）、灰（#a2a5a0/#6c6e6e）、米白（#e9e1d0）、青（#acd9d3）",
+        "palette_sampled_hex": [
+          "#e56c4e",
+          "#a2a5a0",
+          "#6c6e6e",
+          "#e9e1d0"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "0.98 × 0.17 × 0.37 的扁平体，板厚在 Y 轴（推断，未预览）"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 117165,
+        "vertices": 78708,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_node_dff25d42-4864-479b-b006-75544e88fb27_material"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/png",
+            "slot": "normal"
+          },
+          {
+            "index": 1,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.4896,
+          -0.0,
+          -0.186
+        ],
+        "max": [
+          0.4896,
+          0.1673,
+          0.186
+        ],
+        "size": [
+          0.9792,
+          0.1673,
+          0.372
+        ],
+        "long_axis": "X",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_dff25d42-4864-479b-b006-75544e88fb27"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "117,165 三角面 + 2 张 4096 贴图，对小型道具过重",
+        "无挂点/脚位节点，附着点需人工标定"
+      ],
+      "unverified": [
+        "板面正反朝向",
+        "是否有推进器几何"
+      ],
+      "integration_requirements": [
+        "接入需先定义脚底悬挂偏移与原地旋转，否则会穿模或反向"
+      ]
+    },
+    {
+      "id": "prop_jetpack",
+      "path": "public/models/prop_jetpack.glb",
+      "sha256": "54ac8501cb6f25b0b55e1977bb85aa431cf067d3483089aedb71a93976cf3c08",
+      "bytes": 2353508,
+      "MiB": 2.24,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "双筒喷气背包",
+        "real_content": "高 1.00、宽 0.34、深 0.82 的背挂装置，黄色 + 金属灰 + 深色；与喷气背包语义一致。",
+        "suggested_use": "资产库存；当前玩法无 jetpack 机制，不应自行接入",
+        "gameplay_binding": null
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "黄（#f6b814/#f7bd20）、金属灰（#b9cbb6）、深色（#3b382e）",
+        "palette_sampled_hex": [
+          "#f6b814",
+          "#b9cbb6",
+          "#3b382e",
+          "#c0a247"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "0.34 × 1.00 × 0.82 的竖向体，深向明显大于宽向，推断为双筒 + 背架（未预览）"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 10133,
+        "vertices": 8207,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_4b7f69a8_a5e4_468a_9a39_319df9b49100"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [
+          "KHR_materials_specular"
+        ],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.1711,
+          -0.0,
+          -0.4094
+        ],
+        "max": [
+          0.1711,
+          0.9995,
+          0.4094
+        ],
+        "size": [
+          0.3423,
+          0.9995,
+          0.8188
+        ],
+        "long_axis": "Y",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_4b7f69a8_a5e4_468a_9a39_319df9b49100"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "10,133 三角面，规格尚可",
+        "无挂点节点；无对应玩法机制，接入即等于新增机制"
+      ],
+      "unverified": [
+        "背挂贴合方向",
+        "喷口是否为独立几何"
+      ],
+      "integration_requirements": [
+        "仅在产品明确新增 jetpack 玩法后才接线，不得由资产生成器倒推玩法"
+      ]
+    },
+    {
+      "id": "prop_magnet",
+      "path": "public/models/prop_magnet.glb",
+      "sha256": "2173cef98c32892b0df3b5578b50727416ee2c7d9b9c3a01004f17675069130c",
+      "bytes": 8021860,
+      "MiB": 7.65,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "马蹄形吸金磁铁",
+        "real_content": "高 0.98、深 0.81、宽 0.23 的磁铁造型，主色品红 + 银白；与磁铁道具语义一致。",
+        "suggested_use": "磁铁道具视觉替换候选",
+        "gameplay_binding": "POWERUP magnet（当前为程序化 box）"
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "品红（#ec0093/#ea0092）、银白（#dadcdc）",
+        "palette_sampled_hex": [
+          "#ec0093",
+          "#dadcdc",
+          "#ea0092",
+          "#f00097"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "0.23 × 0.98 × 0.81 的竖向体，厚度很薄，推断为马蹄形磁体（开口朝向未预览）"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 115095,
+        "vertices": 91306,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_material_52854e57-6bde-4050-b231-76a66fae0005"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/png",
+            "slot": "normal"
+          },
+          {
+            "index": 1,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          },
+          {
+            "index": 2,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "metallicRoughness"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.1152,
+          -0.0,
+          -0.4054
+        ],
+        "max": [
+          0.1152,
+          0.9804,
+          0.4054
+        ],
+        "size": [
+          0.2304,
+          0.9804,
+          0.8108
+        ],
+        "long_axis": "Y",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_52854e57-6bde-4050-b231-76a66fae0005"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "115,095 三角面 + 3 张 4096 贴图，明显超道具预算",
+        "无 emissive，道具高亮需运行时处理"
+      ],
+      "unverified": [
+        "磁极朝向（开口指向）",
+        "是否含可动摆件"
+      ],
+      "integration_requirements": [
+        "接入前先减面；磁极朝向影响“吸附方向”视觉暗示，需与玩法一致"
+      ]
+    },
+    {
+      "id": "prop_multiplier_2x",
+      "path": "public/models/prop_multiplier_2x.glb",
+      "sha256": "4c72cbbd619491662ee56fe9dab068cd0ffb77a6a16c3542f9f85470e47f1111",
+      "bytes": 10751396,
+      "MiB": 10.25,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "2X 得分立牌",
+        "real_content": "扁平立牌，0.98 宽 × 0.95 高 × 0.15 厚，黄色 + 深紫配色；几何上确实是一块竖直牌面。",
+        "suggested_use": "双倍得分道具视觉替换候选",
+        "gameplay_binding": "POWERUP multiplier（当前为程序化 box）"
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "金黄（#f1a217）、深紫（#65135c）、米白（#f7e0bc）",
+        "palette_sampled_hex": [
+          "#f1a217",
+          "#65135c",
+          "#f7e0bc",
+          "#f4a61c"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "0.98 × 0.95 × 0.15 的竖直薄板（推断为牌面，未预览）"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 118625,
+        "vertices": 93176,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_material_380888f1-54e2-4d98-95c1-c193c3abdf8f"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/png",
+            "slot": "normal"
+          },
+          {
+            "index": 1,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          },
+          {
+            "index": 2,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "metallicRoughness"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.49,
+          -0.0,
+          -0.0743
+        ],
+        "max": [
+          0.49,
+          0.9549,
+          0.0743
+        ],
+        "size": [
+          0.98,
+          0.9549,
+          0.1487
+        ],
+        "long_axis": "X",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_380888f1-54e2-4d98-95c1-c193c3abdf8f"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "118,625 三角面 + 3 张 4096 贴图，超道具预算",
+        "“2X”字样是否真的烘进贴图未验证，不能对外宣称标识清晰"
+      ],
+      "unverified": [
+        "牌面文字可读性",
+        "牌面正反是否一致"
+      ],
+      "integration_requirements": [
+        "若文字不可读，需要额外贴花或改为 UI 元素补偿"
+      ]
+    },
+    {
+      "id": "prop_mystery_box",
+      "path": "public/models/prop_mystery_box.glb",
+      "sha256": "5cda16b11fcc41e08f1340e188abff56ee2f57cfe810496aa70eff2c73a040c3",
+      "bytes": 2176812,
+      "MiB": 2.08,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "神秘宝箱（木箱质感）",
+        "real_content": "箱体 1.00 × 0.88 × 0.94，琥珀黄 + 深棕配色，接近立方；与“谜题宝箱/问号箱”外观相符。",
+        "suggested_use": "资产库存；当前玩法无 mystery_box 机制",
+        "gameplay_binding": null
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "琥珀（#e7af2f）、深棕（#652615/#8a4d1d）",
+        "palette_sampled_hex": [
+          "#e7af2f",
+          "#652615",
+          "#642515",
+          "#612414"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "1.00 × 0.88 × 0.94 的方正体块（推断为箱体，箱盖结构未预览）"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 9015,
+        "vertices": 8778,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_63d37e18_1f9a_482c_820b_24687d9d9cfd"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [
+          "KHR_materials_specular"
+        ],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.4998,
+          -0.0,
+          -0.4719
+        ],
+        "max": [
+          0.4998,
+          0.8774,
+          0.4719
+        ],
+        "size": [
+          0.9995,
+          0.8774,
+          0.9438
+        ],
+        "long_axis": "X",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_63d37e18_1f9a_482c_820b_24687d9d9cfd"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "9,015 三角面，规格友好",
+        "无对应玩法；接入即新增机制"
+      ],
+      "unverified": [
+        "是否有“?”贴花",
+        "箱盖是否可开合（无节点，判断为不可动）"
+      ],
+      "integration_requirements": [
+        "作为纯装饰掉落物之前，需先有确定的玩法定义"
+      ]
+    },
+    {
+      "id": "prop_shield",
+      "path": "public/models/prop_shield.glb",
+      "sha256": "22667c3183387bfc430993ef33497ac93845fe3fd3deb0d27716da3d4861b26c",
+      "bytes": 11080992,
+      "MiB": 10.57,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "能量护盾罩体",
+        "real_content": "近球形罩体 0.67 × 0.98 × 0.70，淡蓝紫 + 青色；alphaMode 为 OPAQUE，当前不是半透明能量罩。",
+        "suggested_use": "护盾道具/罩体视觉候选（需改材质为半透明才能当罩）",
+        "gameplay_binding": "POWERUP shield（当前为程序化 box）"
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "蓝紫（#7677aa/#5d598e）、天蓝（#63c8eb）、浅蓝（#adcbe5）",
+        "palette_sampled_hex": [
+          "#7677aa",
+          "#5d598e",
+          "#829ac7",
+          "#63c8eb"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "0.67 × 0.98 × 0.70 的近球形体，竖向略长；是否中空未验证"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 114233,
+        "vertices": 108316,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_material_f8c269f5-1718-40e7-a414-d92c4364f630"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/png",
+            "slot": "normal"
+          },
+          {
+            "index": 1,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          },
+          {
+            "index": 2,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "metallicRoughness"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.3364,
+          -0.0001,
+          -0.3511
+        ],
+        "max": [
+          0.3363,
+          0.9785,
+          0.3512
+        ],
+        "size": [
+          0.6727,
+          0.9786,
+          0.7023
+        ],
+        "long_axis": "Y",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_f8c269f5-1718-40e7-a414-d92c4364f630"
+        ],
+        "parts": [
+          "整体单一网格"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "114,233 三角面 + 3 张 4096 贴图，超预算",
+        "材质不透明，直接套玩家会完全遮挡角色，需新增半透明/菲涅尔变体",
+        "无骨架，无法做呼吸缩放以外的形变"
+      ],
+      "unverified": [
+        "是否为中空壳体",
+        "罩内是否有玩家净空",
+        "是否有厚度穿插"
+      ],
+      "integration_requirements": [
+        "作为罩体前必须：(1) 改半透明材质变体；(2) 按玩家 1.8m 身高标定缩放；(3) 确认不遮挡镜头"
+      ]
+    },
+    {
+      "id": "prop_sneakers",
+      "path": "public/models/prop_sneakers.glb",
+      "sha256": "e0e616489f4726471d07c7e68332f50042e69f7bd72bbd94be9f73d344fd290f",
+      "bytes": 3056964,
+      "MiB": 2.92,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "运动鞋（成对）",
+        "real_content": "1.00 宽 × 0.64 高 × 0.98 深的鞋类模型，米白 + 墨绿 + 砖红配色；宽度接近深度，判断为双鞋并排。",
+        "suggested_use": "跑鞋道具视觉替换候选",
+        "gameplay_binding": "POWERUP sneakers（当前为程序化 box）"
+      },
+      "appearance": {
+        "status": "semantics.parsed-only",
+        "colors": "米白（#f6e2bc/#f9eac4）、浅绿（#a1bd90/#bddaad）、砖红（#d66749）",
+        "palette_sampled_hex": [
+          "#a1bd90",
+          "#f6e2bc",
+          "#d66749",
+          "#f9eac4"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "1.00 × 0.64 × 0.98 的扁宽体，宽≈深，推断为双鞋并排（未预览）"
+      },
+      "previews": [],
+      "parse": {
+        "triangles": 10034,
+        "vertices": 11467,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "e28899ee_9d73_4189_a138_7d01492aa62e"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [
+          "KHR_materials_specular"
+        ],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.4998,
+          -0.0,
+          -0.489
+        ],
+        "max": [
+          0.4998,
+          0.6411,
+          0.489
+        ],
+        "size": [
+          0.9995,
+          0.6411,
+          0.978
+        ],
+        "long_axis": "X",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "unverified",
+          "note": "无预览，朝向完全未验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "e28899ee_9d73_4189_a138_7d01492aa62e"
+        ],
+        "parts": [
+          "整体单一网格（未见左右脚分离节点）"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "10,034 三角面，规格友好",
+        "单只/成对未在数据层区分，若需单只需另行裁切",
+        "无挂点"
+      ],
+      "unverified": [
+        "是否左右脚各一",
+        "鞋底细节"
+      ],
+      "integration_requirements": [
+        "作为道具图标可用；若挂到角色脚部，需要单只版本与脚部挂点"
+      ]
+    },
+    {
+      "id": "train_metro",
+      "path": "public/models/train_metro.glb",
+      "sha256": "721bb182e1a323e1a01f65db3bb3602de3c6196ccb5c458a093ca87cd10ed4c8",
+      "bytes": 2700620,
+      "MiB": 2.58,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "带黄色坡道的工程车（文件名与实际内容不符）",
+        "real_content": "侧视预览确认：绿色车体 + 红色腰线 + 米白车顶 + 从车身中部下探至地面的黄色楔形坡道 + 两组转向架车轮。整车与坡道是同一个网格，不存在可单独取出的坡道部件。",
+        "suggested_use": "“带坡道组合段”的视觉整件（车体 + 坡道一并呈现）",
+        "gameplay_binding": "RAMP + STATIC_TRAIN 组合段视觉（逻辑仍用已验收几何）"
+      },
+      "appearance": {
+        "status": "semantics.preview-confirmed",
+        "colors": "墨绿车身（#517267/#2a4343）、米白车顶（#aea97e）、黄色坡道（#e9cf5f）",
+        "palette_sampled_hex": [
+          "#517267",
+          "#2a4343",
+          "#5f5651",
+          "#aea97e"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "车体（含车顶平板、红腰线、车窗/检修门）+ 黄色斜坡楔形 + 两组车轮；1.00 × 0.31 × 0.32（长轴 X，高度仅约长度 31%）"
+      },
+      "previews": [
+        {
+          "path": "docs/evidence/glb-handoff-2026-11-01/train_metro-front.png",
+          "view": "side/profile",
+          "status": "preview-confirmed",
+          "asset_version_sha256": "721bb182e1a323e1a01f65db3bb3602de3c6196ccb5c458a093ca87cd10ed4c8",
+          "file_sha256": "08dd305682e927a8c8c87b107ccf3b2dd5fd528f5fcfa410d4ea6a3f487ffcad",
+          "note": "文件名写 front，实际为侧视；可确认车身、坡道与车轮"
+        }
+      ],
+      "parse": {
+        "triangles": 8968,
+        "vertices": 11508,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_mat_77c6091c-0ce6-4ae0-8e93-6b05990da594"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Tripo",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.4998,
+          0.0,
+          -0.1604
+        ],
+        "max": [
+          0.4998,
+          0.311,
+          0.1604
+        ],
+        "size": [
+          0.9995,
+          0.311,
+          0.3208
+        ],
+        "long_axis": "X",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "verified-by-preview",
+          "note": "仅确认了预览角度可见的朝向；前进方向/正反面未做运行时验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_77c6091c-0ce6-4ae0-8e93-6b05990da594"
+        ],
+        "parts": [
+          "单一网格内混合：车体 + 坡道 + 两组转向架；无拆分节点，不可按部件绑定"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "文件名与内容相反（train_metro 实为工程车 + 坡道）",
+        "车体与坡道不可分离：坡道无法独立贴到逻辑坡面上，视觉坡面与逻辑坡面必然错位，需整体缩放/位移对齐",
+        "长轴 X 而非 Z：沿轨道（Z）前进必须先绕 Y 旋转 ±90°",
+        "坡脚/坡顶/车顶三个端点均未标定，包围盒高 0.311 单位不能当米制",
+        "无碰撞体、无支撑面节点",
+        "8,968 三角面 / 2.58 MiB，是全库最轻的结构件之一"
+      ],
+      "unverified": [
+        "前进方向（车头朝 +X 还是 -X）",
+        "坡道倾角与坡面平整度",
+        "坡顶是否与车顶齐平",
+        "坡脚是否落在 y=0 地面",
+        "旋转后包围盒是否与 2.4 × 3.0 逻辑尺寸匹配"
+      ],
+      "integration_requirements": [
+        "接入时：(1) 只允许一个视觉根，禁止再额外生成一份坡或车；(2) 先按车顶高度反推统一缩放，再按坡脚落点对齐逻辑坡起点；(3) 逻辑坡面与可达性判定保持现有几何，模型仅作视觉；"
+      ]
+    },
+    {
+      "id": "train_ramp_or_car",
+      "path": "public/models/train_ramp_or_car.glb",
+      "sha256": "b561449fbb1426f2ba38cd54f75818090cf68076b3cb59a50c80dce2beb48fe4",
+      "bytes": 11852604,
+      "MiB": 11.3,
+      "source": {
+        "commit": "622e7da",
+        "commit_subject": "feat(PAO-7): add complete 21-asset 3D models and concept references",
+        "added_in_commit": true
+      },
+      "content": {
+        "subject": "普通客运车厢 / 动车组头车（文件名与实际内容不符）",
+        "real_content": "侧视与端面预览确认：青绿车身 + 橙红腰线 + 米白车顶，侧面 3 扇窗 + 2 组双开门 + 两组转向架；一端为司机室端面，含 3 扇前窗、目的地牌、两个圆形前灯与车钩。无任何坡道。",
+        "suggested_use": "普通车厢/车头的视觉候选（拼段用）",
+        "gameplay_binding": "STATIC_TRAIN / MOVING_TRAIN 视觉（逻辑 2.4 宽 × 3.0 高）"
+      },
+      "appearance": {
+        "status": "semantics.preview-confirmed",
+        "colors": "青绿车体（#576962/#243331）、米白车顶、橙红腰线（#ff590b）",
+        "palette_sampled_hex": [
+          "#514f48",
+          "#576962",
+          "#243331",
+          "#6c8078"
+        ],
+        "palette_source": "embedded baseColor texture, 96px thumbnail, 5-color median cut (not visual acceptance)",
+        "structures": "矩形车体 + 圆弧车顶 + 端面司机室；0.98 × 0.44 × 0.38（长轴 X，高约长度 45%）"
+      },
+      "previews": [
+        {
+          "path": "docs/evidence/glb-handoff-2026-11-01/train_ramp_or_car-side.png",
+          "view": "side/profile",
+          "status": "preview-confirmed",
+          "asset_version_sha256": "b561449fbb1426f2ba38cd54f75818090cf68076b3cb59a50c80dce2beb48fe4",
+          "file_sha256": "2fa7c5b7c439508f917b70e2b73d1d6758bb720cf32f321240b5e6f4713624d8",
+          "note": "侧视：车窗/车门/转向架"
+        },
+        {
+          "path": "docs/evidence/glb-handoff-2026-11-01/train_ramp_or_car-end.png",
+          "view": "end/cab three-quarter",
+          "status": "preview-confirmed",
+          "asset_version_sha256": "b561449fbb1426f2ba38cd54f75818090cf68076b3cb59a50c80dce2beb48fe4",
+          "file_sha256": "1530592230ab48e72e146237c94f5e66c62b0aee0fd5d6e3dda208fdabf156c7",
+          "note": "端面：司机室窗、目的地牌、双前灯、车钩"
+        }
+      ],
+      "parse": {
+        "triangles": 112516,
+        "vertices": 114123,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "material_names": [
+          "tripo_material_83c94436-c6e2-4fbb-ad55-fd24d04446ee"
+        ],
+        "alpha_mode": [
+          "OPAQUE"
+        ],
+        "has_emissive": false,
+        "images": [
+          {
+            "index": 0,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/png",
+            "slot": "normal"
+          },
+          {
+            "index": 1,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "baseColor"
+          },
+          {
+            "index": 2,
+            "w": 4096,
+            "h": 4096,
+            "mime": "image/jpeg",
+            "slot": "metallicRoughness"
+          }
+        ],
+        "image_sizes": [
+          "4096x4096"
+        ],
+        "skins": 0,
+        "skin_joints": [],
+        "animations": [],
+        "animation_count": 0,
+        "generator": "Khronos glTF Blender I/O v4.5.48",
+        "extensions_used": [],
+        "extensions_required": []
+      },
+      "bounds": {
+        "min": [
+          -0.4895,
+          -0.0001,
+          -0.1904
+        ],
+        "max": [
+          0.4896,
+          0.4385,
+          0.1904
+        ],
+        "size": [
+          0.9792,
+          0.4386,
+          0.3808
+        ],
+        "long_axis": "X",
+        "units": "glTF raw units (~1-unit normalization); NOT meters",
+        "origin": {
+          "status": "parsed",
+          "note": "包围盒底面 y≈0 且 X/Z 近居中：几何原点位于底面中心；是否等于导入期望原点由接入任务确认"
+        },
+        "orientation": {
+          "status": "verified-by-preview",
+          "note": "仅确认了预览角度可见的朝向；前进方向/正反面未做运行时验证"
+        },
+        "scale": {
+          "status": "pending-calibration",
+          "note": "未与逻辑米制尺寸（车道 3.0m、火车 2.4×3.0m、障碍 1.0/1.8m）标定；原始包围盒不得直接当碰撞代理"
+        }
+      },
+      "composition": {
+        "node_count": 1,
+        "scene_root_count": 1,
+        "root_nodes": [
+          "tripo_node_83c94436-c6e2-4fbb-ad55-fd24d04446ee"
+        ],
+        "parts": [
+          "单一网格内混合：车体 + 车顶 + 两组转向架 + 端面细节；无拆分节点"
+        ],
+        "splittable_by_part": false,
+        "visual_root_recommendation": "接一个视觉根；不得同时生成两套（模型 + 程序化占位）",
+        "named_proxy_nodes": []
+      },
+      "issues": [
+        "文件名与内容相反（train_ramp_or_car 实为客运车厢/头车，无坡道）",
+        "端面目的地牌文字镜像/不可读（贴图内容问题）",
+        "长轴 X，沿 Z 前进需绕 Y 旋转 ±90°",
+        "112,516 三角面 + 3 张 4096 贴图，11.30 MiB，远超同屏预算",
+        "车顶可走面高度未标定（逻辑车顶约 3.0m）"
+      ],
+      "unverified": [
+        "行驶方向与车头端朝向",
+        "车顶是否能作为连续支撑面（需运行时验证）",
+        "窗/门是否独立几何",
+        "目的地牌是否有可替换贴图槽"
+      ],
+      "integration_requirements": [
+        "接入时：(1) 统一缩放使车顶贴合逻辑顶面高度；(2) 车厢拼接需固定端口间距，避免缝隙；(3) 目的地牌文字问题要么换贴图要么接受现状并记录；"
+      ]
+    }
+  ]
+}

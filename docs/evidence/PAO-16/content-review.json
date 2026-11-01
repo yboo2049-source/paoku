@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-01 Asia/Shanghai",
+  "scope": "Document content checks only; not engine or physics acceptance",
+  "hashes": "8/8 match",
+  "sourceTriangleSum": 505300.0,
+  "unmeasuredFieldsRemainNull": true,
+  "transformAppliedCount": 0,
+  "logicalExample": {
+    "rampTop": [
+      0,
+      3,
+      73
+    ],
+    "mid": [
+      0,
+      1.5,
+      70
+    ],
+    "foot": [
+      0,
+      0,
+      67
+    ],
+    "roofEntry": [
+      0,
+      3,
+      73
+    ],
+    "roofExit": [
+      0,
+      3,
+      85
+    ]
+  },
+  "logicalSeamArithmeticPass": true,
+  "nonzeroBaseY": {
+    "mid": 6.5,
+    "foot": 5,
+    "top": 8
+  },
+  "q0Triangles": {
+    "total": 70400,
+    "world": 44400,
+    "characters": 24000,
+    "fx": 2000,
+    "headroom": 9600
+  },
+  "textureMiB": {
+    "projectSteady": [
+      110.6666666667,
+      45.6666666667,
+      24.6666666667
+    ],
+    "candidateCaps": [
+      128,
+      64,
+      32
+    ],
+    "worldSteady": [
+      72,
+      36,
+      15
+    ],
+    "projectTransitionPeak": [
+      126.6666666667,
+      61.6666666667,
+      28.6666666667
+    ]
+  },
+  "referencesChecked": [
+    "docs/art/world-assets.md -> D:/worker/paoku/docs/plans/2026-11-01-m2-dispatch-preparation.md",
+    "docs/art/world-assets.md -> ../superpowers/specs/2026-11-01-pao16-world-design.md",
+    "docs/art/world-assets.md -> ../evidence/PAO-16/README.md",
+    "docs/art/world-assets.md -> ../evidence/PAO-16/selected-assets.json",
+    "docs/superpowers/specs/2026-11-01-pao16-world-design.md -> ../../art/world-assets.md",
+    "docs/superpowers/specs/2026-11-01-pao16-world-design.md -> ../../evidence/PAO-16/README.md",
+    "docs/evidence/PAO-16/README.md -> C:/Users/Administrator/.workbuddy/plugins/marketplaces/codebuddy-plugins-official/external_plugins/superpowers/skills/brainstorming/SKILL.md",
+    "docs/evidence/PAO-16/README.md -> C:/Users/Administrator/.workbuddy/plugins/marketplaces/codebuddy-plugins-official/external_plugins/superpowers/skills/using-superpowers/SKILL.md",
+    "docs/evidence/PAO-16/README.md -> selected-assets.json",
+    "docs/evidence/PAO-16/README.md -> ../../art/world-assets.md",
+    "docs/evidence/PAO-16/README.md -> ../../superpowers/specs/2026-11-01-pao16-world-design.md"
+  ],
+  "technicalPreviewsViewed": 2,
+  "newRenders": 0,
+  "runtimeCalibration": "not_performed",
+  "browserE2E": "not_run_document_only",
+  "N": "not_run",
+  "F": "not_run",
+  "approval": "pending; preparation only"
+}

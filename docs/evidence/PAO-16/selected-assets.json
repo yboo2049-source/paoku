@@ -1,0 +1,506 @@
+{
+  "schema": "pao16-preparation-evidence-v1",
+  "date": "2026-11-01 Asia/Shanghai",
+  "baseline": "19aa31492ddce4c1c5e74ef1e49312ad41ec2dd6",
+  "assetReviewCommit": "7a2fb2963deae061d15deae4019910a15f0dfbcf",
+  "manifestSHA256": "a53fa5a86d166ad8edb8471186bc119e0c85fad3dea4f7d300384d5bb1e87d07",
+  "scope": "8 selected assets only; not runtime configuration or full geometry remeasurement",
+  "assets": [
+    {
+      "file": "env_gantry.glb",
+      "sourcePath": "public/models/env_gantry.glb",
+      "sourceCommit": "622e7da",
+      "sourceSHA256": "88be31b77e98e840640640844bc802296341ec245c87b59b14bd0dcf0313381e",
+      "actualSHA256": "88be31b77e98e840640640844bc802296341ec245c87b59b14bd0dcf0313381e",
+      "hashMatches": true,
+      "boundsEvidence": "S: manifest parse, not recomputed this turn; normalized source units, not metres",
+      "sceneBounds": {
+        "min": [
+          -0.4902,
+          -0.0006,
+          -0.0691
+        ],
+        "max": [
+          0.4902,
+          0.6672,
+          0.0689
+        ],
+        "size": [
+          0.9803,
+          0.6678,
+          0.138
+        ],
+        "long_axis": "X",
+        "meaning": "按场景节点 TRS 逐级变换后求出的 AABB，用于判断朝向/落地/比例",
+        "verified_by": "parse"
+      },
+      "sourceOrigin": -0.0006,
+      "triangles": 109871,
+      "textures": [
+        {
+          "index": 0,
+          "slot": "normal",
+          "mimeType": "image/png",
+          "width": 4096,
+          "height": 4096,
+          "bytes": 1343307
+        },
+        {
+          "index": 1,
+          "slot": "baseColor",
+          "mimeType": "image/jpeg",
+          "width": 4096,
+          "height": 4096,
+          "bytes": 3157759
+        }
+      ],
+      "skins": 0,
+      "animations": 0,
+      "previewStatus": "absent",
+      "visualAcceptance": "not_performed",
+      "calibration": "UNCALIBRATED",
+      "candidateOnly": true,
+      "sourceForward": null,
+      "sourceUnitInMetres": null,
+      "N": null,
+      "T_logic_from_asset": null,
+      "sourceEndpointMarkers": null,
+      "measuredProxy": null,
+      "endpointErrors": null,
+      "appliedCount": 0,
+      "fallback": "LEGACY_PRIMITIVES"
+    },
+    {
+      "file": "env_tunnel_arch.glb",
+      "sourcePath": "public/models/env_tunnel_arch.glb",
+      "sourceCommit": "622e7da",
+      "sourceSHA256": "353a5b37281ec1a19262926626180361474192cccb1a4b332d464a144f70dfca",
+      "actualSHA256": "353a5b37281ec1a19262926626180361474192cccb1a4b332d464a144f70dfca",
+      "hashMatches": true,
+      "boundsEvidence": "S: manifest parse, not recomputed this turn; normalized source units, not metres",
+      "sceneBounds": {
+        "min": [
+          -0.4315,
+          -0.0032,
+          -0.4227
+        ],
+        "max": [
+          0.4309,
+          0.9806,
+          0.4229
+        ],
+        "size": [
+          0.8624,
+          0.9838,
+          0.8456
+        ],
+        "long_axis": "Y",
+        "meaning": "按场景节点 TRS 逐级变换后求出的 AABB，用于判断朝向/落地/比例",
+        "verified_by": "parse"
+      },
+      "sourceOrigin": -0.0032,
+      "triangles": 130478,
+      "textures": [
+        {
+          "index": 0,
+          "slot": "normal",
+          "mimeType": "image/png",
+          "width": 4096,
+          "height": 4096,
+          "bytes": 5926189
+        },
+        {
+          "index": 1,
+          "slot": "baseColor",
+          "mimeType": "image/jpeg",
+          "width": 4096,
+          "height": 4096,
+          "bytes": 3116987
+        }
+      ],
+      "skins": 0,
+      "animations": 0,
+      "previewStatus": "absent",
+      "visualAcceptance": "not_performed",
+      "calibration": "UNCALIBRATED",
+      "candidateOnly": true,
+      "sourceForward": null,
+      "sourceUnitInMetres": null,
+      "N": null,
+      "T_logic_from_asset": null,
+      "sourceEndpointMarkers": null,
+      "measuredProxy": null,
+      "endpointErrors": null,
+      "appliedCount": 0,
+      "fallback": "LEGACY_PRIMITIVES"
+    },
+    {
+      "file": "obstacle_hurdle_barrier.glb",
+      "sourcePath": "public/models/obstacle_hurdle_barrier.glb",
+      "sourceCommit": "622e7da",
+      "sourceSHA256": "4f8d4756dcf150b086f8cad14a531305cae61caa0996872af291128d099306c4",
+      "actualSHA256": "4f8d4756dcf150b086f8cad14a531305cae61caa0996872af291128d099306c4",
+      "hashMatches": true,
+      "boundsEvidence": "S: manifest parse, not recomputed this turn; normalized source units, not metres",
+      "sceneBounds": {
+        "min": [
+          -0.4998,
+          0.0,
+          -0.137
+        ],
+        "max": [
+          0.4998,
+          0.7642,
+          0.137
+        ],
+        "size": [
+          0.9995,
+          0.7642,
+          0.2739
+        ],
+        "long_axis": "X",
+        "meaning": "按场景节点 TRS 逐级变换后求出的 AABB，用于判断朝向/落地/比例",
+        "verified_by": "parse"
+      },
+      "sourceOrigin": 0.0,
+      "triangles": 8894,
+      "textures": [
+        {
+          "index": 0,
+          "slot": "baseColor",
+          "mimeType": "image/jpeg",
+          "width": 4096,
+          "height": 4096,
+          "bytes": 2520863
+        }
+      ],
+      "skins": 0,
+      "animations": 0,
+      "previewStatus": "absent",
+      "visualAcceptance": "not_performed",
+      "calibration": "UNCALIBRATED",
+      "candidateOnly": true,
+      "sourceForward": null,
+      "sourceUnitInMetres": null,
+      "N": null,
+      "T_logic_from_asset": null,
+      "sourceEndpointMarkers": null,
+      "measuredProxy": null,
+      "endpointErrors": null,
+      "appliedCount": 0,
+      "fallback": "LEGACY_PRIMITIVES"
+    },
+    {
+      "file": "obstacle_slide_barrier.glb",
+      "sourcePath": "public/models/obstacle_slide_barrier.glb",
+      "sourceCommit": "622e7da",
+      "sourceSHA256": "471b24a3a1cc6a25cc18bac7cfcfd5cad36e61ce3e7088fd75f9dfbe99379d0a",
+      "actualSHA256": "471b24a3a1cc6a25cc18bac7cfcfd5cad36e61ce3e7088fd75f9dfbe99379d0a",
+      "hashMatches": true,
+      "boundsEvidence": "S: manifest parse, not recomputed this turn; normalized source units, not metres",
+      "sceneBounds": {
+        "min": [
+          -0.0627,
+          -0.0,
+          -0.3157
+        ],
+        "max": [
+          0.0627,
+          0.9995,
+          0.3157
+        ],
+        "size": [
+          0.1255,
+          0.9995,
+          0.6313
+        ],
+        "long_axis": "Y",
+        "meaning": "按场景节点 TRS 逐级变换后求出的 AABB，用于判断朝向/落地/比例",
+        "verified_by": "parse"
+      },
+      "sourceOrigin": -0.0,
+      "triangles": 9711,
+      "textures": [
+        {
+          "index": 0,
+          "slot": "baseColor",
+          "mimeType": "image/jpeg",
+          "width": 4096,
+          "height": 4096,
+          "bytes": 2781275
+        }
+      ],
+      "skins": 0,
+      "animations": 0,
+      "previewStatus": "confirmed",
+      "visualAcceptance": "not_performed",
+      "calibration": "UNCALIBRATED",
+      "candidateOnly": true,
+      "sourceForward": null,
+      "sourceUnitInMetres": null,
+      "N": null,
+      "T_logic_from_asset": null,
+      "sourceEndpointMarkers": null,
+      "measuredProxy": null,
+      "endpointErrors": null,
+      "appliedCount": 0,
+      "fallback": "LEGACY_PRIMITIVES"
+    },
+    {
+      "file": "prop_coin.glb",
+      "sourcePath": "public/models/prop_coin.glb",
+      "sourceCommit": "622e7da",
+      "sourceSHA256": "b725ade8553e81b375c2265db5fb00078e3f994bce2505ada76360f0af3b27dd",
+      "actualSHA256": "b725ade8553e81b375c2265db5fb00078e3f994bce2505ada76360f0af3b27dd",
+      "hashMatches": true,
+      "boundsEvidence": "S: manifest parse, not recomputed this turn; normalized source units, not metres",
+      "sceneBounds": {
+        "min": [
+          -0.4998,
+          0.0,
+          -0.0813
+        ],
+        "max": [
+          0.4998,
+          0.9995,
+          0.0813
+        ],
+        "size": [
+          0.9995,
+          0.9995,
+          0.1626
+        ],
+        "long_axis": "X",
+        "meaning": "按场景节点 TRS 逐级变换后求出的 AABB，用于判断朝向/落地/比例",
+        "verified_by": "parse"
+      },
+      "sourceOrigin": 0.0,
+      "triangles": 9767,
+      "textures": [
+        {
+          "index": 0,
+          "slot": "baseColor",
+          "mimeType": "image/jpeg",
+          "width": 4096,
+          "height": 4096,
+          "bytes": 1472098
+        }
+      ],
+      "skins": 0,
+      "animations": 0,
+      "previewStatus": "absent",
+      "visualAcceptance": "not_performed",
+      "calibration": "UNCALIBRATED",
+      "candidateOnly": true,
+      "sourceForward": null,
+      "sourceUnitInMetres": null,
+      "N": null,
+      "T_logic_from_asset": null,
+      "sourceEndpointMarkers": null,
+      "measuredProxy": null,
+      "endpointErrors": null,
+      "appliedCount": 0,
+      "fallback": "LEGACY_PRIMITIVES"
+    },
+    {
+      "file": "prop_magnet.glb",
+      "sourcePath": "public/models/prop_magnet.glb",
+      "sourceCommit": "622e7da",
+      "sourceSHA256": "2173cef98c32892b0df3b5578b50727416ee2c7d9b9c3a01004f17675069130c",
+      "actualSHA256": "2173cef98c32892b0df3b5578b50727416ee2c7d9b9c3a01004f17675069130c",
+      "hashMatches": true,
+      "boundsEvidence": "S: manifest parse, not recomputed this turn; normalized source units, not metres",
+      "sceneBounds": {
+        "min": [
+          -0.1152,
+          -0.0,
+          -0.4054
+        ],
+        "max": [
+          0.1152,
+          0.9804,
+          0.4054
+        ],
+        "size": [
+          0.2304,
+          0.9804,
+          0.8108
+        ],
+        "long_axis": "Y",
+        "meaning": "按场景节点 TRS 逐级变换后求出的 AABB，用于判断朝向/落地/比例",
+        "verified_by": "parse"
+      },
+      "sourceOrigin": -0.0,
+      "triangles": 115095,
+      "textures": [
+        {
+          "index": 0,
+          "slot": "normal",
+          "mimeType": "image/png",
+          "width": 4096,
+          "height": 4096,
+          "bytes": 1603605
+        },
+        {
+          "index": 1,
+          "slot": "baseColor",
+          "mimeType": "image/jpeg",
+          "width": 4096,
+          "height": 4096,
+          "bytes": 1152664
+        },
+        {
+          "index": 2,
+          "slot": "metallicRoughness",
+          "mimeType": "image/jpeg",
+          "width": 4096,
+          "height": 4096,
+          "bytes": 960805
+        }
+      ],
+      "skins": 0,
+      "animations": 0,
+      "previewStatus": "absent",
+      "visualAcceptance": "not_performed",
+      "calibration": "UNCALIBRATED",
+      "candidateOnly": true,
+      "sourceForward": null,
+      "sourceUnitInMetres": null,
+      "N": null,
+      "T_logic_from_asset": null,
+      "sourceEndpointMarkers": null,
+      "measuredProxy": null,
+      "endpointErrors": null,
+      "appliedCount": 0,
+      "fallback": "LEGACY_PRIMITIVES"
+    },
+    {
+      "file": "train_metro.glb",
+      "sourcePath": "public/models/train_metro.glb",
+      "sourceCommit": "622e7da",
+      "sourceSHA256": "721bb182e1a323e1a01f65db3bb3602de3c6196ccb5c458a093ca87cd10ed4c8",
+      "actualSHA256": "721bb182e1a323e1a01f65db3bb3602de3c6196ccb5c458a093ca87cd10ed4c8",
+      "hashMatches": true,
+      "boundsEvidence": "S: manifest parse, not recomputed this turn; normalized source units, not metres",
+      "sceneBounds": {
+        "min": [
+          -0.4998,
+          0.0,
+          -0.1604
+        ],
+        "max": [
+          0.4998,
+          0.311,
+          0.1604
+        ],
+        "size": [
+          0.9995,
+          0.311,
+          0.3208
+        ],
+        "long_axis": "X",
+        "meaning": "按场景节点 TRS 逐级变换后求出的 AABB，用于判断朝向/落地/比例",
+        "verified_by": "parse"
+      },
+      "sourceOrigin": 0.0,
+      "triangles": 8968,
+      "textures": [
+        {
+          "index": 0,
+          "slot": "baseColor",
+          "mimeType": "image/jpeg",
+          "width": 4096,
+          "height": 4096,
+          "bytes": 2277041
+        }
+      ],
+      "skins": 0,
+      "animations": 0,
+      "previewStatus": "confirmed",
+      "visualAcceptance": "not_performed",
+      "calibration": "UNCALIBRATED",
+      "candidateOnly": true,
+      "sourceForward": null,
+      "sourceUnitInMetres": null,
+      "N": null,
+      "T_logic_from_asset": null,
+      "sourceEndpointMarkers": null,
+      "measuredProxy": null,
+      "endpointErrors": null,
+      "appliedCount": 0,
+      "fallback": "LEGACY_PRIMITIVES"
+    },
+    {
+      "file": "train_ramp_or_car.glb",
+      "sourcePath": "public/models/train_ramp_or_car.glb",
+      "sourceCommit": "622e7da",
+      "sourceSHA256": "b561449fbb1426f2ba38cd54f75818090cf68076b3cb59a50c80dce2beb48fe4",
+      "actualSHA256": "b561449fbb1426f2ba38cd54f75818090cf68076b3cb59a50c80dce2beb48fe4",
+      "hashMatches": true,
+      "boundsEvidence": "S: manifest parse, not recomputed this turn; normalized source units, not metres",
+      "sceneBounds": {
+        "min": [
+          -0.4895,
+          -0.0001,
+          -0.1904
+        ],
+        "max": [
+          0.4896,
+          0.4385,
+          0.1904
+        ],
+        "size": [
+          0.9792,
+          0.4386,
+          0.3808
+        ],
+        "long_axis": "X",
+        "meaning": "按场景节点 TRS 逐级变换后求出的 AABB，用于判断朝向/落地/比例",
+        "verified_by": "parse"
+      },
+      "sourceOrigin": -0.0001,
+      "triangles": 112516,
+      "textures": [
+        {
+          "index": 0,
+          "slot": "normal",
+          "mimeType": "image/png",
+          "width": 4096,
+          "height": 4096,
+          "bytes": 1870479
+        },
+        {
+          "index": 1,
+          "slot": "baseColor",
+          "mimeType": "image/jpeg",
+          "width": 4096,
+          "height": 4096,
+          "bytes": 3335812
+        },
+        {
+          "index": 2,
+          "slot": "metallicRoughness",
+          "mimeType": "image/jpeg",
+          "width": 4096,
+          "height": 4096,
+          "bytes": 1642333
+        }
+      ],
+      "skins": 0,
+      "animations": 0,
+      "previewStatus": "confirmed",
+      "visualAcceptance": "not_performed",
+      "calibration": "UNCALIBRATED",
+      "candidateOnly": true,
+      "sourceForward": null,
+      "sourceUnitInMetres": null,
+      "N": null,
+      "T_logic_from_asset": null,
+      "sourceEndpointMarkers": null,
+      "measuredProxy": null,
+      "endpointErrors": null,
+      "appliedCount": 0,
+      "fallback": "LEGACY_PRIMITIVES"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao19.pao6.config.ts --grep ramp-roof-jump-land --repeat-each 3
+
+[WebServer] (node:25376) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:9192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\.pao19-pao6.local\baseline.spec.ts:65:1 › ramp-roof-jump-land (7.0s)
+  ok 2 tests\e2e\.pao19-pao6.local\proposal.spec.ts:64:1 › ramp-roof-jump-land (5.8s)
+(node:32236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  3 tests\e2e\.pao19-pao6.local\baseline.spec.ts:65:1 › ramp-roof-jump-land (5.8s)
+(node:19464) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 4 tests\e2e\.pao19-pao6.local\proposal.spec.ts:64:1 › ramp-roof-jump-land (6.0s)
+(node:26400) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 5 tests\e2e\.pao19-pao6.local\baseline.spec.ts:65:1 › ramp-roof-jump-land (6.8s)
+  ok 6 tests\e2e\.pao19-pao6.local\proposal.spec.ts:64:1 › ramp-roof-jump-land (5.6s)
+
+
+  1) tests\e2e\.pao19-pao6.local\baseline.spec.ts:65:1 › ramp-roof-jump-land ───────────────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "PLAYING"
+    Received: "GAMEOVER"
+
+      70 |   if (roof.state === 'PLAYING' || roof.state === 'PAUSED') {
+      71 |     await page.keyboard.press('w'); await page.waitForTimeout(150); await snap(page, 'roof-jump');
+    > 72 |     await reach(page, 60); const landed = await snap(page, 'roof-exit-land'); expect(landed.state).toBe('PLAYING'); expect(landed.position.y).toBe(0);
+         |                                                                                                    ^
+      73 |   }
+      74 |   expect(await page.evaluate(() => (window as any).__paoTrace.length)).toBeGreaterThan(10);
+      75 | });
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\.pao19-pao6.local\baseline.spec.ts:72:100
+
+    Error Context: test-results\baseline-ramp-roof-jump-land-repeat1\error-context.md
+
+  1 failed
+    tests\e2e\.pao19-pao6.local\baseline.spec.ts:65:1 › ramp-roof-jump-land ────────────────────────
+  5 passed (44.9s)

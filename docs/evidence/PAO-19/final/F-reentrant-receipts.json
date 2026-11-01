@@ -1,0 +1,15 @@
+[
+  {
+    "pending": {
+      "commandId": "reentrant-receipt",
+      "type": "GO_MENU",
+      "runId": "run-c5ad9d23-a881-48f2-a170-29453e6657b5"
+    }
+  },
+  {
+    "result": {
+      "ok": true,
+      "commandId": "reentrant-receipt"
+    }
+  }
+]

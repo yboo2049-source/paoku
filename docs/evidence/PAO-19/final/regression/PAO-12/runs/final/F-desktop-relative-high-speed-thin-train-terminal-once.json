@@ -1,0 +1,402 @@
+{
+  "title": "F-desktop-relative-high-speed-thin-train-terminal-once",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "browserVersion": "151.0.7922.34",
+  "errors": [],
+  "states": [
+    {
+      "name": "F-desktop-head-on-before",
+      "snapshot": {
+        "contractVersion": 1,
+        "runId": "run-eed982d1-cd0d-4a32-914a-71220af2fc36",
+        "tick": 1,
+        "timeSec": 0.016666666666666666,
+        "stepSec": 0.016666666666666666,
+        "phase": "PAUSED",
+        "seed": 1346457360,
+        "rngState": 1346457360,
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "simulationVersion": "pao10-fixed-v1",
+        "configId": "legacy-18-45-v1",
+        "contentRevision": "pao13-track-v1",
+        "generation": {
+          "runId": "run-eed982d1-cd0d-4a32-914a-71220af2fc36",
+          "seed": 1346457360,
+          "contentRevision": "pao13-track-v1",
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "rngState": 1346457360,
+          "cursor": 0,
+          "nextZ": 30,
+          "lastTick": 0,
+          "stage": "INTRO",
+          "lastSegmentId": null,
+          "fallbackCount": 0
+        },
+        "lastInputSequence": 0,
+        "discontinuity": true,
+        "context": {
+          "state": "PAUSED",
+          "score": 0.030006944444444447,
+          "highScore": 0,
+          "coins": 0,
+          "totalCoins": 0,
+          "speed": 18.004166666666666,
+          "distance": 0.30006944444444444,
+          "player": {
+            "lane": 1,
+            "x": 0,
+            "targetX": 0,
+            "y": 0,
+            "z": 0,
+            "vy": 0,
+            "isJumping": false,
+            "isRolling": false,
+            "rollTimer": 0,
+            "hasHoverboard": false,
+            "hoverboardActive": false,
+            "invulnerableTimer": 0,
+            "activePowerUps": {},
+            "collisionEnded": false,
+            "supportSurfaceId": null,
+            "contact": "AIRBORNE",
+            "supportDeparture": null,
+            "supportRampExit": null
+          },
+          "obstacles": [],
+          "coinEntities": [],
+          "powerUpEntities": [],
+          "missions": [
+            {
+              "id": "m1",
+              "title": "COIN COLLECTOR",
+              "description": "Collect 30 coins in a single run",
+              "target": 30,
+              "current": 0,
+              "rewardCoins": 50,
+              "completed": false,
+              "type": "COLLECT_COINS"
+            },
+            {
+              "id": "m2",
+              "title": "HIGH JUMPER",
+              "description": "Perform 10 jumps in a single run",
+              "target": 10,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "JUMP_TIMES"
+            },
+            {
+              "id": "m3",
+              "title": "SLIDER PRO",
+              "description": "Perform 8 rolls under obstacles",
+              "target": 8,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "ROLL_TIMES"
+            },
+            {
+              "id": "m4",
+              "title": "SCORE RUNNER",
+              "description": "Reach a score of 500 in a single run",
+              "target": 500,
+              "current": 0,
+              "rewardCoins": 100,
+              "completed": false,
+              "type": "SCORE_REACH"
+            }
+          ],
+          "chase": {
+            "distance": 2.8,
+            "isNear": false
+          },
+          "runLedger": {
+            "pickupCount": 0,
+            "pickupCoins": 0,
+            "rewardCoins": 0,
+            "rewardedMissionIds": []
+          }
+        }
+      }
+    },
+    {
+      "name": "F-desktop-head-on-ended",
+      "snapshot": {
+        "contractVersion": 1,
+        "runId": "run-eed982d1-cd0d-4a32-914a-71220af2fc36",
+        "tick": 2,
+        "timeSec": 0.03333333333333333,
+        "stepSec": 0.016666666666666666,
+        "phase": "ENDED",
+        "seed": 1346457360,
+        "rngState": 1346457360,
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "simulationVersion": "pao10-fixed-v1",
+        "configId": "legacy-18-45-v1",
+        "contentRevision": "pao13-track-v1",
+        "generation": {
+          "runId": "run-eed982d1-cd0d-4a32-914a-71220af2fc36",
+          "seed": 1346457360,
+          "contentRevision": "pao13-track-v1",
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "rngState": 1346457360,
+          "cursor": 0,
+          "nextZ": 30,
+          "lastTick": 0,
+          "stage": "INTRO",
+          "lastSegmentId": null,
+          "fallbackCount": 0
+        },
+        "lastInputSequence": 0,
+        "discontinuity": false,
+        "context": {
+          "state": "GAMEOVER",
+          "score": 0.06002083333333334,
+          "highScore": 0,
+          "coins": 0,
+          "totalCoins": 0,
+          "speed": 18.008333333333333,
+          "distance": 0.6002083333333333,
+          "player": {
+            "lane": 1,
+            "x": 0,
+            "targetX": 0,
+            "y": 0,
+            "z": 0.3001388888888889,
+            "vy": 0,
+            "isJumping": false,
+            "isRolling": false,
+            "rollTimer": 0,
+            "hasHoverboard": false,
+            "hoverboardActive": false,
+            "invulnerableTimer": 0,
+            "activePowerUps": {},
+            "collisionEnded": false,
+            "supportSurfaceId": "ground",
+            "contact": "SUPPORTED",
+            "supportDeparture": null,
+            "supportRampExit": null,
+            "supportSample": {
+              "x": 0,
+              "y": 0,
+              "z": 0.3001388888888889
+            }
+          },
+          "obstacles": [
+            {
+              "id": "head-on",
+              "type": "MOVING_TRAIN",
+              "lane": 1,
+              "x": 0,
+              "y": 0,
+              "z": -18,
+              "width": 2.4,
+              "height": 3,
+              "depth": 0.05,
+              "speedZ": -1800
+            }
+          ],
+          "coinEntities": [],
+          "powerUpEntities": [],
+          "missions": [
+            {
+              "id": "m1",
+              "title": "COIN COLLECTOR",
+              "description": "Collect 30 coins in a single run",
+              "target": 30,
+              "current": 0,
+              "rewardCoins": 50,
+              "completed": false,
+              "type": "COLLECT_COINS"
+            },
+            {
+              "id": "m2",
+              "title": "HIGH JUMPER",
+              "description": "Perform 10 jumps in a single run",
+              "target": 10,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "JUMP_TIMES"
+            },
+            {
+              "id": "m3",
+              "title": "SLIDER PRO",
+              "description": "Perform 8 rolls under obstacles",
+              "target": 8,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "ROLL_TIMES"
+            },
+            {
+              "id": "m4",
+              "title": "SCORE RUNNER",
+              "description": "Reach a score of 500 in a single run",
+              "target": 500,
+              "current": 0,
+              "rewardCoins": 100,
+              "completed": false,
+              "type": "SCORE_REACH"
+            }
+          ],
+          "chase": {
+            "distance": 2.8,
+            "isNear": false
+          },
+          "runLedger": {
+            "pickupCount": 0,
+            "pickupCoins": 0,
+            "rewardCoins": 0,
+            "rewardedMissionIds": []
+          }
+        }
+      }
+    },
+    {
+      "name": "restart-before-pause-UI-boundary",
+      "activeElement": {
+        "id": "",
+        "tagName": "BODY"
+      },
+      "hudPausePresent": true,
+      "state": "PLAYING"
+    }
+  ],
+  "events": [
+    {
+      "type": "PLAYER_LANDED",
+      "payload": {
+        "y": 0
+      }
+    },
+    {
+      "type": "COLLISION",
+      "payload": {
+        "targetType": "MOVING_TRAIN",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0.11465649222363301
+        },
+        "obstacleId": "head-on",
+        "time": 0.38201145025921224,
+        "normal": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      }
+    },
+    {
+      "type": "PLAYER_LANDED",
+      "payload": {
+        "y": 0
+      }
+    },
+    {
+      "type": "PLAYER_LANDED",
+      "payload": {
+        "y": 0
+      }
+    },
+    {
+      "type": "COLLISION",
+      "payload": {
+        "targetType": "MOVING_TRAIN",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0.11470902356964088
+        },
+        "obstacleId": "head-on",
+        "time": 0.38200969921434524,
+        "normal": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      }
+    }
+  ],
+  "trace": [
+    {
+      "tick": 1,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "isRolling": false,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 0,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "isRolling": false,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 0,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "isRolling": false,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 1,
+      "x": 0,
+      "y": 0,
+      "z": 0.30006944444444444,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 2,
+      "x": 0,
+      "y": 0,
+      "z": 0.6002083333333333,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 3,
+      "x": 0,
+      "y": 0,
+      "z": 0.9004166666666666,
+      "isRolling": false,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 3,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "isRolling": false,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 3,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "isRolling": false,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    }
+  ],
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+  "devicePixelRatio": 1
+}

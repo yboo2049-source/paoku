@@ -156,16 +156,20 @@ function syncApplicationProjection(): void {
   gameLoop.setPaused(!accepting);
 }
 
+// Retain failed/unknown attempts verbatim so explicit retries cannot toggle twice
+// or reseal a different summary under the same transaction identity.
+const commandAttempts = new Map<string,{signature:string; command:AppCommand; pending:boolean}>();
 function reportResult(result: CommandResult): void {
   if (disposed) return;
   syncApplicationProjection();
-  if (!result.ok) uiManager.showToast?.('ACTION FAILED: ' + result.errorCode + '. Retry the action.');
+  if (uiManager.notifyCommandResult) uiManager.notifyCommandResult(result);
+  else if (!result.ok) uiManager.showToast?.('ACTION FAILED: ' + result.errorCode + '. Retry the action.');
 }
 
 function dispatchIntent(type: AppCommand['type'], payload?: Record<string, unknown>): void {
   const app = application.snapshot;
   const hasRunId = payload != null && Object.prototype.hasOwnProperty.call(payload, 'runId');
-  const command: AppCommand = {
+  let command: AppCommand = {
     commandId: typeof payload?.commandId === 'string' ? payload.commandId : 'ui-' + (++commandSequence),
     type,
     ...(type === 'START_RUN' || type === 'BUY_SKIN' || type === 'EQUIP_SKIN' || type === 'SET_AUDIO' || type === 'UPDATE_AUDIO' ? {} : { runId: hasRunId ? payload!.runId as string | null : app.activeRunId }),
@@ -173,6 +177,12 @@ function dispatchIntent(type: AppCommand['type'], payload?: Record<string, unkno
     ...(type === 'SET_AUDIO' ? { audio: payload as unknown as AppCommand['audio'] } : {}),
     ...(type === 'UPDATE_AUDIO' ? { audioOperation: payload as unknown as AppCommand['audioOperation'] } : {}),
   };
+  const signature=JSON.stringify(command);
+  const previous=commandAttempts.get(command.commandId);
+  if(previous?.signature===signature){
+    if(previous.pending)return;
+    command={...previous.command};
+  }
   const terminalCommand = type === 'RESTART_RUN' || type === 'GO_MENU' || type === 'OPEN_SHOP';
   if (terminalCommand && inSimulationStep) {
     // A synchronous legacy fact listener can submit an intent mid-tick. Keep its
@@ -194,11 +204,14 @@ function dispatchIntent(type: AppCommand['type'], payload?: Record<string, unkno
   const allowedTerminal = type === 'GO_MENU' || (type === 'RESTART_RUN' && (app.appState === 'PAUSED' || app.appState === 'GAMEOVER')) || (type === 'OPEN_SHOP' && app.appState === 'GAMEOVER');
   if (terminalCommand && allowedTerminal && app.activeRunId && command.runId === app.activeRunId) {
     // Seal before changing phase, clearing the world or resetting any mission.
-    command.summary = app.summary ?? createRunSummary(simulation.snapshot, simulation.snapshot.phase === 'ENDED' ? 'COLLISION' : 'QUIT');
+    command.summary = command.summary ?? app.summary ?? createRunSummary(simulation.snapshot, simulation.snapshot.phase === 'ENDED' ? 'COLLISION' : 'QUIT');
     inputSystem.clear();
     gameLoop.setPaused(true);
     if (command.summary.endReason === 'QUIT') simulation.abandon();
   }
+  const attempt={signature,command:immutableCopy(command),pending:true};
+  commandAttempts.set(command.commandId,attempt);
+  uiManager.notifyCommandPending?.({commandId:command.commandId,type:command.type,runId:command.runId??app.activeRunId});
   const result = application.dispatch(command);
   if (pauseBarrier && application.snapshot.appState === 'PAUSED' && application.snapshot.activeRunId === command.runId) {
     pendingPauseIntents--;
@@ -208,6 +221,8 @@ function dispatchIntent(type: AppCommand['type'], payload?: Record<string, unkno
   if (type === 'START_RUN' || type === 'PAUSE_RUN' || type === 'RESUME_RUN') syncApplicationProjection();
   void result.then(result => {
     if (pauseBarrier) pendingPauseIntents--;
+    attempt.pending=false;
+    if(result.ok&&commandAttempts.get(command.commandId)===attempt)commandAttempts.delete(command.commandId);
     reportResult(result);
   });
 }
@@ -224,8 +239,8 @@ on('TOGGLE_PAUSE', payload => {
   const state = application.snapshot.appState;
   dispatchIntent(state === 'PAUSED' ? 'RESUME_RUN' : 'PAUSE_RUN', payload);
 });
-on('TOGGLE_AUDIO', () => {
-  dispatchIntent('UPDATE_AUDIO', { kind: 'TOGGLE', field: 'masterMuted' });
+on('TOGGLE_AUDIO', payload => {
+  dispatchIntent('UPDATE_AUDIO', { ...payload, kind: 'TOGGLE', field: 'masterMuted' });
 });
 
 /** Observe only complete committed ticks; DOM update and render never settle. */

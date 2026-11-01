@@ -1,0 +1,116 @@
+{
+  "events": [
+    {
+      "type": "pointerdown",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "touchstart",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "pointerup",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "touchend",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "pointerdown",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "touchstart",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "pointerup",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "touchend",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "pointerdown",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "touchstart",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "pointerup",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "touchend",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "pointerdown",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "touchstart",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "pointerup",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "touchend",
+      "target": "CANVAS",
+      "state": "PLAYING"
+    },
+    {
+      "type": "pointerdown",
+      "target": "svg",
+      "id": "hud-pause-btn",
+      "state": "PLAYING"
+    },
+    {
+      "type": "touchstart",
+      "target": "svg",
+      "id": "hud-pause-btn",
+      "state": "PLAYING"
+    },
+    {
+      "type": "pointerup",
+      "target": "svg",
+      "id": "hud-pause-btn",
+      "state": "PLAYING"
+    },
+    {
+      "type": "touchend",
+      "target": "svg",
+      "id": "hud-pause-btn",
+      "state": "PLAYING"
+    },
+    {
+      "type": "click",
+      "target": "BUTTON",
+      "id": "hud-pause-btn",
+      "state": "PLAYING"
+    }
+  ],
+  "state": "PAUSED",
+  "errors": []
+}

@@ -1,0 +1,5 @@
+import fs from 'node:fs';import crypto from 'node:crypto';
+const phase=process.argv[2]||'A';fs.mkdirSync('tests/e2e/.pao19.local',{recursive:true});const manifest=[];
+for(const file of fs.readdirSync('tests/e2e').filter(x=>x.endsWith('.spec.ts'))){const original=fs.readFileSync('tests/e2e/'+file,'utf8');let mirror=original.replace(/docs\/evidence\/PAO-(6|10|11|12|13|14)(?=[/'"])/g,`docs/evidence/PAO-19/${phase}/regression/PAO-$1`).replace(/path: '(screenshot_[^']+)'/g,`path: 'docs/evidence/PAO-19/${phase}/regression/$1'`);fs.writeFileSync('tests/e2e/.pao19.local/'+file,mirror);manifest.push({file,originalSha256:crypto.createHash('sha256').update(original).digest('hex'),mirrorSha256:crypto.createHash('sha256').update(mirror).digest('hex'),changes:'only evidence output paths redirected; all assertions retained'});}
+fs.mkdirSync(`docs/evidence/PAO-19/${phase}/regression`,{recursive:true});fs.writeFileSync(`docs/evidence/PAO-19/${phase}/mirror-manifest.json`,JSON.stringify(manifest,null,2));
+let c=fs.readFileSync('.pao19.playwright.config.ts','utf8').replace(/testDir:'[^']*'/,"testDir:'./tests/e2e/.pao19.local'");fs.writeFileSync('.pao19.playwright.config.ts',c);

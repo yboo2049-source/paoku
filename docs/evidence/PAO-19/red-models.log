@@ -1,0 +1,27 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao19-ui.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-19
+
+ ❯ tests/unit/pao19-ui.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao19-ui.test.ts [ tests/unit/pao19-ui.test.ts ]
+Error: Cannot find module '../../src/ui/views/models' imported from D:/worker/paoku-sessions/pao-19/tests/unit/pao19-ui.test.ts
+ ❯ tests/unit/pao19-ui.test.ts:2:1
+      1| import { describe, it, expect } from 'vitest';
+      2| import { speedLabel, powerUps, ToastQueue, Receipts } from '../../src/…
+       | ^
+      3| describe('PAO19 readonly presentation R01-R05',()=>{
+      4|  it('uses truthful units',()=>{expect(speedLabel(18)).toBe('18.0 m/s')…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  18:14:29
+   Duration  258ms (transform 27ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)

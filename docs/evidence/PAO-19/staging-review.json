@@ -1,0 +1,7 @@
+{
+  "files": 251,
+  "whitelistPassed": true,
+  "unstagedTrackedChanges": false,
+  "legacyTestOnlyApprovedSingleLine": true,
+  "evidenceLogs": "Only whitespace normalized; outcomes and assertions preserved"
+}

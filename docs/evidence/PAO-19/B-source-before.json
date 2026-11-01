@@ -1,0 +1,16 @@
+{
+  "cwd": "D:\\worker\\paoku-sessions\\pao-19",
+  "port": 5189,
+  "hashes": {
+    "src/ui/dom.ts": "7cb84e10af65c329593a464e7d8f44259cea2b06976769a30622f6141dde277b",
+    "src/ui/views/models.ts": "f53781889bc54445388b6c36c88f014a65c49d6e3d362331ce35fb7d8c62dc51",
+    "src/ui/views/screens.ts": "e2e93aab898f820c922da98e4a968fbbc135138592509a7f884c9de25658e06e",
+    "src/style.css": "581fad14c71404644aeff85b4f47cbee3720d047e4c6dd4b93ebf0e22d69e7bf",
+    "src/main.ts": "825a44845af15776f5c159fb836f7867235ac6fc73a05d6e710ce4b9bcf2ce57",
+    "src/application/types.ts": "7b9d24cedb0de02564f18d6eec6c239e7ca299792305b5814177c2088acced2b",
+    "src/application/appService.ts": "843d526e1ee1c71b97299d2dffe9013c6fbca175c8bbe3bf315534c9055a189f",
+    "src/application/saveRepository.ts": "9794bddd00971c6a415168c39c557987b0c4b291fc46d912d03ea6d9efabadde",
+    "src/systems/input.ts": "407c7cc8e5184f87756de0c2f847779b565976a5d2fe74d54e4ad11cd45853e9",
+    "src/systems/physics.ts": "2abbc7950295e1c493a98e6fb1f3db4f97442f2a5e9309863c7f469d72dfe34c"
+  }
+}

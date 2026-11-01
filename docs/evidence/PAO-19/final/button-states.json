@@ -1,0 +1,30 @@
+[
+  {
+    "state": "normal",
+    "background": "rgb(36, 63, 75)",
+    "color": "rgb(247, 243, 233)",
+    "translate": "none",
+    "disabled": false
+  },
+  {
+    "state": "hover",
+    "background": "rgb(54, 87, 101)",
+    "color": "rgb(247, 243, 233)",
+    "translate": "none",
+    "disabled": false
+  },
+  {
+    "state": "pressed",
+    "background": "rgb(54, 87, 101)",
+    "color": "rgb(247, 243, 233)",
+    "translate": "0px 1px",
+    "disabled": false
+  },
+  {
+    "state": "disabled",
+    "background": "rgb(216, 223, 220)",
+    "color": "rgb(75, 98, 107)",
+    "translate": "none",
+    "disabled": true
+  }
+]

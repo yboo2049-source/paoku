@@ -1,0 +1,40 @@
+{
+  "method": "sRGB relative luminance; panel opaque; danger/powerup used as non-text boundary only",
+  "pairs": [
+    {
+      "fg": "#243F4B",
+      "bg": "#F7F3E9",
+      "ratio": 10.040020721448158
+    },
+    {
+      "fg": "#4B626B",
+      "bg": "#F7F3E9",
+      "ratio": 5.815991143351258
+    },
+    {
+      "fg": "#F7F3E9",
+      "bg": "#365765",
+      "ratio": 6.998287890595455
+    },
+    {
+      "fg": "#667B83",
+      "bg": "#F7F3E9",
+      "ratio": 4.010197715777869
+    },
+    {
+      "fg": "#4B626B",
+      "bg": "#d8dfdc",
+      "ratio": 4.759267380384683
+    },
+    {
+      "fg": "#8C6BC4",
+      "bg": "#F7F3E9",
+      "ratio": 3.7787991547171673
+    },
+    {
+      "fg": "#D94B4B",
+      "bg": "#F7F3E9",
+      "ratio": 3.7466008768726042
+    }
+  ]
+}

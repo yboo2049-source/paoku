@@ -1,0 +1,142 @@
+{
+  "title": "F-browser-isolated-highest-speed-large-step-and-pose-matrix",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "browserVersion": "151.0.7922.34",
+  "errors": [],
+  "states": [
+    {
+      "level": "F-isolated-browser-simulation-not-natural-app-run",
+      "maxSpeed": 45,
+      "stepSec": 0.125,
+      "thin": {
+        "contractVersion": 1,
+        "runId": "F-browser-isolated",
+        "tick": 1,
+        "timeSec": 0.125,
+        "stepSec": 0.125,
+        "phase": "ENDED",
+        "seed": 12,
+        "rngState": 12,
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "simulationVersion": "pao10-fixed-v1",
+        "configId": "legacy-18-45-v1",
+        "contentRevision": "legacy-unseeded-spawner",
+        "lastInputSequence": 0,
+        "discontinuity": false,
+        "context": {
+          "state": "GAMEOVER",
+          "score": 0.5625,
+          "highScore": 0,
+          "coins": 0,
+          "totalCoins": 0,
+          "speed": 45,
+          "distance": 5.625,
+          "player": {
+            "lane": 1,
+            "x": 0,
+            "targetX": 0,
+            "y": 0,
+            "z": 5.625,
+            "vy": 0,
+            "isJumping": false,
+            "isRolling": false,
+            "rollTimer": 0,
+            "hasHoverboard": false,
+            "hoverboardActive": false,
+            "invulnerableTimer": 0,
+            "activePowerUps": {},
+            "supportSurfaceId": "ground",
+            "contact": "SUPPORTED",
+            "supportDeparture": null,
+            "supportSample": {
+              "x": 0,
+              "y": 0,
+              "z": 5.625
+            },
+            "supportRampExit": null
+          },
+          "obstacles": [
+            {
+              "id": "thin-static",
+              "type": "LOW_OBSTACLE",
+              "lane": 1,
+              "x": 0,
+              "y": 0,
+              "z": 2.5,
+              "width": 2.4,
+              "height": 1.2,
+              "depth": 0.02
+            }
+          ],
+          "coinEntities": [],
+          "powerUpEntities": [],
+          "missions": [
+            {
+              "id": "m1",
+              "title": "COIN COLLECTOR",
+              "description": "Collect 30 coins in a single run",
+              "target": 30,
+              "current": 0,
+              "rewardCoins": 50,
+              "completed": false,
+              "type": "COLLECT_COINS"
+            },
+            {
+              "id": "m2",
+              "title": "HIGH JUMPER",
+              "description": "Perform 10 jumps in a single run",
+              "target": 10,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "JUMP_TIMES"
+            },
+            {
+              "id": "m3",
+              "title": "SLIDER PRO",
+              "description": "Perform 8 rolls under obstacles",
+              "target": 8,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "ROLL_TIMES"
+            },
+            {
+              "id": "m4",
+              "title": "SCORE RUNNER",
+              "description": "Reach a score of 500 in a single run",
+              "target": 500,
+              "current": 0,
+              "rewardCoins": 100,
+              "completed": false,
+              "type": "SCORE_REACH"
+            }
+          ],
+          "chase": {
+            "distance": 2.8,
+            "isNear": false
+          },
+          "runLedger": {
+            "pickupCount": 0,
+            "pickupCoins": 0,
+            "rewardCoins": 0,
+            "rewardedMissionIds": []
+          }
+        }
+      },
+      "lowStanding": true,
+      "lowRolling": true,
+      "lowJumpClear": false,
+      "highStanding": true,
+      "highRollingClear": false,
+      "airborneRollingHit": true
+    }
+  ],
+  "events": [],
+  "trace": [],
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+  "devicePixelRatio": 1
+}

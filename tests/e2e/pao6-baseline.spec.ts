@@ -67,7 +67,7 @@ test('ramp-roof-jump-land', async ({ page }) => {
   await reach(page, 27); const roof = await snap(page, 'roof-contact');
   expect(roof.state).toBe('PLAYING'); expect(roof.position.y).toBe(3);
   if (roof.state === 'PLAYING' || roof.state === 'PAUSED') {
-    await page.keyboard.press('w'); await page.waitForTimeout(150); await snap(page, 'roof-jump');
+    await reach(page, 31); await page.keyboard.press('w'); await page.waitForTimeout(150); await snap(page, 'roof-jump');
     await reach(page, 60); const landed = await snap(page, 'roof-exit-land'); expect(landed.state).toBe('PLAYING'); expect(landed.position.y).toBe(0);
   }
   expect(await page.evaluate(() => (window as any).__paoTrace.length)).toBeGreaterThan(10);

@@ -1,0 +1,36 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao19.playwright.config.ts --grep modified-volume --retries 0
+
+[WebServer] (node:27264) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:10652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\.pao19.local\rebuild-ui.spec.ts:72:1 › R04 F-modified-volume-is-new-intent-after-lost-UI-ack (7.6s)
+
+
+  1) tests\e2e\.pao19.local\rebuild-ui.spec.ts:72:1 › R04 F-modified-volume-is-new-intent-after-lost-UI-ack
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0.2
+    Received: 0.3
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      73 |  await page.goto('/');await page.waitForFunction(()=>localStorage.getItem('paoku_save_v1')!==null);await page.evaluate(async()=>{const {UIManager}=await import(/* @vite-ignore */ '/src/ui/dom.ts');const result=UIManager.prototype.notifyCommandResult;let lost=true;UIManager.prototype.notifyCommandResult=function(r:any){if(lost&&r.commandId.startsWith('pao19-')){lost=false;return result.call(this,{...r,ok:false,errorCode:'SAVE_FAILED'});}return result.call(this,r);};});
+      74 |  const volume=async(value:string)=>{await page.locator('#bgm-volume').evaluate((el,value)=>{(el as HTMLInputElement).value=value;el.dispatchEvent(new Event('input',{bubbles:true}));},value);};
+    > 75 |  await volume('20');await expect(page.locator('#menu-screen .command-error')).toContainText('保存');await volume('30');await expect.poll(()=>page.evaluate(()=>(window as any).__GAME_SENSOR__.getAppSnapshot().audio.bgmVolume)).toBe(.3);await volume('20');await expect.poll(()=>page.evaluate(()=>(window as any).__GAME_SENSOR__.getAppSnapshot().audio.bgmVolume)).toBe(.2);
+         |                                                                                                                                                                                                                                                                                                                                                                        ^
+      76 | });
+      77 |
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\.pao19.local\rebuild-ui.spec.ts:75:360
+
+    Error Context: test-results\rebuild-ui-R04-F-modified--919ba-ew-intent-after-lost-UI-ack\error-context.md
+
+  1 failed
+    tests\e2e\.pao19.local\rebuild-ui.spec.ts:72:1 › R04 F-modified-volume-is-new-intent-after-lost-UI-ack

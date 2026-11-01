@@ -1,0 +1,43 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao19-ui.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-19
+
+ ❯ tests/unit/pao19-ui.test.ts (7 tests | 1 failed) 355ms
+   × R02 does not advertise a spent hoverboard when a stale timer remains 11ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao19-ui.test.ts > R02 does not advertise a spent hoverboard when a stale timer remains
+AssertionError: expected [ { id: 'HOVERBOARD', …(3) } ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "id": "HOVERBOARD",
++     "label": "悬浮滑板",
++     "path": "M3 10h18l-2 5H5z M7 18h1m8 0h1",
++     "time": "5秒",
++   },
++ ]
+
+ ❯ tests/unit/pao19-ui.test.ts:35:88
+     33|
+     34| it('R02 does not advertise a spent hoverboard when a stale timer remai…
+     35|  expect(powerUps({hoverboardActive:false,activePowerUps:new Map([['HOV…
+       |                                                                                        ^
+     36| });
+     37|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  18:41:58
+   Duration  908ms (transform 341ms, setup 0ms, import 124ms, tests 355ms, environment 0ms)

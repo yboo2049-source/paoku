@@ -1,0 +1,51 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao19.playwright.config.ts rebuild-ui.spec.ts --grep unknown --retries 0
+
+[WebServer] (node:22964) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:17132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\.pao19.local\rebuild-ui.spec.ts:41:1 › R04/R08 F-real-UI-unknown-audio-retry-retains-command (3.3s)
+  x  2 tests\e2e\.pao19.local\rebuild-ui.spec.ts:56:1 › R08 F-unknown-terminal-retry-keeps-sealed-summary (1.0m)
+
+
+  1) tests\e2e\.pao19.local\rebuild-ui.spec.ts:56:1 › R08 F-unknown-terminal-retry-keeps-sealed-summary
+
+    Test timeout of 60000ms exceeded.
+
+    Error: page.click: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for locator('#pause-menu-btn')
+        - locator resolved to <button id="pause-menu-btn" class="cyber-btn secondary-btn">返回菜单</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+          - waiting 100ms
+        107 × waiting for element to be visible, enabled and stable
+            - element is not visible
+          - retrying click action
+            - waiting 500ms
+
+
+      57 |  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await page.waitForFunction(()=>localStorage.getItem('paoku_save_v1')!==null);await page.click('#start-btn');await page.click('#hud-pause-btn');const original=await page.evaluate(()=>(window as any).__GAME_SENSOR__.getAppSnapshot().activeRunId);
+      58 |  await page.evaluate(()=>{const get=Storage.prototype.getItem,set=Storage.prototype.setItem;let armed=true,reads=0;Storage.prototype.getItem=function(k){if(k==='paoku_save_v1'&&reads>0){reads--;throw Error('F unknown terminal confirmation');}return get.call(this,k);};Storage.prototype.setItem=function(k,v){set.call(this,k,v);if(k==='paoku_save_v1'&&armed){armed=false;reads=1;throw Error('F terminal durable write');}};});
+    > 59 |  await page.click('#pause-menu-btn');await expect(page.locator('#paused-screen .command-error')).toContainText('保存');await page.click('#pause-menu-btn');await expect.poll(()=>page.evaluate(()=>(window as any).__GAME_SENSOR__.getGameState())).toBe('MENU');expect(errors).toEqual([]);const app=await page.evaluate(()=>(window as any).__GAME_SENSOR__.getAppSnapshot());await mkdir(dir,{recursive:true});await writeFile(dir+'/F-unknown-terminal.json',JSON.stringify({original,app,errors},null,2));
+         |                                                                                                                                 ^
+      60 | });
+      61 |
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\.pao19.local\rebuild-ui.spec.ts:59:129
+
+    Error Context: test-results\rebuild-ui-R08-F-unknown-terminal-retry-keeps-sealed-summary\error-context.md
+
+  1 failed
+    tests\e2e\.pao19.local\rebuild-ui.spec.ts:56:1 › R08 F-unknown-terminal-retry-keeps-sealed-summary
+  1 passed (1.1m)

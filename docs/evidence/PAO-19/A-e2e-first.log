@@ -1,0 +1,122 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao19.playwright.config.ts
+
+[WebServer] (node:15832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 44 tests using 1 worker
+
+(node:2952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\gameplay.spec.ts:50:3 › 状态机（确定性） › MENU → PLAYING via start button (2.7s)
+  ok  2 tests\e2e\gameplay.spec.ts:56:3 › 状态机（确定性） › PLAYING → 切道（左/右 + 边界钳制） (2.1s)
+  ok  3 tests\e2e\gameplay.spec.ts:73:3 › 状态机（确定性） › PLAYING → 跳跃（isJumping=true） (2.3s)
+  ok  4 tests\e2e\gameplay.spec.ts:79:3 › 状态机（确定性） › PLAYING → 翻滚（isRolling=true） (2.6s)
+  ok  5 tests\e2e\gameplay.spec.ts:85:3 › 状态机（确定性） › PLAYING → PAUSED via Escape，再 resume 回到 PLAYING (2.8s)
+  ok  6 tests\e2e\gameplay.spec.ts:98:3 › 截图回放（确定性） › 捕获 6 张高保真截图（无 GAMEOVER 风险） (3.8s)
+  x   7 tests\e2e\pao10-review-fixes.spec.ts:35:1 › native-menu-slider-and-start-space (2.1s)
+(node:8768) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  8 tests\e2e\pao10-review-fixes.spec.ts:48:1 › paused-rejects-motion-and-resume-space (3.1s)
+  ok  9 tests\e2e\pao10-review-fixes.spec.ts:67:1 › playing-interactive-arrows-do-not-move-player (2.3s)
+  ok 10 tests\e2e\pao10-simulation.spec.ts:29:1 › N-desktop-production-keyboard-flow (50.5s)
+  ok 11 tests\e2e\pao10-simulation.spec.ts:67:1 › N-mobile-production-touch (5.1s)
+  x  12 tests\e2e\pao10-simulation.spec.ts:97:1 › F-lifecycle-clears-input-and-hidden-time (3.7s)
+(node:18948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 13 tests\e2e\pao11-surfaces.spec.ts:95:3 › F-desktop-keyboard-ground-ramp-roof-jump-ground (6.5s)
+  ok 14 tests\e2e\pao11-surfaces.spec.ts:95:3 › F-portrait-touch-ground-ramp-roof-jump-ground (7.0s)
+  ok 15 tests\e2e\pao11-surfaces.spec.ts:124:1 › F-high-base-ramp-5-to-8-continuous-roof (3.4s)
+  ok 16 tests\e2e\pao11-surfaces.spec.ts:142:1 › N-production-input-and-supported-snapshot (3.0s)
+  x  17 tests\e2e\pao12-collision.spec.ts:79:1 › F-desktop-relative-high-speed-thin-train-terminal-once (2.4s)
+(node:26596) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 18 tests\e2e\pao12-collision.spec.ts:119:1 › F-portrait-same-tick-shield-multi-hit-single-consumption (3.6s)
+  ok 19 tests\e2e\pao12-collision.spec.ts:144:1 › F-desktop-airborne-roll-uses-actual-height-box (3.9s)
+  ok 20 tests\e2e\pao12-collision.spec.ts:167:1 › F-browser-isolated-highest-speed-large-step-and-pose-matrix (3.3s)
+  ok 21 tests\e2e\pao12-collision.spec.ts:201:1 › F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position (4.0s)
+  ok 22 tests\e2e\pao13-track.spec.ts:78:1 › N-desktop-seeded-generation-keyboard-and-reset (4.6s)
+  ok 23 tests\e2e\pao13-track.spec.ts:109:1 › N-portrait-seeded-generation-touch (4.4s)
+  ok 24 tests\e2e\pao13-track.spec.ts:138:1 › F-isolated-browser-real-physics-segment-and-pair-witnesses (2.7s)
+  ok 25 tests\e2e\pao14-application.spec.ts:43:1 › N-desktop-pause-restart-stale-run-and-DOM-tamper (3.8s)
+  ok 26 tests\e2e\pao14-application.spec.ts:77:1 › N-portrait-touch-paused-input-and-return (2.5s)
+  ok 27 tests\e2e\pao14-application.spec.ts:94:1 › F-30-pickups-50-reward-save-failure-retry-and-repeat-finish (3.7s)
+  ok 28 tests\e2e\pao14-application.spec.ts:130:1 › F-legacy-rights-shop-purchase-and-refresh (3.6s)
+  ok 29 tests\e2e\pao14-application.spec.ts:147:1 › F-same-tick-terminal-pickup-and-gameover-shop (2.3s)
+  ok 30 tests\e2e\pao14-application.spec.ts:171:1 › F-two-tabs-conflicting-transactions-do-not-overwrite (5.2s)
+  ok 31 tests\e2e\pao14-application.spec.ts:190:1 › F-pause-isolates-input-while-save-lock-is-held (2.1s)
+  ok 32 tests\e2e\pao14-application.spec.ts:211:1 › F-reentrant-end-command-seals-complete-fatal-tick (2.0s)
+  ok 33 tests\e2e\pao14-application.spec.ts:231:1 › F-native-slider-preserves-draft-while-save-lock-is-held (5.3s)
+  ok 34 tests\e2e\pao14-review.spec.ts:54:1 › F-review-audio-different-fields-under-lock (4.8s)
+  ok 35 tests\e2e\pao14-review.spec.ts:78:1 › F-review-audio-repeated-toggle-under-lock (2.4s)
+  ok 36 tests\e2e\pao14-review.spec.ts:98:1 › F-review-audio-volume-and-toggle-queue (3.6s)
+  ok 37 tests\e2e\pao14-review.spec.ts:114:1 › F-review-shop-stale-funds-explicit-retry (3.9s)
+  ok 38 tests\e2e\pao14-unknown-commit.spec.ts:8:3 › F-unknown-toggle-1-confirmation-read-failures (2.3s)
+  ok 39 tests\e2e\pao14-unknown-commit.spec.ts:8:3 › F-unknown-toggle-2-confirmation-read-failures (1.9s)
+  ok 40 tests\e2e\pao6-baseline.spec.ts:64:1 › ramp-roof-jump-land (10.7s)
+  ok 41 tests\e2e\pao6-baseline.spec.ts:76:1 › obstacles-failure-restart (6.7s)
+  ok 42 tests\e2e\pao6-baseline.spec.ts:86:1 › powerups-shield-missions (8.7s)
+  ok 43 tests\e2e\pao6-baseline.spec.ts:98:1 › mobile-touch-layout (4.8s)
+  ok 44 tests\e2e\rebuild-ui.spec.ts:4:1 › R02/R05/R09 desktop UI (2.0s)
+
+
+  1) tests\e2e\pao10-review-fixes.spec.ts:35:1 › native-menu-slider-and-start-space ────────────────
+
+    Error: MENU slider ArrowRight must retain native behavior
+
+    expect(received).toBeGreaterThan(expected)
+
+    Expected: > 60
+    Received:   60
+
+      37 |   await slider.focus(); const before = Number(await slider.inputValue());
+      38 |   await page.keyboard.press('ArrowRight');
+    > 39 |   expect.soft(Number(await slider.inputValue()), 'MENU slider ArrowRight must retain native behavior').toBeGreaterThan(before);
+         |                                                                                                        ^
+      40 |   await page.locator('#start-btn').focus();
+      41 |   await page.keyboard.press('Space');
+      42 |   await expect.poll(async () => (await snapshot(page)).phase, { timeout: 2000 }).toBe('RUNNING');
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao10-review-fixes.spec.ts:39:104
+
+    Error Context: test-results\pao10-review-fixes-native-menu-slider-and-start-space\error-context.md
+
+  2) tests\e2e\pao10-simulation.spec.ts:97:1 › F-lifecycle-clears-input-and-hidden-time ────────────
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      127 |   expect(resumed.inputs).toEqual([]);
+      128 |   expect(resumed.input.cleared).toBeGreaterThan(0);
+    > 129 |   expect(resumed.input.paused).toBeGreaterThan(0);
+          |                                ^
+      130 |   expect(resumed.timeSec).toBe(resumed.tick * resumed.stepSec);
+      131 |   await capture(page, 'F-lifecycle-resumed');
+      132 |   await page.keyboard.press('Escape');
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao10-simulation.spec.ts:129:32
+
+    Error Context: test-results\pao10-simulation-F-lifecycle-clears-input-and-hidden-time\error-context.md
+
+  3) tests\e2e\pao12-collision.spec.ts:79:1 › F-desktop-relative-high-speed-thin-train-terminal-once
+
+    Error: page.evaluate: Execution context was destroyed, most likely because of a navigation.
+
+      47 |   await page.addInitScript(() => { (window as any).__QA_MODE__ = true; });
+      48 |   await page.goto('/'); await page.waitForFunction(() => !!(window as any).__GAME_SENSOR__);
+    > 49 |   await page.evaluate(async () => {
+         |              ^
+      50 |     const w = window as any;
+      51 |     const { spawnerSystem } = await import(/* @vite-ignore */ '/src/systems/spawner.ts');
+      52 |     const { eventBus } = await import(/* @vite-ignore */ '/src/core/eventBus.ts');
+        at fixture (D:\worker\paoku-sessions\pao-19\tests\e2e\pao12-collision.spec.ts:49:14)
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao12-collision.spec.ts:80:3
+
+    Error Context: test-results\pao12-collision-F-desktop--b1081-ed-thin-train-terminal-once\error-context.md
+
+  3 failed
+    tests\e2e\pao10-review-fixes.spec.ts:35:1 › native-menu-slider-and-start-space ─────────────────
+    tests\e2e\pao10-simulation.spec.ts:97:1 › F-lifecycle-clears-input-and-hidden-time ─────────────
+    tests\e2e\pao12-collision.spec.ts:79:1 › F-desktop-relative-high-speed-thin-train-terminal-once
+  41 passed (3.7m)

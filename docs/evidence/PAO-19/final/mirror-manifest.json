@@ -1,0 +1,68 @@
+[
+  {
+    "file": "gameplay.spec.ts",
+    "originalSha256": "ac860d0781b57ec51735607c8e6d1441a5f02afcb9b27203f2f8e682d607ce64",
+    "mirrorSha256": "5375e9b8782c9f637472a900ea37a423ca8ab5e437abe7187136fa4c08b93d94",
+    "changes": "only evidence output paths redirected; all assertions retained"
+  },
+  {
+    "file": "pao10-review-fixes.spec.ts",
+    "originalSha256": "21a92efee35f42f42912d8655d62eb1a6d4786494235ee84d9ff1ae8dab45892",
+    "mirrorSha256": "15ab0c66b1aa195890d147a51f608e345b76acb5f3da70822057c8d7c3fb98d6",
+    "changes": "only evidence output paths redirected; all assertions retained"
+  },
+  {
+    "file": "pao10-simulation.spec.ts",
+    "originalSha256": "4cb5069cfcec3a015c768ee5047403b8cd4c0c295529e1eda186866c6a921ebf",
+    "mirrorSha256": "1f337b50f6f3fc44d0a49a914e2273784f142b56b71467c9b7e6d7ebbf3cb24a",
+    "changes": "only evidence output paths redirected; all assertions retained"
+  },
+  {
+    "file": "pao11-surfaces.spec.ts",
+    "originalSha256": "2e5cb1868763f2ddec33ae472f3497aeac1dffa6d7be0c80c1a41fa6842d868b",
+    "mirrorSha256": "ab2436eec0c750bfab87bfe71a299b50121116180efde08044a418fa2703cc18",
+    "changes": "only evidence output paths redirected; all assertions retained"
+  },
+  {
+    "file": "pao12-collision.spec.ts",
+    "originalSha256": "669125de620cfd8c0263b5ee7696cef53a2e48d9fac0548f5f095fd710371f1d",
+    "mirrorSha256": "373e8efbe972c28ce723c99873b73db70beebfa29758293e2d57cf930cdf15c5",
+    "changes": "only evidence output paths redirected; all assertions retained"
+  },
+  {
+    "file": "pao13-track.spec.ts",
+    "originalSha256": "03211f334c9ff5bf05b058bcb49c1d83d7b0eefe4800b3257453fecd8943a7a3",
+    "mirrorSha256": "fa8049ec95c3d0fc7db49b3e05a34855967d6ec9691a9ccdaa2484dc4d04b0e6",
+    "changes": "only evidence output paths redirected; all assertions retained"
+  },
+  {
+    "file": "pao14-application.spec.ts",
+    "originalSha256": "06039b20c65000d94d819a45ce5332bd77731779bf851ea2eb9164988bba8f6a",
+    "mirrorSha256": "b161884e13da5e0e3f68980b3816e1468ace2f07c601c8e32396cfd53396e120",
+    "changes": "only evidence output paths redirected; all assertions retained"
+  },
+  {
+    "file": "pao14-review.spec.ts",
+    "originalSha256": "b20d8604e98ee5eb1013c458160522c97433475075e9e55bd32d957e5abda413",
+    "mirrorSha256": "b2eed454e9920b68faf3a273604ae99668fdb9047ab775127e0cd916cf83d6a7",
+    "changes": "only evidence output paths redirected; all assertions retained"
+  },
+  {
+    "file": "pao14-unknown-commit.spec.ts",
+    "originalSha256": "2b8545a84b763bf0a0faa9a2a8cf8ac3a10af0040afe42b34754bc2cdc414520",
+    "mirrorSha256": "c54d795d391dc0766e64aea90e421e025c90d5b23a28441ccd8b240f136b4234",
+    "changes": "only evidence output paths redirected; all assertions retained"
+  },
+  {
+    "file": "pao6-baseline.spec.ts",
+    "originalSha256": "2c844682ee847ec388584a48774928037fc4b48bb487d99b3015c938e5a10d69",
+    "mirrorSha256": "4494c4d318a5011b9cb132d76330b90d4558dcc085797aba356f04cc83b5ef42",
+    "changes": "only evidence output paths redirected; all assertions retained"
+  },
+  {
+    "file": "rebuild-ui.spec.ts",
+    "originalSha256": "c66df353e67e756bec078b9e2891d3d8930c896b3bcb872d36b81d77b480eec6",
+    "mirrorSha256": "c66df353e67e756bec078b9e2891d3d8930c896b3bcb872d36b81d77b480eec6",
+    "changes": "only evidence output paths redirected; all assertions retained"
+  }
+]

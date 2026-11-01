@@ -1,0 +1,26 @@
+{
+  "cwd": "D:\\worker\\paoku-sessions\\pao-19",
+  "baseURL": "http://127.0.0.1:5183",
+  "sources": [
+    {
+      "source": "src/main.ts",
+      "sha256": "825a44845af15776f5c159fb836f7867235ac6fc73a05d6e710ce4b9bcf2ce57",
+      "exactRawSourceMatch": true
+    },
+    {
+      "source": "src/core/simulation.ts",
+      "sha256": "792c6ec0604d66e4426ce5831a8132089e3573629fc4af767dc072c5b87bea97",
+      "exactRawSourceMatch": true
+    },
+    {
+      "source": "src/systems/physics.ts",
+      "sha256": "2abbc7950295e1c493a98e6fb1f3db4f97442f2a5e9309863c7f469d72dfe34c",
+      "exactRawSourceMatch": true
+    },
+    {
+      "source": "src/systems/contacts.ts",
+      "sha256": "ce4cf472f746680a81ead20e8344e16556fb4ddc48059c7aff6a688d9c54f9cd",
+      "exactRawSourceMatch": true
+    }
+  ]
+}

@@ -1,0 +1,300 @@
+{
+  "title": "F-lifecycle-clears-input-and-hidden-time",
+  "states": [
+    {
+      "name": "F-lifecycle-resumed",
+      "contractVersion": 1,
+      "runId": "run-d1457f10-822c-4e0a-b339-499dc8e6fb4c",
+      "tick": 14,
+      "timeSec": 0.23333333333333334,
+      "stepSec": 0.016666666666666666,
+      "phase": "RUNNING",
+      "seed": 1346457360,
+      "rngState": 714621690,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "contentRevision": "pao13-track-v1",
+      "generation": {
+        "runId": "run-d1457f10-822c-4e0a-b339-499dc8e6fb4c",
+        "seed": 1346457360,
+        "contentRevision": "pao13-track-v1",
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "rngState": 714621690,
+        "cursor": 1,
+        "nextZ": 190,
+        "lastTick": 3,
+        "stage": "INTRO",
+        "lastSegmentId": "run-d1457f10-822c-4e0a-b339-499dc8e6fb4c/pao13-track-v1/segment-0",
+        "fallbackCount": 0
+      },
+      "lastInputSequence": 0,
+      "discontinuity": false,
+      "context": {
+        "state": "PLAYING",
+        "score": 0.42072916666666665,
+        "highScore": 0,
+        "coins": 0,
+        "totalCoins": 0,
+        "speed": 18.05833333333333,
+        "distance": 4.207291666666666,
+        "player": {
+          "lane": 1,
+          "x": 0,
+          "targetX": 0,
+          "y": 0,
+          "z": 4.207291666666666,
+          "vy": 0,
+          "isJumping": false,
+          "isRolling": false,
+          "rollTimer": 0,
+          "hasHoverboard": false,
+          "hoverboardActive": false,
+          "invulnerableTimer": 0,
+          "activePowerUps": {},
+          "collisionEnded": false,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED",
+          "supportDeparture": null,
+          "supportRampExit": null,
+          "supportSample": {
+            "x": 0,
+            "y": 0,
+            "z": 4.207291666666666
+          }
+        },
+        "obstacles": [],
+        "coinEntities": [],
+        "powerUpEntities": [],
+        "missions": [
+          {
+            "id": "m1",
+            "title": "COIN COLLECTOR",
+            "description": "Collect 30 coins in a single run",
+            "target": 30,
+            "current": 0,
+            "rewardCoins": 50,
+            "completed": false,
+            "type": "COLLECT_COINS"
+          },
+          {
+            "id": "m2",
+            "title": "HIGH JUMPER",
+            "description": "Perform 10 jumps in a single run",
+            "target": 10,
+            "current": 0,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "JUMP_TIMES"
+          },
+          {
+            "id": "m3",
+            "title": "SLIDER PRO",
+            "description": "Perform 8 rolls under obstacles",
+            "target": 8,
+            "current": 0,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "ROLL_TIMES"
+          },
+          {
+            "id": "m4",
+            "title": "SCORE RUNNER",
+            "description": "Reach a score of 500 in a single run",
+            "target": 500,
+            "current": 0,
+            "rewardCoins": 100,
+            "completed": false,
+            "type": "SCORE_REACH"
+          }
+        ],
+        "chase": {
+          "distance": 2.8,
+          "isNear": false
+        },
+        "runLedger": {
+          "pickupCount": 0,
+          "pickupCoins": 0,
+          "rewardCoins": 0,
+          "rewardedMissionIds": []
+        }
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 0,
+        "droppedSec": 0
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 1,
+        "invalid": 0,
+        "cleared": 1
+      },
+      "inputs": [],
+      "state": "PLAYING",
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 4.207291666666666
+      },
+      "score": 0.42072916666666665,
+      "coins": 0
+    },
+    {
+      "name": "F-lifecycle-readonly",
+      "contractVersion": 1,
+      "runId": "run-d1457f10-822c-4e0a-b339-499dc8e6fb4c",
+      "tick": 23,
+      "timeSec": 0.3833333333333333,
+      "stepSec": 0.016666666666666666,
+      "phase": "PAUSED",
+      "seed": 1346457360,
+      "rngState": 714621690,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "contentRevision": "pao13-track-v1",
+      "generation": {
+        "runId": "run-d1457f10-822c-4e0a-b339-499dc8e6fb4c",
+        "seed": 1346457360,
+        "contentRevision": "pao13-track-v1",
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "rngState": 714621690,
+        "cursor": 1,
+        "nextZ": 190,
+        "lastTick": 3,
+        "stage": "INTRO",
+        "lastSegmentId": "run-d1457f10-822c-4e0a-b339-499dc8e6fb4c/pao13-track-v1/segment-0",
+        "fallbackCount": 0
+      },
+      "lastInputSequence": 0,
+      "discontinuity": true,
+      "context": {
+        "state": "PAUSED",
+        "score": 0.6919166666666665,
+        "highScore": 0,
+        "coins": 0,
+        "totalCoins": 0,
+        "speed": 18.095833333333328,
+        "distance": 6.919166666666666,
+        "player": {
+          "lane": 1,
+          "x": 0,
+          "targetX": 0,
+          "y": 0,
+          "z": 6.919166666666666,
+          "vy": 0,
+          "isJumping": false,
+          "isRolling": false,
+          "rollTimer": 0,
+          "hasHoverboard": false,
+          "hoverboardActive": false,
+          "invulnerableTimer": 0,
+          "activePowerUps": {},
+          "collisionEnded": false,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED",
+          "supportDeparture": null,
+          "supportRampExit": null,
+          "supportSample": {
+            "x": 0,
+            "y": 0,
+            "z": 6.919166666666666
+          }
+        },
+        "obstacles": [],
+        "coinEntities": [],
+        "powerUpEntities": [],
+        "missions": [
+          {
+            "id": "m1",
+            "title": "COIN COLLECTOR",
+            "description": "Collect 30 coins in a single run",
+            "target": 30,
+            "current": 0,
+            "rewardCoins": 50,
+            "completed": false,
+            "type": "COLLECT_COINS"
+          },
+          {
+            "id": "m2",
+            "title": "HIGH JUMPER",
+            "description": "Perform 10 jumps in a single run",
+            "target": 10,
+            "current": 0,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "JUMP_TIMES"
+          },
+          {
+            "id": "m3",
+            "title": "SLIDER PRO",
+            "description": "Perform 8 rolls under obstacles",
+            "target": 8,
+            "current": 0,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "ROLL_TIMES"
+          },
+          {
+            "id": "m4",
+            "title": "SCORE RUNNER",
+            "description": "Reach a score of 500 in a single run",
+            "target": 500,
+            "current": 0,
+            "rewardCoins": 100,
+            "completed": false,
+            "type": "SCORE_REACH"
+          }
+        ],
+        "chase": {
+          "distance": 2.8,
+          "isNear": false
+        },
+        "runLedger": {
+          "pickupCount": 0,
+          "pickupCoins": 0,
+          "rewardCoins": 0,
+          "rewardedMissionIds": []
+        }
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 0,
+        "droppedSec": 0
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 1,
+        "invalid": 0,
+        "cleared": 1
+      },
+      "inputs": [],
+      "state": "PAUSED",
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 6.919166666666666
+      },
+      "score": 0.6919166666666665,
+      "coins": 0
+    }
+  ],
+  "errors": []
+}

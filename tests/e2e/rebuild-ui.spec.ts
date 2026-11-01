@@ -1,0 +1,86 @@
+import {test,expect} from '@playwright/test';
+import {mkdir,writeFile} from 'node:fs/promises';
+const dir='docs/evidence/PAO-19/'+(process.env.PAO19_PHASE||'A');
+test('R02/R05/R09 desktop UI',async({page})=>{await page.goto('/');await expect(page.locator('#start-btn')).toHaveText('开始奔跑');await expect(page.locator('html')).toHaveAttribute('lang','zh-CN');await page.click('#start-btn');await expect(page.locator('#hud-speed-text')).toContainText('m/s');await page.click('#hud-pause-btn');await expect(page.locator('#paused-screen')).toBeVisible();await page.keyboard.press('Tab');await expect(page.locator('#paused-screen')).toContainText('继续');await mkdir(dir,{recursive:true});await page.screenshot({path:dir+'/desktop-paused.png'});});
+
+for(const [width,height] of [[1440,900],[390,844],[320,568],[844,390]]) test(`R01-R05/R09 F-readonly-layout-${width}x${height}`,async({page,request})=>{
+ await page.setViewportSize({width,height});await page.goto('/');await page.waitForFunction(()=>!!(window as any).__GAME_SENSOR__);
+ const source=await request.get('/src/ui/dom.ts?raw');expect(await source.text()).toContain('notifyCommandPending');
+ await page.evaluate(async()=>{
+  const main=await import(/* @vite-ignore */ '/src/main.ts');main.disposeGame();
+  const {UIManager}=await import(/* @vite-ignore */ '/src/ui/dom.ts');
+  const sensor=(window as any).__GAME_SENSOR__;const app=structuredClone(sensor.getAppSnapshot());const ctx=JSON.parse(JSON.stringify(sensor.getSimulationSnapshot().context));
+  const ui=new UIManager(document.querySelector('#game-container')!,()=>app);
+  (window as any).__pao19Fixture={ui,app,ctx};ui.update(ctx);
+ });
+ const records=[];
+ for(const state of ['MENU','PLAYING','PAUSED','GAMEOVER']){
+  await page.evaluate(state=>{const f=(window as any).__pao19Fixture;f.app.appState=state;f.app.activeRunId='fixture';f.ctx.speed=18;f.ctx.player.activePowerUps=new Map([['MAGNET',12],['DOUBLE_SCORE',2],['SUPER_SNEAKERS',3],['HOVERBOARD',4]]);f.ctx.player.hoverboardActive=true;f.app.walletCoins=123456789012345;f.ctx.score=123456789012345;f.ui.update(f.ctx);},state);
+  await page.waitForTimeout(60);
+  const record=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,buttons:[...document.querySelectorAll<HTMLButtonElement>('#ui-layer button')].filter(el=>el.getClientRects().length).map(el=>({id:el.id,width:el.getBoundingClientRect().width,height:el.getBoundingClientRect().height})),card:[...document.querySelectorAll<HTMLElement>('.ui-screen')].filter(el=>el.style.display!=='none').map(el=>({w:el.getBoundingClientRect().width,scroll:el.scrollWidth}))}));
+  expect(record.overflow).toBe(false);expect(record.buttons.every(x=>x.width>=48&&x.height>=48)).toBe(true);records.push({state,...record});
+  if(state==='PLAYING'&&width<768){const clear=await page.locator('.buff-pill').evaluateAll((els,width)=>els.every(el=>el.getBoundingClientRect().right<=width*.4),width);expect(clear,'portrait buffs must leave the central runner clear').toBe(true);await page.screenshot({path:dir+'/four-buffs-'+width+'.png'});}
+  if(state==='GAMEOVER'){await expect(page.locator('#go-final-score')).toHaveText('等待结算数据');await expect(page.locator('#go-coins-earned')).toHaveText('—');}
+ }
+ await page.evaluate(()=>{const f=(window as any).__pao19Fixture;f.ui.notifyCommandPending({commandId:'f',type:'GO_MENU',runId:'fixture'});});await page.waitForTimeout(350);
+ await page.evaluate(()=>{const f=(window as any).__pao19Fixture;f.ui.update(f.ctx);});await expect(page.locator('#gameover-screen .command-feedback')).toContainText('正在');
+ await page.evaluate(()=>{const f=(window as any).__pao19Fixture;f.ui.notifyCommandResult({commandId:'f',ok:false,errorCode:'SAVE_FAILED'});f.ui.update(f.ctx);});await expect(page.locator('#gameover-screen .command-error')).toContainText('保存');
+ await page.evaluate(()=>{const f=(window as any).__pao19Fixture;f.app.appState='PLAYING';f.ui.update(f.ctx);for(let i=0;i<20;i++)f.ui.showToast('<img src=x onerror=alert(1)>'+i);f.ui.update(f.ctx);});await expect(page.locator('.cyber-toast')).toHaveCount(1);await expect(page.locator('.cyber-toast img')).toHaveCount(0);
+ await page.evaluate(()=>{const sizes=[...document.querySelectorAll<HTMLElement>('#ui-layer *')].map(el=>[el,parseFloat(getComputedStyle(el).fontSize)] as const);sizes.forEach(([el,size])=>el.style.fontSize=(size*2)+'px');document.documentElement.style.setProperty('--safe-top','47px');document.documentElement.style.setProperty('--safe-bottom','34px');const f=(window as any).__pao19Fixture;f.app.appState='PAUSED';f.ui.update(f.ctx);});
+ await page.locator('#pause-menu-btn').scrollIntoViewIfNeeded();await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator('#paused-screen')).toBeVisible();await page.keyboard.press('Tab');expect(await page.evaluate(()=>!!document.activeElement?.closest('#paused-screen'))).toBe(true);
+ await mkdir(dir,{recursive:true});await writeFile(`${dir}/layout-${width}x${height}.json`,JSON.stringify(records,null,2));await page.screenshot({path:`${dir}/layout-${width}x${height}.png`});
+});
+
+for(const mobile of [false,true])test(`R06/R07 N-complete-${mobile?'touch':'keyboard'}`,async({page,context})=>{
+ await page.setViewportSize(mobile?{width:390,height:844}:{width:1440,height:900});const cdp=mobile?await context.newCDPSession(page):null;if(cdp)await cdp.send('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:1});
+ async function activate(selector:string){if(!cdp)return page.click(selector);const el=page.locator(selector);await el.scrollIntoViewIfNeeded();const box=await el.boundingBox();if(!box)throw Error('Missing touch target');const x=box.x+box.width/2,y=box.y+box.height/2;await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x,y}]});await page.waitForTimeout(80);await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});}
+const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await page.waitForFunction(()=>!!(window as any).__GAME_SENSOR__);await mkdir(dir,{recursive:true});if(mobile)await page.screenshot({path:dir+'/key-mobile-start.png'});await activate('#start-btn');
+ await page.evaluate(()=>{const w=window as any;w.__p19TouchLog=[];for(const type of ['touchstart','touchend','click','pointerdown','pointerup'])document.addEventListener(type,e=>w.__p19TouchLog.push({type,target:(e.target as Element)?.tagName,id:(e.target as Element)?.closest('button')?.id,state:w.__GAME_SENSOR__.getGameState()}),true);});
+ const state=()=>page.evaluate(()=>(window as any).__GAME_SENSOR__.getGameState());
+ if(mobile){for(const [x,y,toX,toY] of [[250,420,100,420],[100,420,250,420],[180,500,180,300],[180,350,180,550]]){await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x,y}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:toX,y:toY}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await page.waitForTimeout(100);}}
+ else {await page.keyboard.press('a');await page.waitForTimeout(100);await page.keyboard.press('d');await page.keyboard.press('Space');await page.waitForTimeout(100);await page.keyboard.press('s');await page.screenshot({path:dir+'/key-desktop-hud.png'});}
+ await activate('#hud-pause-btn');await writeFile(dir+'/touch-debug.json',JSON.stringify(await page.evaluate(()=>({events:(window as any).__p19TouchLog,state:(window as any).__GAME_SENSOR__.getGameState(),errors:[]})),null,2));await expect.poll(state).toBe('PAUSED');const before=await page.evaluate(()=>(window as any).__GAME_SENSOR__.getSimulationSnapshot().tick);await page.waitForTimeout(250);expect(await page.evaluate(()=>(window as any).__GAME_SENSOR__.getSimulationSnapshot().tick)).toBe(before);await activate('#resume-btn');await expect.poll(state).toBe('PLAYING');await expect.poll(state,{timeout:55000}).toBe('GAMEOVER');await expect(page.locator('#settlement-status')).toContainText('已保存');await page.screenshot({path:dir+`/key-${mobile?'mobile':'desktop'}-result.png`});await activate('#restart-btn');await expect.poll(state).toBe('PLAYING');await activate('#hud-pause-btn');await activate('#pause-menu-btn');await expect.poll(state).toBe('MENU');expect(errors).toEqual([]);await writeFile(dir+`/N-${mobile?'touch':'keyboard'}.json`,JSON.stringify({errors,tickPaused:before,state:await state(),qaMode:await page.evaluate(()=>(window as any).__QA_MODE__??false)},null,2));
+});
+
+test('R04/R08 F-real-UI-unknown-audio-retry-retains-command',async({page})=>{
+ await page.goto('/');await page.waitForFunction(()=>localStorage.getItem('paoku_save_v1')!==null);await page.evaluate(async()=>{
+ const w=window as any;const {eventBus}=await import(/* @vite-ignore */ '/src/core/eventBus.ts');w.__p19Intents=[];eventBus.on('UPDATE_AUDIO',(p:unknown)=>w.__p19Intents.push(p));
+ const get=Storage.prototype.getItem,set=Storage.prototype.setItem;let armed=true,reads=0;w.__p19Writes=0;
+ Storage.prototype.getItem=function(k){if(k==='paoku_save_v1'&&reads>0){reads--;throw Error('F lost confirmation');}return get.call(this,k);};
+ Storage.prototype.setItem=function(k,v){set.call(this,k,v);if(k==='paoku_save_v1'){w.__p19Writes++;if(armed){armed=false;reads=2;throw Error('F unknown durable write');}}};
+ });
+ await page.click('#bgm-toggle-btn');await expect(page.locator('#menu-screen .command-error')).toContainText('保存');
+ await page.click('#bgm-toggle-btn');await expect.poll(()=>page.evaluate(()=>(window as any).__p19Intents.length)).toBe(2);
+ await page.waitForTimeout(300);if(await page.locator('#menu-screen .command-error').textContent())await page.click('#bgm-toggle-btn');
+ await expect.poll(()=>page.evaluate(()=>(window as any).__GAME_SENSOR__.getAppSnapshot().audio.bgmEnabled)).toBe(false);
+ const record=await page.evaluate(()=>({intents:(window as any).__p19Intents,writes:(window as any).__p19Writes,app:(window as any).__GAME_SENSOR__.getAppSnapshot(),toasts:document.querySelectorAll('.cyber-toast').length}));expect(new Set(record.intents.map((x:any)=>x.commandId)).size).toBe(1);expect(record.writes).toBe(1);expect(record.app.revision).toBe(1);expect(record.toasts).toBe(0);await mkdir(dir,{recursive:true});await writeFile(dir+'/F-unknown-ui-audio.json',JSON.stringify(record,null,2));
+});
+
+
+test('R08 F-unknown-terminal-retry-keeps-sealed-summary',async({page})=>{
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await page.waitForFunction(()=>localStorage.getItem('paoku_save_v1')!==null);await page.click('#start-btn');await page.click('#hud-pause-btn');const original=await page.evaluate(()=>(window as any).__GAME_SENSOR__.getAppSnapshot().activeRunId);
+ await page.evaluate(()=>{const get=Storage.prototype.getItem,set=Storage.prototype.setItem;let armed=true,reads=0;Storage.prototype.getItem=function(k){if(k==='paoku_save_v1'&&reads>0){reads--;throw Error('F unknown terminal confirmation');}return get.call(this,k);};Storage.prototype.setItem=function(k,v){set.call(this,k,v);if(k==='paoku_save_v1'&&armed){armed=false;reads=1;throw Error('F terminal durable write');}};});
+ await page.click('#pause-menu-btn');await expect(page.locator('#gameover-screen .command-error')).toContainText('保存');await page.click('#go-menu-btn');await expect.poll(()=>page.evaluate(()=>(window as any).__GAME_SENSOR__.getGameState())).toBe('MENU');expect(errors).toEqual([]);const app=await page.evaluate(()=>(window as any).__GAME_SENSOR__.getAppSnapshot());await mkdir(dir,{recursive:true});await writeFile(dir+'/F-unknown-terminal.json',JSON.stringify({original,app,errors},null,2));
+});
+
+test('R04/R08 F-reentrant-duplicate-command-one-receipt',async({page})=>{
+ await page.goto('/');await page.waitForFunction(()=>!!(window as any).__GAME_SENSOR__);await page.evaluate(async()=>{const w=window as any;w.__p19Receipts=[];const {UIManager}=await import(/* @vite-ignore */ '/src/ui/dom.ts');const pending=UIManager.prototype.notifyCommandPending,result=UIManager.prototype.notifyCommandResult;
+ UIManager.prototype.notifyCommandPending=function(p:any){w.__p19Receipts.push({pending:p});return pending.call(this,p);};UIManager.prototype.notifyCommandResult=function(r:any){w.__p19Receipts.push({result:r});return result.call(this,r);};
+ const {spawnerSystem}=await import(/* @vite-ignore */ '/src/systems/spawner.ts');const {eventBus}=await import(/* @vite-ignore */ '/src/core/eventBus.ts');let done=false;spawnerSystem.update=()=>{if(done)return;done=true;const runId=w.__GAME_SENSOR__.getAppSnapshot().activeRunId;for(let i=0;i<2;i++)eventBus.emit('GO_MENU',{commandId:'reentrant-receipt',runId});};
+ });await page.click('#start-btn');await expect.poll(()=>page.evaluate(()=>(window as any).__p19Receipts.filter((x:any)=>x.result?.commandId==='reentrant-receipt').length)).toBe(1);const records=await page.evaluate(()=>(window as any).__p19Receipts.filter((x:any)=>x.pending?.commandId==='reentrant-receipt'||x.result?.commandId==='reentrant-receipt'));expect(records.filter((x:any)=>x.pending)).toHaveLength(1);expect(records.at(-1).result.ok).toBe(true);await mkdir(dir,{recursive:true});await writeFile(dir+'/F-reentrant-receipts.json',JSON.stringify(records,null,2));
+});
+
+test('R04 F-modified-volume-is-new-intent-after-lost-UI-ack',async({page})=>{
+ await page.goto('/');await page.waitForFunction(()=>localStorage.getItem('paoku_save_v1')!==null);await page.evaluate(async()=>{const {UIManager}=await import(/* @vite-ignore */ '/src/ui/dom.ts');const result=UIManager.prototype.notifyCommandResult;let lost=true;UIManager.prototype.notifyCommandResult=function(r:any){if(lost&&r.commandId.startsWith('pao19-')){lost=false;return result.call(this,{...r,ok:false,errorCode:'SAVE_FAILED'});}return result.call(this,r);};});
+ const volume=async(value:string)=>{await page.locator('#bgm-volume').evaluate((el,value)=>{(el as HTMLInputElement).value=value;el.dispatchEvent(new Event('input',{bubbles:true}));},value);};
+ await volume('20');await expect(page.locator('#menu-screen .command-error')).toContainText('保存');await volume('30');await expect.poll(()=>page.evaluate(()=>(window as any).__GAME_SENSOR__.getAppSnapshot().audio.bgmVolume)).toBe(.3);await volume('20');await expect.poll(()=>page.evaluate(()=>(window as any).__GAME_SENSOR__.getAppSnapshot().audio.bgmVolume)).toBe(.2);
+});
+
+test('R02/R09 F-runtime-four-buffs-portrait-runner-clear',async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.goto('/');await page.waitForFunction(()=>!!(window as any).__GAME_SENSOR__);await page.evaluate(async()=>{const {spawnerSystem}=await import(/* @vite-ignore */ '/src/systems/spawner.ts');let injected=false;spawnerSystem.update=(_z:number,obstacles:any[],_coins:any[],powerups:any[])=>{obstacles.length=0;if(injected)return;injected=true;const z=(window as any).__GAME_SENSOR__.getPlayerPos().z;powerups.push(...['MAGNET','DOUBLE_SCORE','SUPER_SNEAKERS','HOVERBOARD'].map((type,i)=>({id:'p19-'+i,type,lane:1,x:0,y:1,z:z+1,collected:false})));};});await page.click('#start-btn');await expect(page.locator('.buff-pill')).toHaveCount(4);await page.waitForTimeout(160);await mkdir(dir,{recursive:true});await page.screenshot({path:dir+'/F-runtime-four-buffs.png'});const names=await page.locator('.buff-pill').allTextContents();expect(names.join()).toContain('悬浮滑板');const bounds=await page.locator('.buff-pill').evaluateAll(els=>els.map(el=>({left:el.getBoundingClientRect().left,right:el.getBoundingClientRect().right,top:el.getBoundingClientRect().top,bottom:el.getBoundingClientRect().bottom})));expect(bounds.every(x=>x.right<390*.4)).toBe(true);await page.click('#hud-pause-btn');const paused=await page.locator('.buff-pill').allTextContents();await page.waitForTimeout(400);expect(await page.locator('.buff-pill').allTextContents()).toEqual(paused);await writeFile(dir+'/F-runtime-four-buffs.json',JSON.stringify({names,bounds},null,2));
+});
+
+test('R09 F-button-four-states',async({page})=>{
+ await page.goto('/');const button=page.locator('#start-btn');await button.waitFor();await mkdir(dir,{recursive:true});const records:any[]=[];const capture=async(state:string)=>{records.push({state,...await button.evaluate(el=>({background:getComputedStyle(el).backgroundColor,color:getComputedStyle(el).color,translate:getComputedStyle(el).translate,disabled:(el as HTMLButtonElement).disabled}))});await button.screenshot({path:dir+'/button-'+state+'.png'});};
+ await capture('normal');await button.hover();await capture('hover');await page.mouse.down();await capture('pressed');await page.mouse.move(0,0);await page.mouse.up();await button.evaluate(el=>(el as HTMLButtonElement).disabled=true);await capture('disabled');expect(records[0].background).toBe('rgb(36, 63, 75)');expect(records[1].background).toBe('rgb(54, 87, 101)');expect(records[2].translate).toBe('0px 1px');expect(records[3].disabled).toBe(true);expect(records[3].background).toBe('rgb(216, 223, 220)');await writeFile(dir+'/button-states.json',JSON.stringify(records,null,2));
+});

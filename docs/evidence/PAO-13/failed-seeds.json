@@ -1,0 +1,36 @@
+{
+  "contentRevision": "pao13-track-v1",
+  "witnessDefaults": { "spawnLead": 150, "stepSec": 0.016666666666666666, "maxSteps": 3600, "variant": 0 },
+  "regressions": [
+    {
+      "seed": 13,
+      "definitions": ["calm", "under-over"],
+      "speed": 45,
+      "variant": 4,
+      "discoveredWithPreviousVariantMapping": 6,
+      "restoreMutationForRejectedFixture": { "definitionIndex": 1, "appendReward": { "localId": "old-unreachable-coin90", "kind": "COIN", "lane": 1, "y": 0.8, "z": 90, "routeId": "main" } },
+      "failure": "Inherited SUPER_SNEAKERS left the player above a ground reward at local z=90 after the low hurdle. The real witness did not collect that reward.",
+      "resolution": "Removed unproven z=90 reward; preserved all obstacle proxies and action constants. Current all-variant pair test includes seed13 and variant4 (SUPER_SNEAKERS).",
+      "command": "npm run test -- tests/unit/trackSegments.test.ts",
+      "log": "red-variants-immutability.log"
+    },
+    {
+      "seed": 44013,
+      "definitions": ["under-over"],
+      "speed": 45,
+      "mutation": "Remove candidate route commands",
+      "exactMutation": "definitions[0].routes[0].commands = []",
+      "expectedFailure": "collision on candidate route",
+      "test": "rejects no-input hurdle witness rather than merely accepting its geometry"
+    },
+    {
+      "seed": 44113,
+      "definitions": ["moving-rush"],
+      "speed": 18,
+      "mutation": "Place uncollected coin at lane0/y0.8/z40, in incoming train path before collection",
+      "restoreMutationForRejectedFixture": { "definitionIndex": 0, "appendReward": { "localId": "moving-embed", "kind": "COIN", "lane": 0, "y": 0.8, "z": 40, "routeId": "main" } },
+      "expectedFailure": "reward embedded during movement",
+      "test": "checks reward occupancy against incoming movement before collection, not only spawn geometry"
+    }
+  ]
+}

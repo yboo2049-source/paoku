@@ -1,0 +1,12 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/trackSegments.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-13
+
+
+ Test Files  1 passed (1)
+      Tests  18 passed (18)
+   Start at  12:13:35
+   Duration  5.03s (transform 214ms, setup 0ms, import 267ms, tests 4.52s, environment 0ms)

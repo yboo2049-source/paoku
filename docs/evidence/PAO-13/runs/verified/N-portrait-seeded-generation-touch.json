@@ -1,0 +1,753 @@
+{
+  "title": "N-portrait-seeded-generation-touch",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "browserVersion": "151.0.7922.34",
+  "errors": [],
+  "states": [
+    {
+      "name": "N-portrait-seeded-jump",
+      "snapshot": {
+        "contractVersion": 1,
+        "runId": "run-1",
+        "tick": 45,
+        "timeSec": 0.75,
+        "stepSec": 0.016666666666666666,
+        "phase": "RUNNING",
+        "seed": 1346457360,
+        "rngState": 714621690,
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "simulationVersion": "pao10-fixed-v1",
+        "configId": "legacy-18-45-v1",
+        "contentRevision": "pao13-track-v1",
+        "generation": {
+          "runId": "run-1",
+          "seed": 1346457360,
+          "contentRevision": "pao13-track-v1",
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "rngState": 714621690,
+          "cursor": 1,
+          "nextZ": 190,
+          "lastTick": 45,
+          "stage": "INTRO",
+          "lastSegmentId": "run-1/pao13-track-v1/segment-0",
+          "fallbackCount": 0
+        },
+        "lastInputSequence": 3,
+        "discontinuity": false,
+        "context": {
+          "state": "PLAYING",
+          "score": 1.3571874999999993,
+          "highScore": 0,
+          "coins": 0,
+          "totalCoins": 0,
+          "speed": 18.18749999999999,
+          "distance": 13.571874999999997,
+          "player": {
+            "lane": 1,
+            "x": 0.007008091761298808,
+            "targetX": 0,
+            "y": 0.41833333333333333,
+            "z": 13.571874999999997,
+            "vy": 12.233333333333334,
+            "isJumping": true,
+            "isRolling": false,
+            "rollTimer": 0,
+            "hasHoverboard": false,
+            "hoverboardActive": false,
+            "invulnerableTimer": 0,
+            "activePowerUps": {},
+            "collisionEnded": false,
+            "supportSurfaceId": null,
+            "contact": "AIRBORNE",
+            "supportDeparture": null,
+            "supportRampExit": null,
+            "supportSample": {
+              "x": 0.007008091761298808,
+              "y": 0.41833333333333333,
+              "z": 13.571874999999997
+            }
+          },
+          "obstacles": [],
+          "coinEntities": [
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-0",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 56,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-1",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 66,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-2",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 76,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-3",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 86,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-4",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 96,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-5",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 106,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-6",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 116,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-7",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 126,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-8",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 136,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-9",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 146,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-10",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 156,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-11",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 166,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-12",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 171,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-13",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 176,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-14",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 181,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            }
+          ],
+          "powerUpEntities": [
+            {
+              "id": "run-1/pao13-track-v1/segment-0/tail-power",
+              "type": "DOUBLE_SCORE",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 183,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            }
+          ],
+          "missions": [
+            {
+              "id": "m1",
+              "title": "COIN COLLECTOR",
+              "description": "Collect 30 coins in a single run",
+              "target": 30,
+              "current": 0,
+              "rewardCoins": 50,
+              "completed": false,
+              "type": "COLLECT_COINS"
+            },
+            {
+              "id": "m2",
+              "title": "HIGH JUMPER",
+              "description": "Perform 10 jumps in a single run",
+              "target": 10,
+              "current": 1,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "JUMP_TIMES"
+            },
+            {
+              "id": "m3",
+              "title": "SLIDER PRO",
+              "description": "Perform 8 rolls under obstacles",
+              "target": 8,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "ROLL_TIMES"
+            },
+            {
+              "id": "m4",
+              "title": "SCORE RUNNER",
+              "description": "Reach a score of 500 in a single run",
+              "target": 500,
+              "current": 1,
+              "rewardCoins": 100,
+              "completed": false,
+              "type": "SCORE_REACH"
+            }
+          ],
+          "chase": {
+            "distance": 2.8,
+            "isNear": false
+          }
+        }
+      }
+    },
+    {
+      "name": "N-portrait-seeded-paused",
+      "snapshot": {
+        "contractVersion": 1,
+        "runId": "run-1",
+        "tick": 52,
+        "timeSec": 0.8666666666666667,
+        "stepSec": 0.016666666666666666,
+        "phase": "PAUSED",
+        "seed": 1346457360,
+        "rngState": 714621690,
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "simulationVersion": "pao10-fixed-v1",
+        "configId": "legacy-18-45-v1",
+        "contentRevision": "pao13-track-v1",
+        "generation": {
+          "runId": "run-1",
+          "seed": 1346457360,
+          "contentRevision": "pao13-track-v1",
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "rngState": 714621690,
+          "cursor": 1,
+          "nextZ": 190,
+          "lastTick": 52,
+          "stage": "INTRO",
+          "lastSegmentId": "run-1/pao13-track-v1/segment-0",
+          "fallbackCount": 0
+        },
+        "lastInputSequence": 3,
+        "discontinuity": true,
+        "context": {
+          "state": "PAUSED",
+          "score": 1.5695694444444437,
+          "highScore": 0,
+          "coins": 0,
+          "totalCoins": 0,
+          "speed": 18.216666666666654,
+          "distance": 15.69569444444444,
+          "player": {
+            "lane": 1,
+            "x": 0.0009354673267798153,
+            "targetX": 0,
+            "y": 1.5500000000000003,
+            "z": 15.69569444444444,
+            "vy": 7.800000000000004,
+            "isJumping": true,
+            "isRolling": false,
+            "rollTimer": 0,
+            "hasHoverboard": false,
+            "hoverboardActive": false,
+            "invulnerableTimer": 0,
+            "activePowerUps": {},
+            "collisionEnded": false,
+            "supportSurfaceId": null,
+            "contact": "AIRBORNE",
+            "supportDeparture": null,
+            "supportRampExit": null,
+            "supportSample": {
+              "x": 0.0009354673267798153,
+              "y": 1.5500000000000003,
+              "z": 15.69569444444444
+            }
+          },
+          "obstacles": [],
+          "coinEntities": [
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-0",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 56,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-1",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 66,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-2",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 76,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-3",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 86,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-4",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 96,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-5",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 106,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-6",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 116,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-7",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 126,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-8",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 136,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-9",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 146,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-10",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 156,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-11",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 166,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-12",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 171,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-13",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 176,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            },
+            {
+              "id": "run-1/pao13-track-v1/segment-0/coin-14",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 181,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            }
+          ],
+          "powerUpEntities": [
+            {
+              "id": "run-1/pao13-track-v1/segment-0/tail-power",
+              "type": "DOUBLE_SCORE",
+              "lane": 1,
+              "x": 0,
+              "y": 0.8,
+              "z": 183,
+              "collected": false,
+              "segmentInstanceId": "run-1/pao13-track-v1/segment-0",
+              "routeId": "main"
+            }
+          ],
+          "missions": [
+            {
+              "id": "m1",
+              "title": "COIN COLLECTOR",
+              "description": "Collect 30 coins in a single run",
+              "target": 30,
+              "current": 0,
+              "rewardCoins": 50,
+              "completed": false,
+              "type": "COLLECT_COINS"
+            },
+            {
+              "id": "m2",
+              "title": "HIGH JUMPER",
+              "description": "Perform 10 jumps in a single run",
+              "target": 10,
+              "current": 1,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "JUMP_TIMES"
+            },
+            {
+              "id": "m3",
+              "title": "SLIDER PRO",
+              "description": "Perform 8 rolls under obstacles",
+              "target": 8,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "ROLL_TIMES"
+            },
+            {
+              "id": "m4",
+              "title": "SCORE RUNNER",
+              "description": "Reach a score of 500 in a single run",
+              "target": 500,
+              "current": 1,
+              "rewardCoins": 100,
+              "completed": false,
+              "type": "SCORE_REACH"
+            }
+          ],
+          "chase": {
+            "distance": 2.8,
+            "isNear": false
+          }
+        }
+      }
+    }
+  ],
+  "firstGeneratedRuns": [
+    {
+      "runId": "run-1",
+      "tick": 1,
+      "seed": 1346457360,
+      "generation": {
+        "runId": "<run>",
+        "seed": 1346457360,
+        "contentRevision": "pao13-track-v1",
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "rngState": 714621690,
+        "cursor": 1,
+        "nextZ": 190,
+        "lastTick": 0,
+        "stage": "INTRO",
+        "lastSegmentId": "<run>/pao13-track-v1/segment-0",
+        "fallbackCount": 0
+      },
+      "obstacles": [],
+      "rewards": [
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-0",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 56,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-1",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 66,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-2",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 76,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-3",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 86,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-4",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 96,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-5",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 106,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-6",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 116,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-7",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 126,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-8",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 136,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-9",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 146,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-10",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 156,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-11",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 166,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-12",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 171,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-13",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 176,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/coin-14",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 181,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        },
+        {
+          "id": "<run>/pao13-track-v1/segment-0/tail-power",
+          "type": "DOUBLE_SCORE",
+          "lane": 1,
+          "x": 0,
+          "y": 0.8,
+          "z": 183,
+          "collected": false,
+          "segmentInstanceId": "<run>/pao13-track-v1/segment-0",
+          "routeId": "main"
+        }
+      ]
+    }
+  ],
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+  "devicePixelRatio": 1
+}

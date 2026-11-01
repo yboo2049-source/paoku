@@ -1,5 +1,6 @@
 ﻿import type { GameContext } from '../types';
 import { CONSTANTS } from '../types';
+import type { TrackGenerationFrame, TrackGenerationState } from '../types';
 import type { PhysicsStepStart } from '../types';
 import type { RunPhase, SimSnapshot, VersionedRng } from '../types/contracts';
 import { InputQueue } from './inputQueue';
@@ -24,7 +25,11 @@ export function createSeededRng(seed: number): VersionedRng {
 interface SimulationOptions {
   runId: string; seed: number; stepSec?: number; rng?: VersionedRng;
   physics?: (ctx: GameContext, dt: number, stepStart?: PhysicsStepStart) => void;
-  afterStep?: (ctx: GameContext, dt: number, rng: VersionedRng) => void;
+  afterStep?: (ctx: GameContext, dt: number, rng: VersionedRng, frame: TrackGenerationFrame) => void;
+  generation?: {
+    reset(runId: string, seed: number): void;
+    snapshot(): TrackGenerationState | undefined;
+  };
 }
 
 /** Exclusive mutable Context owner. Legacy systems borrow it only during a tick/change. */
@@ -49,6 +54,7 @@ export class Simulation {
     if (!Number.isFinite(this.stepSec) || this.stepSec <= 0 || !options.runId || !Number.isSafeInteger(options.seed) || options.seed < 0 || options.seed > 0xffffffff) throw new Error('Invalid simulation configuration');
     this.seed = options.seed; this.runId = options.runId;
     this.rng = options.rng ?? createSeededRng(this.seed); this.queue = new InputQueue(this.runId);
+    this.options.generation?.reset(this.runId, this.seed);
     this.syncPhase(); this.commit(true);
   }
   get tick(): number { return this.currentTick; }
@@ -60,10 +66,13 @@ export class Simulation {
   }
   private commit(discontinuity = false): void {
     this.previous = discontinuity ? null : this.current ?? null;
+    const generation = this.options.generation?.snapshot();
     const snapshot: SimSnapshot = {
       contractVersion: 1, runId: this.runId, tick: this.tick, timeSec: this.tick * this.stepSec, stepSec: this.stepSec,
       phase: this.phase, seed: this.seed, rngState: this.rng.state, rngAlgorithmVersion: this.rng.algorithmVersion,
-      simulationVersion: 'pao10-fixed-v1', configId: 'legacy-18-45-v1', contentRevision: 'legacy-unseeded-spawner',
+      simulationVersion: 'pao10-fixed-v1', configId: 'legacy-18-45-v1',
+      contentRevision: generation?.contentRevision ?? 'legacy-unseeded-spawner',
+      ...(generation ? { generation } : {}),
       lastInputSequence: this.lastSequence, discontinuity, context: this.context,
     };
     this.current = immutableCopy(snapshot);
@@ -83,6 +92,7 @@ export class Simulation {
     if (context) this.context = structuredClone(context);
     this.runId = runId; this.seed = seed; this.rng = createSeededRng(seed);
     this.currentTick = 0; this.lastSequence = 0; this.inputLog = [];
+    this.options.generation?.reset(this.runId, this.seed);
     this.queue.reset(runId); this.syncPhase(); this.commit(true);
   }
   step(): void {
@@ -102,7 +112,9 @@ export class Simulation {
     ctx.player.z += deltaDistanceM; ctx.distance += deltaDistanceM;
     ctx.score = accumulateScore(ctx.score, ctx.speed, dt, ctx.player.activePowerUps);
     this.options.physics?.(ctx, dt, stepStart);
-    this.options.afterStep?.(ctx, dt, this.rng);
+    this.options.afterStep?.(ctx, dt, this.rng, {
+      runId: this.runId, seed: this.seed, rng: this.rng, tick: this.tick, speed: ctx.speed,
+    });
     } finally { this.stepping = false; }
     this.syncPhase(); this.commit();
   }

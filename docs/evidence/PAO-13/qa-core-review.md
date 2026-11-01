@@ -1,0 +1,9 @@
+# PAO-13 independent core-wiring review
+
+Read-only review of src/main.ts, src/core/simulation.ts, src/types/contracts.ts and the isolated core integration tests on 2026-11-01. Review was performed while the track owner was still implementing; final build/unit/E2E and source freeze remain required.
+
+The main path passes the simulation-owned run, seed, RNG, tick and speed as the fifth spawner argument. The existing four array arguments and browser replacement boundary remain intact. The fixed-step scheduler, input, scoring and physics callback order are unchanged. Constructor and restart reset generation before committing its metadata; immutableCopy freezes and detaches metadata along with the rest of the snapshot. Optional generation hooks preserve isolated legacy Simulation callers and existing main-test spawner doubles. The old seed/config compatibility values remain, while contentRevision is sourced from the generator.
+
+The integration tests cover authoritative frame identity, constructor/reset ordering, immutable generation snapshots and fixed-tick cadence equality; the real spawner test also compares generated arrays and restart state. Direct Simulation.restart without supplying/resetting a GameContext still retains that context as it did before; application restart explicitly clears the world before resetting the simulation. This is not a new full saved-run restoration API.
+
+No blocking core-wiring finding at this stage. E2E N reset observation must normalize all run-derived nested identifiers, exclude observation tick, and omit moving-instance positions; those timing qualifications are documented in browser-validation.md. F physics validation emits legacy global bus facts, so the new F browser test executes while application MENU/tick0 with a normal SFX-off gesture and verifies the real app remains there. It does not claim event isolation, audio quality or production playback.

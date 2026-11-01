@@ -1,5 +1,6 @@
 ﻿import type { GameContext } from './index';
 export type RunPhase = 'RUNNING' | 'PAUSED' | 'ENDED' | 'ABANDONED';
+import type { TrackGenerationState } from './index';
 export type InputAction = 'LEFT' | 'RIGHT' | 'JUMP' | 'ROLL';
 export type InputSource = 'KEYBOARD' | 'TOUCH' | 'REPLAY' | 'QA';
 export interface InputCommand { runId: string; tick: number; sequence: number; action: InputAction; source: InputSource }
@@ -10,6 +11,7 @@ export interface SimSnapshot {
   contractVersion: 1; runId: string; tick: number; timeSec: number; stepSec: number; phase: RunPhase;
   seed: number; rngState: number; rngAlgorithmVersion: string;
   simulationVersion: string; configId: string; contentRevision: string;
+  generation?: DeepReadonly<TrackGenerationState>;
   lastInputSequence: number; discontinuity: boolean;
   context: DeepReadonly<GameContext>;
 }

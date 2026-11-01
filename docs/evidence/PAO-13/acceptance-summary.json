@@ -1,0 +1,86 @@
+{
+  "issue": "PAO-13",
+  "date": "2026-11-01",
+  "timezone": "Asia/Shanghai",
+  "baseline": "6efdd1f7ef975a8910340e5f1ca39a9078621ad3",
+  "branch": "feat/pao-13-seeded-tracks",
+  "checks": {
+    "build": {
+      "command": "npm run build",
+      "exitCode": 0,
+      "log": "build-final.log"
+    },
+    "unit": {
+      "command": "npm run test",
+      "exitCode": 0,
+      "files": 12,
+      "passed": 178,
+      "log": "test-final.log"
+    },
+    "e2e": {
+      "command": "npm run test:e2e -- --config docs/evidence/PAO-13/playwright.config.ts",
+      "exitCode": 0,
+      "startTime": "2026-11-01T04:15:14.074Z",
+      "duration": 159342.08200000002,
+      "expected": 28,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "diffCheck": {
+      "exitCode": 0
+    }
+  },
+  "source": {
+    "files": 22,
+    "unchanged": true,
+    "rawSourceIdentity": "runs/verified/browser-source-identity.json"
+  },
+  "history": {
+    "files": 673,
+    "refreshed": 90,
+    "allVerified": true,
+    "backupAndMirror": ".pao13-local/verified/"
+  },
+  "coverage": {
+    "singleWitnesses": 96,
+    "orderedPairWitnesses": 384,
+    "additionalPowerPairWitnesses": 128,
+    "generatorSeeds": 32,
+    "generatorUpdatesPerSeed": 32,
+    "browserDefaultVariantWitnesses": 60,
+    "browserWitnessFailures": 0,
+    "newBrowserCases": [
+      {
+        "title": "N-desktop-seeded-generation-keyboard-and-reset",
+        "errors": 0
+      },
+      {
+        "title": "N-portrait-seeded-generation-touch",
+        "errors": 0
+      },
+      {
+        "title": "F-isolated-browser-real-physics-segment-and-pair-witnesses",
+        "errors": 0
+      }
+    ]
+  },
+  "visualReview": {
+    "reviewed": true,
+    "newScreenshots": 5,
+    "regressionScreenshots": 4,
+    "findings": [
+      "No new obvious HUD/modal/centre-lane framing anomaly in reviewed samples",
+      "Existing yellow ramp occlusion and chase-actor edge crop retained; no renderer changes",
+      "Restart screenshot intentionally paused after new run generation"
+    ],
+    "emulation": "Desktop Chromium151.0.7922.34 ANGLE D3D11; portrait390x844 touch emulation"
+  },
+  "limitations": [
+    "Finite constant-speed and matching-variant pair sampling; not all long or mixed histories",
+    "Current route catalogue has centre-ground ports and one candidate route per segment",
+    "Witness second-segment pre-entry motion differs from progressive runtime lookahead; current moving hazards stay on side lanes",
+    "Uncalibrated GLB data bindings only; no runtime asset loading or proxy alignment",
+    "No old-save checkpoint/replay or real mobile performance sign-off"
+  ]
+}

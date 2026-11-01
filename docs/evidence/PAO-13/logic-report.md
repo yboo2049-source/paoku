@@ -1,0 +1,39 @@
+# PAO-13 logic implementation and finite coverage
+
+Baseline 6efdd1f; 2026-11-01 Asia/Shanghai. Task sources frozen after the checks below. This report covers logic/unit verification; final build/E2E/screenshots/commit are recorded by Dispatcher separately.
+
+## Data and real runtime
+
+Four immutable definitions, revision1/content `pao13-track-v1`, each160m with explicit centre-ground entry/exit at y0 and speed range18–45m/s: calm, under-over, ramp-truck, moving-rush. First two segments introduce ground rewards; BUILD/CHALLENGE/RECOVERY thereafter choose from finite stage candidates. This pacing is candidate content, not a signed-off player-difficulty curve. Eight variants alter harmless ground coin offset (+0/+1m) and optional tail power kind; all four existing powers are represented. No extra power mechanics.
+
+Spawner receives the simulation-owned run/seed/RNG/tick/speed; standalone four-argument callers use the same versioned mulberry32 algorithm locally. It makes two random draws per generated segment, never from Math.random/Date.now. IDs include run/content revision/cursor/local ID; reset clears RNG/cursor/active metadata. Main calls this production generator, while the accepted QA array replacement/freeze boundary remains intact. Committed snapshots expose generation identity, cursor, nextZ, last tick, stage and RNG state through the core owner's wiring. Legacy spawnPattern names remain usable; forced patterns reference the finite definitions.
+
+Normal generation looks150m ahead with at most2 segments/update. Definition length160m prevents large per-tick bursts. Obstacles are reclaimed using their full trailing extent; pickups after passing15m; active metadata is reclaimed by segment end. No object pool, global run history or witness cache is retained. Local QA teleport can leave a bounded catch-up backlog instead of attempting millions of segments in one call; teleport is not supported replay restoration.
+
+## Physics and reward admission
+
+The generator admits only structurally valid frozen catalogue content. Runtime never executes synthetic physics witnesses: existing updatePhysics/applyInputAction emit the legacy global EventBus, which would leak test actions/pickups into real missions/audio. Physical witnesses are explicitly offline/tool validation, using the unchanged real PAO-12 updatePhysics and real applyInputAction. This is not a second physics approximation. The runtime structural checks and offline matrix apply to the same immutable definitions/variant instantiator; no unknown procedural shapes are admitted.
+
+Each witness carries actual player vertical/stance/support/effect state across the entire sequence, executes commands in fixed1/60s ticks, moves incoming trains during the full150m pre-entry lead, and requires actual pickup consumption plus a supported centre-ground exit. It starts with no immunity; GAMEOVER or shield-created invulnerableTimer is a failure, so a reward cannot rescue a colliding route. Static reward radius0.25 is checked against boxes/ramp wedge; incoming train occupancy is checked each tick before any remaining reward can be collected. Failed routes return seed, definition order, speed, executed command ticks, reason, finite trace and uncollected reward IDs.
+
+Caller must retain the input options (variant, spawnLead and maxSteps) alongside the result; the witness result alone is not a complete reproduction bundle, and seed identifies witness entities rather than selecting its explicitly provided definitions/variant. failed-seeds.json includes those defaults plus exact rejected-fixture mutations and content revision. The production generator, in contrast, uses its seed/RNG to select content.
+
+Ramp/roof group uses the accepted logical2.4×3×6 ramp and2.4×3×12 carriage. Ramp centre70→top73 meets roof front73 exactly; group children share one combination instance, one visual root, owner IDs and common world endpoint. Duplicate/orphan children are rejected. Logical dimension substitution by raw GLB bounds is rejected. Carriage/combined prefab bindings explicitly reference the reviewed fixed commit622e7daa2262015f34e511e59628a3653273994d and the opposite-to-filename semantics: carriage→train_ramp_or_car, ramp-truck→train_metro. Both are UNCALIBRATED with null transform and LEGACY_PRIMITIVES fallback. Low/high barriers retain legacy primitive definitions, with no invented external model mapping. No GLB is imported, downloaded or changed. The visual root is a future data contract; existing renderer still renders old separate primitives, and no model/proxy alignment is claimed.
+
+## Fresh unit evidence
+
+- `red-track.log`: initial13/13 expected assertion failures for missing APIs/nonseeded layout.
+- `red-variants-immutability.log`: inherited SUPER_SNEAKERS missed a ground coin after low hurdle; mutable export also detected. Reward removed from the unproven location, proxies/actions unchanged; catalogue recursively frozen.
+- `red-unique-roots-dynamic-rewards.log`, `red-orphan-raw-proxy.log`: duplicate/orphan ownership, dynamic reward occupancy and raw logical-size substitution regressions.
+- `track-types.log`: `npx tsc --noEmit`, exit0.
+- `green-all-track.log`: full `npm run test`,12files178/178 passed; includes five core integration tests, all153 prior tests and20 new track cases.
+
+Finite matrix:4 definitions×8 variants×3 speeds(18/30/45)=96 single physical witnesses;16 ordered definition pairs×8 matching variants×3speeds=384 adjacent physical witnesses. The power-specific case repeats128 adjacent witnesses at45m/s and verifies all four kinds.32 seed values0–31×32 generation updates=1024 sampled selection/update pairs; each is compared to a second identical generator, and all4 definitions/all8 variants occur. This seed sampling verifies deterministic selection and bounded active metadata, not1024 additional physical witnesses. Regression seed13 plus deliberate failing seeds44013/44113 are saved in failed-seeds.json.
+
+Work bounds: witness at most4 segments,3600steps,12obstacles/24declared rewards/8commands per definition; generated catalogue has at most2obstacles/15coins plus1tail power per instance. Trace allocation is bounded by3600entries. Runtime checks have finite array bounds, no search, no per-frame physical validation, no unbounded cache. These bounds are engineering guardrails, not measured device/frame-time performance acceptance.
+
+## Limits
+
+All provided routes enter/exit the centre lane. Under-over needs jump then roll; ramp runs to roof and falls naturally to ground; moving-rush retains centre refuge while side incoming trains remain genuine hazards. This is a minimal catalogue with one candidate route per segment, not a route-search system, side-lane reward-route proof or full branching gameplay. Pairs use matching variants; arbitrary mixed variants, long effect histories, intermediate speeds, every acceleration history, arbitrary spawn/teleport sequences and all possible human inputs are not exhaustively proven. Moving-train reaction check uses relative speed and player front extent with a1.5s candidate admission bound, not a guarantee of actual visibility or human response time. The pre-entry physical test also conservatively lets both pair segments' incoming trains move from the same early witness start; runtime creates the later segment later. Their side-lane motion cannot intersect this catalogue's centre route/rewards.
+
+Fixed seed/content version does not implement full saved replay/restore, checkpoint state or cross-version determinism. Existing pickup detection, event bridge and physical solver limitations remain unchanged. GLB scale/orientation/endpoints, current yellow-ramp occlusion, rendering/UI, formal art and target-device performance belong to their separate tasks; this task does not claim them complete.

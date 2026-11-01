@@ -47,6 +47,11 @@ export interface PlayerEntity {
 }
 
 export interface ObstacleEntity {
+  /** PAO-13 data-only presentation ownership; ignored by the legacy renderer. */
+  definitionId?: string;
+  segmentInstanceId?: string;
+  combinationId?: string;
+  visualRootId?: string;
   id: string;
   type: ObstacleType;
   lane: number;
@@ -60,6 +65,8 @@ export interface ObstacleEntity {
 }
 
 export interface CoinEntity {
+  segmentInstanceId?: string;
+  routeId?: string;
   id: string;
   lane: number;
   x: number;
@@ -69,6 +76,8 @@ export interface CoinEntity {
 }
 
 export interface PowerUpEntity {
+  segmentInstanceId?: string;
+  routeId?: string;
   id: string;
   type: PowerUpType;
   lane: number;
@@ -118,3 +127,13 @@ export const CONSTANTS = {
   MAGNET_RADIUS: 15.0,
   MAGNET_SPEED: 25.0,
 };
+
+/** Fixed-tick authoritative generator input, never populated from presentation. */
+export interface TrackGenerationFrame {
+  runId: string; seed: number; rng: import('./contracts').VersionedRng; tick: number; speed: number;
+}
+export interface TrackGenerationState {
+  runId: string; seed: number; contentRevision: string;
+  rngAlgorithmVersion: string; rngState: number; cursor: number; nextZ: number; lastTick: number;
+  stage: string; lastSegmentId: string | null; fallbackCount: number;
+}

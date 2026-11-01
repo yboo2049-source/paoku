@@ -1,0 +1,68 @@
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-13
+
+ ❯ docs/evidence/PAO-13/core-integration.test.ts (3 tests | 3 failed) 11ms
+     × provides the same owned RNG, run, seed, tick and speed to each generation callback 4ms
+     × initializes and resets generation before committing a frozen, versioned snapshot 4ms
+     × retains four-argument QA-compatible array generation under different display cadences 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  docs/evidence/PAO-13/core-integration.test.ts > PAO-13 authoritative generation wiring > provides the same owned RNG, run, seed, tick and speed to each generation callback
+AssertionError: generation frame must be supplied by the simulation: expected undefined to be defined
+ ❯ docs/evidence/PAO-13/core-integration.test.ts:23:74
+     21|       }) as any });
+     22|     sim.step();
+     23|     expect(frame, 'generation frame must be supplied by the simulation…
+       |                                                                          ^
+     24|     expect(frame).toMatchObject({ runId: 'run-owned', seed: 13, tick: …
+     25|     expect(frame.rng).toBe(callbackRng);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  docs/evidence/PAO-13/core-integration.test.ts > PAO-13 authoritative generation wiring > initializes and resets generation before committing a frozen, versioned snapshot
+AssertionError: generation reset must precede initial commit: expected [] to deeply equal [ [ 'first', 1 ] ]
+
+- Expected
++ Received
+
+- [
+-   [
+-     "first",
+-     1,
+-   ],
+- ]
++ []
+
+ ❯ docs/evidence/PAO-13/core-integration.test.ts:41:67
+     39|     };
+     40|     const sim = new Simulation(initial(), { runId: 'first', seed: 1, g…
+     41|     expect(calls, 'generation reset must precede initial commit').toEq…
+       |                                                                   ^
+     42|     expect((sim.snapshot as any).generation).toEqual(state);
+     43|     expect(sim.snapshot.contentRevision).toBe('test-track-v1');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  docs/evidence/PAO-13/core-integration.test.ts > PAO-13 authoritative generation wiring > retains four-argument QA-compatible array generation under different display cadences
+AssertionError: expected undefined to be defined
+ ❯ Object.afterStep docs/evidence/PAO-13/core-integration.test.ts:64:25
+     62|       const sim = new Simulation(initial(), { runId: 'same', seed: 13,…
+     63|         afterStep: ((_ctx: GameContext, _dt: number, rng: any, frame: …
+     64|           expect(frame).toBeDefined();
+       |                         ^
+     65|           frames.push({ tick: frame.tick, seed: frame.seed, runId: fra…
+     66|         }) as any });
+ ❯ Simulation.step src/core/simulation.ts:105:18
+ ❯ GameLoop.updateFn docs/evidence/PAO-13/core-integration.test.ts:68:65
+ ❯ GameLoop.advance src/core/gameLoop.ts:46:12
+ ❯ drive docs/evidence/PAO-13/core-integration.test.ts:70:35
+ ❯ docs/evidence/PAO-13/core-integration.test.ts:73:23
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  12:09:14
+   Duration  331ms (transform 109ms, setup 0ms, import 137ms, tests 11ms, environment 0ms)

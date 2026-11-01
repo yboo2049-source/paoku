@@ -1,5 +1,6 @@
 import { Vector3 } from '@babylonjs/core';
 import type { GameContext } from './types';
+import type { TrackGenerationFrame } from './types';
 import { CONSTANTS } from './types';
 import { eventBus } from './core/eventBus';
 import { GameLoop } from './core/gameLoop';
@@ -52,7 +53,11 @@ const uiManager = new UIManager(appEl);
 const simulation = new Simulation(initialContext, {
   runId: 'podium', seed: 0x50414f10,
   physics: (ctx, dt, stepStart) => updatePhysics(ctx, dt, undefined, stepStart),
-  afterStep: ctx => updateLegacySystems(ctx),
+  afterStep: (ctx, _dt, _rng, frame) => updateLegacySystems(ctx, frame),
+  generation: {
+    reset: (runId, seed) => spawnerSystem.reset(runId, seed),
+    snapshot: () => spawnerSystem.generationState,
+  },
 });
 inputSystem.initQueue(simulation.queue, () => simulation.tick);
 let runSequence = 0;
@@ -77,7 +82,7 @@ function resetToPodium(ctx: GameContext): void {
   ctx.distance = 0;
   ctx.chase = { distance: 2.8, isNear: false };
 
-  spawnerSystem.reset();
+  spawnerSystem.reset(simulation.snapshot.runId, simulation.snapshot.seed);
   renderEngine.reset();
   audioEngine.stopBGM();
   audioEngine.stopChase();
@@ -197,13 +202,14 @@ on('COLLISION', () => {
 // QA 传感器可冻结生成器，构造确定性无碰撞环境
 let spawnerFrozen = false;
 
-function updateLegacySystems(ctx: GameContext): void {
+function updateLegacySystems(ctx: GameContext, generationFrame: TrackGenerationFrame): void {
   if (!spawnerFrozen) {
     spawnerSystem.update(
       ctx.player.z,
       ctx.obstacles,
       ctx.coinEntities,
-      ctx.powerUpEntities
+      ctx.powerUpEntities,
+      generationFrame,
     );
   }
   missionSystem.update(ctx);
@@ -294,6 +300,7 @@ const isQaMode = () => (window as any).__QA_MODE__ === true;
     simulationVersion: simulation.snapshot.simulationVersion, configId: simulation.snapshot.configId,
     seed: simulation.snapshot.seed, rngAlgorithmVersion: simulation.snapshot.rngAlgorithmVersion,
     contentRevision: simulation.snapshot.contentRevision,
+    generation: simulation.snapshot.generation,
     scheduler: { ...gameLoop.diagnostics }, input: { ...simulation.queue.diagnostics },
     inputs: simulation.acceptedInputs,
   }),

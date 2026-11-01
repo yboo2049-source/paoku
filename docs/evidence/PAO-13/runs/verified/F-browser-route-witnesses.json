@@ -1,0 +1,4324 @@
+{
+  "level": "F-isolated-browser-physics-not-natural-app-run",
+  "seed": 137,
+  "definitionCount": 4,
+  "speeds": [
+    18,
+    30,
+    45
+  ],
+  "results": [
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm"
+      ],
+      "speed": 18,
+      "steps": 1034,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1034,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm"
+      ],
+      "speed": 30,
+      "steps": 620,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 620,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm"
+      ],
+      "speed": 45,
+      "steps": 414,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 414,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm",
+        "calm"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm",
+        "calm"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm",
+        "calm"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm",
+        "under-over"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 224.6,
+          "tick": 1250
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 269.6,
+          "tick": 1400
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm",
+        "under-over"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 221,
+          "tick": 743
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 266,
+          "tick": 833
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm",
+        "under-over"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 216.5,
+          "tick": 490
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 261.5,
+          "tick": 550
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm",
+        "ramp-truck"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm",
+        "ramp-truck"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm",
+        "ramp-truck"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm",
+        "moving-rush"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm",
+        "moving-rush"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "calm",
+        "moving-rush"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over"
+      ],
+      "speed": 18,
+      "steps": 1034,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 64.6,
+          "tick": 717
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 109.6,
+          "tick": 867
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1034,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over"
+      ],
+      "speed": 30,
+      "steps": 620,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 61,
+          "tick": 423
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 106,
+          "tick": 513
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 620,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over"
+      ],
+      "speed": 45,
+      "steps": 414,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 56.5,
+          "tick": 277
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 101.5,
+          "tick": 337
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 414,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over",
+        "calm"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 64.6,
+          "tick": 717
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 109.6,
+          "tick": 867
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over",
+        "calm"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 61,
+          "tick": 423
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 106,
+          "tick": 513
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over",
+        "calm"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 56.5,
+          "tick": 277
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 101.5,
+          "tick": 337
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over",
+        "under-over"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 64.6,
+          "tick": 717
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 109.6,
+          "tick": 867
+        },
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 224.6,
+          "tick": 1250
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 269.6,
+          "tick": 1400
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over",
+        "under-over"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 61,
+          "tick": 423
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 106,
+          "tick": 513
+        },
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 221,
+          "tick": 743
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 266,
+          "tick": 833
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over",
+        "under-over"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 56.5,
+          "tick": 277
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 101.5,
+          "tick": 337
+        },
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 216.5,
+          "tick": 490
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 261.5,
+          "tick": 550
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over",
+        "ramp-truck"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 64.6,
+          "tick": 717
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 109.6,
+          "tick": 867
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over",
+        "ramp-truck"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 61,
+          "tick": 423
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 106,
+          "tick": 513
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over",
+        "ramp-truck"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 56.5,
+          "tick": 277
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 101.5,
+          "tick": 337
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over",
+        "moving-rush"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 64.6,
+          "tick": 717
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 109.6,
+          "tick": 867
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over",
+        "moving-rush"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 61,
+          "tick": 423
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 106,
+          "tick": 513
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "under-over",
+        "moving-rush"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 56.5,
+          "tick": 277
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 101.5,
+          "tick": 337
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck"
+      ],
+      "speed": 18,
+      "steps": 1034,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1034,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck"
+      ],
+      "speed": 30,
+      "steps": 620,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 620,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck"
+      ],
+      "speed": 45,
+      "steps": 414,
+      "commands": [],
+      "trace": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": -149.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -148.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -147.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -147,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -146.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -145.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -144.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -144,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -143.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -142.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -141.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -141,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -140.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -139.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -138.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -138,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -137.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -136.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -135.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -135,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -134.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -133.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -132.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -132,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -131.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -130.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -129.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -129,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -128.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -127.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -126.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -126,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -125.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -124.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -123.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -123,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -122.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -121.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -120.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -120,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -119.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -118.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -117.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -117,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -116.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -115.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -114.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -114,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -113.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -112.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -111.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -111,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -110.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -109.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -108.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -108,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -107.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -106.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -105.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -105,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -104.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -103.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -102.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -102,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -101.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -100.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -99.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -99,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -98.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -97.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -96.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -96,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -95.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -94.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -93.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -93,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -92.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -91.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -90.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -90,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -89.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -88.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -87.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -87,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -86.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -85.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -84.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -84,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -83.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -82.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -81.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -81,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -80.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -79.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -78.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -78,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -77.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -76.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -75.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -74.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -73.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -72.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -72,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -71.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -70.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -69.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -69,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -68.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -67.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -66.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -66,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -65.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -64.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -63.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -63,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -62.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -61.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -60.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -60,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -59.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -58.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -57.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -57,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -56.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -55.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -54.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -54,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -53.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -52.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -51.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -51,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -50.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -49.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -48.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -48,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -47.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -46.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -45.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -45,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -44.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -43.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -42.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -42,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -41.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -40.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -39.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -39,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -38.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -37.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -36.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -36,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -35.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -34.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -33.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -33,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -32.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -31.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -30.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -30,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -29.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -28.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -27.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -27,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -26.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -25.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -24.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -24,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -23.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -22.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -21.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -21,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -20.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -19.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -18.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -18,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -17.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -16.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -15.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -15,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -14.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -13.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -12.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -12,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -11.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -10.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -9.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -9,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -8.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -7.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -6.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -6,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -5.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -4.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -3.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -3,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -2.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -1.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 2.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 3,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 3.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 4.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 5.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 6,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 6.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 7.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 8.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 9,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 9.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 10.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 11.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 12,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 12.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 13.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 14.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 15,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 15.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 16.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 17.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 18,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 18.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 19.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 20.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 21,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 21.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 22.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 23.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 24,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 24.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 25.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 26.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 27,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 27.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 28.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 29.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 30,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 30.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 31.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 32.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 33,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 33.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 34.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 35.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 36,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 36.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 37.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 38.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 39,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 39.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 40.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 41.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 42,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 42.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 43.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 44.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 45,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 45.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 46.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 47.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 48,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 48.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 49.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 50.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 51,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 51.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 52.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 53.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 54,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 54.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 55.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 56.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 57,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 57.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 58.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 59.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 60,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 60.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 61.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 62.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 63,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 63.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 64.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 65.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 66,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 66.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0.25,
+          "z": 67.5,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/ramp:ramp",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0.625,
+          "z": 68.25,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/ramp:ramp",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 69,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/ramp:ramp",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 1.375,
+          "z": 69.75,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/ramp:ramp",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 1.75,
+          "z": 70.5,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/ramp:ramp",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 2.125,
+          "z": 71.25,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/ramp:ramp",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 2.5,
+          "z": 72,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/ramp:ramp",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 2.875,
+          "z": 72.75,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/ramp:ramp",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 73.5,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 74.25,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 75,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 75.75,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 76.5,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 77.25,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 78,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 78.75,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 79.5,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 80.25,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 81,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 81.75,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 82.5,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 83.25,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 84,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 84.75,
+          "supportSurfaceId": "witness-137/pao13-track-v1/segment-0/roof:roof",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 2.9894444444444446,
+          "z": 85.5,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 2.9683333333333333,
+          "z": 86.25,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 2.9366666666666665,
+          "z": 87,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 2.8944444444444444,
+          "z": 87.75,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 2.841666666666667,
+          "z": 88.5,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 2.7783333333333333,
+          "z": 89.25,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 2.7044444444444444,
+          "z": 90,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 2.62,
+          "z": 90.75,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 2.525,
+          "z": 91.5,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 2.4194444444444443,
+          "z": 92.25,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 2.3033333333333332,
+          "z": 93,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 2.1766666666666667,
+          "z": 93.75,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 2.0394444444444444,
+          "z": 94.5,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 1.8916666666666666,
+          "z": 95.25,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 1.7333333333333334,
+          "z": 96,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 1.5644444444444445,
+          "z": 96.75,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 1.3850000000000002,
+          "z": 97.5,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 1.1950000000000003,
+          "z": 98.25,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 0.9944444444444448,
+          "z": 99,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 0.7833333333333338,
+          "z": 99.75,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 0.5616666666666672,
+          "z": 100.5,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 0.3294444444444451,
+          "z": 101.25,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 0.08666666666666745,
+          "z": 102,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 102.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 103.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 104.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 105,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 105.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 106.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 107.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 108,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 108.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 109.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 110.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 111,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 111.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 112.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 113.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 114,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 114.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 115.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 116.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 117,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 117.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 118.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 119.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 120,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 120.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 121.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 122.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 123,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 123.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 124.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 125.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 126,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 126.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 127.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 128.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 129,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 129.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 130.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 131.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 132,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 132.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 133.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 134.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 135,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 135.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 136.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 137.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 138,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 138.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 139.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 140.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 141,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 141.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 142.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 143.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 144,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 144.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 145.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 146.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 147,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 147.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 148.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 149.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 150,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 150.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 151.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 152.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 153,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 153.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 154.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 155.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 156,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 156.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 157.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 158.25,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 159,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 159.75,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 160.5,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED"
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 414,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck",
+        "calm"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck",
+        "calm"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck",
+        "calm"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck",
+        "under-over"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 224.6,
+          "tick": 1250
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 269.6,
+          "tick": 1400
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck",
+        "under-over"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 221,
+          "tick": 743
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 266,
+          "tick": 833
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck",
+        "under-over"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 216.5,
+          "tick": 490
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 261.5,
+          "tick": 550
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck",
+        "ramp-truck"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck",
+        "ramp-truck"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck",
+        "ramp-truck"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck",
+        "moving-rush"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck",
+        "moving-rush"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "ramp-truck",
+        "moving-rush"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush"
+      ],
+      "speed": 18,
+      "steps": 1034,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1034,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush"
+      ],
+      "speed": 30,
+      "steps": 620,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 620,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush"
+      ],
+      "speed": 45,
+      "steps": 414,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 414,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush",
+        "calm"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush",
+        "calm"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush",
+        "calm"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush",
+        "under-over"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 224.6,
+          "tick": 1250
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 269.6,
+          "tick": 1400
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush",
+        "under-over"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 221,
+          "tick": 743
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 266,
+          "tick": 833
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush",
+        "under-over"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [
+        {
+          "atZ": 70,
+          "action": "JUMP",
+          "leadSec": 0.3,
+          "worldZ": 216.5,
+          "tick": 490
+        },
+        {
+          "atZ": 115,
+          "action": "ROLL",
+          "leadSec": 0.3,
+          "worldZ": 261.5,
+          "tick": 550
+        }
+      ],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 2.2866666666666684,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush",
+        "ramp-truck"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush",
+        "ramp-truck"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush",
+        "ramp-truck"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 3,
+      "sawRoof": true,
+      "sawRamp": true
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush",
+        "moving-rush"
+      ],
+      "speed": 18,
+      "steps": 1567,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 1567,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush",
+        "moving-rush"
+      ],
+      "speed": 30,
+      "steps": 940,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 940,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    },
+    {
+      "ok": true,
+      "reason": "",
+      "seed": 137,
+      "definitionIds": [
+        "moving-rush",
+        "moving-rush"
+      ],
+      "speed": 45,
+      "steps": 627,
+      "commands": [],
+      "uncollectedRewardIds": [],
+      "traceSamples": 627,
+      "maximumFootY": 0,
+      "sawRoof": false,
+      "sawRamp": false
+    }
+  ],
+  "applicationState": "MENU",
+  "applicationTick": 0
+}

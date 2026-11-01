@@ -1,268 +1,63 @@
-import type { ObstacleEntity, CoinEntity, PowerUpEntity } from '../types';
-import { CONSTANTS } from '../types';
+import type { ObstacleEntity, CoinEntity, PowerUpEntity, TrackGenerationFrame, TrackGenerationState } from '../types';
+import type { VersionedRng } from '../types/contracts';
+import { TRACK_SEGMENTS, TRACK_CONTENT_REVISION, stageForCursor } from '../data/trackSegments';
+import { instantiateTrackSegment, MAX_SEGMENTS_PER_UPDATE, TRACK_VARIANTS, validateTrackDefinition } from './track';
+import type { TrackSegmentInstance } from './track';
 
 export type PatternType = 'ZigZag_Trains' | 'Under_Over' | 'Moving_Rush' | 'Coin_Frenzy';
-
+/** Standalone compatibility RNG; production receives the simulation's versioned stream. */
+function localRng(seed: number): VersionedRng {
+  let state = seed >>> 0;
+  return { algorithmVersion: 'mulberry32-v1', get state() { return state; }, next() {
+    state = (state + 0x6D2B79F5) >>> 0;
+    let t = Math.imul(state ^ (state >>> 15), 1 | state); t ^= t + Math.imul(t ^ (t >>> 7), 61 | t);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  } };
+}
 export class SpawnerSystem {
-  private lastSpawnZ: number = 30;
-
-  update(
-    playerZ: number,
-    obstacles: ObstacleEntity[],
-    coins: CoinEntity[],
-    powerUps: PowerUpEntity[]
-  ): void {
-    // 保持前方有足够生成的区块
-    while (this.lastSpawnZ - playerZ < 150) {
-      this.spawnPattern(this.lastSpawnZ, obstacles, coins, powerUps);
-      this.lastSpawnZ += 40;
-    }
-
-    // 清理落后于玩家身后的物体
-    for (let i = obstacles.length - 1; i >= 0; i--) {
-      if (obstacles[i].z < playerZ - 15) {
-        obstacles.splice(i, 1);
-      }
-    }
-
-    for (let i = coins.length - 1; i >= 0; i--) {
-      if (coins[i].z < playerZ - 15) {
-        coins.splice(i, 1);
-      }
-    }
-
-    for (let i = powerUps.length - 1; i >= 0; i--) {
-      if (powerUps[i].z < playerZ - 15) {
-        powerUps.splice(i, 1);
-      }
-    }
+  private state!: TrackGenerationState;
+  private rng!: VersionedRng;
+  private instances: TrackSegmentInstance[] = [];
+  constructor() { this.reset(); }
+  get generationState(): TrackGenerationState { return { ...this.state, rngState: this.rng.state }; }
+  /** Bounded active metadata for future presentation; no models loaded here. */
+  get activeSegments(): readonly TrackSegmentInstance[] { return structuredClone(this.instances); }
+  reset(runId = 'standalone', seed = 0x50414f10): void {
+    if (!runId || !Number.isSafeInteger(seed) || seed < 0 || seed > 0xffffffff) throw new Error('invalid generation identity');
+    this.rng = localRng(seed); this.instances = [];
+    this.state = { runId, seed, contentRevision: TRACK_CONTENT_REVISION, rngAlgorithmVersion: this.rng.algorithmVersion, rngState: seed, cursor: 0, nextZ: 30, lastTick: 0, stage: 'INTRO', lastSegmentId: null, fallbackCount: 0 };
   }
-
-  reset(): void {
-    this.lastSpawnZ = 30;
-  }
-
-  spawnPattern(
-    spawnZ: number,
-    obstacles: ObstacleEntity[],
-    coins: CoinEntity[],
-    _powerUps: PowerUpEntity[],
-    forcedPattern?: PatternType
-  ): void {
-    const patterns: PatternType[] = ['ZigZag_Trains', 'Under_Over', 'Moving_Rush', 'Coin_Frenzy'];
-    const pattern = forcedPattern || patterns[Math.floor(Math.random() * patterns.length)];
-
-    switch (pattern) {
-      case 'ZigZag_Trains':
-        this.spawnZigZagTrains(spawnZ, obstacles, coins);
-        break;
-      case 'Under_Over':
-        this.spawnUnderOver(spawnZ, obstacles, coins);
-        break;
-      case 'Moving_Rush':
-        this.spawnMovingRush(spawnZ, obstacles, coins);
-        break;
-      case 'Coin_Frenzy':
-        this.spawnCoinFrenzy(spawnZ, coins);
-        break;
+  update(playerZ: number, obstacles: ObstacleEntity[], coins: CoinEntity[], powerUps: PowerUpEntity[], frame?: TrackGenerationFrame): void {
+    if (!Number.isFinite(playerZ)) throw new Error('invalid player position');
+    if (frame) {
+      if (frame.runId !== this.state.runId || frame.seed !== this.state.seed) this.reset(frame.runId, frame.seed);
+      if (!Number.isSafeInteger(frame.tick) || frame.tick < this.state.lastTick || !Number.isFinite(frame.speed) || frame.speed < 18 || frame.speed > 45) throw new Error('invalid generation frame');
+      this.rng = frame.rng; this.state.lastTick = frame.tick; this.state.rngAlgorithmVersion = frame.rng.algorithmVersion;
     }
-
-    // 25% 概率在跑道中央放置一个随机 PowerUp 道具
-    if (Math.random() < 0.35) {
-      const pTypes: PowerUpEntity['type'][] = ['MAGNET', 'DOUBLE_SCORE', 'SUPER_SNEAKERS', 'HOVERBOARD'];
-      const randomType = pTypes[Math.floor(Math.random() * pTypes.length)];
-      const randomLane = Math.floor(Math.random() * 3);
-
-      _powerUps.push({
-        id: `powerup_${spawnZ}_${Date.now()}`,
-        type: randomType,
-        lane: randomLane,
-        x: CONSTANTS.LANE_X[randomLane],
-        y: 1.0,
-        z: spawnZ + 20,
-        collected: false,
-      });
+    for (let n = 0; n < MAX_SEGMENTS_PER_UPDATE && this.state.nextZ - playerZ < 150; n++) {
+      const stage = stageForCursor(this.state.cursor);
+      const candidates = TRACK_SEGMENTS.filter(d => d.stages.includes(stage));
+      let d = candidates[Math.floor(this.rng.next() * candidates.length)];
+      const variant = Math.floor(this.rng.next() * TRACK_VARIANTS);
+      if (!d || validateTrackDefinition(d).length) { d = TRACK_SEGMENTS[0]; this.state.fallbackCount++; }
+      const instance = instantiateTrackSegment(d, { runId: this.state.runId, cursor: this.state.cursor, startZ: this.state.nextZ, variant });
+      obstacles.push(...instance.obstacles); coins.push(...instance.coins); powerUps.push(...instance.powerUps);
+      this.instances.push(instance); this.state.cursor++; this.state.nextZ += d.length;
+      this.state.stage = stage; this.state.lastSegmentId = instance.id;
     }
+    for (let i = obstacles.length - 1; i >= 0; i--) if (obstacles[i].z + obstacles[i].depth / 2 < playerZ - 15) obstacles.splice(i, 1);
+    for (let i = coins.length - 1; i >= 0; i--) if (coins[i].z < playerZ - 15) coins.splice(i, 1);
+    for (let i = powerUps.length - 1; i >= 0; i--) if (powerUps[i].z < playerZ - 15) powerUps.splice(i, 1);
+    this.instances = this.instances.filter(i => i.startZ + i.length >= playerZ - 15);
   }
-
-  private spawnZigZagTrains(spawnZ: number, obstacles: ObstacleEntity[], coins: CoinEntity[]): void {
-    // 交错的火车 + 斜坡(RAMP)与金币
-    // 车道0 (左): RAMP at spawnZ, 火车顶部有金币
-    obstacles.push({
-      id: `obs_ramp_${spawnZ}_0`,
-      type: 'RAMP',
-      lane: 0,
-      x: CONSTANTS.LANE_X[0],
-      y: 0,
-      z: spawnZ,
-      width: 2.4,
-      height: 3.0,
-      depth: 6.0,
-    });
-    obstacles.push({
-      id: `obs_train_${spawnZ}_0`,
-      type: 'STATIC_TRAIN',
-      lane: 0,
-      x: CONSTANTS.LANE_X[0],
-      y: 0,
-      z: spawnZ + 9,
-      width: 2.4,
-      height: 3.0,
-      depth: 12.0,
-    });
-    for (let i = 0; i < 4; i++) {
-      coins.push({
-        id: `coin_${spawnZ}_0_${i}`,
-        lane: 0,
-        x: CONSTANTS.LANE_X[0],
-        y: 3.8,
-        z: spawnZ + 4 + i * 3,
-        collected: false,
-      });
-    }
-
-    // 车道1 (中): STATIC_TRAIN at spawnZ + 15
-    obstacles.push({
-      id: `obs_train_${spawnZ}_1`,
-      type: 'STATIC_TRAIN',
-      lane: 1,
-      x: CONSTANTS.LANE_X[1],
-      y: 0,
-      z: spawnZ + 15,
-      width: 2.4,
-      height: 3.0,
-      depth: 12.0,
-    });
-
-    // 车道2 (右): RAMP at spawnZ + 20
-    obstacles.push({
-      id: `obs_ramp_${spawnZ}_2`,
-      type: 'RAMP',
-      lane: 2,
-      x: CONSTANTS.LANE_X[2],
-      y: 0,
-      z: spawnZ + 20,
-      width: 2.4,
-      height: 3.0,
-      depth: 6.0,
-    });
-  }
-
-  private spawnUnderOver(spawnZ: number, obstacles: ObstacleEntity[], coins: CoinEntity[]): void {
-    // 组合高空与低矮障碍
-    // 车道 0: HIGH_OBSTACLE (需翻滚)
-    obstacles.push({
-      id: `obs_high_${spawnZ}_0`,
-      type: 'HIGH_OBSTACLE',
-      lane: 0,
-      x: CONSTANTS.LANE_X[0],
-      y: 1.2,
-      z: spawnZ + 5,
-      width: 2.2,
-      height: 1.8,
-      depth: 0.5,
-    });
-    coins.push({
-      id: `coin_${spawnZ}_0_0`,
-      lane: 0,
-      x: CONSTANTS.LANE_X[0],
-      y: 0.8,
-      z: spawnZ + 5,
-      collected: false,
-    });
-
-    // 车道 1: LOW_OBSTACLE (需跳跃)
-    obstacles.push({
-      id: `obs_low_${spawnZ}_1`,
-      type: 'LOW_OBSTACLE',
-      lane: 1,
-      x: CONSTANTS.LANE_X[1],
-      y: 0,
-      z: spawnZ + 15,
-      width: 2.2,
-      height: 1.0,
-      depth: 0.5,
-    });
-    coins.push({
-      id: `coin_${spawnZ}_1_0`,
-      lane: 1,
-      x: CONSTANTS.LANE_X[1],
-      y: 2.0,
-      z: spawnZ + 15,
-      collected: false,
-    });
-
-    // 车道 2: HIGH_OBSTACLE
-    obstacles.push({
-      id: `obs_high_${spawnZ}_2`,
-      type: 'HIGH_OBSTACLE',
-      lane: 2,
-      x: CONSTANTS.LANE_X[2],
-      y: 1.2,
-      z: spawnZ + 25,
-      width: 2.2,
-      height: 1.8,
-      depth: 0.5,
-    });
-  }
-
-  private spawnMovingRush(spawnZ: number, obstacles: ObstacleEntity[], coins: CoinEntity[]): void {
-    // 迎面驶来的动态火车
-    obstacles.push({
-      id: `obs_mov_${spawnZ}_0`,
-      type: 'MOVING_TRAIN',
-      lane: 0,
-      x: CONSTANTS.LANE_X[0],
-      y: 0,
-      z: spawnZ + 30,
-      width: 2.4,
-      height: 3.0,
-      depth: 12.0,
-      speedZ: -10,
-    });
-
-    obstacles.push({
-      id: `obs_mov_${spawnZ}_2`,
-      type: 'MOVING_TRAIN',
-      lane: 2,
-      x: CONSTANTS.LANE_X[2],
-      y: 0,
-      z: spawnZ + 10,
-      width: 2.4,
-      height: 3.0,
-      depth: 12.0,
-      speedZ: -12,
-    });
-
-    // 安全车道 1 放置金币
-    for (let i = 0; i < 6; i++) {
-      coins.push({
-        id: `coin_${spawnZ}_1_${i}`,
-        lane: 1,
-        x: CONSTANTS.LANE_X[1],
-        y: 0.8,
-        z: spawnZ + i * 5,
-        collected: false,
-      });
-    }
-  }
-
-  private spawnCoinFrenzy(spawnZ: number, coins: CoinEntity[]): void {
-    // 密集金币阵列
-    for (let lane = 0; lane < 3; lane++) {
-      for (let i = 0; i < 5; i++) {
-        coins.push({
-          id: `coin_frenzy_${spawnZ}_${lane}_${i}`,
-          lane,
-          x: CONSTANTS.LANE_X[lane],
-          y: 0.8,
-          z: spawnZ + i * 4,
-          collected: false,
-        });
-      }
-    }
+  spawnPattern(spawnZ: number, obstacles: ObstacleEntity[], coins: CoinEntity[], powerUps: PowerUpEntity[], forcedPattern?: PatternType): void {
+    const names: PatternType[] = ['ZigZag_Trains', 'Under_Over', 'Moving_Rush', 'Coin_Frenzy'];
+    const name = forcedPattern ?? names[Math.floor(this.rng.next() * names.length)];
+    const definitionId = ({ ZigZag_Trains: 'ramp-truck', Under_Over: 'under-over', Moving_Rush: 'moving-rush', Coin_Frenzy: 'calm' } as const)[name];
+    if (!definitionId) throw new Error('unknown pattern');
+    const d = TRACK_SEGMENTS.find(d => d.definitionId === definitionId)!;
+    const instance = instantiateTrackSegment(d, { runId: this.state.runId, cursor: this.state.cursor++, startZ: spawnZ, variant: 0 });
+    obstacles.push(...instance.obstacles); coins.push(...instance.coins); powerUps.push(...instance.powerUps);
   }
 }
-
 export const spawnerSystem = new SpawnerSystem();
-

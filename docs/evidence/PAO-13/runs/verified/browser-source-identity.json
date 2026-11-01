@@ -1,0 +1,41 @@
+{
+  "cwd": "D:\\worker\\paoku-sessions\\pao-13",
+  "baseURL": "http://127.0.0.1:5184",
+  "sources": [
+    {
+      "source": "src/main.ts",
+      "sha256": "15c489f3ebac2e08a68b2b7b2e3d79e91842bb5b7cd48cd6990ba37d1cbd0db8",
+      "exactRawSourceMatch": true
+    },
+    {
+      "source": "src/core/simulation.ts",
+      "sha256": "0268fb031134eb7cb202c72fdd22880c496c81bf838a627153435dcb00b03adf",
+      "exactRawSourceMatch": true
+    },
+    {
+      "source": "src/systems/spawner.ts",
+      "sha256": "0d72d6533495c82f999a9a4caff0b1fb099d10dcfa4f70c8ea9df5997442a284",
+      "exactRawSourceMatch": true
+    },
+    {
+      "source": "src/systems/track.ts",
+      "sha256": "a636be6e3e2191a36d876c7436d378e0bb5143aa80725870fabf968dbd1cab6f",
+      "exactRawSourceMatch": true
+    },
+    {
+      "source": "src/data/trackSegments.ts",
+      "sha256": "7604590fcfd3390d82068c4add949f34049c3096368d064963d9700daac9b60a",
+      "exactRawSourceMatch": true
+    },
+    {
+      "source": "src/data/modelBindings.ts",
+      "sha256": "372c770cbb9bb31c8f0fd488f47add18c54ad89c2e711e3f5396f21549f69905",
+      "exactRawSourceMatch": true
+    },
+    {
+      "source": "src/systems/physics.ts",
+      "sha256": "0eddeb1ae8e47638c5b139dc484aefd4f22696fa5b2be6ac8a76d07cab4fbce6",
+      "exactRawSourceMatch": true
+    }
+  ]
+}

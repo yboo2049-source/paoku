@@ -1,0 +1,33 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/trackSegments.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-13
+
+ ❯ tests/unit/trackSegments.test.ts (13 tests | 1 failed) 397ms
+     × pins actual GLB semantics and never uses uncalibrated raw dimensions for collision 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > pins actual GLB semantics and never uses uncalibrated raw dimensions for collision
+AssertionError: expected '622e7daa2262015f34e511e59628a36532739…' to be '622e7da' // Object.is equality
+
+Expected: "622e7da"
+Received: "622e7daa2262015f34e511e59628a3653273994d"
+
+ ❯ tests/unit/trackSegments.test.ts:119:35
+    117|     expect(MODEL_BINDINGS['ramp-truck'].modelPath).toContain('train_me…
+    118|     for (const binding of Object.values(MODEL_BINDINGS) as any[]) {
+    119|       expect(binding.assetCommit).toBe('622e7da'); expect(binding.cali…
+       |                                   ^
+    120|       expect(binding.fallback).toBe('LEGACY_PRIMITIVES');
+    121|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 passed (13)
+   Start at  12:11:13
+   Duration  734ms (transform 119ms, setup 0ms, import 145ms, tests 397ms, environment 0ms)

@@ -1,0 +1,36 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/trackSegments.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-13
+
+ ❯ tests/unit/trackSegments.test.ts (25 tests | 1 failed) 5284ms
+     × rejects orphan combination children and raw GLB sizes substituted for accepted proxies 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > rejects orphan combination children and raw GLB sizes substituted for accepted proxies
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/trackSegments.test.ts:195:92
+    193|     const { TRACK_SEGMENTS, validateTrackDefinition } = api();
+    194|     const orphan = structuredClone(TRACK_SEGMENTS[2]); orphan.obstacle…
+    195|     expect(validateTrackDefinition(orphan).some((s: string) => s.inclu…
+       |                                                                                            ^
+    196|     const raw = structuredClone(TRACK_SEGMENTS[2]); raw.obstacles[0].w…
+    197|     expect(validateTrackDefinition(raw).some((s: string) => s.includes…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 24 passed (25)
+   Start at  12:14:15
+   Duration  5.97s (transform 369ms, setup 0ms, import 402ms, tests 5.28s, environment 0ms)

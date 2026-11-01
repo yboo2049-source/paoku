@@ -1,5 +1,9 @@
 # 系统架构与模块隔离设计 (Architecture Spec)
 
+## 2026-11-01 PAO-16 标定探针边界
+
+[独立标定工具](plans/2026-11-01-pao16-calibration-spike.md)只读取既有GLB和M1逻辑，输出有证据/置信度的测点、候选矩阵与误差分类，不改src/public或生产模型绑定。source节点/loader手性/asset→logic重基各转换一次；工程车组合单视觉根，逻辑RAMP/ROOF仍独立。非等比/不可拟合须诊断，不能反改物理或拿外框匹配当表面对齐通过。
+
 ## 2026-11-01 PAO-15 试样隔离
 
 [已批准局部试样](plans/2026-11-01-pao15-rig-spike.md)保留pao-15@8b26bdf，不合并PAO-19。原GLB只读，派生DCC/导出/校验工具分别在专属目录，独立Babylon预览不修改src/public/main/render。数据记录source/derived hash、骨架/权重/逆绑定矩阵、源→引擎变换及姿势证据；动画仅变形，不获得模拟位移或碰撞权威。试样不是正式运行时资产注册或PAO-18接线放行。

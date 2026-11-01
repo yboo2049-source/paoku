@@ -2,6 +2,12 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-01] PAO-16下一批标定探针准备
+
+- PAO-15自动绑定阶段通过后，下一步准备[两车/高低栏技术标定](docs/plans/2026-11-01-pao16-calibration-spike.md)，已写Spike设计、独立目录/白名单/测试与可粘贴提示词。原pao-16树仍dd82d22、干净，未启动实现。
+- 只读GLB和M1逻辑，独立预览/量测/候选矩阵/残差/TODO；不改物理/渲染入口，不做手工美术或整批新资产，不能把不适配强行判绿。
+- 用户手动触发原PAO-16聊天后才执行；本Dispatcher未创建聊天/Agent、未改Linear状态或合并。正式PAO-16/17依赖和风格/设备门禁仍保留。
+
 ## [2026-11-01] PAO-15自动绑定试样阶段验收通过
 
 - [64c4f31独立主审](docs/reviews/2026-11-01-pao15-rig-spike-review.md)：46交付哈希匹配；23骨/真实软蒙皮/11诊断姿势、IBM/root通过；新Blender进程重开派生工程并重导出再次通过，不改原GLB。

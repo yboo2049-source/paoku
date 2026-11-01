@@ -1,0 +1,157 @@
+{
+  "task": "PAO-16 first four-asset calibration Spike only",
+  "commit": "3de6e543ff5b5d29a2c624c8d482e5acb8865444",
+  "branch": "codex/pao-16-world-assets",
+  "buildExit": 0,
+  "toolTypecheckExit": 0,
+  "unit": {
+    "files": 17,
+    "passed": 252
+  },
+  "regression": {
+    "startTime": "2026-11-01T15:20:08.608Z",
+    "duration": 222524.529,
+    "expected": 43,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "tests": 43,
+    "retries": 0
+  },
+  "preview": {
+    "startTime": "2026-11-01T15:23:57.995Z",
+    "duration": 10503.994,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "tests": 1,
+    "retries": 0
+  },
+  "protected": {
+    "tracked": 1026,
+    "changed": 0,
+    "originalTaskManifest": 950,
+    "originalTaskChanged": 0,
+    "externalSources": 4
+  },
+  "reproducedDiagnosticByteIdentical": true,
+  "reproducedTodoByteIdentical": true,
+  "rawGameModules": 26,
+  "markerProvenance": [
+    {
+      "file": "train_ramp_or_car.glb",
+      "triangles": 112516,
+      "markers": 7,
+      "localError": 4.808614648418704e-10,
+      "sceneError": 4.808614648418704e-10,
+      "chainError": 5.34810424675915e-10,
+      "classification": "POINTS_REQUIRE_REVIEW",
+      "accepted": false
+    },
+    {
+      "file": "train_metro.glb",
+      "triangles": 8968,
+      "markers": 9,
+      "localError": 7.359767168474848e-10,
+      "sceneError": 7.359767168474848e-10,
+      "chainError": 5.703018026051608e-10,
+      "classification": "NEEDS_DERIVED_REPAIR",
+      "accepted": false
+    },
+    {
+      "file": "obstacle_hurdle_barrier.glb",
+      "triangles": 8894,
+      "markers": 4,
+      "localError": 5.017375702777123e-10,
+      "sceneError": 5.017375702777123e-10,
+      "chainError": 3.5849690228479103e-10,
+      "classification": "NEEDS_DERIVED_REPAIR",
+      "accepted": false
+    },
+    {
+      "file": "obstacle_slide_barrier.glb",
+      "triangles": 9711,
+      "markers": 6,
+      "localError": 5.929381916802316e-10,
+      "sceneError": 1.0008819057804659e-9,
+      "chainError": 4.518665152270771e-10,
+      "classification": "NEEDS_DERIVED_REPAIR",
+      "accepted": false
+    }
+  ],
+  "previewGeometry": [
+    {
+      "ready": true,
+      "file": "train_metro.glb",
+      "meshes": 1,
+      "loaderMaxError": 0,
+      "candidateAppliedError": 0.00000762939453125,
+      "rightHanded": true,
+      "visualRootCount": 1,
+      "logicalChildCount": 2,
+      "compared": 11508
+    },
+    {
+      "ready": true,
+      "file": "obstacle_slide_barrier.glb",
+      "meshes": 1,
+      "loaderMaxError": 1.5634417809987836e-8,
+      "candidateAppliedError": 7.878241889193316e-8,
+      "rightHanded": true,
+      "visualRootCount": 1,
+      "logicalChildCount": 1,
+      "compared": 8716
+    },
+    {
+      "ready": true,
+      "file": "train_ramp_or_car.glb",
+      "meshes": 1,
+      "loaderMaxError": 0,
+      "candidateAppliedError": 0,
+      "rightHanded": true,
+      "visualRootCount": 1,
+      "logicalChildCount": 1,
+      "compared": 114123
+    },
+    {
+      "ready": true,
+      "file": "obstacle_hurdle_barrier.glb",
+      "meshes": 1,
+      "loaderMaxError": 0,
+      "candidateAppliedError": 0,
+      "rightHanded": true,
+      "visualRootCount": 1,
+      "logicalChildCount": 1,
+      "compared": 10132
+    }
+  ],
+  "sourceHashes": [
+    {
+      "file": "train_metro.glb",
+      "httpSHA256": "721bb182e1a323e1a01f65db3bb3602de3c6196ccb5c458a093ca87cd10ed4c8"
+    },
+    {
+      "file": "obstacle_slide_barrier.glb",
+      "httpSHA256": "471b24a3a1cc6a25cc18bac7cfcfd5cad36e61ce3e7088fd75f9dfbe99379d0a"
+    },
+    {
+      "file": "train_ramp_or_car.glb",
+      "httpSHA256": "b561449fbb1426f2ba38cd54f75818090cf68076b3cb59a50c80dce2beb48fe4"
+    },
+    {
+      "file": "obstacle_hurdle_barrier.glb",
+      "httpSHA256": "4f8d4756dcf150b086f8cad14a531305cae61caa0996872af291128d099306c4"
+    }
+  ],
+  "pageErrors": [],
+  "scope": "Technical probe acceptance only; no runtime config/asset acceptance, no PAO-16 Done, no PAO-17 release",
+  "taskPreviousE2EAttempts": {
+    "failedAttempts": 2,
+    "each": "42/43",
+    "cause": "Unproven old sensor/fixture timing; retained, not fixed or erased"
+  },
+  "sourceTodoCorrection": "Author original DCC does not exist per 0f96ee7. Future work uses reconstructed derived source; no original-source prerequisite.",
+  "artAndDeviceAcceptance": false,
+  "fullLocalEvidence": ".pao16-local/parent-review"
+}

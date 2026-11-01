@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-01",
+  "timezone": "Asia/Shanghai",
+  "scope": "PAO-15 preparation documents only",
+  "baseCommit": "19aa31492ddce4c1c5e74ef1e49312ad41ec2dd6",
+  "branch": "codex/pao-15-character-assets",
+  "initialWorktree": "clean",
+  "linear": {
+    "pao15Status": "Backlog",
+    "blockedBy": [
+      "PAO-7",
+      "PAO-8",
+      "PAO-9"
+    ],
+    "blocks": [
+      "PAO-18"
+    ],
+    "dependencyStatus": "In Review",
+    "writesPerformed": false
+  },
+  "asset": {
+    "path": "D:/worker/paoku-sessions/glb-review/public/models/character_runner.glb",
+    "sha256": "0f475ed22a2abfbbb9b4cb3069f5c9b131110847b23bd68fbcdff4b3baa797d9",
+    "hashMatches": true,
+    "manifestRevision": "7a2fb2963deae061d15deae4019910a15f0dfbcf",
+    "assetCommit": "622e7da",
+    "sceneHeight": 0.9791,
+    "skins": 0,
+    "animations": 0,
+    "facing": "unverified",
+    "editableSource": "not obtained in scoped delivery",
+    "license": "not obtained in scoped delivery",
+    "riggingFeasibility": "not verified"
+  },
+  "tools": {
+    "nodeNpm": "available",
+    "blenderInPath": false,
+    "fullMachineDccSearch": false,
+    "npmCiExitCode": 0,
+    "dependencyLockChanged": false
+  },
+  "documentChecks": {
+    "clipCount": 13,
+    "clips": [
+      {
+        "name": "idle",
+        "frames": 60,
+        "durationSec": 2
+      },
+      {
+        "name": "run",
+        "frames": 24,
+        "durationSec": 0.8
+      },
+      {
+        "name": "jump_start",
+        "frames": 6,
+        "durationSec": 0.2
+      },
+      {
+        "name": "jump_air",
+        "frames": 12,
+        "durationSec": 0.4
+      },
+      {
+        "name": "land",
+        "frames": 6,
+        "durationSec": 0.2
+      },
+      {
+        "name": "slide_in",
+        "frames": 6,
+        "durationSec": 0.2
+      },
+      {
+        "name": "slide_loop",
+        "frames": 12,
+        "durationSec": 0.4
+      },
+      {
+        "name": "slide_out",
+        "frames": 6,
+        "durationSec": 0.2
+      },
+      {
+        "name": "lane_left",
+        "frames": 6,
+        "durationSec": 0.2
+      },
+      {
+        "name": "lane_right",
+        "frames": 6,
+        "durationSec": 0.2
+      },
+      {
+        "name": "hit",
+        "frames": 9,
+        "durationSec": 0.3
+      },
+      {
+        "name": "fail",
+        "frames": 24,
+        "durationSec": 0.8
+      },
+      {
+        "name": "hoverboard",
+        "frames": 24,
+        "durationSec": 0.8
+      }
+    ],
+    "allDurationsMatch30Fps": true,
+    "skeletonNamedNodeCount": 23,
+    "skeletonNodes": [
+      "root_motionless",
+      "pelvis",
+      "spine_01",
+      "spine_02",
+      "neck",
+      "head",
+      "clavicle_l",
+      "upperarm_l",
+      "forearm_l",
+      "hand_l",
+      "clavicle_r",
+      "upperarm_r",
+      "forearm_r",
+      "hand_r",
+      "backpack",
+      "thigh_l",
+      "calf_l",
+      "foot_l",
+      "toe_l",
+      "thigh_r",
+      "calf_r",
+      "foot_r",
+      "toe_r"
+    ],
+    "acceptanceRows": 11,
+    "gateCount": 5,
+    "manualReview": "scope, evidence strength, source/license gaps, root authority, loop export boundary, sockets, budgets and shared-document suggestions reviewed",
+    "localLinksExist": 8,
+    "changedPathWhitelist": true
+  },
+  "checks": {
+    "build": {
+      "exitCode": 0,
+      "log": "build.txt",
+      "warning": "Existing large chunk warning retained"
+    },
+    "unit": {
+      "exitCode": 0,
+      "files": 16,
+      "passed": 244,
+      "log": "unit.txt"
+    },
+    "diffCheck": {
+      "exitCode": 0,
+      "note": "Initial staged check found trailing whitespace in captured logs; logs normalized without changing test results, then staged diff check rerun."
+    },
+    "normalPreCommit": "Required at commit; actual hook output remains in chat execution record. No bypass permitted.",
+    "e2e": {
+      "executed": false,
+      "reason": "Pure-document preparation per dispatch plan section 5.7"
+    },
+    "browser": {
+      "executed": false
+    },
+    "naturalInput": {
+      "executed": false
+    },
+    "fixtures": {
+      "executed": false
+    },
+    "formalAssetAcceptance": {
+      "executed": false
+    },
+    "logFormatting": "ANSI removed, trailing whitespace and EOF blank lines normalized; command results preserved.",
+    "preCommitEnvironment": {
+      "initialAttempt": "failed before build: npm shell shebang resolved to Windows system WSL bash; C:/Program Files/nodejs/npm not found there",
+      "resolution": "Temporary ignored node_modules/.bin/bash.exe copy of bundled Git usr/bin/sh.exe, with Git usr/bin and local .bin prepended to command PATH. npm --version then succeeded (11.16.0). Shim removed after use; no hook changes or bypass.",
+      "finalHookOutput": "See successful commit command execution record; build and test must pass normally."
+    }
+  },
+  "files": [
+    {
+      "file": "docs/art/character-spec.md",
+      "sha256": "be34a43200bac676cda89efec258cd2a559aa3f881c00e4567888e2533d8e2e8"
+    },
+    {
+      "file": "docs/superpowers/specs/2026-11-01-pao15-character-design.md",
+      "sha256": "7615e50f6b6471d000d7b2fcc69a274ef7bc43a78e39b743626c547a496d7db1"
+    },
+    {
+      "file": "docs/evidence/PAO-15/README.md",
+      "sha256": "e5b2d66f1098d122b44374a4f72c56cf4e68266dc8ec893ebceab511b83927b0"
+    },
+    {
+      "file": "docs/evidence/PAO-15/build.txt",
+      "sha256": "5284f7f8dbfbd87711b16ef369603c518bc980507d40da86fd5278243a2166e7"
+    },
+    {
+      "file": "docs/evidence/PAO-15/unit.txt",
+      "sha256": "befd00f42d60acac0869c695029c9a77d9018f8b4ffd4036e6da8ebd519dc8d5"
+    }
+  ],
+  "releaseGates": [
+    "task design approval",
+    "applicable style and budget approval",
+    "editable source, license and rigging feasibility",
+    "Dispatcher shared-document sync and production whitelist",
+    "formal asset acceptance before downstream release"
+  ]
+}

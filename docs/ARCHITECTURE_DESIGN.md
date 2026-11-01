@@ -1,5 +1,11 @@
 # 系统架构与模块隔离设计 (Architecture Spec)
 
+## 2026-11-01 PAO-19 已批准实现边界
+
+用户已批准[UI方案A、适用UI风格与I-01/I-02](plans/2026-11-01-pao19-approved-execution.md)，本节对PAO-19优先于旧准备白名单。单一PAO-19实现方在原独立工作树串行A→B：A写dom/views/style、专属测试及HTML仅viewport-fit/lang；接口与完整回归检查点后，B独占main.ts的命令生命周期最小接线。其他聊天不得并写main，Dispatcher只写文档与验收。
+
+UIManager保留现有公开门面；新增只读pending/result接收接口与原commandId/type/runId关联，复用既有CommandResult。业务事务/存档schema/共享types/模拟与渲染不开放修改；UI无application实例或钱包权威。递延命令去重、旧局回执隔离、失败显式重试身份与字段音频意图须由测试证明，不能凭新反馈重做事务。
+
 ## 2026-11-01 M2 调度准备边界
 
 [M2分工/白名单/手动提示词](plans/2026-11-01-m2-dispatch-preparation.md)以已验收M1实现19aa314为接续基线；本规划树旧源码不作为M2实现起点。15角色资产、16场景标定、19DOM UI先独立准备，17待16、18待15/17，均不因目录准备而自动放行实现。

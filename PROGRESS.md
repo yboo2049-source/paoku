@@ -2,6 +2,12 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-01] 用户批准PAO-19三点范围
+
+- 用户明确批准UI方案A/规格v0.1、PAO-7适用UI风格及I-01/I-02最小接线；不重复请求相同批准，不将角色/场景/真机预算整体冻结。
+- [执行交接与新提示词](docs/plans/2026-11-01-pao19-approved-execution.md)明确原pao-19树943aad1接续、同一实现聊天A→B串行、UI/HTML与main阶段写权、R01～R09及完整门禁；已同步PRD/架构/系统流程/测试总纲。
+- 本Dispatcher仅记录批准与准备交接，未写游戏代码、未启动服务/Agent/新聊天或任务，未改Linear状态/合并。用户手动粘贴后实施，完整交付主审后才Done。
+
 ## [2026-11-01] PAO-19准备阶段主审
 
 - [PAO-19主审](docs/reviews/2026-11-01-pao19-preparation-review.md)：943aad1已同步远端且干净；4文件纯文档，相对19aa314源码/HTML/资产/依赖未改，独立diff检查通过。准备范围可接收，UI设计和正式实现仍待批准。

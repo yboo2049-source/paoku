@@ -1,5 +1,14 @@
 # 测试用例与传感器计划 (Test Plan & Sensors)
 
+## 2026-11-01 PAO-19 已批准验证门禁
+
+[授权执行计划](plans/2026-11-01-pao19-approved-execution.md)以943aad1的UI规格R01～R09为本批验收矩阵，旧历史UI直接存档等条款不作为新实现契约。测试限定tests/unit/pao19-ui.test.ts与tests/e2e/rebuild-ui.spec.ts，保留全部历史断言，先RED再实现。
+
+- 投影/单位/四道具、有限Toast与文本安全、summary和保存反馈；精确pending/result、递延去重、旧run迟到、成功失败收尾、同ID未知提交重试与音频字段操作，禁止重复TOGGLE/结算。
+- 真实输入N完整四页流程、触摸/键盘；保存失败/锁等待等F分报，保留PAO-14完整事务回归。
+- 桌面/390竖屏及小屏横屏、字体200%、长数值/错误、四道具、安全区、焦点/命中范围与对比度，实际DOM量测和稳定截图；主审默认抽看2～3图，异常扩看。viewport-fit声明/模拟inset不代表真机签收。
+- 阶段A接口/UI与阶段B main串行接线各自完整build/test/E2E，确认5189独占strictPort且不复用服务；源码身份/hash与历史证据恢复。当前仅设计批准，所有新运行时结论待执行，不引用旧244/43作本批成绩。
+
 ## 1. 静态类型护栏 (Static Guardrails)
 *   **验证指令:** `npx tsc --noEmit`
 *   **验收标准:** 必须 0 Error，任何类型推断不明确（any）都不被允许。每次关键节点（Checkpoint）必须通过此检验。

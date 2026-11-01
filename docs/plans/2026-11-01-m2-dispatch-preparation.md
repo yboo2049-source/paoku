@@ -1,5 +1,7 @@
 # M2 下一批调度准备与执行提示词
 
+> 2026-11-01接续更新：PAO-19准备943aad1已审，用户已批准UI三点具体范围，执行时改用[已批准实现提示词](2026-11-01-pao19-approved-execution.md)。本文PAO-19“仅准备/未批准/main与HTML只读”保留为历史状态，受新交接的A→B串行白名单替代。15/16及17/18门禁不变，不自动启动任务。
+
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
 **Goal:** 在已验收 M1 上准备 M2 职责、工作树和人工粘贴提示词，不启动实现。

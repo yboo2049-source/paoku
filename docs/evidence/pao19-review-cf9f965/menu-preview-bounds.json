@@ -1,0 +1,13 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "menuCard": {
+    "x": 16,
+    "y": 381.40625,
+    "width": 358,
+    "height": 446.59375
+  },
+  "note": "same production menu scene; second screenshot only hides UI at runtime for occlusion diagnosis"
+}

@@ -1,0 +1,1769 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-11-01T12:47:00Z",
+  "target_commit": "622e7da",
+  "base_repo": "yboo2049-source/paoku",
+  "summary": {
+    "total_assets": 22,
+    "total_size_mb": 152.26,
+    "total_triangles": 1479694,
+    "total_vertices": 1466298,
+    "static_mesh_count": 21,
+    "skeletal_mesh_count": 1,
+    "critical_name_swaps": [
+      "train_metro.glb <=> train_ramp_or_car.glb"
+    ],
+    "rotation_required_fbx_assets": [
+      "obstacle_slide_barrier.glb",
+      "obstacle_utility_box.glb",
+      "prop_jetpack.glb",
+      "prop_mystery_box.glb",
+      "prop_sneakers.glb"
+    ]
+  },
+  "assets": [
+    {
+      "file_name": "character_dog.glb",
+      "file_path": "public/models/character_dog.glb",
+      "sha256": "43a5351457c1cee6e78c5d1966dc25ca06a4295eb5bb3b0baef58f9d04af457f",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "卡通追捕警犬四足静态网格",
+      "suggested_role": "伴随警官追击的四足警犬宠物伙伴",
+      "visual_summary": "棕黄色短毛配黑色背脊的卡通斗牛犬，戴大红色皮质项圈并挂一枚闪亮金徽，四足微张立正。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/02_police_dog.jpg",
+        "asset_version": "PAO-7 概念原画 v1 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 2335700,
+        "size_mb": 2.23,
+        "triangles": 10396,
+        "vertices": 9551,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_mat_048b3cec-f758-4c2b-bd99-6d6adbbe5727"
+        ],
+        "images_count": 1,
+        "textures": [
+          {
+            "name": "tripo_rgb_a9be98d6-cbad-4abb-8462-33e77d739494",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1966196
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.2756,
+          0,
+          -0.4998
+        ],
+        "raw_bbox_max": [
+          0.2756,
+          0.9106,
+          0.4998
+        ],
+        "raw_bbox_size": [
+          0.5513,
+          0.9106,
+          0.9995
+        ],
+        "longest_axis": "Z",
+        "calibration_status": "原点在四足着地面 (Y min = 0)，高度0.91单位，体长沿Z轴约1.0单位。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "单网格几何体，单一根节点 (node 0)",
+        "known_issues": "无骨骼与骨骼动画（Skins:0, Anims:0）。",
+        "unverified_items": "四足非刚体奔跑姿态缺乏顶点动画时的真实感待验证。",
+        "engine_requirements": "建议等比缩放至约0.65单位高度；追逐时通过代码正弦波模拟俯仰颠簸跳跃。"
+      }
+    },
+    {
+      "file_name": "character_police.glb",
+      "file_path": "public/models/character_police.glb",
+      "sha256": "ca0b85b1e1581d49d45720aa106f027e2560ca7733fe872d51156265809d9f47",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "追捕卡通警官全身静态手办网格",
+      "suggested_role": "后方追捕者追击角色、碰撞失败结算特写模型",
+      "visual_summary": "深蓝警用短夹克制服、大檐警帽、金色纽扣与胸徽，腰间挂黑色多功能装备带，体格魁梧的卡通警察形象。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/01_police.jpg",
+        "asset_version": "PAO-7 概念原画 v1 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 14794364,
+        "size_mb": 14.11,
+        "triangles": 147371,
+        "vertices": 227913,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_mat_b707bb1a-6d7c-4b59-a819-0da7e175a4c3"
+        ],
+        "images_count": 3,
+        "textures": [
+          {
+            "name": "tripo_image_b707bb1a-6d7c-4b59-a819-0da7e175a4c3_2",
+            "format": "PNG",
+            "mimeType": "image/png",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 2331698
+          },
+          {
+            "name": "tripo_image_b707bb1a-6d7c-4b59-a819-0da7e175a4c3_0",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1642950
+          },
+          {
+            "name": "tripo_image_b707bb1a-6d7c-4b59-a819-0da7e175a4c3_1",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1756033
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.2976,
+          -0.0008,
+          -0.1183
+        ],
+        "raw_bbox_max": [
+          0.2975,
+          0.9789,
+          0.1175
+        ],
+        "raw_bbox_size": [
+          0.5951,
+          0.9798,
+          0.2358
+        ],
+        "longest_axis": "Y",
+        "calibration_status": "原点位于脚底地面 (Y min ≈ 0)，X/Z对齐中心，高度约0.98单位，朝向正向+Z。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "单网格复合体，包含单一根节点 (node 0)",
+        "known_issues": "无骨骼与骨骼动画（Skins:0, Anims:0）。面数较高 (14.7万面)。",
+        "unverified_items": "后方追击时的地面投影与光影衰减表现待验证。",
+        "engine_requirements": "需等比缩放约1.95倍至高度约1.9m，以体现威严魁梧身形；奔跑需代码驱动起伏旋转。"
+      }
+    },
+    {
+      "file_name": "character_runner.glb",
+      "file_path": "public/models/character_runner.glb",
+      "sha256": "0f475ed22a2abfbbb9b4cb3069f5c9b131110847b23bd68fbcdff4b3baa797d9",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "主角跑酷少年全身静态手办网格",
+      "suggested_role": "主控跑酷角色静态展示/结算展台角色/无动画回退模型",
+      "visual_summary": "身穿橙色连帽卫衣、深灰束脚工装裤与运动鞋的潮流少年，面部圆润带手办质感，双臂自然下垂放松站立。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/00_runner.jpg",
+        "asset_version": "PAO-7 概念原画 v1 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 8098880,
+        "size_mb": 7.72,
+        "triangles": 26268,
+        "vertices": 26372,
+        "meshes_count": 34,
+        "materials_count": 1,
+        "materials": [
+          "Material"
+        ],
+        "images_count": 2,
+        "textures": [
+          {
+            "name": "stylized_character_3d_model_normal",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 3324093
+          },
+          {
+            "name": "stylized_character_3d_model_basecolor",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 3741184
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.1186,
+          -0.2153,
+          -0.0983
+        ],
+        "raw_bbox_max": [
+          0.1169,
+          0.2052,
+          0.0999
+        ],
+        "raw_bbox_size": [
+          0.2355,
+          0.4204,
+          0.1982
+        ],
+        "longest_axis": "Y",
+        "calibration_status": "原点在人体几何中心附近（非脚底，Y向约中点），高度约0.42单位（偏小），朝向正向+Z。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          34
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "单网格几何体，内含合成根节点 (node 34)",
+        "known_issues": "无骨骼与骨骼动画（Skins:0, Anims:0）。原点未对齐脚底。",
+        "unverified_items": "在游戏运行时使用平移摆动模拟奔跑时的视觉自然度待验证。",
+        "engine_requirements": "需等比缩放约4.28倍至高度约1.8m，并将Y原点偏移至脚底 (Y min对齐0)。"
+      }
+    },
+    {
+      "file_name": "env_gantry.glb",
+      "file_path": "public/models/env_gantry.glb",
+      "sha256": "88be31b77e98e840640640844bc802296341ec245c87b59b14bd0dcf0313381e",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "跨越三轨的高架工业钢管桁架龙门网架",
+      "suggested_role": "悬挂在三轨上方的铁道标志性高架建筑，提供视线纵深与高处悬挂物锚点",
+      "visual_summary": "浅白灰色喷漆钢管三角形受力桁架梁，双侧粗壮方管支撑塔柱，整体开敞通透无阻挡视线。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/13_gantry.jpg",
+        "asset_version": "PAO-7 概念原画 v1 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 9967888,
+        "size_mb": 9.51,
+        "triangles": 109871,
+        "vertices": 129578,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_mat_4ea410a3-6b4a-41b9-8d8d-bba8dfcf1569"
+        ],
+        "images_count": 2,
+        "textures": [
+          {
+            "name": "tripo_image_4ea410a3-6b4a-41b9-8d8d-bba8dfcf1569_1",
+            "format": "PNG",
+            "mimeType": "image/png",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1343307
+          },
+          {
+            "name": "tripo_image_4ea410a3-6b4a-41b9-8d8d-bba8dfcf1569_0",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 3157759
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.4902,
+          -0.0006,
+          -0.069
+        ],
+        "raw_bbox_max": [
+          0.4901,
+          0.6672,
+          0.069
+        ],
+        "raw_bbox_size": [
+          0.9803,
+          0.6678,
+          0.138
+        ],
+        "longest_axis": "X",
+        "calibration_status": "横梁跨度沿X (0.98)，塔柱高度Y (0.67)，厚度Z (0.14)，立柱底座在Y=0。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "全部钢管桁架组合为单一Mesh，单一根节点 (node 0)",
+        "known_issues": "原始跨度仅0.98单位，净空高度仅0.67单位，未达到游戏跨轨尺寸。",
+        "unverified_items": "车顶奔跑角色通过龙门架下方的净空安全距离待验证。",
+        "engine_requirements": "需进行非等比拉伸或等比放大（横向跨度扩展至跨越3条轨道约7.5m，净空高度必须大于列车高3.0m+角色高1.8m ≈ 5.0m）。"
+      }
+    },
+    {
+      "file_name": "env_tunnel_arch.glb",
+      "file_path": "public/models/env_tunnel_arch.glb",
+      "sha256": "353a5b37281ec1a19262926626180361474192cccb1a4b332d464a144f70dfca",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "通透彻底镂空的混凝土圆角隧道门（带青粉双色霓虹发光边框）",
+      "suggested_role": "关卡分段转场拱门、地下隧道入口过渡门户，玩家与列车均从中穿过",
+      "visual_summary": "厚重浅灰混凝土圆角拱形大门框，内圈镶嵌多环青蓝与粉紫发光霓虹灯带，拱门中央为100%全透穿行通道。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/16_tunnel_arch.jpg",
+        "asset_version": "PAO-7 概念原画 v2 通透重绘版 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 18020724,
+        "size_mb": 17.19,
+        "triangles": 130478,
+        "vertices": 231561,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_mat_a0b694c4-ccb0-420d-89b2-6fa975061d68"
+        ],
+        "images_count": 2,
+        "textures": [
+          {
+            "name": "tripo_image_a0b694c4-ccb0-420d-89b2-6fa975061d68_1",
+            "format": "PNG",
+            "mimeType": "image/png",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 5926189
+          },
+          {
+            "name": "tripo_image_a0b694c4-ccb0-420d-89b2-6fa975061d68_0",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 3116987
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.4315,
+          -0.0032,
+          -0.4228
+        ],
+        "raw_bbox_max": [
+          0.4309,
+          0.9806,
+          0.4229
+        ],
+        "raw_bbox_size": [
+          0.8624,
+          0.9838,
+          0.8456
+        ],
+        "longest_axis": "Y",
+        "calibration_status": "宽度X (0.86)，高度Y (0.98)，纵深Z (0.85)，原点在地面中心。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "外框、混凝土基底与霓虹灯条合并为单一Mesh，单一根节点 (node 0)",
+        "known_issues": "通道内部必须保持无障碍，避免AI误烘焙出看不见的封死面。",
+        "unverified_items": "Babylon.js开启GlowLayer时双色霓虹灯带的发光自发光强度待验证。",
+        "engine_requirements": "需整体放大至覆盖三轨（宽约8m，高约6m）；碰撞盒仅挂载于左右门柱与拱顶，门洞完全放行。"
+      }
+    },
+    {
+      "file_name": "obstacle_buffer_stop.glb",
+      "file_path": "public/models/obstacle_buffer_stop.glb",
+      "sha256": "6da940e05b660e05e0757f2e1360a2dc23a51d5be68da700cc93bc29f4046930",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "铁轨死路终端重型防撞液压缓冲墩（带红白同心圆靶盘）",
+      "suggested_role": "断头路/死胡同铁轨终点阻断物，正面撞击判定直接死亡",
+      "visual_summary": "粗大实木与铆接钢框构成的重型阻车框架，两侧配粗壮螺旋液压减震弹簧，中央装有醒目红白同心圆靶标，底部固定在短轨枕木上。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/track_buffer_stop.png",
+        "asset_version": "PAO-7 概念原画 v1 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 12034648,
+        "size_mb": 11.48,
+        "triangles": 115890,
+        "vertices": 98961,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_material_d9077f78-951c-4518-9b03-c40e0f997a44"
+        ],
+        "images_count": 3,
+        "textures": [
+          {
+            "name": "target_practice_3d_model_normal",
+            "format": "PNG",
+            "mimeType": "image/png",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 2889513
+          },
+          {
+            "name": "target_practice_3d_model_basecolor",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 2653542
+          },
+          {
+            "name": "target_practice_3d_model_rm",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1932294
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.5,
+          0.0,
+          -0.434
+        ],
+        "raw_bbox_max": [
+          0.5001,
+          0.8742,
+          0.434
+        ],
+        "raw_bbox_size": [
+          1.0001,
+          0.8741,
+          0.8679
+        ],
+        "longest_axis": "X",
+        "calibration_status": "宽度X (1.0)，高度Y (0.87)，深度Z (0.87)，原点位于底部枕木地面中央。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "实木、弹簧、靶盘与钢轨合成为单Mesh，单一根节点 (node 0)",
+        "known_issues": "面数稍高 (11.5万面)，需确保单场仅少量实例化放置。",
+        "unverified_items": "列车直冲缓冲墩时的残骸撞击粒子特效联动待验证。",
+        "engine_requirements": "尺寸1.0m完美契合单轨宽度，无需额外旋转，直接配置全阻挡致死碰撞盒放置于死轨尽头。"
+      }
+    },
+    {
+      "file_name": "obstacle_hurdle_barrier.glb",
+      "file_path": "public/models/obstacle_hurdle_barrier.glb",
+      "sha256": "4f8d4756dcf150b086f8cad14a531305cae61caa0996872af291128d099306c4",
+      "source_commit": "622e7da",
+      "verification_status": "实际预览确认 (截图对账通过)",
+      "actual_content": "【实际核验】深灰色工业金属圆管防撞矮闸门（带黄色中间牌）",
+      "suggested_role": "单轨低矮跳跃路障，横梁拦截玩家下盘，必须起跳跨越",
+      "visual_summary": "深灰工业金属方圆管双立柱，顶端带粗壮横向拦截管，中央嵌有警示小黄牌，外观为现代化轨旁防越闸门。",
+      "preview_reference": {
+        "path": "docs/assets/inspections/obstacle_hurdle_barrier_inspect.png",
+        "asset_version": "真实引擎渲染快照 (2026-11-01)"
+      },
+      "metrics": {
+        "size_bytes": 2899972,
+        "size_mb": 2.77,
+        "triangles": 8894,
+        "vertices": 10132,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_mat_342f97d3-02fb-4047-8588-0f1edd5101e9"
+        ],
+        "images_count": 1,
+        "textures": [
+          {
+            "name": "tripo_rgb_81412d54-7f76-4571-b843-704d8f45bcaa",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 2520863
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.4998,
+          0,
+          -0.137
+        ],
+        "raw_bbox_max": [
+          0.4998,
+          0.7642,
+          0.137
+        ],
+        "raw_bbox_size": [
+          0.9995,
+          0.7642,
+          0.2739
+        ],
+        "longest_axis": "X",
+        "calibration_status": "宽度X (1.0)，高度Y (0.76)，厚度Z (0.27)，原点在立柱底部地面。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "单网格几何体，单一根节点 (node 0)",
+        "known_issues": "实际为工业金属闸门，并非木质红白斜条纹跨栏（受原画转模选型影响）；下部无钻行空间。",
+        "unverified_items": "跳跃最高点与横梁顶部的擦碰宽容度判定待验证。",
+        "engine_requirements": "尺寸1.0m刚好匹配单轨宽度，高度0.76m合适；不可钻过，仅响应跳跃动作通过。"
+      }
+    },
+    {
+      "file_name": "obstacle_signal_light.glb",
+      "file_path": "public/models/obstacle_signal_light.glb",
+      "sha256": "7189e9141cd207de6788cd7d0df9876ec5ffd0509e06e70266d6e2c24112b705",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "细长立柱铁路三色凸透镜信号灯（红黄绿垂直排列）",
+      "suggested_role": "铁轨旁环境标识建筑，或单轨道细柱阻挡障碍",
+      "visual_summary": "深灰铁青色修长圆管金属杆，加重圆盘法兰底座，顶部方形竖式信号灯箱嵌有红、黄、绿三颗凸出透明晶体透镜与防雨遮檐。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/14_signal_light.jpg",
+        "asset_version": "PAO-7 概念原画 v1 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 10312252,
+        "size_mb": 9.83,
+        "triangles": 117376,
+        "vertices": 77834,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_material_70af8adf-0cc2-4e4a-a6b0-87cfe33f6841"
+        ],
+        "images_count": 3,
+        "textures": [
+          {
+            "name": "traffic_light_3d_model_normal",
+            "format": "PNG",
+            "mimeType": "image/png",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 3535471
+          },
+          {
+            "name": "traffic_light_3d_model_basecolor",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1748829
+          },
+          {
+            "name": "traffic_light_3d_model_rm",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1126896
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.1025,
+          -0.0,
+          -0.1095
+        ],
+        "raw_bbox_max": [
+          0.1025,
+          0.9806,
+          0.1095
+        ],
+        "raw_bbox_size": [
+          0.205,
+          0.9806,
+          0.2191
+        ],
+        "longest_axis": "Y",
+        "calibration_status": "立向垂直沿Y轴 (高度0.98)，原点在底盘地面中央 (Y min = 0)，底盘直径约0.21单位。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "杆身、底座与透镜合并为单Mesh，单一根节点 (node 0)",
+        "known_issues": "结构极其细长（仅0.2x0.2单位），若直接作为碰撞物玩家极易从侧边穿插产生碰撞歧义。",
+        "unverified_items": "三色透镜材质自发光与夜间轨旁动态光影投射待验证。",
+        "engine_requirements": "建议等比缩放至高度约3.5~4.0m放置于两轨之间或外侧作为环境氛围物；若做障碍物需适当放宽碰撞盒半径。"
+      }
+    },
+    {
+      "file_name": "obstacle_slide_barrier.glb",
+      "file_path": "public/models/obstacle_slide_barrier.glb",
+      "sha256": "471b24a3a1cc6a25cc18bac7cfcfd5cad36e61ce3e7088fd75f9dfbe99379d0a",
+      "source_commit": "622e7da",
+      "verification_status": "实际预览确认 (截图对账通过)",
+      "actual_content": "【实际核验】蓝黄相间警示立柱支撑的红白斜纹限高门架（印有MAX HT 2.5M）",
+      "suggested_role": "单轨高位下滑路障，横梁高挂拦截上身，必须滑铲（翻滚）钻过",
+      "visual_summary": "蓝黄相间醒目反光斑马纹双高柱，顶部架设厚实红白警示板并印有MAX HT 2.5M字样与下行箭头，下方彻底开敞通透。",
+      "preview_reference": {
+        "path": "docs/assets/inspections/obstacle_slide_barrier_inspect.png",
+        "asset_version": "真实引擎渲染快照 (2026-11-01)"
+      },
+      "metrics": {
+        "size_bytes": 3120136,
+        "size_mb": 2.98,
+        "triangles": 9711,
+        "vertices": 8716,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "a36ab175_e746_47e4_b179_3b1bbc3e490e"
+        ],
+        "images_count": 1,
+        "textures": [
+          {
+            "name": "traffic_barrier_3d_model_basecolor",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 2781275
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.0627,
+          -0.3157,
+          -0.9995
+        ],
+        "raw_bbox_max": [
+          0.0627,
+          0.3157,
+          0
+        ],
+        "raw_bbox_size": [
+          0.1255,
+          0.6313,
+          0.9995
+        ],
+        "longest_axis": "Z",
+        "calibration_status": "【严重轴向翻转】FBX转换导致模型立柱躺在Z轴(负向[-1.0, 0])，X厚度0.13，Y跨度0.63。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "单网格几何体，单一根节点 (node 0)",
+        "known_issues": "【核心陷阱】模型初始姿态严重躺平在Z轴！若不旋转90度会横躺在铁轨上。",
+        "unverified_items": "滑铲姿态判定时玩家高度是否低于下横梁安全高度待验证。",
+        "engine_requirements": "导入时必须绕X轴旋转+90度以正立；碰撞体必须分成顶部阻挡盒（跳跃撞击致死）与底部镂空区（滑铲无阻力通行）。"
+      }
+    },
+    {
+      "file_name": "obstacle_traffic_cone.glb",
+      "file_path": "public/models/obstacle_traffic_cone.glb",
+      "sha256": "f4bc094be2a40118bdd9af5c28c5372bf4d0620584a7e9c6a5c3ce42b3025f8e",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "亮橙色加宽方底座交通施工警示锥（带双反光白圈）",
+      "suggested_role": "单轨轻便避让障碍物，最基础的跳跃/侧移躲避道具",
+      "visual_summary": "鲜明高饱和亮橙色软橡胶圆锥体，底部为加厚防倾翻正方形承托底板，锥身带有两条白色高反光环形斑纹。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/traffic_cone.png",
+        "asset_version": "PAO-7 概念原画 v1 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 7577024,
+        "size_mb": 7.23,
+        "triangles": 119424,
+        "vertices": 75206,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_material_57dd384b-46a3-410e-8f5a-94f3b61df386"
+        ],
+        "images_count": 3,
+        "textures": [
+          {
+            "name": "traffic_cone_3d_model_normal",
+            "format": "PNG",
+            "mimeType": "image/png",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1749850
+          },
+          {
+            "name": "traffic_cone_3d_model_basecolor",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1191829
+          },
+          {
+            "name": "traffic_cone_3d_model_rm",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 793812
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.4879,
+          -0.0,
+          -0.4879
+        ],
+        "raw_bbox_max": [
+          0.4879,
+          1.0,
+          0.4879
+        ],
+        "raw_bbox_size": [
+          0.9757,
+          1.0,
+          0.9758
+        ],
+        "longest_axis": "Y",
+        "calibration_status": "原点在方形底盘中心地面 (Y min = 0)，底盘0.97x0.97，高度0.98单位。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "单网格几何体，单一根节点 (node 0)",
+        "known_issues": "原始尺寸近1米高（略大于真实交通锥），直接放置会显得偏大。",
+        "unverified_items": "角色滑铲撞飞交通锥的布娃娃/物理刚体弹飞效果待验证。",
+        "engine_requirements": "需等比缩放至约0.5单位（高约0.5m，底盘0.48m）；碰撞盒尺寸建议紧缩至半径0.2m以保证判定手感。"
+      }
+    },
+    {
+      "file_name": "obstacle_utility_box.glb",
+      "file_path": "public/models/obstacle_utility_box.glb",
+      "sha256": "d9e94576dddccdcb7efa907402c253dcbd6889611bb2122e803de3c3d6e66ad2",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "哑光灰绿色户外轨旁电气机柜（带百叶窗与高压三角标）",
+      "suggested_role": "单轨低位阻挡障碍物，或轨旁工业配电设施",
+      "visual_summary": "坚固方正的圆角金属薄板箱体，军灰绿色防腐漆面，前开门带多组冲压通风散热百叶窗与醒目黄色三角闪电危险标志。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/15_utility_box.jpg",
+        "asset_version": "PAO-7 概念原画 v1 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 1922588,
+        "size_mb": 1.83,
+        "triangles": 9352,
+        "vertices": 8298,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_4957cda7_c570_4810_b9d5_eb10e147a894"
+        ],
+        "images_count": 1,
+        "textures": [
+          {
+            "name": "electrical_box_3d_model_basecolor",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1599248
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.3943,
+          -0.3259,
+          -0.9995
+        ],
+        "raw_bbox_max": [
+          0.3943,
+          0.3259,
+          0
+        ],
+        "raw_bbox_size": [
+          0.7886,
+          0.6519,
+          0.9995
+        ],
+        "longest_axis": "Z",
+        "calibration_status": "FBX转换资产，高度躺在Z轴(负向[-1.0, 0])，面宽X约0.79，厚度Y约0.65。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "箱体与把手百叶合并为单Mesh，单一根节点 (node 0)",
+        "known_issues": "FBX轴向偏移，箱体躺在Z轴负向，原点在箱后顶部。",
+        "unverified_items": "玩家跳上机柜顶部站立的物理支撑判定待验证。",
+        "engine_requirements": "导入后必须绕X轴旋转+90度正立，缩放至约1.2m高放置于单条轨道中间或枕木外侧。"
+      }
+    },
+    {
+      "file_name": "player.glb",
+      "file_path": "public/models/player.glb",
+      "sha256": "002f8d269de68e5dce3d25195caf390d1aa359bbfaae3fcf4c8dc78ec36c3ba5",
+      "source_commit": "0898b93 (历史工程基线)",
+      "verification_status": "GLB解析确认 + 历史工程确认",
+      "actual_content": "带骨骼蒙皮与基础动画的旧版科幻发光装甲人形 (Beta人形)",
+      "suggested_role": "当前main分支babylon.ts正在尝试加载的活动角色骨骼模型",
+      "visual_summary": "灰白双色科幻贴身装甲人形，头部带目镜，体表有关节发光分块，风格偏写实CG而非潮玩手办。",
+      "preview_reference": {
+        "path": "docs/art/asset-audit.md (§2审计记录与历史截图)",
+        "asset_version": "历史工程资产 (0898b93)"
+      },
+      "metrics": {
+        "size_bytes": 2930032,
+        "size_mb": 2.79,
+        "triangles": 49112,
+        "vertices": 28374,
+        "meshes_count": 2,
+        "materials_count": 2,
+        "materials": [
+          "Beta_Joints_MAT",
+          "asdf1:Beta_HighLimbsGeoSG2"
+        ],
+        "images_count": 0,
+        "textures": [],
+        "skins": [
+          {
+            "name": "Armature",
+            "joints_count": 67
+          }
+        ],
+        "animations": [
+          "agree",
+          "headShake",
+          "idle",
+          "run",
+          "sad_pose",
+          "sneak_pose",
+          "walk"
+        ]
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.9026,
+          -0.0032,
+          -0.1437
+        ],
+        "raw_bbox_max": [
+          0.9026,
+          1.806,
+          0.177
+        ],
+        "raw_bbox_size": [
+          1.8051,
+          1.8093,
+          0.3207
+        ],
+        "longest_axis": "Y",
+        "calibration_status": "Y高度1.81单位，含Armature 0.01缩放与逆绑定矩阵，Babylon加载需保持1.0缩放并校正PI旋转。",
+        "single_visual_root": false,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          69
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "包含Armature骨骼根节点与2个蒙皮网格节点 (Mesh, Mesh.001)",
+        "known_issues": "缺失jump/slide/stumble骨骼动画，触发时回退为agree手势；风格与PAO-7皮克斯潮玩不搭。",
+        "unverified_items": "与新跑道碰撞体的精确足底接触帧待验证。",
+        "engine_requirements": "保留用于动画系统向下兼容；后续应重构为皮克斯潮玩骨骼角色。"
+      }
+    },
+    {
+      "file_name": "prop_coin.glb",
+      "file_path": "public/models/prop_coin.glb",
+      "sha256": "b725ade8553e81b375c2265db5fb00078e3f994bce2505ada76360f0af3b27dd",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "带奔跑者徽章浮雕的纯金跑酷圆币",
+      "suggested_role": "轨道金币收集物，主循环金币拾取判定目标",
+      "visual_summary": "高反光纯金质感圆币，边缘带加厚大倒角，币面中央深刻奔跑者飞奔轮廓浮雕，背面为麦穗花纹。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/03_coin.jpg",
+        "asset_version": "PAO-7 概念原画 v1 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 1795036,
+        "size_mb": 1.71,
+        "triangles": 9767,
+        "vertices": 8213,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_mat_52ab1e58-2330-428c-bb9e-f12568823f3e"
+        ],
+        "images_count": 1,
+        "textures": [
+          {
+            "name": "tripo_rgb_96f42532-813f-4d92-877c-2bf8b3017c97",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1472098
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.4998,
+          0,
+          -0.0813
+        ],
+        "raw_bbox_max": [
+          0.4998,
+          0.9995,
+          0.0813
+        ],
+        "raw_bbox_size": [
+          0.9995,
+          0.9995,
+          0.1626
+        ],
+        "longest_axis": "X",
+        "calibration_status": "原点在金币底部切线 (Y min = 0)，直径约1.0单位，厚度约0.16单位。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "单网格几何体，单一根节点 (node 0)",
+        "known_issues": "原点在底部而非圆心，若直接绕Y轴自转会产生偏心摆动。",
+        "unverified_items": "金币高密度排布时的GPU Draw Call与InstancedMesh实例化性能待验证。",
+        "engine_requirements": "需缩放至约0.45单位，且挂载时需偏移局部坐标Y-0.5以实现圆心自转。"
+      }
+    },
+    {
+      "file_name": "prop_hoverboard.glb",
+      "file_path": "public/models/prop_hoverboard.glb",
+      "sha256": "2e35d1da74d3ad328dc3537cf10e09d9f68725f3407b9e6039ccf41b6c1f1114",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "赛博流线型磁悬浮滑板（白底+珊瑚橙防滑踏面+双尾喷）",
+      "suggested_role": "滑板道具拾取物，以及激活滑板保护时角色脚下踏板载具",
+      "visual_summary": "哑光纯白流线曲面甲板，中央覆有珊瑚橙防滑几何纹理，下盘镶嵌青色发光能量凹槽，尾部对称双火箭喷口。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/05_hoverboard.jpg",
+        "asset_version": "PAO-7 概念原画 v1 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 11834532,
+        "size_mb": 11.29,
+        "triangles": 117165,
+        "vertices": 78708,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_node_dff25d42-4864-479b-b006-75544e88fb27_material"
+        ],
+        "images_count": 2,
+        "textures": [
+          {
+            "name": "futuristic_handheld_device_3d_model_normal",
+            "format": "PNG",
+            "mimeType": "image/png",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 5835123
+          },
+          {
+            "name": "futuristic_handheld_device_3d_model_basecolor",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 2073006
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.4896,
+          -0.0,
+          -0.186
+        ],
+        "raw_bbox_max": [
+          0.4896,
+          0.1673,
+          0.186
+        ],
+        "raw_bbox_size": [
+          0.9792,
+          0.1673,
+          0.372
+        ],
+        "longest_axis": "X",
+        "calibration_status": "板长沿X轴分布 (长0.98，宽0.37，厚0.17)，原点在底盘中心地面 (Y min = 0)。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "单网格几何体，单一根节点 (node 0)",
+        "known_issues": "滑板长轴沿X轴，与跑酷Z轴行进方向垂直（横置）。",
+        "unverified_items": "挂载到角色脚底时的相对位置微调与喷口粒子发射器对齐待验证。",
+        "engine_requirements": "作为脚下载具时必须在挂载节点施加Y轴90度旋转校正，使其车头朝向+Z。"
+      }
+    },
+    {
+      "file_name": "prop_jetpack.glb",
+      "file_path": "public/models/prop_jetpack.glb",
+      "sha256": "54ac8501cb6f25b0b55e1977bb85aa431cf067d3483089aedb71a93976cf3c08",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "双筒亮黄色火箭喷气动力背包（带气压表与双喷口）",
+      "suggested_role": "喷气背包道具拾取物，以及飞行阶段挂载于角色背部的动力总成",
+      "visual_summary": "双联装亮黄色圆柱推进燃油罐，中部嵌有青色圆形精密气压刻度表盘，配黑色加厚双肩背带与底部双枪灰色排气管。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/twin_rocket.png",
+        "asset_version": "PAO-7 FBX导出贴图预览 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 2353508,
+        "size_mb": 2.24,
+        "triangles": 10133,
+        "vertices": 8207,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_4b7f69a8_a5e4_468a_9a39_319df9b49100"
+        ],
+        "images_count": 1,
+        "textures": [
+          {
+            "name": "twin_rocket_3d_model_basecolor",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 2028396
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.1711,
+          -0.4094,
+          -0.9995
+        ],
+        "raw_bbox_max": [
+          0.1711,
+          0.4094,
+          0
+        ],
+        "raw_bbox_size": [
+          0.3423,
+          0.8188,
+          0.9995
+        ],
+        "longest_axis": "Z",
+        "calibration_status": "FBX转换资产，Z范围[-1.0, 0]，喷嘴与罐体沿Z轴分布，原点在顶部挂点处。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "单网格复合体，单一根节点 (node 0)",
+        "known_issues": "立向躺平（沿Z轴而非Y轴），直接导入会导致喷口朝前/朝后水平放置。",
+        "unverified_items": "挂载在角色背后时与连帽衫网格的穿插避让待验证。",
+        "engine_requirements": "导入后必须在TransformNode层旋转X轴+90度使罐体竖立、喷口垂直朝下，缩放至约0.45单位。"
+      }
+    },
+    {
+      "file_name": "prop_magnet.glb",
+      "file_path": "public/models/prop_magnet.glb",
+      "sha256": "2173cef98c32892b0df3b5578b50727416ee2c7d9b9c3a01004f17675069130c",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "经典洋红/紫色U型吸金磁铁（带镀铬两极）",
+      "suggested_role": "吸金磁铁道具生成物，拾取后触发磁吸范围扩大机制",
+      "visual_summary": "饱满圆润的粗壮马蹄管身，洋红色高光注塑塑料表面，两端带有大圆角镜面电镀铬银白色磁极端头。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/pink_magnet.png",
+        "asset_version": "PAO-7 概念原画 v1 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 8021860,
+        "size_mb": 7.65,
+        "triangles": 115095,
+        "vertices": 91306,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_material_52854e57-6bde-4050-b231-76a66fae0005"
+        ],
+        "images_count": 3,
+        "textures": [
+          {
+            "name": "pink_magnet_3d_model_normal",
+            "format": "PNG",
+            "mimeType": "image/png",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1603605
+          },
+          {
+            "name": "pink_magnet_3d_model_basecolor",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1152664
+          },
+          {
+            "name": "pink_magnet_3d_model_rm",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 960805
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.1152,
+          -0.0,
+          -0.4054
+        ],
+        "raw_bbox_max": [
+          0.1152,
+          0.9804,
+          0.4054
+        ],
+        "raw_bbox_size": [
+          0.2304,
+          0.9804,
+          0.8108
+        ],
+        "longest_axis": "Y",
+        "calibration_status": "原点位于底部 (Y min = 0)，立姿高度0.98单位，U形宽度0.81单位，厚度0.23单位。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "单网格几何体，单一根节点 (node 0)",
+        "known_issues": "模型为静态展示姿态，开口朝向需微调。",
+        "unverified_items": "金属反射贴图在环境光缺失时的反射质感待验证。",
+        "engine_requirements": "建议等比缩放至约0.5单位，开口微倾朝上放置在跑道中央悬浮自转。"
+      }
+    },
+    {
+      "file_name": "prop_multiplier_2x.glb",
+      "file_path": "public/models/prop_multiplier_2x.glb",
+      "sha256": "4c72cbbd619491662ee56fe9dab068cd0ffb77a6a16c3542f9f85470e47f1111",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "厚重倒角金色菱形星徽+深紫内底+立体“2X”字样",
+      "suggested_role": "双倍积分道具收集物，拾取后得分系数倍增",
+      "visual_summary": "厚实硬质金属金色菱形倒角徽章外壳，深紫色反光底板，中央浮雕悬浮白色高亮“2X”立体文字标志。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/star_badge.png",
+        "asset_version": "PAO-7 概念原画 v1 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 10751396,
+        "size_mb": 10.25,
+        "triangles": 118625,
+        "vertices": 93176,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_material_380888f1-54e2-4d98-95c1-c193c3abdf8f"
+        ],
+        "images_count": 3,
+        "textures": [
+          {
+            "name": "star_badge_3d_model_normal",
+            "format": "PNG",
+            "mimeType": "image/png",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 2716414
+          },
+          {
+            "name": "star_badge_3d_model_basecolor",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1937778
+          },
+          {
+            "name": "star_badge_3d_model_rm",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1690217
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.49,
+          -0.0,
+          -0.0743
+        ],
+        "raw_bbox_max": [
+          0.49,
+          0.9549,
+          0.0743
+        ],
+        "raw_bbox_size": [
+          0.98,
+          0.9549,
+          0.1487
+        ],
+        "longest_axis": "X",
+        "calibration_status": "原点在底部边缘 (Y min = 0)，立面尺寸宽0.98、高0.95，厚度0.15单位。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "单网格几何体，单一根节点 (node 0)",
+        "known_issues": "原点在底部边缘，直接自转会绕底轴摇摆。",
+        "unverified_items": "UI HUD右上角同步渲染微缩3D图标的效果待验证。",
+        "engine_requirements": "缩放至约0.5单位，局部坐标Y向下偏移0.47单位对齐旋转中心。"
+      }
+    },
+    {
+      "file_name": "prop_mystery_box.glb",
+      "file_path": "public/models/prop_mystery_box.glb",
+      "sha256": "5cda16b11fcc41e08f1340e188abff56ee2f57cfe810496aa70eff2c73a040c3",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "经典木质包金加固神秘问号宝箱",
+      "suggested_role": "跑道随机刷新盲盒宝箱，拾取后随机开出金币或道具",
+      "visual_summary": "深棕实木板条箱体，圆角圆弧箱盖，四角装饰加粗铜金铆钉护角，箱体正面嵌有立体金黄色“?”大问号。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/mystery_box.png",
+        "asset_version": "PAO-7 概念原画 v1 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 2176812,
+        "size_mb": 2.08,
+        "triangles": 9015,
+        "vertices": 8778,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_63d37e18_1f9a_482c_820b_24687d9d9cfd"
+        ],
+        "images_count": 1,
+        "textures": [
+          {
+            "name": "treasure_chest_3d_model_basecolor",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1840127
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.4998,
+          -0.4719,
+          -0.8774
+        ],
+        "raw_bbox_max": [
+          0.4998,
+          0.4719,
+          0
+        ],
+        "raw_bbox_size": [
+          0.9995,
+          0.9438,
+          0.8774
+        ],
+        "longest_axis": "X",
+        "calibration_status": "FBX转换资产，Z轴负向[-0.88, 0]，原点在箱子顶部后侧边缘，宽高深约1.0x0.94x0.88单位。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "箱体与金色问号已合并为单一Mesh，单一根节点 (node 0)",
+        "known_issues": "FBX原点偏移且有初始倾角，直接放置会倾斜沉入地面。",
+        "unverified_items": "拾取时开启箱盖的破碎/开箱动作（当前为合拢静态模型，无开盖动画）。",
+        "engine_requirements": "需校正中心原点与旋转欧拉角，缩放至约0.6单位悬浮或放置于铁轨中央。"
+      }
+    },
+    {
+      "file_name": "prop_shield.glb",
+      "file_path": "public/models/prop_shield.glb",
+      "sha256": "22667c3183387bfc430993ef33497ac93845fe3fd3deb0d27716da3d4861b26c",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "带有六边形能量力场切面的青蓝色发光晶球（能量护盾）",
+      "suggested_role": "碰撞保护盾道具拾取物，或角色护盾激活时包围全身的防护罩",
+      "visual_summary": "半透明高反射青蓝色能量球体，表面折射出精密漂浮的六边形蜂窝力场图案，核心带有高亮能量光球。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/energy_shield_cube.png",
+        "asset_version": "PAO-7 概念原画 v1 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 11080992,
+        "size_mb": 10.57,
+        "triangles": 114233,
+        "vertices": 108316,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_material_f8c269f5-1718-40e7-a414-d92c4364f630"
+        ],
+        "images_count": 3,
+        "textures": [
+          {
+            "name": "futuristic_crystal_orb_3d_model_normal",
+            "format": "PNG",
+            "mimeType": "image/png",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 2505852
+          },
+          {
+            "name": "futuristic_crystal_orb_3d_model_basecolor",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 2606550
+          },
+          {
+            "name": "futuristic_crystal_orb_3d_model_rm",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1129795
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.3364,
+          -0.0001,
+          -0.3511
+        ],
+        "raw_bbox_max": [
+          0.3363,
+          0.9785,
+          0.3512
+        ],
+        "raw_bbox_size": [
+          0.6727,
+          0.9786,
+          0.7023
+        ],
+        "longest_axis": "Y",
+        "calibration_status": "原点在球体底部 (Y min ≈ 0)，球体直径约0.70~0.98单位。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "单网格几何体，单一根节点 (node 0)",
+        "known_issues": "原点在球底，若作为角色护盾直接挂载会沉在角色脚下。",
+        "unverified_items": "在Babylon.js默认材质下半透明玻璃透明度与折射效果待验证。",
+        "engine_requirements": "作为角色护盾罩时需放大至约2.2单位并上移Y+1.0使其包裹角色躯干；若作为拾取物则缩放至0.5单位。"
+      }
+    },
+    {
+      "file_name": "prop_sneakers.glb",
+      "file_path": "public/models/prop_sneakers.glb",
+      "sha256": "e0e616489f4726471d07c7e68332f50042e69f7bd72bbd94be9f73d344fd290f",
+      "source_commit": "622e7da",
+      "verification_status": "GLB解析确认 + 实际预览确认",
+      "actual_content": "薄荷绿配珊瑚粉的高帮厚底弹跳潮玩球鞋（双只并排）",
+      "suggested_role": "超级弹跳鞋道具拾取物，拾取后赋予高跳属性",
+      "visual_summary": "一对摆放整齐的加厚潮玩高帮板鞋，薄荷绿鞋身、珊瑚橙色鞋带与提环细节，乳白色果冻厚气垫大底。",
+      "preview_reference": {
+        "path": "docs/assets/pao7_visual_assets/sneaker.png",
+        "asset_version": "PAO-7 FBX导出贴图预览 (622e7da)"
+      },
+      "metrics": {
+        "size_bytes": 3056964,
+        "size_mb": 2.92,
+        "triangles": 10034,
+        "vertices": 11467,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "e28899ee_9d73_4189_a138_7d01492aa62e"
+        ],
+        "images_count": 1,
+        "textures": [
+          {
+            "name": "sneaker_3d_model_basecolor",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 2628143
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.4998,
+          -0.489,
+          -0.6411
+        ],
+        "raw_bbox_max": [
+          0.4998,
+          0.489,
+          0
+        ],
+        "raw_bbox_size": [
+          0.9995,
+          0.978,
+          0.6411
+        ],
+        "longest_axis": "X",
+        "calibration_status": "FBX转换资产，包围盒Z范围为[-0.64, 0]，原点在顶部后侧，双鞋总宽度X约1.0单位。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "双鞋合并为一个Mesh几何体，单一根节点 (node 0)",
+        "known_issues": "FBX轴向偏移，Z轴全负，原点悬空在鞋顶。",
+        "unverified_items": "角色穿戴时拆分为单只绑定到双脚的逻辑待验证（当前为成对模型）。",
+        "engine_requirements": "作为地面拾取物需校正局部原点居中并缩放至约0.5单位；不能直接作为角色穿戴替换件。"
+      }
+    },
+    {
+      "file_name": "train_metro.glb",
+      "file_path": "public/models/train_metro.glb",
+      "sha256": "721bb182e1a323e1a01f65db3bb3602de3c6196ccb5c458a093ca87cd10ed4c8",
+      "source_commit": "622e7da",
+      "verification_status": "实际预览确认 (截图对账通过)",
+      "actual_content": "【重点注意】带黄色斜面爬坡梯的工程检修列车车头（Ramp Train）",
+      "suggested_role": "爬坡列车机制主体，玩家迎面顺坡冲上车顶的专用跳板列车",
+      "visual_summary": "车头为长条形黄黑斜纹倾斜登顶坡道，自地面平滑升至平坦车顶；后半部为复古青蓝车厢身与红色防撞腰线。",
+      "preview_reference": {
+        "path": "docs/assets/inspections/train_metro_actual_ramp.png",
+        "asset_version": "真实引擎渲染快照 (2026-11-01)"
+      },
+      "metrics": {
+        "size_bytes": 2700620,
+        "size_mb": 2.58,
+        "triangles": 8968,
+        "vertices": 11508,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_mat_77c6091c-0ce6-4ae0-8e93-6b05990da594"
+        ],
+        "images_count": 1,
+        "textures": [
+          {
+            "name": "tripo_rgb_55f29814-6209-40fa-ba91-2f8674994fb2",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 2277041
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.4998,
+          0,
+          -0.1604
+        ],
+        "raw_bbox_max": [
+          0.4998,
+          0.311,
+          0.1604
+        ],
+        "raw_bbox_size": [
+          0.9995,
+          0.311,
+          0.3208
+        ],
+        "longest_axis": "X",
+        "calibration_status": "长轴沿X轴分布 (长1.0，宽0.32，高0.31)，原点在地面坡道起点底部。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "坡道与车身已合成为单一Mesh，单一根节点 (node 0)",
+        "known_issues": "【核心陷阱】文件名叫train_metro，实际内容是斜坡爬坡车（与train_ramp_or_car互换）；长轴沿X而非跑道Z轴。",
+        "unverified_items": "坡道表面碰撞是否能直接支持平滑推挤角色上升（通常需要代码专用梯形倾斜碰撞盒）。",
+        "engine_requirements": "导入后必须Y轴旋转90度使其车头正对玩家(-Z)；需放大至游戏列车标准尺寸（长约15m，宽约2.4m，高约3m）；禁止直接使用AABB包围盒做碰撞！"
+      }
+    },
+    {
+      "file_name": "train_ramp_or_car.glb",
+      "file_path": "public/models/train_ramp_or_car.glb",
+      "sha256": "b561449fbb1426f2ba38cd54f75818090cf68076b3cb59a50c80dce2beb48fe4",
+      "source_commit": "622e7da",
+      "verification_status": "实际预览确认 (截图对账通过)",
+      "actual_content": "【重点注意】标准青绿色流线型复古地铁列车/车厢（Standard Metro Train）",
+      "suggested_role": "标准阻挡列车主体，正面迎击致命撞击障碍物，车顶为平整奔跑平台",
+      "visual_summary": "圆润复古青绿车身，圆角方形车窗与车门，车头配对称双白发光大灯与挡风玻璃，顶部为平整米白防滑走道。",
+      "preview_reference": {
+        "path": "docs/assets/inspections/train_ramp_actual_metro.png",
+        "asset_version": "真实引擎渲染快照 (2026-11-01)"
+      },
+      "metrics": {
+        "size_bytes": 11852604,
+        "size_mb": 11.3,
+        "triangles": 112516,
+        "vertices": 114123,
+        "meshes_count": 1,
+        "materials_count": 1,
+        "materials": [
+          "tripo_material_83c94436-c6e2-4fbb-ad55-fd24d04446ee"
+        ],
+        "images_count": 3,
+        "textures": [
+          {
+            "name": "train_car_3d_model_normal",
+            "format": "PNG",
+            "mimeType": "image/png",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1870479
+          },
+          {
+            "name": "train_car_3d_model_basecolor",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 3335812
+          },
+          {
+            "name": "train_car_3d_model_rm",
+            "format": "JPEG",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "byteLength": 1642333
+          }
+        ],
+        "skins": [],
+        "animations": []
+      },
+      "geometry": {
+        "raw_bbox_min": [
+          -0.4895,
+          -0.0001,
+          -0.1904
+        ],
+        "raw_bbox_max": [
+          0.4896,
+          0.4385,
+          0.1904
+        ],
+        "raw_bbox_size": [
+          0.9792,
+          0.4386,
+          0.3808
+        ],
+        "longest_axis": "X",
+        "calibration_status": "长轴沿X轴分布 (长0.98，宽0.38，高0.44)，原点在底部地面轨道高度。",
+        "single_visual_root": true,
+        "root_nodes_count": 1,
+        "root_nodes": [
+          0
+        ]
+      },
+      "integration_notes": {
+        "parts_description": "车头与车身一体化Mesh，单一根节点 (node 0)",
+        "known_issues": "【核心陷阱】文件名叫train_ramp_or_car，实际内容是标准地铁列车（无斜坡）；长轴横向沿X分布。",
+        "unverified_items": "车顶AABB触发区与上方金币刷新高度的精确间距待验证。",
+        "engine_requirements": "导入后必须Y轴旋转90度使车头朝向迎面玩家；等比缩放至真实尺寸（高约3.0m，宽约2.4m，长约15~18m）；正面必须配置严格致死阻挡碰撞盒。"
+      }
+    }
+  ]
+}

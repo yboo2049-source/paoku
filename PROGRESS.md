@@ -2,6 +2,12 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-01] PAO-15改为本地自动流程，人工精修延期
+
+- 用户选择先本地自动绑定/权重/批量试姿/导出/Babylon检查，本轮跳过手工调权、拓扑和动作精修，不执行Tripo云端。
+- 已更新[执行提示词](docs/plans/2026-11-01-pao15-rig-spike.md)和设计/PRD/测试口径，新增[人工TODO](docs/art/pao15-rigging-manual-todo.md)，按真实试样证据填项；目前仅列待检查内容，不冒称已发现缺陷或已修复。
+- 自动工具流程与资产质量分开报告，可带瑕疵/TODO交诊断结果；程序与结构错误仍自主修复，正式PAO-15/18不提前Done。未启动实现、云调用、自动提醒或其他任务。
+
 ## [2026-11-01] 用户同意PAO-15局部骨骼绑定试样
 
 - 已记录一个runner的派生DCC/真实蒙皮/肩肘髋膝试姿与Babylon验证范围，[设计](docs/superpowers/specs/2026-11-01-pao15-rig-spike-design.md)与[执行提示词](docs/plans/2026-11-01-pao15-rig-spike.md)已准备并同步共享文档；原pao-15树8b26bdf，未自动启动。

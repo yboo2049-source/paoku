@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { speedLabel, powerUps, ToastQueue, Receipts } from '../../src/ui/views/models';
+import { speedLabel, powerUps, ToastQueue, Receipts, InteractionScope } from '../../src/ui/views/models';
 describe('PAO19 readonly presentation R01-R05',()=>{
  it('uses truthful units',()=>{expect(speedLabel(18)).toBe('18.0 m/s');expect(speedLabel(45)).toBe('45.0 m/s');});
  it('projects named icons and frozen seconds without ticking',()=>{const p={hoverboardActive:true,activePowerUps:new Map([['MAGNET',1.1],['DOUBLE_SCORE',3],['SUPER_SNEAKERS',0]])};const before=JSON.stringify([...p.activePowerUps]);expect(powerUps(p).map(x=>x.label)).toEqual(['磁铁','双倍得分','悬浮滑板']);expect(powerUps(p).map(x=>x.time)).toEqual(['2秒','3秒','保护中']);expect(JSON.stringify([...p.activePowerUps])).toBe(before);});
@@ -33,4 +33,13 @@ it('B I-01 notifies before dispatch and correlates success/failure without dupli
 
 it('R02 does not advertise a spent hoverboard when a stale timer remains',()=>{
  expect(powerUps({hoverboardActive:false,activePowerUps:new Map([['HOVERBOARD',5]])})).toEqual([]);
+});
+it('P2 UI scopes expire each menu visit but preserve a run terminal retry',()=>{
+ const scope=new InteractionScope();
+ expect(scope.enter({appState:'MENU',activeRunId:null})).toBe(true);const menu=scope.generation;
+ expect(scope.enter({appState:'MENU',activeRunId:null})).toBe(false);
+ expect(scope.enter({appState:'PLAYING',activeRunId:'run'})).toBe(true);
+ expect(scope.enter({appState:'PAUSED',activeRunId:'run'})).toBe(false);
+ expect(scope.enter({appState:'GAMEOVER',activeRunId:'run'})).toBe(false);
+ expect(scope.enter({appState:'MENU',activeRunId:null})).toBe(true);expect(scope.generation).toBeGreaterThan(menu);
 });

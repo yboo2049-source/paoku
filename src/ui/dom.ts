@@ -1,5 +1,5 @@
 import { screens } from './views/screens';
-import { speedLabel, powerUps, ToastQueue, Receipts, errorLabel } from './views/models';
+import { speedLabel, powerUps, ToastQueue, Receipts, InteractionScope, errorLabel } from './views/models';
 import type { PendingReceipt } from './views/models';
 import type { CommandResult } from '../application/types';
 import type { GameContext } from '../types';
@@ -44,6 +44,7 @@ export class UIManager {
   // Only the application owns wallet, rights and page state.
   private readApp: () => AppSnapshot;
   private receipts = new Receipts();
+  private interactionScope = new InteractionScope();
   private toasts = new ToastQueue();
   private lastPage = '';
   private lastRun: string | null = null;
@@ -189,7 +190,7 @@ export class UIManager {
     const app = this.readApp();
     const state = app.appState;
     if(this.lastRun!==app.activeRunId || this.lastPage!==state) this.toasts.clear();
-    if(this.lastRun!==app.activeRunId){this.receipts.error='';for(const [id,p] of this.requests)if(p.payload.runId!==null&&p.payload.runId!==app.activeRunId)this.requests.delete(id);for(const [id,p] of this.receipts.pending)if(p.runId!==null&&p.runId!==app.activeRunId)this.receipts.pending.delete(id);}
+    this.syncInteractionScope(app);
     const changed=this.lastPage!==state;
     this.lastRun=app.activeRunId; this.lastPage=state;
     const pages=[this.menuEl,this.pausedEl,this.gameOverEl,this.shopEl];
@@ -358,9 +359,21 @@ export class UIManager {
     if(!el){el=document.createElement('div');el.className='cyber-toast';el.setAttribute('role','status');el.setAttribute('aria-live','polite');this.container.append(el);}
     if(el.textContent!==text){el.textContent=text;el.setAttribute('aria-label',text);}
   }
-  public notifyCommandPending(p:PendingReceipt):void {this.receipts.begin(p,performance.now());}
+  private syncInteractionScope(app:AppSnapshot):void {
+    if(!this.interactionScope.enter(app))return;
+    // Retire presentation leases only. Service idempotency/unknown outcomes stay
+    // authoritative, and terminal retries within one run retain their identity.
+    this.requests.clear();this.retries.clear();
+    this.receipts.pending.clear();this.receipts.error='';
+  }
+  public notifyCommandPending(p:PendingReceipt):void {
+    this.syncInteractionScope(this.readApp());
+    this.receipts.begin(p,performance.now());
+  }
   public notifyCommandResult(result:Readonly<CommandResult>):boolean {
-    const accepted=this.receipts.end(result,this.readApp().activeRunId);
+    const app=this.readApp();
+    this.syncInteractionScope(app);
+    const accepted=this.receipts.end(result,app.activeRunId);
     if(result.commandId==='initialize'&&!result.ok)this.receipts.error=errorLabel(result.errorCode);
     const request=this.requests.get(result.commandId);
     if(request){this.requests.delete(result.commandId);if(!result.ok)this.retries.set(request.key,request);else this.retries.delete(request.key);}
@@ -368,6 +381,7 @@ export class UIManager {
   }
   private intent(event:string,payload:Record<string,unknown>={}):void {
     const app=this.readApp();
+    this.syncInteractionScope(app);
     const key=event+JSON.stringify(payload);
     if(event!=='UPDATE_AUDIO'&&[...this.requests.values()].some(x=>x.key===key))return;
     // Changing a field is a new intention, even when later returning to a value

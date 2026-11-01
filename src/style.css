@@ -481,3 +481,24 @@ button:focus-visible,input:focus-visible,summary:focus-visible{
 #game-canvas{touch-action:none}
 button,input{touch-action:manipulation}
 .ui-screen,.ui-card,.buffs-wrap{touch-action:pan-y}
+
+/* Keep the loaded portrait runner above the bottom card. Secondary content
+   remains natively focusable/scrollable; no camera or character scale changes. */
+@media(max-width:767px) and (orientation:portrait){
+  #menu-screen .ui-card{
+    display:flex;
+    flex-direction:column;
+    max-height:calc(25dvh - 16px - var(--safe-bottom));
+    padding:12px 16px;
+    scrollbar-gutter:stable;
+  }
+  #menu-screen .ui-card>*{flex-shrink:0}
+  #menu-screen .command-feedback,#menu-screen .command-error{order:-1}
+  #menu-screen h1{order:0;margin:0 0 8px}
+  #menu-screen #start-btn{order:1;margin-top:0}
+  #menu-screen .stats-row{order:2;margin:8px 0 0}
+  #menu-screen .stat-val{font-size:24px}
+  #menu-screen #open-shop-btn{order:3}
+  #menu-screen .controls-hint{order:4}
+  #menu-screen .audio-settings{order:5}
+}

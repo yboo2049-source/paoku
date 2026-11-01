@@ -1,0 +1,56 @@
+[
+  {
+    "fault": "storage",
+    "returned": {
+      "activeRunId": null,
+      "revision": 2,
+      "bgmEnabled": false
+    },
+    "after": {
+      "activeRunId": null,
+      "revision": 3,
+      "bgmEnabled": true
+    },
+    "commandIds": [
+      "pao19-6f3e327e-e4bc-44b5-8662-789bba40202d-1",
+      "pao19-04fb4094-6dad-4272-9355-96d1f17d4f87-5"
+    ],
+    "newIdentity": true
+  },
+  {
+    "fault": "ui-ack",
+    "returned": {
+      "activeRunId": null,
+      "revision": 2,
+      "bgmEnabled": false
+    },
+    "after": {
+      "activeRunId": null,
+      "revision": 3,
+      "bgmEnabled": true
+    },
+    "commandIds": [
+      "pao19-9d0bf45f-802a-4038-a1f2-7756e1342a4f-1",
+      "pao19-a056fbfb-6afc-4022-8cc0-dc7a141e7ee2-5"
+    ],
+    "newIdentity": true
+  },
+  {
+    "fault": "late-ui-ack",
+    "returned": {
+      "activeRunId": null,
+      "revision": 2,
+      "bgmEnabled": false
+    },
+    "after": {
+      "activeRunId": null,
+      "revision": 3,
+      "bgmEnabled": true
+    },
+    "commandIds": [
+      "pao19-ab2d9b14-0df8-4f56-937b-ee8ac07d78ec-1",
+      "pao19-932bff6e-0d9f-4ed1-9110-90fedcd8fc7f-5"
+    ],
+    "newIdentity": true
+  }
+]

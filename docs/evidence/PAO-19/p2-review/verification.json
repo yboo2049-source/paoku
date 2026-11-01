@@ -1,0 +1,96 @@
+{
+  "baseline": "cf9f9651958db9598313c7a86703b6a4fe0da299",
+  "reviewInput": "00803f154cbfd5e4e1d7af7fd2dcd4320091ba9d",
+  "build": {
+    "exitCode": 0
+  },
+  "unit": {
+    "files": 17,
+    "passed": 252,
+    "exitCode": 0
+  },
+  "e2e": {
+    "passed": 60,
+    "failed": 0,
+    "skipped": 0,
+    "actualRetries": 0,
+    "configuredRetries": 1,
+    "exitCode": 0
+  },
+  "targeted": {
+    "passed": 12,
+    "exitCode": 0
+  },
+  "initialFullRun": {
+    "passed": 58,
+    "failed": 2,
+    "cause": "existing Google Fonts ERR_CONNECTION_CLOSED; assertions retained"
+  },
+  "baseURL": "http://127.0.0.1:5189",
+  "strictPort": true,
+  "reuseExistingServer": false,
+  "rawSources": [
+    {
+      "file": "src/ui/dom.ts",
+      "sha256": "64ae757fa2e42a8a37012890bb2dec835814e2957f3eae96e8ed518ac2114460",
+      "rawMatch": true
+    },
+    {
+      "file": "src/ui/views/models.ts",
+      "sha256": "ba9e5e2453bbb28a85feae0ab457465b5db2182f3986bd4f8ca1f299e0ad0d0e",
+      "rawMatch": true
+    },
+    {
+      "file": "src/ui/views/screens.ts",
+      "sha256": "443aa4c061dc88a9b9860a8755bd3991816fce3f0d535d7261d4dff2b0f1b43c",
+      "rawMatch": true
+    },
+    {
+      "file": "src/style.css",
+      "sha256": "94e5ee4ce6368ab7bc3ed88e6ca9e562eccee700bc959dc86a92d7b2232e3414",
+      "rawMatch": true
+    },
+    {
+      "file": "src/main.ts",
+      "sha256": "825a44845af15776f5c159fb836f7867235ac6fc73a05d6e710ce4b9bcf2ce57",
+      "rawMatch": true
+    },
+    {
+      "file": "src/application/types.ts",
+      "sha256": "7b9d24cedb0de02564f18d6eec6c239e7ca299792305b5814177c2088acced2b",
+      "rawMatch": true
+    },
+    {
+      "file": "src/application/appService.ts",
+      "sha256": "843d526e1ee1c71b97299d2dffe9013c6fbca175c8bbe3bf315534c9055a189f",
+      "rawMatch": true
+    },
+    {
+      "file": "src/application/saveRepository.ts",
+      "sha256": "9794bddd00971c6a415168c39c557987b0c4b291fc46d912d03ea6d9efabadde",
+      "rawMatch": true
+    },
+    {
+      "file": "src/systems/input.ts",
+      "sha256": "407c7cc8e5184f87756de0c2f847779b565976a5d2fe74d54e4ad11cd45853e9",
+      "rawMatch": true
+    },
+    {
+      "file": "src/render/babylon.ts",
+      "sha256": "d60e9885dd9d515635488b610877d29894312652f92b753cf8b870ca50fa7571",
+      "rawMatch": true
+    }
+  ],
+  "allSourceHashesStableDuringRegression": true,
+  "readOnlySourcesChecked": 26,
+  "historicalFilesChecked": 1141,
+  "restoredHistorical": [],
+  "originalHashesMatch": true,
+  "changedSource": [
+    "src/style.css",
+    "src/ui/dom.ts",
+    "src/ui/views/models.ts"
+  ],
+  "unchangedPao6ApprovedLine": true,
+  "realDevicesTested": false
+}

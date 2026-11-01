@@ -1,0 +1,18 @@
+{
+  "model": {
+    "name": "Beta_Surface",
+    "top": 323.6304331894789,
+    "bottom": 616.7717657191988
+  },
+  "card": {
+    "top": 633,
+    "bottom": 828,
+    "height": 195
+  },
+  "start": {
+    "top": 687.59375,
+    "bottom": 735.59375,
+    "height": 48
+  },
+  "overflow": false
+}

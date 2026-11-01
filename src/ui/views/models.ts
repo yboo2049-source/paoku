@@ -1,4 +1,4 @@
-import type { AppCommand, CommandResult, ErrorCode } from '../../application/types';
+import type { AppCommand, AppSnapshot, CommandResult, ErrorCode } from '../../application/types';
 export const speedLabel = (speed:number) => Number.isFinite(speed) ? `${speed.toFixed(1)} m/s` : '速度不可用';
 const definitions = [
  ['MAGNET','磁铁','M6 3v10a6 6 0 0012 0V3h-4v10a2 2 0 01-4 0V3z'],
@@ -25,4 +25,16 @@ export class ToastQueue {
  add(text:string,now:number){if(!text.trim())return;if(this.items.some(x=>x.text===text&&now-x.at<2000))return;if(this.items.length===4)this.items.splice(1,1);this.items.push({text,at:now,remaining:3000});}
  advance(now:number,hidden:boolean){if(this.last!==null&&!hidden&&this.items[0]){this.items[0].remaining-=now-this.last;if(this.items[0].remaining<=0)this.items.shift();}this.last=now;}
  clear(){this.items=[];this.last=null;}
+}
+
+/** A menu visit is a UI scope, not the permanent null run identity. */
+export class InteractionScope {
+ private identity:string|null=null;
+ generation=0;
+ enter(app:Pick<AppSnapshot,'appState'|'activeRunId'>):boolean {
+  const page=app.appState==='MENU'||app.appState==='SHOP'?app.appState:'RUN';
+  const identity=JSON.stringify([page,app.activeRunId]);
+  if(identity===this.identity)return false;
+  this.identity=identity;this.generation++;return true;
+ }
 }

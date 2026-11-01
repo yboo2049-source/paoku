@@ -1,0 +1,12 @@
+PAO-19 preparation review / 2026-11-01 Asia/Shanghai
+Local markdown link checks: 9 passed
+Content review: authority/units/layout arithmetic/approval scope checked
+Tracked source/package/lock/shared docs changes: none
+git diff --check: exit 0
+Staged whitespace check is required again before commit
+E2E / N / F / screenshots / new RED tests: not run (documents only)
+Commit hooks: normal npm run build && npm run test; actual outcome in commit console/final report
+git diff --cached --check: exit 0 (all four task files reviewed)
+First normal commit hook attempt: exit 1 before build; npm launcher selected Windows bash instead of bundled Git shell
+Environment-only recovery: prepend bundled Git usr/bin to process PATH; export npm function forwarding all args to npm.cmd
+Nested sh npm --version: exit 0, 11.16.0; hooks unchanged, not bypassed

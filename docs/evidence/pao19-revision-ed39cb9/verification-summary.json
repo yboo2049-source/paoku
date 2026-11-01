@@ -1,0 +1,31 @@
+{
+  "commit": "ed39cb9",
+  "buildExitCode": 0,
+  "unit": {
+    "exitCode": 0,
+    "passed": 252,
+    "files": 17
+  },
+  "e2e": {
+    "startTime": "2026-11-01T12:16:47.129Z",
+    "duration": 351929.795,
+    "expected": 60,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "configuredRetries": 0,
+  "stability": {
+    "checked": 1178,
+    "sourceFiles": 29,
+    "changed": [],
+    "allUnchanged": true
+  },
+  "rawSourceFiles": 29,
+  "imagesReviewed": [
+    "mobile-menu-loaded.png",
+    "key-desktop-hud.png",
+    "key-mobile-result.png"
+  ],
+  "realDevicesTested": false
+}

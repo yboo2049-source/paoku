@@ -1,0 +1,263 @@
+{
+  "commit": "ed39cb9",
+  "fixtures": [
+    "F: actual Storage write lands then throws; confirmation read throws once; subsequent actions are real clicks",
+    "F: one UI acknowledgement replaced with SAVE_FAILED; service committed normally; subsequent actions are real clicks"
+  ],
+  "results": [
+    {
+      "fixture": "F: actual Storage write lands then throws; confirmation read throws once; subsequent actions are real clicks",
+      "initial": {
+        "appState": "MENU",
+        "activeRunId": null,
+        "walletCoins": 0,
+        "highScore": 0,
+        "revision": 0,
+        "ownedSkinIds": [
+          "cyan"
+        ],
+        "selectedSkinId": "cyan",
+        "audio": {
+          "masterMuted": false,
+          "bgmEnabled": true,
+          "sfxEnabled": true,
+          "bgmVolume": 0.6,
+          "sfxVolume": 0.9
+        },
+        "summary": null,
+        "settlementStatus": "NONE",
+        "errorCode": null
+      },
+      "failedAck": {
+        "appState": "MENU",
+        "activeRunId": null,
+        "walletCoins": 0,
+        "highScore": 0,
+        "revision": 0,
+        "ownedSkinIds": [
+          "cyan"
+        ],
+        "selectedSkinId": "cyan",
+        "audio": {
+          "masterMuted": false,
+          "bgmEnabled": true,
+          "sfxEnabled": true,
+          "bgmVolume": 0.6,
+          "sfxVolume": 0.9
+        },
+        "summary": null,
+        "settlementStatus": "NONE",
+        "errorCode": "SAVE_FAILED"
+      },
+      "returned": {
+        "appState": "MENU",
+        "activeRunId": null,
+        "walletCoins": 0,
+        "highScore": 0,
+        "revision": 2,
+        "ownedSkinIds": [
+          "cyan"
+        ],
+        "selectedSkinId": "cyan",
+        "audio": {
+          "masterMuted": false,
+          "bgmEnabled": false,
+          "sfxEnabled": true,
+          "bgmVolume": 0.6,
+          "sfxVolume": 0.9
+        },
+        "summary": {
+          "runId": "run-c466c754-199f-48fe-b1a2-abe424597349",
+          "scoreInt": 0,
+          "pickupCount": 0,
+          "pickupCoins": 0,
+          "rewardCoins": 0,
+          "earnedCoins": 0,
+          "endReason": "QUIT"
+        },
+        "settlementStatus": "COMMITTED",
+        "errorCode": null
+      },
+      "after": {
+        "appState": "MENU",
+        "activeRunId": null,
+        "walletCoins": 0,
+        "highScore": 0,
+        "revision": 3,
+        "ownedSkinIds": [
+          "cyan"
+        ],
+        "selectedSkinId": "cyan",
+        "audio": {
+          "masterMuted": false,
+          "bgmEnabled": true,
+          "sfxEnabled": true,
+          "bgmVolume": 0.6,
+          "sfxVolume": 0.9
+        },
+        "summary": {
+          "runId": "run-c466c754-199f-48fe-b1a2-abe424597349",
+          "scoreInt": 0,
+          "pickupCount": 0,
+          "pickupCoins": 0,
+          "rewardCoins": 0,
+          "earnedCoins": 0,
+          "endReason": "QUIT"
+        },
+        "settlementStatus": "COMMITTED",
+        "errorCode": null
+      },
+      "intents": [
+        {
+          "kind": "TOGGLE",
+          "field": "bgmEnabled",
+          "runId": null,
+          "commandId": "pao19-7615bfd7-ab10-4e3b-99b8-c1e6f189da1b-1"
+        },
+        {
+          "kind": "TOGGLE",
+          "field": "bgmEnabled",
+          "runId": null,
+          "commandId": "pao19-cd48e38a-0012-4938-ab9e-bfe8088f972c-5"
+        }
+      ],
+      "expectedBgmAfterNewClick": true,
+      "actualBgmAfterNewClick": true,
+      "reusedCommandId": false
+    },
+    {
+      "fixture": "F: one UI acknowledgement replaced with SAVE_FAILED; service committed normally; subsequent actions are real clicks",
+      "initial": {
+        "appState": "MENU",
+        "activeRunId": null,
+        "walletCoins": 0,
+        "highScore": 0,
+        "revision": 0,
+        "ownedSkinIds": [
+          "cyan"
+        ],
+        "selectedSkinId": "cyan",
+        "audio": {
+          "masterMuted": false,
+          "bgmEnabled": true,
+          "sfxEnabled": true,
+          "bgmVolume": 0.6,
+          "sfxVolume": 0.9
+        },
+        "summary": null,
+        "settlementStatus": "NONE",
+        "errorCode": null
+      },
+      "failedAck": {
+        "appState": "MENU",
+        "activeRunId": null,
+        "walletCoins": 0,
+        "highScore": 0,
+        "revision": 1,
+        "ownedSkinIds": [
+          "cyan"
+        ],
+        "selectedSkinId": "cyan",
+        "audio": {
+          "masterMuted": false,
+          "bgmEnabled": false,
+          "sfxEnabled": true,
+          "bgmVolume": 0.6,
+          "sfxVolume": 0.9
+        },
+        "summary": null,
+        "settlementStatus": "NONE",
+        "errorCode": null
+      },
+      "returned": {
+        "appState": "MENU",
+        "activeRunId": null,
+        "walletCoins": 0,
+        "highScore": 0,
+        "revision": 2,
+        "ownedSkinIds": [
+          "cyan"
+        ],
+        "selectedSkinId": "cyan",
+        "audio": {
+          "masterMuted": false,
+          "bgmEnabled": false,
+          "sfxEnabled": true,
+          "bgmVolume": 0.6,
+          "sfxVolume": 0.9
+        },
+        "summary": {
+          "runId": "run-dcb6f3d1-b9e8-46d0-baa1-eb5b9ca34b07",
+          "scoreInt": 0,
+          "pickupCount": 0,
+          "pickupCoins": 0,
+          "rewardCoins": 0,
+          "earnedCoins": 0,
+          "endReason": "QUIT"
+        },
+        "settlementStatus": "COMMITTED",
+        "errorCode": null
+      },
+      "after": {
+        "appState": "MENU",
+        "activeRunId": null,
+        "walletCoins": 0,
+        "highScore": 0,
+        "revision": 3,
+        "ownedSkinIds": [
+          "cyan"
+        ],
+        "selectedSkinId": "cyan",
+        "audio": {
+          "masterMuted": false,
+          "bgmEnabled": true,
+          "sfxEnabled": true,
+          "bgmVolume": 0.6,
+          "sfxVolume": 0.9
+        },
+        "summary": {
+          "runId": "run-dcb6f3d1-b9e8-46d0-baa1-eb5b9ca34b07",
+          "scoreInt": 0,
+          "pickupCount": 0,
+          "pickupCoins": 0,
+          "rewardCoins": 0,
+          "earnedCoins": 0,
+          "endReason": "QUIT"
+        },
+        "settlementStatus": "COMMITTED",
+        "errorCode": null
+      },
+      "intents": [
+        {
+          "kind": "TOGGLE",
+          "field": "bgmEnabled",
+          "runId": null,
+          "commandId": "pao19-90aa7c55-d25c-4ec0-875a-892c530be811-1"
+        },
+        {
+          "kind": "TOGGLE",
+          "field": "bgmEnabled",
+          "runId": null,
+          "commandId": "pao19-22d9ed62-dd7f-4ade-aa8b-c01681597928-5"
+        }
+      ],
+      "expectedBgmAfterNewClick": true,
+      "actualBgmAfterNewClick": true,
+      "reusedCommandId": false
+    }
+  ],
+  "scope": "Independent parent scripts from cf9f965 review replayed unchanged against revised source",
+  "menuBounds": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "menuCard": {
+      "x": 16,
+      "y": 633,
+      "width": 358,
+      "height": 195
+    },
+    "note": "same production menu scene; second screenshot only hides UI at runtime for occlusion diagnosis"
+  }
+}

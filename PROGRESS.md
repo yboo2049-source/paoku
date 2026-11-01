@@ -2,6 +2,12 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-01] PAO-19修订验收Done
+
+- ed39cb9独立复审通过，[主审末节](docs/reviews/2026-11-01-pao19-implementation-review.md)：旧菜单重试不再复活，两个独立故障脚本均为新ID/音乐开/revision3；加载后390竖屏角色完整可见，卡片与开始按钮布局通过，两项P2关闭。
+- 主Agent独立build、252/252单测、60/60完整E2E通过，351.930秒、0重试；29raw源码与1178路径hash稳定，抽看3张本轮关键图。原任务分支干净且已推，Linear已设Done并回读确认。
+- 实现基线可引用codex/pao-19-ui@ed39cb9，包含M1；未自动合并或启动下游。M2仍缺正式角色/场景/渲染/动作镜头/音频与整体样板集成，真机仍未签收。
+
 ## [2026-11-01] PAO-19实现主审发现两项P2
 
 - [cf9f965主审与修复提示词](docs/reviews/2026-11-01-pao19-implementation-review.md)：原提交已推且干净、Linear In Review；独立build、251单测、56完整E2E均通过，无重试，29raw源码身份与1170路径稳定性核对通过。

@@ -1,5 +1,7 @@
 # PAO-19 实现主审：cf9f965
 
+> 最新结论：后续修订ed39cb9已通过独立复审，两项P2关闭，PAO-19已验收Done。见末节；下文cf9f965的In Review为当时审查结论。
+
 2026-11-01（Asia/Shanghai）。结论：发现两项已独立复现的P2，**保持In Review，不验收Done**。主Agent只读审查与独立验证，不改游戏实现、不合并分支、不启动其他任务。
 
 ## 提交与范围
@@ -50,3 +52,15 @@
 先补RED再最小修复UI重试上下文生命周期，防止旧失败/迟到回执在新菜单访问中复活；当前上下文明确重试仍保留原ID，不得破坏未知提交确认/字段音频事务。第二项为390竖屏开始卡片遮住主角身体，模型加载后仍仅露头：先看主审正常/隐藏UI诊断图，在已批准UI方案A内调整CSS/内容折叠和布局并补稳定截图/可见性验证；如果确需相机接口只提最小请求，不改渲染。优先src/ui/dom.ts、src/style.css、views必要状态与tests/unit/pao19-ui.test.ts、tests/e2e/rebuild-ui.spec.ts及本任务文档/证据，application/schema/模拟/物理/渲染/资产/依赖保持只读。
 保留原全部断言与PAO-6已批准单行。完整build/test/E2E、N/F分报、独占服务/raw源码与前后hash、旧证据恢复，查看稳定桌面/竖屏关键图；新增回归镜像及批量旧图留忽略目录，只提交本修复少量关键证据。正常hooks提交/push核对远端后再送主Agent复审，不自动Done/合并/启动下游。
 ```
+
+## ed39cb9修订复审与验收
+
+固定提交 `ed39cb9aad981da1e9eda0a196b86d0c0c6702d9` 与origin/codex/pao-19-ui一致，原树干净。相对cf9f965仅改UI交互作用域、竖屏菜单CSS及专属测试/少量任务证据；main、应用服务、schema、模拟/物理/输入/渲染/资产/依赖和旧PAO-6单行均未改变。原断言保留，新增三种菜单重访故障与加载后角色可见性断言。
+
+UI按MENU/SHOP/RUN+activeRunId切换展示作用域，在意图/pending/result/update入口同步，过期requests/retries/视觉pending；同run的PLAYING/PAUSED/GAMEOVER保持同作用域，未清业务幂等/未知提交记录。主Agent复用上一轮两个独立浏览器脚本，真实存储未知提交与UI回执丢失均从旧失败进入真实开始→暂停→回菜单：新点击使用新ID，音乐false→true、revision2→3。完整E2E另覆盖迟到旧回执不复活、同上下文原ID重试只写一次及原事务回归。第一项P2关闭。
+
+竖屏开始卡片在portrait范围限制高度并前置标题/开始，成绩/商店/音频继续内部滚动；未改相机或人物尺度。主Agent在390×844加载后截图确认完整身体位于卡片上方，卡片y633、高195；开始按钮完整可点。完整回归中加载后包围盒投影验证了角色与卡片间距，320/短横屏/200%字形、安全区及N触摸/键盘断言仍通过。第二项P2关闭。[独立复现与菜单矩形](../evidence/pao19-revision-ed39cb9/retry-and-menu.json)、[本轮加载后菜单图](../evidence/pao19-revision-ed39cb9/mobile-menu-loaded.png)仅证明当前测试条件，不冒称所有设备。
+
+主Agent独立build exit0；17文件252/252单测；完整60/60 E2E、exit0，351.930秒，0 skipped/unexpected/flaky，配置retries=0。29源码raw身份确认，1178个源码/证据/根截图/元数据前后hash相同，原任务树干净，无需恢复字节。只查看本轮390加载后菜单、桌面HUD、竖屏结果三张，未发现新增明显遮挡/裁切。N自然键盘/CDP触摸完整流程与F故障/布局分报，未采用旧图冒充本轮验证。[精简验证结果](../evidence/pao19-revision-ed39cb9/verification-summary.json)保存计数/时长与稳定性；完整镜像和日志留原任务树`.pao19-revision.local/`与`tests/e2e/.pao19-revision.local/`。
+
+本次UI实现验收通过，Linear PAO-19已设Done并回读确认。正式角色/场景GLB、镜头美术、实体手机/系统手势/真实刘海及设备性能仍待各任务；不将UI Done等同M2完整样板完成。本轮未合并分支、未写游戏实现、未启动15/16/17/18/20/21。

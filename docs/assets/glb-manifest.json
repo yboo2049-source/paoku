@@ -1,8 +1,9 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-11-01T13:11:14+08:00",
+  "generated_at": "2026-11-01T13:12:36+08:00",
   "target_commit": "622e7da",
-  "revises_commit": "173fbf4",
+  "revises_commit": "d87aad6",
+  "revises_note": "本版同时覆盖 173fbf4(v1.0.0) 与 d87aad6(v1.1.0)",
   "base_repo": "yboo2049-source/paoku",
   "branch": "main",
   "scope": {
@@ -63,6 +64,24 @@
       "was": "直接给出致死碰撞盒、缩放 0.45、磁铁悬浮自转等具体配法",
       "now": "改为“碰撞方案另行决定”，清单只描述几何事实",
       "because": "超出文档职责，且未经玩法评审"
+    },
+    {
+      "item": "v1.1.0 仍在正文保留的 PAO 契约引用",
+      "was": "「严格遵从 PAO-11/12/13 已验收的表面支撑与碰撞契约」「严禁替代 PAO-15 正式跑跳滑动作交付」",
+      "now": "不再引用这些编号：本仓库内找不到对应已验收文档",
+      "because": "无法核实的契约不能写成既定事实"
+    },
+    {
+      "item": "v1.1.0 的 player.glb 尺寸",
+      "was": "场景尺寸 1.45 / 1.81 / 0.39",
+      "now": "对象空间 1.81 / 1.81 / 0.32；场景空间因蒙皮 IBM 未参与而不适用（变换后仅 0.018）",
+      "because": "把对象空间数值当成场景尺寸，且 X/Z 取值与实测不符"
+    },
+    {
+      "item": "v1.1.0 引用的复核文档路径",
+      "was": "docs/reviews/2026-11-01-glb-manifest-review.md、docs/evidence/glb-manifest-review-173fbf4.json",
+      "now": "两个路径在本仓库均不存在，链接已移除；更正清单内联在 corrections 与 notes 第 1 节",
+      "because": "悬空链接会让接手者以为有更权威的原始依据可查"
     },
     {
       "item": "slide_barrier 牌面文字",

@@ -1,5 +1,7 @@
 # PAO-16 场景标定与优化准备设计
 
+> 阶段更新：用户2026-11-01手动授权第一批两车/两栏技术Spike。其实施边界见 [实施计划](../../plans/2026-11-01-pao16-calibration-implementation.md)，新证据单列 [calibration-spike](../../evidence/PAO-16/calibration-spike/README.md)。这项有限授权取代本稿“只写准备文档”的当前执行限制，但不放行正式资产、美术预算或PAO-17等下游；本稿以下保留历史准备结论。
+
 2026-11-01（Asia/Shanghai）｜brainstorming：Bounded准备交付，跨模块接入仍有门禁｜状态：待任务级设计与适用项审查，不进入实现。
 
 ## 1. 问题与目标

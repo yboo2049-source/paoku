@@ -1,0 +1,70 @@
+{
+  "sourceSHA256": "6716fce213607a848779abf78f51ea81cc6a76483bd5d91c8d0c8a4c670d06af",
+  "hashes": [
+    {
+      "file": "train_metro.glb",
+      "httpSHA256": "721bb182e1a323e1a01f65db3bb3602de3c6196ccb5c458a093ca87cd10ed4c8"
+    },
+    {
+      "file": "obstacle_slide_barrier.glb",
+      "httpSHA256": "471b24a3a1cc6a25cc18bac7cfcfd5cad36e61ce3e7088fd75f9dfbe99379d0a"
+    },
+    {
+      "file": "train_ramp_or_car.glb",
+      "httpSHA256": "b561449fbb1426f2ba38cd54f75818090cf68076b3cb59a50c80dce2beb48fe4"
+    },
+    {
+      "file": "obstacle_hurdle_barrier.glb",
+      "httpSHA256": "4f8d4756dcf150b086f8cad14a531305cae61caa0996872af291128d099306c4"
+    }
+  ],
+  "results": [
+    {
+      "ready": true,
+      "file": "train_metro.glb",
+      "meshes": 1,
+      "loaderMaxError": 0,
+      "candidateAppliedError": 0.00000762939453125,
+      "rightHanded": true,
+      "visualRootCount": 1,
+      "logicalChildCount": 2,
+      "compared": 11508
+    },
+    {
+      "ready": true,
+      "file": "obstacle_slide_barrier.glb",
+      "meshes": 1,
+      "loaderMaxError": 1.5634417809987836e-8,
+      "candidateAppliedError": 7.878241889193316e-8,
+      "rightHanded": true,
+      "visualRootCount": 1,
+      "logicalChildCount": 1,
+      "compared": 8716
+    },
+    {
+      "ready": true,
+      "file": "train_ramp_or_car.glb",
+      "meshes": 1,
+      "loaderMaxError": 0,
+      "candidateAppliedError": 0,
+      "rightHanded": true,
+      "visualRootCount": 1,
+      "logicalChildCount": 1,
+      "compared": 114123
+    },
+    {
+      "ready": true,
+      "file": "obstacle_hurdle_barrier.glb",
+      "meshes": 1,
+      "loaderMaxError": 0,
+      "candidateAppliedError": 0,
+      "rightHanded": true,
+      "visualRootCount": 1,
+      "logicalChildCount": 1,
+      "compared": 10132
+    }
+  ],
+  "errors": [],
+  "backend": "Chromium ANGLE D3D11; desktop technical preview, not target-device acceptance",
+  "renderedOriginalAssets": true
+}

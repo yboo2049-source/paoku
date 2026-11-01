@@ -1,0 +1,147 @@
+{
+  "baseline": "dd82d22",
+  "buildExitCode": 0,
+  "toolTypecheckExitCode": 0,
+  "unit": {
+    "files": 17,
+    "exitCode": 0,
+    "tests": 252
+  },
+  "dedicatedUnitTests": 8,
+  "fullE2E": {
+    "command": "npm run test:e2e -- --config .pao16-local/regression.config.ts --retries=1",
+    "stats": {
+      "startTime": "2026-11-01T15:12:25.9Z",
+      "duration": 208336.192,
+      "expected": 43,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "exitCode": 0,
+    "actualRetries": 0,
+    "assertionsPreserved": true
+  },
+  "previousCompletedAttempts": [
+    {
+      "failure": "PAO14 sensor undefined during settlement fixture",
+      "exitCode": 1,
+      "record": ".pao16-local/regression-attempt1.json",
+      "failed": 1,
+      "passed": 42
+    },
+    {
+      "failure": "PAO6 ramp-roof-jump-land reached GAMEOVER",
+      "exitCode": 1,
+      "record": ".pao16-local/regression-attempt2.json",
+      "failed": 1,
+      "passed": 42
+    }
+  ],
+  "failureCause": "Not proven; old real-time fixture/sensor timing instability remains a limitation; no game/test assertion changes",
+  "mirrorRecords": [
+    {
+      "source": "tests/e2e/gameplay.spec.ts",
+      "mirror": ".pao16-local/regression/gameplay.pw.ts",
+      "sha256": "ac860d0781b57ec51735607c8e6d1441a5f02afcb9b27203f2f8e682d607ce64",
+      "modification": "Output prefix docs/evidence/ -> .pao16-local/regression-output/; root screenshot path prefix redirected only",
+      "reverseMatches": true
+    },
+    {
+      "source": "tests/e2e/pao10-review-fixes.spec.ts",
+      "mirror": ".pao16-local/regression/pao10-review-fixes.pw.ts",
+      "sha256": "21a92efee35f42f42912d8655d62eb1a6d4786494235ee84d9ff1ae8dab45892",
+      "modification": "Output prefix docs/evidence/ -> .pao16-local/regression-output/; root screenshot path prefix redirected only",
+      "reverseMatches": true
+    },
+    {
+      "source": "tests/e2e/pao10-simulation.spec.ts",
+      "mirror": ".pao16-local/regression/pao10-simulation.pw.ts",
+      "sha256": "4cb5069cfcec3a015c768ee5047403b8cd4c0c295529e1eda186866c6a921ebf",
+      "modification": "Output prefix docs/evidence/ -> .pao16-local/regression-output/; root screenshot path prefix redirected only",
+      "reverseMatches": true
+    },
+    {
+      "source": "tests/e2e/pao11-surfaces.spec.ts",
+      "mirror": ".pao16-local/regression/pao11-surfaces.pw.ts",
+      "sha256": "2e5cb1868763f2ddec33ae472f3497aeac1dffa6d7be0c80c1a41fa6842d868b",
+      "modification": "Output prefix docs/evidence/ -> .pao16-local/regression-output/; root screenshot path prefix redirected only",
+      "reverseMatches": true
+    },
+    {
+      "source": "tests/e2e/pao12-collision.spec.ts",
+      "mirror": ".pao16-local/regression/pao12-collision.pw.ts",
+      "sha256": "669125de620cfd8c0263b5ee7696cef53a2e48d9fac0548f5f095fd710371f1d",
+      "modification": "Output prefix docs/evidence/ -> .pao16-local/regression-output/; root screenshot path prefix redirected only",
+      "reverseMatches": true
+    },
+    {
+      "source": "tests/e2e/pao13-track.spec.ts",
+      "mirror": ".pao16-local/regression/pao13-track.pw.ts",
+      "sha256": "03211f334c9ff5bf05b058bcb49c1d83d7b0eefe4800b3257453fecd8943a7a3",
+      "modification": "Output prefix docs/evidence/ -> .pao16-local/regression-output/; root screenshot path prefix redirected only",
+      "reverseMatches": true
+    },
+    {
+      "source": "tests/e2e/pao14-application.spec.ts",
+      "mirror": ".pao16-local/regression/pao14-application.pw.ts",
+      "sha256": "06039b20c65000d94d819a45ce5332bd77731779bf851ea2eb9164988bba8f6a",
+      "modification": "Output prefix docs/evidence/ -> .pao16-local/regression-output/; root screenshot path prefix redirected only",
+      "reverseMatches": true
+    },
+    {
+      "source": "tests/e2e/pao14-review.spec.ts",
+      "mirror": ".pao16-local/regression/pao14-review.pw.ts",
+      "sha256": "b20d8604e98ee5eb1013c458160522c97433475075e9e55bd32d957e5abda413",
+      "modification": "Output prefix docs/evidence/ -> .pao16-local/regression-output/; root screenshot path prefix redirected only",
+      "reverseMatches": true
+    },
+    {
+      "source": "tests/e2e/pao14-unknown-commit.spec.ts",
+      "mirror": ".pao16-local/regression/pao14-unknown-commit.pw.ts",
+      "sha256": "2b8545a84b763bf0a0faa9a2a8cf8ac3a10af0040afe42b34754bc2cdc414520",
+      "modification": "Output prefix docs/evidence/ -> .pao16-local/regression-output/; root screenshot path prefix redirected only",
+      "reverseMatches": true
+    },
+    {
+      "source": "tests/e2e/pao6-baseline.spec.ts",
+      "mirror": ".pao16-local/regression/pao6-baseline.pw.ts",
+      "sha256": "710cd0dc1d6fd938825b4c741f0c32798a2ada5c507209c48b2f57889f441df9",
+      "modification": "Output prefix docs/evidence/ -> .pao16-local/regression-output/; root screenshot path prefix redirected only",
+      "reverseMatches": true
+    }
+  ],
+  "protected": {
+    "changed": 0,
+    "fileCount": 950
+  },
+  "originalAndCopyHashes": [
+    {
+      "file": "train_ramp_or_car.glb",
+      "match": true,
+      "source": "b561449fbb1426f2ba38cd54f75818090cf68076b3cb59a50c80dce2beb48fe4",
+      "copy": "b561449fbb1426f2ba38cd54f75818090cf68076b3cb59a50c80dce2beb48fe4"
+    },
+    {
+      "file": "train_metro.glb",
+      "match": true,
+      "source": "721bb182e1a323e1a01f65db3bb3602de3c6196ccb5c458a093ca87cd10ed4c8",
+      "copy": "721bb182e1a323e1a01f65db3bb3602de3c6196ccb5c458a093ca87cd10ed4c8"
+    },
+    {
+      "file": "obstacle_hurdle_barrier.glb",
+      "match": true,
+      "source": "4f8d4756dcf150b086f8cad14a531305cae61caa0996872af291128d099306c4",
+      "copy": "4f8d4756dcf150b086f8cad14a531305cae61caa0996872af291128d099306c4"
+    },
+    {
+      "file": "obstacle_slide_barrier.glb",
+      "match": true,
+      "source": "471b24a3a1cc6a25cc18bac7cfcfd5cad36e61ce3e7088fd75f9dfbe99379d0a",
+      "copy": "471b24a3a1cc6a25cc18bac7cfcfd5cad36e61ce3e7088fd75f9dfbe99379d0a"
+    }
+  ],
+  "gameSourceIdentity": "game-source-identity.json",
+  "technicalPreview": "preview-verification.json",
+  "evidenceMode": "New calibration F technical fixture; old regression N keyboard/touch + F fixtures; no game integration"
+}

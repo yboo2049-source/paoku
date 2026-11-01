@@ -1,0 +1,825 @@
+{
+  "commit": "622e7da",
+  "method": "Static node-transformed POSITION bounds; not posed/skinned runtime visual acceptance",
+  "assets": [
+    {
+      "file": "character_dog.glb",
+      "MiB": 2.23,
+      "triangles": 10396,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.5513,
+        0.9106,
+        0.9995
+      ],
+      "minXYZ": [
+        -0.2756,
+        0,
+        -0.4998
+      ],
+      "maxXYZ": [
+        0.2756,
+        0.9106,
+        0.4998
+      ],
+      "generator": "Tripo",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "character_police.glb",
+      "MiB": 14.11,
+      "triangles": 147371,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.5951,
+        0.9798,
+        0.2358
+      ],
+      "minXYZ": [
+        -0.2977,
+        -0.0008,
+        -0.1183
+      ],
+      "maxXYZ": [
+        0.2974,
+        0.9789,
+        0.1175
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "character_runner.glb",
+      "MiB": 7.72,
+      "triangles": 26268,
+      "meshInstances": 34,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.611,
+        0.9791,
+        0.1891
+      ],
+      "minXYZ": [
+        -0.3056,
+        0,
+        -0.0947
+      ],
+      "maxXYZ": [
+        0.3055,
+        0.9791,
+        0.0944
+      ],
+      "generator": "Tripo",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "env_gantry.glb",
+      "MiB": 9.51,
+      "triangles": 109871,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.9803,
+        0.6678,
+        0.138
+      ],
+      "minXYZ": [
+        -0.4902,
+        -0.0006,
+        -0.0691
+      ],
+      "maxXYZ": [
+        0.4902,
+        0.6672,
+        0.0689
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "env_tunnel_arch.glb",
+      "MiB": 17.19,
+      "triangles": 130478,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.8624,
+        0.9838,
+        0.8456
+      ],
+      "minXYZ": [
+        -0.4315,
+        -0.0032,
+        -0.4227
+      ],
+      "maxXYZ": [
+        0.4309,
+        0.9806,
+        0.4229
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "obstacle_buffer_stop.glb",
+      "MiB": 11.48,
+      "triangles": 115890,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        1.0001,
+        0.8741,
+        0.8679
+      ],
+      "minXYZ": [
+        -0.5,
+        0,
+        -0.434
+      ],
+      "maxXYZ": [
+        0.5001,
+        0.8742,
+        0.434
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "obstacle_hurdle_barrier.glb",
+      "MiB": 2.77,
+      "triangles": 8894,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.9995,
+        0.7642,
+        0.2739
+      ],
+      "minXYZ": [
+        -0.4998,
+        0,
+        -0.137
+      ],
+      "maxXYZ": [
+        0.4998,
+        0.7642,
+        0.137
+      ],
+      "generator": "Tripo",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "obstacle_signal_light.glb",
+      "MiB": 9.83,
+      "triangles": 117376,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.205,
+        0.9806,
+        0.2191
+      ],
+      "minXYZ": [
+        -0.1025,
+        0,
+        -0.1095
+      ],
+      "maxXYZ": [
+        0.1025,
+        0.9806,
+        0.1095
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "obstacle_slide_barrier.glb",
+      "MiB": 2.98,
+      "triangles": 9711,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.1255,
+        0.9995,
+        0.6313
+      ],
+      "minXYZ": [
+        -0.0627,
+        0,
+        -0.3157
+      ],
+      "maxXYZ": [
+        0.0627,
+        0.9995,
+        0.3157
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [
+        "KHR_materials_specular"
+      ],
+      "namedProxies": []
+    },
+    {
+      "file": "obstacle_traffic_cone.glb",
+      "MiB": 7.23,
+      "triangles": 119424,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.9757,
+        1,
+        0.9758
+      ],
+      "minXYZ": [
+        -0.4879,
+        0,
+        -0.4879
+      ],
+      "maxXYZ": [
+        0.4879,
+        1,
+        0.4879
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "obstacle_utility_box.glb",
+      "MiB": 1.83,
+      "triangles": 9352,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.7886,
+        0.9995,
+        0.6519
+      ],
+      "minXYZ": [
+        -0.3943,
+        0,
+        -0.3259
+      ],
+      "maxXYZ": [
+        0.3943,
+        0.9995,
+        0.3259
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [
+        "KHR_materials_specular"
+      ],
+      "namedProxies": []
+    },
+    {
+      "file": "player.glb",
+      "MiB": 2.79,
+      "triangles": 49112,
+      "meshInstances": 2,
+      "materials": 2,
+      "images": [],
+      "skins": 1,
+      "animations": [
+        "agree",
+        "headShake",
+        "idle",
+        "run",
+        "sad_pose",
+        "sneak_pose",
+        "walk"
+      ],
+      "sizeXYZ": [
+        0.0181,
+        0.0181,
+        0.0032
+      ],
+      "minXYZ": [
+        -0.009,
+        0,
+        -0.0014
+      ],
+      "maxXYZ": [
+        0.009,
+        0.0181,
+        0.0018
+      ],
+      "generator": "Khronos glTF Blender I/O v1.1.46",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "prop_coin.glb",
+      "MiB": 1.71,
+      "triangles": 9767,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.9995,
+        0.9995,
+        0.1626
+      ],
+      "minXYZ": [
+        -0.4998,
+        0,
+        -0.0813
+      ],
+      "maxXYZ": [
+        0.4998,
+        0.9995,
+        0.0813
+      ],
+      "generator": "Tripo",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "prop_hoverboard.glb",
+      "MiB": 11.29,
+      "triangles": 117165,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.9792,
+        0.1673,
+        0.372
+      ],
+      "minXYZ": [
+        -0.4896,
+        0,
+        -0.186
+      ],
+      "maxXYZ": [
+        0.4896,
+        0.1673,
+        0.186
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "prop_jetpack.glb",
+      "MiB": 2.24,
+      "triangles": 10133,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.3423,
+        0.9995,
+        0.8188
+      ],
+      "minXYZ": [
+        -0.1711,
+        0,
+        -0.4094
+      ],
+      "maxXYZ": [
+        0.1711,
+        0.9995,
+        0.4094
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [
+        "KHR_materials_specular"
+      ],
+      "namedProxies": []
+    },
+    {
+      "file": "prop_magnet.glb",
+      "MiB": 7.65,
+      "triangles": 115095,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.2304,
+        0.9804,
+        0.8108
+      ],
+      "minXYZ": [
+        -0.1152,
+        0,
+        -0.4054
+      ],
+      "maxXYZ": [
+        0.1152,
+        0.9804,
+        0.4054
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "prop_multiplier_2x.glb",
+      "MiB": 10.25,
+      "triangles": 118625,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.98,
+        0.9549,
+        0.1487
+      ],
+      "minXYZ": [
+        -0.49,
+        0,
+        -0.0743
+      ],
+      "maxXYZ": [
+        0.49,
+        0.9549,
+        0.0743
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "prop_mystery_box.glb",
+      "MiB": 2.08,
+      "triangles": 9015,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.9995,
+        0.8774,
+        0.9438
+      ],
+      "minXYZ": [
+        -0.4998,
+        0,
+        -0.4719
+      ],
+      "maxXYZ": [
+        0.4998,
+        0.8774,
+        0.4719
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [
+        "KHR_materials_specular"
+      ],
+      "namedProxies": []
+    },
+    {
+      "file": "prop_shield.glb",
+      "MiB": 10.57,
+      "triangles": 114233,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.6727,
+        0.9786,
+        0.7023
+      ],
+      "minXYZ": [
+        -0.3364,
+        -0.0001,
+        -0.3511
+      ],
+      "maxXYZ": [
+        0.3363,
+        0.9785,
+        0.3512
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "prop_sneakers.glb",
+      "MiB": 2.92,
+      "triangles": 10034,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.9995,
+        0.6411,
+        0.978
+      ],
+      "minXYZ": [
+        -0.4998,
+        0,
+        -0.489
+      ],
+      "maxXYZ": [
+        0.4998,
+        0.6411,
+        0.489
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [
+        "KHR_materials_specular"
+      ],
+      "namedProxies": []
+    },
+    {
+      "file": "train_metro.glb",
+      "MiB": 2.58,
+      "triangles": 8968,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.9995,
+        0.311,
+        0.3208
+      ],
+      "minXYZ": [
+        -0.4998,
+        0,
+        -0.1604
+      ],
+      "maxXYZ": [
+        0.4998,
+        0.311,
+        0.1604
+      ],
+      "generator": "Tripo",
+      "extensions": [],
+      "namedProxies": []
+    },
+    {
+      "file": "train_ramp_or_car.glb",
+      "MiB": 11.3,
+      "triangles": 112516,
+      "meshInstances": 1,
+      "materials": 1,
+      "images": [
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        },
+        {
+          "w": 4096,
+          "h": 4096
+        }
+      ],
+      "skins": 0,
+      "animations": [],
+      "sizeXYZ": [
+        0.9792,
+        0.4386,
+        0.3808
+      ],
+      "minXYZ": [
+        -0.4895,
+        -0.0001,
+        -0.1904
+      ],
+      "maxXYZ": [
+        0.4896,
+        0.4385,
+        0.1904
+      ],
+      "generator": "Khronos glTF Blender I/O v4.5.48",
+      "extensions": [],
+      "namedProxies": []
+    }
+  ]
+}

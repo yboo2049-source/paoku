@@ -2,6 +2,12 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-01] 远程GLB交付检查与关卡任务交接
+
+- 已fetch origin/main至622e7da，在独立glb-review工作树检查新增21个GLB，未合并或覆盖PAO-13的M1代码。
+- 完成GLB元数据/静态尺寸统计及关键火车、角色的真实Babylon浏览器导入和截图查看。文件名train_metro实为带坡工程车，train_ramp_or_car实为普通车厢；21个新模型均无skins/animations，新增文件未接入当前渲染加载器。
+- [检查报告](docs/assets/2026-11-01-glb-handoff-review.md)记录PAO-13所需的数据绑定/组合段调整，以及PAO-15/16/17的动画、标定和优化边界。本轮不修改游戏实现或资产。
+
 ## [2026-10-31] PAO-7/8/9 一致性审查与下一批派发规划
 
 - 已读取三个独立工作树的固定提交ea6867d/be6c7d5/2eac04b、Linear正文/送审评论和PAO-6至26的原生依赖。PAO-6为Done，PAO-7/8/9保持In Review；交付完成不等于最终人工冻结。

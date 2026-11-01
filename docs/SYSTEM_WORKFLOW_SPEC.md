@@ -1,5 +1,9 @@
 # 核心系统模块与纯函数规范 (System Workflow Spec)
 
+## 2026-11-01 PAO-15 局部蒙皮试样流程
+
+原GLB身份确认→派生DCC/骨架/权重→肩肘髋膝与组合姿势→导出有效skin/IBM/JOINTS/WEIGHTS→独立Babylon播放/释放→证据与可行性结论。[执行交接](plans/2026-11-01-pao15-rig-spike.md)规定root固定，变形测试不推进游戏逻辑，单个诊断clip不计作正式13动作；局部调权失败交返工诊断，不自动转整角色重建或外部上传。
+
 ## 2026-11-01 PAO-19 已批准UI命令反馈
 
 [已批准执行交接](plans/2026-11-01-pao19-approved-execution.md)规定：用户意图→main捕获命令身份→通知pending→既有application.dispatch→成功/失败结果与原身份回传→UI读取已提交快照。pending不发布虚假业务成功，保留原暂停屏障/终止摘要与快照同步语义；递延命令同身份只建立一次等待。

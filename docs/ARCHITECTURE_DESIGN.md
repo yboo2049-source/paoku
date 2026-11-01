@@ -1,5 +1,9 @@
 # 系统架构与模块隔离设计 (Architecture Spec)
 
+## 2026-11-01 PAO-15 试样隔离
+
+[已批准局部试样](plans/2026-11-01-pao15-rig-spike.md)保留pao-15@8b26bdf，不合并PAO-19。原GLB只读，派生DCC/导出/校验工具分别在专属目录，独立Babylon预览不修改src/public/main/render。数据记录source/derived hash、骨架/权重/逆绑定矩阵、源→引擎变换及姿势证据；动画仅变形，不获得模拟位移或碰撞权威。试样不是正式运行时资产注册或PAO-18接线放行。
+
 ## 2026-11-01 PAO-19 已批准实现边界
 
 用户已批准[UI方案A、适用UI风格与I-01/I-02](plans/2026-11-01-pao19-approved-execution.md)，本节对PAO-19优先于旧准备白名单。单一PAO-19实现方在原独立工作树串行A→B：A写dom/views/style、专属测试及HTML仅viewport-fit/lang；接口与完整回归检查点后，B独占main.ts的命令生命周期最小接线。其他聊天不得并写main，Dispatcher只写文档与验收。

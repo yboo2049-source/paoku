@@ -2,6 +2,12 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-01] 用户同意PAO-15局部骨骼绑定试样
+
+- 已记录一个runner的派生DCC/真实蒙皮/肩肘髋膝试姿与Babylon验证范围，[设计](docs/superpowers/specs/2026-11-01-pao15-rig-spike-design.md)与[执行提示词](docs/plans/2026-11-01-pao15-rig-spike.md)已准备并同步共享文档；原pao-15树8b26bdf，未自动启动。
+- 原始DCC已确认不存在，不重复索取；本轮建立的是派生重建工程。正式13动作、角色替换/大规模重拓扑及运行时接入未放行。
+- 已核对Tripo官方Rig Check/Auto Rig/动画与GLB导出能力，加入可选样本路线；用户的能力询问不当云上传/付费调用授权，主Agent未上传/调用。本机有限探测未找到Blender，执行者可在隔离目录用官方便携工具，不能伪造模型不可绑定结论。
+
 ## [2026-11-01] PAO-19修订验收Done
 
 - ed39cb9独立复审通过，[主审末节](docs/reviews/2026-11-01-pao19-implementation-review.md)：旧菜单重试不再复活，两个独立故障脚本均为新ID/音乐开/revision3；加载后390竖屏角色完整可见，卡片与开始按钮布局通过，两项P2关闭。

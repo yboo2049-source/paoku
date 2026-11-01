@@ -1,5 +1,11 @@
 # 测试用例与传感器计划 (Test Plan & Sensors)
 
+## 2026-11-01 PAO-15 骨骼绑定探针
+
+[探针设计](superpowers/specs/2026-11-01-pao15-rig-spike-design.md)检查源/派生hash、骨架层级/IBM、≤48关节/≤4归一化权重与覆盖、真实关节顶点变形、左右肩90°/肘120°/髋90°/膝120°和组合姿态、root固定、一次轴向/单位变换、DCC与Babylon一致。原文件不改、工具阻塞不当模型失败、单个诊断clip不当正式动作库通过。
+
+专属tests/unit/pao15-rig-spike.test.ts与tests/e2e/pao15-rig-spike.spec.ts；新增工具代码按build/test/完整E2E及独立真实预览验收。只同屏一角色，试样资源上限与正式预算区分；2～3关键截图配姿势索引/短录屏，异常扩看。工具/完整回归镜像/旧图留忽略目录，服务独占5185，原src和历史证据hash核对。本轮只是派发准备，未运行或声称试样成功。
+
 ## 2026-11-01 PAO-19 已批准验证门禁
 
 [授权执行计划](plans/2026-11-01-pao19-approved-execution.md)以943aad1的UI规格R01～R09为本批验收矩阵，旧历史UI直接存档等条款不作为新实现契约。测试限定tests/unit/pao19-ui.test.ts与tests/e2e/rebuild-ui.spec.ts，保留全部历史断言，先RED再实现。

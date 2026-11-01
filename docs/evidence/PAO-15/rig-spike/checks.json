@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-01",
+  "timezone": "Asia/Shanghai",
+  "scope": "approved local automatic runner rigging spike",
+  "baseCommit": "8b26bdf2737cc86ea2c67476e08b22d417793f3a",
+  "automaticPipeline": "passed",
+  "assetQuality": "needs local manual refinement; not production approved",
+  "manualWorkPerformed": false,
+  "cloudCalls": false,
+  "buildExitCode": 0,
+  "toolTypecheckExitCode": 0,
+  "nodeSyntaxExitCode": 0,
+  "unit": {
+    "files": 17,
+    "passed": 257,
+    "exitCode": 0
+  },
+  "e2e": {
+    "passed": 44,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "exitCode": 0,
+    "durationMs": 303388.616
+  },
+  "probeE2E": {
+    "passed": 1
+  },
+  "structural": {
+    "joints": 23,
+    "softVertices": 26399,
+    "triangles": 26268,
+    "poses": 11,
+    "restIbmMaxError": 0.0000022505429450454612,
+    "maxDccGlbDiscrepancyM": 9.168408634518954e-7,
+    "maxDccBabylonDiscrepancyM": 9.112464978144885e-7,
+    "reopenedPassed": true
+  },
+  "protected": {
+    "count": 963,
+    "allUnchanged": true,
+    "sourceUnchanged": true
+  },
+  "visualReview": {
+    "probe": [
+      "01-rest-front.png",
+      "02-combined-front.png",
+      "03-knee-side.png"
+    ],
+    "gameBaseline": [
+      ".pao15-local/regression-evidence/gameplay/screenshot_1_menu.png",
+      ".pao15-local/regression-evidence/PAO-10/screenshots/N-mobile-gameplay.png"
+    ],
+    "quality": "cross influence leakage and unrefined combined-pose foot contact recorded in manual TODO"
+  },
+  "unverified": [
+    "commercial license",
+    "manual skin quality signoff",
+    "formal 13 actions",
+    "production LOD/textures/device budget",
+    "runtime integration"
+  ],
+  "localLinksChecked": 45,
+  "finalLifecycleChecks": "passed: disabled controls and safe empty info after dispose, enabled after reload"
+}

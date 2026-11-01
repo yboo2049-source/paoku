@@ -1,0 +1,11 @@
+{
+  "cwd": "D:\\worker\\paoku-sessions\\pao-15",
+  "baseURL": "http://127.0.0.1:5185",
+  "source": "src/main.ts",
+  "sourceSha256": "05b5d022d5309a57383e11e2b82bd02c3a599e75f3aa20fd44d81476d47cd750",
+  "rawResponseSha256": "8043651bb362ce1c47a17d9fa6b33623806fb87a6626a42d1e1f0a94b50d72b0",
+  "exactRawSourceMatch": true,
+  "assetSha256": "cb84cfb9a308c54245ac49627383aa6643c8d40efc9c2a6929334dc60c7348f5",
+  "assetMatchesLocal": true,
+  "server": "local Vite strictPort; reuseExistingServer=false; Windows ANGLE D3D11"
+}

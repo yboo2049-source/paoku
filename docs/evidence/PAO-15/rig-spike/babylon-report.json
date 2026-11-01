@@ -1,0 +1,2065 @@
+{
+  "imported": {
+    "skeletons": 1,
+    "jointCount": 23,
+    "groups": [
+      "rig_diagnostic"
+    ],
+    "skinnedMeshes": 34,
+    "materials": [
+      "Material.001"
+    ],
+    "frame": 0,
+    "from": 0,
+    "to": 300,
+    "fps": 60,
+    "handedness": "RH native glTF, Y up, +Z front"
+  },
+  "rest": {
+    "name": "rest",
+    "dccFrame": 0,
+    "maxDisplacementM": 0,
+    "rootPosition": [
+      0,
+      0,
+      0
+    ],
+    "parts": [
+      {
+        "name": "tripo_part_0",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_1",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_10",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_11",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_12",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_13",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_14",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_15",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_16",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_17",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_18",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_19",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_2",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_20",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_21",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_22",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_23",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_24",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_25",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_26",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_27",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_28",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_29",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_3",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_30",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_31",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_32",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_33",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_4",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_5",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_6",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_7",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_8",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_9",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      }
+    ]
+  },
+  "poses": [
+    {
+      "name": "shoulder_l",
+      "dccFrame": 15,
+      "maxDisplacementM": 1.0413592985115971,
+      "rootPosition": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "name": "tripo_part_0",
+          "maxDisplacementM": 0.2001273805263325,
+          "movedVertices": 855
+        },
+        {
+          "name": "tripo_part_1",
+          "maxDisplacementM": 0.04886035491337757,
+          "movedVertices": 112
+        },
+        {
+          "name": "tripo_part_10",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_11",
+          "maxDisplacementM": 1.024307015788116,
+          "movedVertices": 462
+        },
+        {
+          "name": "tripo_part_12",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_13",
+          "maxDisplacementM": 0.9203493349431261,
+          "movedVertices": 508
+        },
+        {
+          "name": "tripo_part_14",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_15",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_16",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_17",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_18",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_19",
+          "maxDisplacementM": 1.030320282483365,
+          "movedVertices": 335
+        },
+        {
+          "name": "tripo_part_2",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_20",
+          "maxDisplacementM": 1.0413592985115971,
+          "movedVertices": 349
+        },
+        {
+          "name": "tripo_part_21",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_22",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_23",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_24",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_25",
+          "maxDisplacementM": 0.040166490086415624,
+          "movedVertices": 229
+        },
+        {
+          "name": "tripo_part_26",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_27",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_28",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_29",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_3",
+          "maxDisplacementM": 0.0025148121378276845,
+          "movedVertices": 138
+        },
+        {
+          "name": "tripo_part_30",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_31",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_32",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_33",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_4",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_5",
+          "maxDisplacementM": 0.7525130214463466,
+          "movedVertices": 1316
+        },
+        {
+          "name": "tripo_part_6",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_7",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_8",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_9",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        }
+      ]
+    },
+    {
+      "name": "elbow_l",
+      "dccFrame": 30,
+      "maxDisplacementM": 0.7927551371200465,
+      "rootPosition": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "name": "tripo_part_0",
+          "maxDisplacementM": 0.04814600887488602,
+          "movedVertices": 372
+        },
+        {
+          "name": "tripo_part_1",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_10",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_11",
+          "maxDisplacementM": 0.7742599280862742,
+          "movedVertices": 462
+        },
+        {
+          "name": "tripo_part_12",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_13",
+          "maxDisplacementM": 0.6441701815232851,
+          "movedVertices": 508
+        },
+        {
+          "name": "tripo_part_14",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_15",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_16",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_17",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_18",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_19",
+          "maxDisplacementM": 0.7796310434076618,
+          "movedVertices": 335
+        },
+        {
+          "name": "tripo_part_2",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_20",
+          "maxDisplacementM": 0.7927551371200465,
+          "movedVertices": 349
+        },
+        {
+          "name": "tripo_part_21",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_22",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_23",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_24",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_25",
+          "maxDisplacementM": 0.028324948370457907,
+          "movedVertices": 168
+        },
+        {
+          "name": "tripo_part_26",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_27",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_28",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_29",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_3",
+          "maxDisplacementM": 0.0012023960115604717,
+          "movedVertices": 125
+        },
+        {
+          "name": "tripo_part_30",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_31",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_32",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_33",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_4",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_5",
+          "maxDisplacementM": 0.44051731203762035,
+          "movedVertices": 1245
+        },
+        {
+          "name": "tripo_part_6",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_7",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_8",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_9",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        }
+      ]
+    },
+    {
+      "name": "hip_l",
+      "dccFrame": 45,
+      "maxDisplacementM": 1.2384226690977507,
+      "rootPosition": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "name": "tripo_part_0",
+          "maxDisplacementM": 0.12581180439893053,
+          "movedVertices": 1096
+        },
+        {
+          "name": "tripo_part_1",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_10",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_11",
+          "maxDisplacementM": 0.0028003678408786755,
+          "movedVertices": 429
+        },
+        {
+          "name": "tripo_part_12",
+          "maxDisplacementM": 0.027538587684644553,
+          "movedVertices": 107
+        },
+        {
+          "name": "tripo_part_13",
+          "maxDisplacementM": 0.0027430825164305103,
+          "movedVertices": 296
+        },
+        {
+          "name": "tripo_part_14",
+          "maxDisplacementM": 1.2384226690977507,
+          "movedVertices": 529
+        },
+        {
+          "name": "tripo_part_15",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_16",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_17",
+          "maxDisplacementM": 1.109747038603201,
+          "movedVertices": 588
+        },
+        {
+          "name": "tripo_part_18",
+          "maxDisplacementM": 0.016177905288692063,
+          "movedVertices": 116
+        },
+        {
+          "name": "tripo_part_19",
+          "maxDisplacementM": 0.00015932710953607944,
+          "movedVertices": 65
+        },
+        {
+          "name": "tripo_part_2",
+          "maxDisplacementM": 0.09268735683273684,
+          "movedVertices": 1003
+        },
+        {
+          "name": "tripo_part_20",
+          "maxDisplacementM": 0.00017476317726547195,
+          "movedVertices": 53
+        },
+        {
+          "name": "tripo_part_21",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_22",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_23",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_24",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_25",
+          "maxDisplacementM": 0.1191555880165274,
+          "movedVertices": 473
+        },
+        {
+          "name": "tripo_part_26",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_27",
+          "maxDisplacementM": 0.0006275356220190266,
+          "movedVertices": 237
+        },
+        {
+          "name": "tripo_part_28",
+          "maxDisplacementM": 0.00043225571930198217,
+          "movedVertices": 313
+        },
+        {
+          "name": "tripo_part_29",
+          "maxDisplacementM": 0.010544387565284013,
+          "movedVertices": 170
+        },
+        {
+          "name": "tripo_part_3",
+          "maxDisplacementM": 0.9743229851543838,
+          "movedVertices": 1871
+        },
+        {
+          "name": "tripo_part_30",
+          "maxDisplacementM": 1.0402149757963721,
+          "movedVertices": 352
+        },
+        {
+          "name": "tripo_part_31",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_32",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_33",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_4",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_5",
+          "maxDisplacementM": 0.021014868551489877,
+          "movedVertices": 608
+        },
+        {
+          "name": "tripo_part_6",
+          "maxDisplacementM": 1.2148727352431026,
+          "movedVertices": 1320
+        },
+        {
+          "name": "tripo_part_7",
+          "maxDisplacementM": 0.07292457181938376,
+          "movedVertices": 1226
+        },
+        {
+          "name": "tripo_part_8",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_9",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        }
+      ]
+    },
+    {
+      "name": "knee_l",
+      "dccFrame": 60,
+      "maxDisplacementM": 0.8670980434651966,
+      "rootPosition": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "name": "tripo_part_0",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_1",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_10",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_11",
+          "maxDisplacementM": 0.0007429670274839248,
+          "movedVertices": 48
+        },
+        {
+          "name": "tripo_part_12",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_13",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_14",
+          "maxDisplacementM": 0.8670980434651966,
+          "movedVertices": 529
+        },
+        {
+          "name": "tripo_part_15",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_16",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_17",
+          "maxDisplacementM": 0.6962315567024037,
+          "movedVertices": 588
+        },
+        {
+          "name": "tripo_part_18",
+          "maxDisplacementM": 0.008736774338945543,
+          "movedVertices": 116
+        },
+        {
+          "name": "tripo_part_19",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_2",
+          "maxDisplacementM": 0.027869553322550453,
+          "movedVertices": 508
+        },
+        {
+          "name": "tripo_part_20",
+          "maxDisplacementM": 0.0001245538011423881,
+          "movedVertices": 24
+        },
+        {
+          "name": "tripo_part_21",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_22",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_23",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_24",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_25",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_26",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_27",
+          "maxDisplacementM": 0.0003899878864083086,
+          "movedVertices": 124
+        },
+        {
+          "name": "tripo_part_28",
+          "maxDisplacementM": 0.0002746250328860689,
+          "movedVertices": 175
+        },
+        {
+          "name": "tripo_part_29",
+          "maxDisplacementM": 0.006259931199215582,
+          "movedVertices": 170
+        },
+        {
+          "name": "tripo_part_3",
+          "maxDisplacementM": 0.5603004364197546,
+          "movedVertices": 1517
+        },
+        {
+          "name": "tripo_part_30",
+          "maxDisplacementM": 0.6292836785243936,
+          "movedVertices": 352
+        },
+        {
+          "name": "tripo_part_31",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_32",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_33",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_4",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_5",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_6",
+          "maxDisplacementM": 0.8425223733869153,
+          "movedVertices": 1320
+        },
+        {
+          "name": "tripo_part_7",
+          "maxDisplacementM": 0.05152231069172515,
+          "movedVertices": 1212
+        },
+        {
+          "name": "tripo_part_8",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_9",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        }
+      ]
+    },
+    {
+      "name": "shoulder_r",
+      "dccFrame": 75,
+      "maxDisplacementM": 1.041656252524726,
+      "rootPosition": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "name": "tripo_part_0",
+          "maxDisplacementM": 0.2027438487232467,
+          "movedVertices": 790
+        },
+        {
+          "name": "tripo_part_1",
+          "maxDisplacementM": 0.04881359355910861,
+          "movedVertices": 113
+        },
+        {
+          "name": "tripo_part_10",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_11",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_12",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_13",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_14",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_15",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_16",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_17",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_18",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_19",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_2",
+          "maxDisplacementM": 0.0026066195682021374,
+          "movedVertices": 130
+        },
+        {
+          "name": "tripo_part_20",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_21",
+          "maxDisplacementM": 1.030177589289515,
+          "movedVertices": 337
+        },
+        {
+          "name": "tripo_part_22",
+          "maxDisplacementM": 1.041656252524726,
+          "movedVertices": 322
+        },
+        {
+          "name": "tripo_part_23",
+          "maxDisplacementM": 0.040279993834633314,
+          "movedVertices": 235
+        },
+        {
+          "name": "tripo_part_24",
+          "maxDisplacementM": 1.0239316748289522,
+          "movedVertices": 371
+        },
+        {
+          "name": "tripo_part_25",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_26",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_27",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_28",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_29",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_3",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_30",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_31",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_32",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_33",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_4",
+          "maxDisplacementM": 0.7521902820260944,
+          "movedVertices": 1183
+        },
+        {
+          "name": "tripo_part_5",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_6",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_7",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_8",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_9",
+          "maxDisplacementM": 0.963990123542945,
+          "movedVertices": 653
+        }
+      ]
+    },
+    {
+      "name": "elbow_r",
+      "dccFrame": 90,
+      "maxDisplacementM": 0.7931110286922912,
+      "rootPosition": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "name": "tripo_part_0",
+          "maxDisplacementM": 0.048684320575898464,
+          "movedVertices": 342
+        },
+        {
+          "name": "tripo_part_1",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_10",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_11",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_12",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_13",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_14",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_15",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_16",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_17",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_18",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_19",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_2",
+          "maxDisplacementM": 0.0012428602200931778,
+          "movedVertices": 112
+        },
+        {
+          "name": "tripo_part_20",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_21",
+          "maxDisplacementM": 0.7795281078477281,
+          "movedVertices": 337
+        },
+        {
+          "name": "tripo_part_22",
+          "maxDisplacementM": 0.7931110286922912,
+          "movedVertices": 322
+        },
+        {
+          "name": "tripo_part_23",
+          "maxDisplacementM": 0.027972776594464822,
+          "movedVertices": 180
+        },
+        {
+          "name": "tripo_part_24",
+          "maxDisplacementM": 0.7740879991654905,
+          "movedVertices": 371
+        },
+        {
+          "name": "tripo_part_25",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_26",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_27",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_28",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_29",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_3",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_30",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_31",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_32",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_33",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_4",
+          "maxDisplacementM": 0.4393119544935889,
+          "movedVertices": 1117
+        },
+        {
+          "name": "tripo_part_5",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_6",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_7",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_8",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_9",
+          "maxDisplacementM": 0.7027947749935978,
+          "movedVertices": 653
+        }
+      ]
+    },
+    {
+      "name": "hip_r",
+      "dccFrame": 105,
+      "maxDisplacementM": 1.2362572610780727,
+      "rootPosition": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "name": "tripo_part_0",
+          "maxDisplacementM": 0.12646492539304632,
+          "movedVertices": 1028
+        },
+        {
+          "name": "tripo_part_1",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_10",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_11",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_12",
+          "maxDisplacementM": 0.02668698235646232,
+          "movedVertices": 100
+        },
+        {
+          "name": "tripo_part_13",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_14",
+          "maxDisplacementM": 0.00964026178335183,
+          "movedVertices": 529
+        },
+        {
+          "name": "tripo_part_15",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_16",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_17",
+          "maxDisplacementM": 0.0006234031089213594,
+          "movedVertices": 248
+        },
+        {
+          "name": "tripo_part_18",
+          "maxDisplacementM": 0.9741296760938986,
+          "movedVertices": 423
+        },
+        {
+          "name": "tripo_part_19",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_2",
+          "maxDisplacementM": 0.9100893085259582,
+          "movedVertices": 1684
+        },
+        {
+          "name": "tripo_part_20",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_21",
+          "maxDisplacementM": 0.0001538922457876072,
+          "movedVertices": 84
+        },
+        {
+          "name": "tripo_part_22",
+          "maxDisplacementM": 0.00017827032710565722,
+          "movedVertices": 54
+        },
+        {
+          "name": "tripo_part_23",
+          "maxDisplacementM": 0.11888070379306445,
+          "movedVertices": 557
+        },
+        {
+          "name": "tripo_part_24",
+          "maxDisplacementM": 0.0011435969291046883,
+          "movedVertices": 321
+        },
+        {
+          "name": "tripo_part_25",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_26",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_27",
+          "maxDisplacementM": 1.1112108362686068,
+          "movedVertices": 594
+        },
+        {
+          "name": "tripo_part_28",
+          "maxDisplacementM": 1.1199757498420337,
+          "movedVertices": 617
+        },
+        {
+          "name": "tripo_part_29",
+          "maxDisplacementM": 1.039919730571914,
+          "movedVertices": 350
+        },
+        {
+          "name": "tripo_part_3",
+          "maxDisplacementM": 0.089469825239753,
+          "movedVertices": 1113
+        },
+        {
+          "name": "tripo_part_30",
+          "maxDisplacementM": 0.010023552843313783,
+          "movedVertices": 155
+        },
+        {
+          "name": "tripo_part_31",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_32",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_33",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_4",
+          "maxDisplacementM": 0.02125756578099007,
+          "movedVertices": 535
+        },
+        {
+          "name": "tripo_part_5",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_6",
+          "maxDisplacementM": 0.0704640917990782,
+          "movedVertices": 967
+        },
+        {
+          "name": "tripo_part_7",
+          "maxDisplacementM": 1.2362572610780727,
+          "movedVertices": 1604
+        },
+        {
+          "name": "tripo_part_8",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_9",
+          "maxDisplacementM": 0.0027038642865664093,
+          "movedVertices": 461
+        }
+      ]
+    },
+    {
+      "name": "knee_r",
+      "dccFrame": 120,
+      "maxDisplacementM": 0.8646783977724225,
+      "rootPosition": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "name": "tripo_part_0",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_1",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_10",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_11",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_12",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_13",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_14",
+          "maxDisplacementM": 0.006712602336742018,
+          "movedVertices": 529
+        },
+        {
+          "name": "tripo_part_15",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_16",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_17",
+          "maxDisplacementM": 0.0003849078961144607,
+          "movedVertices": 151
+        },
+        {
+          "name": "tripo_part_18",
+          "maxDisplacementM": 0.5600234202714643,
+          "movedVertices": 423
+        },
+        {
+          "name": "tripo_part_19",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_2",
+          "maxDisplacementM": 0.48071768095156053,
+          "movedVertices": 1328
+        },
+        {
+          "name": "tripo_part_20",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_21",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_22",
+          "maxDisplacementM": 0.00012654028271342569,
+          "movedVertices": 28
+        },
+        {
+          "name": "tripo_part_23",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_24",
+          "maxDisplacementM": 0.0007494981845979536,
+          "movedVertices": 74
+        },
+        {
+          "name": "tripo_part_25",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_26",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_27",
+          "maxDisplacementM": 0.7056618219349442,
+          "movedVertices": 594
+        },
+        {
+          "name": "tripo_part_28",
+          "maxDisplacementM": 0.7134228133819884,
+          "movedVertices": 617
+        },
+        {
+          "name": "tripo_part_29",
+          "maxDisplacementM": 0.6287978895425127,
+          "movedVertices": 350
+        },
+        {
+          "name": "tripo_part_3",
+          "maxDisplacementM": 0.02758884861576151,
+          "movedVertices": 621
+        },
+        {
+          "name": "tripo_part_30",
+          "maxDisplacementM": 0.005960078814745015,
+          "movedVertices": 155
+        },
+        {
+          "name": "tripo_part_31",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_32",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_33",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_4",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_5",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_6",
+          "maxDisplacementM": 0.04976424064112029,
+          "movedVertices": 924
+        },
+        {
+          "name": "tripo_part_7",
+          "maxDisplacementM": 0.8646783977724225,
+          "movedVertices": 1604
+        },
+        {
+          "name": "tripo_part_8",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        },
+        {
+          "name": "tripo_part_9",
+          "maxDisplacementM": 0,
+          "movedVertices": 0
+        }
+      ]
+    },
+    {
+      "name": "combined_squat",
+      "dccFrame": 135,
+      "maxDisplacementM": 0.6490024068940334,
+      "rootPosition": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "name": "tripo_part_0",
+          "maxDisplacementM": 0.15211847101187,
+          "movedVertices": 3069
+        },
+        {
+          "name": "tripo_part_1",
+          "maxDisplacementM": 0.2675370836663597,
+          "movedVertices": 2245
+        },
+        {
+          "name": "tripo_part_10",
+          "maxDisplacementM": 0.15349505811685113,
+          "movedVertices": 489
+        },
+        {
+          "name": "tripo_part_11",
+          "maxDisplacementM": 0.6450218521376196,
+          "movedVertices": 462
+        },
+        {
+          "name": "tripo_part_12",
+          "maxDisplacementM": 0.15527965779182015,
+          "movedVertices": 406
+        },
+        {
+          "name": "tripo_part_13",
+          "maxDisplacementM": 0.5259466559770414,
+          "movedVertices": 508
+        },
+        {
+          "name": "tripo_part_14",
+          "maxDisplacementM": 0.4047844628178876,
+          "movedVertices": 529
+        },
+        {
+          "name": "tripo_part_15",
+          "maxDisplacementM": 0.25078794914494246,
+          "movedVertices": 620
+        },
+        {
+          "name": "tripo_part_16",
+          "maxDisplacementM": 0.153869024925486,
+          "movedVertices": 445
+        },
+        {
+          "name": "tripo_part_17",
+          "maxDisplacementM": 0.38704212808342797,
+          "movedVertices": 588
+        },
+        {
+          "name": "tripo_part_18",
+          "maxDisplacementM": 0.4645722696489558,
+          "movedVertices": 423
+        },
+        {
+          "name": "tripo_part_19",
+          "maxDisplacementM": 0.6287982393176035,
+          "movedVertices": 335
+        },
+        {
+          "name": "tripo_part_2",
+          "maxDisplacementM": 0.499408240143636,
+          "movedVertices": 1684
+        },
+        {
+          "name": "tripo_part_20",
+          "maxDisplacementM": 0.6486522051251415,
+          "movedVertices": 349
+        },
+        {
+          "name": "tripo_part_21",
+          "maxDisplacementM": 0.6287753343221897,
+          "movedVertices": 337
+        },
+        {
+          "name": "tripo_part_22",
+          "maxDisplacementM": 0.6490024068940334,
+          "movedVertices": 322
+        },
+        {
+          "name": "tripo_part_23",
+          "maxDisplacementM": 0.10980870470846808,
+          "movedVertices": 612
+        },
+        {
+          "name": "tripo_part_24",
+          "maxDisplacementM": 0.6448057776915374,
+          "movedVertices": 371
+        },
+        {
+          "name": "tripo_part_25",
+          "maxDisplacementM": 0.11091106079268953,
+          "movedVertices": 534
+        },
+        {
+          "name": "tripo_part_26",
+          "maxDisplacementM": 0.20610584651537106,
+          "movedVertices": 384
+        },
+        {
+          "name": "tripo_part_27",
+          "maxDisplacementM": 0.3710042547852666,
+          "movedVertices": 594
+        },
+        {
+          "name": "tripo_part_28",
+          "maxDisplacementM": 0.3626263455956407,
+          "movedVertices": 617
+        },
+        {
+          "name": "tripo_part_29",
+          "maxDisplacementM": 0.4545686434291427,
+          "movedVertices": 350
+        },
+        {
+          "name": "tripo_part_3",
+          "maxDisplacementM": 0.499661650782224,
+          "movedVertices": 1871
+        },
+        {
+          "name": "tripo_part_30",
+          "maxDisplacementM": 0.4535506898900866,
+          "movedVertices": 352
+        },
+        {
+          "name": "tripo_part_31",
+          "maxDisplacementM": 0.19751944241784777,
+          "movedVertices": 380
+        },
+        {
+          "name": "tripo_part_32",
+          "maxDisplacementM": 0.1838968233214075,
+          "movedVertices": 220
+        },
+        {
+          "name": "tripo_part_33",
+          "maxDisplacementM": 0.18364529981475208,
+          "movedVertices": 248
+        },
+        {
+          "name": "tripo_part_4",
+          "maxDisplacementM": 0.35917522251007755,
+          "movedVertices": 1183
+        },
+        {
+          "name": "tripo_part_5",
+          "maxDisplacementM": 0.3580466173450585,
+          "movedVertices": 1316
+        },
+        {
+          "name": "tripo_part_6",
+          "maxDisplacementM": 0.49689862475145063,
+          "movedVertices": 1320
+        },
+        {
+          "name": "tripo_part_7",
+          "maxDisplacementM": 0.49676450247397175,
+          "movedVertices": 1604
+        },
+        {
+          "name": "tripo_part_8",
+          "maxDisplacementM": 0.2423296252899987,
+          "movedVertices": 979
+        },
+        {
+          "name": "tripo_part_9",
+          "maxDisplacementM": 0.5932105077687633,
+          "movedVertices": 653
+        }
+      ]
+    }
+  ],
+  "played": {
+    "skeletons": 1,
+    "jointCount": 23,
+    "groups": [
+      "rig_diagnostic"
+    ],
+    "skinnedMeshes": 34,
+    "materials": [
+      "Material.001"
+    ],
+    "frame": 37.21799999982119,
+    "from": 0,
+    "to": 300,
+    "fps": 60,
+    "handedness": "RH native glTF, Y up, +Z front"
+  },
+  "returned": {
+    "name": "rest_return",
+    "dccFrame": 150,
+    "maxDisplacementM": 0,
+    "rootPosition": [
+      0,
+      0,
+      0
+    ],
+    "parts": [
+      {
+        "name": "tripo_part_0",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_1",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_10",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_11",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_12",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_13",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_14",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_15",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_16",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_17",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_18",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_19",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_2",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_20",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_21",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_22",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_23",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_24",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_25",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_26",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_27",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_28",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_29",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_3",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_30",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_31",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_32",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_33",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_4",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_5",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_6",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_7",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_8",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      },
+      {
+        "name": "tripo_part_9",
+        "maxDisplacementM": 0,
+        "movedVertices": 0
+      }
+    ]
+  },
+  "disposed": {
+    "skeletons": 0,
+    "skinnedMeshes": 0
+  },
+  "reloaded": {
+    "skeletons": 1,
+    "jointCount": 23,
+    "groups": [
+      "rig_diagnostic"
+    ],
+    "skinnedMeshes": 34,
+    "materials": [
+      "Material.001"
+    ],
+    "frame": 0,
+    "from": 0,
+    "to": 300,
+    "fps": 60,
+    "handedness": "RH native glTF, Y up, +Z front"
+  },
+  "errors": [],
+  "browser": "151.0.7922.34",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "mode": "F isolated diagnostic poses; not game natural input"
+}

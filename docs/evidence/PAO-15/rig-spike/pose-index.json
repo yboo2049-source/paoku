@@ -1,0 +1,185 @@
+[
+  {
+    "name": "rest",
+    "dccFrame": 0,
+    "timeSec": 0,
+    "babylonFrame": 0,
+    "rotations": [],
+    "reference": "bone local XYZ Euler in Blender rest bone basis; degrees",
+    "maxDccVertexDisplacementM": 0
+  },
+  {
+    "name": "shoulder_l",
+    "dccFrame": 15,
+    "timeSec": 0.5,
+    "babylonFrame": 30,
+    "rotations": [
+      [
+        "upperarm_l",
+        "X",
+        90
+      ]
+    ],
+    "reference": "bone local XYZ Euler in Blender rest bone basis; degrees",
+    "maxDccVertexDisplacementM": 1.041359474376681
+  },
+  {
+    "name": "elbow_l",
+    "dccFrame": 30,
+    "timeSec": 1,
+    "babylonFrame": 60,
+    "rotations": [
+      [
+        "forearm_l",
+        "X",
+        120
+      ]
+    ],
+    "reference": "bone local XYZ Euler in Blender rest bone basis; degrees",
+    "maxDccVertexDisplacementM": 0.792755077024453
+  },
+  {
+    "name": "hip_l",
+    "dccFrame": 45,
+    "timeSec": 1.5,
+    "babylonFrame": 90,
+    "rotations": [
+      [
+        "thigh_l",
+        "X",
+        -90
+      ]
+    ],
+    "reference": "bone local XYZ Euler in Blender rest bone basis; degrees",
+    "maxDccVertexDisplacementM": 1.2384235803442485
+  },
+  {
+    "name": "knee_l",
+    "dccFrame": 60,
+    "timeSec": 2,
+    "babylonFrame": 120,
+    "rotations": [
+      [
+        "calf_l",
+        "X",
+        120
+      ]
+    ],
+    "reference": "bone local XYZ Euler in Blender rest bone basis; degrees",
+    "maxDccVertexDisplacementM": 0.8670981249417586
+  },
+  {
+    "name": "shoulder_r",
+    "dccFrame": 75,
+    "timeSec": 2.5,
+    "babylonFrame": 150,
+    "rotations": [
+      [
+        "upperarm_r",
+        "X",
+        -90
+      ]
+    ],
+    "reference": "bone local XYZ Euler in Blender rest bone basis; degrees",
+    "maxDccVertexDisplacementM": 1.041656304148947
+  },
+  {
+    "name": "elbow_r",
+    "dccFrame": 90,
+    "timeSec": 3,
+    "babylonFrame": 180,
+    "rotations": [
+      [
+        "forearm_r",
+        "X",
+        120
+      ]
+    ],
+    "reference": "bone local XYZ Euler in Blender rest bone basis; degrees",
+    "maxDccVertexDisplacementM": 0.7931110860364641
+  },
+  {
+    "name": "hip_r",
+    "dccFrame": 105,
+    "timeSec": 3.5,
+    "babylonFrame": 210,
+    "rotations": [
+      [
+        "thigh_r",
+        "X",
+        -90
+      ]
+    ],
+    "reference": "bone local XYZ Euler in Blender rest bone basis; degrees",
+    "maxDccVertexDisplacementM": 1.2362580332239506
+  },
+  {
+    "name": "knee_r",
+    "dccFrame": 120,
+    "timeSec": 4,
+    "babylonFrame": 240,
+    "rotations": [
+      [
+        "calf_r",
+        "X",
+        120
+      ]
+    ],
+    "reference": "bone local XYZ Euler in Blender rest bone basis; degrees",
+    "maxDccVertexDisplacementM": 0.8646784561561102
+  },
+  {
+    "name": "combined_squat",
+    "dccFrame": 135,
+    "timeSec": 4.5,
+    "babylonFrame": 270,
+    "rotations": [
+      [
+        "thigh_l",
+        "X",
+        -70
+      ],
+      [
+        "thigh_r",
+        "X",
+        -70
+      ],
+      [
+        "calf_l",
+        "X",
+        110
+      ],
+      [
+        "calf_r",
+        "X",
+        110
+      ],
+      [
+        "spine_01",
+        "X",
+        20
+      ],
+      [
+        "forearm_l",
+        "X",
+        80
+      ],
+      [
+        "forearm_r",
+        "X",
+        80
+      ]
+    ],
+    "reference": "bone local XYZ Euler in Blender rest bone basis; degrees",
+    "maxDccVertexDisplacementM": 0.6490024370131888
+  },
+  {
+    "name": "rest_return",
+    "dccFrame": 150,
+    "timeSec": 5,
+    "babylonFrame": 300,
+    "rotations": [],
+    "reference": "bone local XYZ Euler in Blender rest bone basis; degrees",
+    "maxDccVertexDisplacementM": 0
+  }
+]

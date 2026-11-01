@@ -1,0 +1,98 @@
+{
+  "records": [
+    {
+      "file": "tests/e2e/gameplay.spec.ts",
+      "sha256": "ac860d0781b57ec51735607c8e6d1441a5f02afcb9b27203f2f8e682d607ce64",
+      "mirrorSha256": "d6860159e1495028ca0d670029df471f5428b834b9dc91fdce85cfebbb5a2dd1",
+      "testAndExpectCallCount": 27,
+      "changes": "evidence output destinations only",
+      "mirrorPath": ".pao15-local/regression/gameplay.pw.ts"
+    },
+    {
+      "file": "tests/e2e/pao10-review-fixes.spec.ts",
+      "sha256": "21a92efee35f42f42912d8655d62eb1a6d4786494235ee84d9ff1ae8dab45892",
+      "mirrorSha256": "b1baab5c657902c99a75664d3d159c1929271bceece4ca9324867bb323c4d5ba",
+      "testAndExpectCallCount": 22,
+      "changes": "evidence output destinations only",
+      "mirrorPath": ".pao15-local/regression/pao10-review-fixes.pw.ts"
+    },
+    {
+      "file": "tests/e2e/pao10-simulation.spec.ts",
+      "sha256": "4cb5069cfcec3a015c768ee5047403b8cd4c0c295529e1eda186866c6a921ebf",
+      "mirrorSha256": "4b2fde6918b5ed68baf6ade2df919b088dfd5b85138fca53932c6efae5327233",
+      "testAndExpectCallCount": 55,
+      "changes": "evidence output destinations only",
+      "mirrorPath": ".pao15-local/regression/pao10-simulation.pw.ts"
+    },
+    {
+      "file": "tests/e2e/pao11-surfaces.spec.ts",
+      "sha256": "2e5cb1868763f2ddec33ae472f3497aeac1dffa6d7be0c80c1a41fa6842d868b",
+      "mirrorSha256": "8481b96fb38ba3c9d25d9298581699e91100479773e505e642281e436c307413",
+      "testAndExpectCallCount": 32,
+      "changes": "evidence output destinations only",
+      "mirrorPath": ".pao15-local/regression/pao11-surfaces.pw.ts"
+    },
+    {
+      "file": "tests/e2e/pao12-collision.spec.ts",
+      "sha256": "669125de620cfd8c0263b5ee7696cef53a2e48d9fac0548f5f095fd710371f1d",
+      "mirrorSha256": "fa73e29222c09682ecda01f4a1c3293b84057605ad6455aeac41ac1c9314100a",
+      "testAndExpectCallCount": 53,
+      "changes": "evidence output destinations only",
+      "mirrorPath": ".pao15-local/regression/pao12-collision.pw.ts"
+    },
+    {
+      "file": "tests/e2e/pao13-track.spec.ts",
+      "sha256": "03211f334c9ff5bf05b058bcb49c1d83d7b0eefe4800b3257453fecd8943a7a3",
+      "mirrorSha256": "6cb9ef243f30813d5136bc33281c2ea25fd3aee6fad58903cc9aa80bbfc69bb6",
+      "testAndExpectCallCount": 53,
+      "changes": "evidence output destinations only",
+      "mirrorPath": ".pao15-local/regression/pao13-track.pw.ts"
+    },
+    {
+      "file": "tests/e2e/pao14-application.spec.ts",
+      "sha256": "06039b20c65000d94d819a45ce5332bd77731779bf851ea2eb9164988bba8f6a",
+      "mirrorSha256": "c16ce7b6f7b42356036bf6239c0692555fbc337021c3328af8f2a2f180c0438c",
+      "testAndExpectCallCount": 86,
+      "changes": "evidence output destinations only",
+      "mirrorPath": ".pao15-local/regression/pao14-application.pw.ts"
+    },
+    {
+      "file": "tests/e2e/pao14-review.spec.ts",
+      "sha256": "b20d8604e98ee5eb1013c458160522c97433475075e9e55bd32d957e5abda413",
+      "mirrorSha256": "5b7b426bd61e144651faa2d715bd753820de9c3a3ad90d92d4ae60ceb57722e7",
+      "testAndExpectCallCount": 39,
+      "changes": "evidence output destinations only",
+      "mirrorPath": ".pao15-local/regression/pao14-review.pw.ts"
+    },
+    {
+      "file": "tests/e2e/pao14-unknown-commit.spec.ts",
+      "sha256": "2b8545a84b763bf0a0faa9a2a8cf8ac3a10af0040afe42b34754bc2cdc414520",
+      "mirrorSha256": "91081acf555bc7f0ebbc67bd52849022f518d9d7a236adc145aad6ad816706d6",
+      "testAndExpectCallCount": 21,
+      "changes": "evidence output destinations only",
+      "mirrorPath": ".pao15-local/regression/pao14-unknown-commit.pw.ts"
+    },
+    {
+      "file": "tests/e2e/pao15-rig-spike.spec.ts",
+      "sha256": "cbe8f1b331a60d867c7b0238a53be2be98e24bac651976dce3ee218c79ff333d",
+      "mirrorSha256": "cbe8f1b331a60d867c7b0238a53be2be98e24bac651976dce3ee218c79ff333d",
+      "testAndExpectCallCount": 19,
+      "changes": "none",
+      "mirrorPath": ".pao15-local/regression/pao15-rig-spike.pw.ts"
+    },
+    {
+      "file": "tests/e2e/pao6-baseline.spec.ts",
+      "sha256": "710cd0dc1d6fd938825b4c741f0c32798a2ada5c507209c48b2f57889f441df9",
+      "mirrorSha256": "953eb1e3750cdfed889b3456b40329404e3bdad065b070aa46c4f89be87397a0",
+      "testAndExpectCallCount": 31,
+      "changes": "evidence output destinations only",
+      "mirrorPath": ".pao15-local/regression/pao6-baseline.pw.ts"
+    }
+  ],
+  "port": 5185,
+  "strictPort": true,
+  "reuseExistingServer": false,
+  "backend": "ANGLE D3D11",
+  "allOldAssertionsPreserved": true,
+  "mirrorExtensionReason": "Ignored mirrors use .pw.ts with explicit testMatch to avoid default Vitest discovering Playwright copies; all contents/old assertions retained. Final complete regression executed after lifecycle fix."
+}

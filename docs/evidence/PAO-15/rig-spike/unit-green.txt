@@ -1,0 +1,7 @@
+RUN  v4.1.10 D:/worker/paoku-sessions/pao-15
+
+
+ Test Files  1 passed (1)
+      Tests  13 passed (13)
+   Start at  20:59:26
+   Duration  293ms (transform 47ms, setup 0ms, import 61ms, tests 8ms, environment 0ms)

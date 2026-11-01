@@ -1,0 +1,76 @@
+INFO Draco mesh compression is available, use library at D:\worker\paoku-sessions\pao-15\.pao15-local\blender\blender-4.5.3-windows-x64\4.5\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+20:49:27 | INFO: Starting glTF 2.0 export
+20:49:27 | INFO: Extracting primitive: tripo_part_0.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_1.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_10.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_11.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_12.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_13.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_14.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_15.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_16.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_17.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_18.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_19.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_2.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_20.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_21.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_22.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_23.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_24.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_25.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_26.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_27.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_28.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_29.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_3.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_30.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_31.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_32.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_33.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_4.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_5.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_6.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_7.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_8.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Extracting primitive: tripo_part_9.001
+20:49:27 | INFO: Primitives created: 1
+20:49:27 | INFO: Finished glTF 2.0 export in 0.8463919162750244 s
+
+Blender 4.5.3 LTS (hash 67807e1800cc built 2025-09-09 01:33:33)
+Read blend: "D:\worker\paoku-sessions\pao-15\assets-source\characters\runner\rig-spike\runner-derived.blend"
+
+Blender quit

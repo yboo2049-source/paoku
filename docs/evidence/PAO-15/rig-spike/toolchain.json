@@ -1,0 +1,16 @@
+{
+  "blender": {
+    "version": "4.5.3 LTS",
+    "buildHash": "67807e1800cc",
+    "archiveUrl": "https://download.blender.org/release/Blender4.5/blender-4.5.3-windows-x64.zip",
+    "officialChecksumUrl": "https://download.blender.org/release/Blender4.5/blender-4.5.3.sha256",
+    "sha256": "6b657c8bdd3a7b65b07b9e1ae17eb4be7dd4aa23121da7f3d3354fc2551330a7",
+    "officialChecksumMatched": true,
+    "deployment": ".pao15-local/blender (locally ignored)",
+    "systemInstall": false,
+    "globalPathChanged": false
+  },
+  "node": "v24.18.1",
+  "cloudCalls": false,
+  "characterLicense": "Unverified. Author confirms original DCC does not exist; derived reconstruction under this technical spike authorization only."
+}

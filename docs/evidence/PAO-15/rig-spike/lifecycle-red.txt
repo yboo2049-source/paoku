@@ -1,0 +1,43 @@
+[WebServer] (node:20336) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:26108) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\pao15-rig-spike.spec.ts:7:1 › runner diagnostic imports, deforms, replays and disposes in Babylon (18.0s)
+
+
+  1) tests\e2e\pao15-rig-spike.spec.ts:7:1 › runner diagnostic imports, deforms, replays and disposes in Babylon
+
+    Error: expect(locator).toBeDisabled() failed
+
+    Locator:  locator('#play')
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeDisabled" with timeout 5000ms
+      - waiting for locator('#play')
+        14 × locator resolved to <button id="play">播放一次诊断序列</button>
+           - unexpected value "enabled"
+
+
+      40 |   expect(disposed.skeletons).toBe(0);
+      41 |   expect(disposed.skinnedMeshes).toBe(0);
+    > 42 |   await expect(page.locator('#play')).toBeDisabled();
+         |                                       ^
+      43 |   await expect(page.locator('#pose')).toBeDisabled();
+      44 |   const released = await page.evaluate(() => (window as any).__RIG_PROBE__.info());
+      45 |   expect(released.groups).toEqual([]);
+        at D:\worker\paoku-sessions\pao-15\tests\e2e\pao15-rig-spike.spec.ts:42:39
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    .pao15-local\probe-results\pao15-rig-spike-runner-dia-ebac6-ays-and-disposes-in-Babylon\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .pao15-local\probe-results\pao15-rig-spike-runner-dia-ebac6-ays-and-disposes-in-Babylon\error-context.md
+
+  1 failed
+    tests\e2e\pao15-rig-spike.spec.ts:7:1 › runner diagnostic imports, deforms, replays and disposes in Babylon

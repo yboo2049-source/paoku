@@ -1,0 +1,2589 @@
+{
+  "file": ".pao15-local\\reopened.glb",
+  "sha256": "cb84cfb9a308c54245ac49627383aa6643c8d40efc9c2a6929334dc60c7348f5",
+  "vertexCount": 26399,
+  "softVertices": 26399,
+  "jointCount": 23,
+  "triangles": 26268,
+  "restMaxError": 0.0000022505429450454612,
+  "rootSamples": 7,
+  "animations": [
+    {
+      "name": "rig_diagnostic",
+      "channels": 69
+    }
+  ],
+  "restBounds": [
+    {
+      "min": -0.5617742538452148,
+      "max": 0.5616476535797119
+    },
+    {
+      "min": 0,
+      "max": 1.7999999523162842
+    },
+    {
+      "min": -0.17402328550815582,
+      "max": 0.1736106127500534
+    }
+  ],
+  "poses": [
+    {
+      "name": "rest",
+      "frame": 0,
+      "timeSec": 0,
+      "maxDisplacementM": 5.007290077160434e-7,
+      "dccMaxErrorM": 5.007290077160434e-7,
+      "rootTranslation": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "primitive": 0,
+          "maxDisplacementM": 2.1757983849634737e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 1,
+          "maxDisplacementM": 2.1496685149800914e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 2,
+          "maxDisplacementM": 1.7547584522147823e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 3,
+          "maxDisplacementM": 1.6482501911773897e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 4,
+          "maxDisplacementM": 1.4221544726869668e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 5,
+          "maxDisplacementM": 1.778686696097479e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 6,
+          "maxDisplacementM": 4.22289976109386e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 7,
+          "maxDisplacementM": 1.7329295625323542e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 8,
+          "maxDisplacementM": 1.4920353732675588e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 9,
+          "maxDisplacementM": 2.731560724374661e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 10,
+          "maxDisplacementM": 3.917856520568229e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 11,
+          "maxDisplacementM": 1.6192806783781188e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 12,
+          "maxDisplacementM": 4.52162912167507e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 13,
+          "maxDisplacementM": 1.667743446553338e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 14,
+          "maxDisplacementM": 1.6793867794196615e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 15,
+          "maxDisplacementM": 1.5827486984138017e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 16,
+          "maxDisplacementM": 1.7452822459480607e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 17,
+          "maxDisplacementM": 1.6108399131695587e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 18,
+          "maxDisplacementM": 1.793604060601062e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 19,
+          "maxDisplacementM": 1.843880887555245e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 20,
+          "maxDisplacementM": 2.748822841457606e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 21,
+          "maxDisplacementM": 2.8497806616441246e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 22,
+          "maxDisplacementM": 3.717250052638453e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 23,
+          "maxDisplacementM": 4.5059337134408327e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 24,
+          "maxDisplacementM": 3.727074844513218e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 25,
+          "maxDisplacementM": 2.044052755455292e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 26,
+          "maxDisplacementM": 1.6170821182483066e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 27,
+          "maxDisplacementM": 1.9594404455754819e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 28,
+          "maxDisplacementM": 2.521076041476741e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 29,
+          "maxDisplacementM": 2.5386934411522553e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 30,
+          "maxDisplacementM": 4.991978239644718e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 31,
+          "maxDisplacementM": 5.007290077160434e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 32,
+          "maxDisplacementM": 2.09567126793144e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 33,
+          "maxDisplacementM": 1.8258520030648701e-7,
+          "movedVertices": 0
+        }
+      ]
+    },
+    {
+      "name": "shoulder_l",
+      "frame": 15,
+      "timeSec": 0.5,
+      "maxDisplacementM": 1.04135950443812,
+      "dccMaxErrorM": 3.006143911576942e-8,
+      "rootTranslation": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "primitive": 0,
+          "maxDisplacementM": 0.20012755446184047,
+          "movedVertices": 855
+        },
+        {
+          "primitive": 1,
+          "maxDisplacementM": 0.04886029102221205,
+          "movedVertices": 112
+        },
+        {
+          "primitive": 2,
+          "maxDisplacementM": 1.7547584522147823e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 3,
+          "maxDisplacementM": 1.02430729345314,
+          "movedVertices": 462
+        },
+        {
+          "primitive": 4,
+          "maxDisplacementM": 1.4221544726869668e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 5,
+          "maxDisplacementM": 0.9203496150464583,
+          "movedVertices": 508
+        },
+        {
+          "primitive": 6,
+          "maxDisplacementM": 3.9842941145961975e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 7,
+          "maxDisplacementM": 1.7329295625323542e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 8,
+          "maxDisplacementM": 1.4920353732675588e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 9,
+          "maxDisplacementM": 2.6496154505032827e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 10,
+          "maxDisplacementM": 4.0201874711355493e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 11,
+          "maxDisplacementM": 1.0303205427514126,
+          "movedVertices": 335
+        },
+        {
+          "primitive": 12,
+          "maxDisplacementM": 4.637759657355947e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 13,
+          "maxDisplacementM": 1.04135950443812,
+          "movedVertices": 349
+        },
+        {
+          "primitive": 14,
+          "maxDisplacementM": 1.8709815624282276e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 15,
+          "maxDisplacementM": 1.8845717661672875e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 16,
+          "maxDisplacementM": 1.8369207199770557e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 17,
+          "maxDisplacementM": 1.976255327661636e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 18,
+          "maxDisplacementM": 0.04016647382930533,
+          "movedVertices": 229
+        },
+        {
+          "primitive": 19,
+          "maxDisplacementM": 1.843880887555245e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 20,
+          "maxDisplacementM": 2.6272203056175714e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 21,
+          "maxDisplacementM": 2.6288883478778754e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 22,
+          "maxDisplacementM": 3.863312676121611e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 23,
+          "maxDisplacementM": 0.0025148545949130094,
+          "movedVertices": 138
+        },
+        {
+          "primitive": 24,
+          "maxDisplacementM": 3.8690087829209456e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 25,
+          "maxDisplacementM": 2.044052755455292e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 26,
+          "maxDisplacementM": 1.6170821182483066e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 27,
+          "maxDisplacementM": 1.9594404455754819e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 28,
+          "maxDisplacementM": 2.713884404715081e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 29,
+          "maxDisplacementM": 0.7525130882322313,
+          "movedVertices": 1316
+        },
+        {
+          "primitive": 30,
+          "maxDisplacementM": 5.211696443086501e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 31,
+          "maxDisplacementM": 5.223568752701524e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 32,
+          "maxDisplacementM": 2.09567126793144e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 33,
+          "maxDisplacementM": 2.2411820633563397e-7,
+          "movedVertices": 0
+        }
+      ]
+    },
+    {
+      "name": "elbow_l",
+      "frame": 30,
+      "timeSec": 1,
+      "maxDisplacementM": 0.7927552880398745,
+      "dccMaxErrorM": 2.1101542146961805e-7,
+      "rootTranslation": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "primitive": 0,
+          "maxDisplacementM": 0.048145955263924935,
+          "movedVertices": 372
+        },
+        {
+          "primitive": 1,
+          "maxDisplacementM": 2.1496685149800914e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 2,
+          "maxDisplacementM": 1.7547584522147823e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 3,
+          "maxDisplacementM": 0.7742601944166142,
+          "movedVertices": 462
+        },
+        {
+          "primitive": 4,
+          "maxDisplacementM": 1.4221544726869668e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 5,
+          "maxDisplacementM": 0.6441704108616022,
+          "movedVertices": 508
+        },
+        {
+          "primitive": 6,
+          "maxDisplacementM": 4.228725515128615e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 7,
+          "maxDisplacementM": 1.7329295625323542e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 8,
+          "maxDisplacementM": 1.4920353732675588e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 9,
+          "maxDisplacementM": 2.7197632732555483e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 10,
+          "maxDisplacementM": 4.0201874711355493e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 11,
+          "maxDisplacementM": 0.7796313774852247,
+          "movedVertices": 335
+        },
+        {
+          "primitive": 12,
+          "maxDisplacementM": 4.6236831498033285e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 13,
+          "maxDisplacementM": 0.7927552880398745,
+          "movedVertices": 349
+        },
+        {
+          "primitive": 14,
+          "maxDisplacementM": 1.8709815624282276e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 15,
+          "maxDisplacementM": 1.8845717661672875e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 16,
+          "maxDisplacementM": 1.8369207199770557e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 17,
+          "maxDisplacementM": 1.976255327661636e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 18,
+          "maxDisplacementM": 0.028324964797249566,
+          "movedVertices": 168
+        },
+        {
+          "primitive": 19,
+          "maxDisplacementM": 1.843880887555245e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 20,
+          "maxDisplacementM": 2.6271125451609384e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 21,
+          "maxDisplacementM": 2.6288840929327393e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 22,
+          "maxDisplacementM": 3.859829577691878e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 23,
+          "maxDisplacementM": 0.001202373024026353,
+          "movedVertices": 125
+        },
+        {
+          "primitive": 24,
+          "maxDisplacementM": 3.7004661799996577e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 25,
+          "maxDisplacementM": 2.044052755455292e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 26,
+          "maxDisplacementM": 1.6170821182483066e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 27,
+          "maxDisplacementM": 1.9594404455754819e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 28,
+          "maxDisplacementM": 2.713884404715081e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 29,
+          "maxDisplacementM": 0.4405174675759378,
+          "movedVertices": 1245
+        },
+        {
+          "primitive": 30,
+          "maxDisplacementM": 4.965785017097062e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 31,
+          "maxDisplacementM": 5.196312158656594e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 32,
+          "maxDisplacementM": 2.09567126793144e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 33,
+          "maxDisplacementM": 2.2411820633563397e-7,
+          "movedVertices": 0
+        }
+      ]
+    },
+    {
+      "name": "hip_l",
+      "frame": 45,
+      "timeSec": 1.5,
+      "maxDisplacementM": 1.238422663503385,
+      "dccMaxErrorM": 9.168408634518954e-7,
+      "rootTranslation": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "primitive": 0,
+          "maxDisplacementM": 0.12581166197924237,
+          "movedVertices": 1096
+        },
+        {
+          "primitive": 1,
+          "maxDisplacementM": 2.1496685149800914e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 2,
+          "maxDisplacementM": 1.7547584522147823e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 3,
+          "maxDisplacementM": 0.0028002649898968912,
+          "movedVertices": 429
+        },
+        {
+          "primitive": 4,
+          "maxDisplacementM": 0.027538662073131905,
+          "movedVertices": 107
+        },
+        {
+          "primitive": 5,
+          "maxDisplacementM": 0.00274321138813997,
+          "movedVertices": 296
+        },
+        {
+          "primitive": 6,
+          "maxDisplacementM": 1.238422663503385,
+          "movedVertices": 529
+        },
+        {
+          "primitive": 7,
+          "maxDisplacementM": 1.7329295625323542e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 8,
+          "maxDisplacementM": 1.4920353732675588e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 9,
+          "maxDisplacementM": 1.1097469390145398,
+          "movedVertices": 588
+        },
+        {
+          "primitive": 10,
+          "maxDisplacementM": 0.016177586501924048,
+          "movedVertices": 116
+        },
+        {
+          "primitive": 11,
+          "maxDisplacementM": 0.00015939847363034175,
+          "movedVertices": 65
+        },
+        {
+          "primitive": 12,
+          "maxDisplacementM": 0.09268711225854663,
+          "movedVertices": 1003
+        },
+        {
+          "primitive": 13,
+          "maxDisplacementM": 0.00017476167998034184,
+          "movedVertices": 53
+        },
+        {
+          "primitive": 14,
+          "maxDisplacementM": 1.8709815624282276e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 15,
+          "maxDisplacementM": 1.8845717661672875e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 16,
+          "maxDisplacementM": 1.8369207199770557e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 17,
+          "maxDisplacementM": 1.976255327661636e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 18,
+          "maxDisplacementM": 0.11915562668345124,
+          "movedVertices": 473
+        },
+        {
+          "primitive": 19,
+          "maxDisplacementM": 1.843880887555245e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 20,
+          "maxDisplacementM": 0.0006273370810813764,
+          "movedVertices": 237
+        },
+        {
+          "primitive": 21,
+          "maxDisplacementM": 0.0004320805758211541,
+          "movedVertices": 313
+        },
+        {
+          "primitive": 22,
+          "maxDisplacementM": 0.010544083538405243,
+          "movedVertices": 170
+        },
+        {
+          "primitive": 23,
+          "maxDisplacementM": 0.9743228285373958,
+          "movedVertices": 1871
+        },
+        {
+          "primitive": 24,
+          "maxDisplacementM": 1.0402148757612646,
+          "movedVertices": 352
+        },
+        {
+          "primitive": 25,
+          "maxDisplacementM": 2.044052755455292e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 26,
+          "maxDisplacementM": 1.6170821182483066e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 27,
+          "maxDisplacementM": 1.9594404455754819e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 28,
+          "maxDisplacementM": 2.713884404715081e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 29,
+          "maxDisplacementM": 0.02101478337492356,
+          "movedVertices": 608
+        },
+        {
+          "primitive": 30,
+          "maxDisplacementM": 1.2148726711052276,
+          "movedVertices": 1320
+        },
+        {
+          "primitive": 31,
+          "maxDisplacementM": 0.07292414407657608,
+          "movedVertices": 1226
+        },
+        {
+          "primitive": 32,
+          "maxDisplacementM": 2.09567126793144e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 33,
+          "maxDisplacementM": 2.2411820633563397e-7,
+          "movedVertices": 0
+        }
+      ]
+    },
+    {
+      "name": "knee_l",
+      "frame": 60,
+      "timeSec": 2,
+      "maxDisplacementM": 0.8670983237758819,
+      "dccMaxErrorM": 1.9883412327725836e-7,
+      "rootTranslation": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "primitive": 0,
+          "maxDisplacementM": 2.145265440567734e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 1,
+          "maxDisplacementM": 2.1496685149800914e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 2,
+          "maxDisplacementM": 1.7547584522147823e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 3,
+          "maxDisplacementM": 0.0007427966311031414,
+          "movedVertices": 48
+        },
+        {
+          "primitive": 4,
+          "maxDisplacementM": 1.4221544726869668e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 5,
+          "maxDisplacementM": 2.1595432414350074e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 6,
+          "maxDisplacementM": 0.8670983237758819,
+          "movedVertices": 529
+        },
+        {
+          "primitive": 7,
+          "maxDisplacementM": 1.7329295625323542e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 8,
+          "maxDisplacementM": 1.4920353732675588e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 9,
+          "maxDisplacementM": 0.696231617600688,
+          "movedVertices": 588
+        },
+        {
+          "primitive": 10,
+          "maxDisplacementM": 0.008736803885959998,
+          "movedVertices": 116
+        },
+        {
+          "primitive": 11,
+          "maxDisplacementM": 1.9180750657265777e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 12,
+          "maxDisplacementM": 0.02786949908973391,
+          "movedVertices": 508
+        },
+        {
+          "primitive": 13,
+          "maxDisplacementM": 0.00012439206068101333,
+          "movedVertices": 24
+        },
+        {
+          "primitive": 14,
+          "maxDisplacementM": 1.6745127094397582e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 15,
+          "maxDisplacementM": 1.5777808231675118e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 16,
+          "maxDisplacementM": 1.8239179398077863e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 17,
+          "maxDisplacementM": 1.6053841963186057e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 18,
+          "maxDisplacementM": 1.8880421792456383e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 19,
+          "maxDisplacementM": 1.843880887555245e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 20,
+          "maxDisplacementM": 0.0003900818299907196,
+          "movedVertices": 124
+        },
+        {
+          "primitive": 21,
+          "maxDisplacementM": 0.0002747258196220325,
+          "movedVertices": 175
+        },
+        {
+          "primitive": 22,
+          "maxDisplacementM": 0.006259900979230472,
+          "movedVertices": 170
+        },
+        {
+          "primitive": 23,
+          "maxDisplacementM": 0.560300430804311,
+          "movedVertices": 1517
+        },
+        {
+          "primitive": 24,
+          "maxDisplacementM": 0.6292837399394111,
+          "movedVertices": 352
+        },
+        {
+          "primitive": 25,
+          "maxDisplacementM": 2.044052755455292e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 26,
+          "maxDisplacementM": 1.6170821182483066e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 27,
+          "maxDisplacementM": 1.9594404455754819e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 28,
+          "maxDisplacementM": 2.5210710456788866e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 29,
+          "maxDisplacementM": 2.587841585497035e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 30,
+          "maxDisplacementM": 0.8425225863467916,
+          "movedVertices": 1320
+        },
+        {
+          "primitive": 31,
+          "maxDisplacementM": 0.051522303793132544,
+          "movedVertices": 1212
+        },
+        {
+          "primitive": 32,
+          "maxDisplacementM": 2.09567126793144e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 33,
+          "maxDisplacementM": 1.825188626510608e-7,
+          "movedVertices": 0
+        }
+      ]
+    },
+    {
+      "name": "shoulder_r",
+      "frame": 75,
+      "timeSec": 2.5,
+      "maxDisplacementM": 1.0416564259410375,
+      "dccMaxErrorM": 1.2179209041285333e-7,
+      "rootTranslation": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "primitive": 0,
+          "maxDisplacementM": 0.20274394458139028,
+          "movedVertices": 790
+        },
+        {
+          "primitive": 1,
+          "maxDisplacementM": 0.04881352835466709,
+          "movedVertices": 113
+        },
+        {
+          "primitive": 2,
+          "maxDisplacementM": 1.7547584522147823e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 3,
+          "maxDisplacementM": 2.1097716159490742e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 4,
+          "maxDisplacementM": 1.4221544726869668e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 5,
+          "maxDisplacementM": 2.1595432414350074e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 6,
+          "maxDisplacementM": 3.9842941145961975e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 7,
+          "maxDisplacementM": 1.7329295625323542e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 8,
+          "maxDisplacementM": 1.4920353732675588e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 9,
+          "maxDisplacementM": 2.6496154505032827e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 10,
+          "maxDisplacementM": 4.0201874711355493e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 11,
+          "maxDisplacementM": 1.9180750657265777e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 12,
+          "maxDisplacementM": 0.0026067379088085905,
+          "movedVertices": 130
+        },
+        {
+          "primitive": 13,
+          "maxDisplacementM": 1.9376873956085829e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 14,
+          "maxDisplacementM": 1.030177784810439,
+          "movedVertices": 337
+        },
+        {
+          "primitive": 15,
+          "maxDisplacementM": 1.0416564259410375,
+          "movedVertices": 322
+        },
+        {
+          "primitive": 16,
+          "maxDisplacementM": 0.040279964429206255,
+          "movedVertices": 235
+        },
+        {
+          "primitive": 17,
+          "maxDisplacementM": 1.0239319102133813,
+          "movedVertices": 371
+        },
+        {
+          "primitive": 18,
+          "maxDisplacementM": 1.8880421792456383e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 19,
+          "maxDisplacementM": 1.843880887555245e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 20,
+          "maxDisplacementM": 2.6272203056175714e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 21,
+          "maxDisplacementM": 2.6288883478778754e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 22,
+          "maxDisplacementM": 3.863312676121611e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 23,
+          "maxDisplacementM": 4.6565462207736426e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 24,
+          "maxDisplacementM": 3.8690087829209456e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 25,
+          "maxDisplacementM": 2.044052755455292e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 26,
+          "maxDisplacementM": 1.6170821182483066e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 27,
+          "maxDisplacementM": 1.9594404455754819e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 28,
+          "maxDisplacementM": 0.7521904016915184,
+          "movedVertices": 1183
+        },
+        {
+          "primitive": 29,
+          "maxDisplacementM": 2.587841585497035e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 30,
+          "maxDisplacementM": 5.211696443086501e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 31,
+          "maxDisplacementM": 5.223568752701524e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 32,
+          "maxDisplacementM": 2.09567126793144e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 33,
+          "maxDisplacementM": 0.9639902372032884,
+          "movedVertices": 653
+        }
+      ]
+    },
+    {
+      "name": "elbow_r",
+      "frame": 90,
+      "timeSec": 3,
+      "maxDisplacementM": 0.7931112825246198,
+      "dccMaxErrorM": 1.9648815574591083e-7,
+      "rootTranslation": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "primitive": 0,
+          "maxDisplacementM": 0.04868425528605479,
+          "movedVertices": 342
+        },
+        {
+          "primitive": 1,
+          "maxDisplacementM": 2.1496685149800914e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 2,
+          "maxDisplacementM": 1.7547584522147823e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 3,
+          "maxDisplacementM": 2.1097716159490742e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 4,
+          "maxDisplacementM": 1.4221544726869668e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 5,
+          "maxDisplacementM": 2.1595432414350074e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 6,
+          "maxDisplacementM": 3.98430932485606e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 7,
+          "maxDisplacementM": 1.7329295625323542e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 8,
+          "maxDisplacementM": 1.4920353732675588e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 9,
+          "maxDisplacementM": 2.6494995557367323e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 10,
+          "maxDisplacementM": 3.896651757320956e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 11,
+          "maxDisplacementM": 1.9180750657265777e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 12,
+          "maxDisplacementM": 0.0012428379937160859,
+          "movedVertices": 112
+        },
+        {
+          "primitive": 13,
+          "maxDisplacementM": 1.9376873956085829e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 14,
+          "maxDisplacementM": 0.7795283461614622,
+          "movedVertices": 337
+        },
+        {
+          "primitive": 15,
+          "maxDisplacementM": 0.7931112825246198,
+          "movedVertices": 322
+        },
+        {
+          "primitive": 16,
+          "maxDisplacementM": 0.027972797580381285,
+          "movedVertices": 180
+        },
+        {
+          "primitive": 17,
+          "maxDisplacementM": 0.7740883170083462,
+          "movedVertices": 371
+        },
+        {
+          "primitive": 18,
+          "maxDisplacementM": 1.8880421792456383e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 19,
+          "maxDisplacementM": 1.843880887555245e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 20,
+          "maxDisplacementM": 2.730249545158521e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 21,
+          "maxDisplacementM": 2.8403621029584707e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 22,
+          "maxDisplacementM": 3.692476698038878e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 23,
+          "maxDisplacementM": 4.63901992862843e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 24,
+          "maxDisplacementM": 3.8655208082268806e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 25,
+          "maxDisplacementM": 2.044052755455292e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 26,
+          "maxDisplacementM": 1.6170821182483066e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 27,
+          "maxDisplacementM": 1.9594404455754819e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 28,
+          "maxDisplacementM": 0.4393121334027622,
+          "movedVertices": 1117
+        },
+        {
+          "primitive": 29,
+          "maxDisplacementM": 2.587841585497035e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 30,
+          "maxDisplacementM": 5.185015506472667e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 31,
+          "maxDisplacementM": 4.981123450084125e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 32,
+          "maxDisplacementM": 2.09567126793144e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 33,
+          "maxDisplacementM": 0.7027949777963314,
+          "movedVertices": 653
+        }
+      ]
+    },
+    {
+      "name": "hip_r",
+      "frame": 105,
+      "timeSec": 3.5,
+      "maxDisplacementM": 1.2362571297904417,
+      "dccMaxErrorM": 9.034335088919931e-7,
+      "rootTranslation": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "primitive": 0,
+          "maxDisplacementM": 0.1264649045227944,
+          "movedVertices": 1028
+        },
+        {
+          "primitive": 1,
+          "maxDisplacementM": 2.1496685149800914e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 2,
+          "maxDisplacementM": 1.7547584522147823e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 3,
+          "maxDisplacementM": 2.1097716159490742e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 4,
+          "maxDisplacementM": 0.026687061159135377,
+          "movedVertices": 100
+        },
+        {
+          "primitive": 5,
+          "maxDisplacementM": 2.1595432414350074e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 6,
+          "maxDisplacementM": 0.009640028089621338,
+          "movedVertices": 529
+        },
+        {
+          "primitive": 7,
+          "maxDisplacementM": 1.7329295625323542e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 8,
+          "maxDisplacementM": 1.4920353732675588e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 9,
+          "maxDisplacementM": 0.0006231915991329353,
+          "movedVertices": 248
+        },
+        {
+          "primitive": 10,
+          "maxDisplacementM": 0.9741295080579627,
+          "movedVertices": 423
+        },
+        {
+          "primitive": 11,
+          "maxDisplacementM": 1.9180750657265777e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 12,
+          "maxDisplacementM": 0.9100891966585917,
+          "movedVertices": 1684
+        },
+        {
+          "primitive": 13,
+          "maxDisplacementM": 1.9376873956085829e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 14,
+          "maxDisplacementM": 0.0001539114175862207,
+          "movedVertices": 84
+        },
+        {
+          "primitive": 15,
+          "maxDisplacementM": 0.0001782401851922786,
+          "movedVertices": 54
+        },
+        {
+          "primitive": 16,
+          "maxDisplacementM": 0.11888071324838785,
+          "movedVertices": 557
+        },
+        {
+          "primitive": 17,
+          "maxDisplacementM": 0.0011435343214765746,
+          "movedVertices": 321
+        },
+        {
+          "primitive": 18,
+          "maxDisplacementM": 1.8880421792456383e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 19,
+          "maxDisplacementM": 1.843880887555245e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 20,
+          "maxDisplacementM": 1.1112108010642499,
+          "movedVertices": 594
+        },
+        {
+          "primitive": 21,
+          "maxDisplacementM": 1.1199758100055097,
+          "movedVertices": 617
+        },
+        {
+          "primitive": 22,
+          "maxDisplacementM": 1.039919683611149,
+          "movedVertices": 350
+        },
+        {
+          "primitive": 23,
+          "maxDisplacementM": 0.0894695195638062,
+          "movedVertices": 1113
+        },
+        {
+          "primitive": 24,
+          "maxDisplacementM": 0.010023258350752134,
+          "movedVertices": 155
+        },
+        {
+          "primitive": 25,
+          "maxDisplacementM": 2.044052755455292e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 26,
+          "maxDisplacementM": 1.6170821182483066e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 27,
+          "maxDisplacementM": 1.9594404455754819e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 28,
+          "maxDisplacementM": 0.021257493347916868,
+          "movedVertices": 535
+        },
+        {
+          "primitive": 29,
+          "maxDisplacementM": 2.587841585497035e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 30,
+          "maxDisplacementM": 0.07046367342378526,
+          "movedVertices": 967
+        },
+        {
+          "primitive": 31,
+          "maxDisplacementM": 1.2362571297904417,
+          "movedVertices": 1604
+        },
+        {
+          "primitive": 32,
+          "maxDisplacementM": 2.09567126793144e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 33,
+          "maxDisplacementM": 0.0027037557210640136,
+          "movedVertices": 461
+        }
+      ]
+    },
+    {
+      "name": "knee_r",
+      "frame": 120,
+      "timeSec": 4,
+      "maxDisplacementM": 0.8646786002263981,
+      "dccMaxErrorM": 1.4407028792184917e-7,
+      "rootTranslation": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "primitive": 0,
+          "maxDisplacementM": 2.172503645131177e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 1,
+          "maxDisplacementM": 2.1496685149800914e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 2,
+          "maxDisplacementM": 1.7547584522147823e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 3,
+          "maxDisplacementM": 2.1061681580932288e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 4,
+          "maxDisplacementM": 1.4221544726869668e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 5,
+          "maxDisplacementM": 2.1573997035015802e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 6,
+          "maxDisplacementM": 0.006712817996336131,
+          "movedVertices": 529
+        },
+        {
+          "primitive": 7,
+          "maxDisplacementM": 1.7329295625323542e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 8,
+          "maxDisplacementM": 1.4920353732675588e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 9,
+          "maxDisplacementM": 0.00038510098426047974,
+          "movedVertices": 151
+        },
+        {
+          "primitive": 10,
+          "maxDisplacementM": 0.5600233787837466,
+          "movedVertices": 423
+        },
+        {
+          "primitive": 11,
+          "maxDisplacementM": 1.915140585476654e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 12,
+          "maxDisplacementM": 0.4807176698976966,
+          "movedVertices": 1328
+        },
+        {
+          "primitive": 13,
+          "maxDisplacementM": 1.934612919689173e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 14,
+          "maxDisplacementM": 1.8684217050103492e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 15,
+          "maxDisplacementM": 0.00012636294195539677,
+          "movedVertices": 28
+        },
+        {
+          "primitive": 16,
+          "maxDisplacementM": 1.7589516329995346e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 17,
+          "maxDisplacementM": 0.0007493397779619607,
+          "movedVertices": 74
+        },
+        {
+          "primitive": 18,
+          "maxDisplacementM": 1.8087507714329505e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 19,
+          "maxDisplacementM": 1.843880887555245e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 20,
+          "maxDisplacementM": 0.7056619219925934,
+          "movedVertices": 594
+        },
+        {
+          "primitive": 21,
+          "maxDisplacementM": 0.7134229871808146,
+          "movedVertices": 617
+        },
+        {
+          "primitive": 22,
+          "maxDisplacementM": 0.6287979164832082,
+          "movedVertices": 350
+        },
+        {
+          "primitive": 23,
+          "maxDisplacementM": 0.027588896354999497,
+          "movedVertices": 621
+        },
+        {
+          "primitive": 24,
+          "maxDisplacementM": 0.005960146282421162,
+          "movedVertices": 155
+        },
+        {
+          "primitive": 25,
+          "maxDisplacementM": 2.044052755455292e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 26,
+          "maxDisplacementM": 1.6170821182483066e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 27,
+          "maxDisplacementM": 1.9594404455754819e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 28,
+          "maxDisplacementM": 2.713969183181075e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 29,
+          "maxDisplacementM": 2.5878656653593727e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 30,
+          "maxDisplacementM": 0.049764350900718526,
+          "movedVertices": 924
+        },
+        {
+          "primitive": 31,
+          "maxDisplacementM": 0.8646786002263981,
+          "movedVertices": 1604
+        },
+        {
+          "primitive": 32,
+          "maxDisplacementM": 2.09567126793144e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 33,
+          "maxDisplacementM": 2.2412045165693852e-7,
+          "movedVertices": 0
+        }
+      ]
+    },
+    {
+      "name": "combined_squat",
+      "frame": 135,
+      "timeSec": 4.5,
+      "maxDisplacementM": 0.6490026399246009,
+      "dccMaxErrorM": 2.0291141211714603e-7,
+      "rootTranslation": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "primitive": 0,
+          "maxDisplacementM": 0.1521184510154855,
+          "movedVertices": 3069
+        },
+        {
+          "primitive": 1,
+          "maxDisplacementM": 0.26753713763815373,
+          "movedVertices": 2245
+        },
+        {
+          "primitive": 2,
+          "maxDisplacementM": 0.15349505749702702,
+          "movedVertices": 489
+        },
+        {
+          "primitive": 3,
+          "maxDisplacementM": 0.6450220020779599,
+          "movedVertices": 462
+        },
+        {
+          "primitive": 4,
+          "maxDisplacementM": 0.15527961981318925,
+          "movedVertices": 406
+        },
+        {
+          "primitive": 5,
+          "maxDisplacementM": 0.5259468525168259,
+          "movedVertices": 508
+        },
+        {
+          "primitive": 6,
+          "maxDisplacementM": 0.40478447740778645,
+          "movedVertices": 529
+        },
+        {
+          "primitive": 7,
+          "maxDisplacementM": 0.2507879565974475,
+          "movedVertices": 620
+        },
+        {
+          "primitive": 8,
+          "maxDisplacementM": 0.15386907556769713,
+          "movedVertices": 445
+        },
+        {
+          "primitive": 9,
+          "maxDisplacementM": 0.3870421449036208,
+          "movedVertices": 588
+        },
+        {
+          "primitive": 10,
+          "maxDisplacementM": 0.464572189288655,
+          "movedVertices": 423
+        },
+        {
+          "primitive": 11,
+          "maxDisplacementM": 0.6287984112186306,
+          "movedVertices": 335
+        },
+        {
+          "primitive": 12,
+          "maxDisplacementM": 0.4994081067245322,
+          "movedVertices": 1684
+        },
+        {
+          "primitive": 13,
+          "maxDisplacementM": 0.6486524306063776,
+          "movedVertices": 349
+        },
+        {
+          "primitive": 14,
+          "maxDisplacementM": 0.6287755833497323,
+          "movedVertices": 337
+        },
+        {
+          "primitive": 15,
+          "maxDisplacementM": 0.6490026399246009,
+          "movedVertices": 322
+        },
+        {
+          "primitive": 16,
+          "maxDisplacementM": 0.10980869546773046,
+          "movedVertices": 612
+        },
+        {
+          "primitive": 17,
+          "maxDisplacementM": 0.6448059741197271,
+          "movedVertices": 371
+        },
+        {
+          "primitive": 18,
+          "maxDisplacementM": 0.1109111140416086,
+          "movedVertices": 534
+        },
+        {
+          "primitive": 19,
+          "maxDisplacementM": 0.20610588046777586,
+          "movedVertices": 384
+        },
+        {
+          "primitive": 20,
+          "maxDisplacementM": 0.37100423604364907,
+          "movedVertices": 594
+        },
+        {
+          "primitive": 21,
+          "maxDisplacementM": 0.36262635747571675,
+          "movedVertices": 617
+        },
+        {
+          "primitive": 22,
+          "maxDisplacementM": 0.4545685778185564,
+          "movedVertices": 350
+        },
+        {
+          "primitive": 23,
+          "maxDisplacementM": 0.4996614634553863,
+          "movedVertices": 1871
+        },
+        {
+          "primitive": 24,
+          "maxDisplacementM": 0.45355063886457303,
+          "movedVertices": 352
+        },
+        {
+          "primitive": 25,
+          "maxDisplacementM": 0.19751948170738598,
+          "movedVertices": 380
+        },
+        {
+          "primitive": 26,
+          "maxDisplacementM": 0.1838968180289276,
+          "movedVertices": 220
+        },
+        {
+          "primitive": 27,
+          "maxDisplacementM": 0.18364530255045095,
+          "movedVertices": 248
+        },
+        {
+          "primitive": 28,
+          "maxDisplacementM": 0.3591754311299139,
+          "movedVertices": 1183
+        },
+        {
+          "primitive": 29,
+          "maxDisplacementM": 0.35804688347704317,
+          "movedVertices": 1316
+        },
+        {
+          "primitive": 30,
+          "maxDisplacementM": 0.49689855545580497,
+          "movedVertices": 1320
+        },
+        {
+          "primitive": 31,
+          "maxDisplacementM": 0.4967644257957382,
+          "movedVertices": 1604
+        },
+        {
+          "primitive": 32,
+          "maxDisplacementM": 0.24232967675482817,
+          "movedVertices": 979
+        },
+        {
+          "primitive": 33,
+          "maxDisplacementM": 0.5932106732611461,
+          "movedVertices": 653
+        }
+      ]
+    },
+    {
+      "name": "rest_return",
+      "frame": 150,
+      "timeSec": 5,
+      "maxDisplacementM": 5.007290077160434e-7,
+      "dccMaxErrorM": 5.007290077160434e-7,
+      "rootTranslation": [
+        0,
+        0,
+        0
+      ],
+      "parts": [
+        {
+          "primitive": 0,
+          "maxDisplacementM": 2.1757983849634737e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 1,
+          "maxDisplacementM": 2.1496685149800914e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 2,
+          "maxDisplacementM": 1.7547584522147823e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 3,
+          "maxDisplacementM": 1.6482501911773897e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 4,
+          "maxDisplacementM": 1.4221544726869668e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 5,
+          "maxDisplacementM": 1.778686696097479e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 6,
+          "maxDisplacementM": 4.22289976109386e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 7,
+          "maxDisplacementM": 1.7329295625323542e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 8,
+          "maxDisplacementM": 1.4920353732675588e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 9,
+          "maxDisplacementM": 2.731560724374661e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 10,
+          "maxDisplacementM": 3.917856520568229e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 11,
+          "maxDisplacementM": 1.6192806783781188e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 12,
+          "maxDisplacementM": 4.52162912167507e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 13,
+          "maxDisplacementM": 1.667743446553338e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 14,
+          "maxDisplacementM": 1.6793867794196615e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 15,
+          "maxDisplacementM": 1.5827486984138017e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 16,
+          "maxDisplacementM": 1.7452822459480607e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 17,
+          "maxDisplacementM": 1.6108399131695587e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 18,
+          "maxDisplacementM": 1.793604060601062e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 19,
+          "maxDisplacementM": 1.843880887555245e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 20,
+          "maxDisplacementM": 2.748822841457606e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 21,
+          "maxDisplacementM": 2.8497806616441246e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 22,
+          "maxDisplacementM": 3.717250052638453e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 23,
+          "maxDisplacementM": 4.5059337134408327e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 24,
+          "maxDisplacementM": 3.727074844513218e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 25,
+          "maxDisplacementM": 2.044052755455292e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 26,
+          "maxDisplacementM": 1.6170821182483066e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 27,
+          "maxDisplacementM": 1.9594404455754819e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 28,
+          "maxDisplacementM": 2.521076041476741e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 29,
+          "maxDisplacementM": 2.5386934411522553e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 30,
+          "maxDisplacementM": 4.991978239644718e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 31,
+          "maxDisplacementM": 5.007290077160434e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 32,
+          "maxDisplacementM": 2.09567126793144e-7,
+          "movedVertices": 0
+        },
+        {
+          "primitive": 33,
+          "maxDisplacementM": 1.8258520030648701e-7,
+          "movedVertices": 0
+        }
+      ]
+    }
+  ],
+  "maxDccGlbDiscrepancyM": 9.168408634518954e-7,
+  "joints": [
+    {
+      "name": "root_motionless",
+      "node": 22,
+      "parent": -1,
+      "inverseBind": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "pelvis",
+      "node": 21,
+      "parent": 0,
+      "inverseBind": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -0.8700000047683716,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "spine_01",
+      "node": 12,
+      "parent": 1,
+      "inverseBind": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1.0299999713897705,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "spine_02",
+      "node": 11,
+      "parent": 2,
+      "inverseBind": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1.190000057220459,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "neck",
+      "node": 1,
+      "parent": 3,
+      "inverseBind": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1.399999976158142,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "head",
+      "node": 0,
+      "parent": 4,
+      "inverseBind": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1.5199999809265137,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "clavicle_l",
+      "node": 5,
+      "parent": 3,
+      "inverseBind": [
+        0,
+        1.0000001192092896,
+        0,
+        0,
+        4.371138828673793e-8,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -4.371138828673793e-8,
+        0,
+        -6.032171739889236e-8,
+        0,
+        -1.3799999952316284,
+        1
+      ]
+    },
+    {
+      "name": "upperarm_l",
+      "node": 4,
+      "parent": 6,
+      "inverseBind": [
+        0.6738854050636292,
+        0.5710645914077759,
+        0.4687899649143219,
+        0,
+        0.46878987550735474,
+        -0.820905327796936,
+        0.3261147439479828,
+        0,
+        0.5710645914077759,
+        -4.470350134511136e-8,
+        -0.8209052681922913,
+        0,
+        -0.7682293653488159,
+        1.030057668685913,
+        -0.5344204902648926,
+        1
+      ]
+    },
+    {
+      "name": "forearm_l",
+      "node": 3,
+      "parent": 7,
+      "inverseBind": [
+        0.701591432094574,
+        0.5462679862976074,
+        0.4575597941875458,
+        0,
+        0.4575597643852234,
+        -0.83761066198349,
+        0.2984086573123932,
+        0,
+        0.5462679266929626,
+        -7.450583439094771e-8,
+        -0.83761066198349,
+        0,
+        -0.7647348642349243,
+        0.7775211334228516,
+        -0.4987402856349945,
+        1
+      ]
+    },
+    {
+      "name": "hand_l",
+      "node": 2,
+      "parent": 8,
+      "inverseBind": [
+        0.9245285391807556,
+        0.27472084760665894,
+        0.2641507685184479,
+        0,
+        0.2641506493091583,
+        -0.9615241885185242,
+        0.07547151297330856,
+        0,
+        0.27472078800201416,
+        -7.450584149637507e-9,
+        -0.9615241885185242,
+        0,
+        -0.6960375905036926,
+        0.7499890327453613,
+        -0.19886764883995056,
+        1
+      ]
+    },
+    {
+      "name": "clavicle_r",
+      "node": 9,
+      "parent": 3,
+      "inverseBind": [
+        0,
+        -1.0000001192092896,
+        0,
+        0,
+        -4.371138828673793e-8,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        -4.371138828673793e-8,
+        0,
+        6.032171739889236e-8,
+        0,
+        -1.3799999952316284,
+        1
+      ]
+    },
+    {
+      "name": "upperarm_r",
+      "node": 8,
+      "parent": 10,
+      "inverseBind": [
+        0.6738854050636292,
+        -0.5710645914077759,
+        -0.4687899649143219,
+        0,
+        -0.46878987550735474,
+        -0.820905327796936,
+        0.3261147439479828,
+        0,
+        -0.5710645914077759,
+        -4.470350134511136e-8,
+        -0.8209052681922913,
+        0,
+        0.7682293653488159,
+        1.030057668685913,
+        -0.5344204902648926,
+        1
+      ]
+    },
+    {
+      "name": "forearm_r",
+      "node": 7,
+      "parent": 11,
+      "inverseBind": [
+        0.701591432094574,
+        -0.5462679862976074,
+        -0.4575597941875458,
+        0,
+        -0.4575597643852234,
+        -0.83761066198349,
+        0.2984086573123932,
+        0,
+        -0.5462679266929626,
+        -7.450583439094771e-8,
+        -0.83761066198349,
+        0,
+        0.7647348642349243,
+        0.7775211334228516,
+        -0.4987402856349945,
+        1
+      ]
+    },
+    {
+      "name": "hand_r",
+      "node": 6,
+      "parent": 12,
+      "inverseBind": [
+        0.9245285391807556,
+        -0.27472084760665894,
+        -0.2641507685184479,
+        0,
+        -0.2641506493091583,
+        -0.9615241885185242,
+        0.07547151297330856,
+        0,
+        -0.27472078800201416,
+        -7.450584149637507e-9,
+        -0.9615241885185242,
+        0,
+        0.6960375905036926,
+        0.7499890327453613,
+        -0.19886764883995056,
+        1
+      ]
+    },
+    {
+      "name": "backpack",
+      "node": 10,
+      "parent": 3,
+      "inverseBind": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1.149999976158142,
+        0.10999999940395355,
+        1
+      ]
+    },
+    {
+      "name": "thigh_l",
+      "node": 16,
+      "parent": 1,
+      "inverseBind": [
+        0.9971256852149963,
+        0.0525183342397213,
+        0.05454890802502632,
+        0,
+        0.054553400725126266,
+        -0.9978427886962891,
+        -0.03651747107505798,
+        0,
+        0.0525178462266922,
+        0.039388351142406464,
+        -0.9978412985801697,
+        0,
+        -0.20700156688690186,
+        0.8597202897071838,
+        0.023042380809783936,
+        1
+      ]
+    },
+    {
+      "name": "calf_l",
+      "node": 15,
+      "parent": 15,
+      "inverseBind": [
+        0.9999966621398926,
+        2.2957897272135597e-7,
+        -0.000004447514584171586,
+        0,
+        -1.8334685991661104e-9,
+        -0.9990279674530029,
+        0.044074688106775284,
+        0,
+        -7.465879292567479e-8,
+        -0.044074926525354385,
+        -0.9990266561508179,
+        0,
+        -0.17999939620494843,
+        0.4901847839355469,
+        -0.006610396783798933,
+        1
+      ]
+    },
+    {
+      "name": "foot_l",
+      "node": 14,
+      "parent": 16,
+      "inverseBind": [
+        0.9999966621398926,
+        0.0000037760812574560987,
+        -0.0000022179963252710877,
+        0,
+        2.3560209230603923e-13,
+        -0.5881720185279846,
+        -0.8087356090545654,
+        0,
+        1.7134702673653884e-13,
+        0.8087344169616699,
+        -0.5881714820861816,
+        0,
+        -0.1799994260072708,
+        0.0882251039147377,
+        0.12131071835756302,
+        1
+      ]
+    },
+    {
+      "name": "toe_l",
+      "node": 13,
+      "parent": 17,
+      "inverseBind": [
+        0.9999966621398926,
+        0.000004269852070137858,
+        -9.729631074151257e-7,
+        0,
+        -3.8571031297738475e-19,
+        -0.3162277042865753,
+        -0.9486830234527588,
+        0,
+        -1.285700655517037e-19,
+        0.948681652545929,
+        -0.31622761487960815,
+        0,
+        -0.17999939620494843,
+        -0.08221980929374695,
+        0.10119299590587616,
+        1
+      ]
+    },
+    {
+      "name": "thigh_r",
+      "node": 20,
+      "parent": 1,
+      "inverseBind": [
+        0.9971256852149963,
+        -0.0525183342397213,
+        -0.05454890802502632,
+        0,
+        -0.054553400725126266,
+        -0.9978427886962891,
+        -0.03651747107505798,
+        0,
+        -0.0525178462266922,
+        0.039388351142406464,
+        -0.9978412985801697,
+        0,
+        0.20700156688690186,
+        0.8597202897071838,
+        0.023042380809783936,
+        1
+      ]
+    },
+    {
+      "name": "calf_r",
+      "node": 19,
+      "parent": 19,
+      "inverseBind": [
+        0.9999966621398926,
+        -2.2957897272135597e-7,
+        0.000004447514584171586,
+        0,
+        1.8334685991661104e-9,
+        -0.9990279674530029,
+        0.044074688106775284,
+        0,
+        7.465879292567479e-8,
+        -0.044074926525354385,
+        -0.9990266561508179,
+        0,
+        0.17999939620494843,
+        0.4901847839355469,
+        -0.006610396783798933,
+        1
+      ]
+    },
+    {
+      "name": "foot_r",
+      "node": 18,
+      "parent": 20,
+      "inverseBind": [
+        0.9999966621398926,
+        -0.0000037760812574560987,
+        0.0000022179963252710877,
+        0,
+        -2.3560209230603923e-13,
+        -0.5881720185279846,
+        -0.8087356090545654,
+        0,
+        -1.7134702673653884e-13,
+        0.8087344169616699,
+        -0.5881714820861816,
+        0,
+        0.1799994260072708,
+        0.0882251039147377,
+        0.12131071835756302,
+        1
+      ]
+    },
+    {
+      "name": "toe_r",
+      "node": 17,
+      "parent": 21,
+      "inverseBind": [
+        0.9999966621398926,
+        -0.000004269852070137858,
+        9.729631074151257e-7,
+        0,
+        3.8571031297738475e-19,
+        -0.3162277042865753,
+        -0.9486830234527588,
+        0,
+        1.285700655517037e-19,
+        0.948681652545929,
+        -0.31622761487960815,
+        0,
+        0.17999939620494843,
+        -0.08221980929374695,
+        0.10119299590587616,
+        1
+      ]
+    }
+  ],
+  "quality": "Structural and numerical validation only; visual quality requires independent review."
+}

@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "startTime": "2026-11-01T14:27:39.604Z",
+    "duration": 303388.616,
+    "expected": 44,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "oldTests": 43,
+  "newProbeTests": 1,
+  "exitCode": 0,
+  "config": {
+    "port": 5185,
+    "strictPort": true,
+    "reuseExistingServer": false,
+    "workers": 1,
+    "backend": "ANGLE D3D11"
+  },
+  "fullResultsLocation": ".pao15-local/full-results.json"
+}

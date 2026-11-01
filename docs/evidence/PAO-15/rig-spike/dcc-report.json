@@ -1,0 +1,3495 @@
+{
+  "status": "automatic probe only; not production approval",
+  "derivedReconstruction": true,
+  "source": "D:\\worker\\paoku-sessions\\glb-review\\public\\models\\character_runner.glb",
+  "sourceSha256": "0f475ed22a2abfbbb9b4cb3069f5c9b131110847b23bd68fbcdff4b3baa797d9",
+  "blenderVersion": "4.5.3 LTS",
+  "blenderBuildHash": "67807e1800cc",
+  "sourceHeightDcc": 0.9790511131286621,
+  "probeHeightM": 1.8,
+  "scale": 1.8385148393814785,
+  "sourceGltfAxes": "Y-up +Z-forward candidate checked with front/side engine preview",
+  "dccAxes": "Z-up -Y-forward; glTF importer/exporter handles basis conversion",
+  "normalizationDcc": [
+    [
+      1.838514804840088,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.838514804840088,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.838514804840088,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "normalizationAppliedCount": 1,
+  "normalizationStage": "mesh data in world DCC space, before armature/IBM",
+  "triangleCount": 26268,
+  "materials": 1,
+  "textures": [
+    {
+      "name": "stylized_character_3d_model_basecolor",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "stylized_character_3d_model_normal",
+      "size": [
+        4096,
+        4096
+      ]
+    }
+  ],
+  "weightMethod": "deterministic nearest-four rest bone-segment inverse squared distance-squared weights; softening .035m; no heat solver, manual painting or topology edits",
+  "weightStats": {
+    "vertices": 26372,
+    "softVertices": 26372,
+    "maxInfluences": 4,
+    "maxSumError": 4.440892098500626e-16
+  },
+  "bones": [
+    {
+      "name": "root_motionless",
+      "parent": null,
+      "headTarget": [
+        0,
+        0,
+        0
+      ],
+      "tailTarget": [
+        0,
+        0.12,
+        0
+      ]
+    },
+    {
+      "name": "pelvis",
+      "parent": "root_motionless",
+      "headTarget": [
+        0,
+        0.87,
+        0
+      ],
+      "tailTarget": [
+        0,
+        1.03,
+        0
+      ]
+    },
+    {
+      "name": "spine_01",
+      "parent": "pelvis",
+      "headTarget": [
+        0,
+        1.03,
+        0
+      ],
+      "tailTarget": [
+        0,
+        1.19,
+        0
+      ]
+    },
+    {
+      "name": "spine_02",
+      "parent": "spine_01",
+      "headTarget": [
+        0,
+        1.19,
+        0
+      ],
+      "tailTarget": [
+        0,
+        1.4,
+        0
+      ]
+    },
+    {
+      "name": "neck",
+      "parent": "spine_02",
+      "headTarget": [
+        0,
+        1.4,
+        0
+      ],
+      "tailTarget": [
+        0,
+        1.52,
+        0
+      ]
+    },
+    {
+      "name": "head",
+      "parent": "neck",
+      "headTarget": [
+        0,
+        1.52,
+        0
+      ],
+      "tailTarget": [
+        0,
+        1.76,
+        0
+      ]
+    },
+    {
+      "name": "clavicle_l",
+      "parent": "spine_02",
+      "headTarget": [
+        0,
+        1.38,
+        0
+      ],
+      "tailTarget": [
+        0.18,
+        1.38,
+        0
+      ]
+    },
+    {
+      "name": "upperarm_l",
+      "parent": "clavicle_l",
+      "headTarget": [
+        0.18,
+        1.38,
+        0
+      ],
+      "tailTarget": [
+        0.34,
+        1.15,
+        0
+      ]
+    },
+    {
+      "name": "forearm_l",
+      "parent": "upperarm_l",
+      "headTarget": [
+        0.34,
+        1.15,
+        0
+      ],
+      "tailTarget": [
+        0.49,
+        0.92,
+        0
+      ]
+    },
+    {
+      "name": "hand_l",
+      "parent": "forearm_l",
+      "headTarget": [
+        0.49,
+        0.92,
+        0
+      ],
+      "tailTarget": [
+        0.53,
+        0.78,
+        0
+      ]
+    },
+    {
+      "name": "thigh_l",
+      "parent": "pelvis",
+      "headTarget": [
+        0.16,
+        0.87,
+        0
+      ],
+      "tailTarget": [
+        0.18,
+        0.49,
+        0.015
+      ]
+    },
+    {
+      "name": "calf_l",
+      "parent": "thigh_l",
+      "headTarget": [
+        0.18,
+        0.49,
+        0.015
+      ],
+      "tailTarget": [
+        0.18,
+        0.15,
+        0
+      ]
+    },
+    {
+      "name": "foot_l",
+      "parent": "calf_l",
+      "headTarget": [
+        0.18,
+        0.15,
+        0
+      ],
+      "tailTarget": [
+        0.18,
+        0.07,
+        0.11
+      ]
+    },
+    {
+      "name": "toe_l",
+      "parent": "foot_l",
+      "headTarget": [
+        0.18,
+        0.07,
+        0.11
+      ],
+      "tailTarget": [
+        0.18,
+        0.05,
+        0.17
+      ]
+    },
+    {
+      "name": "clavicle_r",
+      "parent": "spine_02",
+      "headTarget": [
+        0,
+        1.38,
+        0
+      ],
+      "tailTarget": [
+        -0.18,
+        1.38,
+        0
+      ]
+    },
+    {
+      "name": "upperarm_r",
+      "parent": "clavicle_r",
+      "headTarget": [
+        -0.18,
+        1.38,
+        0
+      ],
+      "tailTarget": [
+        -0.34,
+        1.15,
+        0
+      ]
+    },
+    {
+      "name": "forearm_r",
+      "parent": "upperarm_r",
+      "headTarget": [
+        -0.34,
+        1.15,
+        0
+      ],
+      "tailTarget": [
+        -0.49,
+        0.92,
+        0
+      ]
+    },
+    {
+      "name": "hand_r",
+      "parent": "forearm_r",
+      "headTarget": [
+        -0.49,
+        0.92,
+        0
+      ],
+      "tailTarget": [
+        -0.53,
+        0.78,
+        0
+      ]
+    },
+    {
+      "name": "thigh_r",
+      "parent": "pelvis",
+      "headTarget": [
+        -0.16,
+        0.87,
+        0
+      ],
+      "tailTarget": [
+        -0.18,
+        0.49,
+        0.015
+      ]
+    },
+    {
+      "name": "calf_r",
+      "parent": "thigh_r",
+      "headTarget": [
+        -0.18,
+        0.49,
+        0.015
+      ],
+      "tailTarget": [
+        -0.18,
+        0.15,
+        0
+      ]
+    },
+    {
+      "name": "foot_r",
+      "parent": "calf_r",
+      "headTarget": [
+        -0.18,
+        0.15,
+        0
+      ],
+      "tailTarget": [
+        -0.18,
+        0.07,
+        0.11
+      ]
+    },
+    {
+      "name": "toe_r",
+      "parent": "foot_r",
+      "headTarget": [
+        -0.18,
+        0.07,
+        0.11
+      ],
+      "tailTarget": [
+        -0.18,
+        0.05,
+        0.17
+      ]
+    },
+    {
+      "name": "backpack",
+      "parent": "spine_02",
+      "headTarget": [
+        0,
+        1.15,
+        -0.11
+      ],
+      "tailTarget": [
+        0,
+        1.3,
+        -0.11
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "name": "tripo_part_0",
+      "vertices": 3068,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.0017023071413859725
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.006947963032871485
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.1296229362487793
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_1",
+      "vertices": 2245,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.0016823866171762347
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.00026092978077940643
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.5639933347702026
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_10",
+      "vertices": 489,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.047601524740457535
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.11455099284648895
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.3328070640563965
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_11",
+      "vertices": 462,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.511898398399353
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.07301971316337585
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.7950270175933838
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_12",
+      "vertices": 406,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.0007433054852299392
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.08867276459932327
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.2692818641662598
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_13",
+      "vertices": 508,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.4769439101219177
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.0008741843630559742
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.8527853488922119
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_14",
+      "vertices": 529,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.19794325530529022
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.07497602701187134
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.021093500778079033
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_15",
+      "vertices": 620,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.019840901717543602
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.031895656138658524
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.6539360284805298
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_16",
+      "vertices": 445,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.04646095260977745
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.10755504667758942
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.355055570602417
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_17",
+      "vertices": 588,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.18479005992412567
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.03623426333069801
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.1100015863776207
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_18",
+      "vertices": 423,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.143564835190773
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.07102810591459274
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.20558661222457886
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_19",
+      "vertices": 335,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.5320303440093994
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.02774113044142723
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.795266330242157
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_2",
+      "vertices": 1683,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.11759517341852188
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.019945552572607994
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.5303276777267456
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_20",
+      "vertices": 349,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.5389867424964905
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.014036009088158607
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.7819413542747498
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_21",
+      "vertices": 337,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.5352602601051331
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.029735052958130836
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.7947205901145935
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_22",
+      "vertices": 321,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.5411009788513184
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.014156430959701538
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.7822291851043701
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_23",
+      "vertices": 599,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.13982604444026947
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.096021868288517
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.03056001663208
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_24",
+      "vertices": 371,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.5281006693840027
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.06082255020737648
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.780533492565155
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_25",
+      "vertices": 534,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.13805529475212097
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.09907624125480652
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.0323631763458252
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_26",
+      "vertices": 384,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.07926282286643982
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.051667407155036926
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.579200267791748
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_27",
+      "vertices": 594,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.18202073872089386
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.041070982813835144
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.11184725910425186
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_28",
+      "vertices": 616,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.18821606040000916
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.0570702850818634
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.09856858104467392
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_29",
+      "vertices": 350,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.14747095108032227
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.0731169804930687
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.1652475893497467
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_3",
+      "vertices": 1870,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.12009809166193008
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.023007582873106003
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.5143924951553345
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_30",
+      "vertices": 352,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.1500328779220581
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.07375746965408325
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.16508039832115173
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_31",
+      "vertices": 379,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.001453297445550561
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.11015085875988007
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.5687552690505981
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_32",
+      "vertices": 220,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.035794589668512344
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.09762392938137054
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.511030912399292
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_33",
+      "vertices": 248,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.034312549978494644
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.1025398001074791
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.5139373540878296
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_4",
+      "vertices": 1182,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.32629668712615967
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.038256578147411346
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.0956751108169556
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_5",
+      "vertices": 1316,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.3383893072605133
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.03398966044187546
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.0829180479049683
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_6",
+      "vertices": 1317,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          0.17112398147583008
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.012603512965142727
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.08765281736850739
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_7",
+      "vertices": 1603,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.17180058360099792
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.008423740044236183
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.07984472811222076
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_8",
+      "vertices": 978,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.006840749178081751
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          -0.05514596402645111
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          1.5927379131317139
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tripo_part_9",
+      "vertices": 651,
+      "normalizationTimesNodeMatrix": [
+        [
+          1.838514804840088,
+          0.0,
+          0.0,
+          -0.4809260368347168
+        ],
+        [
+          0.0,
+          1.838514804840088,
+          0.0,
+          0.020371930673718452
+        ],
+        [
+          0.0,
+          0.0,
+          1.838514804840088,
+          0.8367242217063904
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "poses": [
+    {
+      "name": "rest",
+      "frame": 0,
+      "rotations": [],
+      "parts": [
+        {
+          "part": "tripo_part_0",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_1",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_10",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_11",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_12",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_13",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_14",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_15",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_16",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_17",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_18",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_19",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_2",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_20",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_21",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_22",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_23",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_24",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_25",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_26",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_27",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_28",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_29",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_3",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_30",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_31",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_32",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_33",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_4",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_5",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_6",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_7",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_8",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_9",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        }
+      ],
+      "maxDisplacementM": 0.0,
+      "movedVertices": 0,
+      "referenceSpace": "bone local XYZ Euler in Blender rest bone basis; degrees"
+    },
+    {
+      "name": "shoulder_l",
+      "frame": 15,
+      "rotations": [
+        [
+          "upperarm_l",
+          "X",
+          90
+        ]
+      ],
+      "parts": [
+        {
+          "part": "tripo_part_0",
+          "maxDisplacementM": 0.20012744910530017,
+          "movedVertices": 855
+        },
+        {
+          "part": "tripo_part_1",
+          "maxDisplacementM": 0.04886028761628935,
+          "movedVertices": 112
+        },
+        {
+          "part": "tripo_part_10",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_11",
+          "maxDisplacementM": 1.0243072144940335,
+          "movedVertices": 462
+        },
+        {
+          "part": "tripo_part_12",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_13",
+          "maxDisplacementM": 0.9203496437519045,
+          "movedVertices": 508
+        },
+        {
+          "part": "tripo_part_14",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_15",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_16",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_17",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_18",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_19",
+          "maxDisplacementM": 1.030320335888286,
+          "movedVertices": 335
+        },
+        {
+          "part": "tripo_part_2",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_20",
+          "maxDisplacementM": 1.041359474376681,
+          "movedVertices": 349
+        },
+        {
+          "part": "tripo_part_21",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_22",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_23",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_24",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_25",
+          "maxDisplacementM": 0.04016642676915614,
+          "movedVertices": 229
+        },
+        {
+          "part": "tripo_part_26",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_27",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_28",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_29",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_3",
+          "maxDisplacementM": 0.0025148579640304827,
+          "movedVertices": 138
+        },
+        {
+          "part": "tripo_part_30",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_31",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_32",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_33",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_4",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_5",
+          "maxDisplacementM": 0.7525130787949299,
+          "movedVertices": 1316
+        },
+        {
+          "part": "tripo_part_6",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_7",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_8",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_9",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        }
+      ],
+      "maxDisplacementM": 1.041359474376681,
+      "movedVertices": 4304,
+      "referenceSpace": "bone local XYZ Euler in Blender rest bone basis; degrees"
+    },
+    {
+      "name": "elbow_l",
+      "frame": 30,
+      "rotations": [
+        [
+          "forearm_l",
+          "X",
+          120
+        ]
+      ],
+      "parts": [
+        {
+          "part": "tripo_part_0",
+          "maxDisplacementM": 0.04814599948466497,
+          "movedVertices": 372
+        },
+        {
+          "part": "tripo_part_1",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_10",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_11",
+          "maxDisplacementM": 0.7742600209604141,
+          "movedVertices": 462
+        },
+        {
+          "part": "tripo_part_12",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_13",
+          "maxDisplacementM": 0.6441701845820546,
+          "movedVertices": 508
+        },
+        {
+          "part": "tripo_part_14",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_15",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_16",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_17",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_18",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_19",
+          "maxDisplacementM": 0.7796311247250027,
+          "movedVertices": 335
+        },
+        {
+          "part": "tripo_part_2",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_20",
+          "maxDisplacementM": 0.792755077024453,
+          "movedVertices": 349
+        },
+        {
+          "part": "tripo_part_21",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_22",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_23",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_24",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_25",
+          "maxDisplacementM": 0.02832491351811848,
+          "movedVertices": 168
+        },
+        {
+          "part": "tripo_part_26",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_27",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_28",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_29",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_3",
+          "maxDisplacementM": 0.0012024057355845164,
+          "movedVertices": 125
+        },
+        {
+          "part": "tripo_part_30",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_31",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_32",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_33",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_4",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_5",
+          "maxDisplacementM": 0.440517306863569,
+          "movedVertices": 1245
+        },
+        {
+          "part": "tripo_part_6",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_7",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_8",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_9",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        }
+      ],
+      "maxDisplacementM": 0.792755077024453,
+      "movedVertices": 3564,
+      "referenceSpace": "bone local XYZ Euler in Blender rest bone basis; degrees"
+    },
+    {
+      "name": "hip_l",
+      "frame": 45,
+      "rotations": [
+        [
+          "thigh_l",
+          "X",
+          -90
+        ]
+      ],
+      "parts": [
+        {
+          "part": "tripo_part_0",
+          "maxDisplacementM": 0.12581154413554582,
+          "movedVertices": 1095
+        },
+        {
+          "part": "tripo_part_1",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_10",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_11",
+          "maxDisplacementM": 0.0028003604507282477,
+          "movedVertices": 429
+        },
+        {
+          "part": "tripo_part_12",
+          "maxDisplacementM": 0.027538618684847502,
+          "movedVertices": 107
+        },
+        {
+          "part": "tripo_part_13",
+          "maxDisplacementM": 0.0027430842477267734,
+          "movedVertices": 296
+        },
+        {
+          "part": "tripo_part_14",
+          "maxDisplacementM": 1.2384235803442485,
+          "movedVertices": 529
+        },
+        {
+          "part": "tripo_part_15",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_16",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_17",
+          "maxDisplacementM": 1.1097477203671693,
+          "movedVertices": 588
+        },
+        {
+          "part": "tripo_part_18",
+          "maxDisplacementM": 0.016177922292663564,
+          "movedVertices": 116
+        },
+        {
+          "part": "tripo_part_19",
+          "maxDisplacementM": 0.00015932710936187447,
+          "movedVertices": 65
+        },
+        {
+          "part": "tripo_part_2",
+          "maxDisplacementM": 0.09268755892663953,
+          "movedVertices": 1002
+        },
+        {
+          "part": "tripo_part_20",
+          "maxDisplacementM": 0.00017478821983298167,
+          "movedVertices": 53
+        },
+        {
+          "part": "tripo_part_21",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_22",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_23",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_24",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_25",
+          "maxDisplacementM": 0.11915576294628948,
+          "movedVertices": 473
+        },
+        {
+          "part": "tripo_part_26",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_27",
+          "maxDisplacementM": 0.0006275399908566166,
+          "movedVertices": 255
+        },
+        {
+          "part": "tripo_part_28",
+          "maxDisplacementM": 0.00043224764833630323,
+          "movedVertices": 352
+        },
+        {
+          "part": "tripo_part_29",
+          "maxDisplacementM": 0.01054440739573203,
+          "movedVertices": 170
+        },
+        {
+          "part": "tripo_part_3",
+          "maxDisplacementM": 0.9743239621755236,
+          "movedVertices": 1870
+        },
+        {
+          "part": "tripo_part_30",
+          "maxDisplacementM": 1.040216016938679,
+          "movedVertices": 352
+        },
+        {
+          "part": "tripo_part_31",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_32",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_33",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_4",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_5",
+          "maxDisplacementM": 0.021014877958681847,
+          "movedVertices": 608
+        },
+        {
+          "part": "tripo_part_6",
+          "maxDisplacementM": 1.214873406686056,
+          "movedVertices": 1317
+        },
+        {
+          "part": "tripo_part_7",
+          "maxDisplacementM": 0.07292466994436125,
+          "movedVertices": 1233
+        },
+        {
+          "part": "tripo_part_8",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_9",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        }
+      ],
+      "maxDisplacementM": 1.2384235803442485,
+      "movedVertices": 10910,
+      "referenceSpace": "bone local XYZ Euler in Blender rest bone basis; degrees"
+    },
+    {
+      "name": "knee_l",
+      "frame": 60,
+      "rotations": [
+        [
+          "calf_l",
+          "X",
+          120
+        ]
+      ],
+      "parts": [
+        {
+          "part": "tripo_part_0",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_1",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_10",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_11",
+          "maxDisplacementM": 0.0007429670364497845,
+          "movedVertices": 48
+        },
+        {
+          "part": "tripo_part_12",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_13",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_14",
+          "maxDisplacementM": 0.8670981249417586,
+          "movedVertices": 529
+        },
+        {
+          "part": "tripo_part_15",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_16",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_17",
+          "maxDisplacementM": 0.6962315454040509,
+          "movedVertices": 588
+        },
+        {
+          "part": "tripo_part_18",
+          "maxDisplacementM": 0.008736790168103064,
+          "movedVertices": 116
+        },
+        {
+          "part": "tripo_part_19",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_2",
+          "maxDisplacementM": 0.02786955352045775,
+          "movedVertices": 508
+        },
+        {
+          "part": "tripo_part_20",
+          "maxDisplacementM": 0.00012455494246819905,
+          "movedVertices": 24
+        },
+        {
+          "part": "tripo_part_21",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_22",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_23",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_24",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_25",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_26",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_27",
+          "maxDisplacementM": 0.00038999430214491646,
+          "movedVertices": 124
+        },
+        {
+          "part": "tripo_part_28",
+          "maxDisplacementM": 0.0002746271378798069,
+          "movedVertices": 175
+        },
+        {
+          "part": "tripo_part_29",
+          "maxDisplacementM": 0.006259930149245113,
+          "movedVertices": 170
+        },
+        {
+          "part": "tripo_part_3",
+          "maxDisplacementM": 0.560300361611655,
+          "movedVertices": 1516
+        },
+        {
+          "part": "tripo_part_30",
+          "maxDisplacementM": 0.6292836466700651,
+          "movedVertices": 352
+        },
+        {
+          "part": "tripo_part_31",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_32",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_33",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_4",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_5",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_6",
+          "maxDisplacementM": 0.8425224169060869,
+          "movedVertices": 1317
+        },
+        {
+          "part": "tripo_part_7",
+          "maxDisplacementM": 0.051522300760795135,
+          "movedVertices": 1211
+        },
+        {
+          "part": "tripo_part_8",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_9",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        }
+      ],
+      "maxDisplacementM": 0.8670981249417586,
+      "movedVertices": 6678,
+      "referenceSpace": "bone local XYZ Euler in Blender rest bone basis; degrees"
+    },
+    {
+      "name": "shoulder_r",
+      "frame": 75,
+      "rotations": [
+        [
+          "upperarm_r",
+          "X",
+          -90
+        ]
+      ],
+      "parts": [
+        {
+          "part": "tripo_part_0",
+          "maxDisplacementM": 0.20274396953591162,
+          "movedVertices": 790
+        },
+        {
+          "part": "tripo_part_1",
+          "maxDisplacementM": 0.04881352146635426,
+          "movedVertices": 113
+        },
+        {
+          "part": "tripo_part_10",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_11",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_12",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_13",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_14",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_15",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_16",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_17",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_18",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_19",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_2",
+          "maxDisplacementM": 0.002606622507409326,
+          "movedVertices": 130
+        },
+        {
+          "part": "tripo_part_20",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_21",
+          "maxDisplacementM": 1.0301775919368292,
+          "movedVertices": 337
+        },
+        {
+          "part": "tripo_part_22",
+          "maxDisplacementM": 1.041656304148947,
+          "movedVertices": 321
+        },
+        {
+          "part": "tripo_part_23",
+          "maxDisplacementM": 0.04028000421538354,
+          "movedVertices": 228
+        },
+        {
+          "part": "tripo_part_24",
+          "maxDisplacementM": 1.0239317115681084,
+          "movedVertices": 371
+        },
+        {
+          "part": "tripo_part_25",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_26",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_27",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_28",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_29",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_3",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_30",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_31",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_32",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_33",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_4",
+          "maxDisplacementM": 0.7521904211776044,
+          "movedVertices": 1182
+        },
+        {
+          "part": "tripo_part_5",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_6",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_7",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_8",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_9",
+          "maxDisplacementM": 0.963990107991584,
+          "movedVertices": 651
+        }
+      ],
+      "maxDisplacementM": 1.041656304148947,
+      "movedVertices": 4123,
+      "referenceSpace": "bone local XYZ Euler in Blender rest bone basis; degrees"
+    },
+    {
+      "name": "elbow_r",
+      "frame": 90,
+      "rotations": [
+        [
+          "forearm_r",
+          "X",
+          120
+        ]
+      ],
+      "parts": [
+        {
+          "part": "tripo_part_0",
+          "maxDisplacementM": 0.04868430593783545,
+          "movedVertices": 342
+        },
+        {
+          "part": "tripo_part_1",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_10",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_11",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_12",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_13",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_14",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_15",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_16",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_17",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_18",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_19",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_2",
+          "maxDisplacementM": 0.00124286022831136,
+          "movedVertices": 112
+        },
+        {
+          "part": "tripo_part_20",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_21",
+          "maxDisplacementM": 0.7795281987102811,
+          "movedVertices": 337
+        },
+        {
+          "part": "tripo_part_22",
+          "maxDisplacementM": 0.7931110860364641,
+          "movedVertices": 321
+        },
+        {
+          "part": "tripo_part_23",
+          "maxDisplacementM": 0.027972767071445484,
+          "movedVertices": 173
+        },
+        {
+          "part": "tripo_part_24",
+          "maxDisplacementM": 0.7740880392964334,
+          "movedVertices": 371
+        },
+        {
+          "part": "tripo_part_25",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_26",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_27",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_28",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_29",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_3",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_30",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_31",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_32",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_33",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_4",
+          "maxDisplacementM": 0.4393120263661941,
+          "movedVertices": 1116
+        },
+        {
+          "part": "tripo_part_5",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_6",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_7",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_8",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_9",
+          "maxDisplacementM": 0.7027948107556271,
+          "movedVertices": 651
+        }
+      ],
+      "maxDisplacementM": 0.7931110860364641,
+      "movedVertices": 3423,
+      "referenceSpace": "bone local XYZ Euler in Blender rest bone basis; degrees"
+    },
+    {
+      "name": "hip_r",
+      "frame": 105,
+      "rotations": [
+        [
+          "thigh_r",
+          "X",
+          -90
+        ]
+      ],
+      "parts": [
+        {
+          "part": "tripo_part_0",
+          "maxDisplacementM": 0.1264647263817261,
+          "movedVertices": 1028
+        },
+        {
+          "part": "tripo_part_1",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_10",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_11",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_12",
+          "maxDisplacementM": 0.026686993888238943,
+          "movedVertices": 100
+        },
+        {
+          "part": "tripo_part_13",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_14",
+          "maxDisplacementM": 0.009640273374542693,
+          "movedVertices": 529
+        },
+        {
+          "part": "tripo_part_15",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_16",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_17",
+          "maxDisplacementM": 0.0006234019794133981,
+          "movedVertices": 270
+        },
+        {
+          "part": "tripo_part_18",
+          "maxDisplacementM": 0.9741305962675106,
+          "movedVertices": 423
+        },
+        {
+          "part": "tripo_part_19",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_2",
+          "maxDisplacementM": 0.9100903450860731,
+          "movedVertices": 1683
+        },
+        {
+          "part": "tripo_part_20",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_21",
+          "maxDisplacementM": 0.00015384648290103808,
+          "movedVertices": 84
+        },
+        {
+          "part": "tripo_part_22",
+          "maxDisplacementM": 0.00017827032826362945,
+          "movedVertices": 54
+        },
+        {
+          "part": "tripo_part_23",
+          "maxDisplacementM": 0.11888084870894287,
+          "movedVertices": 544
+        },
+        {
+          "part": "tripo_part_24",
+          "maxDisplacementM": 0.0011436110761468173,
+          "movedVertices": 321
+        },
+        {
+          "part": "tripo_part_25",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_26",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_27",
+          "maxDisplacementM": 1.1111311069571994,
+          "movedVertices": 594
+        },
+        {
+          "part": "tripo_part_28",
+          "maxDisplacementM": 1.1199766025520055,
+          "movedVertices": 616
+        },
+        {
+          "part": "tripo_part_29",
+          "maxDisplacementM": 1.039920858596974,
+          "movedVertices": 350
+        },
+        {
+          "part": "tripo_part_3",
+          "maxDisplacementM": 0.0894699547412063,
+          "movedVertices": 1112
+        },
+        {
+          "part": "tripo_part_30",
+          "maxDisplacementM": 0.010023575761164439,
+          "movedVertices": 155
+        },
+        {
+          "part": "tripo_part_31",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_32",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_33",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_4",
+          "maxDisplacementM": 0.021257572271783518,
+          "movedVertices": 535
+        },
+        {
+          "part": "tripo_part_5",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_6",
+          "maxDisplacementM": 0.07046420443789742,
+          "movedVertices": 970
+        },
+        {
+          "part": "tripo_part_7",
+          "maxDisplacementM": 1.2362580332239506,
+          "movedVertices": 1603
+        },
+        {
+          "part": "tripo_part_8",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_9",
+          "maxDisplacementM": 0.0027038621565056444,
+          "movedVertices": 460
+        }
+      ],
+      "maxDisplacementM": 1.2362580332239506,
+      "movedVertices": 11431,
+      "referenceSpace": "bone local XYZ Euler in Blender rest bone basis; degrees"
+    },
+    {
+      "name": "knee_r",
+      "frame": 120,
+      "rotations": [
+        [
+          "calf_r",
+          "X",
+          120
+        ]
+      ],
+      "parts": [
+        {
+          "part": "tripo_part_0",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_1",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_10",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_11",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_12",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_13",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_14",
+          "maxDisplacementM": 0.00671260236617049,
+          "movedVertices": 529
+        },
+        {
+          "part": "tripo_part_15",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_16",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_17",
+          "maxDisplacementM": 0.00038490835019657773,
+          "movedVertices": 151
+        },
+        {
+          "part": "tripo_part_18",
+          "maxDisplacementM": 0.5600233341282561,
+          "movedVertices": 423
+        },
+        {
+          "part": "tripo_part_19",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_2",
+          "maxDisplacementM": 0.48071766572341706,
+          "movedVertices": 1327
+        },
+        {
+          "part": "tripo_part_20",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_21",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_22",
+          "maxDisplacementM": 0.00012654028183605842,
+          "movedVertices": 28
+        },
+        {
+          "part": "tripo_part_23",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_24",
+          "maxDisplacementM": 0.0007495038524306239,
+          "movedVertices": 74
+        },
+        {
+          "part": "tripo_part_25",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_26",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_27",
+          "maxDisplacementM": 0.7056617962726672,
+          "movedVertices": 594
+        },
+        {
+          "part": "tripo_part_28",
+          "maxDisplacementM": 0.7134228431075008,
+          "movedVertices": 616
+        },
+        {
+          "part": "tripo_part_29",
+          "maxDisplacementM": 0.6287979023761052,
+          "movedVertices": 350
+        },
+        {
+          "part": "tripo_part_3",
+          "maxDisplacementM": 0.027588848764152896,
+          "movedVertices": 621
+        },
+        {
+          "part": "tripo_part_30",
+          "maxDisplacementM": 0.005960077807282085,
+          "movedVertices": 155
+        },
+        {
+          "part": "tripo_part_31",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_32",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_33",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_4",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_5",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_6",
+          "maxDisplacementM": 0.04976423998890799,
+          "movedVertices": 922
+        },
+        {
+          "part": "tripo_part_7",
+          "maxDisplacementM": 0.8646784561561102,
+          "movedVertices": 1603
+        },
+        {
+          "part": "tripo_part_8",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_9",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        }
+      ],
+      "maxDisplacementM": 0.8646784561561102,
+      "movedVertices": 7393,
+      "referenceSpace": "bone local XYZ Euler in Blender rest bone basis; degrees"
+    },
+    {
+      "name": "combined_squat",
+      "frame": 135,
+      "rotations": [
+        [
+          "thigh_l",
+          "X",
+          -70
+        ],
+        [
+          "thigh_r",
+          "X",
+          -70
+        ],
+        [
+          "calf_l",
+          "X",
+          110
+        ],
+        [
+          "calf_r",
+          "X",
+          110
+        ],
+        [
+          "spine_01",
+          "X",
+          20
+        ],
+        [
+          "forearm_l",
+          "X",
+          80
+        ],
+        [
+          "forearm_r",
+          "X",
+          80
+        ]
+      ],
+      "parts": [
+        {
+          "part": "tripo_part_0",
+          "maxDisplacementM": 0.15211843103198128,
+          "movedVertices": 3068
+        },
+        {
+          "part": "tripo_part_1",
+          "maxDisplacementM": 0.26753720458761726,
+          "movedVertices": 2245
+        },
+        {
+          "part": "tripo_part_10",
+          "maxDisplacementM": 0.15349503526493766,
+          "movedVertices": 489
+        },
+        {
+          "part": "tripo_part_11",
+          "maxDisplacementM": 0.6450219403380022,
+          "movedVertices": 462
+        },
+        {
+          "part": "tripo_part_12",
+          "maxDisplacementM": 0.1552796737450215,
+          "movedVertices": 406
+        },
+        {
+          "part": "tripo_part_13",
+          "maxDisplacementM": 0.5259466439489056,
+          "movedVertices": 508
+        },
+        {
+          "part": "tripo_part_14",
+          "maxDisplacementM": 0.40478526814350496,
+          "movedVertices": 529
+        },
+        {
+          "part": "tripo_part_15",
+          "maxDisplacementM": 0.2507880129748961,
+          "movedVertices": 620
+        },
+        {
+          "part": "tripo_part_16",
+          "maxDisplacementM": 0.1538691378823556,
+          "movedVertices": 445
+        },
+        {
+          "part": "tripo_part_17",
+          "maxDisplacementM": 0.3870428633895724,
+          "movedVertices": 588
+        },
+        {
+          "part": "tripo_part_18",
+          "maxDisplacementM": 0.464572696377993,
+          "movedVertices": 423
+        },
+        {
+          "part": "tripo_part_19",
+          "maxDisplacementM": 0.6287981680512146,
+          "movedVertices": 335
+        },
+        {
+          "part": "tripo_part_2",
+          "maxDisplacementM": 0.4994085889220943,
+          "movedVertices": 1683
+        },
+        {
+          "part": "tripo_part_20",
+          "maxDisplacementM": 0.6486521805902913,
+          "movedVertices": 349
+        },
+        {
+          "part": "tripo_part_21",
+          "maxDisplacementM": 0.6287754027121204,
+          "movedVertices": 337
+        },
+        {
+          "part": "tripo_part_22",
+          "maxDisplacementM": 0.6490024370131888,
+          "movedVertices": 321
+        },
+        {
+          "part": "tripo_part_23",
+          "maxDisplacementM": 0.10980885492016355,
+          "movedVertices": 599
+        },
+        {
+          "part": "tripo_part_24",
+          "maxDisplacementM": 0.6448059047728042,
+          "movedVertices": 371
+        },
+        {
+          "part": "tripo_part_25",
+          "maxDisplacementM": 0.11091122309368155,
+          "movedVertices": 534
+        },
+        {
+          "part": "tripo_part_26",
+          "maxDisplacementM": 0.20610592699933517,
+          "movedVertices": 384
+        },
+        {
+          "part": "tripo_part_27",
+          "maxDisplacementM": 0.371024986808795,
+          "movedVertices": 594
+        },
+        {
+          "part": "tripo_part_28",
+          "maxDisplacementM": 0.36262712243329187,
+          "movedVertices": 616
+        },
+        {
+          "part": "tripo_part_29",
+          "maxDisplacementM": 0.4545690683676326,
+          "movedVertices": 350
+        },
+        {
+          "part": "tripo_part_3",
+          "maxDisplacementM": 0.4996618938498459,
+          "movedVertices": 1870
+        },
+        {
+          "part": "tripo_part_30",
+          "maxDisplacementM": 0.4535511047568121,
+          "movedVertices": 352
+        },
+        {
+          "part": "tripo_part_31",
+          "maxDisplacementM": 0.19751953671384745,
+          "movedVertices": 379
+        },
+        {
+          "part": "tripo_part_32",
+          "maxDisplacementM": 0.18389685054669114,
+          "movedVertices": 220
+        },
+        {
+          "part": "tripo_part_33",
+          "maxDisplacementM": 0.1836452873888972,
+          "movedVertices": 248
+        },
+        {
+          "part": "tripo_part_4",
+          "maxDisplacementM": 0.35917534802228396,
+          "movedVertices": 1182
+        },
+        {
+          "part": "tripo_part_5",
+          "maxDisplacementM": 0.358046750861048,
+          "movedVertices": 1316
+        },
+        {
+          "part": "tripo_part_6",
+          "maxDisplacementM": 0.4968990748558409,
+          "movedVertices": 1317
+        },
+        {
+          "part": "tripo_part_7",
+          "maxDisplacementM": 0.49676494508407476,
+          "movedVertices": 1603
+        },
+        {
+          "part": "tripo_part_8",
+          "maxDisplacementM": 0.2423297124221341,
+          "movedVertices": 978
+        },
+        {
+          "part": "tripo_part_9",
+          "maxDisplacementM": 0.5932106096128235,
+          "movedVertices": 651
+        }
+      ],
+      "maxDisplacementM": 0.6490024370131888,
+      "movedVertices": 26372,
+      "referenceSpace": "bone local XYZ Euler in Blender rest bone basis; degrees"
+    },
+    {
+      "name": "rest_return",
+      "frame": 150,
+      "rotations": [],
+      "parts": [
+        {
+          "part": "tripo_part_0",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_1",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_10",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_11",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_12",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_13",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_14",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_15",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_16",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_17",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_18",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_19",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_2",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_20",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_21",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_22",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_23",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_24",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_25",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_26",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_27",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_28",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_29",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_3",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_30",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_31",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_32",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_33",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_4",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_5",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_6",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_7",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_8",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        },
+        {
+          "part": "tripo_part_9",
+          "maxDisplacementM": 0.0,
+          "movedVertices": 0
+        }
+      ],
+      "maxDisplacementM": 0.0,
+      "movedVertices": 0,
+      "referenceSpace": "bone local XYZ Euler in Blender rest bone basis; degrees"
+    }
+  ],
+  "rootPolicy": "fixed translation/rotation/scale; no keyed root movement",
+  "exportOptions": {
+    "filepath": "D:\\worker\\paoku-sessions\\pao-15\\docs\\evidence\\PAO-15\\rig-spike\\runner-rig-spike.glb",
+    "export_format": "GLB",
+    "use_selection": true,
+    "export_yup": true,
+    "export_animations": true,
+    "export_animation_mode": "ACTIVE_ACTIONS",
+    "export_force_sampling": true,
+    "export_frame_range": true,
+    "export_frame_step": 1,
+    "export_skins": true,
+    "export_all_influences": false,
+    "export_def_bones": false,
+    "export_nla_strips_merged_animation_name": "rig_diagnostic"
+  },
+  "license": "not verified; technical probe only"
+}

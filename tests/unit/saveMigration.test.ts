@@ -8,6 +8,11 @@ export class MemoryStorage {
 }
 export const lock = async <T>(work: () => Promise<T>): Promise<T> => work();
 describe('PAO-14 migration and protected saves', () => {
+  it('retries the original candidate rather than rerunning its mutator when an unknown write was not applied',async()=>{
+    const s=new MemoryStorage(),r=new SaveRepository(s,lock);await r.load();const originalSet=s.setItem.bind(s),originalGet=s.getItem.bind(s);let failWrite=true,failRead=false,writes=0,mutations=0;
+    s.setItem=(key,value)=>{writes++;if(failWrite){failWrite=false;failRead=true;throw Error('write failed');}originalSet(key,value);};s.getItem=key=>{if(failRead){failRead=false;throw Error('read failed');}return originalGet(key);};
+    const mutate=(d:any)=>{mutations++;d.audio.masterMuted=!d.audio.masterMuted;};expect((await r.update(mutate,'same-operation')).ok).toBe(false);expect(r.snapshot.audio.masterMuted).toBe(false);expect((await r.update(mutate,'same-operation')).ok).toBe(true);expect(r.snapshot.audio.masterMuted).toBe(true);expect(r.snapshot.revision).toBe(1);expect(mutations).toBe(1);expect(writes).toBe(2);
+  });
   it('serializes competing tabs and rejects stale writes without losing the winner',async()=>{
     let tail:Promise<unknown>=Promise.resolve(); const serial= <T>(work:()=>Promise<T>):Promise<T>=>{const next=tail.then(work);tail=next.catch(()=>{});return next;};
     const s=new MemoryStorage(),a=new SaveRepository(s,serial),b=new SaveRepository(s,serial);await Promise.all([a.load(),b.load()]);const results=await Promise.all([a.update(d=>{d.walletCoins=10;}),b.update(d=>{d.walletCoins=20;})]);expect(results.map(r=>r.ok)).toEqual([true,false]);expect(results[1].errorCode).toBe('CONFLICT');const refreshed=new SaveRepository(s,serial);await refreshed.load();expect(refreshed.snapshot.walletCoins).toBe(10);

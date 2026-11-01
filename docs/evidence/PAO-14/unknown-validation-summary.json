@@ -1,0 +1,91 @@
+{
+  "issue": "PAO-14",
+  "baseline": "74a5b14aec8cf0f1bed544b43c8712be55935af4",
+  "branch": "codex/pao-14-application",
+  "buildExitCode": 0,
+  "unitFiles": 16,
+  "unitPassed": 244,
+  "retainedUnitCount": 236,
+  "newUnitCount": 8,
+  "retainedE2ECount": 41,
+  "newE2ECount": 2,
+  "completeE2E": {
+    "startTime": "2026-11-01T06:03:40.663Z",
+    "duration": 275242.749,
+    "expected": 43,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "historicalOriginalFiles": 709,
+  "historicalCheckedPaths": 731,
+  "historicalAllVerified": true,
+  "sourceStable": true,
+  "rawSourcesMatch": true,
+  "unknownOutcomes": [
+    {
+      "confirmationReadFailures": 1,
+      "writeCount": 1,
+      "finalRevision": 1,
+      "finalMasterMuted": true,
+      "firstResult": {
+        "ok": false,
+        "commandId": "same-unknown-toggle",
+        "errorCode": "SAVE_FAILED"
+      },
+      "firstCachedMasterMuted": false,
+      "retryResults": [
+        {
+          "ok": false,
+          "commandId": "same-unknown-toggle",
+          "errorCode": "SAVE_FAILED"
+        },
+        {
+          "ok": true,
+          "commandId": "same-unknown-toggle"
+        },
+        {
+          "ok": true,
+          "commandId": "same-unknown-toggle"
+        },
+        {
+          "ok": true,
+          "commandId": "same-unknown-toggle"
+        }
+      ]
+    },
+    {
+      "confirmationReadFailures": 2,
+      "writeCount": 1,
+      "finalRevision": 1,
+      "finalMasterMuted": true,
+      "firstResult": {
+        "ok": false,
+        "commandId": "same-unknown-toggle",
+        "errorCode": "SAVE_FAILED"
+      },
+      "firstCachedMasterMuted": false,
+      "retryResults": [
+        {
+          "ok": false,
+          "commandId": "same-unknown-toggle",
+          "errorCode": "SAVE_FAILED"
+        },
+        {
+          "ok": false,
+          "commandId": "same-unknown-toggle",
+          "errorCode": "SAVE_FAILED"
+        },
+        {
+          "ok": true,
+          "commandId": "same-unknown-toggle"
+        },
+        {
+          "ok": true,
+          "commandId": "same-unknown-toggle"
+        }
+      ]
+    }
+  ],
+  "stableScreenshotsInspected": 2
+}

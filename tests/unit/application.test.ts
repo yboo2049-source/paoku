@@ -7,6 +7,49 @@ const lock=async<T>(f:()=>Promise<T>)=>f();
 const summary=(runId:string,endReason:'QUIT'|'COLLISION'='COLLISION'):RunSummary=>({runId,scoreInt:123,pickupCount:30,pickupCoins:30,rewardCoins:50,earnedCoins:80,endReason});
 async function setup(){const storage=new Storage();let n=0;const app=new AppService(new SaveRepository(storage,lock),()=>`run-${++n}`);await app.initialize();await app.dispatch({commandId:'start',type:'START_RUN'});return {app,storage};}
 describe('PAO-14 application lifecycle and settlement',()=>{
+  class UnknownStorage extends Storage {
+    mode:'none'|'after'|'before'='none'; unreadable=false; confirmationReads=0; writes=0;
+    override getItem(key:string){if(this.unreadable||this.confirmationReads>0){if(this.confirmationReads>0)this.confirmationReads--;throw Error('read denied');}return super.getItem(key);}
+    override setItem(key:string,value:string){
+      this.writes++;const mode=this.mode;this.mode='none';
+      if(mode==='before'){this.confirmationReads=1;throw Error('write denied');}
+      super.setItem(key,value);
+      if(mode==='after'){this.confirmationReads=1;throw Error('ack lost');}
+    }
+  }
+  async function unknownSetup(){const storage=new UnknownStorage(),repository=new SaveRepository(storage,lock),app=new AppService(repository);await app.initialize();storage.writes=0;return {storage,repository,app};}
+  const unknownToggle={commandId:'unknown-toggle',type:'UPDATE_AUDIO',audioOperation:{kind:'TOGGLE',field:'masterMuted'}} as AppCommand;
+  it('confirms the exact written candidate after unreadable acknowledgment without toggling twice',async()=>{
+    const {app,storage}=await unknownSetup();storage.mode='after';expect((await app.dispatch(unknownToggle)).errorCode).toBe('SAVE_FAILED');expect(app.snapshot.audio.masterMuted).toBe(false);expect(JSON.parse([...storage.data.values()][0]).audio.masterMuted).toBe(true);
+    expect((await app.dispatch(unknownToggle)).ok).toBe(true);expect(app.snapshot.audio.masterMuted).toBe(true);expect(app.snapshot.revision).toBe(1);expect(storage.writes).toBe(1);
+  });
+  it('keeps an unknown candidate unpublished while all confirmation reads keep failing',async()=>{
+    const {app,storage}=await unknownSetup();storage.mode='after';await app.dispatch(unknownToggle);storage.unreadable=true;
+    for(let i=0;i<3;i++){expect((await app.dispatch(unknownToggle)).ok).toBe(false);expect(app.snapshot.audio.masterMuted).toBe(false);expect(app.snapshot.revision).toBe(0);}
+    storage.unreadable=false;expect((await app.dispatch(unknownToggle)).ok).toBe(true);expect(app.snapshot.audio.masterMuted).toBe(true);expect(app.snapshot.revision).toBe(1);expect(storage.writes).toBe(1);
+  });
+  it('does not let another queued command claim the unknown receipt or late retry overwrite it',async()=>{
+    const {app,storage}=await unknownSetup();storage.mode='after';const first=app.dispatch(unknownToggle);const next=app.dispatch({commandId:'second-toggle',type:'UPDATE_AUDIO',audioOperation:{kind:'TOGGLE',field:'sfxEnabled'}});
+    expect((await first).ok).toBe(false);expect((await next).ok).toBe(true);expect(app.snapshot.audio).toMatchObject({masterMuted:true,sfxEnabled:false});expect(app.snapshot.revision).toBe(2);
+    expect((await app.dispatch(unknownToggle)).ok).toBe(true);expect(app.snapshot.audio).toMatchObject({masterMuted:true,sfxEnabled:false});expect(app.snapshot.revision).toBe(2);expect(storage.writes).toBe(2);
+  });
+  it('retains unknown transaction identity through load and freshness checks',async()=>{
+    const {app,repository,storage}=await unknownSetup();storage.mode='after';await app.dispatch(unknownToggle);expect((await repository.load()).ok).toBe(true);expect((await repository.checkFreshness()).ok).toBe(true);expect((await app.dispatch(unknownToggle)).ok).toBe(true);expect(app.snapshot.audio.masterMuted).toBe(true);expect(app.snapshot.revision).toBe(1);expect(storage.writes).toBe(1);
+  });
+  it('does not let another operation reuse the commandId of an unconfirmed candidate',async()=>{
+    const {app,storage}=await unknownSetup();storage.mode='after';await app.dispatch(unknownToggle);
+    expect((await app.dispatch({...unknownToggle,audioOperation:{kind:'TOGGLE',field:'sfxEnabled'}})).errorCode).toBe('INVALID_COMMAND');expect(app.snapshot.audio).toMatchObject({masterMuted:false,sfxEnabled:true});
+    expect((await app.dispatch(unknownToggle)).ok).toBe(true);expect(app.snapshot.audio).toMatchObject({masterMuted:true,sfxEnabled:true});expect(app.snapshot.revision).toBe(1);expect(storage.writes).toBe(1);
+  });
+  it('retains the original receipt when freshness alone confirms before a later operation',async()=>{
+    const {app,repository,storage}=await unknownSetup();storage.mode='after';await app.dispatch(unknownToggle);expect((await repository.checkFreshness()).ok).toBe(true);
+    await app.dispatch({commandId:'volume-after-confirm',type:'UPDATE_AUDIO',audioOperation:{kind:'SET_VOLUME',field:'bgmVolume',value:0.25}});
+    expect((await app.dispatch({...unknownToggle,audioOperation:{kind:'TOGGLE',field:'bgmEnabled'}})).errorCode).toBe('INVALID_COMMAND');expect((await app.dispatch(unknownToggle)).ok).toBe(true);expect(app.snapshot.audio).toMatchObject({masterMuted:true,bgmVolume:0.25,bgmEnabled:true});expect(app.snapshot.revision).toBe(2);expect(storage.writes).toBe(2);
+  });
+  it('protects an unresolved candidate against an unrelated third token',async()=>{
+    const {app,storage}=await unknownSetup();storage.mode='after';await app.dispatch(unknownToggle);const key=[...storage.data.keys()][0],other=JSON.parse(storage.data.get(key)!);other.revision=2;other.audio.sfxEnabled=false;storage.data.set(key,JSON.stringify(other));
+    expect((await app.dispatch(unknownToggle)).errorCode).toBe('CONFLICT');expect((await app.initialize()).errorCode).toBe('CONFLICT');expect((await app.dispatch(unknownToggle)).errorCode).toBe('CONFLICT');expect(storage.writes).toBe(1);expect(app.snapshot.revision).toBe(0);
+  });
   const audioCommand=(commandId:string,audioOperation:unknown)=>({commandId,type:'UPDATE_AUDIO',audioOperation}) as AppCommand;
   async function audioSetup(){
     const storage=new Storage();let tail:Promise<unknown>=Promise.resolve();const serial=<T>(f:()=>Promise<T>):Promise<T>=>{const next=tail.then(f);tail=next.catch(()=>{});return next;};const app=new AppService(new SaveRepository(storage,serial));await app.initialize();

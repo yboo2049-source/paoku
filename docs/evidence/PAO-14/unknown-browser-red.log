@@ -1,0 +1,56 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config docs/evidence/PAO-14/playwright.config.ts tests/e2e/pao14-unknown-commit.spec.ts
+
+[WebServer] (node:23276) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:16564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\pao14-unknown-commit.spec.ts:8:3 › F-unknown-toggle-1-confirmation-read-failures (13.1s)
+(node:444) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 tests\e2e\pao14-unknown-commit.spec.ts:8:3 › F-unknown-toggle-2-confirmation-read-failures (2.1s)
+
+
+  1) tests\e2e\pao14-unknown-commit.spec.ts:8:3 › F-unknown-toggle-1-confirmation-read-failures ────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      69 |     const last = record.attempts.at(-1)!;
+      70 |     expect(last.result.ok).toBe(true);
+    > 71 |     expect(last.snapshot.audio.masterMuted).toBe(true);
+         |                                             ^
+      72 |     expect(last.durable.audio.masterMuted).toBe(true);
+      73 |     expect(last.snapshot.revision).toBe(1);
+      74 |     expect(last.durable.revision).toBe(1);
+        at D:\worker\paoku-sessions\pao-14\tests\e2e\pao14-unknown-commit.spec.ts:71:45
+
+    Error Context: .pao14-local\unknown-red\test-results\pao14-unknown-commit-F-unk-2b696--confirmation-read-failures\error-context.md
+
+  2) tests\e2e\pao14-unknown-commit.spec.ts:8:3 › F-unknown-toggle-2-confirmation-read-failures ────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      69 |     const last = record.attempts.at(-1)!;
+      70 |     expect(last.result.ok).toBe(true);
+    > 71 |     expect(last.snapshot.audio.masterMuted).toBe(true);
+         |                                             ^
+      72 |     expect(last.durable.audio.masterMuted).toBe(true);
+      73 |     expect(last.snapshot.revision).toBe(1);
+      74 |     expect(last.durable.revision).toBe(1);
+        at D:\worker\paoku-sessions\pao-14\tests\e2e\pao14-unknown-commit.spec.ts:71:45
+
+    Error Context: .pao14-local\unknown-red\test-results\pao14-unknown-commit-F-unk-ece47--confirmation-read-failures\error-context.md
+
+  2 failed
+    tests\e2e\pao14-unknown-commit.spec.ts:8:3 › F-unknown-toggle-1-confirmation-read-failures ─────
+    tests\e2e\pao14-unknown-commit.spec.ts:8:3 › F-unknown-toggle-2-confirmation-read-failures ─────

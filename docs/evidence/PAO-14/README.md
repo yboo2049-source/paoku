@@ -1,5 +1,7 @@
 # PAO-14 送审证据
 
+> 最新“TOGGLE未知提交结果重试”P2修订见[未知提交结果报告](unknown-report.md)；本页及上一轮报告保留各次送审的历史结果。
+
 > 本文保留 `3d0efe8` 首次送审记录。主审两项P2的最小修订、RED/GREEN及最新完整门禁见[修订送审报告](revision-report.md)。
 
 2026-11-01（Asia/Shanghai）。工作目录 `D:/worker/paoku-sessions/pao-14`，分支 `codex/pao-14-application`，基线 `a4486a21435a7315d091769d8ac6bc8accc8f2f0`。仅执行 PAO-14；交付 In Review，等待主 Agent 验收，不设 Done、不启动其他任务。

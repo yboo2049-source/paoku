@@ -19,6 +19,7 @@ export class AppService {
   private queue:Promise<unknown>=Promise.resolve();
   private pendingTransactions=0;
   private commands=new Map<string,{fingerprint:string;result:CommandResult}>();
+  private commandFingerprints=new Map<string,string>();
   private usedRunIds=new Set<string>();
   constructor(repository:SaveRepository,createRunId:()=>string=()=>`run-${crypto.randomUUID()}`){this.repository=repository;this.createRunId=createRunId;}
   get snapshot():AppSnapshot {
@@ -34,6 +35,8 @@ export class AppService {
     // input isolation boundary, while never overtaking a pending transaction.
     if(command&&command.commandId&&this.pendingTransactions===0&&['START_RUN','PAUSE_RUN','RESUME_RUN'].includes(command.type)){
       const fingerprint=JSON.stringify(command),previous=this.commands.get(command.commandId);
+      if(this.commandFingerprints.has(command.commandId)&&this.commandFingerprints.get(command.commandId)!==fingerprint)return Promise.resolve(this.failure(command.commandId,'INVALID_COMMAND'));
+      this.commandFingerprints.set(command.commandId,fingerprint);
       if(previous)return Promise.resolve(previous.fingerprint===fingerprint?frozenCopy(previous.result):this.failure(command.commandId,'INVALID_COMMAND'));
       const result=this.lifecycle(command);
       if(result.ok)this.commands.set(command.commandId,{fingerprint,result:frozenCopy(result)});
@@ -42,8 +45,11 @@ export class AppService {
     return this.transaction(async()=>{
     if(!command||!command.commandId)return this.failure('', 'INVALID_COMMAND');
     const fingerprint=JSON.stringify(command),previous=this.commands.get(command.commandId);
+    if(this.commandFingerprints.has(command.commandId)&&this.commandFingerprints.get(command.commandId)!==fingerprint)return this.failure(command.commandId,'INVALID_COMMAND');
+    this.commandFingerprints.set(command.commandId,fingerprint);
     if(previous)return previous.fingerprint===fingerprint?frozenCopy(previous.result):this.failure(command.commandId,'INVALID_COMMAND');
-    const result=await this.execute(command);
+    const receipt=await this.repository.confirmTransaction('command:'+command.commandId);
+    const result=receipt?(receipt.ok?this.success(command.commandId):this.saveFailure(command.commandId,receipt.errorCode!)):await this.execute(command);
     // Persisted transactions are also protected by ownership/run ledgers. Failed
     // requests are deliberately retryable with the same command identity.
     if(result.ok)this.commands.set(command.commandId,{fingerprint,result:frozenCopy(result)});
@@ -80,7 +86,7 @@ export class AppService {
     if(!validInteger(this.repository.snapshot.walletCoins+summary.earnedCoins)){this.status='FAILED';return this.failure(commandId,'OVERFLOW');}
     const result=await this.repository.update(d=>{
       d.walletCoins+=summary.earnedCoins;d.highScore=Math.max(d.highScore,summary.scoreInt);d.settledRunIds.push(summary.runId);
-    });
+    },'settle:'+summary.runId);
     if(!result.ok){this.status='FAILED';return this.saveFailure(commandId,result.errorCode!);}
     this.status='COMMITTED';return this.success(commandId);
   }
@@ -130,13 +136,13 @@ export class AppService {
         if(c.type==='BUY_SKIN'&&owned)return this.success(c.commandId,true);
         if(c.type==='EQUIP_SKIN'&&!owned)return this.failure(c.commandId,'NOT_OWNED');
         if(!owned&&save.walletCoins<skin.price)return this.failure(c.commandId,'INSUFFICIENT_FUNDS');
-        const result=await this.repository.update(d=>{if(!owned){d.walletCoins-=skin.price;d.ownedSkinIds.push(skin.id);}d.selectedSkinId=skin.id;});
+        const result=await this.repository.update(d=>{if(!owned){d.walletCoins-=skin.price;d.ownedSkinIds.push(skin.id);}d.selectedSkinId=skin.id;},'command:'+c.commandId);
         return result.ok?this.success(c.commandId):this.saveFailure(c.commandId,result.errorCode!);
       }
       case 'SET_AUDIO':{
         if(!validAudio(c.audio))return this.failure(c.commandId,'INVALID_AUDIO');
         const readyError=await this.ensureReady();if(readyError)return this.failure(c.commandId,readyError);
-        const audio=structuredClone(c.audio),result=await this.repository.update(d=>{d.audio=audio;});
+        const audio=structuredClone(c.audio),result=await this.repository.update(d=>{d.audio=audio;},'command:'+c.commandId);
         return result.ok?this.success(c.commandId):this.saveFailure(c.commandId,result.errorCode!);
       }
       case 'UPDATE_AUDIO':{
@@ -148,7 +154,7 @@ export class AppService {
           // while holding the repository lock; never replay an old full snapshot.
           if(operation.kind==='TOGGLE')d.audio[operation.field]=!d.audio[operation.field];
           else d.audio[operation.field]=operation.value;
-        });
+        },'command:'+c.commandId);
         return result.ok?this.success(c.commandId):this.saveFailure(c.commandId,result.errorCode!);
       }
       default:return this.failure(c.commandId,'INVALID_COMMAND');

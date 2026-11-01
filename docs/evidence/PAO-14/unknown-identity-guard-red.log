@@ -1,0 +1,46 @@
+
+> app@0.0.0 test
+> vitest run --run tests/unit/application.test.ts -t does not let another operation reuse|retains the original receipt when freshness alone
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-14
+
+ ❯ tests/unit/application.test.ts (32 tests | 2 failed | 30 skipped) 9ms
+     × does not let another operation reuse the commandId of an unconfirmed candidate 7ms
+     × retains the original receipt when freshness alone confirms before a later operation 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > does not let another operation reuse the commandId of an unconfirmed candidate
+AssertionError: expected undefined to be 'INVALID_COMMAND' // Object.is equality
+
+- Expected:
+"INVALID_COMMAND"
+
++ Received:
+undefined
+
+ ❯ tests/unit/application.test.ts:41:114
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > retains the original receipt when freshness alone confirms before a later operation
+AssertionError: expected undefined to be 'INVALID_COMMAND' // Object.is equality
+
+- Expected:
+"INVALID_COMMAND"
+
++ Received:
+undefined
+
+ ❯ tests/unit/application.test.ts:47:114
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 30 skipped (32)
+   Start at  13:55:01
+   Duration  336ms (transform 93ms, setup 0ms, import 115ms, tests 9ms, environment 0ms)

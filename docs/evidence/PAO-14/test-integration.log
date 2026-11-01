@@ -1,0 +1,33 @@
+
+> app@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-14
+
+ ❯ tests/unit/trackSegments.test.ts (25 tests | 1 failed) 5543ms
+   × PAO-13 main owns seed metadata and clean start/menu/shop resets without synthetic witness facts 25ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/trackSegments.test.ts > PAO-13 main owns seed metadata and clean start/menu/shop resets without synthetic witness facts
+AssertionError: expected 'GAMEOVER' to be 'MENU' // Object.is equality
+
+Expected: "MENU"
+Received: "GAMEOVER"
+
+ ❯ tests/unit/trackSegments.test.ts:358:32
+    356|     eventBus.emit('GO_MENU');
+    357|     const menu = sensor.getSimulationSnapshot();
+    358|     expect(menu.context.state).toBe('MENU');
+       |                                ^
+    359|     expect(menu.generation).toMatchObject({ runId: menu.runId, seed: m…
+    360|     expect(menu.context.obstacles).toEqual([]); expect(menu.context.co…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 15 passed (16)
+      Tests  1 failed | 219 passed (220)
+   Start at  12:43:31
+   Duration  7.60s (transform 6.89s, setup 0ms, import 8.38s, tests 6.73s, environment 2ms)

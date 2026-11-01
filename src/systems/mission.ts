@@ -1,5 +1,6 @@
 import type { Mission, GameContext } from '../types';
 import { eventBus } from '../core/eventBus';
+import { awardMissionReward } from './runSettlement';
 
 export class MissionSystem {
   private initialMissions: Mission[] = [
@@ -56,15 +57,17 @@ export class MissionSystem {
     });
   }
 
-  public update(ctx: GameContext): void {
-    if (ctx.state !== 'PLAYING') return;
+  public update(ctx: GameContext, terminalTick = false): void {
+    if (ctx.state !== 'PLAYING' && !(terminalTick && ctx.state === 'GAMEOVER')) return;
 
     ctx.missions.forEach((mission) => {
       if (mission.completed) return;
 
       switch (mission.type) {
         case 'COLLECT_COINS':
-          mission.current = ctx.coins;
+          // Legacy standalone callers without a ledger retain their old test interface.
+          // Simulation-owned runs always use the actual consumed-entity count.
+          mission.current = ctx.runLedger ? ctx.runLedger.pickupCount : ctx.coins;
           break;
         case 'SCORE_REACH':
           mission.current = Math.floor(ctx.score);
@@ -75,11 +78,10 @@ export class MissionSystem {
       // COLLECT_COINS / SCORE_REACH 的 current 在下方 switch 中由 ctx 同步。
       if (mission.current >= mission.target && !mission.completed) {
         mission.completed = true;
-        // 奖励通过 ctx.coins 结算，在 GAMEOVER 时由 dom.ts 持久化入账；
-        // 不要在此累加 ctx.totalCoins（dom.ts 每帧会以存档值覆盖它）。
-        ctx.coins += mission.rewardCoins;
+        if (!awardMissionReward(ctx, mission.id, mission.rewardCoins)) return;
 
         eventBus.emit('MISSION_COMPLETED', {
+          missionId: mission.id,
           title: mission.title,
           reward: mission.rewardCoins,
         });

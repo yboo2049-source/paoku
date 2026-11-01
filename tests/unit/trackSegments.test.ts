@@ -324,11 +324,20 @@ vi.mock('../../src/systems/mission', () => ({ missionSystem: {
 } }));
 
 it('PAO-13 main owns seed metadata and clean start/menu/shop resets without synthetic witness facts', async () => {
-  const browser = new EventTarget() as EventTarget & { __GAME_SENSOR__: any };
+  // PAO-14: exercise actual application persistence and its cooperating-tab lock
+  // protocol; lifecycle completion now waits for the durable settlement result.
+  const saved = new Map<string, string>();
+  const storage = { getItem: (key: string) => saved.get(key) ?? null,
+    setItem: (key: string, value: string) => { saved.set(key, value); } };
+  const browser = Object.assign(new EventTarget(), { localStorage: storage }) as EventTarget & { __GAME_SENSOR__: any };
   const page = Object.assign(new EventTarget(), { hidden: false, body: {}, getElementById: () => null });
   const frames = new Map<number, FrameRequestCallback>();
   let id = 0;
   vi.stubGlobal('window', browser); vi.stubGlobal('document', page);
+  let lockTail: Promise<unknown> = Promise.resolve();
+  vi.stubGlobal('navigator', { locks: { request: (_name: string, work: () => unknown) => {
+    const next = lockTail.then(work); lockTail = next.catch(() => {}); return next;
+  } } });
   vi.stubGlobal('requestAnimationFrame', (callback: FrameRequestCallback) => { frames.set(++id, callback); return id; });
   vi.stubGlobal('cancelAnimationFrame', (key: number) => frames.delete(key));
   const app = await import('../../src/main');
@@ -343,6 +352,7 @@ it('PAO-13 main owns seed metadata and clean start/menu/shop resets without synt
     const ready = [...frames.values()]; frames.clear(); ready.forEach(callback => callback(time));
   }
   try {
+    await vi.waitFor(() => expect(saved.has('paoku_save_v1')).toBe(true));
     expect(sensor.getSimulationSnapshot().generation).toMatchObject({ runId: 'podium', cursor: 0 });
     eventBus.emit('START_GAME'); frame(0); frame(1000 / 60);
     const first = sensor.getSimulationSnapshot();
@@ -354,6 +364,8 @@ it('PAO-13 main owns seed metadata and clean start/menu/shop resets without synt
     expect(events, 'offline physical witnesses must not publish synthetic gameplay facts during generation').toEqual([]);
     const normalize = (snapshot: any) => JSON.stringify(snapshot.context.coinEntities).replaceAll(snapshot.runId + '/', 'RUN/');
     eventBus.emit('GO_MENU');
+    await vi.waitFor(() => expect(sensor.getSimulationSnapshot().context.state).toBe('MENU'));
+    expect(sensor.getAppSnapshot()).toMatchObject({ appState: 'MENU', activeRunId: null, errorCode: null });
     const menu = sensor.getSimulationSnapshot();
     expect(menu.context.state).toBe('MENU');
     expect(menu.generation).toMatchObject({ runId: menu.runId, seed: menu.seed, cursor: 0 });
@@ -365,6 +377,17 @@ it('PAO-13 main owns seed metadata and clean start/menu/shop resets without synt
     expect(normalize(second)).toEqual(normalize(first));
     expect(second.context.coinEntities.every((coin: any) => coin.id.startsWith(second.runId + '/'))).toBe(true);
     eventBus.emit('OPEN_SHOP');
+    await vi.waitFor(() => expect(sensor.getAppSnapshot().errorCode).toBe('INVALID_STATE'));
+    expect(sensor.getAppSnapshot().appState).toBe('PLAYING');
+    expect(sensor.getSimulationSnapshot().generation).toEqual(second.generation);
+    expect(sensor.getSimulationSnapshot().context.obstacles).toEqual(second.context.obstacles);
+    expect(sensor.getSimulationSnapshot().context.coinEntities).toEqual(second.context.coinEntities);
+    eventBus.emit('GO_MENU');
+    await vi.waitFor(() => expect(sensor.getSimulationSnapshot().context.state).toBe('MENU'));
+    expect(sensor.getAppSnapshot()).toMatchObject({ appState: 'MENU', activeRunId: null, errorCode: null });
+    eventBus.emit('OPEN_SHOP');
+    await vi.waitFor(() => expect(sensor.getSimulationSnapshot().context.state).toBe('SHOP'));
+    expect(sensor.getAppSnapshot()).toMatchObject({ appState: 'SHOP', activeRunId: null, errorCode: null });
     const shop = sensor.getSimulationSnapshot();
     expect(shop.context.state).toBe('SHOP');
     expect(shop.generation).toMatchObject({ runId: shop.runId, seed: shop.seed, cursor: 0 });

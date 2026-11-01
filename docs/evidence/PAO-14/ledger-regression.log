@@ -1,0 +1,110 @@
+
+> app@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-14
+
+ ❯ tests/unit/pao10-main.test.ts (3 tests | 3 failed) 322ms
+   × exposes immutable committed diagnostics/snapshots while real input waits for the next production tick 311ms
+   × clears pending real input on blur and resumes without accumulating hidden wall time 5ms
+   × disposes its event bus subscriptions as well as input and rAF before a replacement entry is loaded 4ms
+ ❯ tests/unit/simulation.test.ts (7 tests | 1 failed) 137ms
+     × commits once after reentrant legacy action listeners update owner state 9ms
+ ❯ tests/unit/trackSegments.test.ts (25 tests | 1 failed) 4640ms
+   × PAO-13 main owns seed metadata and clean start/menu/shop resets without synthetic witness facts 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao10-main.test.ts > exposes immutable committed diagnostics/snapshots while real input waits for the next production tick
+TypeError: Cannot set property coins of #<Object> which has only a getter
+ ❯ src/main.ts:103:9
+    101|     ctx.state = 'PLAYING';
+    102|     ctx.score = 0;
+    103|     ctx.coins = 0;
+       |         ^
+    104|     ctx.speed = CONSTANTS.BASE_SPEED;
+    105|
+ ❯ Simulation.change src/core/simulation.ts:84:5
+ ❯ src/main.ts:99:14
+ ❯ src/core/eventBus.ts:25:38
+ ❯ EventBus.emit src/core/eventBus.ts:25:22
+ ❯ tests/unit/pao10-main.test.ts:42:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  tests/unit/pao10-main.test.ts > clears pending real input on blur and resumes without accumulating hidden wall time
+TypeError: Cannot set property coins of #<Object> which has only a getter
+ ❯ src/main.ts:103:9
+    101|     ctx.state = 'PLAYING';
+    102|     ctx.score = 0;
+    103|     ctx.coins = 0;
+       |         ^
+    104|     ctx.speed = CONSTANTS.BASE_SPEED;
+    105|
+ ❯ Simulation.change src/core/simulation.ts:84:5
+ ❯ src/main.ts:99:14
+ ❯ src/core/eventBus.ts:25:38
+ ❯ EventBus.emit src/core/eventBus.ts:25:22
+ ❯ tests/unit/pao10-main.test.ts:62:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  tests/unit/pao10-main.test.ts > disposes its event bus subscriptions as well as input and rAF before a replacement entry is loaded
+TypeError: Cannot set property coins of #<Object> which has only a getter
+ ❯ src/main.ts:103:9
+    101|     ctx.state = 'PLAYING';
+    102|     ctx.score = 0;
+    103|     ctx.coins = 0;
+       |         ^
+    104|     ctx.speed = CONSTANTS.BASE_SPEED;
+    105|
+ ❯ Simulation.change src/core/simulation.ts:84:5
+ ❯ src/main.ts:99:14
+ ❯ src/core/eventBus.ts:25:38
+ ❯ EventBus.emit src/core/eventBus.ts:25:22
+ ❯ tests/unit/pao10-main.test.ts:78:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  tests/unit/simulation.test.ts > PAO-10 reproducible controlled simulation (legacy spawner excluded) > commits once after reentrant legacy action listeners update owner state
+TypeError: Cannot set property coins of #<Object> which has only a getter
+ ❯ tests/unit/simulation.test.ts:86:38
+
+     84|     const observed: unknown[] = [];
+     85|     const listener = () => {
+     86|       sim.change((ctx: any) => { ctx.coins += 7; });
+       |                                      ^
+     87|       observed.push(sim.snapshot);
+     88|     };
+ Test Files  3 failed | 13 passed (16)
+      Tests  5 failed | 207 passed (212)
+   Start at  12:40:24
+   Duration  6.31s (transform 5.01s, setup 0ms, import 6.09s, tests 5.36s, environment 2ms)
+
+ ❯ Simulation.change src/core/simulation.ts:84:5
+ ❯ listener tests/unit/simulation.test.ts:86:11
+ ❯ src/core/eventBus.ts:25:38
+ ❯ EventBus.emit src/core/eventBus.ts:25:22
+ ❯ applyInputAction src/systems/input.ts:146:16
+ ❯ Simulation.step src/core/simulation.ts:107:7
+ ❯ tests/unit/simulation.test.ts:92:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  tests/unit/trackSegments.test.ts > PAO-13 main owns seed metadata and clean start/menu/shop resets without synthetic witness facts
+TypeError: Cannot set property coins of #<Object> which has only a getter
+ ❯ src/main.ts:103:9
+    101|     ctx.state = 'PLAYING';
+    102|     ctx.score = 0;
+    103|     ctx.coins = 0;
+       |         ^
+    104|     ctx.speed = CONSTANTS.BASE_SPEED;
+    105|
+ ❯ Simulation.change src/core/simulation.ts:84:5
+ ❯ src/main.ts:99:14
+ ❯ src/core/eventBus.ts:25:38
+ ❯ EventBus.emit src/core/eventBus.ts:25:22
+ ❯ tests/unit/trackSegments.test.ts:347:14
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯

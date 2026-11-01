@@ -1,0 +1,204 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/runSettlement.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-14
+
+ ❯ tests/unit/runSettlement.test.ts (11 tests | 10 failed) 23ms
+     × separates 30 actual consumed coins from the 50 coin mission reward 9ms
+     × does not credit a consumed coin twice across repeated physics and mission updates 1ms
+     × rewards other missions without counting their rewards as collected coins 2ms
+     × uses mission identity even when a completed flag is reset or duplicated 1ms
+     × creates independent ledgers and has no writable third earned total 2ms
+     × commits pickups and mission rewards from the same fatal tick before summary creation 3ms
+     × freezes the summary before restart and isolates new run accounting 1ms
+     × keeps ledger snapshots immutable and never interpolates reward totals 1ms
+     × does not infer new ledger parts from an unaccounted legacy coins value 1ms
+     × rejects invalid ledger values instead of creating a payable summary 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > separates 30 actual consumed coins from the 50 coin mission reward
+AssertionError: expected undefined to deeply equal { pickupCount: 30, …(3) }
+
+- Expected:
+{
+  "pickupCoins": 30,
+  "pickupCount": 30,
+  "rewardCoins": 50,
+  "rewardedMissionIds": [
+    "m1",
+  ],
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/runSettlement.test.ts:25:27
+     23|     const ctx = context(); initializeRunLedger(ctx); coins(ctx, 30);
+     24|     updatePhysics(ctx, 0); new MissionSystem().update(ctx);
+     25|     expect(ctx.runLedger).toEqual({ pickupCount: 30, pickupCoins: 30, …
+       |                           ^
+     26|     expect(ctx.coins).toBe(80);
+     27|     expect(ctx.missions[0].current).toBe(30);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > does not credit a consumed coin twice across repeated physics and mission updates
+AssertionError: expected undefined to be 30 // Object.is equality
+
+- Expected:
+30
+
++ Received:
+undefined
+
+ ❯ tests/unit/runSettlement.test.ts:33:40
+     31|     const ms = new MissionSystem();
+     32|     for (let i = 0; i < 3; i++) { updatePhysics(ctx, 0); ms.update(ctx…
+     33|     expect(ctx.runLedger?.pickupCount).toBe(30); expect(ctx.coins).toB…
+       |                                        ^
+     34|   });
+     35|   it('rewards other missions without counting their rewards as collect…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > rewards other missions without counting their rewards as collected coins
+AssertionError: expected 90 to be 40 // Object.is equality
+
+- Expected
++ Received
+
+- 40
++ 90
+
+ ❯ tests/unit/runSettlement.test.ts:40:23
+     38|     for (let i = 0; i < 10; i++) ms.trackAction(ctx.missions, 'JUMP');
+     39|     ms.update(ctx); ms.update(ctx);
+     40|     expect(ctx.coins).toBe(40); expect(ctx.missions[0].current).toBe(0…
+       |                       ^
+     41|     expect(ctx.missions[0].completed).toBe(false); expect(ctx.runLedge…
+     42|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > uses mission identity even when a completed flag is reset or duplicated
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/runSettlement.test.ts:45:47
+     43|   it('uses mission identity even when a completed flag is reset or dup…
+     44|     const ctx = context(); initializeRunLedger(ctx);
+     45|     expect(awardMissionReward(ctx, 'm2', 40)).toBe(true);
+       |                                               ^
+     46|     expect(awardMissionReward(ctx, 'm2', 40)).toBe(false);
+     47|     expect(ctx.coins).toBe(40);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > creates independent ledgers and has no writable third earned total
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/runSettlement.test.ts:53:40
+     51|     expect(b.rewardedMissionIds).toEqual([]);
+     52|     const ctx = context(); initializeRunLedger(ctx);
+     53|     expect(() => { ctx.coins = 999; }).toThrow();
+       |                                        ^
+     54|     expect(ctx.coins).toBe(0);
+     55|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+ FAIL  tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > commits pickups and mission rewards from the same fatal tick before summary creation
+Error: Run summary not implemented
+ ❯ createRunSummary src/systems/runSettlement.ts:10:9
+      8| export function awardMissionReward(_ctx: GameContext, _missionId: stri…
+      9| export function createRunSummary(_snapshot: DeepReadonly<SimSnapshot>,…
+     10|   throw new Error('Run summary not implemented');
+       |         ^
+     11| }
+     12|
+ ❯ tests/unit/runSettlement.test.ts:64:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯
+
+ FAIL  tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > freezes the summary before restart and isolates new run accounting
+Error: Run summary not implemented
+ ❯ createRunSummary src/systems/runSettlement.ts:10:9
+      8| export function awardMissionReward(_ctx: GameContext, _missionId: stri…
+      9| export function createRunSummary(_snapshot: DeepReadonly<SimSnapshot>,…
+     10|   throw new Error('Run summary not implemented');
+       |         ^
+     11| }
+     12|
+ ❯ tests/unit/runSettlement.test.ts:73:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/10]⎯
+
+ FAIL  tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > keeps ledger snapshots immutable and never interpolates reward totals
+AssertionError: expected +0 to be 40 // Object.is equality
+
+- Expected
++ Received
+
+- 40
++ 0
+
+ ❯ tests/unit/runSettlement.test.ts:84:84
+     82|     sim.step();
+     83|     expect(() => { (sim.snapshot.context.runLedger!.rewardedMissionIds…
+     84|     for (const alpha of [0, 0.5, 1]) expect(sim.presentation(alpha).co…
+       |                                                                                    ^
+     85|   });
+     86|   it('does not infer new ledger parts from an unaccounted legacy coins…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/10]⎯
+
+ FAIL  tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > does not infer new ledger parts from an unaccounted legacy coins value
+AssertionError: expected undefined to deeply equal { pickupCount: +0, …(3) }
+
+- Expected:
+{
+  "pickupCoins": 0,
+  "pickupCount": 0,
+  "rewardCoins": 0,
+  "rewardedMissionIds": [],
+}
+
+
++ Received:
+undefined
+
+ Test Files  1 failed (1)
+      Tests  10 failed | 1 passed (11)
+   Start at  12:39:30
+   Duration  534ms (transform 167ms, setup 0ms, import 211ms, tests 23ms, environment 0ms)
+
+ ❯ tests/unit/runSettlement.test.ts:89:44
+     87|     const ctx = context(); ctx.coins = 80;
+     88|     const sim = new Simulation(ctx, { runId: 'new', seed: 1 });
+     89|     expect(sim.snapshot.context.runLedger).toEqual(createRunLedger());
+       |                                            ^
+     90|     expect(sim.snapshot.context.coins).toBe(0);
+     91|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/10]⎯
+
+ FAIL  tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > rejects invalid ledger values instead of creating a payable summary
+TypeError: Cannot set properties of undefined (setting 'pickupCoins')
+ ❯ tests/unit/runSettlement.test.ts:94:36
+     92|   it('rejects invalid ledger values instead of creating a payable summ…
+     93|     const sim = new Simulation(context(), { runId: 'bad', seed: 1 });
+     94|     sim.change(c => { c.runLedger!.pickupCoins = Number.NaN; });
+       |                                    ^
+     95|     expect(() => createRunSummary(sim.snapshot, 'QUIT')).toThrow();
+     96|   });
+ ❯ Simulation.change src/core/simulation.ts:82:5
+ ❯ tests/unit/runSettlement.test.ts:94:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/10]⎯

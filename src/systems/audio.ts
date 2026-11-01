@@ -6,6 +6,7 @@
 // - 追逐音：监听 CHASE_STATE_CHANGED，驱动警官警笛 loop 与警犬吠（距离衰减）
 
 import { eventBus } from '../core/eventBus';
+import type { AudioSettings } from '../application/types';
 
 const AUDIO_STORAGE = {
   MASTER_MUTED: 'paoku_audio_master_muted',
@@ -70,8 +71,11 @@ export class AudioEngine {
   private isChasing = false;
   private barkTimerId: number | null = null;
 
-  constructor() {
-    this.loadPersistence();
+  private readonly legacyPersistence: boolean;
+
+  constructor(legacyPersistence = true) {
+    this.legacyPersistence = legacyPersistence;
+    if (this.legacyPersistence) this.loadPersistence();
     // 追逐状态：监听 CHASE_STATE_CHANGED，驱动警笛 loop 与警犬吠
     eventBus.on('CHASE_STATE_CHANGED', (payload: any) => {
       this.setChaseState(payload?.distance ?? 2.8, payload?.isNear === true);
@@ -110,6 +114,7 @@ export class AudioEngine {
   }
 
   private savePersistence(): void {
+    if (!this.legacyPersistence) return;
     try {
       localStorage.setItem(AUDIO_STORAGE.MASTER_MUTED, this.isMuted ? '1' : '0');
       localStorage.setItem(AUDIO_STORAGE.BGM_ENABLED, this.bgmEnabled ? '1' : '0');
@@ -119,6 +124,15 @@ export class AudioEngine {
     } catch {
       // 忽略写入失败
     }
+  }
+
+  /** Preferences are applied only after the application commits the versioned save. */
+  public applySettings(settings: Readonly<AudioSettings>): void {
+    if (this.isMuted !== settings.masterMuted) this.toggleMute();
+    if (this.bgmEnabled !== settings.bgmEnabled) this.setBgmEnabled(settings.bgmEnabled);
+    if (this.sfxEnabled !== settings.sfxEnabled) this.setSfxEnabled(settings.sfxEnabled);
+    if (this.bgmVolume !== settings.bgmVolume) this.setBgmVolume(settings.bgmVolume);
+    if (this.sfxVolume !== settings.sfxVolume) this.setSfxVolume(settings.sfxVolume);
   }
 
   // ===== 上下文与总线初始化 =====
@@ -778,4 +792,6 @@ export class AudioEngine {
   }
 }
 
-export const audioEngine = new AudioEngine();
+// Standalone instances keep the legacy settings adapter for existing clients.
+// Production uses only the versioned application repository and injected settings.
+export const audioEngine = new AudioEngine(false);

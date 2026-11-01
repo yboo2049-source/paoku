@@ -95,6 +95,8 @@ export interface ChaseState {
 }
 
 export interface GameContext {
+  /** Present on authoritative Simulation runs; absent only for legacy standalone callers. */
+  runLedger?: RunLedger;
   state: GameState;
   score: number;
   highScore: number;
@@ -109,6 +111,23 @@ export interface GameContext {
   missions: Mission[];
   /** 追逐状态（由逻辑层计算，供渲染层与音频层共用，避免跨层读渲染状态） */
   chase: ChaseState;
+}
+
+export interface RunLedger {
+  pickupCount: number;
+  pickupCoins: number;
+  rewardCoins: number;
+  rewardedMissionIds: string[];
+}
+
+export interface RunSummary {
+  readonly runId: string;
+  readonly scoreInt: number;
+  readonly pickupCount: number;
+  readonly pickupCoins: number;
+  readonly rewardCoins: number;
+  readonly earnedCoins: number;
+  readonly endReason: 'COLLISION' | 'QUIT';
 }
 
 export const CONSTANTS = {

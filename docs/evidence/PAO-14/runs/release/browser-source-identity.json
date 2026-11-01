@@ -1,0 +1,31 @@
+{
+  "cwd": "D:\\worker\\paoku-sessions\\pao-14",
+  "baseURL": "http://127.0.0.1:5185",
+  "sources": [
+    {
+      "source": "src/main.ts",
+      "exactRawSourceMatch": true,
+      "sha256": "d174d004898d1c5e0ccd030e28490ec4da67efddf153e8777abe3d5ae3f4e4ff"
+    },
+    {
+      "source": "src/ui/dom.ts",
+      "exactRawSourceMatch": true,
+      "sha256": "f3d0823d26e9e1645a4a20407655663e87478b42dcc34c8c23c6a70dc5f69fdb"
+    },
+    {
+      "source": "src/core/simulation.ts",
+      "exactRawSourceMatch": true,
+      "sha256": "792c6ec0604d66e4426ce5831a8132089e3573629fc4af767dc072c5b87bea97"
+    },
+    {
+      "source": "src/application/appService.ts",
+      "exactRawSourceMatch": true,
+      "sha256": "55af38816e4246b15f7efd9bc4df20f756efe44dffffb593fc8326699da42ae4"
+    },
+    {
+      "source": "src/systems/runSettlement.ts",
+      "exactRawSourceMatch": true,
+      "sha256": "aa9efa286bd26f7060d709ca144468dcf64cb17463abe979f0edc429e12e8721"
+    }
+  ]
+}

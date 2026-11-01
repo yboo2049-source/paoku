@@ -1,0 +1,29 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/runSettlement.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-14
+
+ ❯ tests/unit/runSettlement.test.ts (13 tests | 1 failed) 15ms
+     × seals a quit as ABANDONED without clearing final world or earnings, and resets on restart 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > seals a quit as ABANDONED without clearing final world or earnings, and resets on restart
+TypeError: sim.abandon is not a function
+ ❯ tests/unit/runSettlement.test.ts:78:9
+     76|     sim.queue.collect('JUMP', 'KEYBOARD', sim.tick);
+     77|     const before = sim.snapshot;
+     78|     sim.abandon();
+       |         ^
+     79|     expect(sim.snapshot).toMatchObject({ runId: 'quit-run', phase: 'AB…
+     80|       context: { state: 'GAMEOVER', coins: 80, distance: before.contex…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 passed (13)
+   Start at  12:43:03
+   Duration  457ms (transform 144ms, setup 0ms, import 179ms, tests 15ms, environment 0ms)

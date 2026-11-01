@@ -1,0 +1,2 @@
+src/main.ts(52,19): error TS2554: Expected 2 arguments, but got 1.
+src/systems/audio.ts(74,15): error TS1294: This syntax is not allowed when 'erasableSyntaxOnly' is enabled.

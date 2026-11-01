@@ -8,6 +8,7 @@ import { immutableCopy, interpolateSnapshots } from './snapshot';
 import type { CommittedSnapshot } from './snapshot';
 import { applyInputAction } from '../systems/input';
 import { accumulateScore } from '../systems/scoring';
+import { awardMissionReward, initializeRunLedger } from '../systems/runSettlement';
 
 export function createSeededRng(seed: number): VersionedRng {
   let state = seed >>> 0;
@@ -42,14 +43,17 @@ export class Simulation {
   private runId: string;
   private seed: number;
   private phase: RunPhase = 'RUNNING';
+  private abandoned = false;
   private currentTick = 0;
   private lastSequence = 0;
   private previous: CommittedSnapshot | null = null;
   private current!: CommittedSnapshot;
   private stepping = false;
+  private legacyRewardSequence = 0;
   private inputLog: { tick: number; sequence: number; action: string; source: string }[] = [];
   constructor(context: GameContext, options: SimulationOptions) {
     this.context = structuredClone(context); this.options = options;
+    initializeRunLedger(this.context);
     this.stepSec = options.stepSec ?? 1 / 60;
     if (!Number.isFinite(this.stepSec) || this.stepSec <= 0 || !options.runId || !Number.isSafeInteger(options.seed) || options.seed < 0 || options.seed > 0xffffffff) throw new Error('Invalid simulation configuration');
     this.seed = options.seed; this.runId = options.runId;
@@ -61,7 +65,7 @@ export class Simulation {
   get snapshot(): CommittedSnapshot { return this.current; }
   get acceptedInputs() { return immutableCopy(this.inputLog); }
   private syncPhase(): void {
-    this.phase = this.context.state === 'PLAYING' ? 'RUNNING' : this.context.state === 'PAUSED' ? 'PAUSED' : this.context.state === 'GAMEOVER' ? 'ENDED' : 'ABANDONED';
+    this.phase = this.abandoned ? 'ABANDONED' : this.context.state === 'PLAYING' ? 'RUNNING' : this.context.state === 'PAUSED' ? 'PAUSED' : this.context.state === 'GAMEOVER' ? 'ENDED' : 'ABANDONED';
     this.queue.setAccepting(this.phase === 'RUNNING');
   }
   private commit(discontinuity = false): void {
@@ -79,7 +83,19 @@ export class Simulation {
   }
   /** Application lifecycle/QA boundary; never pass this capability to presentation. */
   change(change: (ctx: GameContext) => void, discontinuity = true): void {
-    change(this.context);
+    // Compatibility for existing privileged owner/QA callers only. The actual
+    // context and every published snapshot keep coins as the derived read view.
+    // A legacy positive increment is explicitly a reward, never a pickup fact.
+    const ownerView = new Proxy(this.context, { set: (ctx, key, value) => {
+      if (key !== 'coins') return Reflect.set(ctx, key, value);
+      const delta = typeof value === 'number' ? value - ctx.coins : Number.NaN;
+      if (!Number.isSafeInteger(value) || !Number.isSafeInteger(delta) || delta <= 0) {
+        throw new Error('Legacy owner coin mutations must be positive safe integer rewards');
+      }
+      awardMissionReward(ctx, `legacy-owner:${++this.legacyRewardSequence}`, delta);
+      return true;
+    } });
+    change(ownerView);
     // Synchronous legacy action listeners borrow the owner inside this tick;
     // they must not expose a half-integrated snapshot.
     if (!this.stepping) { this.syncPhase(); this.commit(discontinuity); }
@@ -87,11 +103,20 @@ export class Simulation {
   setPhase(phase: RunPhase): void {
     this.change(ctx => { ctx.state = phase === 'RUNNING' ? 'PLAYING' : phase === 'PAUSED' ? 'PAUSED' : phase === 'ENDED' ? 'GAMEOVER' : 'MENU'; });
   }
+  /** Quit lifecycle boundary: preserve final world/accounting for save retries. */
+  abandon(): void {
+    this.abandoned = true;
+    this.context.state = 'GAMEOVER';
+    this.syncPhase();
+    this.commit(true);
+  }
   restart(runId: string, seed: number, context?: GameContext): void {
     if (!runId || !Number.isSafeInteger(seed) || seed < 0 || seed > 0xffffffff) throw new Error('Invalid run identity/seed');
     if (context) this.context = structuredClone(context);
+    initializeRunLedger(this.context);
+    this.abandoned = false;
     this.runId = runId; this.seed = seed; this.rng = createSeededRng(seed);
-    this.currentTick = 0; this.lastSequence = 0; this.inputLog = [];
+    this.currentTick = 0; this.lastSequence = 0; this.inputLog = []; this.legacyRewardSequence = 0;
     this.options.generation?.reset(this.runId, this.seed);
     this.queue.reset(runId); this.syncPhase(); this.commit(true);
   }

@@ -1,0 +1,142 @@
+[
+  {
+    "phase": "red",
+    "stats": {
+      "startTime": "2026-11-01T04:39:08.815Z",
+      "duration": 8042.091,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/red"
+  },
+  {
+    "phase": "red-boundaries",
+    "stats": {
+      "startTime": "2026-11-01T04:45:11.5Z",
+      "duration": 19545.093,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/red-boundaries"
+  },
+  {
+    "phase": "focused",
+    "stats": {
+      "startTime": "2026-11-01T04:46:47.959Z",
+      "duration": 121879.943,
+      "expected": 7,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/focused"
+  },
+  {
+    "phase": "conflict-fixed",
+    "stats": {
+      "startTime": "2026-11-01T04:49:47.251Z",
+      "duration": 12166.04,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/conflict-fixed"
+  },
+  {
+    "phase": "verified",
+    "stats": {
+      "startTime": "2026-11-01T04:50:19.136Z",
+      "duration": 225312.639,
+      "expected": 36,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/verified"
+  },
+  {
+    "phase": "stable-visual",
+    "stats": {
+      "startTime": "2026-11-01T04:54:11.835Z",
+      "duration": 19997.367,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/stable-visual"
+  },
+  {
+    "phase": "final",
+    "stats": {
+      "startTime": "2026-11-01T04:57:43.374Z",
+      "duration": 221907.269,
+      "expected": 34,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/final"
+  },
+  {
+    "phase": "accepted",
+    "stats": {
+      "startTime": "2026-11-01T05:02:23.667Z",
+      "duration": 197727.64899999998,
+      "expected": 35,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/accepted"
+  },
+  {
+    "phase": "red-slider",
+    "stats": {
+      "startTime": "2026-11-01T05:05:48.139Z",
+      "duration": 8174.65,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/red-slider"
+  },
+  {
+    "phase": "slider-fixed",
+    "stats": {
+      "startTime": "2026-11-01T05:06:37.784Z",
+      "duration": 12001.36,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/slider-fixed"
+  }
+]

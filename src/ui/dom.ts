@@ -1,66 +1,13 @@
-import type { GameContext, GameState } from '../types';
+import type { GameContext } from '../types';
+import type { DeepReadonly } from '../types/contracts';
+import type { AppSnapshot } from '../application/types';
+import { SKINS } from '../application/skinCatalog';
+import type { SkinConfig } from '../application/skinCatalog';
+export { SKINS } from '../application/skinCatalog';
+export type { SkinConfig } from '../application/skinCatalog';
 import { CONSTANTS } from '../types';
 import { eventBus } from '../core/eventBus';
 import { audioEngine } from '../systems/audio';
-
-export interface SkinConfig {
-  id: string;
-  name: string;
-  color: string;
-  secondaryColor: string;
-  price: number;
-  description: string;
-}
-
-export const SKINS: SkinConfig[] = [
-  {
-    id: 'cyan',
-    name: 'Cyber Cyan',
-    color: '#00f3ff',
-    secondaryColor: '#0066ff',
-    price: 0,
-    description: 'Standard high-speed cyber runner suit.',
-  },
-  {
-    id: 'pink',
-    name: 'Neon Magenta',
-    color: '#ff007f',
-    secondaryColor: '#7928ca',
-    price: 50,
-    description: 'Vibrant neon synthwave pulse color.',
-  },
-  {
-    id: 'gold',
-    name: 'Cyber Gold',
-    color: '#ffd700',
-    secondaryColor: '#ff8800',
-    price: 150,
-    description: 'Luxury gold casing with high-voltage luster.',
-  },
-  {
-    id: 'green',
-    name: 'Matrix Emerald',
-    color: '#00ff66',
-    secondaryColor: '#008833',
-    price: 300,
-    description: 'Hacker-grade green matrix energy grid.',
-  },
-  {
-    id: 'purple',
-    name: 'Quantum Void',
-    color: '#9d4edd',
-    secondaryColor: '#3c096c',
-    price: 500,
-    description: 'Mysterious dark matter quantum armor.',
-  },
-];
-
-const STORAGE_KEYS = {
-  HIGH_SCORE: 'paoku_high_score',
-  TOTAL_COINS: 'paoku_total_coins',
-  SELECTED_SKIN: 'paoku_selected_skin',
-  UNLOCKED_SKINS: 'paoku_unlocked_skins',
-};
 
 export class UIManager {
   private container: HTMLElement;
@@ -90,86 +37,30 @@ export class UIManager {
   private shopCoinsEl!: HTMLElement;
   private skinsGridEl!: HTMLElement;
 
-  // Storage & State
-  private savedHighScore: number = 0;
-  private savedTotalCoins: number = 0;
-  private selectedSkinId: string = 'cyan';
-  private unlockedSkinIds: string[] = ['cyan'];
-  private processedGameOver: boolean = false;
-  private isNewRecord: boolean = false;
+  // Only the application owns wallet, rights and page state.
+  private readApp: () => AppSnapshot;
+  private shopFingerprint = '';
+  private newRecordRunId: string | null = null;
 
-  private pendingState: GameState | null = null;
-  private lastState: GameState = 'MENU';
-
-  constructor(container: HTMLElement) {
+  constructor(container: HTMLElement, readApp: () => AppSnapshot) {
     this.container = container;
-    this.loadPersistence();
+    this.readApp = readApp;
     this.buildUI();
     this.setupGlobalEvents();
-    this.emitSkinChange();
   }
 
-  /**
-   * 加载 localStorage 数据
-   */
-  private loadPersistence(): void {
-    try {
-      const hs = localStorage.getItem(STORAGE_KEYS.HIGH_SCORE);
-      if (hs) this.savedHighScore = parseInt(hs, 10) || 0;
-
-      const tc = localStorage.getItem(STORAGE_KEYS.TOTAL_COINS);
-      if (tc) this.savedTotalCoins = parseInt(tc, 10) || 0;
-
-      const skin = localStorage.getItem(STORAGE_KEYS.SELECTED_SKIN);
-      if (skin) this.selectedSkinId = skin;
-
-      const unlocked = localStorage.getItem(STORAGE_KEYS.UNLOCKED_SKINS);
-      if (unlocked) {
-        const parsed = JSON.parse(unlocked);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          this.unlockedSkinIds = parsed;
-        }
-      }
-      if (!this.unlockedSkinIds.includes('cyan')) {
-        this.unlockedSkinIds.unshift('cyan');
-      }
-    } catch (e) {
-      console.warn('Failed to load persistence from localStorage', e);
-    }
-  }
-
-  /**
-   * 保存 localStorage 数据
-   */
-  private savePersistence(): void {
-    try {
-      localStorage.setItem(STORAGE_KEYS.HIGH_SCORE, this.savedHighScore.toString());
-      localStorage.setItem(STORAGE_KEYS.TOTAL_COINS, this.savedTotalCoins.toString());
-      localStorage.setItem(STORAGE_KEYS.SELECTED_SKIN, this.selectedSkinId);
-      localStorage.setItem(STORAGE_KEYS.UNLOCKED_SKINS, JSON.stringify(this.unlockedSkinIds));
-    } catch (e) {
-      console.warn('Failed to save persistence to localStorage', e);
-    }
-  }
-
-  /**
-   * 获取当前皮肤配置
-   */
   public getSelectedSkin(): SkinConfig {
-    return SKINS.find((s) => s.id === this.selectedSkinId) || SKINS[0];
+    return SKINS.find(s => s.id === this.readApp().selectedSkinId) || SKINS[0];
   }
 
-  private emitSkinChange(): void {
-    eventBus.emit('SKIN_CHANGED', this.getSelectedSkin());
-  }
+  public markNewRecord(runId: string): void { this.newRecordRunId = runId; }
 
   private setupGlobalEvents(): void {
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        if (this.lastState === 'PLAYING' || this.lastState === 'PAUSED') {
+        if (this.readApp().appState === 'PLAYING' || this.readApp().appState === 'PAUSED') {
           eventBus.emit('TOGGLE_PAUSE');
-        } else if (this.lastState === 'SHOP') {
-          this.pendingState = 'MENU';
+        } else if (this.readApp().appState === 'SHOP') {
           eventBus.emit('GO_MENU');
         }
       }
@@ -400,7 +291,6 @@ export class UIManager {
 
     const openShop = (e: MouseEvent) => {
       (e.currentTarget as HTMLElement)?.blur();
-      this.pendingState = 'SHOP';
       eventBus.emit('OPEN_SHOP');
     };
 
@@ -409,14 +299,6 @@ export class UIManager {
 
     const backToMenu = (e: MouseEvent) => {
       (e.currentTarget as HTMLElement)?.blur();
-      if (this.lastState === 'PAUSED' || this.lastState === 'PLAYING') {
-        const hudCoins = parseInt(this.hudCoinsEl.textContent || '0', 10);
-        if (hudCoins > 0) {
-          this.savedTotalCoins += hudCoins;
-          this.savePersistence();
-        }
-      }
-      this.pendingState = 'MENU';
       eventBus.emit('GO_MENU');
     };
 
@@ -426,46 +308,24 @@ export class UIManager {
 
     this.bindAudioSettings();
 
-    this.shopCoinsEl.textContent = this.savedTotalCoins.toString();
+    this.shopCoinsEl.textContent = this.readApp().walletCoins.toString();
     this.renderShop();
   }
 
   /**
    * 每帧更新 UI 状态与数值
    */
-  public update(ctx: GameContext): void {
-    if (this.pendingState !== null) {
-      ctx.state = this.pendingState;
-      this.pendingState = null;
-    }
-
-    this.lastState = ctx.state;
-
-    // 同步内存持久化值至 ctx
-    ctx.highScore = Math.max(ctx.highScore, this.savedHighScore);
-    ctx.totalCoins = this.savedTotalCoins;
-
-    // 屏幕显隐控制
-    this.menuEl.style.display = ctx.state === 'MENU' ? 'flex' : 'none';
-    this.hudEl.style.display = ctx.state === 'PLAYING' || ctx.state === 'PAUSED' ? 'block' : 'none';
-    this.pausedEl.style.display = ctx.state === 'PAUSED' ? 'flex' : 'none';
-    this.gameOverEl.style.display = ctx.state === 'GAMEOVER' ? 'flex' : 'none';
-    this.shopEl.style.display = ctx.state === 'SHOP' ? 'flex' : 'none';
-
-    // MENU 状态下数据
-    if (ctx.state === 'MENU') {
-      this.menuHighScoreEl.textContent = this.savedHighScore.toString();
-      this.menuTotalCoinsEl.textContent = this.savedTotalCoins.toString();
-      this.processedGameOver = false;
-    }
-
-    // PLAYING 状态重置 GAMEOVER 标记
-    if (ctx.state === 'PLAYING') {
-      this.processedGameOver = false;
-    }
-
-    // HUD 实时更新
-    if (ctx.state === 'PLAYING' || ctx.state === 'PAUSED') {
+  public update(ctx: DeepReadonly<GameContext>): void {
+    const app = this.readApp();
+    const state = app.appState;
+    this.menuEl.style.display = state === 'MENU' ? 'flex' : 'none';
+    this.hudEl.style.display = state === 'PLAYING' || state === 'PAUSED' ? 'block' : 'none';
+    this.pausedEl.style.display = state === 'PAUSED' ? 'flex' : 'none';
+    this.gameOverEl.style.display = state === 'GAMEOVER' ? 'flex' : 'none';
+    this.shopEl.style.display = state === 'SHOP' ? 'flex' : 'none';
+    this.menuHighScoreEl.textContent = app.highScore.toString();
+    this.menuTotalCoinsEl.textContent = app.walletCoins.toString();
+    if (state === 'PLAYING' || state === 'PAUSED') {
       this.hudScoreEl.textContent = Math.floor(ctx.score).toString();
       this.hudCoinsEl.textContent = ctx.coins.toString();
 
@@ -484,40 +344,25 @@ export class UIManager {
       this.renderBuffs(ctx);
     }
 
-    // GAMEOVER 处理与持久化保存
-    if (ctx.state === 'GAMEOVER') {
-      if (!this.processedGameOver) {
-        this.processedGameOver = true;
-        const finalScore = Math.floor(ctx.score);
-        const coinsEarned = ctx.coins;
-
-        this.isNewRecord = finalScore > this.savedHighScore;
-        if (this.isNewRecord) {
-          this.savedHighScore = finalScore;
-          audioEngine.playNewRecord();
-        }
-
-        this.savedTotalCoins += coinsEarned;
-        this.savePersistence();
-
-        // 更新 UI
-        this.goFinalScoreEl.textContent = finalScore.toString();
-        this.goCoinsEarnedEl.textContent = `+${coinsEarned}`;
-        this.goHighScoreEl.textContent = this.savedHighScore.toString();
-        this.goBadgeEl.style.display = this.isNewRecord ? 'inline-block' : 'none';
-      }
+    if (state === 'GAMEOVER') {
+      this.goFinalScoreEl.textContent = String(app.summary?.scoreInt ?? Math.floor(ctx.score));
+      this.goCoinsEarnedEl.textContent = '+' + (app.summary?.earnedCoins ?? ctx.coins);
+      this.goHighScoreEl.textContent = String(app.highScore);
+      this.goBadgeEl.style.display = app.summary?.runId === this.newRecordRunId ? 'inline-block' : 'none';
     }
-
-    // SHOP 状态下刷新余额
-    if (ctx.state === 'SHOP') {
-      this.shopCoinsEl.textContent = this.savedTotalCoins.toString();
+    this.shopCoinsEl.textContent = app.walletCoins.toString();
+    const shopFingerprint = JSON.stringify([app.walletCoins, app.ownedSkinIds, app.selectedSkinId]);
+    if (this.shopFingerprint !== shopFingerprint) {
+      this.shopFingerprint = shopFingerprint;
+      this.renderShop(app);
     }
+    this.renderAudioControls();
   }
 
   /**
    * 渲染 Active PowerUps (Buffs)
    */
-  private renderBuffs(ctx: GameContext): void {
+  private renderBuffs(ctx: DeepReadonly<GameContext>): void {
     let html = '';
 
     if (ctx.player.hoverboardActive) {
@@ -548,12 +393,12 @@ export class UIManager {
   /**
    * 渲染 Shop 皮肤列表
    */
-  private renderShop(): void {
+  private renderShop(app: AppSnapshot = this.readApp()): void {
     let html = '';
 
     SKINS.forEach((skin) => {
-      const isUnlocked = this.unlockedSkinIds.includes(skin.id);
-      const isSelected = this.selectedSkinId === skin.id;
+      const isUnlocked = app.ownedSkinIds.includes(skin.id);
+      const isSelected = app.selectedSkinId === skin.id;
 
       let btnText = 'EQUIP';
       let btnClass = 'cyber-btn skin-action-btn';
@@ -564,7 +409,7 @@ export class UIManager {
         btnClass += ' secondary-btn disabled';
         isDisabled = true;
       } else if (!isUnlocked) {
-        const canAfford = this.savedTotalCoins >= skin.price;
+        const canAfford = app.walletCoins >= skin.price;
         btnText = `BUY [${skin.price} ¢]`;
         btnClass += canAfford ? '' : ' secondary-btn disabled';
         isDisabled = !canAfford;
@@ -600,61 +445,35 @@ export class UIManager {
    * 处理皮肤解锁或装备
    */
   private handleSkinAction(skinId: string): void {
-    const skin = SKINS.find((s) => s.id === skinId);
-    if (!skin) return;
-
-    const isUnlocked = this.unlockedSkinIds.includes(skinId);
-
-    if (isUnlocked) {
-      this.selectedSkinId = skinId;
-      this.savePersistence();
-      this.emitSkinChange();
-      this.renderShop();
-    } else if (this.savedTotalCoins >= skin.price) {
-      this.savedTotalCoins -= skin.price;
-      this.unlockedSkinIds.push(skinId);
-      this.selectedSkinId = skinId;
-      this.savePersistence();
-      this.emitSkinChange();
-      this.renderShop();
-    }
+    eventBus.emit(this.readApp().ownedSkinIds.includes(skinId) ? 'EQUIP_SKIN' : 'BUY_SKIN', { skinId });
   }
 
-  /**
-   * 绑定音频设置控件（BGM / SFX 独立开关 + 音量滑块）
-   */
   private bindAudioSettings(): void {
-    const bgmToggleBtn = document.getElementById('bgm-toggle-btn');
-    const sfxToggleBtn = document.getElementById('sfx-toggle-btn');
+    document.getElementById('bgm-toggle-btn')?.addEventListener('click', () => {
+      eventBus.emit('SET_AUDIO', { ...this.readApp().audio, bgmEnabled: !this.readApp().audio.bgmEnabled });
+    });
+    document.getElementById('sfx-toggle-btn')?.addEventListener('click', () => {
+      eventBus.emit('SET_AUDIO', { ...this.readApp().audio, sfxEnabled: !this.readApp().audio.sfxEnabled });
+    });
+    for (const [id, field] of [['bgm-volume', 'bgmVolume'], ['sfx-volume', 'sfxVolume']] as const) {
+      document.getElementById(id)?.addEventListener('input', e => {
+        eventBus.emit('SET_AUDIO', { ...this.readApp().audio, [field]: Number((e.currentTarget as HTMLInputElement).value) / 100 });
+      });
+    }
+    this.renderAudioControls();
+  }
+
+  private renderAudioControls(): void {
+    const audio = this.readApp().audio;
+    const bgm = document.getElementById('bgm-toggle-btn');
+    const sfx = document.getElementById('sfx-toggle-btn');
+    if (bgm) bgm.textContent = 'MUSIC: ' + (audio.bgmEnabled ? 'ON' : 'OFF');
+    if (sfx) sfx.textContent = 'SFX: ' + (audio.sfxEnabled ? 'ON' : 'OFF');
     const bgmVolume = document.getElementById('bgm-volume') as HTMLInputElement | null;
     const sfxVolume = document.getElementById('sfx-volume') as HTMLInputElement | null;
-
-    const renderControls = () => {
-      if (bgmToggleBtn) bgmToggleBtn.textContent = `MUSIC: ${audioEngine.getBgmEnabled() ? 'ON' : 'OFF'}`;
-      if (sfxToggleBtn) sfxToggleBtn.textContent = `SFX: ${audioEngine.getSfxEnabled() ? 'ON' : 'OFF'}`;
-      if (bgmVolume) bgmVolume.value = String(Math.round(audioEngine.getBgmVolume() * 100));
-      if (sfxVolume) sfxVolume.value = String(Math.round(audioEngine.getSfxVolume() * 100));
-    };
-
-    bgmToggleBtn?.addEventListener('click', () => {
-      audioEngine.setBgmEnabled(!audioEngine.getBgmEnabled());
-      renderControls();
-    });
-
-    sfxToggleBtn?.addEventListener('click', () => {
-      audioEngine.setSfxEnabled(!audioEngine.getSfxEnabled());
-      renderControls();
-    });
-
-    bgmVolume?.addEventListener('input', () => {
-      audioEngine.setBgmVolume(Number(bgmVolume.value) / 100);
-    });
-
-    sfxVolume?.addEventListener('input', () => {
-      audioEngine.setSfxVolume(Number(sfxVolume.value) / 100);
-    });
-
-    renderControls();
+    // Focused ranges keep their native editing draft while persistence is pending.
+    if (bgmVolume && document.activeElement !== bgmVolume) bgmVolume.value = String(Math.round(audio.bgmVolume * 100));
+    if (sfxVolume && document.activeElement !== sfxVolume) sfxVolume.value = String(Math.round(audio.sfxVolume * 100));
   }
 
   /**
@@ -681,4 +500,3 @@ export class UIManager {
     }, 3000);
   }
 }
-

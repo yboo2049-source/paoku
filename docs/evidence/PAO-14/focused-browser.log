@@ -1,0 +1,64 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config docs/evidence/PAO-14/playwright.config.ts tests/e2e/pao14-application.spec.ts
+
+[WebServer] (node:24872) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:11308) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\pao14-application.spec.ts:38:1 › N-desktop-pause-restart-stale-run-and-DOM-tamper (6.3s)
+  ok 2 tests\e2e\pao14-application.spec.ts:72:1 › N-portrait-touch-paused-input-and-return (3.3s)
+  ok 3 tests\e2e\pao14-application.spec.ts:89:1 › F-30-pickups-50-reward-save-failure-retry-and-repeat-finish (4.7s)
+  ok 4 tests\e2e\pao14-application.spec.ts:125:1 › F-legacy-rights-shop-purchase-and-refresh (4.0s)
+  ok 5 tests\e2e\pao14-application.spec.ts:142:1 › F-same-tick-terminal-pickup-and-gameover-shop (3.0s)
+  x  6 tests\e2e\pao14-application.spec.ts:166:1 › F-two-tabs-conflicting-transactions-do-not-overwrite (1.5m)
+(node:5332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 7 tests\e2e\pao14-application.spec.ts:184:1 › F-pause-isolates-input-while-save-lock-is-held (3.0s)
+  ok 8 tests\e2e\pao14-application.spec.ts:205:1 › F-reentrant-end-command-seals-complete-fatal-tick (2.3s)
+
+
+  1) tests\e2e\pao14-application.spec.ts:166:1 › F-two-tabs-conflicting-transactions-do-not-overwrite
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.click: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for locator('button[data-skin-id="pink"]')
+        - locator resolved to <button disabled data-skin-id="pink" class="cyber-btn skin-action-btn secondary-btn disabled">↵            BUY [50 ¢]↵          </button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not stable
+        - retrying click action
+        - waiting 20ms
+        - waiting for element to be visible, enabled and stable
+        - element is not stable
+      2 × retrying click action
+          - waiting 100ms
+          - waiting for element to be visible, enabled and stable
+          - element is not enabled
+      158 × retrying click action
+            - waiting 500ms
+            - waiting for element to be visible, enabled and stable
+            - element is not enabled
+      - retrying click action
+        - waiting 500ms
+
+
+      171 |   await page.click('#open-shop-btn'); await second.click('#open-shop-btn');
+      172 |   await expect(page.locator('#shop-screen')).toBeVisible(); await expect(second.locator('#shop-screen')).toBeVisible();
+    > 173 |   await page.locator('button[data-skin-id="pink"]').click();
+          |                                                     ^
+      174 |   await expect.poll(async () => (await app(page)).walletCoins).toBe(200);
+      175 |   await second.locator('button[data-skin-id="gold"]').click();
+      176 |   await expect.poll(async () => (await app(second)).errorCode).toBe('CONFLICT');
+        at D:\worker\paoku-sessions\pao-14\tests\e2e\pao14-application.spec.ts:173:53
+
+    Error Context: .pao14-local\focused\test-results\pao14-application-F-two-ta-6f2d2-ansactions-do-not-overwrite\error-context.md
+
+  1 failed
+    tests\e2e\pao14-application.spec.ts:166:1 › F-two-tabs-conflicting-transactions-do-not-overwrite
+  7 passed (2.0m)

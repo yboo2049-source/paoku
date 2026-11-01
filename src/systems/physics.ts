@@ -4,6 +4,7 @@ import { eventBus } from '../core/eventBus';
 import { GROUND, obstacleSurface, resolveSupport, sampleSurface, SURFACE_EPSILON } from './surfaces';
 import { compareContacts, sweepAABB } from './contacts';
 import type { SweptContact } from './contacts';
+import { recordCoinPickup } from './runSettlement';
 
 /** Called only by run/QA discontinuity owners, never by presentation. */
 export function resetPhysicsContacts(player: PlayerEntity): void {
@@ -259,7 +260,7 @@ export function updatePhysics(
     // 金币拾取判定
     if (Math.abs(player.x - coin.x) < 1.2 && Math.abs(player.z - coin.z) < 1.2 && Math.abs(player.y - coin.y) < 1.8) {
       coin.collected = true;
-      if (ctx) ctx.coins += 1;
+      if (ctx) recordCoinPickup(ctx);
       eventBus.emit('COIN_COLLECTED', { value: 1, total: ctx ? ctx.coins : 0 });
     }
   }

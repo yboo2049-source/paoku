@@ -168,9 +168,10 @@ function dispatchIntent(type: AppCommand['type'], payload?: Record<string, unkno
   const command: AppCommand = {
     commandId: typeof payload?.commandId === 'string' ? payload.commandId : 'ui-' + (++commandSequence),
     type,
-    ...(type === 'START_RUN' || type === 'BUY_SKIN' || type === 'EQUIP_SKIN' || type === 'SET_AUDIO' ? {} : { runId: hasRunId ? payload!.runId as string | null : app.activeRunId }),
+    ...(type === 'START_RUN' || type === 'BUY_SKIN' || type === 'EQUIP_SKIN' || type === 'SET_AUDIO' || type === 'UPDATE_AUDIO' ? {} : { runId: hasRunId ? payload!.runId as string | null : app.activeRunId }),
     ...(typeof payload?.skinId === 'string' ? { skinId: payload.skinId } : {}),
     ...(type === 'SET_AUDIO' ? { audio: payload as unknown as AppCommand['audio'] } : {}),
+    ...(type === 'UPDATE_AUDIO' ? { audioOperation: payload as unknown as AppCommand['audioOperation'] } : {}),
   };
   const terminalCommand = type === 'RESTART_RUN' || type === 'GO_MENU' || type === 'OPEN_SHOP';
   if (terminalCommand && inSimulationStep) {
@@ -218,13 +219,13 @@ on('OPEN_SHOP', payload => dispatchIntent('OPEN_SHOP', payload));
 on('BUY_SKIN', payload => dispatchIntent('BUY_SKIN', payload));
 on('EQUIP_SKIN', payload => dispatchIntent('EQUIP_SKIN', payload));
 on('SET_AUDIO', payload => dispatchIntent('SET_AUDIO', payload));
+on('UPDATE_AUDIO', payload => dispatchIntent('UPDATE_AUDIO', payload));
 on('TOGGLE_PAUSE', payload => {
   const state = application.snapshot.appState;
   dispatchIntent(state === 'PAUSED' ? 'RESUME_RUN' : 'PAUSE_RUN', payload);
 });
 on('TOGGLE_AUDIO', () => {
-  const audio = application.snapshot.audio;
-  dispatchIntent('SET_AUDIO', { ...audio, masterMuted: !audio.masterMuted });
+  dispatchIntent('UPDATE_AUDIO', { kind: 'TOGGLE', field: 'masterMuted' });
 });
 
 /** Observe only complete committed ticks; DOM update and render never settle. */

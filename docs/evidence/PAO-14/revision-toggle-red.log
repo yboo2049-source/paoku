@@ -1,0 +1,34 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config docs/evidence/PAO-14/playwright.config.ts tests/e2e/pao14-review.spec.ts --grep F-review-audio-repeated
+
+[WebServer] (node:6832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:5636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\pao14-review.spec.ts:78:1 › F-review-audio-repeated-toggle-under-lock (9.2s)
+
+
+  1) tests\e2e\pao14-review.spec.ts:78:1 › F-review-audio-repeated-toggle-under-lock ───────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      84 |   } finally { await unlock(page); }
+      85 |   await expect.poll(async () => (await app(page)).revision).toBe(revision + 2);
+    > 86 |   expect((await app(page)).audio.bgmEnabled).toBe(true);
+         |                                              ^
+      87 |   // Master mute is a real HUD button, available during the actual run.
+      88 |   await page.click('#start-btn'); await expect(page.locator('#audio-toggle-btn')).toBeVisible();
+      89 |   await hold(page);
+        at D:\worker\paoku-sessions\pao-14\tests\e2e\pao14-review.spec.ts:86:46
+
+    Error Context: .pao14-local\revision-red-toggle\test-results\pao14-review-F-review-audio-repeated-toggle-under-lock\error-context.md
+
+  1 failed
+    tests\e2e\pao14-review.spec.ts:78:1 › F-review-audio-repeated-toggle-under-lock ────────────────

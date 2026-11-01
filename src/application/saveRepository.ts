@@ -55,6 +55,16 @@ export class SaveRepository {
     try{this.storage.setItem(SAVE_KEY,encoded);return {ok:true};}
     catch{try{if(this.storage.getItem(SAVE_KEY)===encoded)return {ok:true};}catch{/* unavailable */}return {ok:false,errorCode:'SAVE_FAILED'};}
   }
+  /** Check before cached business rejections and idempotent no-ops. This does not
+   * refresh or mutate the owner; update still checks again under its own lock. */
+  async checkFreshness():Promise<RepositoryResult>{
+    if(!this.loaded)return {ok:false,errorCode:this.blocked??'STORAGE_UNAVAILABLE'};
+    try{return await this.lock(async()=>{
+      let raw:string|null;
+      try{raw=this.storage.getItem(SAVE_KEY);}catch{return {ok:false,errorCode:'STORAGE_UNAVAILABLE'};}
+      return raw===this.token?{ok:true}:{ok:false,errorCode:'CONFLICT'};
+    });}catch{return {ok:false,errorCode:'LOCK_UNAVAILABLE'};}
+  }
   async update(mutate:(draft:SaveData)=>void):Promise<RepositoryResult>{
     if(!this.loaded)return {ok:false,errorCode:this.blocked??'STORAGE_UNAVAILABLE'};
     try{return await this.lock(async()=>{

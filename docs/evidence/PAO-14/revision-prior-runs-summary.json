@@ -1,0 +1,44 @@
+[
+  {
+    "phase": "revision-red",
+    "stats": {
+      "startTime": "2026-11-01T05:32:46.663Z",
+      "duration": 108383.12400000001,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 3,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/revision-red"
+  },
+  {
+    "phase": "revision-red-toggle",
+    "stats": {
+      "startTime": "2026-11-01T05:34:49.703Z",
+      "duration": 12162.332,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/revision-red-toggle"
+  },
+  {
+    "phase": "revision-focused",
+    "stats": {
+      "startTime": "2026-11-01T05:36:17.165Z",
+      "duration": 31545.148,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/revision-focused"
+  }
+]

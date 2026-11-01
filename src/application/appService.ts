@@ -1,7 +1,14 @@
-import type { AppCommand, AppSnapshot, CommandResult, ErrorCode, RunSummary } from './types';
+import type { AppCommand, AppSnapshot, AudioOperation, CommandResult, ErrorCode, RunSummary } from './types';
 import { frozenCopy } from './types';
 import { SaveRepository, validAudio, validInteger } from './saveRepository';
 import { SKINS } from './skinCatalog';
+
+function validAudioOperation(value:unknown):value is AudioOperation {
+  if(!value||typeof value!=='object')return false;
+  const operation=value as AudioOperation;
+  if(operation.kind==='TOGGLE')return ['masterMuted','bgmEnabled','sfxEnabled'].includes(operation.field);
+  return operation.kind==='SET_VOLUME'&&['bgmVolume','sfxVolume'].includes(operation.field)&&typeof operation.value==='number'&&Number.isFinite(operation.value)&&operation.value>=0&&operation.value<=1;
+}
 
 /** Application commands are serialized independently of fixed simulation ticks. */
 export class AppService {
@@ -117,6 +124,8 @@ export class AppService {
         if(this.appState!=='SHOP')return this.failure(c.commandId,'INVALID_STATE');
         const skin=SKINS.find(s=>s.id===c.skinId);if(!skin)return this.failure(c.commandId,'UNKNOWN_SKIN');
         const readyError=await this.ensureReady();if(readyError)return this.failure(c.commandId,readyError);
+        const freshness=await this.repository.checkFreshness();
+        if(!freshness.ok)return this.saveFailure(c.commandId,freshness.errorCode!);
         const save=this.repository.snapshot,owned=save.ownedSkinIds.includes(skin.id);
         if(c.type==='BUY_SKIN'&&owned)return this.success(c.commandId,true);
         if(c.type==='EQUIP_SKIN'&&!owned)return this.failure(c.commandId,'NOT_OWNED');
@@ -128,6 +137,18 @@ export class AppService {
         if(!validAudio(c.audio))return this.failure(c.commandId,'INVALID_AUDIO');
         const readyError=await this.ensureReady();if(readyError)return this.failure(c.commandId,readyError);
         const audio=structuredClone(c.audio),result=await this.repository.update(d=>{d.audio=audio;});
+        return result.ok?this.success(c.commandId):this.saveFailure(c.commandId,result.errorCode!);
+      }
+      case 'UPDATE_AUDIO':{
+        if(!validAudioOperation(c.audioOperation))return this.failure(c.commandId,'INVALID_AUDIO');
+        const readyError=await this.ensureReady();if(readyError)return this.failure(c.commandId,readyError);
+        const operation=c.audioOperation;
+        const result=await this.repository.update(d=>{
+          // Interpret the intent only after the preceding command committed and
+          // while holding the repository lock; never replay an old full snapshot.
+          if(operation.kind==='TOGGLE')d.audio[operation.field]=!d.audio[operation.field];
+          else d.audio[operation.field]=operation.value;
+        });
         return result.ok?this.success(c.commandId):this.saveFailure(c.commandId,result.errorCode!);
       }
       default:return this.failure(c.commandId,'INVALID_COMMAND');

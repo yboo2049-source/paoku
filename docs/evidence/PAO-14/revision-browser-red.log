@@ -1,0 +1,95 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config docs/evidence/PAO-14/playwright.config.ts tests/e2e/pao14-review.spec.ts --grep F-review-audio
+
+[WebServer] (node:16084) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 3 tests using 1 worker
+
+(node:2220) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\pao14-review.spec.ts:52:1 › F-review-audio-different-fields-under-lock (10.6s)
+(node:25104) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 tests\e2e\pao14-review.spec.ts:76:1 › F-review-audio-repeated-toggle-under-lock (1.5m)
+(node:23952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  3 tests\e2e\pao14-review.spec.ts:88:1 › F-review-audio-volume-and-toggle-queue (2.6s)
+
+
+  1) tests\e2e\pao14-review.spec.ts:52:1 › F-review-audio-different-fields-under-lock ──────────────
+
+    Error: expect(received).toMatchObject(expected)
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "bgmEnabled": false,
+    +   "bgmEnabled": true,
+        "sfxEnabled": false,
+      }
+
+      67 |   } finally { await unlock(page); }
+      68 |   await expect.poll(async () => (await app(page)).revision).toBe(revision + 2);
+    > 69 |   expect((await app(page)).audio).toMatchObject({ bgmEnabled: false, sfxEnabled: false });
+         |                                   ^
+      70 |   await capture(page, 'F-review-desktop-audio-both-off', '#menu-screen');
+      71 |   await page.reload(); await boot(page);
+      72 |   await expect.poll(async () => (await app(page)).audio.bgmEnabled).toBe(false);
+        at D:\worker\paoku-sessions\pao-14\tests\e2e\pao14-review.spec.ts:69:35
+
+    Error Context: .pao14-local\revision-red\test-results\pao14-review-F-review-audio-different-fields-under-lock\error-context.md
+
+  2) tests\e2e\pao14-review.spec.ts:76:1 › F-review-audio-repeated-toggle-under-lock ───────────────
+
+    Test timeout of 90000ms exceeded.
+
+    Error: page.evaluate: Target page, context or browser has been closed
+
+      22 |   });
+      23 |   await page.waitForFunction(() => (window as any).__revisionLockHeld);
+    > 24 | }
+         |  ^
+      25 | async function unlock(page: Page) { await page.evaluate(() => (window as any).__revisionUnlock()); }
+      26 | async function volume(page: Page, id: string, value: string) {
+      27 |   await page.locator(id).focus();
+        at unlock (D:\worker\paoku-sessions\pao-14\tests\e2e\pao14-review.spec.ts:24:48)
+        at D:\worker\paoku-sessions\pao-14\tests\e2e\pao14-review.spec.ts:83:21
+
+    Error Context: .pao14-local\revision-red\test-results\pao14-review-F-review-audio-repeated-toggle-under-lock\error-context.md
+
+  3) tests\e2e\pao14-review.spec.ts:88:1 › F-review-audio-volume-and-toggle-queue ──────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+      Object {
+        "bgmEnabled": false,
+    -   "bgmVolume": 0.4,
+    +   "bgmVolume": 0.6,
+        "masterMuted": false,
+    -   "sfxEnabled": false,
+    -   "sfxVolume": 0.35,
+    +   "sfxEnabled": true,
+    +   "sfxVolume": 0.9,
+      }
+
+       96 | });
+       97 |
+    >  98 | test('F-review-audio-volume-and-toggle-queue', async ({ page }) => {
+          |                                   ^
+       99 |   await boot(page); const revision = (await app(page)).revision;
+      100 |   await hold(page);
+      101 |   try {
+        at D:\worker\paoku-sessions\pao-14\tests\e2e\pao14-review.spec.ts:98:35
+
+    Error Context: .pao14-local\revision-red\test-results\pao14-review-F-review-audio-volume-and-toggle-queue\error-context.md
+
+  3 failed
+    tests\e2e\pao14-review.spec.ts:52:1 › F-review-audio-different-fields-under-lock ───────────────
+    tests\e2e\pao14-review.spec.ts:76:1 › F-review-audio-repeated-toggle-under-lock ────────────────
+    tests\e2e\pao14-review.spec.ts:88:1 › F-review-audio-volume-and-toggle-queue ───────────────────

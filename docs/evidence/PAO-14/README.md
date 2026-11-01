@@ -1,5 +1,7 @@
 # PAO-14 送审证据
 
+> 本文保留 `3d0efe8` 首次送审记录。主审两项P2的最小修订、RED/GREEN及最新完整门禁见[修订送审报告](revision-report.md)。
+
 2026-11-01（Asia/Shanghai）。工作目录 `D:/worker/paoku-sessions/pao-14`，分支 `codex/pao-14-application`，基线 `a4486a21435a7315d091769d8ac6bc8accc8f2f0`。仅执行 PAO-14；交付 In Review，等待主 Agent 验收，不设 Done、不启动其他任务。
 
 先写 [实施计划](implementation-plan.md)，再由应用/账本、UI 适配、QA 隔离完成 RED→GREEN。应用服务拥有页面状态、活动局、钱包/皮肤权利和版本化存档；DOM 仅提交意图、读取冻结视图。结束/退出/暂停重开/结算页商店统一先封存完整摘要、成功提交后才清世界或创建新 runId。保存失败保留摘要和原局，可重试；旧 run 命令不能终止新局。

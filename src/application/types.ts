@@ -1,6 +1,9 @@
 export type { RunSummary } from '../types';
 import type { RunSummary, GameState } from '../types';
 export interface AudioSettings { masterMuted: boolean; bgmEnabled: boolean; sfxEnabled: boolean; bgmVolume: number; sfxVolume: number }
+export type AudioOperation =
+  | { kind: 'TOGGLE'; field: 'masterMuted' | 'bgmEnabled' | 'sfxEnabled' }
+  | { kind: 'SET_VOLUME'; field: 'bgmVolume' | 'sfxVolume'; value: number };
 export interface SaveData {
   schemaVersion: 1; revision: number; walletCoins: number; highScore: number;
   ownedSkinIds: string[]; selectedSkinId: string; audio: AudioSettings; settledRunIds: string[];
@@ -9,8 +12,8 @@ export type ErrorCode = 'STORAGE_UNAVAILABLE' | 'SAVE_FAILED' | 'FUTURE_SCHEMA' 
 export interface CommandResult { ok: boolean; commandId: string; errorCode?: ErrorCode; runId?: string; idempotent?: boolean }
 export interface RepositoryResult { ok: boolean; errorCode?: ErrorCode }
 export interface AppCommand {
-  commandId: string; type: 'START_RUN' | 'RESTART_RUN' | 'GO_MENU' | 'OPEN_SHOP' | 'PAUSE_RUN' | 'RESUME_RUN' | 'BUY_SKIN' | 'EQUIP_SKIN' | 'SET_AUDIO';
-  runId?: string | null; skinId?: string; audio?: AudioSettings; summary?: RunSummary;
+  commandId: string; type: 'START_RUN' | 'RESTART_RUN' | 'GO_MENU' | 'OPEN_SHOP' | 'PAUSE_RUN' | 'RESUME_RUN' | 'BUY_SKIN' | 'EQUIP_SKIN' | 'SET_AUDIO' | 'UPDATE_AUDIO';
+  runId?: string | null; skinId?: string; audio?: AudioSettings; audioOperation?: AudioOperation; summary?: RunSummary;
 }
 export interface AppSnapshot {
   readonly appState: GameState; readonly activeRunId: string | null;

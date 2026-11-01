@@ -1,0 +1,55 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config docs/evidence/PAO-14/playwright.config.ts
+
+[WebServer] (node:23388) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 41 tests using 1 worker
+
+(node:6164) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\gameplay.spec.ts:50:3 › 状态机（确定性） › MENU → PLAYING via start button (9.5s)
+  ok  2 tests\e2e\gameplay.spec.ts:56:3 › 状态机（确定性） › PLAYING → 切道（左/右 + 边界钳制） (2.6s)
+  ok  3 tests\e2e\gameplay.spec.ts:73:3 › 状态机（确定性） › PLAYING → 跳跃（isJumping=true） (2.3s)
+  ok  4 tests\e2e\gameplay.spec.ts:79:3 › 状态机（确定性） › PLAYING → 翻滚（isRolling=true） (2.2s)
+  ok  5 tests\e2e\gameplay.spec.ts:85:3 › 状态机（确定性） › PLAYING → PAUSED via Escape，再 resume 回到 PLAYING (2.5s)
+  ok  6 tests\e2e\gameplay.spec.ts:98:3 › 截图回放（确定性） › 捕获 6 张高保真截图（无 GAMEOVER 风险） (4.0s)
+  ok  7 tests\e2e\pao10-review-fixes.spec.ts:35:1 › native-menu-slider-and-start-space (2.5s)
+  ok  8 tests\e2e\pao10-review-fixes.spec.ts:48:1 › paused-rejects-motion-and-resume-space (3.1s)
+  ok  9 tests\e2e\pao10-review-fixes.spec.ts:67:1 › playing-interactive-arrows-do-not-move-player (2.7s)
+  ok 10 tests\e2e\pao10-simulation.spec.ts:29:1 › N-desktop-production-keyboard-flow (50.2s)
+  ok 11 tests\e2e\pao10-simulation.spec.ts:67:1 › N-mobile-production-touch (4.4s)
+  ok 12 tests\e2e\pao10-simulation.spec.ts:97:1 › F-lifecycle-clears-input-and-hidden-time (4.5s)
+  ok 13 tests\e2e\pao11-surfaces.spec.ts:95:3 › F-desktop-keyboard-ground-ramp-roof-jump-ground (6.4s)
+  ok 14 tests\e2e\pao11-surfaces.spec.ts:95:3 › F-portrait-touch-ground-ramp-roof-jump-ground (5.9s)
+  ok 15 tests\e2e\pao11-surfaces.spec.ts:124:1 › F-high-base-ramp-5-to-8-continuous-roof (3.7s)
+  ok 16 tests\e2e\pao11-surfaces.spec.ts:142:1 › N-production-input-and-supported-snapshot (2.8s)
+  ok 17 tests\e2e\pao12-collision.spec.ts:79:1 › F-desktop-relative-high-speed-thin-train-terminal-once (4.0s)
+  ok 18 tests\e2e\pao12-collision.spec.ts:119:1 › F-portrait-same-tick-shield-multi-hit-single-consumption (3.1s)
+  ok 19 tests\e2e\pao12-collision.spec.ts:144:1 › F-desktop-airborne-roll-uses-actual-height-box (3.2s)
+  ok 20 tests\e2e\pao12-collision.spec.ts:167:1 › F-browser-isolated-highest-speed-large-step-and-pose-matrix (1.9s)
+  ok 21 tests\e2e\pao12-collision.spec.ts:201:1 › F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position (4.0s)
+  ok 22 tests\e2e\pao13-track.spec.ts:78:1 › N-desktop-seeded-generation-keyboard-and-reset (3.4s)
+  ok 23 tests\e2e\pao13-track.spec.ts:109:1 › N-portrait-seeded-generation-touch (4.0s)
+  ok 24 tests\e2e\pao13-track.spec.ts:138:1 › F-isolated-browser-real-physics-segment-and-pair-witnesses (2.6s)
+  ok 25 tests\e2e\pao14-application.spec.ts:43:1 › N-desktop-pause-restart-stale-run-and-DOM-tamper (4.9s)
+  ok 26 tests\e2e\pao14-application.spec.ts:77:1 › N-portrait-touch-paused-input-and-return (3.9s)
+  ok 27 tests\e2e\pao14-application.spec.ts:94:1 › F-30-pickups-50-reward-save-failure-retry-and-repeat-finish (4.6s)
+  ok 28 tests\e2e\pao14-application.spec.ts:130:1 › F-legacy-rights-shop-purchase-and-refresh (3.9s)
+  ok 29 tests\e2e\pao14-application.spec.ts:147:1 › F-same-tick-terminal-pickup-and-gameover-shop (3.9s)
+  ok 30 tests\e2e\pao14-application.spec.ts:171:1 › F-two-tabs-conflicting-transactions-do-not-overwrite (5.8s)
+  ok 31 tests\e2e\pao14-application.spec.ts:190:1 › F-pause-isolates-input-while-save-lock-is-held (2.5s)
+  ok 32 tests\e2e\pao14-application.spec.ts:211:1 › F-reentrant-end-command-seals-complete-fatal-tick (2.3s)
+  ok 33 tests\e2e\pao14-application.spec.ts:231:1 › F-native-slider-preserves-draft-while-save-lock-is-held (2.1s)
+  ok 34 tests\e2e\pao14-review.spec.ts:54:1 › F-review-audio-different-fields-under-lock (3.8s)
+  ok 35 tests\e2e\pao14-review.spec.ts:78:1 › F-review-audio-repeated-toggle-under-lock (2.8s)
+  ok 36 tests\e2e\pao14-review.spec.ts:98:1 › F-review-audio-volume-and-toggle-queue (4.0s)
+  ok 37 tests\e2e\pao14-review.spec.ts:114:1 › F-review-shop-stale-funds-explicit-retry (7.5s)
+  ok 38 tests\e2e\pao6-baseline.spec.ts:64:1 › ramp-roof-jump-land (6.2s)
+  ok 39 tests\e2e\pao6-baseline.spec.ts:76:1 › obstacles-failure-restart (7.4s)
+  ok 40 tests\e2e\pao6-baseline.spec.ts:86:1 › powerups-shield-missions (9.4s)
+  ok 41 tests\e2e\pao6-baseline.spec.ts:98:1 › mobile-touch-layout (4.7s)
+
+  41 passed (3.7m)
+exitCode=0

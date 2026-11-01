@@ -450,14 +450,14 @@ export class UIManager {
 
   private bindAudioSettings(): void {
     document.getElementById('bgm-toggle-btn')?.addEventListener('click', () => {
-      eventBus.emit('SET_AUDIO', { ...this.readApp().audio, bgmEnabled: !this.readApp().audio.bgmEnabled });
+      eventBus.emit('UPDATE_AUDIO', { kind: 'TOGGLE', field: 'bgmEnabled' });
     });
     document.getElementById('sfx-toggle-btn')?.addEventListener('click', () => {
-      eventBus.emit('SET_AUDIO', { ...this.readApp().audio, sfxEnabled: !this.readApp().audio.sfxEnabled });
+      eventBus.emit('UPDATE_AUDIO', { kind: 'TOGGLE', field: 'sfxEnabled' });
     });
     for (const [id, field] of [['bgm-volume', 'bgmVolume'], ['sfx-volume', 'sfxVolume']] as const) {
       document.getElementById(id)?.addEventListener('input', e => {
-        eventBus.emit('SET_AUDIO', { ...this.readApp().audio, [field]: Number((e.currentTarget as HTMLInputElement).value) / 100 });
+        eventBus.emit('UPDATE_AUDIO', { kind: 'SET_VOLUME', field, value: Number((e.currentTarget as HTMLInputElement).value) / 100 });
       });
     }
     this.renderAudioControls();

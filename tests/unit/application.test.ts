@@ -1,12 +1,34 @@
 import { describe, expect, it } from 'vitest';
 import { AppService } from '../../src/application/appService';
 import { SaveRepository } from '../../src/application/saveRepository';
-import type { RunSummary } from '../../src/application/types';
+import type { AppCommand, RunSummary } from '../../src/application/types';
 class Storage { data=new Map<string,string>();fail=false;getItem(k:string){return this.data.get(k)??null;}setItem(k:string,v:string){if(this.fail)throw Error('quota');this.data.set(k,v);} }
 const lock=async<T>(f:()=>Promise<T>)=>f();
 const summary=(runId:string,endReason:'QUIT'|'COLLISION'='COLLISION'):RunSummary=>({runId,scoreInt:123,pickupCount:30,pickupCoins:30,rewardCoins:50,earnedCoins:80,endReason});
 async function setup(){const storage=new Storage();let n=0;const app=new AppService(new SaveRepository(storage,lock),()=>`run-${++n}`);await app.initialize();await app.dispatch({commandId:'start',type:'START_RUN'});return {app,storage};}
 describe('PAO-14 application lifecycle and settlement',()=>{
+  const audioCommand=(commandId:string,audioOperation:unknown)=>({commandId,type:'UPDATE_AUDIO',audioOperation}) as AppCommand;
+  async function audioSetup(){
+    const storage=new Storage();let tail:Promise<unknown>=Promise.resolve();const serial=<T>(f:()=>Promise<T>):Promise<T>=>{const next=tail.then(f);tail=next.catch(()=>{});return next;};const app=new AppService(new SaveRepository(storage,serial));await app.initialize();
+    const hold=async()=>{let release!:()=>void,entered!:()=>void;const waiting=new Promise<void>(resolve=>{release=resolve;});const started=new Promise<void>(resolve=>{entered=resolve;});const done=serial(async()=>{entered();await waiting;});await started;return {release,done};};return {app,storage,hold};
+  }
+  it.each([
+    ['distinct toggles',[{kind:'TOGGLE',field:'bgmEnabled'},{kind:'TOGGLE',field:'sfxEnabled'}],{bgmEnabled:false,sfxEnabled:false}],
+    ['same toggle twice',[{kind:'TOGGLE',field:'bgmEnabled'},{kind:'TOGGLE',field:'bgmEnabled'}],{bgmEnabled:true}],
+    ['master toggle twice',[{kind:'TOGGLE',field:'masterMuted'},{kind:'TOGGLE',field:'masterMuted'}],{masterMuted:false}],
+    ['volume and toggles interleaved',[{kind:'SET_VOLUME',field:'bgmVolume',value:0.2},{kind:'TOGGLE',field:'sfxEnabled'},{kind:'SET_VOLUME',field:'sfxVolume',value:0.4},{kind:'SET_VOLUME',field:'bgmVolume',value:0.7}],{bgmVolume:0.7,sfxVolume:0.4,sfxEnabled:false}],
+  ])('applies queued audio intents against committed settings: %s',async(_name,operations,expected)=>{
+    const {app,hold}=await audioSetup(),blocked=await hold(),before=app.snapshot;
+    const results=(operations as unknown[]).map((operation,i)=>app.dispatch(audioCommand('op-'+i,operation)));
+    await Promise.resolve();expect(app.snapshot.audio).toEqual(before.audio);expect(app.snapshot.revision).toBe(before.revision);
+    blocked.release();await blocked.done;expect((await Promise.all(results)).every(r=>r.ok)).toBe(true);expect(app.snapshot.audio).toMatchObject(expected);expect(app.snapshot.revision).toBe(before.revision+operations.length);
+  });
+  it('retries a failed audio operation without a fake publication and deduplicates its commandId',async()=>{
+    const {app,storage,hold}=await audioSetup();const command=audioCommand('toggle',{kind:'TOGGLE',field:'sfxEnabled'});storage.fail=true;expect((await app.dispatch(command)).errorCode).toBe('SAVE_FAILED');expect(app.snapshot.audio.sfxEnabled).toBe(true);expect(app.snapshot.revision).toBe(0);storage.fail=false;const blocked=await hold();const first=app.dispatch(command),second=app.dispatch(command);expect(app.snapshot.audio.sfxEnabled).toBe(true);blocked.release();await blocked.done;expect((await first).ok).toBe(true);expect(await second).toEqual(await first);expect(app.snapshot.audio.sfxEnabled).toBe(false);expect(app.snapshot.revision).toBe(1);
+  });
+  it.each([null,{kind:'TOGGLE',field:'bgmVolume'},{kind:'TOGGLE',field:'unknown'},{kind:'SET_VOLUME',field:'bgmEnabled',value:0.5},{kind:'SET_VOLUME',field:'bgmVolume',value:NaN},{kind:'SET_VOLUME',field:'sfxVolume',value:Infinity},{kind:'SET_VOLUME',field:'sfxVolume',value:-0.1},{kind:'SET_VOLUME',field:'sfxVolume',value:1.1}])('rejects invalid audio operation without storing: %j',async operation=>{
+    const {app}=await audioSetup();expect((await app.dispatch(audioCommand('bad',operation))).errorCode).toBe('INVALID_AUDIO');expect(app.snapshot.revision).toBe(0);
+  });
   it('retries interrupted initialization within the same live run',async()=>{const storage=new Storage();storage.data.set('paoku_total_coins','25');storage.fail=true;const app=new AppService(new SaveRepository(storage,lock),()=> 'migrated-run');expect((await app.initialize()).ok).toBe(false);await app.dispatch({commandId:'s',type:'START_RUN'});storage.fail=false;expect((await app.finish(summary('migrated-run'))).ok).toBe(true);expect(app.snapshot.walletCoins).toBe(105);});
   it('reloads a conflicting repository on retry while preserving the sealed summary',async()=>{const {app,storage}=await setup();const other=new SaveRepository(storage,lock);await other.load();await other.update(d=>{d.walletCoins=15;});expect((await app.finish(summary('run-1'))).errorCode).toBe('CONFLICT');expect(app.snapshot.walletCoins).toBe(0);expect((await app.finish(summary('run-1'))).ok).toBe(true);expect(app.snapshot.walletCoins).toBe(95);});
   it('publishes in-memory start/pause/resume synchronously without storage access',()=>{const storage=new Storage();const app=new AppService(new SaveRepository(storage,lock),()=> 'sync');app.dispatch({commandId:'s',type:'START_RUN'});expect(app.snapshot.appState).toBe('PLAYING');app.dispatch({commandId:'p',type:'PAUSE_RUN',runId:'sync'});expect(app.snapshot.appState).toBe('PAUSED');app.dispatch({commandId:'r',type:'RESUME_RUN',runId:'sync'});expect(app.snapshot.appState).toBe('PLAYING');});

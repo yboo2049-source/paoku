@@ -1,0 +1,26 @@
+{
+  "issue": "PAO-14",
+  "revisionBase": "3d0efe8c061d4482d60dbf5e429a9f980937eed0",
+  "branch": "codex/pao-14-application",
+  "buildExitCode": 0,
+  "unitFiles": 16,
+  "unitPassed": 236,
+  "retainedUnitCount": 220,
+  "newUnitCount": 16,
+  "retainedE2ECount": 37,
+  "newE2ECount": 4,
+  "completeE2E": {
+    "startTime": "2026-11-01T05:36:56.348Z",
+    "duration": 221762.44700000001,
+    "expected": 41,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "historicalOriginalFiles": 709,
+  "historicalCheckedPaths": 731,
+  "historicalAllVerified": true,
+  "srcStable": true,
+  "servedRevisionSourcesMatch": true,
+  "newStableScreenshotsInspected": 2
+}

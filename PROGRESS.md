@@ -2,6 +2,12 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-03] 主Agent继续，PAO-15/18并行设计交接已准备
+
+- 用户要求本主Agent继续。已准备[两份设计准备提示词](docs/plans/2026-11-03-pao15-pao18-preparation-prompts.md)：15原聊天设计本地基础动作技术样本，18新聊天设计动作/接触反馈/镜头及接口。只写任务文档，不生成动作或编写游戏实现；具体设计返回后审查审批。
+- 15@64c4f31跟踪内容无改动；已从已审17@82d2d47建立D:/worker/paoku-sessions/pao-18、codex/pao-18-motion-camera，干净。只建立准备目录，未安装依赖/验证运行环境/推新分支/启动任务或Agent，未合并15/19。
+- 15/18父依赖保留，4类技术样本不当正式13动作，人工权重/拓扑/精修继续延期。共享契约已同步设计准备边界，main/types/物理/DOM/旧测试/已审资产等只读；不重复17主题校验或15绑定探针。
+
 ## [2026-11-02] PAO-17明亮主题阶段独立复审通过
 
 - 实现5298e1a、日志82d2d47，本地与远端codex/pao-17-render均核实为82d2d47。[独立复审](docs/reviews/2026-11-02-pao17-bright-theme-review.md)已完成。

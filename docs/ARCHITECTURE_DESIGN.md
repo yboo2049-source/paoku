@@ -1,5 +1,11 @@
 # 系统架构与模块隔离设计 (Architecture Spec)
 
+## 2026-11-03 PAO-15/18并行准备写权
+
+[准备交接](plans/2026-11-03-pao15-pao18-preparation-prompts.md)使用15@64c4f31及新建18@82d2d47独立树；当前两者均只写各自设计/规格/接口矩阵和纯文本证据。15不改已审派生工程/脚本/旧GLB，18不写characterView/cameraRig/babylon/main/types或导入资产。18含已审17主题，但不含15新角色/19新UI；不得把并行设计或未审产物当正式契约。
+
+未来root世界位置仍归模拟，骨架只作用visual child；动画末帧不改变接触/伤害/时长。既有Player的contact/supportSurfaceId/supportSample与I-01为实际输入，完整运动阶段/事实envelope或I-03去重桥缺口由18明确提出最小请求，Dispatcher另行定串行入口，不自行补全公共schema。
+
 ## 2026-11-02 PAO-17主题/坡面本批写权
 
 [本批批准计划](plans/2026-11-02-pao17-bright-theme-execution.md)固定536f54b，仅environment/entityViews/babylon及必要assets和新专属测试可写；main/types/modelBindings/core/systems/application/DOM/public/依赖/默认配置/旧测试保持只读。原I-01/I-02沿用，不重做接线。主题池由playerZ绝对段索引驱动，背景不占模拟RNG/生成权威；独立展台按既有应用状态显隐。

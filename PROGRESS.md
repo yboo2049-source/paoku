@@ -2,6 +2,13 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-02] PAO-17首批结构/生命周期A→B验收通过
+
+- [536f54b独立主审](docs/reviews/2026-11-02-pao17-structure-implementation-review.md)：远程同SHA，已批准的assets/environment/entityViews拆分与I-01同次帧身份/I-02释放桥通过本阶段验收；父17不Done，生产资产/主题/18仍递延。
+- 独立build、261单测、48完整E2E通过，315.045秒、0重试；实际raw/legacy HTTP身份核对，1078跟踪文件前后不变，初始995原件稳定。环境两旧方法换行规范后文本相同；抽看桌面/390触摸/390重开三图，兼容旧画面并保留已知视觉缺口。
+- 新增真实GLB成功加载后20次reset稳定、最终资源归零；延迟HTTP销毁真实ERR_ABORTED、活动请求/场景/缓存归零，补充F1/1通过。loader取消路径Promise未结算和主审两次探针修正完整保留，不声称通用堆内存或所有Promise结算已证明。
+- 未写游戏实现、派发/联系其他聊天、合并或改Linear；原任务`.pao17-local/`临时未追踪证据保留。下一阶段需明确生产接入与主题/动作范围，不能直接以此放行18或把16候选当生产配置。
+
 ## [2026-11-02] PAO-16自动标定细化阶段验收通过
 
 - [c7b09e6主审](docs/reviews/2026-11-02-pao16-calibration-refinement-review.md)：远程同SHA、任务树干净；新诊断/TODO重生成逐字节一致，12266交点可追溯，96条索引/全量射线一致。工程车5剖面候选带、高栏有限网格及普通车双端/低栏剖面作为调查输入保留。

@@ -15,10 +15,19 @@
 
 [人工TODO](../art/pao15-rigging-manual-todo.md)的刷权、拓扑、局部接触和动作精修继续延期，不重做绑定探针，不索取已确认不存在的原作者DCC，不上传云或付费调用。共享总纲由Dispatcher统一整合。旧绑定/主题提示词已经执行，不重复派发。
 
+## 主Agent下发前门禁
+
+主Agent先按[交接第3、4节](../handoffs/2026-11-02-main-agent-m2-theme.md)完成目标worktree的创建或复用，并核验Git登记、顶层、分支、实际HEAD、基线祖先关系和用户改动，再交付下面的提示词。不能只提供预期路径、把建树留给任务Agent；也不能因“不自动启动任务”而省略目录准备。
+
+2026-11-03本机PAO-18已登记在D:/worker/paoku-sessions/pao-18，分支codex/pao-18-motion-camera，实际HEAD等于准备基线82d2d47b333de2cc0da778591f99df8fe98084ed，当前直接复用。本轮复核时已出现未跟踪候选设计/接口矩阵/准备证据，等待任务方交付，不重复派发第2节。新会话必须复核；HEAD推进或有未提交内容则保留并检查新成果，不回退或重复派发。目录已建不代表新聊天已绑定、依赖已安装、检查已通过或远程分支已推送，回执须分别说明。
+
+用户新建18专属聊天时选择D:/worker/paoku-sessions/pao-18。提示词中的目录声明不会自动切换聊天cwd；命令必须显式使用任务workdir或git -C。任务Agent首次简短回报实际目录/顶层、分支、HEAD及“仅设计”阶段；发现目标目录缺失或分支错误，返回具体核验结果交Dispatcher处理，不改主规划树。
+
 ## 1. 复制到原 PAO-15 聊天
 
 ~~~text
 继续PAO-15，本轮只设计本地自动基础动作技术样本，不生成动作/新GLB或修改游戏。目录D:/worker/paoku-sessions/pao-15，codex/pao-15-character-assets，固定准备起点64c4f3120224f42995bc4b0fae544feae139d380。先核对Git/用户改动，不reset/merge或启动其他任务/Agent。
+命令显式设workdir为上述任务目录或git -C；先核验show-toplevel、branch、HEAD、status及基线祖先关系，首次简短回报结果。不要把提示词路径当作cwd已切换；目录/分支不符先交Dispatcher纠正，不在主规划树写设计。已有后续成果先检查保留，不因固定准备起点而回退或重复执行。
 先读D:/worker/paoku/AGENTS.md、D:/worker/paoku/docs/plans/2026-11-03-pao15-pao18-preparation-prompts.md及15主审/人工TODO链接；再按需读本树character-spec、rig-spike/README、pose-index/骨架清单与build.py相关骨架/姿势定义。不扫全库/全部GLB/图集，不重跑已验收绑定。
 现有派生工程assets-source/characters/runner/rig-spike/runner-derived.blend、诊断GLB docs/evidence/PAO-15/rig-spike/runner-rig-spike.glb，23骨/真实蒙皮但仅rig_diagnostic。Blender4.5.3已在.pao15-local/blender/便携部署，有旧版本/hash记录。本轮只读资料，不打开保存二进制工程、运行导出或改旧样本；原作者DCC不存在，未来只能创建标明来源的新版本派生工程。
 使用using-superpowers/brainstorming形成完整可审设计；按需用art-animation-vfx/animation-spec，项目30fps、0基半开区间与GLB边界键约定优先于通用2D/1基闭区间/战斗模板，不引入攻击/美术无敌判定。疑点列假设/选项继续草案，不因已知源缺失或每个参数反复问用户。
@@ -35,6 +44,7 @@
 
 ~~~text
 作为PAO-18动作/镜头Agent，本轮只设计准备。目录D:/worker/paoku-sessions/pao-18，codex/pao-18-motion-camera，固定准备起点82d2d47b333de2cc0da778591f99df8fe98084ed（已审17结构/明亮主题）。主Agent已建树，先核对Git/用户改动，不另建树/reset/merge/cherry-pick或启动其他任务/Agent。
+命令显式设workdir为上述任务目录或git -C；先核验show-toplevel、branch、HEAD、status及基线祖先关系，首次简短回报结果。目录声明不会自动切换聊天cwd；若目录缺失/分支不符，返回具体检查结果交Dispatcher修复，不把D:/worker/paoku作替代。不因已有worktree而声称聊天已绑定或运行环境已验证；HEAD若已推进，先保留检查新成果，不回退或重复派发。
 先读D:/worker/paoku/AGENTS.md、D:/worker/paoku/docs/plans/2026-11-03-pao15-pao18-preparation-prompts.md与15/17主审链接；主仓架构/流程/测试只读当前生效段，Linear PAO-18正文/依赖只读，不改状态或发评论。
 事实：本树有RenderFrameIdentity、reset/dispose、明亮主题/楔形坡，但实际仍是legacy player七clip别名，不是新runner。15只有23骨/单诊断clip已审，四基础动作仍在并行设计；19新UI未合入。缺项不得写成已有能力，15/17→18父依赖保留。
 用using-superpowers/brainstorming比较至少两条路线，推荐保留门面/生命周期、分离characterView/cameraRig并只读消费事实；大main/总线重构列成本和独立请求。形成完整可审草案，细节未知列假设继续；不重复审批M1/明亮主题，本轮不进入writing-plans/实现。

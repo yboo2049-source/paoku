@@ -1,0 +1,208 @@
+{
+  "date": "2026-11-02 Asia/Shanghai",
+  "task": "PAO-16 automatic calibration refinement review only",
+  "commit": "c7b09e6136acbbb5e248baa2d24e2d71c51a4773",
+  "branch": "codex/pao-16-world-assets",
+  "buildExit": 0,
+  "toolTypecheckExit": 0,
+  "unit": {
+    "files": 18,
+    "passed": 260
+  },
+  "regression": {
+    "startTime": "2026-11-02T12:29:29.882Z",
+    "duration": 257027.947,
+    "expected": 43,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "tests": 43,
+    "retries": 0,
+    "errors": [],
+    "failures": []
+  },
+  "toolPreviews": {
+    "startTime": "2026-11-02T12:33:55.750Z",
+    "duration": 22948.156,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "tests": 2,
+    "retries": 0,
+    "errors": [],
+    "failures": []
+  },
+  "protected": {
+    "trackedFiles": 1049,
+    "changed": 0,
+    "taskProtection": 965,
+    "taskProtectionChanged": 0,
+    "externalSources": 4
+  },
+  "rawGameModules": 26,
+  "reproduction": [
+    {
+      "path": "docs/assets/pao16-calibration-refinement.json",
+      "byteMatch": true
+    },
+    {
+      "path": "docs/art/pao16-calibration-todo.md",
+      "byteMatch": true
+    }
+  ],
+  "points": [
+    {
+      "file": "train_ramp_or_car.glb",
+      "checkedHits": 3748,
+      "maxLocalError": 0,
+      "maxSceneError": 1.2432050435751766e-16,
+      "indexVersusExhaustive": {
+        "rays": 24,
+        "maxRayError": 0
+      },
+      "rawHashMatches": true,
+      "classification": "POINTS_REQUIRE_REVIEW",
+      "roofRegions": 18,
+      "clearance": null
+    },
+    {
+      "file": "train_metro.glb",
+      "checkedHits": 3954,
+      "maxLocalError": 0,
+      "maxSceneError": 1.1210126175528405e-16,
+      "indexVersusExhaustive": {
+        "rays": 24,
+        "maxRayError": 0
+      },
+      "rawHashMatches": true,
+      "classification": "POINTS_REQUIRE_REVIEW",
+      "roofRegions": 2,
+      "clearance": null
+    },
+    {
+      "file": "obstacle_hurdle_barrier.glb",
+      "checkedHits": 1770,
+      "maxLocalError": 0,
+      "maxSceneError": 2.2898349882893854e-16,
+      "indexVersusExhaustive": {
+        "rays": 24,
+        "maxRayError": 0
+      },
+      "rawHashMatches": true,
+      "classification": "POINTS_REQUIRE_REVIEW",
+      "roofRegions": 1,
+      "clearance": null
+    },
+    {
+      "file": "obstacle_slide_barrier.glb",
+      "checkedHits": 2794,
+      "maxLocalError": 0,
+      "maxSceneError": 3.3335590258932494e-16,
+      "indexVersusExhaustive": {
+        "rays": 24,
+        "maxRayError": 0
+      },
+      "rawHashMatches": true,
+      "classification": "POINTS_REQUIRE_REVIEW",
+      "roofRegions": 5,
+      "clearance": {
+        "total": 1649,
+        "pass": 1015,
+        "unknown": 252,
+        "blocked": 382,
+        "spacing": [
+          0.00784301571547985,
+          0.006576539055660081
+        ]
+      }
+    }
+  ],
+  "checkedHits": 12266,
+  "indexVersusExhaustiveRays": 96,
+  "previewRecords": [
+    {
+      "ready": true,
+      "file": "train_metro.glb",
+      "meshes": 1,
+      "loaderMaxError": 0,
+      "candidateAppliedError": 0.00000762939453125,
+      "base5Error": 0.00000762939453125,
+      "restoreError": 0.00000762939453125,
+      "rightHanded": true,
+      "visualRootCount": 1,
+      "logicalChildCount": 2,
+      "compared": 11508,
+      "refinementOverlayCount": 7,
+      "cameraCount": 1,
+      "continuousCertificate": false,
+      "httpSHA256": "721bb182e1a323e1a01f65db3bb3602de3c6196ccb5c458a093ca87cd10ed4c8"
+    },
+    {
+      "ready": true,
+      "file": "obstacle_slide_barrier.glb",
+      "meshes": 1,
+      "loaderMaxError": 1.5634417809987836e-8,
+      "candidateAppliedError": 7.878241889193316e-8,
+      "base5Error": 5.151655884524719e-8,
+      "restoreError": 7.878241889193316e-8,
+      "rightHanded": true,
+      "visualRootCount": 1,
+      "logicalChildCount": 1,
+      "compared": 8716,
+      "refinementOverlayCount": 6,
+      "cameraCount": 1,
+      "continuousCertificate": false,
+      "httpSHA256": "471b24a3a1cc6a25cc18bac7cfcfd5cad36e61ce3e7088fd75f9dfbe99379d0a"
+    },
+    {
+      "ready": true,
+      "file": "train_ramp_or_car.glb",
+      "meshes": 1,
+      "loaderMaxError": 0,
+      "candidateAppliedError": 0,
+      "base5Error": 2.223532646894455e-8,
+      "restoreError": 0,
+      "rightHanded": true,
+      "visualRootCount": 1,
+      "logicalChildCount": 1,
+      "compared": 114123,
+      "refinementOverlayCount": 8,
+      "cameraCount": 2,
+      "continuousCertificate": false,
+      "httpSHA256": "b561449fbb1426f2ba38cd54f75818090cf68076b3cb59a50c80dce2beb48fe4"
+    },
+    {
+      "ready": true,
+      "file": "obstacle_hurdle_barrier.glb",
+      "meshes": 1,
+      "loaderMaxError": 0,
+      "candidateAppliedError": 0,
+      "base5Error": 0,
+      "restoreError": 0,
+      "rightHanded": true,
+      "visualRootCount": 1,
+      "logicalChildCount": 1,
+      "compared": 10132,
+      "refinementOverlayCount": 6,
+      "cameraCount": 1,
+      "continuousCertificate": false,
+      "httpSHA256": "4f8d4756dcf150b086f8cad14a531305cae61caa0996872af291128d099306c4"
+    }
+  ],
+  "previewRawSHA256": "654bd02b56ef33696fab3342ee43b7ba769e888bf43ab6e3a58acccbc61c21ad",
+  "pageErrors": [],
+  "taskReportedHistoricalRegression": {
+    "cases": 43,
+    "firstAttemptPassed": 42,
+    "flaky": 1,
+    "retryPassed": true,
+    "failure": "PAO6 ramp-roof-jump-land observed GAMEOVER instead of PLAYING",
+    "rootCauseFixed": false,
+    "record": "docs/evidence/PAO-16/calibration-refinement/regression-failure.txt"
+  },
+  "productionAccepted": false,
+  "parentDone": false,
+  "LHProductionVerified": false,
+  "fullLocalEvidence": ".pao16-local/refinement-parent-review"
+}

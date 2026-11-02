@@ -1,0 +1,28 @@
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 41 .pao16-local\refinement\regression\pao6-baseline.pw.ts:64:1 › ramp-roof-jump-land (retry #1) (5.9s)
+  ok 42 .pao16-local\refinement\regression\pao6-baseline.pw.ts:76:1 › obstacles-failure-restart (6.4s)
+  ok 43 .pao16-local\refinement\regression\pao6-baseline.pw.ts:86:1 › powerups-shield-missions (9.3s)
+  ok 44 .pao16-local\refinement\regression\pao6-baseline.pw.ts:98:1 › mobile-touch-layout (4.4s)
+
+
+  1) .pao16-local\refinement\regression\pao6-baseline.pw.ts:64:1 › ramp-roof-jump-land ─────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "PLAYING"
+    Received: "GAMEOVER"
+
+      69 |   if (roof.state === 'PLAYING' || roof.state === 'PAUSED') {
+      70 |     await page.keyboard.press('w'); await page.waitForTimeout(150); await snap(page, 'roof-jump');
+    > 71 |     await reach(page, 60); const landed = await snap(page, 'roof-exit-land'); expect(landed.state).toBe('PLAYING'); expect(landed.position.y).toBe(0);
+         |                                                                                                    ^
+      72 |   }
+      73 |   expect(await page.evaluate(() => (window as any).__paoTrace.length)).toBeGreaterThan(10);
+      74 | });
+        at D:\worker\paoku-sessions\pao-16\.pao16-local\refinement\regression\pao6-baseline.pw.ts:71:100
+
+    Error Context: .pao16-local\refinement\regression-results\pao6-baseline.pw.ts-ramp-roof-jump-land\error-context.md
+
+  1 flaky
+    .pao16-local\refinement\regression\pao6-baseline.pw.ts:64:1 › ramp-roof-jump-land ──────────────
+  42 passed (3.7m)

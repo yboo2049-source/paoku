@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 
 const files = new Set(['train_metro.glb', 'train_ramp_or_car.glb', 'obstacle_hurdle_barrier.glb', 'obstacle_slide_barrier.glb']);
 const server = await createServer({
-  configFile: false, publicDir: false,
+  configFile: false, publicDir: false, appType: 'mpa',
   server: { host: '127.0.0.1', port: 5186, strictPort: true },
   plugins: [{ name: 'pao16-readonly-inputs', configureServer(vite) {
     vite.middlewares.use((req, res, next) => {

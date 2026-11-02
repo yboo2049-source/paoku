@@ -1,28 +1,29 @@
-# PAO-16 技术标定 Spike TODO
+# PAO-16 自动细化后 TODO
 
-此批只诊断，不是正式资产或PAO-17放行。source→asset→logic→world矩阵见诊断JSON；完整源节点TRS保留，未知端点不由AABB补齐。
+2026-11-02：原作者已确认原始DCC不存在。未来建立标明现有GLB来源的重建派生工程，不再索取不存在的原始源；本轮无修整、建模、烘焙、LOD或云上传。首批证据旧文字不改写。
 
 ## train_ramp_or_car.glb — POINTS_REQUIRE_REVIEW
 
-- [ ] Long axis X confirmed; semantic front/back is unresolved by the automatic geometry detector; the rendered cab needs an explicit signed source marker. Both ±90deg remain candidates; displayed -90deg is arbitrary, not forward approval.
-- [ ] Wheel/rail contact line and certified traversable roof boundary remain null; ray hits include roof attachments.
+- [ ] 复核新法向/剖面/连通采样候选；不把边界采样当端点或连续空间证书。
+- [ ] 车头正负仍缺自动语义特征；查看带源轴标记的双端预览。
+- [ ] 接地/轮轨线、可走车顶、正式代理与生产LH边界未获接入验收。
 
-## train_metro.glb — NEEDS_DERIVED_REPAIR
+## train_metro.glb — POINTS_REQUIRE_REVIEW
 
-- [ ] Exact ramp foot/top and roof seam semantic boundary remain null: rounded transition; measured interior patches cannot certify endpoints.
-- [ ] Sampled incline interior lies above source ground; exact foot/undercarriage relationship remains unverified; no physics change.
-- [ ] Obtain editable author source before any repair; this probe performs none.
+- [ ] 复核新法向/剖面/连通采样候选；不把边界采样当端点或连续空间证书。
+- [ ] 源部件语义及两侧/全深范围仍须复核。
+- [ ] 接地/轮轨线、可走车顶、正式代理与生产LH边界未获接入验收。
 
-## obstacle_hurdle_barrier.glb — NEEDS_DERIVED_REPAIR
+## obstacle_hurdle_barrier.glb — POINTS_REQUIRE_REVIEW
 
-- [ ] Low hurdle contains multiple horizontal bars; effective blocking shape differs from solid logic envelope.
-- [ ] Foot/rod primitive grouping and usable low-obstacle outline require review; do not shrink logic or jump height.
+- [ ] 复核新法向/剖面/连通采样候选；不把边界采样当端点或连续空间证书。
+- [ ] 源部件语义及两侧/全深范围仍须复核。
+- [ ] 接地/轮轨线、可走车顶、正式代理与生产LH边界未获接入验收。
 
-## obstacle_slide_barrier.glb — NEEDS_DERIVED_REPAIR
+## obstacle_slide_barrier.glb — POINTS_REQUIRE_REVIEW
 
-- [ ] Center underside measured but full width/depth clearance needs continuous aperture analysis; side posts must not become new gameplay obstacles.
-- [ ] Yaw +90deg maps source Z span to game X; face/sign not semantically approved.
+- [ ] 复核新法向/剖面/连通采样候选；不把边界采样当端点或连续空间证书。
+- [ ] 源部件语义及两侧/全深范围仍须复核。
+- [ ] 接地/轮轨线、可走车顶、正式代理与生产LH边界未获接入验收。
 
-- [ ] 原作者源/许可确认；批准后另做派生比例/几何修整、重拓扑/烘焙/LOD/贴图分档。
-- [ ] 具体美术与真机预算未签收，不因技术预览通过而冻结。
-- [ ] 本批未接游戏；后续接入仍须审查生产元数据、唯一组合根、回退与真实脚底连续性。
+具体美术/许可适用项/真机预算另审；不修改M1尺寸/容差，不标Done，不解锁下游。

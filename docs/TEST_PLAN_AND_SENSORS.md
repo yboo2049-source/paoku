@@ -1,5 +1,11 @@
 # 测试用例与传感器计划 (Test Plan & Sensors)
 
+## 2026-11-02 PAO-17已批准首批门禁
+
+[首批计划](plans/2026-11-02-pao17-approved-execution.md)限定tests/unit/pao17-*.test.ts、tests/e2e/pao17-*.spec.ts。先RED再迁移；A内部结构与B真实main接线分别通过build、完整单测/旧E2E和专属传感器，不能只测假接口或源码字符串。真实Map读保护复用immutableCopy并以对抗性set/delete/clear和条目比较验证；断点跨多个渲染帧只消费一次；A局晚到请求与B局同ID、旧皮肤/订阅、失败fallback和单组合根用受控夹具覆盖。
+
+暖机后20轮实体创建/删除、10次reset及最终dispose/晚到完成，按共享缓存/实例/宿主资源计数，阴影/订阅无残留且不允许固定增长；I-01同次presentation取样/无二次插值、I-02真实释放须执行验证。5187独占strictPort、不复用服务、Windows D3D11，raw/legacy资产HTTP身份和历史保护清单核对；可逆旧回归镜像不误收Vitest，保留首次失败。N桌面/390触摸与F异步故障分报，默认查看2～3新图，兼容旧视觉不等于新主题或PAO-19整合验收。
+
 ## 2026-11-02 PAO-16/17 接续验证
 
 [16细化探针](plans/2026-11-01-pao16-pao17-parallel-prompts.md)先有新方法的RED，三角语义候选附来源/置信度，有限采样不冒称连续净空证明；新增工具继续完整build/test/E2E及独立预览，保护首批证据、raw/源hash和旧断言，5186独占。17仅文档设计/引用与diff检查，正常hooks保留；其生命周期/回退/唯一组合根/手性/资源清理与5187截图等只交测试矩阵，不声称已经运行或通过。主审默认各批2～3关键图。

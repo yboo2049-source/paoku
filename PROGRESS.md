@@ -2,6 +2,12 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-02] 用户批准PAO-17首批结构与I-01/I-02
+
+- 用户明确“批准”前一主审列明的路线A、只读帧身份及释放桥，第一批仅等行为结构/内部生命周期和专属合成验证。已同步PRD/架构/流程/测试，[实施计划与可复制提示词](docs/plans/2026-11-02-pao17-approved-execution.md)固定接续fcddba1，已核对本地/远端一致、任务树干净。
+- 原17聊天单一实现方A→B：A写渲染三模块/门面及专属测试，完整检查点后B独占main最小render/legacyView取样与disposeGame接线；帧类型局部定义，shared types只读。Map/断点一次消费/输入溯源/资源基线纳入计划，不重复请求相同批准。
+- 不合入15/16/19、不接生产GLB/主题资产、不做正式动作或镜头重设计；16可独立自动标定，父17及16/9整体依赖不变。本Dispatcher未写游戏代码、启动任务/Agent/聊天或合并，用户粘贴后才执行。
+
 ## [2026-11-02] PAO-17方案准备主审通过
 
 - [fcddba1主审](docs/reviews/2026-11-02-pao17-preparation-review.md)：远程同SHA、树干净，仅三份文档266行，diff检查与现行渲染/main/类型/模型绑定窄范围核对通过。父任务仍Backlog、依赖保留，不将准备当实现Done。

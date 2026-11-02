@@ -1,5 +1,11 @@
 # 系统架构与模块隔离设计 (Architecture Spec)
 
+## 2026-11-02 PAO-17批准后A→B串行写权
+
+[本批计划](plans/2026-11-02-pao17-approved-execution.md)固定pao-17@fcddba1495a27436de64971720aad67624bc4420，由原17聊天单一实现方执行。A独占babylon/assets/environment/entityViews及专属测试，先保留门面并明确加载容器/实例/共享材质/阴影/订阅的归属、失效与幂等释放；完成完整验证检查点后B独占main的render/legacyView必要取样参数和disposeGame最小接线。Dispatcher仍只写文档与验收。
+
+只读帧身份`{runId,tick,discontinuity,appState}`类型在渲染模块定义，复用现有类型，shared types只读；context和模拟身份取自同一次presentation(alpha)，应用状态在同次同步调用投影，位移不再次插值。disposeGame调用幂等renderer.dispose，eventBus回调保存身份后off；只移除自己创建的Canvas。main其他业务、application/core/physics/modelBindings/DOM/public/依赖和共享配置不开放。合成夹具与生产绑定分开，renderer缓存与旧消费者资格分开，18角色/相机路径继续递延。
+
 ## 2026-11-02 PAO-16/17 并行写权
 
 [并行交接](plans/2026-11-01-pao16-pao17-parallel-prompts.md)：16接续3de6e54，只改专属标定工具/测试及新refinement诊断证据，原src/public/首批诊断证据只读；17从19aa314分析实际渲染门面，只写任务级设计/接口验收方案。17目录已建立，但不是正式实现基线或运行环境签收；两树互不写入/合并，main/types/共享总纲无并行写权。

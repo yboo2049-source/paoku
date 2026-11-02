@@ -1,5 +1,11 @@
 # 系统架构与模块隔离设计 (Architecture Spec)
 
+## 2026-11-02 PAO-17主题/坡面本批写权
+
+[本批批准计划](plans/2026-11-02-pao17-bright-theme-execution.md)固定536f54b，仅environment/entityViews/babylon及必要assets和新专属测试可写；main/types/modelBindings/core/systems/application/DOM/public/依赖/默认配置/旧测试保持只读。原I-01/I-02沿用，不重做接线。主题池由playerZ绝对段索引驱动，背景不占模拟RNG/生成权威；独立展台按既有应用状态显隐。
+
+楔形顶面按obs底面中心/宽高深生成，程序车顶板在表现层铺满ROOF范围并对齐高度，读已验收Surface作测试基准，不修改物理尺寸/容差。资源/材质/Glow/caster有单一归属，段回收/reset/dispose都清理引用；四件GLB候选、18镜头/正式动作和跨分支整合继续递延。
+
 ## 2026-11-02 PAO-17批准后A→B串行写权
 
 [本批计划](plans/2026-11-02-pao17-approved-execution.md)固定pao-17@fcddba1495a27436de64971720aad67624bc4420，由原17聊天单一实现方执行。A独占babylon/assets/environment/entityViews及专属测试，先保留门面并明确加载容器/实例/共享材质/阴影/订阅的归属、失效与幂等释放；完成完整验证检查点后B独占main的render/legacyView必要取样参数和disposeGame最小接线。Dispatcher仍只写文档与验收。

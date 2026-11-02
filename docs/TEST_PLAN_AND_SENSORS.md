@@ -1,5 +1,11 @@
 # 测试用例与传感器计划 (Test Plan & Sensors)
 
+## 2026-11-02 PAO-17主题/坡面批准门禁
+
+[本批计划](plans/2026-11-02-pao17-bright-theme-execution.md)先RED验证绝对段池的真实world覆盖/接缝/冻结矩阵、展台各状态和重开、楔形三角平面/车顶范围及非零Y与只读sampleSurface一致；不以存储的目标数字、外AABB或自家同算法相互验证替代。坡顶原程序顶板缩进及低0.005m偏差须被捕获并只修表现。
+
+真实GLB/阴影充分暖机后20轮跨段回收/10次reset及dispose，资源按池/共享缓存/动态对象分报，不把首帧阴影纹理初始化误判泄漏。保留原261单测/48E2E全部断言，加本批theme/ramp专属测试；每步骤即时build/目标测试，最终完整build/test/E2E。N桌面/390触摸与F坡车顶/循环/基准分报，5187 strictPort/不复用服务/D3D11、raw/legacy HTTP及保护hash核对，默认抽看2～3本轮图，异常扩看。正式GLB/新UI/正式动作/真机未因此验收。
+
 ## 2026-11-02 PAO-17已批准首批门禁
 
 [首批计划](plans/2026-11-02-pao17-approved-execution.md)限定tests/unit/pao17-*.test.ts、tests/e2e/pao17-*.spec.ts。先RED再迁移；A内部结构与B真实main接线分别通过build、完整单测/旧E2E和专属传感器，不能只测假接口或源码字符串。真实Map读保护复用immutableCopy并以对抗性set/delete/clear和条目比较验证；断点跨多个渲染帧只消费一次；A局晚到请求与B局同ID、旧皮肤/订阅、失败fallback和单组合根用受控夹具覆盖。

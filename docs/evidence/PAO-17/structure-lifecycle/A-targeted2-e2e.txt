@@ -1,0 +1,17 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao17-local/acceptance.config.ts --retries=0 tests/e2e/pao17-
+
+[WebServer] (node:13672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:26396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\pao17-lifecycle.spec.ts:11:1 › F real renderer fallback, 20 cycles / 10 resets, dispose/remount, late shared load and host canvas (3.2s)
+  ok 2 tests\e2e\pao17-structure.spec.ts:8:1 › F source raw and legacy HTTP identity (128ms)
+  ok 3 tests\e2e\pao17-structure.spec.ts:23:37 › N desktop keyboard legacy start motion pause resume end restart (29.2s)
+  ok 4 tests\e2e\pao17-structure.spec.ts:23:37 › N 390 touch legacy start motion pause resume end restart (28.9s)
+
+  4 passed (1.1m)

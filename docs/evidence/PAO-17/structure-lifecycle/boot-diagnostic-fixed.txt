@@ -1,0 +1,322 @@
+
+> app@0.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+ ✓ tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > includes nonzero ramp base and connects roof 5ms
+ ✓ tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > does not clamp ramp outside { x: 1.21, z: 100 } 1ms
+ ✓ tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > does not clamp ramp outside { x: +0, z: 106.01 } 0ms
+ ✓ tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > does not lift from below ramp 0ms
+ ✓ tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > does not snap a side hit to roof 1ms
+ ✓ tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > detaches on jump and lands from above 2ms
+ ✓ tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > leaves laterally and clears recycled support 1ms
+ ✓ tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > carries once using speedZ -4 1ms
+ ✓ tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > carries once using speedZ 4 0ms
+ ✓ tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > does not carry newly landed player for elapsed movement 0ms
+ ✓ tests/unit/surfaces.test.ts > continuous fixed ticks at 18 m/s do not die at ramp/roof seam 8ms
+ ✓ tests/unit/surfaces.test.ts > continuous fixed ticks at 45 m/s do not die at ramp/roof seam 3ms
+ ✓ tests/unit/surfaces.test.ts > uses numerical endpoint epsilon without extending gameplay support 0ms
+ ✓ tests/unit/surfaces.test.ts > emits landing exactly once from above 1ms
+ ✓ tests/unit/surfaces.test.ts > lands on a rising ramp by relative crossing while descending 0ms
+ ✓ tests/unit/surfaces.test.ts > selects overlapping equal surfaces stably 0ms
+ ✓ tests/unit/surfaces.test.ts > does not carry on the tick lateral interpolation exits 0ms
+ ✓ tests/unit/surfaces.test.ts > clears departure after separation and collides on reentry 0ms
+ ✓ tests/unit/surfaces.test.ts > uses relative normal motion when world vy is upward but ramp overtakes feet 0ms
+ ✓ tests/unit/surfaces.test.ts > rejects stale sample after external placement below roof 2ms
+ ✓ tests/unit/surfaces.test.ts > does not emit landing while continuously crossing ground ramp roof 2ms
+ ✓ tests/unit/surfaces.test.ts > revokes departure when its owner is recycled 0ms
+ ✓ tests/unit/surfaces.test.ts > keeps an upward departure on a zero-time physics update 0ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > confirms the exact written candidate after unreadable acknowledgment without toggling twice 5ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > keeps an unknown candidate unpublished while all confirmation reads keep failing 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > does not let another queued command claim the unknown receipt or late retry overwrite it 3ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > retains unknown transaction identity through load and freshness checks 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > does not let another operation reuse the commandId of an unconfirmed candidate 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > retains the original receipt when freshness alone confirms before a later operation 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > protects an unresolved candidate against an unrelated third token 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > applies queued audio intents against committed settings: distinct toggles 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > applies queued audio intents against committed settings: same toggle twice 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > applies queued audio intents against committed settings: master toggle twice 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > applies queued audio intents against committed settings: volume and toggles interleaved 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > retries a failed audio operation without a fake publication and deduplicates its commandId 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: null 0ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: {"kind":"TOGGLE","field":"bgmVolume"} 0ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: {"kind":"TOGGLE","field":"unknown"} 0ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"bgmEnabled","value":0.5} 0ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"bgmVolume","value":null} 0ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"sfxVolume","value":null} 0ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"sfxVolume","value":-0.1} 0ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"sfxVolume","value":1.1} 0ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > retries interrupted initialization within the same live run 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > reloads a conflicting repository on retry while preserving the sealed summary 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > publishes in-memory start/pause/resume synchronously without storage access 0ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > never substitutes a changed summary when retrying a sealed run 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects reuse of a successful commandId with a different payload 0ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > owns state and only permits matching run transitions 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > settles duplicate finish and return exactly once 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > seals paused restart before creating a new run and rejects late old commands 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > preserves summary and retry ability after save failure without partial success 1ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > survives concurrent duplicate finish and menu/shop transitions 0ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > does not accept forged invalid summary arithmetic 0ms
+ ✓ tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > retry after refresh cannot replay a settled run or compact away old IDs 1ms
+ ✓ tests/unit/pao10-main.test.ts > exposes immutable committed diagnostics/snapshots while real input waits for the next production tick 485ms
+ ✓ tests/unit/pao10-main.test.ts > clears pending real input on blur and resumes without accumulating hidden wall time 14ms
+ ✓ tests/unit/pao10-main.test.ts > disposes its event bus subscriptions as well as input and rAF before a replacement entry is loaded 7ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 swept damage regressions > clears terminal and support state at an explicit run or QA boundary 4ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 swept damage regressions > does not tunnel through a thin obstacle on a dropped-frame 45m/s step 2ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 swept damage regressions > uses relative head-on train motion when neither endpoint overlaps 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 swept damage regressions > does not exempt an airborne rolling body that intersects a high obstacle 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 swept damage regressions > uses actual low-obstacle height rather than a hard-coded foot threshold 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 swept damage regressions > notifies a terminal collision once across repeated calls on an ended context 3ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 swept damage regressions > notifies a terminal collision once for standalone players without blocking later motion 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 swept damage regressions > chooses the earliest obstacle independently of array order 2ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 pure relative contact geometry > returns earliest TOI and outward normal for travel sign 1 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 pure relative contact geometry > returns earliest TOI and outward normal for travel sign -1 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 pure relative contact geometry > subtracts obstacle displacement for a head-on sweep 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 pure relative contact geometry > has no contact for zero relative velocity separated boxes 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 pure relative contact geometry > reports zero-time initial overlap and a deterministic minimum-penetration normal 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 pure relative contact geometry > ignores parallel grazing along an exact side boundary 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 pure relative contact geometry > ignores touching while separating but detects touching while entering 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 pure relative contact geometry > uses a stable axis normal for a simultaneous corner entry 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 pure relative contact geometry > sorts equal-time contacts by stable ID independent of input order 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > keeps real descending REAR top-edge departure continuous across the next tick 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > keeps real descending LEFT top-edge departure continuous across the next tick 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > keeps real descending RIGHT top-edge departure continuous across the next tick 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > does not turn a descending top-edge departure into immunity on inward reentry 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > does not turn a proven top-edge departure into immunity when its moving owner catches up 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > does not exempt an unknown initial rear overlap merely because this tick moves outward 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > chooses a single top-edge departure owner stably when equivalent roofs overlap 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > passes a high obstacle using the grounded rolling box and a low obstacle using elevated feet 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > retains equal-velocity separation and catches a full reverse crossing 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > chooses same-time fatal contacts by entity ID in either array order 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > keeps LEFT roof departures harmless while separating 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > keeps RIGHT roof departures harmless while separating 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > keeps REAR roof departures harmless while separating 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > keeps the rolling box before a within-tick expiry, then uses standing height 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > uses standing height at a zero-duration expired roll boundary 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > checks the standing box at the exact tick-end roll expiry 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > detects actual side entry irrespective of target lane 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > does not forgive an earlier train-front hit because the final feet are above its roof 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > consumes a same-tick pickup shield once for many contacts and remains protected on the next tick 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > emits only one terminal event after shield grace expires during continuing overlap 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > commits terminal state before synchronous listeners can reenter physics 0ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > preserves deterministic pickup order and a single coin consumption 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > retains ramp/roof, jumping and ground landing with explicit 18m/s sweeps 9ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > retains ramp/roof, jumping and ground landing with explicit 45m/s sweeps 16ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > cannot carry a stale sweep history across external relocation or replacement entities 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > does not exempt inward reentry merely because departure still names that roof 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > honours legacy standalone callers without an explicit invulnerability timer 4ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > does not duplicate terminal notification when a synchronous pickup listener reenters 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > does not exempt rear reentry when a moving former support catches the player 1ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 tick-local motion origin > passes the current tick origin after input and before forward integration 8ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 tick-local motion origin > uses a fresh origin following a QA discontinuity and world replacement 2ms
+ ✓ tests/unit/sweptCollision.test.ts > PAO-12 tick-local motion origin > does not reuse an origin from the previous run when restarted 1ms
+ ✓ tests/unit/simulation.test.ts > PAO-10 reproducible controlled simulation (legacy spawner excluded) > shows the final committed position for every alpha after a tick ends the run 5ms
+ ✓ tests/unit/simulation.test.ts > PAO-10 reproducible controlled simulation (legacy spawner excluded) > same seed and effective inputs at 30/60/120Hz and irregular cadence agree at tick600 77ms
+ ✓ tests/unit/simulation.test.ts > PAO-10 reproducible controlled simulation (legacy spawner excluded) > injects explicit versioned RNG, resets run/input state without retaining old snapshots 6ms
+ ✓ tests/unit/simulation.test.ts > PAO-10 reproducible controlled simulation (legacy spawner excluded) > does not advance timers, input, distance or score while paused 3ms
+ ✓ tests/unit/simulation.test.ts > PAO-10 reproducible controlled simulation (legacy spawner excluded) > commits once after reentrant legacy action listeners update owner state 4ms
+ ✓ tests/unit/simulation.test.ts > PAO-10 scheduler > rejects negative/nonfinite dt and caps long frames with measured dropped time 2ms
+ ✓ tests/unit/simulation.test.ts > PAO-10 scheduler > one rAF, idempotent lifecycle, pause/background resets wall clock, stop within callback does not rearm 1ms
+ ✓ tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > separates 30 actual consumed coins from the 50 coin mission reward 5ms
+ ✓ tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > does not credit a consumed coin twice across repeated physics and mission updates 1ms
+ ✓ tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > rewards other missions without counting their rewards as collected coins 1ms
+ ✓ tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > uses mission identity even when a completed flag is reset or duplicated 0ms
+ ✓ tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > creates independent ledgers and has no writable third earned total 1ms
+ ✓ tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > commits pickups and mission rewards from the same fatal tick before summary creation 5ms
+ ✓ tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > seals a quit as ABANDONED without clearing final world or earnings, and resets on restart 3ms
+ ✓ tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > freezes the summary before restart and isolates new run accounting 2ms
+ ✓ tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > keeps ledger snapshots immutable and never interpolates reward totals 1ms
+ ✓ tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > does not infer new ledger parts from an unaccounted legacy coins value 1ms
+ ✓ tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > adapts explicit privileged legacy owner increments as rewards without inventing pickups 2ms
+ ✓ tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > rejects invalid ledger values instead of creating a payable summary 1ms
+ ✓ tests/unit/runSettlement.test.ts > PAO-14 authoritative run ledger and terminal summary > does not grant missions on an arbitrary paused or ended update 0ms
+ ✓ tests/unit/shopTransactions.test.ts > PAO-14 shop atomic transactions > reports stale low balance as CONFLICT before rejection and reloads only on explicit retry 9ms
+ ✓ tests/unit/shopTransactions.test.ts > PAO-14 shop atomic transactions > checks freshness before rejecting an equip whose rights another service just purchased 2ms
+ ✓ tests/unit/shopTransactions.test.ts > PAO-14 shop atomic transactions > checks freshness even before an already-owned BUY idempotent success 3ms
+ ✓ tests/unit/shopTransactions.test.ts > PAO-14 shop atomic transactions > buys once, retains rights across refresh and duplicate command/BUY 1ms
+ ✓ tests/unit/shopTransactions.test.ts > PAO-14 shop atomic transactions > rejects insufficient balance, unknown product, unowned equip and wrong state 2ms
+ ✓ tests/unit/shopTransactions.test.ts > PAO-14 shop atomic transactions > save failure cannot debit money or deliver/equip goods, same command can retry 1ms
+ ✓ tests/unit/shopTransactions.test.ts > PAO-14 shop atomic transactions > audio settings are atomic and invalid values are rejected 1ms
+ ✓ tests/unit/inputQueue.test.ts > PAO-10 tick input > leaves inactive native arrow/space keys available while diagnosing rejected movement 5ms
+ ✓ tests/unit/inputQueue.test.ts > PAO-10 tick input > keeps native control keys out of gameplay even while the run accepts movement 1ms
+ ✓ tests/unit/inputQueue.test.ts > PAO-10 tick input > still consumes actionable canvas arrows and space immediately into the next tick 1ms
+ ✓ tests/unit/inputQueue.test.ts > PAO-10 tick input > consumes opposite lane commands in sequence order, never arrival order 0ms
+ ✓ tests/unit/inputQueue.test.ts > PAO-10 tick input > rejects old runs, late ticks, duplicate pending and consumed sequences 1ms
+ ✓ tests/unit/inputQueue.test.ts > PAO-10 tick input > rejects paused actions and clears pending inputs on blur and run reset 1ms
+ ✓ tests/unit/inputQueue.test.ts > PAO-10 tick input > rejects malformed time, action and sequence and diagnoses abandoned future commands 0ms
+ ✓ tests/unit/inputQueue.test.ts > PAO-10 tick input > collects keyboard/touch without mutating player or emitting action facts, clears partial touch on blur 1ms
+ ✓ tests/unit/inputQueue.test.ts > PAO-10 tick input > queues vertical touch gestures instead of calling legacy actions without a player 2ms
+ ✓ tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > retries the original candidate rather than rerunning its mutator when an unknown write was not applied 5ms
+ ✓ tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > serializes competing tabs and rejects stale writes without losing the winner 2ms
+ ✓ tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > migrates nine keys by field, retains rights and leaves backups 2ms
+ ✓ tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > rejects invalid legacy integer NaN 1ms
+ ✓ tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > rejects invalid legacy integer Infinity 0ms
+ ✓ tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > rejects invalid legacy integer -1 0ms
+ ✓ tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > rejects invalid legacy integer 1.2 0ms
+ ✓ tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > rejects invalid legacy integer 9007199254740992 0ms
+ ✓ tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > rejects invalid legacy integer 20oops 0ms
+ ✓ tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > does not let one damaged field erase legal wallet or skin rights 1ms
+ ✓ tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > retries interrupted migration and never reimports old wallet after success 1ms
+ ✓ tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > protects future and malformed records from overwriting or old-key replay 0ms
+ ✓ tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > rejects unavailable storage, lock and stale revision without memory commits 1ms
+ ✓ tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > recovers a write whose acknowledgment throws from durable contents 0ms
+ ✓ tests/unit/audio.test.ts > AudioEngine (AC-PRD-08 Web Audio) > should lazily create AudioContext only on first playback and reuse it 6ms
+ ✓ tests/unit/audio.test.ts > AudioEngine (AC-PRD-08 Web Audio) > should route SFX through oscillators (JUMP/COIN/POWERUP/CRASH) 2ms
+ ✓ tests/unit/audio.test.ts > AudioEngine (AC-PRD-08 Web Audio) > should toggle mute and persist to localStorage 1ms
+ ✓ tests/unit/audio.test.ts > AudioEngine (AC-PRD-08 Web Audio) > should suppress SFX playback when muted 1ms
+ ✓ tests/unit/audio.test.ts > AudioEngine (AC-PRD-08 Web Audio) > should clamp volumes to [0, 1] 1ms
+ ✓ tests/unit/audio.test.ts > AudioEngine (AC-PRD-08 Web Audio) > should toggle BGM / SFX enable state independently 0ms
+ ✓ tests/unit/audio.test.ts > AudioEngine (AC-PRD-08 Web Audio) > should start and stop chase sounds via setChaseState and stopChase 3ms
+ ✓ tests/unit/snapshot.test.ts > detaches and freezes every nested object, array and Map mutator 4ms
+ ✓ tests/unit/snapshot.test.ts > interpolates position only, takes discrete fields from latest, clamps alpha 3ms
+ ✓ tests/unit/snapshot.test.ts > never blends the first frame, a new run, teleport or paused discrete phase 1ms
+ ✓ tests/unit/snapshot.test.ts > never exposes a mutable Map receiver through inherited valueOf 1ms
+ ✓ tests/unit/snapshot.test.ts > detaches object Map keys as deeply read-only values 1ms
+ ✓ tests/unit/snapshot.test.ts > uses final positions at every alpha for all non-running phases 4ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-04 (MAGNET) > should attract coins within radius toward player 4ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-04 (MAGNET) > should not attract coins beyond radius (15 units) 1ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-04 (MAGNET) > should not attract coins when MAGNET expired (0) 1ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-04 (MAGNET) > should eventually collect coin via magnet and credit ctx.coins 1ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-04 (MAGNET) > should expire MAGNET timer to 0 after duration elapses 0ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-05 (SUPER_SNEAKERS) > should give base jump velocity without SUPER_SNEAKERS 0ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-05 (SUPER_SNEAKERS) > should give 1.5x jump velocity when SUPER_SNEAKERS active 0ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-05 (SUPER_SNEAKERS) > should revert to base jump velocity when SUPER_SNEAKERS expired (0) 0ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-05 (SUPER_SNEAKERS) > should verify SUPER_JUMP_VELOCITY === 1.5x JUMP_VELOCITY 1ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-05 (SUPER_SNEAKERS) > should set SUPER_SNEAKERS for 10s on pickup and expire to 0 1ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-06 (DOUBLE_SCORE) > should use 1.0 multiplier without DOUBLE_SCORE 0ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-06 (DOUBLE_SCORE) > should use 2.0 multiplier when DOUBLE_SCORE active 0ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-06 (DOUBLE_SCORE) > should revert to 1.0 when DOUBLE_SCORE expired (0) 0ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-06 (DOUBLE_SCORE) > should accumulate 2x score over time when DOUBLE_SCORE active 0ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-06 (DOUBLE_SCORE) > should set DOUBLE_SCORE for 10s on pickup and expire to 0 0ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-07 (HOVERBOARD 护盾) > should activate hoverboard on pickup 0ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-07 (HOVERBOARD 护盾) > should consume hoverboard on fatal collision and stay alive (1.2s invulnerability) 2ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-07 (HOVERBOARD 护盾) > should block a second fatal collision during post-shield invulnerability 1ms
+ ✓ tests/unit/powerups.test.ts > AC-PRD-07 (HOVERBOARD 护盾) > should GAMEOVER on fatal collision WITHOUT hoverboard 0ms
+ ✓ tests/unit/powerups.test.ts > InputSystem (Deterministic Guards & Controls) > should ignore key actions when canAct returns false (PAUSED / MENU / GAMEOVER) 1ms
+ ✓ tests/unit/powerups.test.ts > InputSystem (Deterministic Guards & Controls) > should clamp lane changes within [0, 2] 1ms
+ ✓ tests/unit/powerups.test.ts > InputSystem (Deterministic Guards & Controls) > should trigger fast descent when rolling mid-air 1ms
+ ✓ tests/unit/physics.test.ts > Physics System (AABB & Gravity) > should detect collision between overlapping boxes 3ms
+ ✓ tests/unit/physics.test.ts > Physics System (AABB & Gravity) > should not detect collision for separated boxes 0ms
+ ✓ tests/unit/physics.test.ts > Physics System (AABB & Gravity) > should adjust bounding box height when rolling 1ms
+ ✓ tests/unit/physics.test.ts > Physics System (AABB & Gravity) > should apply gravity during jump 1ms
+ ✓ tests/unit/physics.test.ts > Physics System (AABB & Gravity) > AC-PRD-01 (Low Obstacle) > should collide with LOW_OBSTACLE when standing or rolling 1ms
+ ✓ tests/unit/physics.test.ts > Physics System (AABB & Gravity) > AC-PRD-01 (Low Obstacle) > should pass LOW_OBSTACLE when jumping high enough (y > 1.2) 0ms
+ ✓ tests/unit/physics.test.ts > Physics System (AABB & Gravity) > AC-PRD-02 (High Obstacle) > should collide with HIGH_OBSTACLE when standing or jumping 0ms
+ ✓ tests/unit/physics.test.ts > Physics System (AABB & Gravity) > AC-PRD-02 (High Obstacle) > should pass HIGH_OBSTACLE when rolling (isRolling === true) 0ms
+ ✓ tests/unit/physics.test.ts > Physics System (AABB & Gravity) > AC-PRD-03 (Ramp & Train Tops) > should climb RAMP smoothly to reach y = 3.0 1ms
+ ✓ tests/unit/physics.test.ts > Physics System (AABB & Gravity) > AC-PRD-03 (Ramp & Train Tops) > should maintain y = 3.0 gravity plane on top of STATIC_TRAIN 2ms
+ ✓ tests/unit/physics.test.ts > Physics Edge Cases (Invulnerability, Roll Timer, Jump Arc) > should ignore obstacle collision while invulnerableTimer > 0 0ms
+ ✓ tests/unit/physics.test.ts > Physics Edge Cases (Invulnerability, Roll Timer, Jump Arc) > should expire roll state after rollTimer elapses 0ms
+ ✓ tests/unit/physics.test.ts > Physics Edge Cases (Invulnerability, Roll Timer, Jump Arc) > should return player to ground after a full jump arc 2ms
+ ✓ tests/unit/physics.test.ts > Spawner System (Pattern-based PCG) > should generate predefined pattern segments 3ms
+ ✓ tests/unit/redteam_fixes.test.ts > Red Team Fixes Verification Suite > GameLoop lifecycle and clock robustness > cancels pending animationFrame on stop and ignores negative dt 5ms
+ ✓ tests/unit/redteam_fixes.test.ts > Red Team Fixes Verification Suite > EventBus reentrant safety > does not skip or corrupt callbacks when callback unsubscribes during emit 1ms
+ ✓ tests/unit/redteam_fixes.test.ts > Red Team Fixes Verification Suite > InputSystem Jump-Roll mutual exclusivity and lifecycle > cancels rolling when jumping 1ms
+ ✓ tests/unit/redteam_fixes.test.ts > Red Team Fixes Verification Suite > InputSystem Jump-Roll mutual exclusivity and lifecycle > removes event listeners upon dispose() 3ms
+ ✓ tests/unit/redteam_fixes.test.ts > Red Team Fixes Verification Suite > Physics: RAMP and Train top collision exemption > exempts player from collision when running on top of a train from a ramp 1ms
+ ✓ tests/unit/mission.test.ts > MissionSystem (AC-PRD-09) > initMissions should return 4 independent (deep-copied) missions 4ms
+ ✓ tests/unit/mission.test.ts > MissionSystem (AC-PRD-09) > resetMissions should zero current and clear completed 1ms
+ ✓ tests/unit/mission.test.ts > MissionSystem (AC-PRD-09) > update should complete COLLECT_COINS and credit reward to ctx.coins 1ms
+ ✓ tests/unit/mission.test.ts > MissionSystem (AC-PRD-09) > trackAction should increment JUMP_TIMES then update completes it 1ms
+ ✓ tests/unit/mission.test.ts > MissionSystem (AC-PRD-09) > trackAction should increment ROLL_TIMES 0ms
+ ✓ tests/unit/mission.test.ts > MissionSystem (AC-PRD-09) > completed missions must not be re-credited (idempotent) 0ms
+ ✓ tests/unit/mission.test.ts > MissionSystem (AC-PRD-09) > update should early-return when state is not PLAYING 0ms
+ ✓ tests/unit/mission.test.ts > MissionSystem (AC-PRD-09) > trackAction should not count toward a completed mission 0ms
+stdout | tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > syncs frozen snapshots without modifying map entries or creating duplicate meshes/casters
+BJS - [21:21:55]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao17-assets.test.ts > PAO-17 renderer asset ownership > shares an in-flight resource, rejects old consumer, preserves current consumer and cache 4358ms
+ ✓ tests/unit/pao17-assets.test.ts > PAO-17 renderer asset ownership > disposes resources arriving after renderer disposal without mounting 1ms
+ ✓ tests/unit/pao17-assets.test.ts > PAO-17 renderer asset ownership > caches failures and empty resources, keeps fallback consumer unmounted 2ms
+ ✓ tests/unit/pao17-assets.test.ts > PAO-17 renderer asset ownership > reads the latest skin at mount time; independent instances release before shared container 1ms
+stdout | tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > removes collected/deleted instances and casters while shared materials survive until cache disposal
+BJS - [21:21:55]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > deduplicates synthetic RAMP/ROOF ownership by explicit root key, at nonzero base, releasing once
+BJS - [21:21:55]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > syncs frozen snapshots without modifying map entries or creating duplicate meshes/casters 114ms
+ ✓ tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > removes collected/deleted instances and casters while shared materials survive until cache disposal 16ms
+ ✓ tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > deduplicates synthetic RAMP/ROOF ownership by explicit root key, at nonzero base, releasing once 4ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > uses versioned seeds and reproducible IDs instead of wall-clock random layout 11ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > reset clears cursor/RNG/previous run identity and never reuses a live entity ID 1ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > has bounded generation on a QA teleport and reclaims full passed obstacle extents 2ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > declares finite ports, speed ranges, stable definitions, route rewards and rhythm stages 2ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > runs every segment and adjacent ordered pair through real PAO-12 physics at 18m/s 3372ms
+stdout | tests/unit/pao17-main.test.ts > executes main render with exactly one presentation sample and one app projection, keeping identity/context paired
+BJS - [21:21:55]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-main.test.ts > executes main render with exactly one presentation sample and one app projection, keeping identity/context paired
+[PAO17 boot trace] main import after collection preloading ms 83.07699999999932
+
+stdout | tests/unit/pao17-main.test.ts > executes disposeGame through the renderer release bridge and frees its owned scene resources
+BJS - [21:21:55]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-main.test.ts > executes disposeGame through the renderer release bridge and frees its owned scene resources
+[PAO17 boot trace] main import after collection preloading ms 6.647800000000643
+
+ ✓ tests/unit/pao17-main.test.ts > executes main render with exactly one presentation sample and one app projection, keeping identity/context paired 97ms
+ ✓ tests/unit/pao17-main.test.ts > executes disposeGame through the renderer release bridge and frees its owned scene resources 10ms
+stdout | tests/unit/pao17-lifecycle.test.ts > returns to warmed shared-cache baseline over 20 entity cycles and 10 resets, then disposes all owned resources
+BJS - [21:21:55]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-frame.test.ts > consumes one discontinuity per run/tick while repeated render frames preserve the instance and exact supplied position
+BJS - [21:21:55]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-lifecycle.test.ts > facade unregisters exact callbacks, invalidates late loads and removes only its own canvas
+BJS - [21:21:55]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao17-lifecycle.test.ts > returns to warmed shared-cache baseline over 20 entity cycles and 10 resets, then disposes all owned resources 110ms
+stdout | tests/unit/pao17-frame.test.ts > merges explicit reset with the next new-run boundary, invalidates old same-id views and supports legacy no-envelope calls
+BJS - [21:21:56]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao17-frame.test.ts > consumes one discontinuity per run/tick while repeated render frames preserve the instance and exact supplied position 666ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > runs every segment and adjacent ordered pair through real PAO-12 physics at 30m/s 1466ms
+stdout | tests/unit/pao17-lifecycle.test.ts > preserves host canvas and detaches old skin listener across a real renderer remount
+BJS - [21:21:56]: Babylon.js v9.19.0 - Null engine
+BJS - [21:21:56]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao17-lifecycle.test.ts > facade unregisters exact callbacks, invalidates late loads and removes only its own canvas 579ms
+stdout | tests/unit/pao17-frame.test.ts > freezes the local effect clock during pause, with no change to supplied snapshots
+BJS - [21:21:56]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao17-frame.test.ts > merges explicit reset with the next new-run boundary, invalidates old same-id views and supports legacy no-envelope calls 543ms
+ ✓ tests/unit/pao17-frame.test.ts > freezes the local effect clock during pause, with no change to supplied snapshots 652ms
+stdout | tests/unit/pao17-lifecycle.test.ts > keeps primitives visible for a root-only loaded container rather than accepting an empty character
+BJS - [21:21:57]: Babylon.js v9.19.0 - Null engine
+
+stderr | tests/unit/pao17-lifecycle.test.ts > keeps primitives visible for a root-only loaded container rather than accepting an empty character
+[GLB] empty player geometry; keeping primitives
+
+ ✓ tests/unit/pao17-lifecycle.test.ts > preserves host canvas and detaches old skin listener across a real renderer remount 1142ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > runs every segment and adjacent ordered pair through real PAO-12 physics at 45m/s 1023ms
+stdout | tests/unit/pao17-lifecycle.test.ts > rolls back a partially mounted character on setup failure, keeping fallback and no instance/caster leak
+BJS - [21:21:57]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao17-lifecycle.test.ts > keeps primitives visible for a root-only loaded container rather than accepting an empty character 496ms
+ ✓ tests/unit/pao17-lifecycle.test.ts > rolls back a partially mounted character on setup failure, keeping fallback and no instance/caster leak 460ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > actually rises along the ramp, reaches its shared roof and returns to ground without immunity 4ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > rejects geometrically disconnected ports and an invalid ramp/roof common endpoint 1ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > fails blocked routes, embedded rewards, unknown kinds and unattached route rewards with reproduction data 1ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > checks relative moving-train reaction windows, speed support and finite witness work 1ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > pins actual GLB semantics and never uses uncalibrated raw dimensions for collision 1ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > rejects no-input hurdle witness rather than merely accepting its geometry 7ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > includes all four power-up variants and physically validates effect-carrying adjacent segments 852ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > prevents mutation of exported active-run content and model binding definitions 1ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > rejects a reward placed inside a solid and synthetic immunity cannot rescue an invalid witness 1ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > rejects duplicate combination roots, unknown definitions and malformed bounded content 1ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > checks reward occupancy against incoming movement before collection, not only spawn geometry 11ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > rejects orphan combination children and raw GLB sizes substituted for accepted proxies 1ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 seeded track generation and accepted physics witnesses > samples 32 seeds across 32 generated segments with bounded metadata and reproducible selection 380ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 authoritative generation wiring > provides the same owned RNG, run, seed, tick and speed to each generation callback 3ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 authoritative generation wiring > initializes and resets generation before committing a frozen, versioned snapshot 2ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 authoritative generation wiring > keeps generation frames deterministic across different display cadences 24ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 authoritative generation wiring > runs the real spawner inside fixed ticks and reproduces layouts across cadence and restart 35ms
+ ✓ tests/unit/trackSegments.test.ts > PAO-13 main owns seed metadata and clean start/menu/shop resets without synthetic witness facts 278ms
+
+ Test Files  21 passed (21)
+      Tests  261 passed (261)
+   Start at  21:21:49
+   Duration  9.64s (transform 5.09s, setup 0ms, import 23.81s, tests 17.67s, environment 3ms)

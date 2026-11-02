@@ -11,7 +11,7 @@ import { inputSystem } from './systems/input';
 import { spawnerSystem } from './systems/spawner';
 import { audioEngine } from './systems/audio';
 import { missionSystem } from './systems/mission';
-import { BabylonRenderEngine } from './render/babylon';
+import { BabylonRenderEngine, type RenderFrameIdentity } from './render/babylon';
 import { UIManager } from './ui/dom';
 import { AppService } from './application/appService';
 import { createBrowserSaveRepository } from './application/saveRepository';
@@ -319,8 +319,7 @@ function updateLegacySystems(ctx: GameContext, generationFrame: TrackGenerationF
 
 // Read-only legacy presentation bridge; app fields are projections, never simulation writes.
 // No-op legacy setters retain compatibility with external presentation adapters.
-function legacyView(context: typeof simulation.snapshot.context): GameContext {
-  const app = application.snapshot;
+function legacyView(context: typeof simulation.snapshot.context, app = application.snapshot): GameContext {
   const view = {};
   for (const key of Object.keys(context) as (keyof GameContext)[]) {
     Object.defineProperty(view, key, {
@@ -338,8 +337,14 @@ const gameLoop = new GameLoop(() => {
 }, {
   stepSec: simulation.stepSec,
   render: alpha => {
-    renderEngine.render(legacyView(simulation.presentation(alpha).context));
-    uiManager.update(legacyView(simulation.snapshot.context));
+    const presentation = simulation.presentation(alpha);
+    const app = application.snapshot;
+    const identity: RenderFrameIdentity = Object.freeze({
+      runId: presentation.runId, tick: presentation.tick,
+      discontinuity: presentation.discontinuity, appState: app.appState,
+    });
+    renderEngine.render(legacyView(presentation.context, app), identity);
+    uiManager.update(legacyView(simulation.snapshot.context, app));
   },
 });
 gameLoop.setPaused(true);
@@ -355,11 +360,13 @@ function visibilityChanged(): void { if (document.hidden) suspend(); else gameLo
 window.addEventListener('blur', suspend);
 document.addEventListener('visibilitychange', visibilityChanged);
 export function disposeGame(): void {
+  if (disposed) return;
   disposed = true;
   gameLoop.dispose(); inputSystem.dispose();
   subscriptions.splice(0).forEach(unsubscribe => unsubscribe());
   window.removeEventListener('blur', suspend);
   document.removeEventListener('visibilitychange', visibilityChanged);
+  renderEngine.dispose?.();
 }
 if (import.meta.hot) import.meta.hot.dispose(disposeGame);
 

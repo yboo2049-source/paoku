@@ -1,0 +1,39 @@
+{
+  "headAtRead": "a6fa83f83cc4afad47c34da97133e1b54934047d",
+  "statusAtRead": "",
+  "note": "Disk byte hashes identify actual inputs; HEAD does not freeze working files. Historical 692bf24 did not fix all preparation inputs.",
+  "inputs": {
+    "AGENTS.md": {
+      "sha256": "a7ba647a34ebb8d5ec3f53ca1ba9234bb95412c06a344d8caf7cdc7a42cc7490",
+      "status": ""
+    },
+    "docs/plans/2026-11-02-pao17-approved-execution.md": {
+      "sha256": "4302a7dabb6a45e103b6e4ebc36bd869a144943ffee5e9cfbc257c75543b0b2e",
+      "status": ""
+    },
+    "docs/reviews/2026-11-02-pao17-preparation-review.md": {
+      "sha256": "7318d1838be7e477a17863f16361247146a606e606e692020b1a0964146da00f",
+      "status": ""
+    },
+    "docs/PRODUCT_REQUIREMENT_DOCUMENT.md": {
+      "sha256": "0d73f41797ea909bb7988615e76c43b22f969fd258ac0d2941d6131bbdfd69c8",
+      "status": ""
+    },
+    "docs/ARCHITECTURE_DESIGN.md": {
+      "sha256": "b566f5a85ab7d40ac5c2eb8dc006de9d04a4908b2dc96b2eba8e6e8fae13a9d7",
+      "status": ""
+    },
+    "docs/SYSTEM_WORKFLOW_SPEC.md": {
+      "sha256": "f37df3fbf26467291a5fe55ae2ffe33bcaeafe9af789c6c18dbdac97e61e26e5",
+      "status": ""
+    },
+    "docs/TEST_PLAN_AND_SENSORS.md": {
+      "sha256": "4d4067e767aa0492f5c1edc280003576022df6b9fbdecd7e8dbd7f5165a2fb50",
+      "status": ""
+    },
+    "PROGRESS.md": {
+      "sha256": "490ccb707af2ff66498ad21700d93258480c28b29d0d57c032ae420b505e0de6",
+      "status": ""
+    }
+  }
+}

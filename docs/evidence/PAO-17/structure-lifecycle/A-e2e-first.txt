@@ -1,0 +1,92 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao17-local/acceptance.config.ts --retries=0
+
+[WebServer] (node:11268) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 47 tests using 1 worker
+
+(node:27744) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 .pao17-local\mirror\gameplay.pw.ts:50:3 › 状态机（确定性） › MENU → PLAYING via start button (4.1s)
+  ok  2 .pao17-local\mirror\gameplay.pw.ts:56:3 › 状态机（确定性） › PLAYING → 切道（左/右 + 边界钳制） (2.9s)
+  ok  3 .pao17-local\mirror\gameplay.pw.ts:73:3 › 状态机（确定性） › PLAYING → 跳跃（isJumping=true） (2.7s)
+  ok  4 .pao17-local\mirror\gameplay.pw.ts:79:3 › 状态机（确定性） › PLAYING → 翻滚（isRolling=true） (2.7s)
+  ok  5 .pao17-local\mirror\gameplay.pw.ts:85:3 › 状态机（确定性） › PLAYING → PAUSED via Escape，再 resume 回到 PLAYING (2.7s)
+  ok  6 .pao17-local\mirror\gameplay.pw.ts:98:3 › 截图回放（确定性） › 捕获 6 张高保真截图（无 GAMEOVER 风险） (4.2s)
+  ok  7 .pao17-local\mirror\pao10-review-fixes.pw.ts:35:1 › native-menu-slider-and-start-space (7.6s)
+  ok  8 .pao17-local\mirror\pao10-review-fixes.pw.ts:48:1 › paused-rejects-motion-and-resume-space (3.0s)
+  ok  9 .pao17-local\mirror\pao10-review-fixes.pw.ts:67:1 › playing-interactive-arrows-do-not-move-player (2.7s)
+  ok 10 .pao17-local\mirror\pao10-simulation.pw.ts:29:1 › N-desktop-production-keyboard-flow (50.5s)
+  ok 11 .pao17-local\mirror\pao10-simulation.pw.ts:67:1 › N-mobile-production-touch (8.9s)
+  ok 12 .pao17-local\mirror\pao10-simulation.pw.ts:97:1 › F-lifecycle-clears-input-and-hidden-time (4.8s)
+  ok 13 .pao17-local\mirror\pao11-surfaces.pw.ts:95:3 › F-desktop-keyboard-ground-ramp-roof-jump-ground (7.4s)
+  ok 14 .pao17-local\mirror\pao11-surfaces.pw.ts:95:3 › F-portrait-touch-ground-ramp-roof-jump-ground (5.6s)
+  ok 15 .pao17-local\mirror\pao11-surfaces.pw.ts:124:1 › F-high-base-ramp-5-to-8-continuous-roof (4.5s)
+  ok 16 .pao17-local\mirror\pao11-surfaces.pw.ts:142:1 › N-production-input-and-supported-snapshot (3.2s)
+  ok 17 .pao17-local\mirror\pao12-collision.pw.ts:79:1 › F-desktop-relative-high-speed-thin-train-terminal-once (4.5s)
+  ok 18 .pao17-local\mirror\pao12-collision.pw.ts:119:1 › F-portrait-same-tick-shield-multi-hit-single-consumption (3.0s)
+  ok 19 .pao17-local\mirror\pao12-collision.pw.ts:144:1 › F-desktop-airborne-roll-uses-actual-height-box (3.3s)
+  ok 20 .pao17-local\mirror\pao12-collision.pw.ts:167:1 › F-browser-isolated-highest-speed-large-step-and-pose-matrix (2.0s)
+  ok 21 .pao17-local\mirror\pao12-collision.pw.ts:201:1 › F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position (4.2s)
+  ok 22 .pao17-local\mirror\pao13-track.pw.ts:78:1 › N-desktop-seeded-generation-keyboard-and-reset (4.2s)
+  ok 23 .pao17-local\mirror\pao13-track.pw.ts:109:1 › N-portrait-seeded-generation-touch (3.2s)
+  ok 24 .pao17-local\mirror\pao13-track.pw.ts:138:1 › F-isolated-browser-real-physics-segment-and-pair-witnesses (2.7s)
+  ok 25 .pao17-local\mirror\pao14-application.pw.ts:43:1 › N-desktop-pause-restart-stale-run-and-DOM-tamper (5.2s)
+  ok 26 .pao17-local\mirror\pao14-application.pw.ts:77:1 › N-portrait-touch-paused-input-and-return (4.6s)
+  ok 27 .pao17-local\mirror\pao14-application.pw.ts:94:1 › F-30-pickups-50-reward-save-failure-retry-and-repeat-finish (5.0s)
+  ok 28 .pao17-local\mirror\pao14-application.pw.ts:130:1 › F-legacy-rights-shop-purchase-and-refresh (4.2s)
+  ok 29 .pao17-local\mirror\pao14-application.pw.ts:147:1 › F-same-tick-terminal-pickup-and-gameover-shop (4.0s)
+  ok 30 .pao17-local\mirror\pao14-application.pw.ts:171:1 › F-two-tabs-conflicting-transactions-do-not-overwrite (7.2s)
+  ok 31 .pao17-local\mirror\pao14-application.pw.ts:190:1 › F-pause-isolates-input-while-save-lock-is-held (2.9s)
+  ok 32 .pao17-local\mirror\pao14-application.pw.ts:211:1 › F-reentrant-end-command-seals-complete-fatal-tick (4.1s)
+  ok 33 .pao17-local\mirror\pao14-application.pw.ts:231:1 › F-native-slider-preserves-draft-while-save-lock-is-held (2.1s)
+  ok 34 .pao17-local\mirror\pao14-review.pw.ts:54:1 › F-review-audio-different-fields-under-lock (3.9s)
+  ok 35 .pao17-local\mirror\pao14-review.pw.ts:78:1 › F-review-audio-repeated-toggle-under-lock (2.6s)
+  ok 36 .pao17-local\mirror\pao14-review.pw.ts:98:1 › F-review-audio-volume-and-toggle-queue (3.8s)
+  ok 37 .pao17-local\mirror\pao14-review.pw.ts:114:1 › F-review-shop-stale-funds-explicit-retry (7.6s)
+  ok 38 .pao17-local\mirror\pao14-unknown-commit.pw.ts:8:3 › F-unknown-toggle-1-confirmation-read-failures (2.1s)
+  ok 39 .pao17-local\mirror\pao14-unknown-commit.pw.ts:8:3 › F-unknown-toggle-2-confirmation-read-failures (2.0s)
+  ok 40 .pao17-local\mirror\pao6-baseline.pw.ts:64:1 › ramp-roof-jump-land (6.0s)
+  ok 41 .pao17-local\mirror\pao6-baseline.pw.ts:76:1 › obstacles-failure-restart (7.7s)
+  ok 42 .pao17-local\mirror\pao6-baseline.pw.ts:86:1 › powerups-shield-missions (9.5s)
+  ok 43 .pao17-local\mirror\pao6-baseline.pw.ts:98:1 › mobile-touch-layout (4.7s)
+  x  44 tests\e2e\pao17-lifecycle.spec.ts:11:1 › F real renderer fallback, 20 cycles / 10 resets, dispose/remount, late shared load and host canvas (3.8s)
+(node:25256) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 45 tests\e2e\pao17-structure.spec.ts:8:1 › F source raw and legacy HTTP identity (90ms)
+  ok 46 tests\e2e\pao17-structure.spec.ts:23:37 › N desktop keyboard legacy start motion pause resume end restart (29.7s)
+  x  47 tests\e2e\pao17-structure.spec.ts:23:37 › N 390 touch legacy start motion pause resume end restart (45.2s)
+
+
+  1) tests\e2e\pao17-lifecycle.spec.ts:11:1 › F real renderer fallback, 20 cycles / 10 resets, dispose/remount, late shared load and host canvas
+
+    Error: page.evaluate: Error: Expected cached legacy failure
+        at eval (eval at evaluate (:311:30), <anonymous>:57:51)
+        at async <anonymous>:337:30
+        at eval (eval at evaluate (:311:30), <anonymous>:57:51)
+        at async <anonymous>:337:30
+        at D:\worker\paoku-sessions\pao-17\tests\e2e\pao17-lifecycle.spec.ts:14:29
+
+    Error Context: .pao17-local\.pao17-local\results-A\tests-e2e-pao17-lifecycle--01822-shared-load-and-host-canvas\error-context.md
+
+  2) tests\e2e\pao17-structure.spec.ts:23:37 › N 390 touch legacy start motion pause resume end restart
+
+    TimeoutError: page.waitForFunction: Timeout 40000ms exceeded.
+
+      36 |   await page.keyboard.press('Escape'); await expect(page.locator('#resume-btn')).toBeVisible();
+      37 |   await page.click('#resume-btn');
+    > 38 |   await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getGameState() === 'GAMEOVER', null, { timeout: 40000 });
+         |              ^
+      39 |   await page.click('#restart-btn');
+      40 |   await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getGameState() === 'PLAYING');
+      41 |   const state = await page.evaluate(() => { const s = (window as any).__GAME_SENSOR__; return { state: s.getGameState(), position: s.getPlayerPos(), score: s.getScore(), scroll: document.documentElement.scrollWidth, width: innerWidth }; });
+        at D:\worker\paoku-sessions\pao-17\tests\e2e\pao17-structure.spec.ts:38:14
+
+    Error Context: .pao17-local\.pao17-local\results-A\tests-e2e-pao17-structure--244aa-on-pause-resume-end-restart\error-context.md
+
+  2 failed
+    tests\e2e\pao17-lifecycle.spec.ts:11:1 › F real renderer fallback, 20 cycles / 10 resets, dispose/remount, late shared load and host canvas
+    tests\e2e\pao17-structure.spec.ts:23:37 › N 390 touch legacy start motion pause resume end restart
+  45 passed (5.3m)

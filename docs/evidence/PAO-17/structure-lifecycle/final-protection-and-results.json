@@ -1,0 +1,41 @@
+{
+  "baseline": "fcddba1495a27436de64971720aad67624bc4420",
+  "changedProtectedFiles": [
+    "docs/render/pao17-interface-and-validation.md",
+    "docs/superpowers/specs/2026-11-01-pao17-render-design.md",
+    "src/main.ts",
+    "src/render/babylon.ts"
+  ],
+  "unchangedProtectedFiles": 995,
+  "unexpectedChanges": [],
+  "gitlinks": {
+    "scratch/temp_learn_harness": "4dd9299a98f25484d89edc4019cfd36d83f52fac"
+  },
+  "stats": {
+    "startTime": "2026-11-02T13:04:57.046Z",
+    "duration": 336163.199,
+    "expected": 48,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "buildLog": "B-final-build.txt",
+  "unit": {
+    "files": 21,
+    "tests": 261,
+    "durationSeconds": 10.14
+  },
+  "legacyE2E": 43,
+  "dedicated": {
+    "N": 2,
+    "F": 3
+  },
+  "sourceHashes": {
+    "src/main.ts": "1bfbbc544bfff54d11ee3f49dda254e259513885e2e85821bde610d9b4ccb8ae",
+    "src/render/babylon.ts": "c32f97a5e3075acc291bdb5747b0e9ccc0b089a46b1ffa564a7f51be2d60026b",
+    "src/render/assets.ts": "eba5ddc2266b6d75b68d205894976bf95f9381e94df670e7296d4644fc19e673",
+    "src/render/environment.ts": "820c222fbe9e0e9f18dab862fe4892c07114b1770559b38505f47ceb6b24ffa3",
+    "src/render/entityViews.ts": "f81a7ac8543a88003aa168531945692dc26a40f91c5e09ebf130fbeafbbcce46",
+    "public/models/player.glb": "002f8d269de68e5dce3d25195caf390d1aa359bbfaae3fcf4c8dc78ec36c3ba5"
+  }
+}

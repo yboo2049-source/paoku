@@ -1,5 +1,7 @@
 # PAO-17 渲染架构设计草案（准备阶段，待审）
 
+> 2026-11-02实施状态：用户已批准路线A、I-01/I-02与首批结构/生命周期范围，依据主仓`docs/plans/2026-11-02-pao17-approved-execution.md`，固定接续fcddba1。具体实现计划见[本树实施计划](../../plans/2026-11-02-pao17-structure-implementation.md)，阶段证据见[执行记录](../../evidence/PAO-17/structure-lifecycle/execution-record.md)。以下“待审/只准备/不写实现”是原准备阶段历史状态；新主题、生产资产标定、18动作镜头和父任务完整Done仍未放行。
+
 文件日期沿用调度约定；实际准备日为 2026-11-02（Asia/Shanghai）。分类：Architectural。本文只提交给主 Agent / 用户审查，不代表设计获批、PAO-17 Done 或正式接入放行。
 
 ## 1. 范围与依据

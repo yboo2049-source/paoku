@@ -1,0 +1,405 @@
+{
+  "note": "before/after simulation samples bracket each screenshot; no QA mutation, no clock change",
+  "entries": [
+    {
+      "name": "desktop",
+      "file": "desktop.png",
+      "mode": "N real input",
+      "before": {
+        "sim": {
+          "runId": "run-f6e2538e-4b95-491e-9968-50db30256ef1",
+          "tick": 11,
+          "timeSec": 0.18333333333333332,
+          "stepSec": 0.016666666666666666,
+          "phase": "RUNNING",
+          "simulationVersion": "pao10-fixed-v1",
+          "configId": "legacy-18-45-v1",
+          "seed": 1346457360,
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "contentRevision": "pao13-track-v1",
+          "generation": {
+            "runId": "run-f6e2538e-4b95-491e-9968-50db30256ef1",
+            "seed": 1346457360,
+            "contentRevision": "pao13-track-v1",
+            "rngAlgorithmVersion": "mulberry32-v1",
+            "rngState": 714621690,
+            "cursor": 1,
+            "nextZ": 190,
+            "lastTick": 11,
+            "stage": "INTRO",
+            "lastSegmentId": "run-f6e2538e-4b95-491e-9968-50db30256ef1/pao13-track-v1/segment-0",
+            "fallbackCount": 0
+          },
+          "scheduler": {
+            "invalidDeltas": 0,
+            "droppedSteps": 8,
+            "droppedSec": 0.13333333333333333
+          },
+          "input": {
+            "wrongRun": 0,
+            "late": 0,
+            "duplicate": 0,
+            "paused": 0,
+            "invalid": 0,
+            "cleared": 0
+          },
+          "inputs": [
+            {
+              "runId": "run-f6e2538e-4b95-491e-9968-50db30256ef1",
+              "tick": 6,
+              "sequence": 1,
+              "action": "LEFT",
+              "source": "KEYBOARD"
+            },
+            {
+              "runId": "run-f6e2538e-4b95-491e-9968-50db30256ef1",
+              "tick": 6,
+              "sequence": 2,
+              "action": "JUMP",
+              "source": "KEYBOARD"
+            }
+          ]
+        },
+        "position": {
+          "x": -2.466064453125,
+          "y": 1.1283333333333334,
+          "z": 3.3045833333333334
+        },
+        "state": "PLAYING",
+        "viewport": {
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "scrollWidth": 1440
+        }
+      },
+      "after": {
+        "sim": {
+          "runId": "run-f6e2538e-4b95-491e-9968-50db30256ef1",
+          "tick": 22,
+          "timeSec": 0.36666666666666664,
+          "stepSec": 0.016666666666666666,
+          "phase": "RUNNING",
+          "simulationVersion": "pao10-fixed-v1",
+          "configId": "legacy-18-45-v1",
+          "seed": 1346457360,
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "contentRevision": "pao13-track-v1",
+          "generation": {
+            "runId": "run-f6e2538e-4b95-491e-9968-50db30256ef1",
+            "seed": 1346457360,
+            "contentRevision": "pao13-track-v1",
+            "rngAlgorithmVersion": "mulberry32-v1",
+            "rngState": 714621690,
+            "cursor": 1,
+            "nextZ": 190,
+            "lastTick": 22,
+            "stage": "INTRO",
+            "lastSegmentId": "run-f6e2538e-4b95-491e-9968-50db30256ef1/pao13-track-v1/segment-0",
+            "fallbackCount": 0
+          },
+          "scheduler": {
+            "invalidDeltas": 0,
+            "droppedSteps": 8,
+            "droppedSec": 0.13333333333333333
+          },
+          "input": {
+            "wrongRun": 0,
+            "late": 0,
+            "duplicate": 0,
+            "paused": 0,
+            "invalid": 0,
+            "cleared": 0
+          },
+          "inputs": [
+            {
+              "runId": "run-f6e2538e-4b95-491e-9968-50db30256ef1",
+              "tick": 6,
+              "sequence": 1,
+              "action": "LEFT",
+              "source": "KEYBOARD"
+            },
+            {
+              "runId": "run-f6e2538e-4b95-491e-9968-50db30256ef1",
+              "tick": 6,
+              "sequence": 2,
+              "action": "JUMP",
+              "source": "KEYBOARD"
+            }
+          ]
+        },
+        "position": {
+          "x": -2.9774491595453583,
+          "y": 2.2100000000000013,
+          "z": 6.6175694444444435
+        },
+        "state": "PLAYING",
+        "viewport": {
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "scrollWidth": 1440
+        }
+      },
+      "browserVersion": "151.0.7922.34",
+      "args": [
+        "--use-gl=angle",
+        "--use-angle=d3d11",
+        "--enable-webgl",
+        "--ignore-gpu-blocklist"
+      ]
+    },
+    {
+      "name": "390-touch",
+      "file": "390-touch.png",
+      "mode": "N real input",
+      "before": {
+        "sim": {
+          "runId": "run-853624da-82e6-4ac5-b795-20cc3f4661ea",
+          "tick": 12,
+          "timeSec": 0.2,
+          "stepSec": 0.016666666666666666,
+          "phase": "RUNNING",
+          "simulationVersion": "pao10-fixed-v1",
+          "configId": "legacy-18-45-v1",
+          "seed": 1346457360,
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "contentRevision": "pao13-track-v1",
+          "generation": {
+            "runId": "run-853624da-82e6-4ac5-b795-20cc3f4661ea",
+            "seed": 1346457360,
+            "contentRevision": "pao13-track-v1",
+            "rngAlgorithmVersion": "mulberry32-v1",
+            "rngState": 714621690,
+            "cursor": 1,
+            "nextZ": 190,
+            "lastTick": 12,
+            "stage": "INTRO",
+            "lastSegmentId": "run-853624da-82e6-4ac5-b795-20cc3f4661ea/pao13-track-v1/segment-0",
+            "fallbackCount": 0
+          },
+          "scheduler": {
+            "invalidDeltas": 0,
+            "droppedSteps": 0,
+            "droppedSec": 0
+          },
+          "input": {
+            "wrongRun": 0,
+            "late": 0,
+            "duplicate": 0,
+            "paused": 0,
+            "invalid": 0,
+            "cleared": 0
+          },
+          "inputs": []
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 3.6054166666666667
+        },
+        "state": "PLAYING",
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "scrollWidth": 390
+        }
+      },
+      "after": {
+        "sim": {
+          "runId": "run-853624da-82e6-4ac5-b795-20cc3f4661ea",
+          "tick": 20,
+          "timeSec": 0.3333333333333333,
+          "stepSec": 0.016666666666666666,
+          "phase": "RUNNING",
+          "simulationVersion": "pao10-fixed-v1",
+          "configId": "legacy-18-45-v1",
+          "seed": 1346457360,
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "contentRevision": "pao13-track-v1",
+          "generation": {
+            "runId": "run-853624da-82e6-4ac5-b795-20cc3f4661ea",
+            "seed": 1346457360,
+            "contentRevision": "pao13-track-v1",
+            "rngAlgorithmVersion": "mulberry32-v1",
+            "rngState": 714621690,
+            "cursor": 1,
+            "nextZ": 190,
+            "lastTick": 20,
+            "stage": "INTRO",
+            "lastSegmentId": "run-853624da-82e6-4ac5-b795-20cc3f4661ea/pao13-track-v1/segment-0",
+            "fallbackCount": 0
+          },
+          "scheduler": {
+            "invalidDeltas": 0,
+            "droppedSteps": 0,
+            "droppedSec": 0
+          },
+          "input": {
+            "wrongRun": 0,
+            "late": 0,
+            "duplicate": 0,
+            "paused": 0,
+            "invalid": 0,
+            "cleared": 0
+          },
+          "inputs": [
+            {
+              "runId": "run-853624da-82e6-4ac5-b795-20cc3f4661ea",
+              "tick": 13,
+              "sequence": 1,
+              "action": "JUMP",
+              "source": "TOUCH"
+            }
+          ]
+        },
+        "position": {
+          "x": 0,
+          "y": 1.4200000000000002,
+          "z": 6.0145833333333325
+        },
+        "state": "PLAYING",
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "scrollWidth": 390
+        }
+      },
+      "browserVersion": "151.0.7922.34",
+      "args": [
+        "--use-gl=angle",
+        "--use-angle=d3d11",
+        "--enable-webgl",
+        "--ignore-gpu-blocklist"
+      ]
+    },
+    {
+      "name": "390-restart",
+      "file": "390-restart.png",
+      "mode": "N real input",
+      "before": {
+        "sim": {
+          "runId": "run-7d1865fa-516a-495f-9a0b-d62ddb3704ec",
+          "tick": 0,
+          "timeSec": 0,
+          "stepSec": 0.016666666666666666,
+          "phase": "RUNNING",
+          "simulationVersion": "pao10-fixed-v1",
+          "configId": "legacy-18-45-v1",
+          "seed": 1346457360,
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "contentRevision": "pao13-track-v1",
+          "generation": {
+            "runId": "run-7d1865fa-516a-495f-9a0b-d62ddb3704ec",
+            "seed": 1346457360,
+            "contentRevision": "pao13-track-v1",
+            "rngAlgorithmVersion": "mulberry32-v1",
+            "rngState": 1346457360,
+            "cursor": 0,
+            "nextZ": 30,
+            "lastTick": 0,
+            "stage": "INTRO",
+            "lastSegmentId": null,
+            "fallbackCount": 0
+          },
+          "scheduler": {
+            "invalidDeltas": 0,
+            "droppedSteps": 0,
+            "droppedSec": 0
+          },
+          "input": {
+            "wrongRun": 0,
+            "late": 0,
+            "duplicate": 0,
+            "paused": 0,
+            "invalid": 0,
+            "cleared": 0
+          },
+          "inputs": []
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "state": "PLAYING",
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "scrollWidth": 390
+        }
+      },
+      "after": {
+        "sim": {
+          "runId": "run-7d1865fa-516a-495f-9a0b-d62ddb3704ec",
+          "tick": 5,
+          "timeSec": 0.08333333333333333,
+          "stepSec": 0.016666666666666666,
+          "phase": "RUNNING",
+          "simulationVersion": "pao10-fixed-v1",
+          "configId": "legacy-18-45-v1",
+          "seed": 1346457360,
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "contentRevision": "pao13-track-v1",
+          "generation": {
+            "runId": "run-7d1865fa-516a-495f-9a0b-d62ddb3704ec",
+            "seed": 1346457360,
+            "contentRevision": "pao13-track-v1",
+            "rngAlgorithmVersion": "mulberry32-v1",
+            "rngState": 714621690,
+            "cursor": 1,
+            "nextZ": 190,
+            "lastTick": 5,
+            "stage": "INTRO",
+            "lastSegmentId": "run-7d1865fa-516a-495f-9a0b-d62ddb3704ec/pao13-track-v1/segment-0",
+            "fallbackCount": 0
+          },
+          "scheduler": {
+            "invalidDeltas": 0,
+            "droppedSteps": 0,
+            "droppedSec": 0
+          },
+          "input": {
+            "wrongRun": 0,
+            "late": 0,
+            "duplicate": 0,
+            "paused": 0,
+            "invalid": 0,
+            "cleared": 0
+          },
+          "inputs": []
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 1.5010416666666666
+        },
+        "state": "PLAYING",
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "scrollWidth": 390
+        }
+      },
+      "browserVersion": "151.0.7922.34",
+      "args": [
+        "--use-gl=angle",
+        "--use-angle=d3d11",
+        "--enable-webgl",
+        "--ignore-gpu-blocklist"
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "src/main.ts": "1bfbbc544bfff54d11ee3f49dda254e259513885e2e85821bde610d9b4ccb8ae",
+    "src/render/babylon.ts": "c32f97a5e3075acc291bdb5747b0e9ccc0b089a46b1ffa564a7f51be2d60026b",
+    "src/render/assets.ts": "eba5ddc2266b6d75b68d205894976bf95f9381e94df670e7296d4644fc19e673",
+    "src/render/environment.ts": "820c222fbe9e0e9f18dab862fe4892c07114b1770559b38505f47ceb6b24ffa3",
+    "src/render/entityViews.ts": "f81a7ac8543a88003aa168531945692dc26a40f91c5e09ebf130fbeafbbcce46",
+    "public/models/player.glb": "002f8d269de68e5dce3d25195caf390d1aa359bbfaae3fcf4c8dc78ec36c3ba5"
+  }
+}

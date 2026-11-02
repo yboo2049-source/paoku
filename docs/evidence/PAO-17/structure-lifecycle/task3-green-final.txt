@@ -1,0 +1,59 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao17-lifecycle.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+stdout | tests/unit/pao17-lifecycle.test.ts > facade unregisters exact callbacks, invalidates late loads and removes only its own canvas
+BJS - [20:38:33]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-lifecycle.test.ts > preserves host canvas and detaches old skin listener across a real renderer remount
+BJS - [20:38:34]: Babylon.js v9.19.0 - Null engine
+BJS - [20:38:34]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao17-lifecycle.test.ts (3 tests | 2 failed) 1085ms
+   × facade unregisters exact callbacks, invalidates late loads and removes only its own canvas 369ms
+   × preserves host canvas and detaches old skin listener across a real renderer remount 652ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao17-lifecycle.test.ts > facade unregisters exact callbacks, invalidates late loads and removes only its own canvas
+AssertionError: expected "vi.fn()" to be called 1 times, but got 2 times
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  20:38:31
+   Duration  3.25s (transform 145ms, setup 0ms, import 1.94s, tests 1.09s, environment 0ms)
+
+ ❯ tests/unit/pao17-lifecycle.test.ts:51:27
+     49|   h.win.dispatchEvent(new Event('resize')); expect(resize).toHaveBeenC…
+     50|   expect(off).toHaveBeenCalledWith('SKIN_CHANGED', expect.any(Function…
+     51|   expect(h.canvas.remove).toHaveBeenCalledTimes(1); expect(scene.isDis…
+       |                           ^
+     52|   const late = { meshes: [{}], dispose: vi.fn() } as unknown as AssetC…
+     53|   complete(late); await new Promise(r => setTimeout(r, 0)); expect(lat…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/pao17-lifecycle.test.ts > preserves host canvas and detaches old skin listener across a real renderer remount
+AssertionError: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st vi.fn() call:
+
+    Array []
+
+
+Number of calls: 1
+
+ ❯ tests/unit/pao17-lifecycle.test.ts:66:31
+     64|   eventBus.emit('SKIN_CHANGED', { color: '#ff0000', secondaryColor: '#…
+     65|   expect(applyOld).not.toHaveBeenCalled(); expect(b.currentSkin.color)…
+     66|   expect(h.canvas.remove).not.toHaveBeenCalled(); expect(a.scene.isDis…
+       |                               ^
+     67| });
+     68|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯

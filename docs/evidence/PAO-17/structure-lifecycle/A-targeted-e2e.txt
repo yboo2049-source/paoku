@@ -1,0 +1,53 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao17-local/acceptance.config.ts --retries=0 tests/e2e/pao17-
+
+[WebServer] (node:19256) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:16168) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\pao17-lifecycle.spec.ts:11:1 › F real renderer fallback, 20 cycles / 10 resets, dispose/remount, late shared load and host canvas (2.7s)
+  ok 2 tests\e2e\pao17-structure.spec.ts:8:1 › F source raw and legacy HTTP identity (96ms)
+  x  3 tests\e2e\pao17-structure.spec.ts:23:37 › N desktop keyboard legacy start motion pause resume end restart (33.5s)
+(node:29016) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  4 tests\e2e\pao17-structure.spec.ts:23:37 › N 390 touch legacy start motion pause resume end restart (33.8s)
+
+
+  1) tests\e2e\pao17-structure.spec.ts:23:37 › N desktop keyboard legacy start motion pause resume end restart
+
+    TimeoutError: page.waitForFunction: Timeout 15000ms exceeded.
+
+      55 |     await page.waitForTimeout(500);
+      56 |   }
+    > 57 |   await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getGameState() === 'GAMEOVER', null, { timeout: 15000 });
+         |              ^
+      58 |   await page.click('#restart-btn');
+      59 |   await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getGameState() === 'PLAYING');
+      60 |   const state = await page.evaluate(() => { const s = (window as any).__GAME_SENSOR__; return { state: s.getGameState(), position: s.getPlayerPos(), score: s.getScore(), scroll: document.documentElement.scrollWidth, width: innerWidth }; });
+        at D:\worker\paoku-sessions\pao-17\tests\e2e\pao17-structure.spec.ts:57:14
+
+    Error Context: .pao17-local\.pao17-local\results-A-targeted\tests-e2e-pao17-structure--23ce1-on-pause-resume-end-restart\error-context.md
+
+  2) tests\e2e\pao17-structure.spec.ts:23:37 › N 390 touch legacy start motion pause resume end restart
+
+    TimeoutError: page.waitForFunction: Timeout 15000ms exceeded.
+
+      55 |     await page.waitForTimeout(500);
+      56 |   }
+    > 57 |   await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getGameState() === 'GAMEOVER', null, { timeout: 15000 });
+         |              ^
+      58 |   await page.click('#restart-btn');
+      59 |   await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getGameState() === 'PLAYING');
+      60 |   const state = await page.evaluate(() => { const s = (window as any).__GAME_SENSOR__; return { state: s.getGameState(), position: s.getPlayerPos(), score: s.getScore(), scroll: document.documentElement.scrollWidth, width: innerWidth }; });
+        at D:\worker\paoku-sessions\pao-17\tests\e2e\pao17-structure.spec.ts:57:14
+
+    Error Context: .pao17-local\.pao17-local\results-A-targeted\tests-e2e-pao17-structure--244aa-on-pause-resume-end-restart\error-context.md
+
+  2 failed
+    tests\e2e\pao17-structure.spec.ts:23:37 › N desktop keyboard legacy start motion pause resume end restart
+    tests\e2e\pao17-structure.spec.ts:23:37 › N 390 touch legacy start motion pause resume end restart
+  2 passed (1.3m)

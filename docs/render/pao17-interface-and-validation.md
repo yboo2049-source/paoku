@@ -1,5 +1,7 @@
 # PAO-17 接口请求与后续验收矩阵（待审，未实施）
 
+> 2026-11-02接续状态：I-01/I-02及首批结构/生命周期已获批准并进入A→B实施，见[实施计划](../plans/2026-11-02-pao17-structure-implementation.md)与[阶段执行记录](../evidence/PAO-17/structure-lifecycle/execution-record.md)。当前render附参类型在渲染模块，main按同次presentation与同步应用快照投影传递；disposeGame接renderer幂等释放。以下“未实施”及RED表格是原送审阶段口径，实际通过范围只按新证据记录，生产标定/主题池/18仍递延。
+
 2026-11-02（Asia/Shanghai）。配套 [设计草案](../superpowers/specs/2026-11-01-pao17-render-design.md)。分析基线 `19aa31492ddce4c1c5e74ef1e49312ad41ec2dd6`；该 SHA 不是未来实施放行。本文表格中的测试均是拟议 RED，不能引用为已运行通过。
 
 ## 1. 实际公开门面与调用点

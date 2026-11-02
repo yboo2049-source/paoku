@@ -1,4 +1,5 @@
-import { Color3, StandardMaterial } from '@babylonjs/core';
+import type { Color3 } from '@babylonjs/core';
+import { StandardMaterial } from '@babylonjs/core/Materials/standardMaterial';
 import type { Scene } from '@babylonjs/core';
 
 export interface DisposableAsset { dispose(): void }

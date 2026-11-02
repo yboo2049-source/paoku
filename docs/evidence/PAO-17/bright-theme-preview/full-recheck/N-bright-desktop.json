@@ -1,0 +1,416 @@
+{
+  "image": "N-bright-desktop.png",
+  "before": {
+    "simulation": {
+      "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+      "tick": 10,
+      "timeSec": 0.16666666666666666,
+      "stepSec": 0.016666666666666666,
+      "phase": "RUNNING",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "seed": 1346457360,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "contentRevision": "pao13-track-v1",
+      "generation": {
+        "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+        "seed": 1346457360,
+        "contentRevision": "pao13-track-v1",
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "rngState": 714621690,
+        "cursor": 1,
+        "nextZ": 190,
+        "lastTick": 10,
+        "stage": "INTRO",
+        "lastSegmentId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947/pao13-track-v1/segment-0",
+        "fallbackCount": 0
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 0,
+        "droppedSec": 0
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 0,
+        "invalid": 0,
+        "cleared": 0
+      },
+      "inputs": [
+        {
+          "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+          "tick": 5,
+          "sequence": 1,
+          "action": "LEFT",
+          "source": "KEYBOARD"
+        },
+        {
+          "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+          "tick": 6,
+          "sequence": 2,
+          "action": "JUMP",
+          "source": "KEYBOARD"
+        }
+      ]
+    },
+    "state": "PLAYING",
+    "player": {
+      "x": -2.466064453125,
+      "y": 0.9666666666666668,
+      "z": 3.0038194444444444
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "scroll": 1440
+    }
+  },
+  "after": {
+    "simulation": {
+      "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+      "tick": 14,
+      "timeSec": 0.23333333333333334,
+      "stepSec": 0.016666666666666666,
+      "phase": "RUNNING",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "seed": 1346457360,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "contentRevision": "pao13-track-v1",
+      "generation": {
+        "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+        "seed": 1346457360,
+        "contentRevision": "pao13-track-v1",
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "rngState": 714621690,
+        "cursor": 1,
+        "nextZ": 190,
+        "lastTick": 14,
+        "stage": "INTRO",
+        "lastSegmentId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947/pao13-track-v1/segment-0",
+        "fallbackCount": 0
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 0,
+        "droppedSec": 0
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 0,
+        "invalid": 0,
+        "cleared": 0
+      },
+      "inputs": [
+        {
+          "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+          "tick": 5,
+          "sequence": 1,
+          "action": "LEFT",
+          "source": "KEYBOARD"
+        },
+        {
+          "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+          "tick": 6,
+          "sequence": 2,
+          "action": "JUMP",
+          "source": "KEYBOARD"
+        }
+      ]
+    },
+    "state": "PLAYING",
+    "player": {
+      "x": -2.831059455871582,
+      "y": 1.5500000000000003,
+      "z": 4.207291666666666
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "scroll": 1440
+    }
+  },
+  "restarted": {
+    "simulation": {
+      "runId": "run-05f3027b-e6c6-4255-9047-72b5ace0809f",
+      "tick": 3,
+      "timeSec": 0.05,
+      "stepSec": 0.016666666666666666,
+      "phase": "RUNNING",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "seed": 1346457360,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "contentRevision": "pao13-track-v1",
+      "generation": {
+        "runId": "run-05f3027b-e6c6-4255-9047-72b5ace0809f",
+        "seed": 1346457360,
+        "contentRevision": "pao13-track-v1",
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "rngState": 714621690,
+        "cursor": 1,
+        "nextZ": 190,
+        "lastTick": 3,
+        "stage": "INTRO",
+        "lastSegmentId": "run-05f3027b-e6c6-4255-9047-72b5ace0809f/pao13-track-v1/segment-0",
+        "fallbackCount": 0
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 0,
+        "droppedSec": 0
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 0,
+        "invalid": 0,
+        "cleared": 0
+      },
+      "inputs": []
+    },
+    "state": "PLAYING",
+    "player": {
+      "x": 0,
+      "y": 0,
+      "z": 0.9004166666666666
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "scroll": 1440
+    }
+  },
+  "steering": [
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 2
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1,
+      "target": 2
+    },
+    {
+      "state": "PLAYING",
+      "lane": 2,
+      "target": 2
+    },
+    {
+      "state": "PLAYING",
+      "lane": 2,
+      "target": 2
+    },
+    {
+      "state": "PLAYING",
+      "lane": 2,
+      "target": 2
+    },
+    {
+      "state": "GAMEOVER",
+      "lane": 2,
+      "target": 2
+    }
+  ],
+  "errors": [],
+  "browser": "151.0.7922.34"
+}

@@ -1,0 +1,11 @@
+{
+  "phase": "theme-full-recheck",
+  "hashes": {
+    "src/main.ts": "1bfbbc544bfff54d11ee3f49dda254e259513885e2e85821bde610d9b4ccb8ae",
+    "src/render/babylon.ts": "088c7f5c4b7d0e9ea2053826f01f794f7f1b4599644200b0c74020213ed882a2",
+    "src/render/assets.ts": "421e65af2d07a76afcc631a8c4bbbc2a30abecc073e78038a20391e732a3821a",
+    "src/render/environment.ts": "34fd074d2041390005cfda679897e41c8945fbffb0920e49145495dd82adef36",
+    "src/render/entityViews.ts": "0b11b38359c1c27d64eabab7dd3a591797d7c3379ef028f82fdfde67c531e702",
+    "public/models/player.glb": "002f8d269de68e5dce3d25195caf390d1aa359bbfaae3fcf4c8dc78ec36c3ba5"
+  }
+}

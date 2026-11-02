@@ -1,0 +1,116 @@
+{
+  "base": "536f54b41866e2819d21cd674e64af2cb4d70f80",
+  "stats": {
+    "startTime": "2026-11-02T15:16:27.382Z",
+    "duration": 381708.33999999997,
+    "expected": 53,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "unit": {
+    "files": 24,
+    "tests": 273,
+    "durationSeconds": 10.46
+  },
+  "oldE2E": 48,
+  "newE2E": {
+    "N": 2,
+    "F": 3
+  },
+  "changedProtectedFiles": [
+    "src/render/assets.ts",
+    "src/render/babylon.ts",
+    "src/render/entityViews.ts",
+    "src/render/environment.ts"
+  ],
+  "unchangedProtectedFiles": 1074,
+  "unchangedExistingLocalFiles": 232,
+  "gitlinks": {
+    "scratch/temp_learn_harness": "4dd9299a98f25484d89edc4019cfd36d83f52fac"
+  },
+  "parameters": {
+    "settings": {
+      "length": 120,
+      "segments": 5,
+      "cameraFar": 280,
+      "fogStart": 100,
+      "fogEnd": 250,
+      "glowIntensity": 0.15,
+      "shadowSize": 1024,
+      "shadowRange": 80,
+      "shadowBias": 0.0005,
+      "shadowNormalBias": 0.02,
+      "menuBackdropSize": 600,
+      "sleeperDepthBias": -1,
+      "sky": "#BEDFF4",
+      "track": "#657A88",
+      "rail": "#5E6871",
+      "platform": "#F0E7D5",
+      "accent": "#E8B74F"
+    },
+    "sky": "#BEDFF4FF",
+    "sleeperDepthBias": -1,
+    "fog": [
+      100,
+      250
+    ],
+    "far": 280,
+    "glow": 0.15,
+    "fxaa": true,
+    "bloom": false,
+    "shadow": 1024,
+    "shadowTechnique": "PCF-medium",
+    "webGLVersion": 2,
+    "shadowBias": 0.0005,
+    "shadowNormalBias": 0.02,
+    "sun": "#FFF2D5",
+    "sunIntensity": 0.7,
+    "fill": "#D6E6F4",
+    "fillIntensity": 0.4
+  },
+  "warmActualFrames": 9,
+  "baseline": {
+    "meshes": 71,
+    "nodes": 78,
+    "materials": 32,
+    "textures": 8,
+    "animations": 7,
+    "skeletons": 1,
+    "particles": 1,
+    "casters": 5,
+    "glow": 5,
+    "cache": {
+      "resources": 1,
+      "leases": 1,
+      "pending": 0,
+      "failed": 0
+    }
+  },
+  "disposed": {
+    "meshes": 0,
+    "nodes": 0,
+    "materials": 0,
+    "textures": 0,
+    "animations": 0,
+    "skeletons": 0,
+    "particles": 0,
+    "casters": 0,
+    "glow": 0,
+    "cache": {
+      "resources": 0,
+      "leases": 0,
+      "pending": 0,
+      "failed": 0
+    }
+  },
+  "source": {
+    "src/render/environment.ts": "34fd074d2041390005cfda679897e41c8945fbffb0920e49145495dd82adef36",
+    "src/render/entityViews.ts": "0b11b38359c1c27d64eabab7dd3a591797d7c3379ef028f82fdfde67c531e702",
+    "src/render/babylon.ts": "088c7f5c4b7d0e9ea2053826f01f794f7f1b4599644200b0c74020213ed882a2",
+    "src/render/assets.ts": "421e65af2d07a76afcc631a8c4bbbc2a30abecc073e78038a20391e732a3821a",
+    "src/main.ts": "1bfbbc544bfff54d11ee3f49dda254e259513885e2e85821bde610d9b4ccb8ae",
+    "src/systems/surfaces.ts": "14a734e726e1b2aadcb9add9e96207fbb29e3680a08e762682fa6ece73846484",
+    "public/models/player.glb": "002f8d269de68e5dce3d25195caf390d1aa359bbfaae3fcf4c8dc78ec36c3ba5"
+  }
+}

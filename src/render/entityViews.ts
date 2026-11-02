@@ -1,7 +1,7 @@
-import { Color3, MeshBuilder, TransformNode } from '@babylonjs/core';
-import type { Mesh, Scene, ShadowGenerator } from '@babylonjs/core';
+import { Color3, Mesh, MeshBuilder, TransformNode, VertexData } from '@babylonjs/core';
+import type { GlowLayer, Scene, ShadowGenerator } from '@babylonjs/core';
 import type { DeepReadonly } from '../types/contracts';
-import type { GameContext } from '../types';
+import type { GameContext, ObstacleEntity } from '../types';
 import { SharedMaterials } from './assets';
 
 export class ViewRegistry<T> extends Map<string, T> {
@@ -20,11 +20,23 @@ export class EntityViews {
   private scene: Scene;
   private shadowGenerator: ShadowGenerator;
   private materials: SharedMaterials;
-  constructor(scene: Scene, shadowGenerator: ShadowGenerator, materials: SharedMaterials) { this.scene = scene; this.shadowGenerator = shadowGenerator; this.materials = materials; }
+  private glow?: GlowLayer;
+  private casters = new Set<Mesh>();
+  constructor(scene: Scene, shadowGenerator: ShadowGenerator, materials: SharedMaterials, glow?: GlowLayer) { this.scene = scene; this.shadowGenerator = shadowGenerator; this.materials = materials; this.glow = glow; }
   private release(node: TransformNode): void {
-    for (const mesh of node.getChildMeshes()) this.shadowGenerator.removeShadowCaster(mesh);
+    for (const mesh of node.getChildMeshes()) {
+      this.shadowGenerator.removeShadowCaster(mesh); this.casters.delete(mesh as Mesh); this.glow?.removeIncludedOnlyMesh(mesh as Mesh);
+    }
+    this.casters.delete(node as Mesh); this.glow?.removeIncludedOnlyMesh(node as Mesh);
     this.shadowGenerator.removeShadowCaster(node as Mesh);
     node.dispose(false, false);
+  }
+  limitShadows(playerZ: number, range: number): void {
+    for (const mesh of this.casters) {
+      mesh.computeWorldMatrix(true);
+      if (Math.abs(mesh.getAbsolutePosition().z - playerZ) <= range) this.shadowGenerator.addShadowCaster(mesh, false);
+      else this.shadowGenerator.removeShadowCaster(mesh);
+    }
   }
   private getCachedMaterial(key: string, opts: { diffuse?: Color3; emissive?: Color3 }) { return this.materials.get(key, opts); }
   sync(ctx: DeepReadonly<GameContext>, totalTime: number, dt: number): void {
@@ -32,6 +44,24 @@ export class EntityViews {
   }
   reset(): void { this.obstacleMeshes.clear(); this.coinMeshes.clear(); this.powerUpMeshes.clear(); }
   dispose(): void { this.reset(); }
+  private triangleMesh(name: string, positions: number[], indices: number[]): Mesh {
+    const mesh = new Mesh(name, this.scene); const data = new VertexData();
+    // Babylon's default LH front-face winding is opposite to the geometric cross-product ordering above.
+    const winding = indices.slice();
+    for (let i = 0; i < winding.length; i += 3) [winding[i + 1], winding[i + 2]] = [winding[i + 2], winding[i + 1]];
+    const normals: number[] = []; VertexData.ComputeNormals(positions, winding, normals);
+    data.positions = positions; data.indices = winding; data.normals = normals; data.applyToMesh(mesh);
+    return mesh;
+  }
+  private buildWedge(obs: DeepReadonly<ObstacleEntity>): Mesh {
+    const w = obs.width / 2, d = obs.depth / 2, h = obs.height;
+    const a = [-w, 0, -d], b = [w, 0, -d], c = [-w, h, d], e = [-w, 0, d], f = [w, 0, d], top = [w, h, d];
+    // Separate triangle vertices retain hard face normals at the top/side boundaries.
+    const triangles = [[a, c, b], [b, c, top], [a, e, c], [b, top, f], [a, b, e], [b, f, e], [e, f, c], [f, top, c]];
+    const positions = triangles.flat(2); const indices = Array.from({ length: positions.length / 3 }, (_, i) => i);
+    return this.triangleMesh('ramp_' + obs.id, positions, indices);
+  }
+
   private syncObstacles(ctx: DeepReadonly<GameContext>): void {
     const activeIds = new Set<string>();
 
@@ -45,29 +75,31 @@ export class EntityViews {
           const isMoving = obs.type === 'MOVING_TRAIN';
           const bodyMat = this.getCachedMaterial(
             isMoving ? 'train_body_moving' : 'train_body_static',
-            { diffuse: isMoving ? new Color3(0.9, 0.1, 0.1) : new Color3(0.1, 0.4, 0.85) }
+            { diffuse: isMoving ? Color3.FromHexString('#C44F46') : Color3.FromHexString('#39799D') }
           );
 
           const body = MeshBuilder.CreateBox(`train_${obs.id}`, { width: obs.width, height: obs.height * 0.8, depth: obs.depth }, this.scene);
           body.position.y = obs.height * 0.5;
           body.material = bodyMat;
           body.parent = node;
-          this.shadowGenerator.addShadowCaster(body);
+          this.casters.add(body); this.shadowGenerator.addShadowCaster(body);
 
           // 车顶遮罩
-          const roof = MeshBuilder.CreateBox(`roof_${obs.id}`, { width: obs.width * 0.96, height: 0.15, depth: obs.depth * 0.98 }, this.scene);
-          roof.position.y = obs.height - 0.08;
+          const roof = MeshBuilder.CreateBox(`roof_${obs.id}`, { width: obs.width, height: 0.15, depth: obs.depth }, this.scene);
+          roof.position.y = obs.height - 0.075;
+          roof.material = this.getCachedMaterial('train_roof', { diffuse: Color3.FromHexString('#647988') });
+          roof.receiveShadows = true;
           roof.parent = node;
 
           // 黄色醒目警戒线
-          const stripeMat = this.getCachedMaterial('train_stripe', { emissive: new Color3(1.0, 0.8, 0) });
+          const stripeMat = this.getCachedMaterial('train_stripe', { diffuse: Color3.FromHexString('#E8B74F'), emissive: new Color3(0.06, 0.04, 0) });
           const stripe = MeshBuilder.CreateBox(`stripe_${obs.id}`, { width: obs.width + 0.02, height: 0.15, depth: obs.depth * 0.98 }, this.scene);
           stripe.position.y = obs.height * 0.45;
           stripe.material = stripeMat;
           stripe.parent = node;
 
           // 迎面车头发光大灯
-          const lightMat = this.getCachedMaterial('train_headlight', { emissive: new Color3(1.0, 1.0, 0.6) });
+          const lightMat = this.getCachedMaterial('train_headlight', { diffuse: Color3.FromHexString('#FFF2D5'), emissive: new Color3(0.12, 0.11, 0.08) });
           const rootNode = node;
           [-obs.width * 0.3, obs.width * 0.3].forEach((lx) => {
             const hl = MeshBuilder.CreateCylinder(`hl_${obs.id}_${lx}`, { diameter: 0.35, height: 0.05 }, this.scene);
@@ -78,22 +110,19 @@ export class EntityViews {
           });
 
         } else if (obs.type === 'RAMP') {
-          // 精细化 3D 斜坡 (包含高亮发光 Yellow 冲刺指示箭头)
-          const rampMat = this.getCachedMaterial('ramp_body', { diffuse: new Color3(1.0, 0.45, 0) });
-
-          const ramp = MeshBuilder.CreateBox(`ramp_${obs.id}`, { width: obs.width, height: obs.height, depth: obs.depth }, this.scene);
-          ramp.position.y = obs.height / 2;
-          ramp.material = rampMat;
-          ramp.parent = node;
-
-          // 3 个冲刺箭头标记
-          const arrowMat = this.getCachedMaterial('ramp_arrow', { emissive: new Color3(1.0, 1.0, 0) });
-          const rootNode = node;
+          const rampMat = this.getCachedMaterial('ramp_body', { diffuse: Color3.FromHexString('#D7A74A') });
+          const ramp = this.buildWedge(obs);
+          ramp.material = rampMat; ramp.parent = node; ramp.receiveShadows = true;
+          this.casters.add(ramp); this.shadowGenerator.addShadowCaster(ramp);
+          const arrowMat = this.getCachedMaterial('ramp_arrow', { diffuse: Color3.FromHexString('#FFF2D5') });
           for (let i = -1; i <= 1; i++) {
-            const arrow = MeshBuilder.CreateBox(`arrow_${obs.id}_${i}`, { width: obs.width * 0.5, height: 0.05, depth: 0.4 }, this.scene);
-            arrow.position.set(0, obs.height * 0.5 + 0.1, i * (obs.depth * 0.25));
-            arrow.material = arrowMat;
-            arrow.parent = rootNode;
+            const cz = i * obs.depth * 0.25;
+            const positions: number[] = [];
+            for (const [x, z] of [[-obs.width * 0.22, cz - 0.2], [0, cz + 0.2], [obs.width * 0.22, cz - 0.2]]) {
+              positions.push(x, (z / obs.depth + 0.5) * obs.height + 0.018, z);
+            }
+            const arrow = this.triangleMesh('arrow_' + obs.id + '_' + i, positions, [0, 1, 2]);
+            arrow.material = arrowMat; arrow.parent = node;
           }
 
         } else {
@@ -101,7 +130,7 @@ export class EntityViews {
           const isLow = obs.type === 'LOW_OBSTACLE';
           const frameMat = this.getCachedMaterial(
             isLow ? 'obstacle_low' : 'obstacle_high',
-            { diffuse: isLow ? new Color3(0.9, 0.65, 0) : new Color3(0.85, 0, 0.2) }
+            { diffuse: isLow ? Color3.FromHexString('#E8B74F') : Color3.FromHexString('#BB5145') }
           );
 
           const bar = MeshBuilder.CreateBox(`bar_${obs.id}`, { width: obs.width, height: obs.height, depth: obs.depth }, this.scene);
@@ -110,7 +139,7 @@ export class EntityViews {
           bar.parent = node;
 
           // 警示闪灯
-          const lampMat = this.getCachedMaterial('obstacle_lamp', { emissive: new Color3(1.0, 0.1, 0.1) });
+          const lampMat = this.getCachedMaterial('obstacle_lamp', { diffuse: new Color3(0.8, 0.1, 0.1), emissive: new Color3(0.08, 0.01, 0.01) });
           const rootNode = node;
           [-obs.width * 0.4, obs.width * 0.4].forEach((lx) => {
             const lamp = MeshBuilder.CreateSphere(`lamp_${obs.id}_${lx}`, { diameter: 0.25 }, this.scene);
@@ -147,8 +176,8 @@ export class EntityViews {
         coinMesh.rotation.x = Math.PI / 2;
 
         const goldMat = this.getCachedMaterial('coin_gold', {
-          diffuse: new Color3(1.0, 0.85, 0),
-          emissive: new Color3(0.6, 0.45, 0),
+          diffuse: Color3.FromHexString('#E8B74F'),
+          emissive: new Color3(0.12, 0.08, 0),
         });
         coinMesh.material = goldMat;
 
@@ -158,6 +187,7 @@ export class EntityViews {
         star.material = goldMat;
         star.parent = coinMesh;
 
+        this.glow?.addIncludedOnlyMesh(coinMesh); this.glow?.addIncludedOnlyMesh(star);
         return coinMesh;
       });
 
@@ -191,7 +221,7 @@ export class EntityViews {
         else if (pu.type === 'DOUBLE_SCORE') color = new Color3(1.0, 0.85, 0);
         else if (pu.type === 'SUPER_SNEAKERS') color = new Color3(0, 1.0, 0.4);
 
-        const pMat = this.getCachedMaterial(`powerup_${pu.type}`, { diffuse: color, emissive: color });
+        const pMat = this.getCachedMaterial(`powerup_${pu.type}`, { diffuse: color, emissive: color.scale(0.12) });
         mesh.material = pMat;
         mesh.parent = node;
 

@@ -1,0 +1,588 @@
+{
+  "note": "Before/after samples bracket screenshot time, not a claimed exact screenshot tick. Final runtime SHA256s are working-tree bytes.",
+  "source": {
+    "src/render/environment.ts": "34fd074d2041390005cfda679897e41c8945fbffb0920e49145495dd82adef36",
+    "src/render/entityViews.ts": "0b11b38359c1c27d64eabab7dd3a591797d7c3379ef028f82fdfde67c531e702",
+    "src/render/babylon.ts": "088c7f5c4b7d0e9ea2053826f01f794f7f1b4599644200b0c74020213ed882a2",
+    "src/render/assets.ts": "421e65af2d07a76afcc631a8c4bbbc2a30abecc073e78038a20391e732a3821a",
+    "src/main.ts": "1bfbbc544bfff54d11ee3f49dda254e259513885e2e85821bde610d9b4ccb8ae",
+    "src/systems/surfaces.ts": "14a734e726e1b2aadcb9add9e96207fbb29e3680a08e762682fa6ece73846484",
+    "public/models/player.glb": "002f8d269de68e5dce3d25195caf390d1aa359bbfaae3fcf4c8dc78ec36c3ba5"
+  },
+  "images": [
+    {
+      "file": "full-recheck/N-bright-desktop.png",
+      "mode": "N",
+      "before": {
+        "simulation": {
+          "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+          "tick": 10,
+          "timeSec": 0.16666666666666666,
+          "stepSec": 0.016666666666666666,
+          "phase": "RUNNING",
+          "simulationVersion": "pao10-fixed-v1",
+          "configId": "legacy-18-45-v1",
+          "seed": 1346457360,
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "contentRevision": "pao13-track-v1",
+          "generation": {
+            "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+            "seed": 1346457360,
+            "contentRevision": "pao13-track-v1",
+            "rngAlgorithmVersion": "mulberry32-v1",
+            "rngState": 714621690,
+            "cursor": 1,
+            "nextZ": 190,
+            "lastTick": 10,
+            "stage": "INTRO",
+            "lastSegmentId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947/pao13-track-v1/segment-0",
+            "fallbackCount": 0
+          },
+          "scheduler": {
+            "invalidDeltas": 0,
+            "droppedSteps": 0,
+            "droppedSec": 0
+          },
+          "input": {
+            "wrongRun": 0,
+            "late": 0,
+            "duplicate": 0,
+            "paused": 0,
+            "invalid": 0,
+            "cleared": 0
+          },
+          "inputs": [
+            {
+              "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+              "tick": 5,
+              "sequence": 1,
+              "action": "LEFT",
+              "source": "KEYBOARD"
+            },
+            {
+              "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+              "tick": 6,
+              "sequence": 2,
+              "action": "JUMP",
+              "source": "KEYBOARD"
+            }
+          ]
+        },
+        "state": "PLAYING",
+        "player": {
+          "x": -2.466064453125,
+          "y": 0.9666666666666668,
+          "z": 3.0038194444444444
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "scroll": 1440
+        }
+      },
+      "after": {
+        "simulation": {
+          "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+          "tick": 14,
+          "timeSec": 0.23333333333333334,
+          "stepSec": 0.016666666666666666,
+          "phase": "RUNNING",
+          "simulationVersion": "pao10-fixed-v1",
+          "configId": "legacy-18-45-v1",
+          "seed": 1346457360,
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "contentRevision": "pao13-track-v1",
+          "generation": {
+            "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+            "seed": 1346457360,
+            "contentRevision": "pao13-track-v1",
+            "rngAlgorithmVersion": "mulberry32-v1",
+            "rngState": 714621690,
+            "cursor": 1,
+            "nextZ": 190,
+            "lastTick": 14,
+            "stage": "INTRO",
+            "lastSegmentId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947/pao13-track-v1/segment-0",
+            "fallbackCount": 0
+          },
+          "scheduler": {
+            "invalidDeltas": 0,
+            "droppedSteps": 0,
+            "droppedSec": 0
+          },
+          "input": {
+            "wrongRun": 0,
+            "late": 0,
+            "duplicate": 0,
+            "paused": 0,
+            "invalid": 0,
+            "cleared": 0
+          },
+          "inputs": [
+            {
+              "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+              "tick": 5,
+              "sequence": 1,
+              "action": "LEFT",
+              "source": "KEYBOARD"
+            },
+            {
+              "runId": "run-0ebb21e6-c01a-4c18-9858-8166f17e5947",
+              "tick": 6,
+              "sequence": 2,
+              "action": "JUMP",
+              "source": "KEYBOARD"
+            }
+          ]
+        },
+        "state": "PLAYING",
+        "player": {
+          "x": -2.831059455871582,
+          "y": 1.5500000000000003,
+          "z": 4.207291666666666
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "scroll": 1440
+        }
+      },
+      "browser": "151.0.7922.34",
+      "sha256": "9649242f8eb5c8b1f5effe3a668b0565eb7f01d49fe889a3929ada489eb0d913"
+    },
+    {
+      "file": "full-recheck/N-bright-390.png",
+      "mode": "N",
+      "before": {
+        "simulation": {
+          "runId": "run-23d0165b-c699-42fd-8190-94ffe53023a4",
+          "tick": 22,
+          "timeSec": 0.36666666666666664,
+          "stepSec": 0.016666666666666666,
+          "phase": "RUNNING",
+          "simulationVersion": "pao10-fixed-v1",
+          "configId": "legacy-18-45-v1",
+          "seed": 1346457360,
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "contentRevision": "pao13-track-v1",
+          "generation": {
+            "runId": "run-23d0165b-c699-42fd-8190-94ffe53023a4",
+            "seed": 1346457360,
+            "contentRevision": "pao13-track-v1",
+            "rngAlgorithmVersion": "mulberry32-v1",
+            "rngState": 714621690,
+            "cursor": 1,
+            "nextZ": 190,
+            "lastTick": 22,
+            "stage": "INTRO",
+            "lastSegmentId": "run-23d0165b-c699-42fd-8190-94ffe53023a4/pao13-track-v1/segment-0",
+            "fallbackCount": 0
+          },
+          "scheduler": {
+            "invalidDeltas": 0,
+            "droppedSteps": 0,
+            "droppedSec": 0
+          },
+          "input": {
+            "wrongRun": 0,
+            "late": 0,
+            "duplicate": 0,
+            "paused": 0,
+            "invalid": 0,
+            "cleared": 0
+          },
+          "inputs": [
+            {
+              "runId": "run-23d0165b-c699-42fd-8190-94ffe53023a4",
+              "tick": 19,
+              "sequence": 1,
+              "action": "JUMP",
+              "source": "TOUCH"
+            }
+          ]
+        },
+        "state": "PLAYING",
+        "player": {
+          "x": 0,
+          "y": 0.7944444444444445,
+          "z": 6.6175694444444435
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "scroll": 390
+        }
+      },
+      "after": {
+        "simulation": {
+          "runId": "run-23d0165b-c699-42fd-8190-94ffe53023a4",
+          "tick": 28,
+          "timeSec": 0.4666666666666667,
+          "stepSec": 0.016666666666666666,
+          "phase": "RUNNING",
+          "simulationVersion": "pao10-fixed-v1",
+          "configId": "legacy-18-45-v1",
+          "seed": 1346457360,
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "contentRevision": "pao13-track-v1",
+          "generation": {
+            "runId": "run-23d0165b-c699-42fd-8190-94ffe53023a4",
+            "seed": 1346457360,
+            "contentRevision": "pao13-track-v1",
+            "rngAlgorithmVersion": "mulberry32-v1",
+            "rngState": 714621690,
+            "cursor": 1,
+            "nextZ": 190,
+            "lastTick": 28,
+            "stage": "INTRO",
+            "lastSegmentId": "run-23d0165b-c699-42fd-8190-94ffe53023a4/pao13-track-v1/segment-0",
+            "fallbackCount": 0
+          },
+          "scheduler": {
+            "invalidDeltas": 0,
+            "droppedSteps": 0,
+            "droppedSec": 0
+          },
+          "input": {
+            "wrongRun": 0,
+            "late": 0,
+            "duplicate": 0,
+            "paused": 0,
+            "invalid": 0,
+            "cleared": 0
+          },
+          "inputs": [
+            {
+              "runId": "run-23d0165b-c699-42fd-8190-94ffe53023a4",
+              "tick": 19,
+              "sequence": 1,
+              "action": "JUMP",
+              "source": "TOUCH"
+            }
+          ]
+        },
+        "state": "PLAYING",
+        "player": {
+          "x": 0,
+          "y": 1.6694444444444447,
+          "z": 8.428194444444443
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "scroll": 390
+        }
+      },
+      "browser": "151.0.7922.34",
+      "sha256": "ba1d920a5bba4e2c52118d76fc039f968da5b0ebd901ed764012984946adfa85"
+    },
+    {
+      "file": "full-recheck/F-bright-ramp-roof.png",
+      "mode": "F QA ramp walk",
+      "before": {
+        "contractVersion": 1,
+        "runId": "run-1276a917-4de0-4ce9-b5d1-a50d0bbced58",
+        "tick": 24,
+        "timeSec": 0.4,
+        "stepSec": 0.016666666666666666,
+        "phase": "RUNNING",
+        "seed": 1346457360,
+        "rngState": 1346457360,
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "simulationVersion": "pao10-fixed-v1",
+        "configId": "legacy-18-45-v1",
+        "contentRevision": "pao13-track-v1",
+        "generation": {
+          "runId": "run-1276a917-4de0-4ce9-b5d1-a50d0bbced58",
+          "seed": 1346457360,
+          "contentRevision": "pao13-track-v1",
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "rngState": 1346457360,
+          "cursor": 0,
+          "nextZ": 30,
+          "lastTick": 0,
+          "stage": "INTRO",
+          "lastSegmentId": null,
+          "fallbackCount": 0
+        },
+        "lastInputSequence": 0,
+        "discontinuity": false,
+        "context": {
+          "state": "PLAYING",
+          "score": 0.7220833333333332,
+          "highScore": 0,
+          "coins": 0,
+          "totalCoins": 0,
+          "speed": 18.099999999999994,
+          "distance": 7.220833333333332,
+          "player": {
+            "lane": 1,
+            "x": 0,
+            "targetX": 0,
+            "y": 1.0100694444444471,
+            "z": 69.0201388888889,
+            "vy": 0,
+            "isJumping": false,
+            "isRolling": false,
+            "rollTimer": 0,
+            "hasHoverboard": false,
+            "hoverboardActive": false,
+            "invulnerableTimer": 0,
+            "activePowerUps": {},
+            "collisionEnded": false,
+            "supportSurfaceId": "route-ramp:ramp",
+            "contact": "SUPPORTED",
+            "supportDeparture": null,
+            "supportRampExit": {
+              "xMin": -1.2,
+              "xMax": 1.2,
+              "z": 73,
+              "y": 3
+            },
+            "godMode": false,
+            "supportSample": {
+              "x": 0,
+              "y": 1.0100694444444471,
+              "z": 69.0201388888889
+            }
+          },
+          "obstacles": [
+            {
+              "id": "route-ramp",
+              "type": "RAMP",
+              "lane": 1,
+              "x": 0,
+              "y": 0,
+              "z": 70,
+              "width": 2.4,
+              "height": 3,
+              "depth": 6
+            },
+            {
+              "id": "route-roof",
+              "type": "STATIC_TRAIN",
+              "lane": 1,
+              "x": 0,
+              "y": 0,
+              "z": 79,
+              "width": 2.4,
+              "height": 3,
+              "depth": 12
+            }
+          ],
+          "coinEntities": [],
+          "powerUpEntities": [],
+          "missions": [
+            {
+              "id": "m1",
+              "title": "COIN COLLECTOR",
+              "description": "Collect 30 coins in a single run",
+              "target": 30,
+              "current": 0,
+              "rewardCoins": 50,
+              "completed": false,
+              "type": "COLLECT_COINS"
+            },
+            {
+              "id": "m2",
+              "title": "HIGH JUMPER",
+              "description": "Perform 10 jumps in a single run",
+              "target": 10,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "JUMP_TIMES"
+            },
+            {
+              "id": "m3",
+              "title": "SLIDER PRO",
+              "description": "Perform 8 rolls under obstacles",
+              "target": 8,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "ROLL_TIMES"
+            },
+            {
+              "id": "m4",
+              "title": "SCORE RUNNER",
+              "description": "Reach a score of 500 in a single run",
+              "target": 500,
+              "current": 0,
+              "rewardCoins": 100,
+              "completed": false,
+              "type": "SCORE_REACH"
+            }
+          ],
+          "chase": {
+            "distance": 2.8,
+            "isNear": false
+          },
+          "runLedger": {
+            "pickupCount": 0,
+            "pickupCoins": 0,
+            "rewardCoins": 0,
+            "rewardedMissionIds": []
+          }
+        }
+      },
+      "after": {
+        "contractVersion": 1,
+        "runId": "run-1276a917-4de0-4ce9-b5d1-a50d0bbced58",
+        "tick": 29,
+        "timeSec": 0.48333333333333334,
+        "stepSec": 0.016666666666666666,
+        "phase": "RUNNING",
+        "seed": 1346457360,
+        "rngState": 1346457360,
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "simulationVersion": "pao10-fixed-v1",
+        "configId": "legacy-18-45-v1",
+        "contentRevision": "pao13-track-v1",
+        "generation": {
+          "runId": "run-1276a917-4de0-4ce9-b5d1-a50d0bbced58",
+          "seed": 1346457360,
+          "contentRevision": "pao13-track-v1",
+          "rngAlgorithmVersion": "mulberry32-v1",
+          "rngState": 1346457360,
+          "cursor": 0,
+          "nextZ": 30,
+          "lastTick": 0,
+          "stage": "INTRO",
+          "lastSegmentId": null,
+          "fallbackCount": 0
+        },
+        "lastInputSequence": 0,
+        "discontinuity": false,
+        "context": {
+          "state": "PLAYING",
+          "score": 0.8730208333333331,
+          "highScore": 0,
+          "coins": 0,
+          "totalCoins": 0,
+          "speed": 18.120833333333326,
+          "distance": 8.730208333333332,
+          "player": {
+            "lane": 1,
+            "x": 0,
+            "targetX": 0,
+            "y": 1.76475694444445,
+            "z": 70.5295138888889,
+            "vy": 0,
+            "isJumping": false,
+            "isRolling": false,
+            "rollTimer": 0,
+            "hasHoverboard": false,
+            "hoverboardActive": false,
+            "invulnerableTimer": 0,
+            "activePowerUps": {},
+            "collisionEnded": false,
+            "supportSurfaceId": "route-ramp:ramp",
+            "contact": "SUPPORTED",
+            "supportDeparture": null,
+            "supportRampExit": {
+              "xMin": -1.2,
+              "xMax": 1.2,
+              "z": 73,
+              "y": 3
+            },
+            "godMode": false,
+            "supportSample": {
+              "x": 0,
+              "y": 1.76475694444445,
+              "z": 70.5295138888889
+            }
+          },
+          "obstacles": [
+            {
+              "id": "route-ramp",
+              "type": "RAMP",
+              "lane": 1,
+              "x": 0,
+              "y": 0,
+              "z": 70,
+              "width": 2.4,
+              "height": 3,
+              "depth": 6
+            },
+            {
+              "id": "route-roof",
+              "type": "STATIC_TRAIN",
+              "lane": 1,
+              "x": 0,
+              "y": 0,
+              "z": 79,
+              "width": 2.4,
+              "height": 3,
+              "depth": 12
+            }
+          ],
+          "coinEntities": [],
+          "powerUpEntities": [],
+          "missions": [
+            {
+              "id": "m1",
+              "title": "COIN COLLECTOR",
+              "description": "Collect 30 coins in a single run",
+              "target": 30,
+              "current": 0,
+              "rewardCoins": 50,
+              "completed": false,
+              "type": "COLLECT_COINS"
+            },
+            {
+              "id": "m2",
+              "title": "HIGH JUMPER",
+              "description": "Perform 10 jumps in a single run",
+              "target": 10,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "JUMP_TIMES"
+            },
+            {
+              "id": "m3",
+              "title": "SLIDER PRO",
+              "description": "Perform 8 rolls under obstacles",
+              "target": 8,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "ROLL_TIMES"
+            },
+            {
+              "id": "m4",
+              "title": "SCORE RUNNER",
+              "description": "Reach a score of 500 in a single run",
+              "target": 500,
+              "current": 0,
+              "rewardCoins": 100,
+              "completed": false,
+              "type": "SCORE_REACH"
+            }
+          ],
+          "chase": {
+            "distance": 2.8,
+            "isNear": false
+          },
+          "runLedger": {
+            "pickupCount": 0,
+            "pickupCoins": 0,
+            "rewardCoins": 0,
+            "rewardedMissionIds": []
+          }
+        }
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "browser": "151.0.7922.34",
+      "sha256": "b552b946fb3245e2d2c88d52f1d04df75154e2fc666f09aa84dc7bd34930475f"
+    }
+  ]
+}

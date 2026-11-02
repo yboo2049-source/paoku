@@ -1,0 +1,67 @@
+[
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview\\F-bright-ramp-roof.png",
+    "to": ".pao17-local\\bright-theme\\preliminary-images\\preview\\F-bright-ramp-roof.png",
+    "sha256": "a1a07fc9044f4cfff788a6fa52f2980e5588709d978e3f5cf04a41068898ad3c"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview\\N-bright-390.png",
+    "to": ".pao17-local\\bright-theme\\preliminary-images\\preview\\N-bright-390.png",
+    "sha256": "09603f5b93c907571ec952f9d5a0d0e41bc82a8654bfb1fcf3fca12958c1c281"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview\\N-bright-desktop.png",
+    "to": ".pao17-local\\bright-theme\\preliminary-images\\preview\\N-bright-desktop.png",
+    "sha256": "e519a1c1317bef5887753f6f9ff0a7d59312791299c836216b9992774b6729c8"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview2\\F-bright-ramp-roof.png",
+    "to": ".pao17-local\\bright-theme\\preliminary-images\\preview2\\F-bright-ramp-roof.png",
+    "sha256": "45a22bec29eaad2ab13930f51bbf70df213e4a0b82845e409c481259724ad0e4"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview2\\N-bright-390.png",
+    "to": ".pao17-local\\bright-theme\\preliminary-images\\preview2\\N-bright-390.png",
+    "sha256": "f43f329c664fd8d4c951601e8bbf217920cd3c5ae9ae0513692236511d8b0931"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview2\\N-bright-desktop.png",
+    "to": ".pao17-local\\bright-theme\\preliminary-images\\preview2\\N-bright-desktop.png",
+    "sha256": "145e70be96b47f0670afe3a6ed85379852ade1882d7a7b82ba138b88954e0ae3"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\shadow-preview\\F-bright-ramp-roof.png",
+    "to": ".pao17-local\\bright-theme\\preliminary-images\\shadow-preview\\F-bright-ramp-roof.png",
+    "sha256": "bcc0e9c49251c13c9e85ce0405e8c11e9c31a37362a2e954d1ef3c7424e42d50"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-first\\F-bright-ramp-roof.png",
+    "to": ".pao17-local\\bright-theme\\preliminary-images\\full-first\\F-bright-ramp-roof.png",
+    "sha256": "e05538b4edb0c600181d95cb398e8d45f08cde8ac14334343369274390db7728"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-first\\N-bright-390.png",
+    "to": ".pao17-local\\bright-theme\\preliminary-images\\full-first\\N-bright-390.png",
+    "sha256": "83372692aa25d4d397b27d6d34b53c809dd5fa979ab596e9259a5e8685fa8c18"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-first\\N-bright-desktop.png",
+    "to": ".pao17-local\\bright-theme\\preliminary-images\\full-first\\N-bright-desktop.png",
+    "sha256": "a96c619312b1c2a87f0eb9fa774db4fb7439947b930c2afa1301a830a1056938"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-final\\F-bright-ramp-roof.png",
+    "to": ".pao17-local\\bright-theme\\preliminary-images\\full-final\\F-bright-ramp-roof.png",
+    "sha256": "667410d55f6febd64f341fc87e87539052c321f770a64d66f81776fcd8d3c340"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-final\\N-bright-390.png",
+    "to": ".pao17-local\\bright-theme\\preliminary-images\\full-final\\N-bright-390.png",
+    "sha256": "172cbc0e7818d268f440a543c333b8bcac35bcfb86ffec1be82ab0fe41892556"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-final\\N-bright-desktop.png",
+    "to": ".pao17-local\\bright-theme\\preliminary-images\\full-final\\N-bright-desktop.png",
+    "sha256": "cb4f1cc0b65253107d84d7ccca2e0036a30cb2d07d97ef4c3a251990df234a24"
+  }
+]

@@ -35,7 +35,7 @@ export interface RenderFrameIdentity {
 import { eventBus } from '../core/eventBus';
 import { AssetCache, SharedMaterials } from './assets';
 import type { AssetLease } from './assets';
-import { LegacyEnvironment } from './environment';
+import { BRIGHT_THEME, LegacyEnvironment } from './environment';
 import { EntityViews } from './entityViews';
 import type { AssetContainer } from '@babylonjs/core';
 
@@ -75,6 +75,7 @@ export class BabylonRenderEngine {
   private currentSkin: { color: string; secondaryColor: string } | null = null;
 
   private shadowGenerator: ShadowGenerator;
+  private sun: DirectionalLight;
   private glowLayer: GlowLayer;
   private pipeline: DefaultRenderingPipeline;
   private speedlineSystem: ParticleSystem;
@@ -113,15 +114,19 @@ export class BabylonRenderEngine {
     this.engine = new Engine(this.canvas, true, { preserveDrawingBuffer: true, stencil: true });
     this.engine.setSize(width, height);
     this.scene = new Scene(this.engine);
-    this.scene.clearColor = new Color4(0.04, 0.06, 0.12, 1.0); // 深深沉浸赛博夜色
+    this.scene.clearColor = Color4.FromColor3(Color3.FromHexString(BRIGHT_THEME.sky), 1);
+    this.scene.fogMode = Scene.FOGMODE_LINEAR;
+    this.scene.fogColor = Color3.FromHexString(BRIGHT_THEME.sky);
+    this.scene.fogStart = BRIGHT_THEME.fogStart; this.scene.fogEnd = BRIGHT_THEME.fogEnd;
 
     // 3. 摄像机 (TargetCamera)
     this.camera = new TargetCamera('camera1', new Vector3(0, 4.5, -9.0), this.scene);
     this.camera.setTarget(new Vector3(0, 1.5, 15.0));
+    this.camera.maxZ = BRIGHT_THEME.cameraFar;
 
     // 4. Glow Layer 与 DefaultRenderingPipeline 高级后处理管线
     this.glowLayer = new GlowLayer('glow', this.scene);
-    this.glowLayer.intensity = 0.65;
+    this.glowLayer.intensity = BRIGHT_THEME.glowIntensity;
 
     this.pipeline = new DefaultRenderingPipeline('defaultPipeline', true, this.scene, [this.camera]);
     // 后处理二选一：保留 GlowLayer 作为主发光，关闭 bloom，避免两套发光通道叠加（双全屏 pass）。
@@ -130,22 +135,27 @@ export class BabylonRenderEngine {
 
     // 5. 赛博光照系统 (Hemispheric + Directional Shadow)
     const hemiLight = new HemisphericLight('hemiLight', new Vector3(0, 1, 0), this.scene);
-    hemiLight.diffuse = new Color3(0.3, 0.95, 1.0); // 青色发光
-    hemiLight.groundColor = new Color3(1.0, 0.2, 0.6); // 粉色地面暗部
-    hemiLight.intensity = 1.1;
+    hemiLight.diffuse = Color3.FromHexString('#D6E6F4');
+    hemiLight.groundColor = Color3.FromHexString('#B2A58F');
+    hemiLight.intensity = 0.4;
 
     const dirLight = new DirectionalLight('dirLight', new Vector3(-0.4, -1, 0.5), this.scene);
     dirLight.position = new Vector3(25, 45, 25);
-    dirLight.intensity = 1.8;
+    dirLight.intensity = 0.7;
+    dirLight.diffuse = Color3.FromHexString('#FFF2D5');
+    dirLight.autoCalcShadowZBounds = true;
+    this.sun = dirLight;
 
-    this.shadowGenerator = new ShadowGenerator(2048, dirLight);
-    this.shadowGenerator.useBlurExponentialShadowMap = true;
-    this.shadowGenerator.blurKernel = 32;
+    this.shadowGenerator = new ShadowGenerator(BRIGHT_THEME.shadowSize, dirLight);
+    this.shadowGenerator.usePercentageCloserFiltering = true;
+    this.shadowGenerator.filteringQuality = ShadowGenerator.QUALITY_MEDIUM;
+    this.shadowGenerator.bias = BRIGHT_THEME.shadowBias;
+    this.shadowGenerator.normalBias = BRIGHT_THEME.shadowNormalBias;
 
     // 6. 构建跑道与赛博城天际线环境
-    this.environment = new LegacyEnvironment(this.scene);
+    this.environment = new LegacyEnvironment(this.scene, this.glowLayer);
     this.materials = new SharedMaterials(this.scene);
-    this.entityViews = new EntityViews(this.scene, this.shadowGenerator, this.materials);
+    this.entityViews = new EntityViews(this.scene, this.shadowGenerator, this.materials, this.glowLayer);
     this.playerAssets = new AssetCache(() => SceneLoader.LoadAssetContainerAsync('/models/', 'player.glb', this.scene).catch(error => {
       console.error('[GLB] player load failed; keeping primitives', error); throw error;
     }), a => {
@@ -550,7 +560,8 @@ export class BabylonRenderEngine {
     const dt = ctx.state === 'PAUSED' || ctx.state === 'GAMEOVER' ? 0 : Math.min(this.engine.getDeltaTime() / 1000, 0.05);
     this.totalTime += dt;
 
-    this.environment.sync(ctx.player.z);
+    this.environment.sync(ctx.player.z, ctx.state);
+    this.sun.position.set(ctx.player.x + 25, ctx.player.y + 45, ctx.player.z + 25);
     this.ensurePlayerAsset(this.playerBodyMesh);
 
     // 1. 同步玩家位置与动作
@@ -686,6 +697,7 @@ export class BabylonRenderEngine {
 
     // 7. 同步障碍物/金币/道具
     this.entityViews.sync(ctx, this.totalTime, dt);
+    this.entityViews.limitShadows(ctx.player.z, BRIGHT_THEME.shadowRange);
 
     // 8. 执行渲染
     this.scene.render();

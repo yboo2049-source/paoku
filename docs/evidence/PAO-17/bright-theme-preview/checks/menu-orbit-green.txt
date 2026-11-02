@@ -1,0 +1,12 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao17-theme.test.ts tests/unit/pao17-theme-lifecycle.test.ts tests/unit/pao17-ramp-view.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+
+ Test Files  3 passed (3)
+      Tests  12 passed (12)
+   Start at  22:50:40
+   Duration  3.52s (transform 219ms, setup 0ms, import 8.03s, tests 849ms, environment 0ms)

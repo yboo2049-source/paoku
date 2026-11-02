@@ -1,0 +1,15 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao17-local/theme-acceptance.config.ts --retries=0 tests/e2e/pao17-ramp-view.spec.ts
+
+[WebServer] (node:19952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:20672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\pao17-ramp-view.spec.ts:5:29 › F actual wedge-roof walk, triangle support and exit at base Y=0 (5.8s)
+  ok 2 tests\e2e\pao17-ramp-view.spec.ts:5:29 › F actual wedge-roof walk, triangle support and exit at base Y=5 (9.1s)
+
+  2 passed (19.8s)

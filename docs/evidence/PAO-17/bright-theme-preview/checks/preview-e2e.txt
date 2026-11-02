@@ -1,0 +1,18 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao17-local/theme-acceptance.config.ts --retries=0 tests/e2e/pao17-theme.spec.ts tests/e2e/pao17-ramp-view.spec.ts
+
+[WebServer] (node:4176) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:16088) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\pao17-ramp-view.spec.ts:5:29 › F actual wedge-roof walk, triangle support and exit at base Y=0 (5.5s)
+  ok 2 tests\e2e\pao17-ramp-view.spec.ts:5:29 › F actual wedge-roof walk, triangle support and exit at base Y=5 (4.7s)
+  ok 3 tests\e2e\pao17-theme.spec.ts:7:1 › F successful legacy GLB and shadows warmed before 20 bounded recycles / 10 resets / full disposal (3.3s)
+  ok 4 tests\e2e\pao17-theme.spec.ts:50:37 › N bright desktop keyboard motion pause resume collision and restart (28.5s)
+  ok 5 tests\e2e\pao17-theme.spec.ts:50:37 › N bright 390 touch motion pause resume collision and restart (28.7s)
+
+  5 passed (1.3m)

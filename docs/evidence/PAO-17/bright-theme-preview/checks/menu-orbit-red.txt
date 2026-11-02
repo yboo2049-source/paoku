@@ -1,0 +1,39 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao17-theme.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+stdout | tests/unit/pao17-theme.test.ts > covers the existing 360-degree menu orbit with owned backdrop geometry and hides it in-run
+BJS - [22:50:08]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao17-theme.test.ts (4 tests | 1 failed) 367ms
+   × covers the existing 360-degree menu orbit with owned backdrop geometry and hides it in-run 66ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao17-theme.test.ts > covers the existing 360-degree menu orbit with owned backdrop geometry and hides it in-run
+AssertionError: expected null to be truthy
+
+- Expected:
+true
+
++ Received:
+null
+
+ ❯ tests/unit/pao17-theme.test.ts:48:20
+     46| it('covers the existing 360-degree menu orbit with owned backdrop geom…
+     47|   const { scene, env } = setup(); const backdrop = scene.getMeshByName…
+     48|   expect(backdrop).toBeTruthy(); const points = vertices(backdrop);
+       |                    ^
+     49|   for (const axis of ['x', 'z'] as const) { expect(Math.min(...points.…
+     50|   env.sync(0, 'GAMEOVER'); expect(backdrop!.isEnabled()).toBe(false); …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  22:50:05
+   Duration  3.09s (transform 73ms, setup 0ms, import 2.43s, tests 367ms, environment 0ms)

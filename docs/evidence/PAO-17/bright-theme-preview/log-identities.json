@@ -4,157 +4,157 @@
     {
       "raw": ".pao17-local/bright-theme/final-build.txt",
       "rawSha256": "92eb063dfcba912c1ec932629952de3b4af721968f5fdb43019cfd02b4039ab7",
-      "submitted": "logs/final-build.txt",
+      "submitted": "checks/final-build.txt",
       "submittedUtf8LfSha256": "be6aaae33414bee3753306dc352b12e763f903bfb5e7b166b37334584ebe4783"
     },
     {
       "raw": ".pao17-local/bright-theme/final2-build.txt",
       "rawSha256": "a7e1a704b6bbd0fd8941f62231aa58018e43e61824cdfb3d23785035cbb3d20f",
-      "submitted": "logs/final2-build.txt",
+      "submitted": "checks/final2-build.txt",
       "submittedUtf8LfSha256": "314518e99a3377e785edd113977e9eba407d35e0954b042721bae177c37266e8"
     },
     {
       "raw": ".pao17-local/bright-theme/final2-unit.txt",
       "rawSha256": "9524f97ab228498977afaeb72ae817f76fe8b82946d0bc9b2a94be293298d7a8",
-      "submitted": "logs/final2-unit.txt",
+      "submitted": "checks/final2-unit.txt",
       "submittedUtf8LfSha256": "3220307fb89920d72da027a695af6ff0c3ad7b36f1f53d98f51ef1d45a721450"
     },
     {
       "raw": ".pao17-local/bright-theme/full-build.txt",
       "rawSha256": "cb3a7fd836ada7411b14718808f9492bf14f39c9267387562e0076ddb862ef8a",
-      "submitted": "logs/full-build.txt",
+      "submitted": "checks/full-build.txt",
       "submittedUtf8LfSha256": "b5dfddf2a17ed9f4972d3906127b7aea1c20df97163a43d2a2239689ded16156"
     },
     {
       "raw": ".pao17-local/bright-theme/full-final-e2e.txt",
       "rawSha256": "fd8e90f355be4eba209d329f6e6f6f2f0634b27d312f2b3c6c367c3075b7eab5",
-      "submitted": "logs/full-final-e2e.txt",
+      "submitted": "checks/full-final-e2e.txt",
       "submittedUtf8LfSha256": "a0b55dfed9ce11368b52ff8333e17713d250fd60e6acfabef4e87d45de7000aa"
     },
     {
       "raw": ".pao17-local/bright-theme/full-first-e2e.txt",
       "rawSha256": "9a4e7f4726ca8092b0f5297501ad06e4bb4a272cdabdf19e8eca2554f2bd67e2",
-      "submitted": "logs/full-first-e2e.txt",
+      "submitted": "checks/full-first-e2e.txt",
       "submittedUtf8LfSha256": "fec3c839d41e19d1ca42447ef4956653f4de3c0c298a540d190664e51a1f3670"
     },
     {
       "raw": ".pao17-local/bright-theme/full-recheck-e2e.txt",
       "rawSha256": "be72df226a1cd8676a65fbd7769f11b85d17e159b22acd32544a3cf6551a6efa",
-      "submitted": "logs/full-recheck-e2e.txt",
+      "submitted": "checks/full-recheck-e2e.txt",
       "submittedUtf8LfSha256": "72ba68ce7920fee56b8906c6d1a894ab3650bf3219e18ef1538c0599df7c79df"
     },
     {
       "raw": ".pao17-local/bright-theme/full-unit-after-import.txt",
       "rawSha256": "b296d74e4f6549132f25bcd47793a031bff25bc647a3c63e0e4ea069997df319",
-      "submitted": "logs/full-unit-after-import.txt",
+      "submitted": "checks/full-unit-after-import.txt",
       "submittedUtf8LfSha256": "996ad116533b42ca8a826a8d21ff71f79a388e3ddb6e58dcc30fbdf77ee8c668"
     },
     {
       "raw": ".pao17-local/bright-theme/full-unit-final.txt",
       "rawSha256": "2cc383aed04b39aa1bc3a53e35fb3a054431e0fdd54199e27a7d86c14f121cc7",
-      "submitted": "logs/full-unit-final.txt",
+      "submitted": "checks/full-unit-final.txt",
       "submittedUtf8LfSha256": "5b292c02277a811670bcd29ad5cef13dea796447cbed22367de6e6400cd986ed"
     },
     {
       "raw": ".pao17-local/bright-theme/full-unit-first.txt",
       "rawSha256": "c15e53a1ad2a92c45a218848e3ff12f94986866aab616a423ed0a0f023fddfcc",
-      "submitted": "logs/full-unit-first.txt",
+      "submitted": "checks/full-unit-first.txt",
       "submittedUtf8LfSha256": "db08bb4f8052174486e6ced070c949601c0c48f13444a0cee9b62bb89a4ca392"
     },
     {
       "raw": ".pao17-local/bright-theme/menu-orbit-green.txt",
       "rawSha256": "78138206287769d7dc03f5962741c5baf4a06707de1966829312f7a6d7ddba6d",
-      "submitted": "logs/menu-orbit-green.txt",
+      "submitted": "checks/menu-orbit-green.txt",
       "submittedUtf8LfSha256": "e42255da4310c50a30a399537e7cb55d90e61e35dc5f9013917f51bfd5430294"
     },
     {
       "raw": ".pao17-local/bright-theme/menu-orbit-red.txt",
       "rawSha256": "36c8e5c3d2eaafb37c73a44f674aea3f5e319769cf37acd5a8ba75f991406422",
-      "submitted": "logs/menu-orbit-red.txt",
+      "submitted": "checks/menu-orbit-red.txt",
       "submittedUtf8LfSha256": "aeb51a7a127dfe681cafb6a44acc4c4a33cd8f43c59228c72d5934e073edb01f"
     },
     {
       "raw": ".pao17-local/bright-theme/preview-e2e.txt",
       "rawSha256": "388653e70b3aebe66abce3f50cc16f1185f2f126116b3fb04b0ebadbd6b80fb9",
-      "submitted": "logs/preview-e2e.txt",
+      "submitted": "checks/preview-e2e.txt",
       "submittedUtf8LfSha256": "6827d261700eee81a0355779eaae3ef4e7d7a44b9cf49e8bb1e87440373d46f0"
     },
     {
       "raw": ".pao17-local/bright-theme/preview2-build.txt",
       "rawSha256": "f701a19dca2eeaa1af3de9776566ce94ea97358c477f9fd1e2490d076f1929fc",
-      "submitted": "logs/preview2-build.txt",
+      "submitted": "checks/preview2-build.txt",
       "submittedUtf8LfSha256": "887e47bdafc6f9c205f47ff18d64a727a09ddd27e8fc4d281e21adf67a1d0df7"
     },
     {
       "raw": ".pao17-local/bright-theme/preview2-e2e.txt",
       "rawSha256": "3c73b1691c3fdd44858174bdb8c032cc4ed1d5fc6498a5a25610988514991196",
-      "submitted": "logs/preview2-e2e.txt",
+      "submitted": "checks/preview2-e2e.txt",
       "submittedUtf8LfSha256": "c4a483c94b591282ce9826ca7b9986b3a7a1283f463c256573e953f27b98a645"
     },
     {
       "raw": ".pao17-local/bright-theme/shadow-debug.txt",
       "rawSha256": "3c62ac7899afba51cc1c213cb2315d898d17fc73ded521e50202a04546d35b28",
-      "submitted": "logs/shadow-debug.txt",
+      "submitted": "checks/shadow-debug.txt",
       "submittedUtf8LfSha256": "1806466a94a9cf4b7ec1889511fa21f27d2fc55b9c1c3c3721bc0d5f254effb9"
     },
     {
       "raw": ".pao17-local/bright-theme/shadow-preview-e2e.txt",
       "rawSha256": "c6d9f337bb4c7c54c94584932d44febdb817b785e0e139e2ee52df9079ed11e9",
-      "submitted": "logs/shadow-preview-e2e.txt",
+      "submitted": "checks/shadow-preview-e2e.txt",
       "submittedUtf8LfSha256": "e7e8ab3f1d437b114846c1612aca4522e0c9098efb3ade9f1dbe3c6fc9fe981f"
     },
     {
       "raw": ".pao17-local/bright-theme/task1-2-build.txt",
       "rawSha256": "9fc267639732d9cb67fb95b27961c7cc7fbe8855b8e6cae26772ade235dbd480",
-      "submitted": "logs/task1-2-build.txt",
+      "submitted": "checks/task1-2-build.txt",
       "submittedUtf8LfSha256": "95a28330311509f1eb51f853854d7fe9224675329e5530e942293f27227e617e"
     },
     {
       "raw": ".pao17-local/bright-theme/task1-2-green-attempt1.txt",
       "rawSha256": "9499a1122afb93bb5717ee6c2878e063059ca821aa7e35cc2517195afd0fcbde",
-      "submitted": "logs/task1-2-green-attempt1.txt",
+      "submitted": "checks/task1-2-green-attempt1.txt",
       "submittedUtf8LfSha256": "56d45fba3d12e9d3466c895b9e57ca2ba8be94d3529b3fa8c5cc28a0147e50c7"
     },
     {
       "raw": ".pao17-local/bright-theme/task1-red.txt",
       "rawSha256": "e7f54ad4d517d347f8aa9ddc02af7c17a73dad8a14dbf39b44f648f265866121",
-      "submitted": "logs/task1-red.txt",
+      "submitted": "checks/task1-red.txt",
       "submittedUtf8LfSha256": "7d9f0aff75e82d2c164b059b463a5ffa7b2bd2ee768bcdafb853e02d570b8e35"
     },
     {
       "raw": ".pao17-local/bright-theme/task2-red.txt",
       "rawSha256": "4f2646656b7a03cc0771dd7093dfe8e1b6ea53ac6a5a56e4a54d99ef3fd146cb",
-      "submitted": "logs/task2-red.txt",
+      "submitted": "checks/task2-red.txt",
       "submittedUtf8LfSha256": "a4d6dc8fa53935f487f915a6cd84f8e1ee4ea4bb15f041199ba3ca9a8e88cd49"
     },
     {
       "raw": ".pao17-local/bright-theme/task3-build-final.txt",
       "rawSha256": "383e7906158e695f546a3f81247093454e43c46b042c3be3ed7ce52ab7d112c4",
-      "submitted": "logs/task3-build-final.txt",
+      "submitted": "checks/task3-build-final.txt",
       "submittedUtf8LfSha256": "4b69279fbd55a5dc3daedef8476b9647013f8c7b484e2dc7d216539d54e26cd6"
     },
     {
       "raw": ".pao17-local/bright-theme/task3-build.txt",
       "rawSha256": "d306ecdd3440007a026a675e22f94b62e9d7031b38392686d2a09e7cb1722c27",
-      "submitted": "logs/task3-build.txt",
+      "submitted": "checks/task3-build.txt",
       "submittedUtf8LfSha256": "6a5a2f815f37f911f21f7cc4d620a9f5da126dc8de2dafd64b5254d10c2a7677"
     },
     {
       "raw": ".pao17-local/bright-theme/task3-green-attempt1.txt",
       "rawSha256": "05d5f6450c7695e809165fe9f063a95ac4e6ad72393f2ff49e2ccd77397105b4",
-      "submitted": "logs/task3-green-attempt1.txt",
+      "submitted": "checks/task3-green-attempt1.txt",
       "submittedUtf8LfSha256": "a8a2cc243607a1d6c178bd32c08ad7a84a17195622668afd46e3e770af4d5c60"
     },
     {
       "raw": ".pao17-local/bright-theme/task3-green-final.txt",
       "rawSha256": "322527c511efe338f6a4d919779cdd4c9266724dc407155de09916cc455d758c",
-      "submitted": "logs/task3-green-final.txt",
+      "submitted": "checks/task3-green-final.txt",
       "submittedUtf8LfSha256": "70408c1362ce2f699e1c02011396c2cf077d8e3d3f0144a26ceb32fc86c4e0f9"
     },
     {
       "raw": ".pao17-local/bright-theme/task3-red.txt",
       "rawSha256": "3136c244bc49d2c8569ff32f679c62d5ce752ec5dcbe4694c375a4ae4d8b33b0",
-      "submitted": "logs/task3-red.txt",
+      "submitted": "checks/task3-red.txt",
       "submittedUtf8LfSha256": "a3f4dce1c2a8b96b099e56b2f365744085aa08ed81b15ae55471bc9487eb38fb"
     }
   ]

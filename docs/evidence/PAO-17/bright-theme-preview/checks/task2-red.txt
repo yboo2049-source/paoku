@@ -1,0 +1,59 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao17-theme-lifecycle.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+stdout | tests/unit/pao17-theme-lifecycle.test.ts > owns a finite bright environment and explicit glow whitelist, with no growth across 20 recycles and 10 resets
+BJS - [22:28:08]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-theme-lifecycle.test.ts > removes and re-adds only owned near casters as an existing entity changes distance
+BJS - [22:28:09]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao17-theme-lifecycle.test.ts (2 tests | 2 failed) 421ms
+   × owns a finite bright environment and explicit glow whitelist, with no growth across 20 recycles and 10 resets 412ms
+   × removes and re-adds only owned near casters as an existing entity changes distance 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao17-theme-lifecycle.test.ts > owns a finite bright environment and explicit glow whitelist, with no growth across 20 recycles and 10 resets
+AssertionError: expected +0 to be 5 // Object.is equality
+
+- Expected
++ Received
+
+- 5
++ 0
+
+ ❯ tests/unit/pao17-theme-lifecycle.test.ts:14:25
+     12|   const engine = new NullEngine(); engines.push(engine); const scene =…
+     13|   const env = new LegacyEnvironment(scene, glow); const signal = scene…
+     14|   expect(signal.length).toBe(5); expect(glowCount(glow)).toBe(5);
+       |                         ^
+     15|   const track = scene.meshes.find(m => m.metadata?.themeRole === 'trac…
+     16|   expect((track.material as any).diffuseColor.toHexString()).toBe('#65…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/pao17-theme-lifecycle.test.ts > removes and re-adds only owned near casters as an existing entity changes distance
+AssertionError: expected 'undefined' to be 'function' // Object.is equality
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ tests/unit/pao17-theme-lifecycle.test.ts:33:46
+     31|   const shadow = new ShadowGenerator(128, new DirectionalLight('sun', …
+     32|   const mats = new SharedMaterials(scene); const views = new EntityVie…
+     33|   expect(typeof (views as any).limitShadows).toBe('function');
+       |                                              ^
+     34|   const f = { obstacles: [{ id: 'train', type: 'STATIC_TRAIN', x: 0, y…
+     35|   views.sync(immutableCopy(f), 0, 0); views.limitShadows(0, 80); expec…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  22:28:06
+   Duration  2.93s (transform 107ms, setup 0ms, import 2.25s, tests 421ms, environment 0ms)

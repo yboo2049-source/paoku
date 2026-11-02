@@ -2,6 +2,12 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-02] 下一批明亮主题/真实楔形坡方案待审
+
+- 首批结构通过后，已准备[下一增量设计](docs/superpowers/specs/2026-11-02-pao17-bright-theme-preview-design.md)：推荐原17聊天做一个明亮城市轨道工程预览、有界循环/菜单展台状态及逻辑驱动楔形坡；main/物理/应用/DOM等保持只读。
+- 当前基线17@536f54b，16@c7b09e6仅候选资料；四件GLB未获生产资格，手工修整仍延期，不再重复自动采样。15人工待办、18正式动作与后续跨分支整合不随本方案启动。
+- 已给具体几何/色板/循环/验证边界供用户审批，未进入writing-plans、创建实现提示词或启动任务，未写游戏代码/改Linear/合并。批准后再同步共享实施契约及固定接续提交。
+
 ## [2026-11-02] PAO-17首批结构/生命周期A→B验收通过
 
 - [536f54b独立主审](docs/reviews/2026-11-02-pao17-structure-implementation-review.md)：远程同SHA，已批准的assets/environment/entityViews拆分与I-01同次帧身份/I-02释放桥通过本阶段验收；父17不Done，生产资产/主题/18仍递延。

@@ -4,39 +4,34 @@
 
 ## 1. 当前要做什么
 
-PAO-17明亮主题已独立验收，最终实现分支82d2d47已推送，验收记录d9c3d58已推主规划分支。不要重复派发或重验同一主题批次。
+PAO-17明亮主题已独立验收，最终82d2d47已推送，验收记录d9c3d58已推主规划树；不重复派发或重验。
 
-当前是[PAO-15/18并行设计准备](../plans/2026-11-03-pao15-pao18-preparation-prompts.md)：
+PAO-15@8c4b09f与PAO-18@f2680f4设计准备均已提交推送，主Agent已做[设计审查](../reviews/2026-11-03-pao15-pao18-design-review.md)。用户在明确两A方案及“准备下一轮提示词，不自动启动”后回复“继续吧”，已批准具体A方案与本次准备。
 
-- PAO-15原聊天：设计本地自动Idle/Run/Jump/Slide技术样本，不重做已验收绑定。
-- PAO-18专属聊天：设计动作/接触反馈/镜头和最小接口，不写游戏实现。其独立worktree已经创建并核验，见第2节；本轮复核时已出现设计草案/接口矩阵/准备证据，尚未提交，不重复派发，等待任务方交付。
-- 具体设计待任务方返回、主Agent审查及用户批准；不启动动作制作/18实现，不合并。人工权重/拓扑/动作精修继续延期，父依赖保留。
-- 用户要求“给某任务提示词”时，主Agent先完成第3节目录/分支/基线准备，再给提示词。只在文字里写一个目录不算准备完成。
+当前入口为[批准执行计划与两份完整提示词](../plans/2026-11-03-pao15-pao18-approved-execution.md)：用户手动粘贴原15/18聊天后，先在各树writing-plans，再执行限定批次。15制作隔离四动作技术样本；18先做无需新资产/公共桥的角色控制器与镜头工程实现。I-03、main/types、动态HUD及生产资产接入另批串行；人工精修延期、父依赖保留。主Agent未自动启动任务或Agent、未写游戏实现或合并。
+
+下发任何新提示词前仍须实际核验目标worktree与Git，不以文字目录代替准备。
 
 ## 2. 工作树当前状态：唯一事实表
 
-这是本机实际Git登记与命令核验结果，不代表其他机器自动有这些目录。新会话须快速复核；HEAD若已经推进，应审阅实际进展，不reset回表中旧值。
+2026-11-03实际Git登记核验；后续HEAD若推进先审新增，不reset到旧值。
 
 | 任务 | 实际目录 | 分支 | 本次核验HEAD | 状态 |
 | --- | --- | --- | --- | --- |
-| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 修订前18a5b28；以最终HEAD为准 | 已存在；旧运行时代码/56单测，不是实现起点 |
-| M1终点 | D:/worker/paoku-sessions/pao-14 | codex/pao-14-application | 19aa314 | 已存在，10→14链已审 |
-| PAO-15 | D:/worker/paoku-sessions/pao-15 | codex/pao-15-character-assets | 64c4f31 | 已创建/复用，跟踪内容干净 |
-| PAO-16 | D:/worker/paoku-sessions/pao-16 | codex/pao-16-world-assets | c7b09e6 | 已创建，跟踪内容干净；不追加同类采样 |
-| PAO-17 | D:/worker/paoku-sessions/pao-17 | codex/pao-17-render | 82d2d47 | 已创建，跟踪内容干净；原.pao17-local未追踪证据保留 |
-| PAO-18 | D:/worker/paoku-sessions/pao-18 | codex/pao-18-motion-camera | 82d2d47 | 已创建且登记；已有未跟踪设计文档，保留等待交付 |
-| PAO-19 | D:/worker/paoku-sessions/pao-19 | codex/pao-19-ui | ed39cb9 | 已创建，跟踪内容干净，UI已Done |
-| 原资产只读树 | D:/worker/paoku-sessions/glb-review | detached | 7a2fb29 | 已存在，不覆盖原GLB |
+| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点2c3d51c；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
+| M1终点 | D:/worker/paoku-sessions/pao-14 | codex/pao-14-application | 19aa314 | 已审 |
+| PAO-15 | D:/worker/paoku-sessions/pao-15 | codex/pao-15-character-assets | 8c4b09f | 干净，远端同SHA，A设计批准；四clip尚未生成 |
+| PAO-16 | D:/worker/paoku-sessions/pao-16 | codex/pao-16-world-assets | c7b09e6 | 不追加同类采样 |
+| PAO-17 | D:/worker/paoku-sessions/pao-17 | codex/pao-17-render | 82d2d47 | 已审；原.pao17-local证据保留 |
+| PAO-18 | D:/worker/paoku-sessions/pao-18 | codex/pao-18-motion-camera | f2680f4 | 干净，远端同SHA，A设计批准；未实现 |
+| PAO-19 | D:/worker/paoku-sessions/pao-19 | codex/pao-19-ui | ed39cb9 | 已审Done |
+| 原资产只读树 | D:/worker/paoku-sessions/glb-review | detached | 7a2fb29 | 不覆盖原GLB |
 
-PAO-18实际核验详情：
+15/18的顶层、分支、HEAD、共同Git目录D:/worker/paoku/.git、含未跟踪项status已在目标目录核对，并与主仓worktree list交叉核验。15完整HEAD=8c4b09fc5351778fe8db19858d52924ac70463b9；18完整HEAD=f2680f46ddef89a38c20496719a31abed9c3caf1；ls-remote核实两个分支均已推送一致。
 
-- Git顶层为D:/worker/paoku-sessions/pao-18，分支codex/pao-18-motion-camera，HEAD为82d2d47b333de2cc0da778591f99df8fe98084ed。
-- 主仓worktree list --porcelain包含该目录/分支；其.git为指向D:/worker/paoku/.git/worktrees/pao-18的文件，git-common-dir为D:/worker/paoku/.git。linked worktree的.git通常是文件，不要求它是目录；文件可能隐藏，优先用Git命令核验。
-- 已从已审17主题建立，不含15新runner或19新UI；未安装依赖、运行本树基线/浏览器或推送远程18分支。没有origin/codex/pao-18-motion-camera不等于本地树不存在，不用空提交证明建树。
-- 当前直接复用，不再新建第二份同名/同分支worktree。新会话若访问不到它，按第3节处理，不能直接抄“已创建”。
-- 本轮后续复核发现未跟踪的docs/superpowers/specs/2026-11-03-pao18-motion-camera-design.md、docs/render/pao18-interface-and-validation.md及docs/evidence/PAO-18/preparation/read-audit.md。头部标明候选v0.1、待审/待批准；它们由任务树新增，本主Agent不暂存、不改写、不代提交。先前“树干净”是建树时快照，不能再作为当前状态；等任务方最终提交/推送后按固定SHA审查，不重发相同准备任务。
+15准备基线64c4f3120224f42995bc4b0fae544feae139d380、18准备基线82d2d47b333de2cc0da778591f99df8fe98084ed均为各自HEAD祖先，exit0。本轮直接复用，不建第二份树、不改写或代提交任务产物。linked worktree的.git是文件，不能用目录存在与否替代Git核验。
 
-固定完整准备基线：15为64c4f3120224f42995bc4b0fae544feae139d380；18为82d2d47b333de2cc0da778591f99df8fe98084ed。7/8/9规划树仍为pao-7@c66b59e、pao-8@be6c7d5、pao-9@59fc682。
+当前主Agent未重跑两树运行环境/浏览器，任务方hook成绩不当新实现验收；不自动安装或启动服务。聊天是否选中对应目录仍由用户手动确认。7/8/9规划树仍为pao-7@c66b59e、pao-8@be6c7d5、pao-9@59fc682。
 
 ## 3. 主Agent下发提示词前必须完成的准备
 
@@ -98,9 +93,9 @@ worktree已创建，不代表Codex新聊天已选中它；提示词写路径也�
 
 Web 3D跑酷，Vite/TypeScript/Babylon.js；不是Godot。主Agent只规划、约束、准备工作树、文档和独立验收，不直接写游戏实现。用户在任务聊天手动粘贴，禁止自动启动任务/子Agent/新任务聊天、合并或删除工作树。
 
-已批准的总体明亮城市轨道方向、M1及已审17主题不重审。当前15/18只设计，具体方案审查批准后再派writing-plans/实现；人工刷权/拓扑/动作精修延期，无云上传/Tripo/Mixamo调用。已授权的可逆准备动作自行完成，不重复索取相同许可。
+已批准的总体明亮城市轨道方向、M1及已审17主题不重审。当前15/18的A方案已批准，下一批按新执行计划先写本树计划再实现限定工程范围；人工刷权/拓扑/动作精修延期，无云上传/Tripo/Mixamo调用。已授权的可逆准备动作自行完成，不重复索取相同许可。
 
-当前[两份提示词](../plans/2026-11-03-pao15-pao18-preparation-prompts.md)：第1节对应15；第2节对应18专属聊天。18本轮已出现准备草案，当前等待交付，不重复粘贴启动。两个任务只写各自设计/规格/接口矩阵和纯文本证据，其他源码/资产/旧测试/共享总纲只读。15/18不能互取运行中未审产物为生产输入，不能把四类技术样本当完整13动作或父Done。具体路径/白名单以该文件为准。
+当前[两份批准后提示词](../plans/2026-11-03-pao15-pao18-approved-execution.md)：第5节给15，第6节给18。工作树已复用并核验，用户手动粘贴后才启动。写权按新计划，旧准备提示词仅查历史。15/18不互取运行中未审资产；四样本不等于13正式动作，18首批不声称真实I-03或动态HUD接入。
 
 ## 6. 已验收状态与来源
 
@@ -110,10 +105,10 @@ Project 492a7fa2-dba9-4b7b-9d22-154822bbe5a2，Workspace Paoku-v1，Team PAO，�
 | --- | --- | --- |
 | 6、10～14 | M1链完成，终点19aa314；已关闭问题不重开 | Done |
 | 7/8/9 | 9技术契约和7适用UI条目已接受，正式风格/设备预算未全部冻结 | In Review |
-| 15 | 64c4f31自动骨架/真实蒙皮/独立导入通过，基础动作设计待做 | Backlog |
+| 15 | 64c4f31绑定已审；8c4b09f四样本A设计已审批准，待手动执行 | Backlog |
 | 16 | 3de6e54和c7b09e6技术探针通过，四件生产资格false | Backlog |
 | 17 | fcddba1设计、536f54b结构/I-01/I-02、82d2d47明亮主题均已审 | Backlog |
-| 18 | 独立worktree已建，已出现未提交候选设计，待任务方交付；正式动作/接口前置仍有缺口 | Backlog |
+| 18 | f2680f4动作/镜头A设计已审批准且推送，待手动执行首批工程；正式动作/共享桥仍缺 | Backlog |
 | 19 | ed39cb9 UI最终复审通过，两项P2已关闭 | Done |
 
 按需查报告，不重复跑已审阶段：

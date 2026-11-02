@@ -1,10 +1,10 @@
 # 系统架构与模块隔离设计 (Architecture Spec)
 
-## 2026-11-03 PAO-15/18并行准备写权
+## 2026-11-03 PAO-15/18 A方案实施写权
 
-[准备交接](plans/2026-11-03-pao15-pao18-preparation-prompts.md)使用15@64c4f31及新建18@82d2d47独立树；当前两者均只写各自设计/规格/接口矩阵和纯文本证据。15不改已审派生工程/脚本/旧GLB，18不写characterView/cameraRig/babylon/main/types或导入资产。18含已审17主题，但不含15新角色/19新UI；不得把并行设计或未审产物当正式契约。
+[批准执行计划与完整提示词](plans/2026-11-03-pao15-pao18-approved-execution.md)复用15@8c4b09f与18@f2680f4，均已推送且干净。15只写新派生工程/四clip导出及manifest/专属工具测试证据；18只写characterView/cameraRig/babylon及新专属测试证据。主Agent只规划/准备/验收，旧资产和旧测试只读，不合并15/19。
 
-未来root世界位置仍归模拟，骨架只作用visual child；动画末帧不改变接触/伤害/时长。既有Player的contact/supportSurfaceId/supportSample与I-01为实际输入，完整运动阶段/事实envelope或I-03去重桥缺口由18明确提出最小请求，Dispatcher另行定串行入口，不自行补全公共schema。
+15保持23骨rest/skin/IBM，manifest登记固定来源/产物hash、骨架/clip版本、30fps区间/边界键、坐标/手性、marker和质量限制。root复制模拟presentation，局部骨姿不决定世界位移/接触/无敌。18保留17资源生命周期，角色实例和相机状态分属各组件；只读同帧身份/context/bounds。main/types/physics/总线/UI/assets/environment/entityViews默认只读；I-03、时间秒数透传、动态HUD及生产资产注册另提最小请求并由唯一入口写入者串行实施。
 
 ## 2026-11-02 PAO-17主题/坡面本批写权
 

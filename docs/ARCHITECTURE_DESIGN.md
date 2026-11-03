@@ -2,6 +2,8 @@
 
 ## 2026-11-03 PAO-15/18 A方案实施写权
 
+本批已交付15@614179d及18@5bd31cc，主Agent独立检查：[15独立主审](reviews/2026-11-03-pao15-basic-motion-sample-review.md)build/269单测通过、完整E2E45/46（旧车尾下降碰撞）；[18独立主审](reviews/2026-11-03-pao18-controller-camera-review.md)build/292单测及新增7项E2E通过、完整59/60（旧字体网络错误）。两项最终验收暂缓，不重复派发已完成制作/工程批次，不以技术子集或旧成绩代替完整门禁；后续先调查/处理失败并完整复验，未授权新资产/I-03/HUD集成。以下为已批准范围及持续生效的技术契约。
+
 [批准执行计划与完整提示词](plans/2026-11-03-pao15-pao18-approved-execution.md)复用15@8c4b09f与18@f2680f4，均已推送且干净。15只写新派生工程/四clip导出及manifest/专属工具测试证据；18只写characterView/cameraRig/babylon及新专属测试证据。主Agent只规划/准备/验收，旧资产和旧测试只读，不合并15/19。
 
 15保持23骨rest/skin/IBM，manifest登记固定来源/产物hash、骨架/clip版本、30fps区间/边界键、坐标/手性、marker和质量限制。root复制模拟presentation，局部骨姿不决定世界位移/接触/无敌。18保留17资源生命周期，角色实例和相机状态分属各组件；只读同帧身份/context/bounds。main/types/physics/总线/UI/assets/environment/entityViews默认只读；I-03、时间秒数透传、动态HUD及生产资产注册另提最小请求并由唯一入口写入者串行实施。

@@ -4,13 +4,16 @@
 
 ## 1. 当前要做什么
 
-PAO-17明亮主题已独立验收，最终82d2d47已推送，验收记录d9c3d58已推主规划树；不重复派发或重验。
+PAO-17明亮主题已独立验收，82d2d47已推送，记录d9c3d58；不重复派发/另做主题主审。
 
-PAO-15@8c4b09f与PAO-18@f2680f4设计准备均已提交推送，主Agent已做[设计审查](../reviews/2026-11-03-pao15-pao18-design-review.md)。用户在明确两A方案及“准备下一轮提示词，不自动启动”后回复“继续吧”，已批准具体A方案与本次准备。
+15@614179d四动作样本与18@5bd31cc控制器/镜头均已交付推送。主Agent已独立运行检查，但最终验收暂缓：
 
-当前入口为[批准执行计划与两份完整提示词](../plans/2026-11-03-pao15-pao18-approved-execution.md)：用户手动粘贴原15/18聊天后，先在各树writing-plans，再执行限定批次。15制作隔离四动作技术样本；18先做无需新资产/公共桥的角色控制器与镜头工程实现。I-03、main/types、动态HUD及生产资产接入另批串行；人工精修延期、父依赖保留。主Agent未自动启动任务或Agent、未写游戏实现或合并。
+- [15主审](../reviews/2026-11-03-pao15-basic-motion-sample-review.md)：build/269单测/工具与重开导出/四clip专项通过；完整E2E45/46，旧坡顶用例下降越过车尾时碰撞GAMEOVER，未解决根因。品质仍需局部修整。
+- [18主审](../reviews/2026-11-03-pao18-controller-camera-review.md)：build/292单测/新增7项E2E/实际资源与投影通过；完整59/60，旧PAO-12用例afterEach捕获Google Fonts网络错误。未屏蔽错误或重试换绿。
 
-下发任何新提示词前仍须实际核验目标worktree与Git，不以文字目录代替准备。
+下一步先调查/处理完整门禁失败并完整复验，不重复四clip制作或控制器实现，不自动放行集成。I-03/main/types/动态HUD/新runner生产接入仍未开放，父任务和依赖保留，人工精修延期。两份[A方案执行提示词](../plans/2026-11-03-pao15-pao18-approved-execution.md)是已交付批次的历史授权，不能再次整批启动。当前未准备新物理/QA任务树或新派发提示词，若要下发，先明确白名单并完成实际工作树/Git核验。
+
+主Agent只做审查/文档，未修改游戏、启动Agent/聊天/服务常驻或合并；本轮临时验证服务随Playwright退出。
 
 ## 2. 工作树当前状态：唯一事实表
 
@@ -18,20 +21,20 @@ PAO-15@8c4b09f与PAO-18@f2680f4设计准备均已提交推送，主Agent已做[�
 
 | 任务 | 实际目录 | 分支 | 本次核验HEAD | 状态 |
 | --- | --- | --- | --- | --- |
-| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点2c3d51c；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
+| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点3c8a21b；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
 | M1终点 | D:/worker/paoku-sessions/pao-14 | codex/pao-14-application | 19aa314 | 已审 |
-| PAO-15 | D:/worker/paoku-sessions/pao-15 | codex/pao-15-character-assets | 8c4b09f | 干净，远端同SHA，A设计批准；四clip尚未生成 |
+| PAO-15 | D:/worker/paoku-sessions/pao-15 | codex/pao-15-character-assets | 614179d | 干净，远端同SHA；技术样本链路通过，完整E2E45/46，最终验收暂缓 |
 | PAO-16 | D:/worker/paoku-sessions/pao-16 | codex/pao-16-world-assets | c7b09e6 | 不追加同类采样 |
 | PAO-17 | D:/worker/paoku-sessions/pao-17 | codex/pao-17-render | 82d2d47 | 已审；原.pao17-local证据保留 |
-| PAO-18 | D:/worker/paoku-sessions/pao-18 | codex/pao-18-motion-camera | f2680f4 | 干净，远端同SHA，A设计批准；未实现 |
+| PAO-18 | D:/worker/paoku-sessions/pao-18 | codex/pao-18-motion-camera | 5bd31cc | 干净，远端同SHA；首批工程检查通过，完整E2E59/60，最终验收暂缓 |
 | PAO-19 | D:/worker/paoku-sessions/pao-19 | codex/pao-19-ui | ed39cb9 | 已审Done |
 | 原资产只读树 | D:/worker/paoku-sessions/glb-review | detached | 7a2fb29 | 不覆盖原GLB |
 
-15/18的顶层、分支、HEAD、共同Git目录D:/worker/paoku/.git、含未跟踪项status已在目标目录核对，并与主仓worktree list交叉核验。15完整HEAD=8c4b09fc5351778fe8db19858d52924ac70463b9；18完整HEAD=f2680f46ddef89a38c20496719a31abed9c3caf1；ls-remote核实两个分支均已推送一致。
+15/18的顶层、分支、HEAD、共同Git目录D:/worker/paoku/.git、含未跟踪项status已在目标目录核对，并与主仓worktree list交叉核验。15完整HEAD=614179d245d2a87a2a2aa3d61fde2a8de68eb7c1；18完整HEAD=5bd31cc06a44c1a2ac382809ea8eadb69df76984；ls-remote核实两个分支均已推送一致。
 
 15准备基线64c4f3120224f42995bc4b0fae544feae139d380、18准备基线82d2d47b333de2cc0da778591f99df8fe98084ed均为各自HEAD祖先，exit0。本轮直接复用，不建第二份树、不改写或代提交任务产物。linked worktree的.git是文件，不能用目录存在与否替代Git核验。
 
-当前主Agent未重跑两树运行环境/浏览器，任务方hook成绩不当新实现验收；不自动安装或启动服务。聊天是否选中对应目录仍由用户手动确认。7/8/9规划树仍为pao-7@c66b59e、pao-8@be6c7d5、pao-9@59fc682。
+本轮主Agent已在两树独立运行build/unit/完整浏览器及新证据检查，实际失败和边界见第1节/主审报告；不能沿用交付方全绿作为本轮成绩。临时服务已退出，无常驻验证会话。聊天是否选中对应目录仍由用户手动确认。7/8/9规划树仍为pao-7@c66b59e、pao-8@be6c7d5、pao-9@59fc682。
 
 ## 3. 主Agent下发提示词前必须完成的准备
 
@@ -93,9 +96,9 @@ worktree已创建，不代表Codex新聊天已选中它；提示词写路径也�
 
 Web 3D跑酷，Vite/TypeScript/Babylon.js；不是Godot。主Agent只规划、约束、准备工作树、文档和独立验收，不直接写游戏实现。用户在任务聊天手动粘贴，禁止自动启动任务/子Agent/新任务聊天、合并或删除工作树。
 
-已批准的总体明亮城市轨道方向、M1及已审17主题不重审。当前15/18的A方案已批准，下一批按新执行计划先写本树计划再实现限定工程范围；人工刷权/拓扑/动作精修延期，无云上传/Tripo/Mixamo调用。已授权的可逆准备动作自行完成，不重复索取相同许可。
+已批准的总体明亮城市轨道方向、M1及已审17主题不重审。15/18的A方案已批准且限定工程批次已交付，当前先处理主审完整门禁失败，不重复执行整批；人工刷权/拓扑/动作精修延期，无云上传/Tripo/Mixamo调用。已授权的可逆准备动作自行完成，不重复索取相同许可。
 
-当前[两份批准后提示词](../plans/2026-11-03-pao15-pao18-approved-execution.md)：第5节给15，第6节给18。工作树已复用并核验，用户手动粘贴后才启动。写权按新计划，旧准备提示词仅查历史。15/18不互取运行中未审资产；四样本不等于13正式动作，18首批不声称真实I-03或动态HUD接入。
+[两份批准后提示词](../plans/2026-11-03-pao15-pao18-approved-execution.md)保留作已交付批次授权历史，不重新粘贴启动。15四样本和18控制器/镜头已检查，但完整门禁失败尚未关闭。当前无新派发提示词，后续下发前重新核验工作树、精确SHA和串行写权。
 
 ## 6. 已验收状态与来源
 
@@ -105,10 +108,10 @@ Project 492a7fa2-dba9-4b7b-9d22-154822bbe5a2，Workspace Paoku-v1，Team PAO，�
 | --- | --- | --- |
 | 6、10～14 | M1链完成，终点19aa314；已关闭问题不重开 | Done |
 | 7/8/9 | 9技术契约和7适用UI条目已接受，正式风格/设备预算未全部冻结 | In Review |
-| 15 | 64c4f31绑定已审；8c4b09f四样本A设计已审批准，待手动执行 | Backlog |
+| 15 | 614179d四技术clip链路检查通过；完整E2E45/46，最终验收暂缓，品质待修整 | Backlog |
 | 16 | 3de6e54和c7b09e6技术探针通过，四件生产资格false | Backlog |
 | 17 | fcddba1设计、536f54b结构/I-01/I-02、82d2d47明亮主题均已审 | Backlog |
-| 18 | f2680f4动作/镜头A设计已审批准且推送，待手动执行首批工程；正式动作/共享桥仍缺 | Backlog |
+| 18 | 5bd31cc首批工程专项通过；完整E2E59/60，字体网络失败，最终验收暂缓 | Backlog |
 | 19 | ed39cb9 UI最终复审通过，两项P2已关闭 | Done |
 
 按需查报告，不重复跑已审阶段：

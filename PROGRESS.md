@@ -2,6 +2,14 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-03] PAO-15/18实现已独立检查，完整门禁分别失败一项
+
+- 固定15@614179d245d2a87a2a2aa3d61fde2a8de68eb7c1、18@5bd31cc06a44c1a2ac382809ea8eadb69df76984；本地/远端一致，两树初始及结束干净，源码/旧测试/历史证据未被主审改写。没有自动派发或直接修游戏实现。
+- [15主审](docs/reviews/2026-11-03-pao15-basic-motion-sample-review.md)：build、269单测、工具显式类型/语法、47项hash、独立Blender重开重导出及30姿态检查通过；四clip专项2项通过，查看本轮Run/Jump/Slide三图并因失败扩看一图。完整E2E45/46、248527.9ms、0 skip/retry/flaky，旧ramp-roof-jump-land在下降越过车尾时STATIC_TRAIN碰撞GAMEOVER；1100保护文件不变。技术链路可用，品质仍需局部修整，最终验收暂缓。
+- [18主审](docs/reviews/2026-11-03-pao18-controller-camera-review.md)：build、292单测、专属测试tsc、新7项E2E和真实资源/延迟/投影通过；完整59/60、378798.466ms、0 skip/retry/flaky。唯一失败为旧PAO-12用例afterEach捕获Google Fonts ERR_CONNECTION_CLOSED，不是该用例碰撞断言失败；1202保护文件不变。查看本轮桌面/390/坡顶三图，工程链路通过但最终验收暂缓。
+- 两次完整回归各用新独立镜像/目录，逆转换验证只改输出路径，原断言/时钟/超时不变；保留首失败，不重试换绿。交付录屏真实Chromium解码结束，解码不代表自然度签收。已审17仅作18继承回归，不新派/重验主题阶段。
+- 当前先做失败调查与原断言不变的完整复验，不重复制作四clip或重派已交付控制器，不自动合并/接I-03、新runner或19 UI、不改Linear/父状态或依赖。主Agent只提交本轮审查/交接文档，任务树不提交新代码。
+
 ## [2026-11-03] PAO-15/18设计主审及A方案批准，下一轮提示词就绪
 
 - [设计主审](docs/reviews/2026-11-03-pao15-pao18-design-review.md)接受15@8c4b09f、18@f2680f4设计准备；用户“继续吧”批准两A方案及准备下一轮。共享PRD/架构/流程/测试已同步[执行计划与两份完整提示词](docs/plans/2026-11-03-pao15-pao18-approved-execution.md)。

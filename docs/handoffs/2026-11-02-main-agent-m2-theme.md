@@ -11,7 +11,7 @@ PAO-17明亮主题已独立验收，82d2d47已推送，记录d9c3d58；不重复
 - [15主审](../reviews/2026-11-03-pao15-basic-motion-sample-review.md)：build/269单测/工具与重开导出/四clip专项通过；完整E2E45/46，旧坡顶用例下降越过车尾时碰撞GAMEOVER，未解决根因。品质仍需局部修整。
 - [18主审](../reviews/2026-11-03-pao18-controller-camera-review.md)：build/292单测/新增7项E2E/实际资源与投影通过；完整59/60，旧PAO-12用例afterEach捕获Google Fonts网络错误。未屏蔽错误或重试换绿。
 
-下一步先调查/处理完整门禁失败并完整复验，不重复四clip制作或控制器实现，不自动放行集成。I-03/main/types/动态HUD/新runner生产接入仍未开放，父任务和依赖保留，人工精修延期。两份[A方案执行提示词](../plans/2026-11-03-pao15-pao18-approved-execution.md)是已交付批次的历史授权，不能再次整批启动。用户已批准准备两项独立诊断；[当前诊断提示词](../plans/2026-11-03-regression-diagnosis-prompts.md)第6/7节可手动触发，工作树已建立并核验。只调查和交文本修复建议，未授权生产修复；不得启动原整批制作提示词。下发后续新提示词仍先核验worktree/Git。
+下一步先调查/处理完整门禁失败并完整复验，不重复四clip制作或控制器实现，不自动放行集成。I-03/main/types/动态HUD/新runner生产接入仍未开放，父任务和依赖保留，人工精修延期。两份[A方案执行提示词](../plans/2026-11-03-pao15-pao18-approved-execution.md)是已交付批次的历史授权，不能再次整批启动。两项诊断已交付并经[主Agent审查接收](../reviews/2026-11-03-regression-diagnosis-review.md)：车尾8af24af、字体e6a52b1。当前是[最小修复设计待用户批准](../superpowers/specs/2026-11-03-regression-remediation-design.md)，推荐保留已证顶面接触的跨步连续性及同源字体；未授权生产修复，不重跑已交付诊断任务。批准后复用现有两棵诊断树，不再建树；下发前重新核验Git与写权。
 
 主Agent只做审查/文档，未修改游戏、启动Agent/聊天/服务常驻或合并；本轮临时验证服务随Playwright退出。
 
@@ -21,14 +21,14 @@ PAO-17明亮主题已独立验收，82d2d47已推送，记录d9c3d58；不重复
 
 | 任务 | 实际目录 | 分支 | 本次核验HEAD | 状态 |
 | --- | --- | --- | --- | --- |
-| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点8c1f1cf；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
+| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点618bd58；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
 | M1终点 | D:/worker/paoku-sessions/pao-14 | codex/pao-14-application | 19aa314 | 已审 |
 | PAO-15 | D:/worker/paoku-sessions/pao-15 | codex/pao-15-character-assets | 614179d | 干净，远端同SHA；技术样本链路通过，完整E2E45/46，最终验收暂缓 |
 | PAO-16 | D:/worker/paoku-sessions/pao-16 | codex/pao-16-world-assets | c7b09e6 | 不追加同类采样 |
 | PAO-17 | D:/worker/paoku-sessions/pao-17 | codex/pao-17-render | 82d2d47 | 已审；原.pao17-local证据保留 |
 | PAO-18 | D:/worker/paoku-sessions/pao-18 | codex/pao-18-motion-camera | 5bd31cc | 干净，远端同SHA；首批工程检查通过，完整E2E59/60，最终验收暂缓 |
-| 车尾诊断 | D:/worker/paoku-sessions/pao-15-roof-diagnosis | codex/pao15-roof-diagnosis | 614179d | 已新建并核验干净；仅诊断，未启动/装依赖/运行验证 |
-| 字体诊断 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | 5bd31cc | 已新建并核验干净；仅诊断，未启动/装依赖/运行验证 |
+| 车尾诊断 | D:/worker/paoku-sessions/pao-15-roof-diagnosis | codex/pao15-roof-diagnosis | 8af24af | 诊断已交付/主审接收，干净且远端一致；修复未批准 |
+| 字体诊断 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | e6a52b1 | 诊断已交付/主审接收，干净且远端一致；修复未批准 |
 | PAO-19 | D:/worker/paoku-sessions/pao-19 | codex/pao-19-ui | ed39cb9 | 已审Done |
 | 原资产只读树 | D:/worker/paoku-sessions/glb-review | detached | 7a2fb29 | 不覆盖原GLB |
 
@@ -36,7 +36,7 @@ PAO-17明亮主题已独立验收，82d2d47已推送，记录d9c3d58；不重复
 
 15准备基线64c4f3120224f42995bc4b0fae544feae139d380、18准备基线82d2d47b333de2cc0da778591f99df8fe98084ed均为各自HEAD祖先，exit0。本轮直接复用，不建第二份树、不改写或代提交任务产物。linked worktree的.git是文件，不能用目录存在与否替代Git核验。
 
-本轮主Agent已在两树独立运行build/unit/完整浏览器及新证据检查，实际失败和边界见第1节/主审报告；不能沿用交付方全绿作为本轮成绩。临时服务已退出，无常驻验证会话。聊天是否选中对应目录仍由用户手动确认。 两新诊断树顶层/分支/HEAD/共同Git目录与登记已核验，均与源固定提交相等且祖先exit0、含未跟踪项status干净；无node_modules或新树运行环境验收，不推空分支。诊断临时端口5195/5198，不能迁移旧树成绩。7/8/9规划树仍为pao-7@c66b59e、pao-8@be6c7d5、pao-9@59fc682。
+本轮主Agent已在两树独立运行build/unit/完整浏览器及新证据检查，实际失败和边界见第1节/主审报告；不能沿用交付方全绿作为本轮成绩。临时服务已退出，无常驻验证会话。聊天是否选中对应目录仍由用户手动确认。 两诊断树已由任务方安装依赖、运行269/292基线及定向实验并提交推送；主Agent核对实际HEAD为8af24af083b369f3f8dc8bb883a861975b9972af与e6a52b1a88db911581c6b88b119d54c356ff9774、源基线祖先exit0及status干净。主Agent独立重放车尾三对照，不重复完整回归或自然网络采集；定向成功不能关闭原完整失败。诊断端口5195/5198，原主审目录保留。7/8/9规划树仍为pao-7@c66b59e、pao-8@be6c7d5、pao-9@59fc682。
 
 ## 3. 主Agent下发提示词前必须完成的准备
 
@@ -100,7 +100,7 @@ Web 3D跑酷，Vite/TypeScript/Babylon.js；不是Godot。主Agent只规划、�
 
 已批准的总体明亮城市轨道方向、M1及已审17主题不重审。15/18的A方案已批准且限定工程批次已交付，当前先处理主审完整门禁失败，不重复执行整批；人工刷权/拓扑/动作精修延期，无云上传/Tripo/Mixamo调用。已授权的可逆准备动作自行完成，不重复索取相同许可。
 
-[两份批准后提示词](../plans/2026-11-03-pao15-pao18-approved-execution.md)保留作已交付批次授权历史，不重新粘贴启动。15四样本和18控制器/镜头已检查，但完整门禁失败尚未关闭。当前新入口是[两项诊断提示词](../plans/2026-11-03-regression-diagnosis-prompts.md)第6/7节；用户已批准准备，独立树已建并核验，仅诊断文本写权。源15/18仍只读；后续真正修复需明确最小白名单和目标SHA，不因建树自动启动。
+[两份批准后提示词](../plans/2026-11-03-pao15-pao18-approved-execution.md)保留作已交付批次授权历史，不重新粘贴启动。15四样本和18控制器/镜头已检查，但完整门禁失败尚未关闭。[两项诊断提示词](../plans/2026-11-03-regression-diagnosis-prompts.md)也已执行完毕，保留作历史授权，不重复派发。当前读[诊断主审](../reviews/2026-11-03-regression-diagnosis-review.md)及[待批修复设计](../superpowers/specs/2026-11-03-regression-remediation-design.md)；尚无获准的修复提示词。若用户批准两项A方案，在现有诊断树续做，主Agent先核验Git/同步核心契约再给新提示词，原15/18树不自动写入或合并。
 
 ## 6. 已验收状态与来源
 

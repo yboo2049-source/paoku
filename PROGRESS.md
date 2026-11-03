@@ -2,6 +2,13 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-03] 两项回归诊断工作树已创建，手动提示词就绪
+
+- 用户“好的 继续”批准准备车尾碰撞与字体请求失败的诊断树/写权/提示词；[当前入口](docs/plans/2026-11-03-regression-diagnosis-prompts.md)第6/7节为两份完整提示词。只诊断/文本交付，不授权生产修复、不自动启动Agent或聊天。
+- 已实际新建并Git核验D:/worker/paoku-sessions/pao-15-roof-diagnosis、codex/pao15-roof-diagnosis@614179d245d2a87a2a2aa3d61fde2a8de68eb7c1，以及D:/worker/paoku-sessions/pao-18-font-diagnosis、codex/pao18-font-diagnosis@5bd31cc06a44c1a2ac382809ea8eadb69df76984；顶层/分支/完整HEAD/common-dir/主仓登记一致，status含未跟踪项干净，固定起点祖先exit0。创建前目录/分支均不存在，未覆盖/重置原树。
+- 两新树未安装依赖/运行baseline或浏览器/推空分支，未绑定聊天。5195/5198准备时无监听，临时QA路径check-ignore exit0。只读输入清单核对8个原现场/报告文件SHA，原证据不复制覆写；字体入口只读定位index.html:7和src/style.css:5，重复请求不直接当网络失败根因。
+- 生产代码/旧测试/资产/依赖/其他树只读，任务方仅提交新报告/纯文本证据，临时QA留本树忽略目录。新修复方案由主Agent审查后另定范围；当前15/18最终验收暂缓、人工精修延期及父依赖不变，不重复制作/渲染批次，不开启I-03或资产集成。
+
 ## [2026-11-03] PAO-15/18实现已独立检查，完整门禁分别失败一项
 
 - 固定15@614179d245d2a87a2a2aa3d61fde2a8de68eb7c1、18@5bd31cc06a44c1a2ac382809ea8eadb69df76984；本地/远端一致，两树初始及结束干净，源码/旧测试/历史证据未被主审改写。没有自动派发或直接修游戏实现。

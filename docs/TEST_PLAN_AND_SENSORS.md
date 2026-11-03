@@ -1,5 +1,9 @@
 # 测试用例与传感器计划 (Test Plan & Sensors)
 
+## 2026-11-03 车尾与字体诊断验证口径
+
+[两项诊断](plans/2026-11-03-regression-diagnosis-prompts.md)只做故障调查，不要求为建树/纯文档重复完整E2E。车尾记录实际JUMP输入tick、逐tick脚底/vy/contact/support/departure及sweep time/normal，比较固定步与截图/按键时序，避免预设算法bug。字体分开请求连接错误与业务断言，正常网络/F故障分别记录，禁止过滤网络错误、空CSS拦截或改变旧断言换绿。临时QA/输出镜像仅本机忽略目录，逐次实验与有限复现率全量保留；5195/5198独占strictPort、不复用、retries0/D3D11，关键新图默认2～3张有异常扩看。诊断文本内容/引用/diff/保护检查及正常hooks保留；真正代码修复另批后先RED→GREEN并完整build/test/E2E与独立视觉验收。
+
 ## 2026-11-03 PAO-15/18批准批次验证门禁
 
 本批已交付15@614179d及18@5bd31cc，主Agent独立检查：[15独立主审](reviews/2026-11-03-pao15-basic-motion-sample-review.md)build/269单测通过、完整E2E45/46（旧车尾下降碰撞）；[18独立主审](reviews/2026-11-03-pao18-controller-camera-review.md)build/292单测及新增7项E2E通过、完整59/60（旧字体网络错误）。两项最终验收暂缓，不重复派发已完成制作/工程批次，不以技术子集或旧成绩代替完整门禁；后续先调查/处理失败并完整复验，未授权新资产/I-03/HUD集成。以下为已批准范围及持续生效的技术契约。

@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-03",
+  "timezone": "Asia/Shanghai",
+  "scope": "diagnosis preparation only; no remediation or runtime acceptance",
+  "worktrees": [
+    {
+      "task": "roof",
+      "directory": "D:/worker/paoku-sessions/pao-15-roof-diagnosis",
+      "branch": "codex/pao15-roof-diagnosis",
+      "head": "614179d245d2a87a2a2aa3d61fde2a8de68eb7c1",
+      "clean": true,
+      "commonDir": "D:/worker/paoku/.git",
+      "runtimeVerified": false,
+      "dependenciesInstalled": false,
+      "port": 5195
+    },
+    {
+      "task": "fonts",
+      "directory": "D:/worker/paoku-sessions/pao-18-font-diagnosis",
+      "branch": "codex/pao18-font-diagnosis",
+      "head": "5bd31cc06a44c1a2ac382809ea8eadb69df76984",
+      "clean": true,
+      "commonDir": "D:/worker/paoku/.git",
+      "runtimeVerified": false,
+      "dependenciesInstalled": false,
+      "port": 5198
+    }
+  ],
+  "readOnlyInputs": [
+    {
+      "task": "roof",
+      "path": "D:/worker/paoku/docs/reviews/2026-11-03-pao15-basic-motion-sample-review.md",
+      "sha256": "f13a0bc112d5f7031dd18bf2a751b9cf6c892bcf50cb042e46f9aee0d269015d",
+      "bytes": 4802,
+      "readOnly": true
+    },
+    {
+      "task": "roof",
+      "path": "D:/worker/paoku-sessions/pao-15/.pao15-local/main-review-614179d/full.json",
+      "sha256": "162561f730eb81bca348daac544fcde7721662993f23c57d836a99db70025a1a",
+      "bytes": 56357,
+      "readOnly": true
+    },
+    {
+      "task": "roof",
+      "path": "D:/worker/paoku-sessions/pao-15/.pao15-local/main-review-614179d/evidence/PAO-6/fixture-ramp-roof-jump-land.json",
+      "sha256": "1432ff96ca74003422e2bdc9ad5f0a1f82f378941babfeaa507d8fcaab0d4528",
+      "bytes": 52190,
+      "readOnly": true
+    },
+    {
+      "task": "roof",
+      "path": "D:/worker/paoku-sessions/pao-15/.pao15-local/main-review-614179d/results/pao6-baseline.pw.ts-ramp-roof-jump-land/error-context.md",
+      "sha256": "b78b04f3d8c8f0519c4dde00ae465a9abdd0a032959db6a8af60cc4a20dbe73f",
+      "bytes": 12383,
+      "readOnly": true
+    },
+    {
+      "task": "fonts",
+      "path": "D:/worker/paoku/docs/reviews/2026-11-03-pao18-controller-camera-review.md",
+      "sha256": "07d2b9d991d3a18603133889233310b7a8293d36e27d9c3bb2fe5a74819f3ba1",
+      "bytes": 5176,
+      "readOnly": true
+    },
+    {
+      "task": "fonts",
+      "path": "D:/worker/paoku-sessions/pao-18/.pao18.local/main-review-5bd31cc/full.json",
+      "sha256": "064e5d372b3d41e950b99c8ac2e150c2c1d2acb2b1fea000611d86d85154d339",
+      "bytes": 73555,
+      "readOnly": true
+    },
+    {
+      "task": "fonts",
+      "path": "D:/worker/paoku-sessions/pao-18/.pao18.local/main-review-5bd31cc/evidence/PAO-12/runs/final/F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position.json",
+      "sha256": "624eab608f5f8b2862349bcbf4bf0091c0e8f5bb9037ea6e96dfc769bbcfcd8c",
+      "bytes": 9480,
+      "readOnly": true
+    },
+    {
+      "task": "fonts",
+      "path": "D:/worker/paoku-sessions/pao-18/.pao18.local/main-review-5bd31cc/results/pao12-collision.pw.ts-F-de-c82f0-e-do-not-sweep-old-position/error-context.md",
+      "sha256": "dd7eaff2fa2ff36653dbe6506ec79d15bc6cc53331aaa220620a4be39914a601",
+      "bytes": 11518,
+      "readOnly": true
+    }
+  ]
+}

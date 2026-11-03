@@ -1,5 +1,9 @@
 # 系统架构与模块隔离设计 (Architecture Spec)
 
+## 2026-11-03 回归诊断隔离与数据边界
+
+[诊断计划](plans/2026-11-03-regression-diagnosis-prompts.md)使用新linked worktree：pao-15-roof-diagnosis@614179d与pao-18-font-diagnosis@5bd31cc。生产源码/旧测试/资产/依赖和原任务树只读；跟踪写权仅各自新报告和纯文本证据，临时QA仅本树既有忽略目录。车尾诊断读取固定步状态/支撑与sweep事实，不修改模拟权威或公共schema；字体诊断记录CSS/字体请求链/发起者/状态/错误，不修改UI或生产资源。主Agent已建立含SHA的原始只读输入清单；后续修复另定单一写入者及最小白名单，不直接在原15/18树越权改代码。
+
 ## 2026-11-03 PAO-15/18 A方案实施写权
 
 本批已交付15@614179d及18@5bd31cc，主Agent独立检查：[15独立主审](reviews/2026-11-03-pao15-basic-motion-sample-review.md)build/269单测通过、完整E2E45/46（旧车尾下降碰撞）；[18独立主审](reviews/2026-11-03-pao18-controller-camera-review.md)build/292单测及新增7项E2E通过、完整59/60（旧字体网络错误）。两项最终验收暂缓，不重复派发已完成制作/工程批次，不以技术子集或旧成绩代替完整门禁；后续先调查/处理失败并完整复验，未授权新资产/I-03/HUD集成。以下为已批准范围及持续生效的技术契约。

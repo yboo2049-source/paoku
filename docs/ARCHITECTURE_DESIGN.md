@@ -1,5 +1,9 @@
 # 系统架构与模块隔离设计 (Architecture Spec)
 
+## 2026-11-03 用户延期车尾修复及派生预览排查
+
+用户明确要求车尾问题先记录、当前不继续修复。以[已知问题KI-001/002](KNOWN_ISSUES.md)和[暂停收口提示词](plans/2026-11-03-roof-exit-deferred-handoff.md)为当前指令：保留本地未提交候选与所有失败证据，不再修复/追查/重复复验车尾及连带ready超时，不回滚、提交或丢弃现有改动。以下历史车尾实施/补充诊断安排暂停；字体任务独立授权不变。延期不表示修复已验收、原失败已关闭或全套测试通过，恢复须用户明确要求。
+
 ## 2026-11-03 批准后的独占修复写权
 
 [批准执行计划](plans/2026-11-03-regression-remediation-execution.md)固定车尾诊断树8af24af、字体诊断树e6a52b1，两个现有树复用，生产写权只在本树生效。车尾限physics.ts的isSupportSweep/已有departure提交、sweptCollision新增行为断言和新专属E2E；复用owner/side/y，只在已证向下顶面接触且终点向外越界/仍重叠同owner时保留跨tick连续性，重入/追上/分离/回收语义维持。surfaces/公共types/步序不开放。

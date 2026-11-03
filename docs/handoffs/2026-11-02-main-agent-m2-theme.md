@@ -4,13 +4,13 @@
 
 ## 1. 当前要做什么
 
-PAO-17明亮主题已审82d2d47，不重复派发/另做主题主审。原15@614179d四动作样本完整45/46、18@5bd31cc控制器/镜头完整59/60的首失败仍保留；两项[诊断已审接收](../reviews/2026-11-03-regression-diagnosis-review.md)。用户已批准车尾连续性及同源字体两A方案，[执行计划](../plans/2026-11-03-regression-remediation-execution.md)继续作为限定写权依据，不重复索取相同批准。
+用户已明确要求车尾问题先记录，当前不继续修复。当前入口为[已知问题KI-001/002](../KNOWN_ISSUES.md)及[暂停收口提示词](../plans/2026-11-03-roof-exit-deferred-handoff.md)。车尾修复和连带四动作ready超时调查均延期，不再重复实验/完整复验或沿历史提示词追修。恢复须用户明确要求，不自动派发Agent。
 
-车尾修复已在本地实现但未提交：主Agent独立tsc/72项目标单测通过；任务方完整49/50，新4及旧PAO-6通过，唯一失败为旧四clip预览ready超时。详见[本地预审](../reviews/2026-11-03-roof-remediation-local-review.md)。本地/远端HEAD仍8af24af，暂存区为空、工作区有批准修复/新证据，不能当已提交修复或干净树。保留实现，不reset、代提交或重派整批制作。
+车尾候选保留在原诊断树：HEAD/远端8af24af未变，暂存区空；2个跟踪修改、43个未跟踪文件包含本地修复/测试/证据，未验收、未提交、未推送。不要reset/clean/stash、删除/合并/移植或代提交。过去tsc/72目标单测和任务方49/50结果保留；原浏览器未再次失败不否认固定步曾复现，延期也不代表原失败关闭。
 
-当前给原车尾聊天的入口是[同树只读ready超时诊断补充](../plans/2026-11-03-motion-preview-readiness-diagnosis.md)第5节：观察加载各await和前序条件，保留首失败和本地改动，不开放preview/旧测试/超时生产修改；有根因证据后再定最小扩围。主Agent一次只读新页面约4秒ready，不关闭原49/50。
+字体修复保持独立批准安排，原执行计划字体段仍有效；本轮仅Git只读核对到其树HEAD仍e6a52b1，index.html/style.css/vite.config.ts有跟踪改动，未审实现或配置扩围依据，等待任务方回执，不因车尾暂停替它判完成或停工。
 
-字体修复按原批准执行计划等待任务方回执，当前不把车尾新阻挡套给字体。两修复均复用现有树，不再建树；I-03/main/types/新runner/19 UI集成未开放，父状态/依赖及人工精修延期不变。主Agent未修改游戏或启动其他Agent/任务聊天，不自动合并/移植；临时只读QA服务已退出。
+PAO-17已审主题不重派重验。原15完整45/46、18完整59/60首失败与父依赖保留；I-03/新runner/19 UI集成未自动开放。主Agent只维护文档、核对Git并保留现场，不自动启动任务或写游戏。
 
 ## 2. 工作树当前状态：唯一事实表
 
@@ -18,14 +18,14 @@ PAO-17明亮主题已审82d2d47，不重复派发/另做主题主审。原15@614
 
 | 任务 | 实际目录 | 分支 | 本次核验HEAD | 状态 |
 | --- | --- | --- | --- | --- |
-| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点c8a1a6d；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
+| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点4fc8164；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
 | M1终点 | D:/worker/paoku-sessions/pao-14 | codex/pao-14-application | 19aa314 | 已审 |
 | PAO-15 | D:/worker/paoku-sessions/pao-15 | codex/pao-15-character-assets | 614179d | 干净，远端同SHA；技术样本链路通过，完整E2E45/46，最终验收暂缓 |
 | PAO-16 | D:/worker/paoku-sessions/pao-16 | codex/pao-16-world-assets | c7b09e6 | 不追加同类采样 |
 | PAO-17 | D:/worker/paoku-sessions/pao-17 | codex/pao-17-render | 82d2d47 | 已审；原.pao17-local证据保留 |
 | PAO-18 | D:/worker/paoku-sessions/pao-18 | codex/pao-18-motion-camera | 5bd31cc | 干净，远端同SHA；首批工程检查通过，完整E2E59/60，最终验收暂缓 |
-| 车尾诊断/修复 | D:/worker/paoku-sessions/pao-15-roof-diagnosis | codex/pao15-roof-diagnosis | 8af24af | 本地修复未提交，暂存区空、脏树保留；完整49/50，待ready超时诊断 |
-| 字体诊断 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | e6a52b1 | 诊断已审；A字体修复已批准，交付待回执，以实际Git为准 |
+| 车尾诊断/修复 | D:/worker/paoku-sessions/pao-15-roof-diagnosis | codex/pao15-roof-diagnosis | 8af24af | 用户延期，候选/证据未提交、暂存区空，保留脏树；不继续诊断/复验 |
+| 字体诊断 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | e6a52b1 | A字体修复独立继续；HTML/CSS/Vite有本地改动，待回执/审查 |
 | PAO-19 | D:/worker/paoku-sessions/pao-19 | codex/pao-19-ui | ed39cb9 | 已审Done |
 | 原资产只读树 | D:/worker/paoku-sessions/glb-review | detached | 7a2fb29 | 不覆盖原GLB |
 
@@ -33,7 +33,7 @@ PAO-17明亮主题已审82d2d47，不重复派发/另做主题主审。原15@614
 
 15准备基线64c4f3120224f42995bc4b0fae544feae139d380、18准备基线82d2d47b333de2cc0da778591f99df8fe98084ed均为各自HEAD祖先，exit0。本轮直接复用，不建第二份树、不改写或代提交任务产物。linked worktree的.git是文件，不能用目录存在与否替代Git核验。
 
-本轮主Agent已在两树独立运行build/unit/完整浏览器及新证据检查，实际失败和边界见第1节/主审报告；不能沿用交付方全绿作为本轮成绩。临时服务已退出，无常驻验证会话。聊天是否选中对应目录仍由用户手动确认。 两诊断文本提交已推送，基线为8af24af083b369f3f8dc8bb883a861975b9972af与e6a52b1a88db911581c6b88b119d54c356ff9774；其源基线祖先检查通过。车尾当前HEAD未变，但生产修复/测试/证据未提交，status不干净且暂存区为空，不能沿用诊断交付时clean快照。主Agent独立重放车尾三对照，不重复完整回归或自然网络采集；定向成功不能关闭原完整失败。诊断端口5195/5198，原主审目录保留。7/8/9规划树仍为pao-7@c66b59e、pao-8@be6c7d5、pao-9@59fc682。
+本轮主Agent已在两树独立运行build/unit/完整浏览器及新证据检查，实际失败和边界见第1节/主审报告；不能沿用交付方全绿作为本轮成绩。临时服务已退出，无常驻验证会话。聊天是否选中对应目录仍由用户手动确认。 两诊断文本提交已推送，基线为8af24af083b369f3f8dc8bb883a861975b9972af与e6a52b1a88db911581c6b88b119d54c356ff9774；其源基线祖先检查通过。车尾当前HEAD未变，生产候选/测试/证据未提交，status不干净且暂存区为空；用户已暂停该线，不沿用诊断交付时clean快照或继续复验。主Agent独立重放车尾三对照，不重复完整回归或自然网络采集；定向成功不能关闭原完整失败。诊断端口5195/5198，原主审目录保留。7/8/9规划树仍为pao-7@c66b59e、pao-8@be6c7d5、pao-9@59fc682。
 
 ## 3. 主Agent下发提示词前必须完成的准备
 
@@ -95,9 +95,9 @@ worktree已创建，不代表Codex新聊天已选中它；提示词写路径也�
 
 Web 3D跑酷，Vite/TypeScript/Babylon.js；不是Godot。主Agent只规划、约束、准备工作树、文档和独立验收，不直接写游戏实现。用户在任务聊天手动粘贴，禁止自动启动任务/子Agent/新任务聊天、合并或删除工作树。
 
-已批准的总体明亮城市轨道方向、M1及已审17主题不重审。15/18的A方案已批准且限定工程批次已交付，当前先处理主审完整门禁失败，不重复执行整批；人工刷权/拓扑/动作精修延期，无云上传/Tripo/Mixamo调用。已授权的可逆准备动作自行完成，不重复索取相同许可。
+已批准的总体明亮城市轨道方向、M1及已审17主题不重审。15/18的A方案已批准且限定工程批次已交付，不重复执行整批；当前车尾与连带预览问题按用户要求延期，字体按独立批准继续，完整门禁原记录保留；人工刷权/拓扑/动作精修延期，无云上传/Tripo/Mixamo调用。已授权的可逆准备动作自行完成，不重复索取相同许可。
 
-[两份批准后提示词](../plans/2026-11-03-pao15-pao18-approved-execution.md)保留作已交付批次授权历史，不重新粘贴启动。15四样本和18控制器/镜头已检查，但完整门禁失败尚未关闭。[两项诊断提示词](../plans/2026-11-03-regression-diagnosis-prompts.md)也已执行完毕，保留作历史授权，不重复派发。用户已批准两A修复方案，当前使用[新批准执行计划](../plans/2026-11-03-regression-remediation-execution.md)第5/6节，工作树已复用核验，核心契约已同步；无需重复询问相同修复批准。原15/18树不自动写入/移植或合并，两诊断树各自独占限定生产写权。车尾已实现但门禁未通过，当前使用只读补充诊断入口，不能重派原实现或宣称修复已交付；字体待后续回执。
+[原制作/控制器提示词](../plans/2026-11-03-pao15-pao18-approved-execution.md)和[两项诊断提示词](../plans/2026-11-03-regression-diagnosis-prompts.md)保留作历史，不重复派发。当前车尾只使用[暂停收口提示词](../plans/2026-11-03-roof-exit-deferred-handoff.md)，停止原修复及ready补充诊断，保留未提交候选；用户明确恢复前不再沿任何旧车尾提示词执行。字体仍按[批准执行计划](../plans/2026-11-03-regression-remediation-execution.md)字体段/第6节继续，等待回执。原15/18树不自动写入/移植或合并，不扩大字体授权。
 
 ## 6. 已验收状态与来源
 

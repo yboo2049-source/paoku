@@ -1,6 +1,9 @@
 # 车尾连续性与同源字体：最小修复设计
 
-2026-11-03，Bounded v0.1，**用户已明确批准两项A方案，尚未实施**。依据[诊断主审](../../reviews/2026-11-03-regression-diagnosis-review.md)，继承15完整45/46、18完整59/60未关闭。brainstorming路线比较与审批已完成，现按[批准执行计划与手动提示词](../../plans/2026-11-03-regression-remediation-execution.md)进入writing-plans及限定修复；不重复申请相同A方案批准，不自动启动任务。
+> 当前状态（2026-11-03用户新指令）：车尾及连带预览调查延期，保留未提交候选，不继续执行车尾修复；字体独立授权不变。以[已知问题](../../KNOWN_ISSUES.md)和[暂停收口提示词](../../plans/2026-11-03-roof-exit-deferred-handoff.md)为准。下文保留已批准设计历史，不作为自动恢复车尾任务的授权。
+
+
+2026-11-03，Bounded v0.1，**用户此前明确批准两项A方案；车尾本地候选现已按新指令延期**。依据[诊断主审](../../reviews/2026-11-03-regression-diagnosis-review.md)，继承15完整45/46、18完整59/60未关闭。brainstorming路线比较与审批已完成，现按[批准执行计划与手动提示词](../../plans/2026-11-03-regression-remediation-execution.md)进入writing-plans及限定修复；不重复申请相同A方案批准，不自动启动任务。
 
 ## 1. 目标、基线和现有树
 

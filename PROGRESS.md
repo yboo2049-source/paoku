@@ -2,6 +2,13 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-03] 车尾本地修复预审，完整49/50受新预览ready超时阻挡
+
+- 用户交回车尾A修复未提交状态。[本地预审](docs/reviews/2026-11-03-roof-remediation-local-review.md)确认诊断树HEAD/远端仍8af24af、暂存区为空，已有physics/增量单测/新E2E和证据保留；这不是已交付修复SHA，未代暂存/重置/提交/推送。
+- 主Agent独立tsc及72项目标单测通过。任务方build/完整292单测/4新增E2E通过，完整49/50、0 retry；旧PAO-6本轮通过，唯一失败为旧四clip预览ready60000ms超时。报告中的完整成绩未冒称主Agent重跑。原始trace/screenshot和原45/46仍保留。
+- 主Agent读现场/预览加载链并做一次只读新页面采样，约4秒ready；中途40mesh/4组/1骨架、pending0但scene未ready。原首失败资源HTTP200/无已记录错误不足以证明各await完成，具体根因未知，不判物理回归或单纯GPU/网络；单次成功不关闭49/50。
+- [同树只读诊断补充](docs/plans/2026-11-03-motion-preview-readiness-diagnosis.md)已准备，保留当前未提交车尾改动，不新建树/启动Agent，不开放preview/旧测试/超时生产修改；有界阶段观测返回最小根因/扩围请求后再定修复。补充期间不提交捎带未过门禁的生产批次，不retry换绿、合并或改变父状态/依赖。
+
 ## [2026-11-03] 用户批准车尾连续性及同源字体修复，现有树复用就绪
 
 - 用户明确“批准”两A方案；[设计](docs/superpowers/specs/2026-11-03-regression-remediation-design.md)已更新批准状态，[执行计划/两份手动提示词](docs/plans/2026-11-03-regression-remediation-execution.md)第5/6节可用于现有诊断聊天。主Agent已先同步PRD/架构/流程/测试与本进度，不写游戏实现、不自动启动Agent。

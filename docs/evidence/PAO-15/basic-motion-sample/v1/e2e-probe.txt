@@ -1,0 +1,11 @@
+[WebServer] (node:2952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:25152) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\pao15-basic-motion-sample.spec.ts:6:1 › four real clips: numerical parity, pause, switching, loops and warm disposal (28.5s)
+  ok 2 tests\e2e\pao15-basic-motion-sample.spec.ts:75:1 › short-sequence: four isolated technical clips play without world root movement (9.7s)
+
+  2 passed (41.7s)

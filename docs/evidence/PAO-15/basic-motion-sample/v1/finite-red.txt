@@ -1,0 +1,31 @@
+RUN  v4.1.10 D:/worker/paoku-sessions/pao-15
+
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts (12 tests | 1 failed) 18ms
+     × rejects non-finite non-root animation values rather than passing NaN comparisons 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao15-basic-motion-sample.test.ts > PAO-15 basic motion file guards > rejects non-finite non-root animation values rather than passing NaN comparisons
+AssertionError: expected [Function] to throw an error
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts:60:33
+     58|   it('rejects non-finite non-root animation values rather than passing…
+     59|     const c = clip(); c.loopChannels[0].next[0] = NaN;
+     60|     expect(() => assertClip(c)).toThrow(/finite/i);
+       |                                 ^
+     61|   });
+     62|   it('treats q and -q as one orientation and checks signed quaternion …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 passed (12)
+   Start at  20:23:31
+   Duration  270ms (transform 49ms, setup 0ms, import 65ms, tests 18ms, environment 0ms)

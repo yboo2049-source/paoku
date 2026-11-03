@@ -1,0 +1,4170 @@
+{
+  "file": ".pao15-local/basic-reopened.glb",
+  "sha256": "da2d051918cd3c37c8a1551532b47dcbada842f1198ae39dbcb680d94b0f62dc",
+  "stats": {
+    "vertexCount": 26399,
+    "softVertices": 26399,
+    "jointCount": 23,
+    "triangles": 26268,
+    "restIbmError": 0.0000022505429450454612
+  },
+  "preservedSourceRestWeightsGeometry": true,
+  "clips": [
+    {
+      "name": "tech_idle_v1",
+      "fps": 30,
+      "N": 60,
+      "durationSec": 2,
+      "loop": true,
+      "metrics": [
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "translation",
+          "bone": "root_motionless"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "root_motionless"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "translation",
+          "bone": "pelvis"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "pelvis"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "translation",
+          "bone": "spine_01"
+        },
+        {
+          "poseError": 0,
+          "speedError": 8.171585469396447e-8,
+          "kind": "rotation",
+          "bone": "spine_01"
+        },
+        {
+          "poseError": 0,
+          "speedError": 4.263256672560021e-12,
+          "kind": "translation",
+          "bone": "spine_02"
+        },
+        {
+          "poseError": 0,
+          "speedError": 2.723863813322569e-8,
+          "kind": "rotation",
+          "bone": "spine_02"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.0000026822119292280178,
+          "kind": "translation",
+          "bone": "neck"
+        },
+        {
+          "poseError": 0,
+          "speedError": 1.3619326163366585e-8,
+          "kind": "rotation",
+          "bone": "neck"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.0000022351756129301847,
+          "kind": "translation",
+          "bone": "head"
+        },
+        {
+          "poseError": 0,
+          "speedError": 1.3619322648816823e-8,
+          "kind": "rotation",
+          "bone": "head"
+        },
+        {
+          "poseError": 0,
+          "speedError": 5.1340731276078266e-12,
+          "kind": "translation",
+          "bone": "clavicle_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "clavicle_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.000005042784250288682,
+          "kind": "translation",
+          "bone": "upperarm_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.000002213075200853755,
+          "kind": "rotation",
+          "bone": "upperarm_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.0000036522365492787677,
+          "kind": "translation",
+          "bone": "forearm_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.0000016038516942241314,
+          "kind": "rotation",
+          "bone": "forearm_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.000013905449768020287,
+          "kind": "translation",
+          "bone": "hand_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.000003646435843806628,
+          "kind": "rotation",
+          "bone": "hand_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 5.1340731276078266e-12,
+          "kind": "translation",
+          "bone": "clavicle_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "clavicle_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.000005042784250288682,
+          "kind": "translation",
+          "bone": "upperarm_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.000002213075200853755,
+          "kind": "rotation",
+          "bone": "upperarm_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.0000036522365492787677,
+          "kind": "translation",
+          "bone": "forearm_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.0000016038516942241314,
+          "kind": "rotation",
+          "bone": "forearm_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.000013905449768020287,
+          "kind": "translation",
+          "bone": "hand_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.000003646435843806628,
+          "kind": "rotation",
+          "bone": "hand_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.000004270288920861814,
+          "kind": "translation",
+          "bone": "backpack"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "backpack"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "translation",
+          "bone": "thigh_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "thigh_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "translation",
+          "bone": "calf_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "calf_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "translation",
+          "bone": "foot_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "foot_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "translation",
+          "bone": "toe_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "toe_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "translation",
+          "bone": "thigh_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "thigh_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "translation",
+          "bone": "calf_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "calf_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "translation",
+          "bone": "foot_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "foot_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "translation",
+          "bone": "toe_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "toe_r"
+        }
+      ],
+      "samplerCount": 69
+    },
+    {
+      "name": "tech_jump_v1",
+      "fps": 30,
+      "N": 36,
+      "durationSec": 1.2,
+      "loop": false,
+      "metrics": [],
+      "samplerCount": 69
+    },
+    {
+      "name": "tech_run_v1",
+      "fps": 30,
+      "N": 24,
+      "durationSec": 0.8,
+      "loop": true,
+      "metrics": [
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "translation",
+          "bone": "root_motionless"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "root_motionless"
+        },
+        {
+          "poseError": 2.68220423649268e-9,
+          "speedError": 1.7601964552582672e-7,
+          "kind": "translation",
+          "bone": "pelvis"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "pelvis"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "translation",
+          "bone": "spine_01"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "spine_01"
+        },
+        {
+          "poseError": 2.664533025712722e-15,
+          "speedError": 4.4703463764077596e-7,
+          "kind": "translation",
+          "bone": "spine_02"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "spine_02"
+        },
+        {
+          "poseError": 4.263256414560601e-14,
+          "speedError": 0.0000035762757022439473,
+          "kind": "translation",
+          "bone": "neck"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "neck"
+        },
+        {
+          "poseError": 4.263256414560601e-14,
+          "speedError": 0.000007152554202249917,
+          "kind": "translation",
+          "bone": "head"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "head"
+        },
+        {
+          "poseError": 4.263256414560605e-14,
+          "speedError": 0.000007156045801073457,
+          "kind": "translation",
+          "bone": "clavicle_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "clavicle_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.000004041793333338605,
+          "kind": "translation",
+          "bone": "upperarm_l"
+        },
+        {
+          "poseError": 1.7133228317902525e-8,
+          "speedError": 0.0000028341714648603125,
+          "kind": "rotation",
+          "bone": "upperarm_l"
+        },
+        {
+          "poseError": 1.5196569852143857e-14,
+          "speedError": 0.0000061801135608282,
+          "kind": "translation",
+          "bone": "forearm_l"
+        },
+        {
+          "poseError": 5.711583893703616e-9,
+          "speedError": 0.000005184625226610932,
+          "kind": "rotation",
+          "bone": "forearm_l"
+        },
+        {
+          "poseError": 7.855350901294316e-14,
+          "speedError": 0.000009932668274261867,
+          "kind": "translation",
+          "bone": "hand_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.0000032907269249584275,
+          "kind": "rotation",
+          "bone": "hand_l"
+        },
+        {
+          "poseError": 4.263256414560605e-14,
+          "speedError": 0.000007156045801073457,
+          "kind": "translation",
+          "bone": "clavicle_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "clavicle_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.000004041793333338605,
+          "kind": "translation",
+          "bone": "upperarm_r"
+        },
+        {
+          "poseError": 1.713325493627654e-8,
+          "speedError": 0.0000037848753573979105,
+          "kind": "rotation",
+          "bone": "upperarm_r"
+        },
+        {
+          "poseError": 8.961636871876651e-14,
+          "speedError": 0.000005201042739969186,
+          "kind": "translation",
+          "bone": "forearm_r"
+        },
+        {
+          "poseError": 5.7116063247595725e-9,
+          "speedError": 0.000006605580109491872,
+          "kind": "rotation",
+          "bone": "forearm_r"
+        },
+        {
+          "poseError": 4.9900227924112796e-14,
+          "speedError": 0.000006650745690436696,
+          "kind": "translation",
+          "bone": "hand_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.0000026007127772474823,
+          "kind": "rotation",
+          "bone": "hand_r"
+        },
+        {
+          "poseError": 4.271574971572196e-14,
+          "speedError": 0.0000036385969743881812,
+          "kind": "translation",
+          "bone": "backpack"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0,
+          "kind": "rotation",
+          "bone": "backpack"
+        },
+        {
+          "poseError": 2.0176331932369928e-16,
+          "speedError": 4.231287419373183e-8,
+          "kind": "translation",
+          "bone": "thigh_l"
+        },
+        {
+          "poseError": 2.85582195185339e-8,
+          "speedError": 0.000011404462377177612,
+          "kind": "rotation",
+          "bone": "thigh_l"
+        },
+        {
+          "poseError": 6.833845486562318e-14,
+          "speedError": 0.000009628204814298634,
+          "kind": "translation",
+          "bone": "calf_l"
+        },
+        {
+          "poseError": 2.2846557383354936e-8,
+          "speedError": 0.00000696705640842741,
+          "kind": "rotation",
+          "bone": "calf_l"
+        },
+        {
+          "poseError": 1.2925013713564968e-14,
+          "speedError": 0.000001964654877917443,
+          "kind": "translation",
+          "bone": "foot_l"
+        },
+        {
+          "poseError": 5.7115185024521576e-9,
+          "speedError": 0.0000060142317229134535,
+          "kind": "rotation",
+          "bone": "foot_l"
+        },
+        {
+          "poseError": 6.845992336199198e-15,
+          "speedError": 0.000001552793708490029,
+          "kind": "translation",
+          "bone": "toe_l"
+        },
+        {
+          "poseError": 0,
+          "speedError": 6.984917598842934e-8,
+          "kind": "rotation",
+          "bone": "toe_l"
+        },
+        {
+          "poseError": 2.0176331932369928e-16,
+          "speedError": 4.231287419373183e-8,
+          "kind": "translation",
+          "bone": "thigh_r"
+        },
+        {
+          "poseError": 2.8558190351917703e-8,
+          "speedError": 0.000008409404537560257,
+          "kind": "rotation",
+          "bone": "thigh_r"
+        },
+        {
+          "poseError": 8.513723869029111e-15,
+          "speedError": 0.0000011618276861940261,
+          "kind": "translation",
+          "bone": "calf_r"
+        },
+        {
+          "poseError": 2.2846444359182125e-8,
+          "speedError": 0.00000593565623585051,
+          "kind": "rotation",
+          "bone": "calf_r"
+        },
+        {
+          "poseError": 1.545901975946457e-14,
+          "speedError": 0.0000016313125145571323,
+          "kind": "translation",
+          "bone": "foot_r"
+        },
+        {
+          "poseError": 5.711548654092938e-9,
+          "speedError": 0.0000014108202348952577,
+          "kind": "rotation",
+          "bone": "foot_r"
+        },
+        {
+          "poseError": 9.697826695452557e-15,
+          "speedError": 0.0000015123700181497033,
+          "kind": "translation",
+          "bone": "toe_r"
+        },
+        {
+          "poseError": 0,
+          "speedError": 0.0000017684879262436722,
+          "kind": "rotation",
+          "bone": "toe_r"
+        }
+      ],
+      "samplerCount": 69
+    },
+    {
+      "name": "tech_slide_v1",
+      "fps": 30,
+      "N": 36,
+      "durationSec": 1.2,
+      "loop": false,
+      "metrics": [],
+      "samplerCount": 69
+    }
+  ],
+  "jointFrames": [
+    {
+      "name": "root_motionless",
+      "node": 22,
+      "parent": -1,
+      "inverseBind": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "pelvis",
+      "node": 21,
+      "parent": 0,
+      "inverseBind": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -0.8700000047683716,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "spine_01",
+      "node": 12,
+      "parent": 1,
+      "inverseBind": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1.0299999713897705,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "spine_02",
+      "node": 11,
+      "parent": 2,
+      "inverseBind": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1.190000057220459,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "neck",
+      "node": 1,
+      "parent": 3,
+      "inverseBind": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1.399999976158142,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "head",
+      "node": 0,
+      "parent": 4,
+      "inverseBind": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1.5199999809265137,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "clavicle_l",
+      "node": 5,
+      "parent": 3,
+      "inverseBind": [
+        0,
+        1.0000001192092896,
+        0,
+        0,
+        4.371138828673793e-8,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -4.371138828673793e-8,
+        0,
+        -6.032171739889236e-8,
+        0,
+        -1.3799999952316284,
+        1
+      ]
+    },
+    {
+      "name": "upperarm_l",
+      "node": 4,
+      "parent": 6,
+      "inverseBind": [
+        0.6738854050636292,
+        0.5710645914077759,
+        0.4687899649143219,
+        0,
+        0.46878987550735474,
+        -0.820905327796936,
+        0.3261147439479828,
+        0,
+        0.5710645914077759,
+        -4.470350134511136e-8,
+        -0.8209052681922913,
+        0,
+        -0.7682293653488159,
+        1.030057668685913,
+        -0.5344204902648926,
+        1
+      ]
+    },
+    {
+      "name": "forearm_l",
+      "node": 3,
+      "parent": 7,
+      "inverseBind": [
+        0.701591432094574,
+        0.5462679862976074,
+        0.4575597941875458,
+        0,
+        0.4575597643852234,
+        -0.83761066198349,
+        0.2984086573123932,
+        0,
+        0.5462679266929626,
+        -7.450583439094771e-8,
+        -0.83761066198349,
+        0,
+        -0.7647348642349243,
+        0.7775211334228516,
+        -0.4987402856349945,
+        1
+      ]
+    },
+    {
+      "name": "hand_l",
+      "node": 2,
+      "parent": 8,
+      "inverseBind": [
+        0.9245285391807556,
+        0.27472084760665894,
+        0.2641507685184479,
+        0,
+        0.2641506493091583,
+        -0.9615241885185242,
+        0.07547151297330856,
+        0,
+        0.27472078800201416,
+        -7.450584149637507e-9,
+        -0.9615241885185242,
+        0,
+        -0.6960375905036926,
+        0.7499890327453613,
+        -0.19886764883995056,
+        1
+      ]
+    },
+    {
+      "name": "clavicle_r",
+      "node": 9,
+      "parent": 3,
+      "inverseBind": [
+        0,
+        -1.0000001192092896,
+        0,
+        0,
+        -4.371138828673793e-8,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        -4.371138828673793e-8,
+        0,
+        6.032171739889236e-8,
+        0,
+        -1.3799999952316284,
+        1
+      ]
+    },
+    {
+      "name": "upperarm_r",
+      "node": 8,
+      "parent": 10,
+      "inverseBind": [
+        0.6738854050636292,
+        -0.5710645914077759,
+        -0.4687899649143219,
+        0,
+        -0.46878987550735474,
+        -0.820905327796936,
+        0.3261147439479828,
+        0,
+        -0.5710645914077759,
+        -4.470350134511136e-8,
+        -0.8209052681922913,
+        0,
+        0.7682293653488159,
+        1.030057668685913,
+        -0.5344204902648926,
+        1
+      ]
+    },
+    {
+      "name": "forearm_r",
+      "node": 7,
+      "parent": 11,
+      "inverseBind": [
+        0.701591432094574,
+        -0.5462679862976074,
+        -0.4575597941875458,
+        0,
+        -0.4575597643852234,
+        -0.83761066198349,
+        0.2984086573123932,
+        0,
+        -0.5462679266929626,
+        -7.450583439094771e-8,
+        -0.83761066198349,
+        0,
+        0.7647348642349243,
+        0.7775211334228516,
+        -0.4987402856349945,
+        1
+      ]
+    },
+    {
+      "name": "hand_r",
+      "node": 6,
+      "parent": 12,
+      "inverseBind": [
+        0.9245285391807556,
+        -0.27472084760665894,
+        -0.2641507685184479,
+        0,
+        -0.2641506493091583,
+        -0.9615241885185242,
+        0.07547151297330856,
+        0,
+        -0.27472078800201416,
+        -7.450584149637507e-9,
+        -0.9615241885185242,
+        0,
+        0.6960375905036926,
+        0.7499890327453613,
+        -0.19886764883995056,
+        1
+      ]
+    },
+    {
+      "name": "backpack",
+      "node": 10,
+      "parent": 3,
+      "inverseBind": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1.149999976158142,
+        0.10999999940395355,
+        1
+      ]
+    },
+    {
+      "name": "thigh_l",
+      "node": 16,
+      "parent": 1,
+      "inverseBind": [
+        0.9971256852149963,
+        0.0525183342397213,
+        0.05454890802502632,
+        0,
+        0.054553400725126266,
+        -0.9978427886962891,
+        -0.03651747107505798,
+        0,
+        0.0525178462266922,
+        0.039388351142406464,
+        -0.9978412985801697,
+        0,
+        -0.20700156688690186,
+        0.8597202897071838,
+        0.023042380809783936,
+        1
+      ]
+    },
+    {
+      "name": "calf_l",
+      "node": 15,
+      "parent": 15,
+      "inverseBind": [
+        0.9999966621398926,
+        2.2957897272135597e-7,
+        -0.000004447514584171586,
+        0,
+        -1.8334685991661104e-9,
+        -0.9990279674530029,
+        0.044074688106775284,
+        0,
+        -7.465879292567479e-8,
+        -0.044074926525354385,
+        -0.9990266561508179,
+        0,
+        -0.17999939620494843,
+        0.4901847839355469,
+        -0.006610396783798933,
+        1
+      ]
+    },
+    {
+      "name": "foot_l",
+      "node": 14,
+      "parent": 16,
+      "inverseBind": [
+        0.9999966621398926,
+        0.0000037760812574560987,
+        -0.0000022179963252710877,
+        0,
+        2.3560209230603923e-13,
+        -0.5881720185279846,
+        -0.8087356090545654,
+        0,
+        1.7134702673653884e-13,
+        0.8087344169616699,
+        -0.5881714820861816,
+        0,
+        -0.1799994260072708,
+        0.0882251039147377,
+        0.12131071835756302,
+        1
+      ]
+    },
+    {
+      "name": "toe_l",
+      "node": 13,
+      "parent": 17,
+      "inverseBind": [
+        0.9999966621398926,
+        0.000004269852070137858,
+        -9.729631074151257e-7,
+        0,
+        -3.8571031297738475e-19,
+        -0.3162277042865753,
+        -0.9486830234527588,
+        0,
+        -1.285700655517037e-19,
+        0.948681652545929,
+        -0.31622761487960815,
+        0,
+        -0.17999939620494843,
+        -0.08221980929374695,
+        0.10119299590587616,
+        1
+      ]
+    },
+    {
+      "name": "thigh_r",
+      "node": 20,
+      "parent": 1,
+      "inverseBind": [
+        0.9971256852149963,
+        -0.0525183342397213,
+        -0.05454890802502632,
+        0,
+        -0.054553400725126266,
+        -0.9978427886962891,
+        -0.03651747107505798,
+        0,
+        -0.0525178462266922,
+        0.039388351142406464,
+        -0.9978412985801697,
+        0,
+        0.20700156688690186,
+        0.8597202897071838,
+        0.023042380809783936,
+        1
+      ]
+    },
+    {
+      "name": "calf_r",
+      "node": 19,
+      "parent": 19,
+      "inverseBind": [
+        0.9999966621398926,
+        -2.2957897272135597e-7,
+        0.000004447514584171586,
+        0,
+        1.8334685991661104e-9,
+        -0.9990279674530029,
+        0.044074688106775284,
+        0,
+        7.465879292567479e-8,
+        -0.044074926525354385,
+        -0.9990266561508179,
+        0,
+        0.17999939620494843,
+        0.4901847839355469,
+        -0.006610396783798933,
+        1
+      ]
+    },
+    {
+      "name": "foot_r",
+      "node": 18,
+      "parent": 20,
+      "inverseBind": [
+        0.9999966621398926,
+        -0.0000037760812574560987,
+        0.0000022179963252710877,
+        0,
+        -2.3560209230603923e-13,
+        -0.5881720185279846,
+        -0.8087356090545654,
+        0,
+        -1.7134702673653884e-13,
+        0.8087344169616699,
+        -0.5881714820861816,
+        0,
+        0.1799994260072708,
+        0.0882251039147377,
+        0.12131071835756302,
+        1
+      ]
+    },
+    {
+      "name": "toe_r",
+      "node": 17,
+      "parent": 21,
+      "inverseBind": [
+        0.9999966621398926,
+        -0.000004269852070137858,
+        9.729631074151257e-7,
+        0,
+        3.8571031297738475e-19,
+        -0.3162277042865753,
+        -0.9486830234527588,
+        0,
+        1.285700655517037e-19,
+        0.948681652545929,
+        -0.31622761487960815,
+        0,
+        0.17999939620494843,
+        -0.08221980929374695,
+        0.10119299590587616,
+        1
+      ]
+    }
+  ],
+  "vertexMap": {
+    "tripo_part_0#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 204,
+        "exportVertex": 204,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 409,
+        "exportVertex": 408,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 613,
+        "exportVertex": 612,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 818,
+        "exportVertex": 818,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1022,
+        "exportVertex": 1022,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1227,
+        "exportVertex": 1227,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1431,
+        "exportVertex": 1431,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1636,
+        "exportVertex": 1634,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1840,
+        "exportVertex": 1838,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 2045,
+        "exportVertex": 2044,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 2249,
+        "exportVertex": 2250,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 2454,
+        "exportVertex": 2455,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 2658,
+        "exportVertex": 2659,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 2863,
+        "exportVertex": 2864,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 3067,
+        "exportVertex": 3067,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_1#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 150,
+        "exportVertex": 150,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 299,
+        "exportVertex": 299,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 449,
+        "exportVertex": 448,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 598,
+        "exportVertex": 597,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 748,
+        "exportVertex": 748,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 898,
+        "exportVertex": 898,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1047,
+        "exportVertex": 1047,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1197,
+        "exportVertex": 1197,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1346,
+        "exportVertex": 1346,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1496,
+        "exportVertex": 1493,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1646,
+        "exportVertex": 1646,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1795,
+        "exportVertex": 1794,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1945,
+        "exportVertex": 1944,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 2094,
+        "exportVertex": 2094,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 2244,
+        "exportVertex": 2242,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_10#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 33,
+        "exportVertex": 33,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 65,
+        "exportVertex": 64,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 98,
+        "exportVertex": 98,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 130,
+        "exportVertex": 130,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 163,
+        "exportVertex": 162,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 195,
+        "exportVertex": 193,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 228,
+        "exportVertex": 228,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 260,
+        "exportVertex": 260,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 293,
+        "exportVertex": 293,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 325,
+        "exportVertex": 325,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 358,
+        "exportVertex": 358,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 390,
+        "exportVertex": 390,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 423,
+        "exportVertex": 422,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 455,
+        "exportVertex": 455,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 488,
+        "exportVertex": 487,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_11#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 31,
+        "exportVertex": 31,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 61,
+        "exportVertex": 61,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 92,
+        "exportVertex": 92,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 123,
+        "exportVertex": 122,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 154,
+        "exportVertex": 154,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 184,
+        "exportVertex": 184,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 215,
+        "exportVertex": 215,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 246,
+        "exportVertex": 246,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 277,
+        "exportVertex": 277,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 307,
+        "exportVertex": 306,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 338,
+        "exportVertex": 338,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 369,
+        "exportVertex": 369,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 400,
+        "exportVertex": 400,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 430,
+        "exportVertex": 430,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 461,
+        "exportVertex": 460,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_12#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 27,
+        "exportVertex": 27,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 54,
+        "exportVertex": 54,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 81,
+        "exportVertex": 81,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 108,
+        "exportVertex": 108,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 135,
+        "exportVertex": 135,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 162,
+        "exportVertex": 162,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 189,
+        "exportVertex": 189,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 216,
+        "exportVertex": 216,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 243,
+        "exportVertex": 243,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 270,
+        "exportVertex": 270,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 297,
+        "exportVertex": 297,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 324,
+        "exportVertex": 323,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 351,
+        "exportVertex": 350,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 378,
+        "exportVertex": 378,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 405,
+        "exportVertex": 405,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_13#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 34,
+        "exportVertex": 34,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 68,
+        "exportVertex": 66,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 101,
+        "exportVertex": 100,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 135,
+        "exportVertex": 135,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 169,
+        "exportVertex": 169,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 203,
+        "exportVertex": 202,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 237,
+        "exportVertex": 237,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 270,
+        "exportVertex": 267,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 304,
+        "exportVertex": 303,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 338,
+        "exportVertex": 336,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 372,
+        "exportVertex": 372,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 406,
+        "exportVertex": 406,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 439,
+        "exportVertex": 439,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 473,
+        "exportVertex": 473,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 507,
+        "exportVertex": 506,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_14#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 35,
+        "exportVertex": 34,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 70,
+        "exportVertex": 69,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 106,
+        "exportVertex": 105,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 141,
+        "exportVertex": 140,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 176,
+        "exportVertex": 176,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 211,
+        "exportVertex": 210,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 246,
+        "exportVertex": 246,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 282,
+        "exportVertex": 281,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 317,
+        "exportVertex": 317,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 352,
+        "exportVertex": 350,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 387,
+        "exportVertex": 385,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 422,
+        "exportVertex": 421,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 458,
+        "exportVertex": 458,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 493,
+        "exportVertex": 492,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 528,
+        "exportVertex": 526,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_15#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 41,
+        "exportVertex": 41,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 83,
+        "exportVertex": 83,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 124,
+        "exportVertex": 124,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 165,
+        "exportVertex": 165,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 206,
+        "exportVertex": 206,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 248,
+        "exportVertex": 247,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 289,
+        "exportVertex": 288,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 330,
+        "exportVertex": 330,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 371,
+        "exportVertex": 371,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 413,
+        "exportVertex": 412,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 454,
+        "exportVertex": 454,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 495,
+        "exportVertex": 494,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 536,
+        "exportVertex": 535,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 578,
+        "exportVertex": 578,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 619,
+        "exportVertex": 619,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_16#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 30,
+        "exportVertex": 28,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 59,
+        "exportVertex": 59,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 89,
+        "exportVertex": 87,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 118,
+        "exportVertex": 117,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 148,
+        "exportVertex": 148,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 178,
+        "exportVertex": 178,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 207,
+        "exportVertex": 206,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 237,
+        "exportVertex": 237,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 266,
+        "exportVertex": 265,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 296,
+        "exportVertex": 296,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 326,
+        "exportVertex": 326,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 355,
+        "exportVertex": 354,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 385,
+        "exportVertex": 385,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 414,
+        "exportVertex": 413,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 444,
+        "exportVertex": 444,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_17#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 39,
+        "exportVertex": 38,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 78,
+        "exportVertex": 78,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 117,
+        "exportVertex": 117,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 157,
+        "exportVertex": 155,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 196,
+        "exportVertex": 196,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 235,
+        "exportVertex": 234,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 274,
+        "exportVertex": 273,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 313,
+        "exportVertex": 313,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 352,
+        "exportVertex": 351,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 391,
+        "exportVertex": 391,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 430,
+        "exportVertex": 430,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 470,
+        "exportVertex": 470,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 509,
+        "exportVertex": 509,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 548,
+        "exportVertex": 546,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 587,
+        "exportVertex": 584,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_18#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 28,
+        "exportVertex": 27,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 56,
+        "exportVertex": 56,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 84,
+        "exportVertex": 84,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 113,
+        "exportVertex": 112,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 141,
+        "exportVertex": 140,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 169,
+        "exportVertex": 169,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 197,
+        "exportVertex": 195,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 225,
+        "exportVertex": 223,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 253,
+        "exportVertex": 253,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 281,
+        "exportVertex": 281,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 309,
+        "exportVertex": 308,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 338,
+        "exportVertex": 337,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 366,
+        "exportVertex": 366,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 394,
+        "exportVertex": 392,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 422,
+        "exportVertex": 422,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_19#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 22,
+        "exportVertex": 22,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 45,
+        "exportVertex": 45,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 67,
+        "exportVertex": 67,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 89,
+        "exportVertex": 89,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 111,
+        "exportVertex": 111,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 134,
+        "exportVertex": 134,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 156,
+        "exportVertex": 156,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 178,
+        "exportVertex": 176,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 200,
+        "exportVertex": 200,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 223,
+        "exportVertex": 221,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 245,
+        "exportVertex": 245,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 267,
+        "exportVertex": 267,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 289,
+        "exportVertex": 289,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 312,
+        "exportVertex": 312,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 334,
+        "exportVertex": 334,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_2#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 112,
+        "exportVertex": 112,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 224,
+        "exportVertex": 224,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 336,
+        "exportVertex": 336,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 449,
+        "exportVertex": 448,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 561,
+        "exportVertex": 560,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 673,
+        "exportVertex": 673,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 785,
+        "exportVertex": 784,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 897,
+        "exportVertex": 897,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1009,
+        "exportVertex": 1009,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1121,
+        "exportVertex": 1120,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1233,
+        "exportVertex": 1233,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1346,
+        "exportVertex": 1346,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1458,
+        "exportVertex": 1458,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1570,
+        "exportVertex": 1569,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1682,
+        "exportVertex": 1681,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_20#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 23,
+        "exportVertex": 23,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 46,
+        "exportVertex": 46,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 70,
+        "exportVertex": 70,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 93,
+        "exportVertex": 92,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 116,
+        "exportVertex": 116,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 139,
+        "exportVertex": 139,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 162,
+        "exportVertex": 162,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 186,
+        "exportVertex": 185,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 209,
+        "exportVertex": 209,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 232,
+        "exportVertex": 232,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 255,
+        "exportVertex": 255,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 278,
+        "exportVertex": 278,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 302,
+        "exportVertex": 302,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 325,
+        "exportVertex": 324,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 348,
+        "exportVertex": 348,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_21#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 22,
+        "exportVertex": 22,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 45,
+        "exportVertex": 44,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 67,
+        "exportVertex": 67,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 90,
+        "exportVertex": 90,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 112,
+        "exportVertex": 112,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 134,
+        "exportVertex": 134,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 157,
+        "exportVertex": 157,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 179,
+        "exportVertex": 177,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 202,
+        "exportVertex": 202,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 224,
+        "exportVertex": 223,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 246,
+        "exportVertex": 246,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 269,
+        "exportVertex": 268,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 291,
+        "exportVertex": 291,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 314,
+        "exportVertex": 314,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 336,
+        "exportVertex": 335,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_22#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 21,
+        "exportVertex": 21,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 43,
+        "exportVertex": 43,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 64,
+        "exportVertex": 65,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 85,
+        "exportVertex": 86,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 107,
+        "exportVertex": 108,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 128,
+        "exportVertex": 129,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 149,
+        "exportVertex": 149,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 171,
+        "exportVertex": 170,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 192,
+        "exportVertex": 193,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 213,
+        "exportVertex": 213,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 235,
+        "exportVertex": 236,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 256,
+        "exportVertex": 257,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 277,
+        "exportVertex": 278,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 299,
+        "exportVertex": 300,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 320,
+        "exportVertex": 321,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_23#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 40,
+        "exportVertex": 40,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 80,
+        "exportVertex": 77,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 120,
+        "exportVertex": 121,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 159,
+        "exportVertex": 163,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 199,
+        "exportVertex": 204,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 239,
+        "exportVertex": 242,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 279,
+        "exportVertex": 285,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 319,
+        "exportVertex": 328,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 359,
+        "exportVertex": 368,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 399,
+        "exportVertex": 409,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 439,
+        "exportVertex": 448,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 478,
+        "exportVertex": 488,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 518,
+        "exportVertex": 526,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 558,
+        "exportVertex": 567,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 598,
+        "exportVertex": 606,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_24#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 25,
+        "exportVertex": 25,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 49,
+        "exportVertex": 47,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 74,
+        "exportVertex": 73,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 99,
+        "exportVertex": 97,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 123,
+        "exportVertex": 123,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 148,
+        "exportVertex": 148,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 173,
+        "exportVertex": 173,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 197,
+        "exportVertex": 197,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 222,
+        "exportVertex": 221,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 247,
+        "exportVertex": 247,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 271,
+        "exportVertex": 270,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 296,
+        "exportVertex": 296,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 321,
+        "exportVertex": 321,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 345,
+        "exportVertex": 344,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 370,
+        "exportVertex": 370,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_25#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 36,
+        "exportVertex": 36,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 71,
+        "exportVertex": 71,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 107,
+        "exportVertex": 105,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 142,
+        "exportVertex": 142,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 178,
+        "exportVertex": 178,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 213,
+        "exportVertex": 213,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 249,
+        "exportVertex": 248,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 284,
+        "exportVertex": 284,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 320,
+        "exportVertex": 319,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 355,
+        "exportVertex": 355,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 391,
+        "exportVertex": 390,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 426,
+        "exportVertex": 423,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 462,
+        "exportVertex": 461,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 497,
+        "exportVertex": 497,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 533,
+        "exportVertex": 532,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_26#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 26,
+        "exportVertex": 26,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 51,
+        "exportVertex": 51,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 77,
+        "exportVertex": 77,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 102,
+        "exportVertex": 102,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 128,
+        "exportVertex": 127,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 153,
+        "exportVertex": 153,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 179,
+        "exportVertex": 179,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 204,
+        "exportVertex": 204,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 230,
+        "exportVertex": 230,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 255,
+        "exportVertex": 254,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 281,
+        "exportVertex": 281,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 306,
+        "exportVertex": 306,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 332,
+        "exportVertex": 331,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 357,
+        "exportVertex": 357,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 383,
+        "exportVertex": 383,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_27#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 40,
+        "exportVertex": 40,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 79,
+        "exportVertex": 79,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 119,
+        "exportVertex": 118,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 158,
+        "exportVertex": 158,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 198,
+        "exportVertex": 197,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 237,
+        "exportVertex": 237,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 277,
+        "exportVertex": 276,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 316,
+        "exportVertex": 315,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 356,
+        "exportVertex": 356,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 395,
+        "exportVertex": 392,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 435,
+        "exportVertex": 435,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 474,
+        "exportVertex": 474,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 514,
+        "exportVertex": 514,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 553,
+        "exportVertex": 553,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 593,
+        "exportVertex": 590,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_28#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 41,
+        "exportVertex": 41,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 82,
+        "exportVertex": 82,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 123,
+        "exportVertex": 123,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 164,
+        "exportVertex": 164,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 205,
+        "exportVertex": 205,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 246,
+        "exportVertex": 246,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 287,
+        "exportVertex": 287,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 328,
+        "exportVertex": 329,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 369,
+        "exportVertex": 370,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 410,
+        "exportVertex": 410,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 451,
+        "exportVertex": 451,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 492,
+        "exportVertex": 493,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 533,
+        "exportVertex": 534,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 574,
+        "exportVertex": 575,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 615,
+        "exportVertex": 614,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_29#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 23,
+        "exportVertex": 23,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 47,
+        "exportVertex": 46,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 70,
+        "exportVertex": 70,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 93,
+        "exportVertex": 93,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 116,
+        "exportVertex": 113,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 140,
+        "exportVertex": 140,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 163,
+        "exportVertex": 163,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 186,
+        "exportVertex": 184,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 209,
+        "exportVertex": 209,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 233,
+        "exportVertex": 233,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 256,
+        "exportVertex": 256,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 279,
+        "exportVertex": 279,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 302,
+        "exportVertex": 302,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 326,
+        "exportVertex": 325,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 349,
+        "exportVertex": 349,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_3#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 125,
+        "exportVertex": 124,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 249,
+        "exportVertex": 247,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 374,
+        "exportVertex": 373,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 498,
+        "exportVertex": 496,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 623,
+        "exportVertex": 622,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 748,
+        "exportVertex": 747,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 872,
+        "exportVertex": 872,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 997,
+        "exportVertex": 996,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1121,
+        "exportVertex": 1122,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1246,
+        "exportVertex": 1247,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1371,
+        "exportVertex": 1370,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1495,
+        "exportVertex": 1496,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1620,
+        "exportVertex": 1621,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1744,
+        "exportVertex": 1744,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1869,
+        "exportVertex": 1870,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_30#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 23,
+        "exportVertex": 22,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 47,
+        "exportVertex": 47,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 70,
+        "exportVertex": 70,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 94,
+        "exportVertex": 93,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 117,
+        "exportVertex": 117,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 140,
+        "exportVertex": 140,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 164,
+        "exportVertex": 164,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 187,
+        "exportVertex": 187,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 211,
+        "exportVertex": 211,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 234,
+        "exportVertex": 232,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 257,
+        "exportVertex": 257,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 281,
+        "exportVertex": 281,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 304,
+        "exportVertex": 304,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 328,
+        "exportVertex": 328,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 351,
+        "exportVertex": 350,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_31#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 25,
+        "exportVertex": 21,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 50,
+        "exportVertex": 50,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 76,
+        "exportVertex": 76,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 101,
+        "exportVertex": 102,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 126,
+        "exportVertex": 126,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 151,
+        "exportVertex": 152,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 176,
+        "exportVertex": 177,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 202,
+        "exportVertex": 203,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 227,
+        "exportVertex": 227,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 252,
+        "exportVertex": 253,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 277,
+        "exportVertex": 278,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 302,
+        "exportVertex": 302,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 328,
+        "exportVertex": 329,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 353,
+        "exportVertex": 354,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 378,
+        "exportVertex": 378,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_32#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 15,
+        "exportVertex": 15,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 29,
+        "exportVertex": 29,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 44,
+        "exportVertex": 44,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 58,
+        "exportVertex": 58,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 73,
+        "exportVertex": 73,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 88,
+        "exportVertex": 88,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 102,
+        "exportVertex": 101,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 117,
+        "exportVertex": 117,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 131,
+        "exportVertex": 131,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 146,
+        "exportVertex": 146,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 161,
+        "exportVertex": 161,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 175,
+        "exportVertex": 175,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 190,
+        "exportVertex": 190,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 204,
+        "exportVertex": 204,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 219,
+        "exportVertex": 219,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_33#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 16,
+        "exportVertex": 16,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 33,
+        "exportVertex": 33,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 49,
+        "exportVertex": 49,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 66,
+        "exportVertex": 66,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 82,
+        "exportVertex": 82,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 99,
+        "exportVertex": 99,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 115,
+        "exportVertex": 115,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 132,
+        "exportVertex": 132,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 148,
+        "exportVertex": 148,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 165,
+        "exportVertex": 165,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 181,
+        "exportVertex": 181,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 198,
+        "exportVertex": 198,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 214,
+        "exportVertex": 214,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 231,
+        "exportVertex": 231,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 247,
+        "exportVertex": 246,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_4#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 79,
+        "exportVertex": 78,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 157,
+        "exportVertex": 155,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 236,
+        "exportVertex": 235,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 315,
+        "exportVertex": 315,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 394,
+        "exportVertex": 394,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 472,
+        "exportVertex": 472,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 551,
+        "exportVertex": 550,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 630,
+        "exportVertex": 630,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 709,
+        "exportVertex": 709,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 787,
+        "exportVertex": 787,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 866,
+        "exportVertex": 866,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 945,
+        "exportVertex": 945,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1024,
+        "exportVertex": 1025,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1102,
+        "exportVertex": 1102,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1181,
+        "exportVertex": 1180,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_5#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 88,
+        "exportVertex": 86,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 175,
+        "exportVertex": 175,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 263,
+        "exportVertex": 262,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 351,
+        "exportVertex": 349,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 438,
+        "exportVertex": 436,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 526,
+        "exportVertex": 525,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 614,
+        "exportVertex": 614,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 701,
+        "exportVertex": 701,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 789,
+        "exportVertex": 789,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 877,
+        "exportVertex": 877,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 964,
+        "exportVertex": 964,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1052,
+        "exportVertex": 1052,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1140,
+        "exportVertex": 1140,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1227,
+        "exportVertex": 1227,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1315,
+        "exportVertex": 1314,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_6#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 88,
+        "exportVertex": 89,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 175,
+        "exportVertex": 175,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 263,
+        "exportVertex": 262,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 351,
+        "exportVertex": 352,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 439,
+        "exportVertex": 441,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 526,
+        "exportVertex": 527,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 614,
+        "exportVertex": 614,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 702,
+        "exportVertex": 702,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 790,
+        "exportVertex": 791,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 877,
+        "exportVertex": 878,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 965,
+        "exportVertex": 968,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1053,
+        "exportVertex": 1053,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1141,
+        "exportVertex": 1142,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1228,
+        "exportVertex": 1230,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1316,
+        "exportVertex": 1318,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_7#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 107,
+        "exportVertex": 106,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 214,
+        "exportVertex": 214,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 320,
+        "exportVertex": 321,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 427,
+        "exportVertex": 427,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 534,
+        "exportVertex": 534,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 641,
+        "exportVertex": 641,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 748,
+        "exportVertex": 749,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 854,
+        "exportVertex": 855,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 961,
+        "exportVertex": 960,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1068,
+        "exportVertex": 1068,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1175,
+        "exportVertex": 1176,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1282,
+        "exportVertex": 1283,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1388,
+        "exportVertex": 1389,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1495,
+        "exportVertex": 1495,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 1602,
+        "exportVertex": 1602,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_8#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 65,
+        "exportVertex": 65,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 130,
+        "exportVertex": 130,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 195,
+        "exportVertex": 194,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 261,
+        "exportVertex": 259,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 326,
+        "exportVertex": 326,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 391,
+        "exportVertex": 390,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 456,
+        "exportVertex": 454,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 521,
+        "exportVertex": 520,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 586,
+        "exportVertex": 585,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 651,
+        "exportVertex": 650,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 716,
+        "exportVertex": 714,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 782,
+        "exportVertex": 780,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 847,
+        "exportVertex": 848,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 912,
+        "exportVertex": 910,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 977,
+        "exportVertex": 976,
+        "restErrorM": 0
+      }
+    ],
+    "tripo_part_9#0": [
+      {
+        "sourceVertex": 0,
+        "exportVertex": 0,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 43,
+        "exportVertex": 41,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 87,
+        "exportVertex": 84,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 130,
+        "exportVertex": 130,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 173,
+        "exportVertex": 174,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 217,
+        "exportVertex": 218,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 260,
+        "exportVertex": 261,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 303,
+        "exportVertex": 304,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 347,
+        "exportVertex": 347,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 390,
+        "exportVertex": 391,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 433,
+        "exportVertex": 434,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 477,
+        "exportVertex": 477,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 520,
+        "exportVertex": 521,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 563,
+        "exportVertex": 565,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 607,
+        "exportVertex": 607,
+        "restErrorM": 0
+      },
+      {
+        "sourceVertex": 650,
+        "exportVertex": 651,
+        "restErrorM": 0
+      }
+    ]
+  },
+  "samples": [
+    {
+      "clip": "tech_idle_v1",
+      "frame": 0,
+      "timeSec": 0,
+      "maxVertexErrorM": 4.995224869425854e-7,
+      "maxBoneMatrixError": 0.0000022545188804430085,
+      "maxDisplacementM": 1.3657139822709083e-7
+    },
+    {
+      "clip": "tech_idle_v1",
+      "frame": 1,
+      "timeSec": 0.03333333333333333,
+      "maxVertexErrorM": 5.208149379142732e-7,
+      "maxBoneMatrixError": 0.0000022542843549591318,
+      "maxDisplacementM": 0.0012412102598853372
+    },
+    {
+      "clip": "tech_idle_v1",
+      "frame": 7.5,
+      "timeSec": 0.25,
+      "maxVertexErrorM": 5.208149379142732e-7,
+      "maxBoneMatrixError": 0.0000022542843549591318,
+      "maxDisplacementM": 0.008384352164551424
+    },
+    {
+      "clip": "tech_idle_v1",
+      "frame": 15,
+      "timeSec": 0.5,
+      "maxVertexErrorM": 5.208149379142732e-7,
+      "maxBoneMatrixError": 0.0000022542843549591318,
+      "maxDisplacementM": 0.01187331319314592
+    },
+    {
+      "clip": "tech_idle_v1",
+      "frame": 30,
+      "timeSec": 1,
+      "maxVertexErrorM": 5.208149379142732e-7,
+      "maxBoneMatrixError": 0.0000022542843549591318,
+      "maxDisplacementM": 1.3657139822709083e-7
+    },
+    {
+      "clip": "tech_idle_v1",
+      "frame": 45,
+      "timeSec": 1.5,
+      "maxVertexErrorM": 6.060762809059851e-7,
+      "maxBoneMatrixError": 0.0000022542843549591318,
+      "maxDisplacementM": 0.011875200269237012
+    },
+    {
+      "clip": "tech_idle_v1",
+      "frame": 59,
+      "timeSec": 1.9666666666666666,
+      "maxVertexErrorM": 5.208149379142732e-7,
+      "maxBoneMatrixError": 0.0000022542843549591318,
+      "maxDisplacementM": 0.0012412282120887411
+    },
+    {
+      "clip": "tech_idle_v1",
+      "frame": 60,
+      "timeSec": 2,
+      "maxVertexErrorM": 4.995224869425854e-7,
+      "maxBoneMatrixError": 0.0000022545188804430085,
+      "maxDisplacementM": 1.3657139822709083e-7
+    },
+    {
+      "clip": "tech_run_v1",
+      "frame": 0,
+      "timeSec": 0,
+      "maxVertexErrorM": 0.0000597234374503487,
+      "maxBoneMatrixError": 0.0000022949327557388738,
+      "maxDisplacementM": 0.4469004112384657
+    },
+    {
+      "clip": "tech_run_v1",
+      "frame": 1,
+      "timeSec": 0.03333333333333333,
+      "maxVertexErrorM": 0.00005770382887533516,
+      "maxBoneMatrixError": 0.0000022702624652513187,
+      "maxDisplacementM": 0.4253229509508883
+    },
+    {
+      "clip": "tech_run_v1",
+      "frame": 3.5,
+      "timeSec": 0.11666666666666667,
+      "maxVertexErrorM": 0.000046337181192578005,
+      "maxBoneMatrixError": 0.0000022548055811535787,
+      "maxDisplacementM": 0.4311225466801785
+    },
+    {
+      "clip": "tech_run_v1",
+      "frame": 6,
+      "timeSec": 0.2,
+      "maxVertexErrorM": 0.00006030306501046476,
+      "maxBoneMatrixError": 0.000002292426421780791,
+      "maxDisplacementM": 0.5830293193274088
+    },
+    {
+      "clip": "tech_run_v1",
+      "frame": 12,
+      "timeSec": 0.4,
+      "maxVertexErrorM": 0.00005360115093396944,
+      "maxBoneMatrixError": 0.0000022944853855146746,
+      "maxDisplacementM": 0.44707823350954584
+    },
+    {
+      "clip": "tech_run_v1",
+      "frame": 18,
+      "timeSec": 0.6,
+      "maxVertexErrorM": 0.000060781268827280985,
+      "maxBoneMatrixError": 0.0000022944667785983197,
+      "maxDisplacementM": 0.5817124686162499
+    },
+    {
+      "clip": "tech_run_v1",
+      "frame": 23,
+      "timeSec": 0.7666666666666667,
+      "maxVertexErrorM": 0.00006161255823485506,
+      "maxBoneMatrixError": 0.0000023033705645776614,
+      "maxDisplacementM": 0.468416878428946
+    },
+    {
+      "clip": "tech_run_v1",
+      "frame": 24,
+      "timeSec": 0.8,
+      "maxVertexErrorM": 0.00005972309488377641,
+      "maxBoneMatrixError": 0.000002293902383735877,
+      "maxDisplacementM": 0.4469004112384657
+    },
+    {
+      "clip": "tech_jump_v1",
+      "frame": 0,
+      "timeSec": 0,
+      "maxVertexErrorM": 4.995224869425854e-7,
+      "maxBoneMatrixError": 0.0000022545188804430085,
+      "maxDisplacementM": 1.3657139822709083e-7
+    },
+    {
+      "clip": "tech_jump_v1",
+      "frame": 4,
+      "timeSec": 0.13333333333333333,
+      "maxVertexErrorM": 0.00003560776644161945,
+      "maxBoneMatrixError": 0.0000022377725676023252,
+      "maxDisplacementM": 0.21888344709079235
+    },
+    {
+      "clip": "tech_jump_v1",
+      "frame": 6,
+      "timeSec": 0.2,
+      "maxVertexErrorM": 0.000010413363899989003,
+      "maxBoneMatrixError": 0.0000022427366413238503,
+      "maxDisplacementM": 0.12841377165321297
+    },
+    {
+      "clip": "tech_jump_v1",
+      "frame": 6.5,
+      "timeSec": 0.21666666666666667,
+      "maxVertexErrorM": 0.000009912025626034624,
+      "maxBoneMatrixError": 0.0000022379589967799762,
+      "maxDisplacementM": 0.12644387843725896
+    },
+    {
+      "clip": "tech_jump_v1",
+      "frame": 15,
+      "timeSec": 0.5,
+      "maxVertexErrorM": 0.000018469474976015542,
+      "maxBoneMatrixError": 0.0000022182947298915456,
+      "maxDisplacementM": 0.28368246538033337
+    },
+    {
+      "clip": "tech_jump_v1",
+      "frame": 24,
+      "timeSec": 0.8,
+      "maxVertexErrorM": 0.00000888792526706461,
+      "maxBoneMatrixError": 0.0000022251833317818437,
+      "maxDisplacementM": 0.20115614467222107
+    },
+    {
+      "clip": "tech_jump_v1",
+      "frame": 30,
+      "timeSec": 1,
+      "maxVertexErrorM": 0.0000016714709281026913,
+      "maxBoneMatrixError": 0.000002232465062507183,
+      "maxDisplacementM": 0.06823815706058484
+    },
+    {
+      "clip": "tech_jump_v1",
+      "frame": 36,
+      "timeSec": 1.2,
+      "maxVertexErrorM": 5.21895739028518e-7,
+      "maxBoneMatrixError": 0.000002255293216466618,
+      "maxDisplacementM": 1.3657139822709083e-7
+    },
+    {
+      "clip": "tech_slide_v1",
+      "frame": 0,
+      "timeSec": 0,
+      "maxVertexErrorM": 4.995224869425854e-7,
+      "maxBoneMatrixError": 0.0000022545188804430085,
+      "maxDisplacementM": 1.3657139822709083e-7
+    },
+    {
+      "clip": "tech_slide_v1",
+      "frame": 6,
+      "timeSec": 0.2,
+      "maxVertexErrorM": 0.00007942141824065662,
+      "maxBoneMatrixError": 0.000002661275590162826,
+      "maxDisplacementM": 0.7727412524200267
+    },
+    {
+      "clip": "tech_slide_v1",
+      "frame": 15,
+      "timeSec": 0.5,
+      "maxVertexErrorM": 0.00007940703836885415,
+      "maxBoneMatrixError": 0.0000026539674266579105,
+      "maxDisplacementM": 0.7727412524200267
+    },
+    {
+      "clip": "tech_slide_v1",
+      "frame": 24,
+      "timeSec": 0.8,
+      "maxVertexErrorM": 0.00007940703836885415,
+      "maxBoneMatrixError": 0.0000026539674266579105,
+      "maxDisplacementM": 0.7727412524200267
+    },
+    {
+      "clip": "tech_slide_v1",
+      "frame": 25.5,
+      "timeSec": 0.85,
+      "maxVertexErrorM": 0.00007736863267854536,
+      "maxBoneMatrixError": 0.000002616065618660235,
+      "maxDisplacementM": 0.746394967269788
+    },
+    {
+      "clip": "tech_slide_v1",
+      "frame": 36,
+      "timeSec": 1.2,
+      "maxVertexErrorM": 5.253225641099046e-7,
+      "maxBoneMatrixError": 0.0000022561602535812054,
+      "maxDisplacementM": 1.3657139822709083e-7
+    }
+  ],
+  "maxVertexErrorM": 0.00007942141824065662,
+  "maxBoneMatrixError": 0.000002661275590162826,
+  "quality": "numerical validity only; manual quality deferred"
+}

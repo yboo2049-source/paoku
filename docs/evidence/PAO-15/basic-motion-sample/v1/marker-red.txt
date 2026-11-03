@@ -1,0 +1,44 @@
+RUN  v4.1.10 D:/worker/paoku-sessions/pao-15
+
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts (11 tests | 3 failed) 21ms
+     × emits f0 once per loop and never double-emits a repeated render frame 3ms
+     × freezes paused markers and seek never replays history 1ms
+     × new selection creates a new identity and disposed cursors emit nothing 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao15-basic-motion-sample.test.ts > isolated motion marker lifecycle > emits f0 once per loop and never double-emits a repeated render frame
+Error: not implemented
+ ❯ new MarkerCursor tools/pao15-basic-motion-sample/playback.mjs:1:51
+      1| export class MarkerCursor { constructor() { throw Error('not implement…
+       |                                                   ^
+      2|
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts:69:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/pao15-basic-motion-sample.test.ts > isolated motion marker lifecycle > freezes paused markers and seek never replays history
+Error: not implemented
+ ❯ new MarkerCursor tools/pao15-basic-motion-sample/playback.mjs:1:51
+      1| export class MarkerCursor { constructor() { throw Error('not implement…
+       |                                                   ^
+      2|
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts:76:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/pao15-basic-motion-sample.test.ts > isolated motion marker lifecycle > new selection creates a new identity and disposed cursors emit nothing
+Error: not implemented
+ ❯ new MarkerCursor tools/pao15-basic-motion-sample/playback.mjs:1:51
+      1| export class MarkerCursor { constructor() { throw Error('not implement…
+       |                                                   ^
+      2|
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts:82:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 8 passed (11)
+   Start at  00:37:46
+   Duration  314ms (transform 58ms, setup 0ms, import 76ms, tests 21ms, environment 0ms)

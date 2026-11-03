@@ -1,0 +1,33 @@
+[WebServer] (node:27188) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:22120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\pao15-basic-motion-sample.spec.ts:6:1 › four real clips: numerical parity, pause, switching, loops and warm disposal (11.2s)
+
+
+  1) tests\e2e\pao15-basic-motion-sample.spec.ts:6:1 › four real clips: numerical parity, pause, switching, loops and warm disposal
+
+    Test timeout of 10000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 10000ms exceeded.
+
+       9 |   await mkdir(dir, { recursive: true });
+      10 |   await page.goto('/tools/pao15-basic-motion-sample/');
+    > 11 |   await page.waitForFunction(() => (window as any).__BASIC_MOTION__?.ready);
+         |              ^
+      12 |   const imported = await page.evaluate(() => (window as any).__BASIC_MOTION__.info());
+      13 |   expect(imported.clips.map((c: any) => c.name).sort()).toEqual(['tech_idle_v1', 'tech_jump_v1', 'tech_run_v1', 'tech_slide_v1']);
+      14 |   expect(imported.clips.map((c: any) => c.durationSec).sort()).toEqual([.8, 1.2, 1.2, 2]);
+        at D:\worker\paoku-sessions\pao-15\tests\e2e\pao15-basic-motion-sample.spec.ts:11:14
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    .pao15-local\basic-results\pao15-basic-motion-sample--98cb8-ing-loops-and-warm-disposal\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .pao15-local\basic-results\pao15-basic-motion-sample--98cb8-ing-loops-and-warm-disposal\error-context.md
+
+  1 failed
+    tests\e2e\pao15-basic-motion-sample.spec.ts:6:1 › four real clips: numerical parity, pause, switching, loops and warm disposal

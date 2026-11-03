@@ -1,0 +1,44 @@
+[WebServer] (node:28644) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:28384) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\pao15-basic-motion-sample.spec.ts:6:1 › four real clips: numerical parity, pause, switching, loops and warm disposal (10.7s)
+
+
+  1) tests\e2e\pao15-basic-motion-sample.spec.ts:6:1 › four real clips: numerical parity, pause, switching, loops and warm disposal
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+      Array [
+    -   0.8,
+    -   1.2,
+    -   1.2,
+    +   0.800000011920929,
+    +   1.2000000476837158,
+    +   1.2000000476837158,
+        2,
+      ]
+
+      12 |   const imported = await page.evaluate(() => (window as any).__BASIC_MOTION__.info());
+      13 |   expect(imported.clips.map((c: any) => c.name).sort()).toEqual(['tech_idle_v1', 'tech_jump_v1', 'tech_run_v1', 'tech_slide_v1']);
+    > 14 |   expect(imported.clips.map((c: any) => c.durationSec).sort()).toEqual([.8, 1.2, 1.2, 2]);
+         |                                                                ^
+      15 |   expect(imported.skeletons).toBe(1); expect(imported.skinnedMeshes).toBe(34);
+      16 |   const parity = await page.evaluate(() => (window as any).__BASIC_MOTION__.compareAll());
+      17 |   expect(parity.maxVertexErrorM).toBeLessThan(1e-4);
+        at D:\worker\paoku-sessions\pao-15\tests\e2e\pao15-basic-motion-sample.spec.ts:14:64
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    .pao15-local\basic-results\pao15-basic-motion-sample--98cb8-ing-loops-and-warm-disposal\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .pao15-local\basic-results\pao15-basic-motion-sample--98cb8-ing-loops-and-warm-disposal\error-context.md
+
+  1 failed
+    tests\e2e\pao15-basic-motion-sample.spec.ts:6:1 › four real clips: numerical parity, pause, switching, loops and warm disposal

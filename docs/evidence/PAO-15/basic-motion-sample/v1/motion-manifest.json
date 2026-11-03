@@ -1,0 +1,452 @@
+{
+  "documentVersion": "1.0",
+  "artifactKind": "technical_motion_sample",
+  "sampleVersion": "v1",
+  "executionBase": "8c4b09fc5351778fe8db19858d52924ac70463b9",
+  "sourceCommit": "64c4f3120224f42995bc4b0fae544feae139d380",
+  "sourceKind": "derived_reconstruction",
+  "sourceDerivedBlendHash": "a75de312d230d1f7924ec7616b47428515dba4b58f1f2219c1dbb8c7e17875bd",
+  "sourceDiagnosticGlbHash": "cb84cfb9a308c54245ac49627383aa6643c8d40efc9c2a6929334dc60c7348f5",
+  "derivedBlendHash": "b7e18628f85fa26a8d9621c25c13e2fcdd53d4f012195540386164316d535193",
+  "exportHash": "da2d051918cd3c37c8a1551532b47dcbada842f1198ae39dbcb680d94b0f62dc",
+  "exportFile": "runner-basic-motion-sample.glb",
+  "sourceRigName": "runner_rig_spike_v1",
+  "skeletonVersion": "rig-spike-v1@64c4f31",
+  "restSkinFingerprint": "8730fec1a9999f82a087adb07038e6e4e913dd72565b25e55f21a825f9fed789",
+  "joints": [
+    {
+      "name": "root_motionless",
+      "parent": null,
+      "node": 22
+    },
+    {
+      "name": "pelvis",
+      "parent": "root_motionless",
+      "node": 21
+    },
+    {
+      "name": "spine_01",
+      "parent": "pelvis",
+      "node": 12
+    },
+    {
+      "name": "spine_02",
+      "parent": "spine_01",
+      "node": 11
+    },
+    {
+      "name": "neck",
+      "parent": "spine_02",
+      "node": 1
+    },
+    {
+      "name": "head",
+      "parent": "neck",
+      "node": 0
+    },
+    {
+      "name": "clavicle_l",
+      "parent": "spine_02",
+      "node": 5
+    },
+    {
+      "name": "upperarm_l",
+      "parent": "clavicle_l",
+      "node": 4
+    },
+    {
+      "name": "forearm_l",
+      "parent": "upperarm_l",
+      "node": 3
+    },
+    {
+      "name": "hand_l",
+      "parent": "forearm_l",
+      "node": 2
+    },
+    {
+      "name": "clavicle_r",
+      "parent": "spine_02",
+      "node": 9
+    },
+    {
+      "name": "upperarm_r",
+      "parent": "clavicle_r",
+      "node": 8
+    },
+    {
+      "name": "forearm_r",
+      "parent": "upperarm_r",
+      "node": 7
+    },
+    {
+      "name": "hand_r",
+      "parent": "forearm_r",
+      "node": 6
+    },
+    {
+      "name": "backpack",
+      "parent": "spine_02",
+      "node": 10
+    },
+    {
+      "name": "thigh_l",
+      "parent": "pelvis",
+      "node": 16
+    },
+    {
+      "name": "calf_l",
+      "parent": "thigh_l",
+      "node": 15
+    },
+    {
+      "name": "foot_l",
+      "parent": "calf_l",
+      "node": 14
+    },
+    {
+      "name": "toe_l",
+      "parent": "foot_l",
+      "node": 13
+    },
+    {
+      "name": "thigh_r",
+      "parent": "pelvis",
+      "node": 20
+    },
+    {
+      "name": "calf_r",
+      "parent": "thigh_r",
+      "node": 19
+    },
+    {
+      "name": "foot_r",
+      "parent": "calf_r",
+      "node": 18
+    },
+    {
+      "name": "toe_r",
+      "parent": "foot_r",
+      "node": 17
+    }
+  ],
+  "coordinates": {
+    "units": "m",
+    "up": "+Y",
+    "forward": "+Z",
+    "origin": "sole_center",
+    "sourceDcc": "Z-up/-Y",
+    "normalizationAppliedAgain": false,
+    "loaderHandedness": "RH_native_gltf_preview",
+    "runtimeConversionStatus": "not_validated"
+  },
+  "rootPolicy": "fixed_bind_TRS",
+  "move_delta": [
+    0,
+    0,
+    0
+  ],
+  "simulationAuthority": "none",
+  "markersArePresentationOnly": true,
+  "attackWindow": "N/A",
+  "artInvulnerability": "N/A",
+  "footContactVerified": false,
+  "resourceProfile": {
+    "name": "single_runner_rig_spike",
+    "triangles": 26268,
+    "joints": 23,
+    "triangleLimit": 30000,
+    "jointLimit": 48,
+    "weightLimit": 4,
+    "textures": "source two 4096x4096; not a production budget pass"
+  },
+  "clips": [
+    {
+      "name": "tech_idle_v1",
+      "clipVersion": "v1",
+      "fps": 30,
+      "N": 60,
+      "durationSec": 2,
+      "playbackRange": [
+        0,
+        60
+      ],
+      "boundaryKeyTimeSec": 2,
+      "loop": true,
+      "holdLast": false,
+      "cancel_from": 0,
+      "phases": [],
+      "markers": [],
+      "interpolation": "sampled LINEAR; STEP constants accepted",
+      "boundaryVelocityPolicy": "symmetric tangent guard f1/fN-1",
+      "drivenBoneNames": [
+        "root_motionless",
+        "pelvis",
+        "spine_01",
+        "spine_02",
+        "neck",
+        "head",
+        "clavicle_l",
+        "upperarm_l",
+        "forearm_l",
+        "hand_l",
+        "clavicle_r",
+        "upperarm_r",
+        "forearm_r",
+        "hand_r",
+        "backpack",
+        "thigh_l",
+        "calf_l",
+        "foot_l",
+        "toe_l",
+        "thigh_r",
+        "calf_r",
+        "foot_r",
+        "toe_r"
+      ]
+    },
+    {
+      "name": "tech_jump_v1",
+      "clipVersion": "v1",
+      "fps": 30,
+      "N": 36,
+      "durationSec": 1.2,
+      "playbackRange": [
+        0,
+        36
+      ],
+      "boundaryKeyTimeSec": 1.2,
+      "loop": false,
+      "holdLast": true,
+      "cancel_from": 0,
+      "phases": [
+        {
+          "name": "prepare",
+          "frames": [
+            0,
+            6
+          ]
+        },
+        {
+          "name": "air_pose",
+          "frames": [
+            6,
+            24
+          ]
+        },
+        {
+          "name": "buffer_pose",
+          "frames": [
+            24,
+            36
+          ]
+        }
+      ],
+      "markers": [
+        {
+          "id": "takeoff_pose",
+          "frame": 6,
+          "time": 0.2,
+          "presentationOnly": true
+        },
+        {
+          "id": "tuck_peak",
+          "frame": 15,
+          "time": 0.5,
+          "presentationOnly": true
+        },
+        {
+          "id": "landing_pose",
+          "frame": 24,
+          "time": 0.8,
+          "presentationOnly": true
+        }
+      ],
+      "interpolation": "sampled LINEAR; STEP constants accepted",
+      "boundaryVelocityPolicy": "bounded smooth source, sampled LINEAR",
+      "drivenBoneNames": [
+        "root_motionless",
+        "pelvis",
+        "spine_01",
+        "spine_02",
+        "neck",
+        "head",
+        "clavicle_l",
+        "upperarm_l",
+        "forearm_l",
+        "hand_l",
+        "clavicle_r",
+        "upperarm_r",
+        "forearm_r",
+        "hand_r",
+        "backpack",
+        "thigh_l",
+        "calf_l",
+        "foot_l",
+        "toe_l",
+        "thigh_r",
+        "calf_r",
+        "foot_r",
+        "toe_r"
+      ]
+    },
+    {
+      "name": "tech_run_v1",
+      "clipVersion": "v1",
+      "fps": 30,
+      "N": 24,
+      "durationSec": 0.8,
+      "playbackRange": [
+        0,
+        24
+      ],
+      "boundaryKeyTimeSec": 0.8,
+      "loop": true,
+      "holdLast": false,
+      "cancel_from": 0,
+      "phases": [],
+      "markers": [
+        {
+          "id": "left_contact_pose_hint",
+          "frame": 0,
+          "time": 0,
+          "presentationOnly": true
+        },
+        {
+          "id": "right_contact_pose_hint",
+          "frame": 12,
+          "time": 0.4,
+          "presentationOnly": true
+        }
+      ],
+      "interpolation": "sampled LINEAR; STEP constants accepted",
+      "boundaryVelocityPolicy": "symmetric tangent guard f1/fN-1",
+      "drivenBoneNames": [
+        "root_motionless",
+        "pelvis",
+        "spine_01",
+        "spine_02",
+        "neck",
+        "head",
+        "clavicle_l",
+        "upperarm_l",
+        "forearm_l",
+        "hand_l",
+        "clavicle_r",
+        "upperarm_r",
+        "forearm_r",
+        "hand_r",
+        "backpack",
+        "thigh_l",
+        "calf_l",
+        "foot_l",
+        "toe_l",
+        "thigh_r",
+        "calf_r",
+        "foot_r",
+        "toe_r"
+      ]
+    },
+    {
+      "name": "tech_slide_v1",
+      "clipVersion": "v1",
+      "fps": 30,
+      "N": 36,
+      "durationSec": 1.2,
+      "playbackRange": [
+        0,
+        36
+      ],
+      "boundaryKeyTimeSec": 1.2,
+      "loop": false,
+      "holdLast": true,
+      "cancel_from": 0,
+      "phases": [
+        {
+          "name": "enter",
+          "frames": [
+            0,
+            6
+          ]
+        },
+        {
+          "name": "hold_pose",
+          "frames": [
+            6,
+            24
+          ]
+        },
+        {
+          "name": "exit",
+          "frames": [
+            24,
+            36
+          ]
+        }
+      ],
+      "markers": [
+        {
+          "id": "low_pose_enter",
+          "frame": 6,
+          "time": 0.2,
+          "presentationOnly": true
+        },
+        {
+          "id": "recovery_pose_begin",
+          "frame": 24,
+          "time": 0.8,
+          "presentationOnly": true
+        }
+      ],
+      "interpolation": "sampled LINEAR; STEP constants accepted",
+      "boundaryVelocityPolicy": "bounded smooth source, sampled LINEAR",
+      "drivenBoneNames": [
+        "root_motionless",
+        "pelvis",
+        "spine_01",
+        "spine_02",
+        "neck",
+        "head",
+        "clavicle_l",
+        "upperarm_l",
+        "forearm_l",
+        "hand_l",
+        "clavicle_r",
+        "upperarm_r",
+        "forearm_r",
+        "hand_r",
+        "backpack",
+        "thigh_l",
+        "calf_l",
+        "foot_l",
+        "toe_l",
+        "thigh_r",
+        "calf_r",
+        "foot_r",
+        "toe_r"
+      ]
+    }
+  ],
+  "pipelineStatus": "passed_pending_independent_review",
+  "qualityClass": "needs_local_refinement",
+  "knownIssues": [
+    "MAN-01 shoulder/hood leakage",
+    "MAN-02 elbow/torso leakage",
+    "MAN-03/04 opposite leg influence and knee compression",
+    "MAN-05 accessories unverified",
+    "MAN-08 no foot locking or natural motion polish"
+  ],
+  "commercialUseConditions": {
+    "value": null,
+    "reason": "not obtained"
+  },
+  "productionApproval": false,
+  "approvalStatus": "awaiting_parent_independent_review",
+  "qualityEvidence": [
+    "manual-todo.md",
+    "quality-samples.json",
+    "01-run.png",
+    "02-jump.png",
+    "03-slide-side.png"
+  ]
+}

@@ -1,0 +1,686 @@
+[
+  {
+    "x": -3,
+    "distance": 1.5,
+    "y": 0,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 91.74461249801631,
+          "maxX": 157.39290791778512,
+          "minY": 293.1713892109659,
+          "maxY": 439.6499076138307,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 181.65810966113716,
+          "maxX": 253.94722407849287,
+          "minY": 294.754904896222,
+          "maxY": 441.11851056535033,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 245.69036972841755,
+          "maxX": 288.37423545447456,
+          "minY": 389.63559675341,
+          "maxY": 483.0906604667618,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": -3,
+    "distance": 1.5,
+    "y": 3,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 90.83586660454753,
+          "maxX": 158.03275432445375,
+          "minY": 237.21160797549015,
+          "maxY": 386.77668933260304,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 183.44797407323495,
+          "maxX": 250.33821316869714,
+          "minY": 368.4949982330253,
+          "maxY": 499.707586290616,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 241.18762375605402,
+          "maxX": 281.6119401281579,
+          "minY": 442.469315066187,
+          "maxY": 537.021640444221,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": -3,
+    "distance": 1.5,
+    "y": 8,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 107.39220402397656,
+          "maxX": 166.104673747625,
+          "minY": 149.0684617764182,
+          "maxY": 283.0680889059725,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 193.93117833511064,
+          "maxX": 255.10594105574071,
+          "minY": 433.3220862765239,
+          "maxY": 557.1673632606788,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 247.98770067181144,
+          "maxX": 283.9214662636364,
+          "minY": 514.2688978742435,
+          "maxY": 594.613731894685,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": -3,
+    "distance": 2.8,
+    "y": 0,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 92.94046265877392,
+          "maxX": 161.08678517380844,
+          "minY": 252.01420971692485,
+          "maxY": 404.42374261683176,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 158.80779628311905,
+          "maxX": 242.51719953497556,
+          "minY": 311.7286354825314,
+          "maxY": 476.9628808798607,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 233.21684685167256,
+          "maxX": 282.56945679579286,
+          "minY": 410.9238268124778,
+          "maxY": 522.8162899343201,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": -3,
+    "distance": 2.8,
+    "y": 3,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 88.8873958692352,
+          "maxX": 159.57158133904346,
+          "minY": 189.4928417005797,
+          "maxY": 346.7997009984496,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 160.77642616174404,
+          "maxX": 242.36246534382565,
+          "minY": 388.7110251673453,
+          "maxY": 538.6285892304655,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 231.1956730510286,
+          "maxX": 277.24644339962265,
+          "minY": 464.8123104312823,
+          "maxY": 575.5917766472614,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": -3,
+    "distance": 2.8,
+    "y": 8,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 127.16159017233184,
+          "maxX": 177.42128240218298,
+          "minY": 147.69672770930927,
+          "maxY": 265.34837600445627,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 190.10133461806402,
+          "maxX": 253.8188986096412,
+          "minY": 421.98701422806135,
+          "maxY": 544.3783697626287,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 245.73104773825693,
+          "maxX": 280.754959126562,
+          "minY": 499.71360099678793,
+          "maxY": 578.4187189124815,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": 0,
+    "distance": 1.5,
+    "y": 0,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 89.68338089296614,
+          "maxX": 145.31616036418032,
+          "minY": 296.11162882296543,
+          "maxY": 442.31579947113903,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 193.6090832140548,
+          "maxX": 265.28168030156723,
+          "minY": 297.71306344368566,
+          "maxY": 440.9297916984531,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 244.31084399342978,
+          "maxX": 297.86093838747627,
+          "minY": 386.8035520329559,
+          "maxY": 477.4844033854081,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": 0,
+    "distance": 1.5,
+    "y": 3,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 88.08746375128857,
+          "maxX": 145.47197398714965,
+          "minY": 239.55778240322584,
+          "maxY": 389.5451963771463,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 195.31924970069306,
+          "maxX": 265.65341218676787,
+          "minY": 367.2410037826946,
+          "maxY": 498.202819064523,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 244.23377234398035,
+          "maxX": 294.37692272882975,
+          "minY": 437.3428040999704,
+          "maxY": 529.1366722777258,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": 0,
+    "distance": 1.5,
+    "y": 8,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 100.77349582218474,
+          "maxX": 151.63540271867618,
+          "minY": 150.6818809530663,
+          "maxY": 286.90807866214726,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 196.3586068597886,
+          "maxX": 262.3427215595751,
+          "minY": 436.742862377932,
+          "maxY": 561.3334313096622,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 244.28105067913748,
+          "maxX": 289.62059400413256,
+          "minY": 514.2846185339416,
+          "maxY": 593.8176966380684,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": 0,
+    "distance": 2.8,
+    "y": 0,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 65.81526194297469,
+          "maxX": 122.2207171564134,
+          "minY": 256.1760239083351,
+          "maxY": 419.81164761710255,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 190.70957275801254,
+          "maxX": 283.3062191987341,
+          "minY": 310.85678381527566,
+          "maxY": 478.9782429885226,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 250.8222145150008,
+          "maxX": 315.03679032388453,
+          "minY": 404.72286914055223,
+          "maxY": 513.5950323183501,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": 0,
+    "distance": 2.8,
+    "y": 3,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 66.17345897207852,
+          "maxX": 124.67903058480304,
+          "minY": 192.94111334658947,
+          "maxY": 361.29392630508886,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 193.42243292521195,
+          "maxX": 277.7431712825611,
+          "minY": 387.04629334333885,
+          "maxY": 536.5935916581004,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 248.82610499558956,
+          "maxX": 307.51591155941964,
+          "minY": 458.1679962906374,
+          "maxY": 565.4180305877908,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": 0,
+    "distance": 2.8,
+    "y": 8,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 96.66249602305083,
+          "maxX": 141.5502959593051,
+          "minY": 150.72148919030695,
+          "maxY": 270.02925851783425,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 190.1859637639227,
+          "maxX": 251.1730235282452,
+          "minY": 426.0142716651046,
+          "maxY": 545.6734030555051,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 235.31622890799045,
+          "maxX": 279.1428197313454,
+          "minY": 500.86234770189503,
+          "maxY": 578.3779216626128,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": 3,
+    "distance": 1.5,
+    "y": 0,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 229.09084989052562,
+          "maxX": 293.79908763312005,
+          "minY": 291.3488013943022,
+          "maxY": 435.51636948060064,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 139.0351264476044,
+          "maxX": 210.26362134274748,
+          "minY": 299.52513709111537,
+          "maxY": 443.6260953394627,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 105.98500050174724,
+          "maxX": 148.47554502332463,
+          "minY": 391.192006060358,
+          "maxY": 485.0734937462302,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": 3,
+    "distance": 1.5,
+    "y": 3,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 230.1011282193065,
+          "maxX": 296.7936901896526,
+          "minY": 235.2901316876718,
+          "maxY": 383.2007739886525,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 141.643502819264,
+          "maxX": 208.85104084623697,
+          "minY": 369.6082001289984,
+          "maxY": 500.8779470831004,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 110.52723214042891,
+          "maxX": 150.83101267130223,
+          "minY": 444.5691766364378,
+          "maxY": 537.832098563035,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": 3,
+    "distance": 1.5,
+    "y": 8,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 223.474816375243,
+          "maxX": 282.12082208054227,
+          "minY": 149.0739238560792,
+          "maxY": 283.09579252181493,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 136.6468626305342,
+          "maxX": 197.04093094763695,
+          "minY": 433.3531483412829,
+          "maxY": 556.8489673442888,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 106.56774002877034,
+          "maxX": 142.490323690479,
+          "minY": 513.6181332206359,
+          "maxY": 594.6179854508744,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": 3,
+    "distance": 2.8,
+    "y": 0,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 229.96504695771705,
+          "maxX": 298.34256331758985,
+          "minY": 254.91028025916967,
+          "maxY": 404.5707518811283,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 143.94999523901012,
+          "maxX": 232.05944720591904,
+          "minY": 309.82195190637793,
+          "maxY": 477.44264824622104,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 106.32030535403995,
+          "maxX": 155.74432702346235,
+          "minY": 407.7880146881297,
+          "maxY": 520.9970044920784,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": 3,
+    "distance": 2.8,
+    "y": 3,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 231.5118868464763,
+          "maxX": 302.4444554555614,
+          "minY": 192.46617839977966,
+          "maxY": 347.38957345791346,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 145.4683759538151,
+          "maxX": 229.0231640656547,
+          "minY": 387.0948600954429,
+          "maxY": 538.482863028434,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 111.72401557590202,
+          "maxX": 157.83938253526864,
+          "minY": 464.1924908326843,
+          "maxY": 574.0011620305071,
+          "safe": true
+        }
+      ]
+    }
+  },
+  {
+    "x": 3,
+    "distance": 2.8,
+    "y": 8,
+    "projection": {
+      "safe": true,
+      "reason": null,
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 212.25566671299168,
+          "maxX": 262.46207683909006,
+          "minY": 147.71040443520792,
+          "maxY": 265.37749667126496,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 136.88416540431686,
+          "maxX": 200.1875072506307,
+          "minY": 422.01644389017576,
+          "maxY": 544.1911606920613,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 109.71779272931205,
+          "maxX": 144.731037804818,
+          "minY": 500.1216895736862,
+          "maxY": 578.4289048680927,
+          "safe": true
+        }
+      ]
+    }
+  }
+]

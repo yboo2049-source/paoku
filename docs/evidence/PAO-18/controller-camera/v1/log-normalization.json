@@ -1,0 +1,135 @@
+{
+  "operation": "Only trim trailing horizontal whitespace and terminal blank lines; raw transcripts retained in .pao18.local/raw-transcripts",
+  "rows": [
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\browser-first-green.txt",
+      "rawSHA256": "ed147accbad35f3e5794aca7888845690695e840e66f25971497304d934a4928",
+      "normalizedSHA256": "cc90638f10de0727071c3214dc82b28d09a71c4c587d6a7ca1619a549705d14f"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\build.txt",
+      "rawSHA256": "c9565112c0790e1b2bb0e19385c8298da528e2503d196df99919769ecb405cf4",
+      "normalizedSHA256": "efecfe0753a931f43e5c678dd5dd7b0b740b597d4460feefafeee22528281ee9"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\camera-first-run.txt",
+      "rawSHA256": "8b18b915b40c8d1a1712a30fc96f444165a290f3acbccdd800b8be99c4d2efe9",
+      "normalizedSHA256": "2e761e5c660c99c20790816e7261e497daed5c28e97294d6105b2b4122741946"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\character-first-run.txt",
+      "rawSHA256": "d675a13f64a418ce0bcc1c8faef86b004334cafd51e22bac76b2c3b076794468",
+      "normalizedSHA256": "4128eee9258ee5fac4c0aa531dd0124a67a2517e8854f5396d754a787fd8eb13"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\e2e-before-final-fixes.txt",
+      "rawSHA256": "c40f41a4b4ef305cb0b89dfe5d04039ffa5d591931ba9de686e0c6c30459fac0",
+      "normalizedSHA256": "f56fee5653eb6de620cb8141be9aee484db7eee18c35eb8550c701e0ac4bd05f"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\e2e-full.txt",
+      "rawSHA256": "70aa8efce5581eb479290589af0d814fe08c8585cf5de1f9035f275919b5d1c0",
+      "normalizedSHA256": "286d4727c04a2c28f71627deac5b05b74801109e571cd827e62cc0259418c8b1"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\e2e-interrupted.txt",
+      "rawSHA256": "96132d67b8b336ea76e7650036054030a460f1b59c2120dd2206d967335b338f",
+      "normalizedSHA256": "974ca83af7384dc52bb76ff02c4138eda87b90aaf4c2544372e83af23a650b50"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\engineering-browser.txt",
+      "rawSHA256": "8e71dac5b2b989697833cba324f5cf5216934d4f35d9fb92f558a29efe83b838",
+      "normalizedSHA256": "4c10aa58b875799116364dd58cfeb59efd2d1c81cd689f4ac67887c79bb46ec1"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\expanded-browser.txt",
+      "rawSHA256": "941d835699a312427c5eeb2536f49608577807733640b5aef5cb9b9d9d6796c7",
+      "normalizedSHA256": "a4c6892df9e960b13abf7ae402959ee4b4344bd6c98f9f0eb80764352d26ed85"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\final-fixes-browser.txt",
+      "rawSHA256": "9101d47fc0fb8c83273bd4966f59fc13927fb43322494a303d3e00f65b519800",
+      "normalizedSHA256": "93bb2ec02a670ab65cf9abf7ece96eae3d49630d8f96f5097160267e45a8cbb7"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\final-fixes-unit.txt",
+      "rawSHA256": "41118d8021695da437e9e4be460af0f88382994d43845211da96cac741f21341",
+      "normalizedSHA256": "368497c5c5ebf19a825c69ce46a948dbf9d194239d1fe33c4f10ab14ecabf96c"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\integration-first-run.txt",
+      "rawSHA256": "64d3674d4eb9e137a7e23ea76eddd954f4c6bbc3b36f963ffad478aab4b31160",
+      "normalizedSHA256": "87221697e62fd64f84abfbf7ed23c8a345797d8af3b8c96e6c9689b9ac6ecf29"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\pause-green.txt",
+      "rawSHA256": "6d77051825b0b9e85d451135e500c5fa2df22c352f509accd2ca0c203e1d38e0",
+      "normalizedSHA256": "74ac76ac9a45f48cdb79ab4c163d7095045eb4546fd48d0f0069d145ecdbd318"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\pause-red.txt",
+      "rawSHA256": "022197a42d5292d1d2c875ee3106fcd733aaf4f2337a3ea816874bc80cb6d5c5",
+      "normalizedSHA256": "2f21884bcb60ae0d37a518ff7501b942a398445e91f9768c9326a86baff70047"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\pause-unit-green.txt",
+      "rawSHA256": "9eb13a0ee903eed661f09dcc0ecb45e3e92f921982216bc234b5654a792e6ddf",
+      "normalizedSHA256": "cd38fbb6634b7260255b046c452bd54cb1842d0f9762b4467effc6da415ad323"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\red-browser.txt",
+      "rawSHA256": "9a8d052c85fcec8bfab3fd99b58e4bb30026d7532d95080c1d4a8540feb6ab95",
+      "normalizedSHA256": "172be6411a0f648fc1a5a71f853a0bcf09207419a78e0d0decf601f679325fd5"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\red-camera.txt",
+      "rawSHA256": "b206a5403db31407688266ce1b846feb653e23b1c8558315752fc90c4cc056b0",
+      "normalizedSHA256": "19afac9be7c032532ca291919446f91ca2270814884eba1a5332f990739eb957"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\red-character.txt",
+      "rawSHA256": "2636874ebc4f6a5c5de7f46c677161c5f4d0ea31adaf49d23f63e07921f22dfc",
+      "normalizedSHA256": "3b55e5fff6dc7a6fb9c941f2b291ccb811d9896bfcb6142ee09fdc13159a5c78"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\red-dispose-consumer.txt",
+      "rawSHA256": "cc6e6401261a58637f23c27fcb1f3856cff53e819bda6c5397f3b52da085a66c",
+      "normalizedSHA256": "3866e78faf17b1f924152fd3e084519d4b59fad1f4a87a98ea67a5c69953a1ef"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\red-facade.txt",
+      "rawSHA256": "c6b93487a608088f6803dfd368c72df0a05f1ddc3778f2a62833015006b1b401",
+      "normalizedSHA256": "1df5270502512f426465f34a5718f69a2484ae974d17bc27074c2754bf475abd"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\red-interrupted-blend.txt",
+      "rawSHA256": "cfa161ba0b42267b2e5e2eb0ca7d02c089e220870912d78ab8e1ef02dfb41a1b",
+      "normalizedSHA256": "e740d8c243bcfce2c89e6a07e53305fa47ed37ecb881b1de2edc90e61e5f1820"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\red-root-hud.txt",
+      "rawSHA256": "50128e55892edeac3ab52be284d4e277c1232e5ddb3bb20b4ab03a2bbaa6e651",
+      "normalizedSHA256": "a1513331d2273efb91f494bb7116bbc3ebbd99604b1236e14448276bd022a8c3"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\root-hud-green.txt",
+      "rawSHA256": "0c5f36133e11f8ab6d60fff060d6d624ea8e948503a015c9d796c6a3b7629bdf",
+      "normalizedSHA256": "08a796533dbaf9e08bd66beba4970d90fbd0a8b749217a5e8e8443d90e0ac3ca"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\test-typecheck.txt",
+      "rawSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalizedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\unit-final.txt",
+      "rawSHA256": "bdae1cde7184e24232f6ccae38129084aa2b190418b92c5ae23350b5903a9675",
+      "normalizedSHA256": "615e2334b3865b68fe1cceb675c513a090918d949dc6e6a2df55e2038153219f"
+    },
+    {
+      "file": "docs\\evidence\\PAO-18\\controller-camera\\v1\\unit-integration.txt",
+      "rawSHA256": "f85ec3f2beb7734e2916a7fd15917463b60c537a12101fc4016b02faa266fb96",
+      "normalizedSHA256": "fd172ca56d7d1c2381962f10637beaaf9b4115180fc4cffa4707004f76a5634e"
+    }
+  ]
+}

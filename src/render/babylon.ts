@@ -20,7 +20,6 @@ import {
   DynamicTexture,
   Scalar,
   SceneLoader,
-  AnimationGroup,
 } from '@babylonjs/core';
 import type { GameContext } from '../types';
 import type { DeepReadonly, SimSnapshot } from '../types/contracts';
@@ -37,6 +36,9 @@ import { AssetCache, SharedMaterials } from './assets';
 import type { AssetLease } from './assets';
 import { BRIGHT_THEME, LegacyEnvironment } from './environment';
 import { EntityViews } from './entityViews';
+import { CharacterView } from './characterView';
+import { CameraRig, actorBounds } from './cameraRig';
+import type { CameraInput } from './cameraRig';
 import type { AssetContainer } from '@babylonjs/core';
 
 export class BabylonRenderEngine {
@@ -52,6 +54,7 @@ export class BabylonRenderEngine {
   private playerLease: AssetLease | null = null;
   private playerPendingEpoch: number | null = null;
   private playerAttemptedEpoch: number | null = null;
+  private cancelPlayerLoads = new Set<() => void>();
   private epoch = 0;
   private frameRunId: string | null = null;
   private discontinuityTick = -1;
@@ -80,14 +83,10 @@ export class BabylonRenderEngine {
   private pipeline: DefaultRenderingPipeline;
   private speedlineSystem: ParticleSystem;
 
-  // 摄像机与动效状态
-  private currentCameraRoll: number = 0;
-  private lastPlayerY: number = 0;
-  private landingShakeTime: number = 0;
-
-  // 3D 骨骼动画状态机缓存
-  private animGroups: AnimationGroup[] = [];
-  private currentAnimName: string = '';
+  private characterView: CharacterView;
+  private cameraRig: CameraRig;
+  private lastRenderTime: number | null = null;
+  private presentationOptions: Partial<CameraInput> = {};
 
   private totalTime: number = 0;
 
@@ -156,8 +155,8 @@ export class BabylonRenderEngine {
     this.environment = new LegacyEnvironment(this.scene, this.glowLayer);
     this.materials = new SharedMaterials(this.scene);
     this.entityViews = new EntityViews(this.scene, this.shadowGenerator, this.materials, this.glowLayer);
-    this.playerAssets = new AssetCache(() => SceneLoader.LoadAssetContainerAsync('/models/', 'player.glb', this.scene).catch(error => {
-      console.error('[GLB] player load failed; keeping primitives', error); throw error;
+    this.playerAssets = new AssetCache(() => this.loadPlayerAsset().catch(error => {
+      if (!this.disposed) console.error('[GLB] player load failed; keeping primitives', error); throw error;
     }), a => {
       const valid = a.meshes.some(mesh => mesh.getTotalVertices() > 0);
       if (!valid) console.warn('[GLB] empty player geometry; keeping primitives');
@@ -172,6 +171,8 @@ export class BabylonRenderEngine {
     this.hoverboardMesh = this.buildHoverboardMesh();
     this.hoverboardMesh.parent = this.playerRoot;
     this.hoverboardMesh.isVisible = false;
+    this.characterView = new CharacterView(this.playerRoot, this.playerBodyMesh, this.hoverboardMesh);
+    this.cameraRig = new CameraRig(this.camera);
 
     // 8. 构建追捕警官与警犬
     this.inspectorRoot = this.buildInspectorMesh();
@@ -294,16 +295,13 @@ export class BabylonRenderEngine {
         }
         const meshes = entries.rootNodes.flatMap(n => n.getChildMeshes());
         for (const mesh of meshes) this.shadowGenerator.addShadowCaster(mesh, false);
-        this.animGroups = entries.animationGroups;
-        this.animGroups.forEach(a => a.stop());
-        this.currentAnimName = '';
         if (this.currentSkin) this.applySkin(this.currentSkin);
-        if (this.animGroups.length) this.playSkeletalAnimation('run', true, 1);
+        this.characterView.attach(entries.animationGroups);
         // Only replace visible fallback once all setup has succeeded.
         for (const name of ['torso', 'armor', 'head', 'visor', 'armLeft', 'armRight', 'legLeft', 'legRight', 'pack']) {
           const mesh = this.scene.getMeshByName(name); if (mesh) mesh.isVisible = false;
         }
-        return { dispose: () => { for (const mesh of meshes) this.shadowGenerator.removeShadowCaster(mesh); entries.dispose(); } };
+        return { dispose: () => { this.characterView.detach(); for (const mesh of meshes) this.shadowGenerator.removeShadowCaster(mesh); entries.dispose(); } };
       } catch (error) {
         // Instantiation can fail part-way through cloning. Roll back only this synchronous attempt.
         for (const mesh of this.scene.meshes.slice()) if (!before.meshes.has(mesh)) {
@@ -314,7 +312,7 @@ export class BabylonRenderEngine {
         for (const skeleton of this.scene.skeletons.slice()) if (!before.skeletons.has(skeleton)) skeleton.dispose();
         // Babylon exposes shared container materials in scene on instantiation; retain cache ownership without an orphan scene entry.
         for (const material of container.materials) if (!before.materials.has(material) && !this.scene.meshes.some(mesh => mesh.material === material)) this.scene.removeMaterial(material);
-        this.animGroups = []; this.currentAnimName = '';
+        this.characterView.detach();
         throw error;
       }
     }).then(lease => {
@@ -323,6 +321,21 @@ export class BabylonRenderEngine {
     }).catch(error => {
       if (this.epoch === epoch) this.playerPendingEpoch = null;
       console.error('[GLB] legacy player instance failed; keeping primitives', error);
+    });
+  }
+
+  /** Settle our consumer on dispose even if Babylon's external loader is cancelled without settling its promise. */
+  private loadPlayerAsset(): Promise<AssetContainer> {
+    return new Promise((resolve, reject) => {
+      let settled = false;
+      const cancel = () => { if (!settled) { settled = true; reject(new Error('Renderer disposed during player load')); } };
+      this.cancelPlayerLoads.add(cancel);
+      const complete = () => { this.cancelPlayerLoads.delete(cancel); };
+      void SceneLoader.LoadAssetContainerAsync('/models/', 'player.glb', this.scene).then(asset => {
+        complete();
+        if (settled || this.disposed) { asset.dispose(); return; }
+        settled = true; resolve(asset);
+      }, error => { complete(); if (!settled) { settled = true; reject(error); } });
     });
   }
 
@@ -357,53 +370,9 @@ export class BabylonRenderEngine {
     }
   }
 
-  // 语义动作关键字 → GLB 内实际动画名映射。
-  // 当前 GLB 仅含 agree/headShake/idle/run/sad_pose/sneak_pose/walk，
-  // jump/slide/stumble 尚无对应动画，暂映射到最接近的已有动画作为占位，
-  // 待后续通过 Mixamo/Blender 补齐真实动画后更新此映射（见 docs/art/asset-audit.md §8 P0）。
-  private static readonly ANIMATION_ALIASES: Record<string, string> = {
-    idle: 'idle',
-    run: 'run',
-    jump: 'run',         // 占位：跳跃位移由物理层处理，动画暂沿用奔跑
-    slide: 'sneak_pose', // 占位：蹲伏姿态最接近滑铲
-    stumble: 'sad_pose', // 占位：受击垂头姿态最接近踉跄
-  };
-
-  /**
-   * 3D 骨骼动画状态机控制
-   */
-  private playSkeletalAnimation(keyword: string, loop: boolean = true, speedRatio: number = 1.0): void {
-    if (this.animGroups.length === 0) return;
-
-    const targetName = BabylonRenderEngine.ANIMATION_ALIASES[keyword] || keyword;
-
-    // 若当前已在该语义动作上，仅更新播放速率
-    if (this.currentAnimName === keyword) {
-      const active = this.findAnimationGroup(targetName);
-      if (active) active.speedRatio = speedRatio;
-      return;
-    }
-
-    let target = this.findAnimationGroup(targetName);
-    if (!target) target = this.findAnimationGroup('idle');
-    if (!target) target = this.animGroups[0];
-    if (!target) return;
-
-    this.animGroups.forEach((ag) => ag.stop());
-    target.speedRatio = speedRatio;
-    target.play(loop);
-    this.currentAnimName = keyword;
-  }
-
-  /**
-   * 按名称（忽略大小写）查找动画组，优先精确匹配，其次子串匹配
-   */
-  private findAnimationGroup(name: string) {
-    const lower = name.toLowerCase();
-    return (
-      this.animGroups.find((ag) => ag.name.toLowerCase() === lower) ||
-      this.animGroups.find((ag) => ag.name.toLowerCase().includes(lower))
-    );
+  /** Explicit renderer-local options; no DOM measurement, persistence or application bridge. */
+  public setPresentationOptions(options: Partial<CameraInput>): void {
+    if (!this.disposed) this.presentationOptions = { ...options };
   }
 
   /**
@@ -557,77 +526,19 @@ export class BabylonRenderEngine {
       this.frameRunId = frame.runId;
     }
     this.boundaryPrepared = false;
-    const dt = ctx.state === 'PAUSED' || ctx.state === 'GAMEOVER' ? 0 : Math.min(this.engine.getDeltaTime() / 1000, 0.05);
+    const now = performance.now();
+    const measured = this.engine.getDeltaTime() / 1000;
+    const elapsed = measured > 0 ? measured : this.lastRenderTime === null ? 0 : (now - this.lastRenderTime) / 1000;
+    this.lastRenderTime = now;
+    const dt = ctx.state === 'PAUSED' || ctx.state === 'GAMEOVER' ? 0 : Math.max(0, Math.min(elapsed, 0.05));
     this.totalTime += dt;
 
     this.environment.sync(ctx.player.z, ctx.state);
     this.sun.position.set(ctx.player.x + 25, ctx.player.y + 45, ctx.player.z + 25);
     this.ensurePlayerAsset(this.playerBodyMesh);
 
-    // 1. 同步玩家位置与动作
-    this.playerRoot.position.set(ctx.player.x, ctx.player.y, ctx.player.z);
-
-    // 2. 果冻起跳与接地伸缩 (Squash & Stretch Animation)
-    let targetScaleY = 1.0;
-    let targetScaleXZ = 1.0;
-    if (ctx.player.isJumping && ctx.player.vy > 0) {
-      targetScaleY = 1.25;
-      targetScaleXZ = 0.88;
-    } else if (ctx.player.isRolling || this.landingShakeTime > 0) {
-      targetScaleY = 0.72;
-      targetScaleXZ = 1.18;
-    }
-    this.playerBodyMesh.scaling.y = Scalar.Lerp(this.playerBodyMesh.scaling.y, targetScaleY, dt * 12.0);
-    this.playerBodyMesh.scaling.x = Scalar.Lerp(this.playerBodyMesh.scaling.x, targetScaleXZ, dt * 12.0);
-    this.playerBodyMesh.scaling.z = Scalar.Lerp(this.playerBodyMesh.scaling.z, targetScaleXZ, dt * 12.0);
-
-    // 肢体跑动与倾斜摆动（仅当 GLB 骨骼模型未加载时才用过程化四肢摆动；
-    // 骨骼模型加载后由 AnimationGroup 驱动四肢，此处不再手动摆动）
+    this.characterView.sync(ctx, dt, !!this.presentationOptions.reducedMotion);
     const animSpeed = ctx.state === 'PLAYING' ? ctx.speed * 0.8 : 0;
-
-    if (this.animGroups.length === 0) {
-      const limbAngle = Math.sin(this.totalTime * animSpeed) * 0.45;
-
-      const armLeft = this.scene.getMeshByName('armLeft');
-      const armRight = this.scene.getMeshByName('armRight');
-      const legLeft = this.scene.getMeshByName('legLeft');
-      const legRight = this.scene.getMeshByName('legRight');
-
-      if (armLeft) armLeft.rotation.x = limbAngle;
-      if (armRight) armRight.rotation.x = -limbAngle;
-      if (legLeft) legLeft.rotation.x = -limbAngle;
-      if (legRight) legRight.rotation.x = limbAngle;
-    }
-
-    // 根据游戏与玩家状态自动管理并切算 3D 骨骼 AnimationGroup (Idle / Run / Jump / Slide / Stumble)
-    if (ctx.state === 'MENU' || ctx.state === 'SHOP') {
-      this.playSkeletalAnimation('idle', true, 1.0);
-    } else if (ctx.state === 'GAMEOVER') {
-      this.playSkeletalAnimation('stumble', false, 1.0);
-    } else if (ctx.state === 'PAUSED') {
-      this.playSkeletalAnimation('idle', true, 1.0);
-    } else if (ctx.player.isJumping) {
-      this.playSkeletalAnimation('jump', false, 1.0);
-    } else if (ctx.player.isRolling) {
-      this.playSkeletalAnimation('slide', false, 1.2);
-    } else if (ctx.player.invulnerableTimer > 0) {
-      this.playSkeletalAnimation('stumble', false, 1.2);
-    } else {
-      this.playSkeletalAnimation('run', true, ctx.speed / 20.0);
-    }
-
-    if (ctx.player.isRolling) {
-      this.playerBodyMesh.scaling.set(1, 0.55, 1);
-      this.playerBodyMesh.position.y = -0.3;
-      this.playerBodyMesh.rotation.x = Math.PI / 6;
-    } else {
-      this.playerBodyMesh.position.y = 0;
-      this.playerBodyMesh.rotation.x = 0;
-    }
-
-    // 悬浮滑板显隐
-    const isBoardActive = ctx.player.hoverboardActive || ctx.player.hasHoverboard;
-    this.hoverboardMesh.isVisible = isBoardActive;
 
     // 3. 追捕警官与警犬动态跟随 (Inspector & Dog Chase System, AC-PRD-17 & AC-PRD-19)
     // 追逐距离由逻辑层维护（ctx.chase），渲染层只读，避免逻辑散落在视觉层
@@ -648,50 +559,19 @@ export class BabylonRenderEngine {
     }
 
     const officerTorso = this.scene.getMeshByName('officerTorso');
-    if (officerTorso) officerTorso.rotation.y = Math.sin(this.totalTime * animSpeed) * 0.15;
+    if (officerTorso && ctx.state !== 'PAUSED' && ctx.state !== 'GAMEOVER') officerTorso.rotation.y = Math.sin(this.totalTime * animSpeed) * 0.15;
     const dogHead = this.scene.getMeshByName('dogHead');
-    if (dogHead) dogHead.rotation.x = Math.sin(this.totalTime * animSpeed * 1.5) * 0.1;
+    if (dogHead && ctx.state !== 'PAUSED' && ctx.state !== 'GAMEOVER') dogHead.rotation.x = Math.sin(this.totalTime * animSpeed * 1.5) * 0.1;
 
-    // 4. 摄像机切道倾斜 (Bank Tilt) & 落地震屏 (Landing Shake)
-    const targetRoll = (ctx.player.targetX - ctx.player.x) * -0.06;
-    this.currentCameraRoll = Scalar.Lerp(this.currentCameraRoll, targetRoll, dt * 10.0);
-    this.camera.rotation.z = this.currentCameraRoll;
-
-    if (ctx.player.y === 0 && this.lastPlayerY > 0.5) {
-      this.landingShakeTime = 0.2;
-    }
-    this.lastPlayerY = ctx.player.y;
-
-    let shakeY = 0;
-    if (this.landingShakeTime > 0) {
-      this.landingShakeTime -= dt;
-      shakeY = Math.sin(this.landingShakeTime * 40.0) * 0.12;
-    }
-
-    // 5. 动态 FOV 与 3D 赛道球形弯曲 (World Bending Target Curvature)
-    const speedRatio = (ctx.speed - 18.0) / (45.0 - 18.0);
-    this.camera.fov = 0.85 + speedRatio * 0.25;
-
-    if (ctx.state === 'MENU' || ctx.state === 'SHOP') {
-      const orbitRadius = 6.2;
-      const orbitSpeed = 0.35;
-      this.camera.position.set(
-        Math.sin(this.totalTime * orbitSpeed) * orbitRadius,
-        3.2,
-        Math.cos(this.totalTime * orbitSpeed) * orbitRadius - 1.0
-      );
-      this.camera.setTarget(new Vector3(0, 1.25, 0));
-      this.camera.rotation.z = 0;
-    } else {
-      this.camera.position.set(ctx.player.x * 0.35, ctx.player.y + 4.5 + shakeY, ctx.player.z - 9.0);
-      // 赛道远景二次方球形弯曲下沉 (World Bending Downward Pitch)
-      const bendTargetY = ctx.player.y + 1.5 - Math.pow(15.0, 2.0) * 0.0008;
-      this.camera.setTarget(new Vector3(ctx.player.x * 0.15, bendTargetY, ctx.player.z + 15.0));
-    }
+    // All three current visual bounds are measured after pose/root/chaser updates.
+    const width = this.engine.getRenderWidth(), height = this.engine.getRenderHeight();
+    const actors = [actorBounds('player', this.playerRoot), actorBounds('officer', this.inspectorRoot), actorBounds('dog', this.dogRoot)];
+    this.cameraRig.sync(ctx, actors, { width, height, ...this.presentationOptions }, dt, this.characterView.status.landed);
+    const speedRatio = Math.max(0, Math.min(1, (ctx.speed - 18) / 27));
 
     // 6. 风阻拉线与碎片动效更新
     if (this.speedlineSystem) {
-      this.speedlineSystem.emitRate = ctx.state === 'PLAYING' ? 50 + speedRatio * 50 : 0;
+      this.speedlineSystem.emitRate = ctx.state === 'PLAYING' && !this.presentationOptions.reducedMotion ? 50 + speedRatio * 50 : 0;
     }
     this.updateFragments(dt);
 
@@ -756,10 +636,9 @@ export class BabylonRenderEngine {
     this.boundaryPrepared = true;
     this.epoch++;
     this.totalTime = 0;
-    this.currentAnimName = '';
-    this.currentCameraRoll = 0;
-    this.lastPlayerY = 0;
-    this.landingShakeTime = 0;
+    this.characterView.reset();
+    this.cameraRig.reset();
+    this.lastRenderTime = null;
     this.environment.reset();
     this.inspectorRoot.position.set(1.2, 0, -1.8);
     this.dogRoot.position.set(1.75, 0, -1.5);
@@ -775,11 +654,12 @@ export class BabylonRenderEngine {
     if (this.disposed) return;
     this.disposed = true;
     this.epoch++;
+    this.cancelPlayerLoads.forEach(cancel => cancel()); this.cancelPlayerLoads.clear();
     window.removeEventListener('resize', this.resizeHandler);
     eventBus.off('SKIN_CHANGED', this.skinHandler);
     this.entityViews.dispose();
     this.playerLease?.release(); this.playerLease = null;
-    this.animGroups = [];
+    this.characterView.dispose(); this.cameraRig.dispose();
     this.activeFragments.forEach(f => f.mesh.dispose()); this.activeFragments = [];
     this.speedlineSystem.stop(); this.speedlineSystem.dispose();
     this.environment.dispose();

@@ -1,0 +1,20 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/playwright-red.config.cjs
+
+[WebServer] (node:23564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 7 tests using 1 worker
+
+(node:23416) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\pao18-controller-camera.spec.ts:8:1 › F actual legacy renderer: 390 framing, actual group pause, support edges and stable resources (22.3s)
+  ok 2 tests\e2e\pao18-controller-camera.spec.ts:105:1 › F runtime modules raw identity and actual legacy GLB HTTP hash (106ms)
+  ok 3 tests\e2e\pao18-controller-camera.spec.ts:119:37 › N desktop keyboard controls, real group pause, HUD profile and restart (3.8s)
+  ok 4 tests\e2e\pao18-controller-camera.spec.ts:119:37 › N 390 touch controls, real group pause, HUD profile and restart (3.5s)
+  ok 5 tests\e2e\pao18-controller-camera.spec.ts:157:1 › F recorded authoritative ramp-to-roof, jump/slide and pause with the production main (6.0s)
+  ok 6 tests\e2e\pao18-controller-camera.spec.ts:188:1 › F real legacy request delayed across reset: same asset ID, latest skin, dispose before completion (1.7s)
+  ok 7 tests\e2e\pao18-controller-camera.spec.ts:227:1 › F fixed old HUD five-row profile measured with actual CSS at 390 and desktop (4.1s)
+
+  7 passed (45.1s)

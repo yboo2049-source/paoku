@@ -1,0 +1,16 @@
+{
+  "baseline": "f2680f46ddef89a38c20496719a31abed9c3caf1",
+  "files": 1147,
+  "unchanged": 1146,
+  "changes": [
+    {
+      "path": "src/render/babylon.ts",
+      "sha256": "c571d8ba6c7770a679487d18fe8970112c321009fb9164f8ee97e2d07fa144ed",
+      "after": "bbac1af869478eb4e3f044651dd5c7ec3eae70d1cd35446c26fd190260e9cbe0"
+    }
+  ],
+  "gitlinks": [
+    "scratch/temp_learn_harness"
+  ],
+  "allowed": true
+}

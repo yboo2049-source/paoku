@@ -1,0 +1,28 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao18-camera.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18
+
+ ❯ tests/unit/pao18-camera.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao18-camera.test.ts [ tests/unit/pao18-camera.test.ts ]
+Error: Cannot find module '../../src/render/cameraRig' imported from D:/worker/paoku-sessions/pao-18/tests/unit/pao18-camera.test.ts
+ ❯ tests/unit/pao18-camera.test.ts:3:1
+      1| import { afterEach, expect, it } from 'vitest';
+      2| import { MeshBuilder, NullEngine, Scene, TargetCamera, TransformNode, …
+      3| import { CameraRig, actorBounds, projectActors, legacyHudProfile } fro…
+       | ^
+      4| import type { GameContext } from '../../src/types';
+      5| const clean: (() => void)[] = [];
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  00:33:17
+   Duration  1.90s (transform 31ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)

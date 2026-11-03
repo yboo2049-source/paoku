@@ -1,0 +1,34 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/playwright.config.cjs
+
+[WebServer] (node:10772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 60 tests using 1 worker
+
+(node:22840) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 .pao18.local\suite\gameplay.pw.ts:50:3 › 状态机（确定性） › MENU → PLAYING via start button (2.1s)
+  ok  2 .pao18.local\suite\gameplay.pw.ts:56:3 › 状态机（确定性） › PLAYING → 切道（左/右 + 边界钳制） (2.0s)
+  ok  3 .pao18.local\suite\gameplay.pw.ts:73:3 › 状态机（确定性） › PLAYING → 跳跃（isJumping=true） (1.9s)
+  ok  4 .pao18.local\suite\gameplay.pw.ts:79:3 › 状态机（确定性） › PLAYING → 翻滚（isRolling=true） (2.0s)
+  ok  5 .pao18.local\suite\gameplay.pw.ts:85:3 › 状态机（确定性） › PLAYING → PAUSED via Escape，再 resume 回到 PLAYING (2.2s)
+  ok  6 .pao18.local\suite\gameplay.pw.ts:98:3 › 截图回放（确定性） › 捕获 6 张高保真截图（无 GAMEOVER 风险） (3.3s)
+  ok  7 .pao18.local\suite\pao10-review-fixes.pw.ts:35:1 › native-menu-slider-and-start-space (1.9s)
+  ok  8 .pao18.local\suite\pao10-review-fixes.pw.ts:48:1 › paused-rejects-motion-and-resume-space (2.9s)
+  ok  9 .pao18.local\suite\pao10-review-fixes.pw.ts:67:1 › playing-interactive-arrows-do-not-move-player (2.3s)
+  ok 10 .pao18.local\suite\pao10-simulation.pw.ts:29:1 › N-desktop-production-keyboard-flow (49.6s)
+  ok 11 .pao18.local\suite\pao10-simulation.pw.ts:67:1 › N-mobile-production-touch (4.9s)
+  ok 12 .pao18.local\suite\pao10-simulation.pw.ts:97:1 › F-lifecycle-clears-input-and-hidden-time (4.0s)
+  ok 13 .pao18.local\suite\pao11-surfaces.pw.ts:95:3 › F-desktop-keyboard-ground-ramp-roof-jump-ground (5.6s)
+  ok 14 .pao18.local\suite\pao11-surfaces.pw.ts:95:3 › F-portrait-touch-ground-ramp-roof-jump-ground (5.4s)
+  ok 15 .pao18.local\suite\pao11-surfaces.pw.ts:124:1 › F-high-base-ramp-5-to-8-continuous-roof (3.5s)
+  ok 16 .pao18.local\suite\pao11-surfaces.pw.ts:142:1 › N-production-input-and-supported-snapshot (2.4s)
+  ok 17 .pao18.local\suite\pao12-collision.pw.ts:79:1 › F-desktop-relative-high-speed-thin-train-terminal-once (3.6s)
+  ok 18 .pao18.local\suite\pao12-collision.pw.ts:119:1 › F-portrait-same-tick-shield-multi-hit-single-consumption (3.0s)
+  ok 19 .pao18.local\suite\pao12-collision.pw.ts:144:1 › F-desktop-airborne-roll-uses-actual-height-box (3.0s)
+  ok 20 .pao18.local\suite\pao12-collision.pw.ts:167:1 › F-browser-isolated-highest-speed-large-step-and-pose-matrix (1.5s)
+  ok 21 .pao18.local\suite\pao12-collision.pw.ts:201:1 › F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position (3.6s)
+  ok 22 .pao18.local\suite\pao13-track.pw.ts:78:1 › N-desktop-seeded-generation-keyboard-and-reset (2.9s)
+  ok 23 .pao18.local\suite\pao13-track.pw.ts:109:1 › N-portrait-seeded-generation-touch (2.9s)

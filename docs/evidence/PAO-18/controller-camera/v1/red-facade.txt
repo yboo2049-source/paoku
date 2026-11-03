@@ -1,0 +1,59 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao18-facade.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18
+
+stdout | tests/unit/pao18-facade.test.ts > facade delegates without squash/stretch or root movement beyond presentation
+BJS - [00:34:50]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-facade.test.ts > delegates one reset for a discontinuity and prevents stale same-id loads from mounting over latest skin
+BJS - [00:34:50]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao18-facade.test.ts (2 tests | 2 failed) 227ms
+   × facade delegates without squash/stretch or root movement beyond presentation 154ms
+   × delegates one reset for a discontinuity and prevents stale same-id loads from mounting over latest skin 72ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao18-facade.test.ts > facade delegates without squash/stretch or root movement beyond presentation
+AssertionError: expected [ 1, 0.55, 1 ] to deeply equal [ 1, 1, 1 ]
+
+- Expected
++ Received
+
+  [
+    1,
+-   1,
++   0.55,
+    1,
+  ]
+
+ ❯ tests/unit/pao18-facade.test.ts:29:46
+     27| it('facade delegates without squash/stretch or root movement beyond pr…
+     28|   const { r, c, frame } = host(); renderer!.render(c, frame());
+     29|   expect(r.playerBodyMesh.scaling.asArray()).toEqual([1, 1, 1]);
+       |                                              ^
+     30|   expect(r.playerBodyMesh.position.asArray()).toEqual([0, 0, 0]);
+     31|   expect(r.playerRoot.position.asArray()).toEqual([1.25, 5, 37.7]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/pao18-facade.test.ts > delegates one reset for a discontinuity and prevents stale same-id loads from mounting over latest skin
+Error: The vi.spyOn() function could not find an object to spy upon. The first argument must be defined.
+ ❯ tests/unit/pao18-facade.test.ts:38:20
+     36| it('delegates one reset for a discontinuity and prevents stale same-id…
+     37|   const { r, c, frame, resolve } = host(); renderer!.render(c, frame()…
+     38|   const reset = vi.spyOn(r.characterView, 'reset');
+       |                    ^
+     39|   renderer!.reset(); renderer!.render(c, frame('B', 0, true)); rendere…
+     40|   expect(reset).toHaveBeenCalledTimes(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  00:34:48
+   Duration  2.21s (transform 117ms, setup 0ms, import 1.76s, tests 227ms, environment 0ms)

@@ -1,0 +1,14 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/playwright-red.config.cjs --grep actual legacy renderer
+
+[WebServer] (node:27896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:22108) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\pao18-controller-camera.spec.ts:8:1 › F actual legacy renderer: 390 framing, actual group pause, support edges and stable resources (16.2s)
+
+  1 passed (18.9s)

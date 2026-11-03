@@ -1,0 +1,212 @@
+[
+  {
+    "source": "tests/e2e/gameplay.spec.ts",
+    "mirror": ".pao18.local/suite/gameplay.pw.ts",
+    "sourceHash": "ac860d0781b57ec51735607c8e6d1441a5f02afcb9b27203f2f8e682d607ce64",
+    "mirrorHash": "e39390f5036ba52d48b664ea8433c976b0cda744e5ebaecf6fe181f7f3c2f33c",
+    "reversible": true,
+    "replacements": [
+      [
+        "path: 'screenshot_1_menu.png'",
+        "path: 'D:/worker/paoku-sessions/pao-18/.pao18.local/history/screenshot_1_menu.png'"
+      ],
+      [
+        "path: 'screenshot_2_shop.png'",
+        "path: 'D:/worker/paoku-sessions/pao-18/.pao18.local/history/screenshot_2_shop.png'"
+      ],
+      [
+        "path: 'screenshot_3_gameplay_chase.png'",
+        "path: 'D:/worker/paoku-sessions/pao-18/.pao18.local/history/screenshot_3_gameplay_chase.png'"
+      ],
+      [
+        "path: 'screenshot_4_bank_tilt.png'",
+        "path: 'D:/worker/paoku-sessions/pao-18/.pao18.local/history/screenshot_4_bank_tilt.png'"
+      ],
+      [
+        "path: 'screenshot_5_jump_action.png'",
+        "path: 'D:/worker/paoku-sessions/pao-18/.pao18.local/history/screenshot_5_jump_action.png'"
+      ],
+      [
+        "path: 'screenshot_6_paused_screen.png'",
+        "path: 'D:/worker/paoku-sessions/pao-18/.pao18.local/history/screenshot_6_paused_screen.png'"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao10-review-fixes.spec.ts",
+    "mirror": ".pao18.local/suite/pao10-review-fixes.pw.ts",
+    "sourceHash": "21a92efee35f42f42912d8655d62eb1a6d4786494235ee84d9ff1ae8dab45892",
+    "mirrorHash": "086e7df7c2786f1db1cd97c801b8bf557c8161d7099b66423081ad4aa1d3c444",
+    "reversible": true,
+    "replacements": [
+      [
+        "docs/evidence/PAO-10/review-fixes",
+        "D:/worker/paoku-sessions/pao-18/.pao18.local/history/pao10-review-fixes.spec.ts/docs/evidence/PAO-10/review-fixes"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao10-simulation.spec.ts",
+    "mirror": ".pao18.local/suite/pao10-simulation.pw.ts",
+    "sourceHash": "4cb5069cfcec3a015c768ee5047403b8cd4c0c295529e1eda186866c6a921ebf",
+    "mirrorHash": "50836d3c247f405d0657aa72ce695069b3483af69d94a31affad3af2368fcfec",
+    "reversible": true,
+    "replacements": [
+      [
+        "docs/evidence/PAO-10",
+        "D:/worker/paoku-sessions/pao-18/.pao18.local/history/pao10-simulation.spec.ts/docs/evidence/PAO-10"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao11-surfaces.spec.ts",
+    "mirror": ".pao18.local/suite/pao11-surfaces.pw.ts",
+    "sourceHash": "2e5cb1868763f2ddec33ae472f3497aeac1dffa6d7be0c80c1a41fa6842d868b",
+    "mirrorHash": "daf8c82d8bdcd556498ae007205d2f175bb195471a40238a9bb04815418e6191",
+    "reversible": true,
+    "replacements": [
+      [
+        "docs/evidence/PAO-11/runs",
+        "D:/worker/paoku-sessions/pao-18/.pao18.local/history/pao11-surfaces.spec.ts/docs/evidence/PAO-11/runs"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao12-collision.spec.ts",
+    "mirror": ".pao18.local/suite/pao12-collision.pw.ts",
+    "sourceHash": "669125de620cfd8c0263b5ee7696cef53a2e48d9fac0548f5f095fd710371f1d",
+    "mirrorHash": "85a13b9e78faae8d2b6b47a33d1492b9b73202cd5a448788b781a0abe79830ba",
+    "reversible": true,
+    "replacements": [
+      [
+        "docs/evidence/PAO-12/runs",
+        "D:/worker/paoku-sessions/pao-18/.pao18.local/history/pao12-collision.spec.ts/docs/evidence/PAO-12/runs"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao13-track.spec.ts",
+    "mirror": ".pao18.local/suite/pao13-track.pw.ts",
+    "sourceHash": "03211f334c9ff5bf05b058bcb49c1d83d7b0eefe4800b3257453fecd8943a7a3",
+    "mirrorHash": "3b06250921fdbdd5dedb53f69dac6838687cae6adbbff832fee871ffdd956832",
+    "reversible": true,
+    "replacements": [
+      [
+        "docs/evidence/PAO-13/runs",
+        "D:/worker/paoku-sessions/pao-18/.pao18.local/history/pao13-track.spec.ts/docs/evidence/PAO-13/runs"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao14-application.spec.ts",
+    "mirror": ".pao18.local/suite/pao14-application.pw.ts",
+    "sourceHash": "06039b20c65000d94d819a45ce5332bd77731779bf851ea2eb9164988bba8f6a",
+    "mirrorHash": "08a7f974c3eae94430006a982a9778dec1df4f9a626931fd80b1857d53aa763a",
+    "reversible": true,
+    "replacements": [
+      [
+        "docs/evidence/PAO-14/runs",
+        "D:/worker/paoku-sessions/pao-18/.pao18.local/history/pao14-application.spec.ts/docs/evidence/PAO-14/runs"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao14-review.spec.ts",
+    "mirror": ".pao18.local/suite/pao14-review.pw.ts",
+    "sourceHash": "b20d8604e98ee5eb1013c458160522c97433475075e9e55bd32d957e5abda413",
+    "mirrorHash": "80606ed3e804738eb2badac7b2392e7aaffdbea15922446de8e26ae478d9d7d4",
+    "reversible": true,
+    "replacements": [
+      [
+        "docs/evidence/PAO-14/runs",
+        "D:/worker/paoku-sessions/pao-18/.pao18.local/history/pao14-review.spec.ts/docs/evidence/PAO-14/runs"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao14-unknown-commit.spec.ts",
+    "mirror": ".pao18.local/suite/pao14-unknown-commit.pw.ts",
+    "sourceHash": "2b8545a84b763bf0a0faa9a2a8cf8ac3a10af0040afe42b34754bc2cdc414520",
+    "mirrorHash": "8bf37fc78daed45ed046cb0ebbf3419a342da7c48d987ef4ee4ba199d2fde396",
+    "reversible": true,
+    "replacements": [
+      [
+        "docs/evidence/PAO-14/runs",
+        "D:/worker/paoku-sessions/pao-18/.pao18.local/history/pao14-unknown-commit.spec.ts/docs/evidence/PAO-14/runs"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao17-lifecycle.spec.ts",
+    "mirror": ".pao18.local/suite/pao17-lifecycle.pw.ts",
+    "sourceHash": "87577c433ee531f1a5fabfc42885f21957dd5c784b5a7d75483139aaf57f6045",
+    "mirrorHash": "509087b1c834a745772441e8fb51e169b466ef6cafb3162536aac4e04fcfd0a3",
+    "reversible": true,
+    "replacements": [
+      [
+        "docs/evidence/PAO-17/structure-lifecycle",
+        "D:/worker/paoku-sessions/pao-18/.pao18.local/history/pao17-lifecycle.spec.ts/docs/evidence/PAO-17/structure-lifecycle"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao17-ramp-view.spec.ts",
+    "mirror": ".pao18.local/suite/pao17-ramp-view.pw.ts",
+    "sourceHash": "128ee83e260e47c130539f97ace8ce38705afbbca582e0ef1a4cf8438750d214",
+    "mirrorHash": "bef2f8a6305dec1545f251138492cffe3325f057a27e1f54b718e14afc51807d",
+    "reversible": true,
+    "replacements": [
+      [
+        "docs/evidence/PAO-17/bright-theme-preview",
+        "D:/worker/paoku-sessions/pao-18/.pao18.local/history/pao17-ramp-view.spec.ts/docs/evidence/PAO-17/bright-theme-preview"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao17-structure.spec.ts",
+    "mirror": ".pao18.local/suite/pao17-structure.pw.ts",
+    "sourceHash": "8f592c4d925071d2bd31c0cc9323d03ce77669cc461b2ddccf563cf8e0d41f4c",
+    "mirrorHash": "b9f1ac7de8fb413b3100a01c2060e260d5ff965e7c05eb3c1e758aafc861533b",
+    "reversible": true,
+    "replacements": [
+      [
+        "docs/evidence/PAO-17/structure-lifecycle",
+        "D:/worker/paoku-sessions/pao-18/.pao18.local/history/pao17-structure.spec.ts/docs/evidence/PAO-17/structure-lifecycle"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao17-theme.spec.ts",
+    "mirror": ".pao18.local/suite/pao17-theme.pw.ts",
+    "sourceHash": "1afc77b291fdd3d07660ebd039bf67d5e3de66e158e6fc3d0b116c5b99cf177e",
+    "mirrorHash": "a19d4f677a307d54f38426364768df0dbbd7a208adfe52c025c4228898f7015b",
+    "reversible": true,
+    "replacements": [
+      [
+        "docs/evidence/PAO-17/bright-theme-preview",
+        "D:/worker/paoku-sessions/pao-18/.pao18.local/history/pao17-theme.spec.ts/docs/evidence/PAO-17/bright-theme-preview"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao18-controller-camera.spec.ts",
+    "mirror": ".pao18.local/suite/pao18-controller-camera.pw.ts",
+    "sourceHash": "1952f3284cfc09d5f1d8ac334561c64561bdb1a1841f9f4a0be940a62197e9cd",
+    "mirrorHash": "1952f3284cfc09d5f1d8ac334561c64561bdb1a1841f9f4a0be940a62197e9cd",
+    "reversible": true,
+    "replacements": []
+  },
+  {
+    "source": "tests/e2e/pao6-baseline.spec.ts",
+    "mirror": ".pao18.local/suite/pao6-baseline.pw.ts",
+    "sourceHash": "710cd0dc1d6fd938825b4c741f0c32798a2ada5c507209c48b2f57889f441df9",
+    "mirrorHash": "40a956a771bf5eebfc90465002c3c878e0f49ae12c96524f280b2c4eea2582eb",
+    "reversible": true,
+    "replacements": [
+      [
+        "docs/evidence/PAO-6",
+        "D:/worker/paoku-sessions/pao-18/.pao18.local/history/pao6-baseline.spec.ts/docs/evidence/PAO-6"
+      ]
+    ]
+  }
+]

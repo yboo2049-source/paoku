@@ -1,0 +1,22 @@
+[
+  {
+    "name": "F-high-speed-presentation.webm",
+    "sampledAt": 1.5,
+    "duration": 2.941552,
+    "width": 390,
+    "height": 844,
+    "decodedFrames": 88,
+    "ended": true,
+    "error": null
+  },
+  {
+    "name": "F-ramp-jump-slide-pause.webm",
+    "sampledAt": 1.8,
+    "duration": 5.16,
+    "width": 960,
+    "height": 600,
+    "decodedFrames": 128,
+    "ended": true,
+    "error": null
+  }
+]

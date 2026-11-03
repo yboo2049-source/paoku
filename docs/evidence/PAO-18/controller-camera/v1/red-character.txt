@@ -1,0 +1,28 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao18-character.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18
+
+ ❯ tests/unit/pao18-character.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao18-character.test.ts [ tests/unit/pao18-character.test.ts ]
+Error: Cannot find module '../../src/render/characterView' imported from D:/worker/paoku-sessions/pao-18/tests/unit/pao18-character.test.ts
+ ❯ tests/unit/pao18-character.test.ts:3:1
+      1| import { afterEach, expect, it } from 'vitest';
+      2| import { Animation, AnimationGroup, Mesh, NullEngine, Scene, Transform…
+      3| import { CharacterView, selectMotion } from '../../src/render/characte…
+       | ^
+      4| import { immutableCopy } from '../../src/core/snapshot';
+      5| import type { GameContext } from '../../src/types';
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  00:31:28
+   Duration  1.81s (transform 30ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)

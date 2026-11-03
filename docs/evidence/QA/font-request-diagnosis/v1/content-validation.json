@@ -1,0 +1,9 @@
+{
+  "verifiedAt": "2026-11-03T13:14:42.443Z",
+  "jsonFiles": 16,
+  "localReferences": 11,
+  "whitelist": true,
+  "originalTrackedHashesUnchanged": 1202,
+  "sensitiveFieldScan": "no matching credential/auth/cookie field",
+  "note": "diagnostic errors intentionally retained; full E2E not rerun; content manually reviewed against source results"
+}

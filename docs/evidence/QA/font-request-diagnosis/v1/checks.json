@@ -1,0 +1,76 @@
+{
+  "cwd": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis",
+  "topLevel": "D:/worker/paoku-sessions/pao-18-font-diagnosis",
+  "branch": "codex/pao18-font-diagnosis",
+  "head": "5bd31cc06a44c1a2ac382809ea8eadb69df76984",
+  "baseline": {
+    "npmCi": 0,
+    "build": 0,
+    "unit": {
+      "exit": 0,
+      "files": 27,
+      "tests": 292
+    }
+  },
+  "originalTarget": {
+    "exit": 0,
+    "passed": 3,
+    "retries": 0
+  },
+  "networkObservation": {
+    "exit": 0,
+    "collected": 5,
+    "passMeans": "observation completed, injected font errors retained"
+  },
+  "fullE2E": "not rerun; inherited 59/60 remains unresolved",
+  "visual": {
+    "viewed": [
+      "N1.png",
+      "F-css.png",
+      "F-font.png"
+    ],
+    "viewport": "1280x720",
+    "finding": "readable menu with no obvious overflow; fallback typography and vertical dimensions visibly differ; no gameplay/portrait/new UI signoff"
+  },
+  "localArtifacts": [
+    {
+      "path": ".pao18.local/font-diagnosis/npm-ci.txt",
+      "sha256": "846face12be847540d31c177c9c6f4920e9edcd437eeecb5e839c046952df20e"
+    },
+    {
+      "path": ".pao18.local/font-diagnosis/baseline-build.txt",
+      "sha256": "ce270aef5176d23bebd3845a7734cb47dcefe5b0081ccfee2892c6faac934803"
+    },
+    {
+      "path": ".pao18.local/font-diagnosis/baseline-unit.txt",
+      "sha256": "1fb81a809949066aaf9192d0035fa3e555c14de8b3bd4f8907e37b5b47c253a6"
+    },
+    {
+      "path": ".pao18.local/font-diagnosis/original-run.txt",
+      "sha256": "6db30ea2d8f98ec612f27da67b95722cabf20fcbe312fc5314b565bd6599bd38"
+    },
+    {
+      "path": ".pao18.local/font-diagnosis/network-run.txt",
+      "sha256": "0afb80c4a9c968a874271b796767b5f29cbbd25d28b8b72fde8d93e8acf6f8cf"
+    },
+    {
+      "path": ".pao18.local/font-diagnosis/suite/network.pw.ts",
+      "sha256": "28e6d68a38c69be9efe811dbafd84f10c2449e915b5f2a9aae929254e6689ddd"
+    },
+    {
+      "path": ".pao18.local/font-diagnosis/original.config.ts",
+      "sha256": "74683f00699207bc01399c0169178472ed9b0279667d363f2c086441d5ffbab9"
+    },
+    {
+      "path": ".pao18.local/font-diagnosis/network.config.ts",
+      "sha256": "1d9a96a72d97ace5a4d89143108670dac4ff5d8bf2e4c60c9a9168199b8b4339"
+    }
+  ],
+  "npmCiAudit": "18 reported vulnerabilities (3 low,10 moderate,5 high); no dependency changes",
+  "commitHookEnvironment": {
+    "firstAttemptExit": 1,
+    "error": "/bin/bash: C:/Program Files/nodejs/npm: No such file or directory",
+    "finding": "bundled Git has sh/dash but no bash; PATH bash resolves to Windows system32 WSL bash",
+    "adaptation": "process PATH prepends ignored local npm sh launcher executing the same installed node.exe and npm-cli.js with unchanged arguments; hooks and checks unchanged; no HUSKY=0/no-verify"
+  }
+}

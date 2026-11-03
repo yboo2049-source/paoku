@@ -1,0 +1,32 @@
+{
+  "fullResult": {
+    "task": "fonts",
+    "path": "D:/worker/paoku-sessions/pao-18/.pao18.local/main-review-5bd31cc/full.json",
+    "sha256": "064e5d372b3d41e950b99c8ac2e150c2c1d2acb2b1fea000611d86d85154d339",
+    "bytes": 73555,
+    "readOnly": true,
+    "actual": "064e5d372b3d41e950b99c8ac2e150c2c1d2acb2b1fea000611d86d85154d339"
+  },
+  "caseRecord": {
+    "task": "fonts",
+    "path": "D:/worker/paoku-sessions/pao-18/.pao18.local/main-review-5bd31cc/evidence/PAO-12/runs/final/F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position.json",
+    "sha256": "624eab608f5f8b2862349bcbf4bf0091c0e8f5bb9037ea6e96dfc769bbcfcd8c",
+    "bytes": 9480,
+    "readOnly": true,
+    "actual": "624eab608f5f8b2862349bcbf4bf0091c0e8f5bb9037ea6e96dfc769bbcfcd8c"
+  },
+  "title": "F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position",
+  "errors": [
+    "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap: net::ERR_CONNECTION_CLOSED",
+    "error: Failed to load resource: net::ERR_CONNECTION_CLOSED",
+    "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap: net::ERR_CONNECTION_CLOSED",
+    "error: Failed to load resource: net::ERR_CONNECTION_CLOSED"
+  ],
+  "states": [
+    {
+      "name": "F-desktop-teleport-recycled",
+      "phase": "RUNNING"
+    }
+  ],
+  "note": "full suite 59/60 from original review; no original network CDP trace supplied in fixed inputs; historical HTTP status/timing/cache/proxy cause unknown"
+}

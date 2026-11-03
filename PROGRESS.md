@@ -2,6 +2,13 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-03] 用户批准车尾连续性及同源字体修复，现有树复用就绪
+
+- 用户明确“批准”两A方案；[设计](docs/superpowers/specs/2026-11-03-regression-remediation-design.md)已更新批准状态，[执行计划/两份手动提示词](docs/plans/2026-11-03-regression-remediation-execution.md)第5/6节可用于现有诊断聊天。主Agent已先同步PRD/架构/流程/测试与本进度，不写游戏实现、不自动启动Agent。
+- 复用车尾D:/worker/paoku-sessions/pao-15-roof-diagnosis、codex/pao15-roof-diagnosis@8af24af083b369f3f8dc8bb883a861975b9972af；字体D:/worker/paoku-sessions/pao-18-font-diagnosis、codex/pao18-font-diagnosis@e6a52b1a88db911581c6b88b119d54c356ff9774。登记/顶层/分支/HEAD/common-dir/status实测，远端SHA一致，批准基线祖先exit0，两树干净；没有新建树。已有node_modules，5195/5198无监听，本轮未重跑修复基线或浏览器。
+- 车尾仅physics现有接触连续性段及增量测试；字体仅HTML/CSS字体路径/声明、已核具体身份/许可的同源文件及新测试。surfaces步序、公共schema/main、旧错误传感器、依赖/默认PWA配置和其他活动树不开放；必要扩围需实证最小请求。原角色/渲染树不自动写入或合并。
+- 原完整45/46、59/60仍未关闭；两项修复先RED/GREEN，完整门禁/真实图/保护通过后才正常提交推送并交主审。若另一项继承失败阻挡，保留现场交Dispatcher串行解依赖，不跨改、过滤或重试换绿。父状态/依赖、I-03/新runner/19 UI边界不变。
+
 ## [2026-11-03] 两项诊断主审接收，最小修复设计待批准
 
 - [诊断主审](docs/reviews/2026-11-03-regression-diagnosis-review.md)固定车尾8af24af083b369f3f8dc8bb883a861975b9972af和字体e6a52b1a88db911581c6b88b119d54c356ff9774；均已推送、远端同SHA、诊断树干净，分别仅新增30/17份文本。diff检查及44条诊断文本hash独立通过，未改游戏/旧断言/资产/依赖。

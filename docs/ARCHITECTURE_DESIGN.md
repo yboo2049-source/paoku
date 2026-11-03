@@ -1,5 +1,11 @@
 # 系统架构与模块隔离设计 (Architecture Spec)
 
+## 2026-11-03 批准后的独占修复写权
+
+[批准执行计划](plans/2026-11-03-regression-remediation-execution.md)固定车尾诊断树8af24af、字体诊断树e6a52b1，两个现有树复用，生产写权只在本树生效。车尾限physics.ts的isSupportSweep/已有departure提交、sweptCollision新增行为断言和新专属E2E；复用owner/side/y，只在已证向下顶面接触且终点向外越界/仍重叠同owner时保留跨tick连续性，重入/追上/分离/回收语义维持。surfaces/公共types/步序不开放。
+
+字体限index.html的字体外链、style.css字体导入/声明/路径、新public/fonts及来源/许可清单、新专属unit/E2E；固定不可变revision与具体二进制hash/许可/weight/字符覆盖/缓存版本。旧错误传感器、main/render/physics/19 UI/依赖/默认配置只读。PWA配置若实证漏缓存需最小扩围，不推定开放。新计划/证据路径按执行计划，其他活动树/原诊断证据只读；不自动移植或合并。本节优先于下文历史仅文本诊断限制。
+
 ## 2026-11-03 回归诊断隔离与数据边界
 
 [诊断计划](plans/2026-11-03-regression-diagnosis-prompts.md)使用新linked worktree：pao-15-roof-diagnosis@614179d与pao-18-font-diagnosis@5bd31cc。生产源码/旧测试/资产/依赖和原任务树只读；跟踪写权仅各自新报告和纯文本证据，临时QA仅本树既有忽略目录。车尾诊断读取固定步状态/支撑与sweep事实，不修改模拟权威或公共schema；字体诊断记录CSS/字体请求链/发起者/状态/错误，不修改UI或生产资源。主Agent已建立含SHA的原始只读输入清单；后续修复另定单一写入者及最小白名单，不直接在原15/18树越权改代码。

@@ -1,5 +1,11 @@
 # 测试用例与传感器计划 (Test Plan & Sensors)
 
+## 2026-11-03 已批准修复的RED与完整门禁
+
+[本批](plans/2026-11-03-regression-remediation-execution.md)车尾先以本次138→139真实两步及96/97/98对照RED，扩交点内/边界/外、侧缘、移动owner/重入/未知重叠、分离/回收与多障碍合法先前命中；保留旧sweptCollision/PAO-6断言，新受控输入tick E2E不能取代旧墙钟用例。字体先RED无外域请求/真实本地两族字重加载，独立F本地404必须仍被错误传感器捕获；原afterEach/requestfailed/console不变。
+
+每次代码修改即时编译/单测，最终完整build/test/E2E含旧套件+新专项、显式新测试tsc、保护/raw/HTTP/hash与真实截图。5195/5198独占strictPort/不复用、retries0/D3D11，N/F分报，关键图实际看2～3张异常扩看；字体另验生产PWA缓存/离线/更新和桌面/390/横屏、200%字体/长数字/缺字。另一项未移植的继承失败不能被隐藏或用一次成功覆盖，未通过不得提交生产修复或称最终通过。原45/46与59/60及诊断结果保留，本节覆盖旧纯诊断验证边界。
+
 ## 2026-11-03 车尾与字体诊断验证口径
 
 [两项诊断](plans/2026-11-03-regression-diagnosis-prompts.md)只做故障调查，不要求为建树/纯文档重复完整E2E。车尾记录实际JUMP输入tick、逐tick脚底/vy/contact/support/departure及sweep time/normal，比较固定步与截图/按键时序，避免预设算法bug。字体分开请求连接错误与业务断言，正常网络/F故障分别记录，禁止过滤网络错误、空CSS拦截或改变旧断言换绿。临时QA/输出镜像仅本机忽略目录，逐次实验与有限复现率全量保留；5195/5198独占strictPort、不复用、retries0/D3D11，关键新图默认2～3张有异常扩看。诊断文本内容/引用/diff/保护检查及正常hooks保留；真正代码修复另批后先RED→GREEN并完整build/test/E2E与独立视觉验收。

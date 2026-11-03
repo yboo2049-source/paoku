@@ -1,0 +1,46 @@
+{
+  "runtime": {
+    "node": "v24.18.1",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "scripts": [
+    {
+      "path": ".pao15-local/roof-diagnosis/prepare.mjs",
+      "sha256": "b82bcf1c19226c36012523ff8803deb13474dac931dce9be75ac8bd4b424b056"
+    },
+    {
+      "path": ".pao15-local/roof-diagnosis/mirrors.mjs",
+      "sha256": "039aa62da96fe921e53f949cef70bf15e65a42130201df1179e57374a101c629"
+    },
+    {
+      "path": ".pao15-local/roof-diagnosis/fixed.mjs",
+      "sha256": "a583a1ddf32dc869f58374d207fd2c289c477b697322c58da0f865a8273b713d"
+    },
+    {
+      "path": ".pao15-local/roof-diagnosis/create-replay.mjs",
+      "sha256": "37dd7c51b9cab2797d535c179a7402af617020fb9e876c3f0524146bede05f4e"
+    },
+    {
+      "path": ".pao15-local/roof-diagnosis/replay.mjs",
+      "sha256": "d536812543d3b27328c5cab9f983d435dc8f182ae2d6ad68d399fa8ab95de910"
+    },
+    {
+      "path": ".pao15-local/roof-diagnosis/collect.mjs",
+      "sha256": "aafb097355338fecc6f7b7ea00ad5af16c977a089383a123493d5641529b5d8c"
+    },
+    {
+      "path": ".pao15-local/roof-diagnosis/csv.mjs",
+      "sha256": "f965758b72231715403417903eae4c164e1ef7be4e0343bb0604527d9ad974ea"
+    },
+    {
+      "path": ".pao15-local/roof-diagnosis/verify.mjs",
+      "sha256": "4f038e47537286f2eb4b7aa78d70f2b65b51f292cabc1baed939fadd50d4a7d6"
+    }
+  ],
+  "fixedMethod": "Simulation(context,{runId,seed:1,physics:updatePhysics}); default stepSec1/60. Queue.collect JUMP REPLAY at preceding tick; step until phase != RUNNING or z>=62 or 260 steps. Store snapshots and direct sweepAABB using pre-step position and committed endpoint; capture original eventBus COLLISION. No generator/render/afterStep. Full before/after data retained for replays, CSV for enumerations.",
+  "mapEncoding": "JSON represents empty Map activePowerUps as {}; all runs have empty powerups. Replay reconstructs new Map().",
+  "mirrorVerification": "runs1..3 reverse only const dir output replacement and compare exact source string before executing; run4 separately adds passive observer.",
+  "sourceFixtureHash": "710cd0dc1d6fd938825b4c741f0c32798a2ada5c507209c48b2f57889f441df9",
+  "inheritedCopyHash": "1432ff96ca74003422e2bdc9ad5f0a1f82f378941babfeaa507d8fcaab0d4528"
+}

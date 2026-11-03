@@ -1,0 +1,10 @@
+{
+  "runs": [
+    1,
+    2,
+    3
+  ],
+  "inverseEqual": true,
+  "run4": "separate passive observation",
+  "sourceSHA256": "710cd0dc1d6fd938825b4c741f0c32798a2ada5c507209c48b2f57889f441df9"
+}

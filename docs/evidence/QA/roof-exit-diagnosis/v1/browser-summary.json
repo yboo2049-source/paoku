@@ -1,0 +1,1502 @@
+[
+  {
+    "run": 1,
+    "kind": "F original output-only mirror",
+    "exit": 0,
+    "stats": {
+      "startTime": "2026-11-03T13:10:30.599Z",
+      "duration": 9760.209,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "states": [
+      {
+        "name": "ramp-approach",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:10:36.088Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 0.18014583333333334,
+        "coins": 0,
+        "speed": 18.025,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 0,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 0,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2749.600000000093
+          }
+        ]
+      },
+      {
+        "name": "ramp-ascent",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:10:37.100Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 1.5380208333333316,
+          "z": 18.152083333333326
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 1.9953541666666654,
+        "coins": 0,
+        "speed": 18.274999999999984,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 0,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 1,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2749.600000000093
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 3274.8000000002794
+          }
+        ]
+      },
+      {
+        "name": "roof-contact",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:10:37.597Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 3,
+          "z": 27.01520833333332
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 2.881666666666664,
+        "coins": 0,
+        "speed": 18.39583333333331,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 0,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 2,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2749.600000000093
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 3274.8000000002794
+          }
+        ]
+      },
+      {
+        "name": "roof-jump",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:10:37.897Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 4.778333333333332,
+          "z": 32.54583333333331
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": true,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 3.434729166666664,
+        "coins": 0,
+        "speed": 18.470833333333307,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 1,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 3,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2749.600000000093
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 3274.8000000002794
+          },
+          {
+            "name": "PLAYER_ACTION",
+            "payload": {
+              "action": "JUMP"
+            },
+            "t": 4875.4000000003725
+          }
+        ]
+      },
+      {
+        "name": "roof-exit-land",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:10:39.380Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 60.22236111111103
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 6.2023819444444355,
+        "coins": 0,
+        "speed": 18.84166666666662,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 1,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 6,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2749.600000000093
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 3274.8000000002794
+          },
+          {
+            "name": "PLAYER_ACTION",
+            "payload": {
+              "action": "JUMP"
+            },
+            "t": 4875.4000000003725
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 5741.200000000186
+          }
+        ]
+      }
+    ],
+    "collectionAttempt": {
+      "exit": 1,
+      "tests": 0,
+      "error": "No tests found; anchored grep included no filename prefix"
+    },
+    "command": "npx playwright test --config .pao15-local/roof-diagnosis/run1/config.ts --grep ramp-roof-jump-land"
+  },
+  {
+    "run": 2,
+    "kind": "F original output-only mirror",
+    "exit": 0,
+    "stats": {
+      "startTime": "2026-11-03T13:10:41.620Z",
+      "duration": 9249.275,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "states": [
+      {
+        "name": "ramp-approach",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:10:46.289Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 0.18014583333333334,
+        "coins": 0,
+        "speed": 18.025,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 0,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 0,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2156.7999999998137
+          }
+        ]
+      },
+      {
+        "name": "ramp-ascent",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:10:47.301Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 1.5380208333333316,
+          "z": 18.152083333333326
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 1.9953541666666654,
+        "coins": 0,
+        "speed": 18.274999999999984,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 0,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 1,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2156.7999999998137
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2664.600000000093
+          }
+        ]
+      },
+      {
+        "name": "roof-contact",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:10:47.797Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 3,
+          "z": 27.01520833333332
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 2.881666666666664,
+        "coins": 0,
+        "speed": 18.39583333333331,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 0,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 2,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2156.7999999998137
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2664.600000000093
+          }
+        ]
+      },
+      {
+        "name": "roof-jump",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:10:48.106Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 4.669444444444443,
+          "z": 32.54583333333331
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": true,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 3.434729166666664,
+        "coins": 0,
+        "speed": 18.470833333333307,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 1,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 3,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2156.7999999998137
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2664.600000000093
+          },
+          {
+            "name": "PLAYER_ACTION",
+            "payload": {
+              "action": "JUMP"
+            },
+            "t": 4282.5
+          }
+        ]
+      },
+      {
+        "name": "roof-exit-land",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:10:49.581Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 60.22236111111103
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 6.2023819444444355,
+        "coins": 0,
+        "speed": 18.84166666666662,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 1,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 6,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2156.7999999998137
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2664.600000000093
+          },
+          {
+            "name": "PLAYER_ACTION",
+            "payload": {
+              "action": "JUMP"
+            },
+            "t": 4282.5
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 5148.100000000093
+          }
+        ]
+      }
+    ],
+    "collectionAttempt": {
+      "exit": 1,
+      "tests": 0,
+      "error": "No tests found; anchored grep included no filename prefix"
+    },
+    "command": "npx playwright test --config .pao15-local/roof-diagnosis/run2/config.ts --grep ramp-roof-jump-land"
+  },
+  {
+    "run": 3,
+    "kind": "F original output-only mirror",
+    "exit": 0,
+    "stats": {
+      "startTime": "2026-11-03T13:10:52.716Z",
+      "duration": 9506.67,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "states": [
+      {
+        "name": "ramp-approach",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:10:57.976Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 0.18014583333333334,
+        "coins": 0,
+        "speed": 18.025,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 0,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 0,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2612.5
+          }
+        ]
+      },
+      {
+        "name": "ramp-ascent",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:10:58.965Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 1.5380208333333316,
+          "z": 18.152083333333326
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 1.9953541666666654,
+        "coins": 0,
+        "speed": 18.274999999999984,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 0,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 1,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2612.5
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 3180.3000000002794
+          }
+        ]
+      },
+      {
+        "name": "roof-contact",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:10:59.464Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 3,
+          "z": 27.01520833333332
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 2.881666666666664,
+        "coins": 0,
+        "speed": 18.39583333333331,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 0,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 2,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2612.5
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 3180.3000000002794
+          }
+        ]
+      },
+      {
+        "name": "roof-jump",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:10:59.773Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 4.669444444444443,
+          "z": 32.54583333333331
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": true,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 3.434729166666664,
+        "coins": 0,
+        "speed": 18.470833333333307,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 1,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 3,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2612.5
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 3180.3000000002794
+          },
+          {
+            "name": "PLAYER_ACTION",
+            "payload": {
+              "action": "JUMP"
+            },
+            "t": 4796.899999999907
+          }
+        ]
+      },
+      {
+        "name": "roof-exit-land",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:11:01.247Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 60.22236111111103
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 6.2023819444444355,
+        "coins": 0,
+        "speed": 18.84166666666662,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 1,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 6,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2612.5
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 3180.3000000002794
+          },
+          {
+            "name": "PLAYER_ACTION",
+            "payload": {
+              "action": "JUMP"
+            },
+            "t": 4796.899999999907
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 5664.300000000279
+          }
+        ]
+      }
+    ],
+    "collectionAttempt": {
+      "exit": 1,
+      "tests": 0,
+      "error": "No tests found; anchored grep included no filename prefix"
+    },
+    "command": "npx playwright test --config .pao15-local/roof-diagnosis/run3/config.ts --grep ramp-roof-jump-land"
+  },
+  {
+    "run": 4,
+    "kind": "F passive observed",
+    "exit": 0,
+    "stats": {
+      "startTime": "2026-11-03T13:11:03.995Z",
+      "duration": 10404.89,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "states": [
+      {
+        "name": "ramp-approach",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:11:09.642Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 0.21019444444444446,
+        "coins": 0,
+        "speed": 18.029166666666665,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 0,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 0,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2038.1000000000931
+          }
+        ]
+      },
+      {
+        "name": "ramp-ascent",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:11:10.667Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 1.5390624999999973,
+          "z": 18.15624999999999
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 2.0258194444444433,
+        "coins": 0,
+        "speed": 18.27916666666665,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 0,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 2,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2038.1000000000931
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2552
+          }
+        ]
+      },
+      {
+        "name": "roof-contact",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:11:11.148Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 3,
+          "z": 27.02138888888887
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 2.912333333333331,
+        "coins": 0,
+        "speed": 18.399999999999977,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 0,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 2,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2038.1000000000931
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2552
+          }
+        ]
+      },
+      {
+        "name": "roof-jump",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:11:11.442Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 4.549999999999999,
+          "z": 32.2453472222222
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": true,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 3.434729166666664,
+        "coins": 0,
+        "speed": 18.470833333333307,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 1,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 3,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2038.1000000000931
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2552
+          },
+          {
+            "name": "PLAYER_ACTION",
+            "payload": {
+              "action": "JUMP"
+            },
+            "t": 4166.700000000186
+          }
+        ]
+      },
+      {
+        "name": "roof-exit-land",
+        "layout": {
+          "viewportWidth": 1440,
+          "viewportHeight": 900,
+          "scrollWidth": 1440,
+          "scrollHeight": 900
+        },
+        "at": "2026-11-03T13:11:12.937Z",
+        "state": "PLAYING",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 60.23597222222214
+        },
+        "player": {
+          "lane": 1,
+          "isJumping": false,
+          "isRolling": false,
+          "invulnerableTimer": 0
+        },
+        "score": 6.233791666666658,
+        "coins": 0,
+        "speed": 18.845833333333285,
+        "missions": [
+          {
+            "type": "COLLECT_COINS",
+            "current": 0,
+            "target": 30,
+            "completed": false
+          },
+          {
+            "type": "JUMP_TIMES",
+            "current": 1,
+            "target": 10,
+            "completed": false
+          },
+          {
+            "type": "ROLL_TIMES",
+            "current": 0,
+            "target": 8,
+            "completed": false
+          },
+          {
+            "type": "SCORE_REACH",
+            "current": 6,
+            "target": 500,
+            "completed": false
+          }
+        ],
+        "hud": "",
+        "events": [
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2038.1000000000931
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 2552
+          },
+          {
+            "name": "PLAYER_ACTION",
+            "payload": {
+              "action": "JUMP"
+            },
+            "t": 4166.700000000186
+          },
+          {
+            "name": "PLAYER_LANDED",
+            "payload": {
+              "y": 0
+            },
+            "t": 5034
+          }
+        ]
+      }
+    ],
+    "collectionAttempt": {
+      "exit": 1,
+      "tests": 0,
+      "error": "No tests found; anchored grep included no filename prefix"
+    },
+    "command": "npx playwright test --config .pao15-local/roof-diagnosis/run4/config.ts --grep ramp-roof-jump-land"
+  }
+]

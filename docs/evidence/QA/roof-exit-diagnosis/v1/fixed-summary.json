@@ -1,0 +1,1404 @@
+[
+  {
+    "label": "scan-85",
+    "jumpTick": 85,
+    "inputs": [
+      {
+        "runId": "scan-85",
+        "tick": 85,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-86",
+    "jumpTick": 86,
+    "inputs": [
+      {
+        "runId": "scan-86",
+        "tick": 86,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-87",
+    "jumpTick": 87,
+    "inputs": [
+      {
+        "runId": "scan-87",
+        "tick": 87,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-88",
+    "jumpTick": 88,
+    "inputs": [
+      {
+        "runId": "scan-88",
+        "tick": 88,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-89",
+    "jumpTick": 89,
+    "inputs": [
+      {
+        "runId": "scan-89",
+        "tick": 89,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-90",
+    "jumpTick": 90,
+    "inputs": [
+      {
+        "runId": "scan-90",
+        "tick": 90,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-91",
+    "jumpTick": 91,
+    "inputs": [
+      {
+        "runId": "scan-91",
+        "tick": 91,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-92",
+    "jumpTick": 92,
+    "inputs": [
+      {
+        "runId": "scan-92",
+        "tick": 92,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-93",
+    "jumpTick": 93,
+    "inputs": [
+      {
+        "runId": "scan-93",
+        "tick": 93,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-94",
+    "jumpTick": 94,
+    "inputs": [
+      {
+        "runId": "scan-94",
+        "tick": 94,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-95",
+    "jumpTick": 95,
+    "inputs": [
+      {
+        "runId": "scan-95",
+        "tick": 95,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-96",
+    "jumpTick": 96,
+    "inputs": [
+      {
+        "runId": "scan-96",
+        "tick": 96,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-97",
+    "jumpTick": 97,
+    "inputs": [
+      {
+        "runId": "scan-97",
+        "tick": 97,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 139,
+      "phase": "ENDED",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 2.68944444444445,
+        "z": 42.3756944444444,
+        "vy": -13.733333333333318,
+        "isJumping": true,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": null,
+        "contact": "AIRBORNE",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 2.68944444444445,
+          "z": 42.3756944444444
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": [
+      {
+        "targetType": "STATIC_TRAIN",
+        "position": {
+          "x": 0,
+          "y": 2.9183333333333388,
+          "z": 42.06604166666662
+        },
+        "obstacleId": "STATIC_TRAIN33",
+        "time": 0,
+        "normal": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        }
+      }
+    ]
+  },
+  {
+    "label": "scan-98",
+    "jumpTick": 98,
+    "inputs": [
+      {
+        "runId": "scan-98",
+        "tick": 98,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-99",
+    "jumpTick": 99,
+    "inputs": [
+      {
+        "runId": "scan-99",
+        "tick": 99,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-100",
+    "jumpTick": 100,
+    "inputs": [
+      {
+        "runId": "scan-100",
+        "tick": 100,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-101",
+    "jumpTick": 101,
+    "inputs": [
+      {
+        "runId": "scan-101",
+        "tick": 101,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-102",
+    "jumpTick": 102,
+    "inputs": [
+      {
+        "runId": "scan-102",
+        "tick": 102,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-103",
+    "jumpTick": 103,
+    "inputs": [
+      {
+        "runId": "scan-103",
+        "tick": 103,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-104",
+    "jumpTick": 104,
+    "inputs": [
+      {
+        "runId": "scan-104",
+        "tick": 104,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-105",
+    "jumpTick": 105,
+    "inputs": [
+      {
+        "runId": "scan-105",
+        "tick": 105,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-106",
+    "jumpTick": 106,
+    "inputs": [
+      {
+        "runId": "scan-106",
+        "tick": 106,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-107",
+    "jumpTick": 107,
+    "inputs": [
+      {
+        "runId": "scan-107",
+        "tick": 107,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-108",
+    "jumpTick": 108,
+    "inputs": [
+      {
+        "runId": "scan-108",
+        "tick": 108,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-109",
+    "jumpTick": 109,
+    "inputs": [
+      {
+        "runId": "scan-109",
+        "tick": 109,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-110",
+    "jumpTick": 110,
+    "inputs": [
+      {
+        "runId": "scan-110",
+        "tick": 110,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-111",
+    "jumpTick": 111,
+    "inputs": [
+      {
+        "runId": "scan-111",
+        "tick": 111,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-112",
+    "jumpTick": 112,
+    "inputs": [
+      {
+        "runId": "scan-112",
+        "tick": 112,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-113",
+    "jumpTick": 113,
+    "inputs": [
+      {
+        "runId": "scan-113",
+        "tick": 113,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-114",
+    "jumpTick": 114,
+    "inputs": [
+      {
+        "runId": "scan-114",
+        "tick": 114,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "scan-115",
+    "jumpTick": 115,
+    "inputs": [
+      {
+        "runId": "scan-115",
+        "tick": 115,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "no-jump",
+    "jumpTick": null,
+    "inputs": [],
+    "terminal": {
+      "tick": 202,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.02381944444436,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.02381944444436
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": []
+  },
+  {
+    "label": "legal-front",
+    "jumpTick": null,
+    "inputs": [],
+    "terminal": {
+      "tick": 24,
+      "phase": "ENDED",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 7.220833333333332,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 7.220833333333332
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": [
+      {
+        "targetType": "STATIC_TRAIN",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 7.1
+        },
+        "obstacleId": "STATIC_TRAIN9",
+        "time": 0.599447513812157,
+        "normal": {
+          "x": 0,
+          "y": 0,
+          "z": -1
+        }
+      }
+    ]
+  }
+]

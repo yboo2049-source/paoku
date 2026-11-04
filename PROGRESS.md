@@ -2,6 +2,12 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-04] PAO-18事实桥设计f5c1ec6主审：一处成功动作预期待修订
+
+- 实际Git核对字体历史名接续树codex/pao18-font-diagnosis@f5c1ec6b685be7278efe89189254a19b0c96ae1d，与远端一致、干净；仅新增规定三份设计文档，基线祖先、diff及7项文档链接检查通过。[独立主审与修订提示词](docs/reviews/2026-11-04-pao18-fact-bridge-design-review.md)已备，不自动发送或启动Agent。
+- 推荐A及提交/批次/去重/生命周期方向可保留；发现spec与FB02把JUMP→ROLL→JUMP误写为三次成功。当前input的ROLL不清isJumping，因此第三次JUMP应拒绝，只有两条事实，最终jumping/rolling均true。须改文档和未来RED，不改玩法迎合草案；另以ROLL→JUMP→ROLL作三成功对照。
+- 本次尚未放行实现。main最小音频暂存、重入屏障、异常fail-stop/fresh-context恢复及预算是具体待审扩围，不能由路线认可默认授权。任务方hooks的build/293单测仅属现有代码，FB01–17尚未执行，主Agent未跑新实验或浏览器。
+- PAO-19继续并行安全区设计，车尾/预览延期、字体/17已审、父状态及依赖不变。
 ## [2026-11-04] PAO-19安全区接入设计并行准备，18事件桥已在进行
 
 - 用户确认上一轮PAO-18事件桥提示词已在执行，本轮只为PAO-19新增[HUD安全区设计任务](docs/plans/2026-11-04-pao19-hud-safe-area-design-brief.md)，不重复派发18。UI提供可见占区/坐标/revision候选，18继续事实身份/批次设计；公共接线后由Dispatcher统一串行安排。

@@ -4,7 +4,7 @@
 
 ## 1. 当前要做什么
 
-用户已确认PAO-18真实运动/接触事实桥纯设计任务在进行，见[原任务范围](../plans/2026-11-04-pao18-fact-bridge-design-brief.md)，不要重派或打断。接续树历史名称为pao-18-font-diagnosis/codex/pao18-font-diagnosis，已备基线826b10f；运行中的实际改动不回退。main/types/模拟及物理生产修改未开放，设计返回主审和用户批准后才实现。
+PAO-18事实桥设计已交f5c1ec6b685be7278efe89189254a19b0c96ae1d并独立主审，当前有一处成功动作示例/FB02待文档修订，见[主审及同树修订提示词](../reviews/2026-11-04-pao18-fact-bridge-design-review.md)。不要重派原设计整批或直接实现。接续树历史名称为pao-18-font-diagnosis/codex/pao18-font-diagnosis，当前HEAD/远端一致、干净，含已审826b10f；下一轮仅改原三份设计文档。main/types/模拟/物理生产写权未开放，音频/异常扩围与完整设计须修订后审定并经用户批准。
 
 并行为PAO-19准备[HUD到镜头动态安全区设计](../plans/2026-11-04-pao19-hud-safe-area-design-brief.md)。原19树codex/pao-19-ui@ed39cb9已重新核验登记/顶层/common-dir/分支/干净状态/远端及祖先，直接复用；只允许三份新增文档，不重做已Done UI，不读取18活动树或抢写共享接口。18参考以固定826b10f Git对象提供，最终公共接线由Dispatcher统一。没有新建树或自动启动任务/Agent。
 
@@ -29,7 +29,7 @@ PAO-17已审主题不重派重验。原15完整45/46、18完整59/60首失败与
 | PAO-17 | D:/worker/paoku-sessions/pao-17 | codex/pao-17-render | 82d2d47 | 已审；原.pao17-local证据保留 |
 | PAO-18 | D:/worker/paoku-sessions/pao-18 | codex/pao-18-motion-camera | 5bd31cc | 干净，远端同SHA；首批工程检查通过，完整E2E59/60，最终验收暂缓 |
 | 车尾诊断/修复 | D:/worker/paoku-sessions/pao-15-roof-diagnosis | codex/pao15-roof-diagnosis | 8af24af | 用户延期，候选/证据未提交、暂存区空，保留脏树；不继续诊断/复验 |
-| 字体修复/18后续设计 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | 826b10f | 字体已审，干净、远端一致；复用准备事实桥纯设计，未合并原18 |
+| 字体修复/18后续设计 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | f5c1ec6 | 字体826b10f已审；事实桥纯设计交付干净、远端一致，主审一处动作预期待修订，未实施/合并原18 |
 | PAO-19 | D:/worker/paoku-sessions/pao-19 | codex/pao-19-ui | ed39cb9 | 已审Done |
 | 原资产只读树 | D:/worker/paoku-sessions/glb-review | detached | 7a2fb29 | 不覆盖原GLB |
 

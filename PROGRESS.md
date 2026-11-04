@@ -2,6 +2,12 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-04] 用户批准两桥限定实施，两树复用及执行提示词就绪
+
+- 用户在联合主审请求具体范围批准后回复“继续 给出提示词”，据此批准18事件桥A及19几何桥A的当前阶段。[实施计划](docs/plans/2026-11-04-pao18-pao19-approved-bridge-execution.md)已同步四份共享契约，再下发手动提示词；主Agent不写游戏、不自动启动Agent。
+- 重新实测18树codex/pao18-font-diagnosis@c3a7eb64a7aa917e4a3cb7a88c1fb01a39dd4e85、19树codex/pao-19-ui@ff02092344fcef2f5a96f29f9762a01ea5043907，顶层/分支/common-dir/登记/status/祖先/指定远端均正确，两树干净且已有依赖。直接复用，不新建树/合并/安装或重复跑游戏基线。
+- 18独占其main/babylon及事实producer/消费者，含最小音频暂存、重入屏障和故障局保护；19并行仅UI producer/中立纯函数/新测试，main/render只读。19生产帧接线待18固定交付审查后另排，不提前算完整集成成功。每批完整门禁、真实图/录屏及正常提交推送后交独立验收。
+- 车尾/预览延期、字体/17已审、新runner/音频重构/20/21未开放及父状态依赖不变。
 ## [2026-11-04] PAO-18/19桥接设计联合审查通过，待具体范围批准
 
 - [联合主审与范围建议](docs/reviews/2026-11-04-pao18-pao19-bridge-design-joint-review.md)固定18@c3a7eb64a7aa917e4a3cb7a88c1fb01a39dd4e85、19@ff02092344fcef2f5a96f29f9762a01ea5043907。两树顶层/分支/common-dir/登记/祖先/status/指定远端一致且干净；均仅三份文档，diff和本地7/6项链接通过。

@@ -1,5 +1,9 @@
 # 系统架构与模块隔离设计 (Architecture Spec)
 
+## 2026-11-04 两桥限定实施写权
+
+[用户已批准范围及执行计划](plans/2026-11-04-pao18-pao19-approved-bridge-execution.md)第2节开放18的contracts/simulation、input与physics观测、main及三个render消费者，采用MotionFact/Stamp/Batch/Cursor/Read/Receipt最小子集，impact未知保持null；不改碰撞/支撑/动作合法性/奖励或audio/application。journal预算256批/1024事件、单tick64 draft，main音频暂存256调用及交付重入屏障/异常局保护纳入限定范围。19第3节仅dom.ts布局producer和新presentation/hudSafeArea.ts纯值模块/新测试；main/render/types/业务仍只读。19布局producerId/epoch/revision不与18事实身份混用。公共接线后续由主Agent统一，当前不merge。明确未就绪/坐标/包络与冻结策略按批准设计保留，不重构solver；本节覆盖旧相应“未授权实施”，不是全库写权。
+
 ## 2026-11-03 用户延期车尾修复及派生预览排查
 
 用户明确要求车尾问题先记录、当前不继续修复。以[已知问题KI-001/002](KNOWN_ISSUES.md)和[暂停收口提示词](plans/2026-11-03-roof-exit-deferred-handoff.md)为当前指令：保留本地未提交候选与所有失败证据，不再修复/追查/重复复验车尾及连带ready超时，不回滚、提交或丢弃现有改动。以下历史车尾实施/补充诊断安排暂停；字体任务独立授权不变。延期不表示修复已验收、原失败已关闭或全套测试通过，恢复须用户明确要求。

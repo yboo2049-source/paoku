@@ -54,4 +54,13 @@ PAO-9只读固定参考：`D:/worker/paoku-sessions/pao-9/docs/architecture/rebu
 
 内容审查已补充提交后交付重入屏障：旧observer触发的暂停/重开在packet确认边界串行执行，旧generation回执不得确认新局。未来FB01–FB17均未执行。
 
-实际提交/推送回执在首次正常提交推送后追加；最终回执提交自身SHA及远端一致性由最终交付提供，避免自引用或预填成功。
+## 实际检查及首次交付回执
+
+- 三份文档逐项完成上述7项内容审查；相对Markdown链接均逐个解析并确认目标存在，PAO-9固定版本与当前能力分开标注。
+- 暂存区精确为本任务三个新增文件，`git diff --cached --check`通过；未改src/public/tests/旧文档/配置/依赖。未来FB01–FB17、N/F及浏览器均未运行。
+- 正常pre-commit执行`npm run build`（tsc+Vite）及`npm run test`：均exit0，28个测试文件、293条单测通过；没有绕过hook、安装依赖或改hook/config。保留既有Husky弃用与大chunk提示，未扩围处理。
+- 首次设计提交：`c6a2115344aba9c9e99b8ac16c47cd949132cbdb`，标题`docs(pao18): design authoritative motion fact bridge`。
+- `git push`成功更新`origin/codex/pao18-font-diagnosis`；随后`git ls-remote --heads origin refs/heads/codex/pao18-font-diagnosis`返回同一完整SHA。提交后status为空，`git diff --check`通过。
+- 本段是首次推送后的真实回执补记；将按相同正常hook另提交推送。最终回执提交自身SHA及远端一致性由最终交付提供，避免自引用或预填成功。
+
+交Dispatcher独立审查；本轮成果为候选设计，尚无事实桥生产实现、运行时验收或用户实施批准。不标18 Done，不调整依赖，不自动进入writing-plans/实现。

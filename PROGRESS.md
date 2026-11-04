@@ -2,6 +2,13 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-04] PAO-19安全区接入设计并行准备，18事件桥已在进行
+
+- 用户确认上一轮PAO-18事件桥提示词已在执行，本轮只为PAO-19新增[HUD安全区设计任务](docs/plans/2026-11-04-pao19-hud-safe-area-design-brief.md)，不重复派发18。UI提供可见占区/坐标/revision候选，18继续事实身份/批次设计；公共接线后由Dispatcher统一串行安排。
+- 先核验并复用原PAO-19树D:/worker/paoku-sessions/pao-19，codex/pao-19-ui@ed39cb9aad981da1e9eda0a196b86d0c0c6702d9，远端一致、status干净，顶层/common-dir/主仓登记及已验收基线祖先exit0。未建新树、启动Agent或重复旧UI验收。
+- 本轮仅允许任务方新增设计spec、候选契约及准备证据三份文档；src/tests/配置/依赖/main/types及其他活动树只读。18消费者以固定826b10f Git对象查阅，不读取进行中事件桥产物或抢写共享接口。设计审查和用户批准前不实现。
+- 已Done的19四页UI/两项P2不重做，车尾/预览继续延期，字体/17不重验，新runner/音频/20/21不开放。
+
 ## [2026-11-04] 下一批真实事实桥设计提示词准备就绪
 
 - 用户要求继续并询问下一步。回读Linear的PAO-18/16/20/5，18真实动作/接触身份与多tick事实仍有缺口，20/21不提前实施；[下一批设计任务及手动提示词](docs/plans/2026-11-04-pao18-fact-bridge-design-brief.md)推荐权威模拟步提交事实，经唯一入口供render只读消费，比较main包装旧总线/最终状态边沿两替代路线。本批仅设计，尚未批准实现。

@@ -4,7 +4,9 @@
 
 ## 1. 当前要做什么
 
-下一批为PAO-18真实运动/接触事实桥的**纯设计准备**，见[任务范围与手动提示词](../plans/2026-11-04-pao18-fact-bridge-design-brief.md)。复用字体树codex/pao18-font-diagnosis@826b10f，Git登记/顶层/分支/common-dir/干净状态/远端及18基线祖先已重新核实。只允许三份新设计文档，main/types/模拟及物理生产修改未开放；设计返回主审和用户批准后才实现。不新建树、不自动启动任务或Agent。
+用户已确认PAO-18真实运动/接触事实桥纯设计任务在进行，见[原任务范围](../plans/2026-11-04-pao18-fact-bridge-design-brief.md)，不要重派或打断。接续树历史名称为pao-18-font-diagnosis/codex/pao18-font-diagnosis，已备基线826b10f；运行中的实际改动不回退。main/types/模拟及物理生产修改未开放，设计返回主审和用户批准后才实现。
+
+并行为PAO-19准备[HUD到镜头动态安全区设计](../plans/2026-11-04-pao19-hud-safe-area-design-brief.md)。原19树codex/pao-19-ui@ed39cb9已重新核验登记/顶层/common-dir/分支/干净状态/远端及祖先，直接复用；只允许三份新增文档，不重做已Done UI，不读取18活动树或抢写共享接口。18参考以固定826b10f Git对象提供，最终公共接线由Dispatcher统一。没有新建树或自动启动任务/Agent。
 
 用户已明确要求车尾问题先记录，当前不继续修复。当前入口为[已知问题KI-001/002](../KNOWN_ISSUES.md)及[暂停收口提示词](../plans/2026-11-03-roof-exit-deferred-handoff.md)。车尾修复和连带四动作ready超时调查均延期，不再重复实验/完整复验或沿历史提示词追修。恢复须用户明确要求，不自动派发Agent。
 

@@ -4,9 +4,9 @@
 
 ## 1. 当前要做什么
 
-PAO-18事实桥设计已交f5c1ec6b685be7278efe89189254a19b0c96ae1d并独立主审，当前有一处成功动作示例/FB02待文档修订，见[主审及同树修订提示词](../reviews/2026-11-04-pao18-fact-bridge-design-review.md)。不要重派原设计整批或直接实现。接续树历史名称为pao-18-font-diagnosis/codex/pao18-font-diagnosis，当前HEAD/远端一致、干净，含已审826b10f；下一轮仅改原三份设计文档。main/types/模拟/物理生产写权未开放，音频/异常扩围与完整设计须修订后审定并经用户批准。
+PAO-18修订c3a7eb64a7aa917e4a3cb7a88c1fb01a39dd4e85及PAO-19安全区设计ff02092344fcef2f5a96f29f9762a01ea5043907已[联合主审](../reviews/2026-11-04-pao18-pao19-bridge-design-joint-review.md)，设计层面通过，18上轮动作预期问题关闭。两原树HEAD/远端一致、干净，均仅三份设计文档；不再重派旧设计或该修订。
 
-并行为PAO-19准备[HUD到镜头动态安全区设计](../plans/2026-11-04-pao19-hud-safe-area-design-brief.md)。原19树codex/pao-19-ui@ed39cb9已重新核验登记/顶层/common-dir/分支/干净状态/远端及祖先，直接复用；只允许三份新增文档，不重做已Done UI，不读取18活动树或抢写共享接口。18参考以固定826b10f Git对象提供，最终公共接线由Dispatcher统一。没有新建树或自动启动任务/Agent。
+当前等待用户批准两份A设计及联合主审中的具体参数/最小扩围。尚未进入writing-plans或开放实现；批准后先同步共享规范/分阶段计划，再核对工作树并下发手动提示词，不自动启动Agent。建议18先独占main/babylon，19可并行只做UI producer/中立纯函数，固定18交付后另定唯一集成者串行接线；不预先合并，不在19树写I-03或在18活动树并写。
 
 用户已明确要求车尾问题先记录，当前不继续修复。当前入口为[已知问题KI-001/002](../KNOWN_ISSUES.md)及[暂停收口提示词](../plans/2026-11-03-roof-exit-deferred-handoff.md)。车尾修复和连带四动作ready超时调查均延期，不再重复实验/完整复验或沿历史提示词追修。恢复须用户明确要求，不自动派发Agent。
 
@@ -29,8 +29,8 @@ PAO-17已审主题不重派重验。原15完整45/46、18完整59/60首失败与
 | PAO-17 | D:/worker/paoku-sessions/pao-17 | codex/pao-17-render | 82d2d47 | 已审；原.pao17-local证据保留 |
 | PAO-18 | D:/worker/paoku-sessions/pao-18 | codex/pao-18-motion-camera | 5bd31cc | 干净，远端同SHA；首批工程检查通过，完整E2E59/60，最终验收暂缓 |
 | 车尾诊断/修复 | D:/worker/paoku-sessions/pao-15-roof-diagnosis | codex/pao15-roof-diagnosis | 8af24af | 用户延期，候选/证据未提交、暂存区空，保留脏树；不继续诊断/复验 |
-| 字体修复/18后续设计 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | f5c1ec6 | 字体826b10f已审；事实桥纯设计交付干净、远端一致，主审一处动作预期待修订，未实施/合并原18 |
-| PAO-19 | D:/worker/paoku-sessions/pao-19 | codex/pao-19-ui | ed39cb9 | 已审Done |
+| 字体修复/18后续设计 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | c3a7eb6 | 字体已审；事实桥设计修订主审通过，干净/远端一致，待实现批准 |
+| PAO-19 | D:/worker/paoku-sessions/pao-19 | codex/pao-19-ui | ff02092 | 原UI ed39cb9已审Done；后续安全区设计主审通过，干净/远端一致，待实现批准 |
 | 原资产只读树 | D:/worker/paoku-sessions/glb-review | detached | 7a2fb29 | 不覆盖原GLB |
 
 15/18的顶层、分支、HEAD、共同Git目录D:/worker/paoku/.git、含未跟踪项status已在目标目录核对，并与主仓worktree list交叉核验。15完整HEAD=614179d245d2a87a2a2aa3d61fde2a8de68eb7c1；18完整HEAD=5bd31cc06a44c1a2ac382809ea8eadb69df76984；ls-remote核实两个分支均已推送一致。

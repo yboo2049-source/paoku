@@ -2,6 +2,12 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-04] PAO-18/19桥接设计联合审查通过，待具体范围批准
+
+- [联合主审与范围建议](docs/reviews/2026-11-04-pao18-pao19-bridge-design-joint-review.md)固定18@c3a7eb64a7aa917e4a3cb7a88c1fb01a39dd4e85、19@ff02092344fcef2f5a96f29f9762a01ea5043907。两树顶层/分支/common-dir/登记/祖先/status/指定远端一致且干净；均仅三份文档，diff和本地7/6项链接通过。
+- 18的JUMP→ROLL→JUMP成功预期已正确修订，原设计问题关闭。19的几何producer/租约/单位转换、顶部包络、冻结/未就绪回退及solver限制清楚，设计层面未见阻断项；FB/H矩阵仍未运行，不重跑游戏或把hooks当桥已实现。
+- 建议接受两A方案及明确参数/扩围：18包括main最小音频暂存、重入屏障和异常局保护；19包括中立值模块、顶部包络/4px/量化及只诊断的模态策略。实施顺序建议18先独占公共入口，19并行只做UI producer/纯函数，固定18交付后另排唯一集成者串行接线。
+- 当前仍待用户批准新设计和具体范围，尚未编写实现计划、开放生产写权、合并或启动Agent。车尾/预览延期、字体/17已审及父任务依赖保持。
 ## [2026-11-04] PAO-18事实桥设计f5c1ec6主审：一处成功动作预期待修订
 
 - 实际Git核对字体历史名接续树codex/pao18-font-diagnosis@f5c1ec6b685be7278efe89189254a19b0c96ae1d，与远端一致、干净；仅新增规定三份设计文档，基线祖先、diff及7项文档链接检查通过。[独立主审与修订提示词](docs/reviews/2026-11-04-pao18-fact-bridge-design-review.md)已备，不自动发送或启动Agent。

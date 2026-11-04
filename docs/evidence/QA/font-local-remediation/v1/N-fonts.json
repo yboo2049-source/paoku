@@ -1,0 +1,204 @@
+{
+  "errors": [],
+  "google": [],
+  "local": [
+    "http://127.0.0.1:5198/fonts/Outfit-fc7287273e66.ttf",
+    "http://127.0.0.1:5198/fonts/Orbitron-f42db2dd16e6.ttf"
+  ],
+  "faces": [
+    {
+      "family": "Outfit",
+      "weight": 400,
+      "faces": [
+        {
+          "family": "Outfit",
+          "status": "loaded",
+          "weight": "100 900"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Outfit",
+      "weight": 600,
+      "faces": [
+        {
+          "family": "Outfit",
+          "status": "loaded",
+          "weight": "100 900"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Outfit",
+      "weight": 700,
+      "faces": [
+        {
+          "family": "Outfit",
+          "status": "loaded",
+          "weight": "100 900"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Outfit",
+      "weight": 900,
+      "faces": [
+        {
+          "family": "Outfit",
+          "status": "loaded",
+          "weight": "100 900"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Orbitron",
+      "weight": 400,
+      "faces": [
+        {
+          "family": "Orbitron",
+          "status": "loaded",
+          "weight": "500 900"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Orbitron",
+      "weight": 500,
+      "faces": [
+        {
+          "family": "Orbitron",
+          "status": "loaded",
+          "weight": "500 900"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Orbitron",
+      "weight": 700,
+      "faces": [
+        {
+          "family": "Orbitron",
+          "status": "loaded",
+          "weight": "500 900"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Orbitron",
+      "weight": 900,
+      "faces": [
+        {
+          "family": "Orbitron",
+          "status": "loaded",
+          "weight": "500 900"
+        }
+      ],
+      "error": null
+    }
+  ],
+  "glyphs": [
+    {
+      "family": "Outfit",
+      "weight": 400,
+      "fonts": [
+        {
+          "familyName": "Outfit Thin",
+          "postScriptName": "Outfit",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ]
+    },
+    {
+      "family": "Outfit",
+      "weight": 600,
+      "fonts": [
+        {
+          "familyName": "Outfit Thin",
+          "postScriptName": "Outfit-SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ]
+    },
+    {
+      "family": "Outfit",
+      "weight": 700,
+      "fonts": [
+        {
+          "familyName": "Outfit Thin",
+          "postScriptName": "Outfit-Bold",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ]
+    },
+    {
+      "family": "Outfit",
+      "weight": 900,
+      "fonts": [
+        {
+          "familyName": "Outfit Thin",
+          "postScriptName": "Outfit-Black",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ]
+    },
+    {
+      "family": "Orbitron",
+      "weight": 400,
+      "fonts": [
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-Medium",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ]
+    },
+    {
+      "family": "Orbitron",
+      "weight": 500,
+      "fonts": [
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-Medium",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ]
+    },
+    {
+      "family": "Orbitron",
+      "weight": 700,
+      "fonts": [
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-Bold",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ]
+    },
+    {
+      "family": "Orbitron",
+      "weight": 900,
+      "fonts": [
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-Black",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ]
+    }
+  ]
+}

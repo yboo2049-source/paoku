@@ -1,0 +1,18 @@
+{
+  "frozenAt": "2026-11-03T13:46:19.438Z",
+  "hashes": {
+    "index.html": "c190886380c7add099049d3b501065691e97747c4e178d21e7fd7c96387b4abd",
+    "src/style.css": "1efd2e79a03c24a343165b42d7b8565cc4be9c2bc6268d5bb7205d7f7954bb0d",
+    "vite.config.ts": "8c665e7882997d89d7f685dd4f5ab12c87d89d61f4ab211c0934e6af0e6cdcdc",
+    "tests/unit/fontResources.test.ts": "dab0623e340e22d3d408e3419f26765f56cfc853726def76871759915526f5c8",
+    "tests/e2e/font-resources.spec.ts": "a8ed06c03f911a900731c9e78070d14e4f2f0e3a8d5c529c50c3cd3eceef773b",
+    "public/fonts/Orbitron-f42db2dd16e6.ttf": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd",
+    "public/fonts/Orbitron-METADATA.pb": "6e897c83b8fcdeccb78accb132efd7b279267b684484aa0735b78aba711d0b36",
+    "public/fonts/Orbitron-OFL.txt": "ab609b0e110d622435ff337cdf233288556e011bbf9bd0550be98846c0630819",
+    "public/fonts/Outfit-fc7287273e66.ttf": "fc7287273e66929776e2ba54f144fe699080bec29f61bf649d70d871468aeade",
+    "public/fonts/Outfit-METADATA.pb": "4cd9d2154f15495ca97de561060d535eaba9f7007be4a87e40f3b58ea8111cf2",
+    "public/fonts/Outfit-OFL.txt": "c676351bf8576b9aba743cd5eaa8c0e7ee0d51f805d720447b4df4ddb6a2e416",
+    "public/fonts/README.md": "1ca699c5e96590c9ea5274374e778757e96cf93d1863d14d6ee603c119ddb4e1",
+    "public/fonts/sources.json": "2b622ef9c6aed258c587fa832f726349e39ef4ffe5dab59a63339371c03ec1aa"
+  }
+}

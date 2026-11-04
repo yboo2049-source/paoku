@@ -1,0 +1,26 @@
+[
+  {
+    "path": "N-desktop-menu.png",
+    "sha256": "a1da20f6e53c157ee9533cce13b31b1f5d35c37102b24a86069e786fd659d66d",
+    "source": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\final-full-text-normalized\\font-evidence\\matrix-1280-menu-normal.png",
+    "reviewed": true
+  },
+  {
+    "path": "N-390-HUD.png",
+    "sha256": "52b62318147f247ffacffccbee09291f5c9dd2fda14367b9dc475c003b4bb011",
+    "source": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\final-full-text-normalized\\font-evidence\\matrix-390-HUD-normal.png",
+    "reviewed": true
+  },
+  {
+    "path": "F-390-200percent-long-text.png",
+    "sha256": "d5bafb5a16277a18d4155dcbf47e6d6ff8ef32be761966b54e3e5f5be7e52899",
+    "source": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\final-full-text-normalized\\font-evidence\\matrix-390-menu-stress.png",
+    "reviewed": true
+  },
+  {
+    "path": "baseline-original-390-stress.png",
+    "sha256": "8bb7192bd157840c1de3c5b7eedf1b41757d98120e30bd61f19a9064c1c60f4c",
+    "source": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\baseline-visual\\original-390-stress.png",
+    "reviewed": true
+  }
+]

@@ -1,0 +1,17 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/font-remediation/target.config.ts
+
+
+[WebServer] (node:10368) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:23904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/2] tests\e2e\font-resources.spec.ts:40:1 › N real application uses local faces and glyphs with Google domains unavailable
+[2/2] tests\e2e\font-resources.spec.ts:63:1 › F independent local font 404 remains visible to unchanged error sensors
+  2 passed (7.6s)

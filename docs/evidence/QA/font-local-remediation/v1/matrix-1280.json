@@ -1,0 +1,957 @@
+{
+  "errors": [],
+  "google": [],
+  "local": [
+    "http://127.0.0.1:5198/fonts/Outfit-fc7287273e66.ttf",
+    "http://127.0.0.1:5198/fonts/Orbitron-f42db2dd16e6.ttf"
+  ],
+  "measurements": [
+    {
+      "label": "menu",
+      "mode": "N: natural app navigation",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "elements": [
+        {
+          "id": "",
+          "className": "ui-card",
+          "text": "\n            SUBWAY SURFERS\n            \n              \n                BEST SCORE\n                0\n              \n              \n                TOTAL CREDITS\n                0\n              \n            \n            \n            START RUN\n            SHOP & SKINS\n            \n            \n              AD / ←→ Move\n              W / SPACE Jump\n              S Roll\n              ESC Pause\n            \n\n            \n              AUDIO SETTINGS\n              \n                MUSIC: ON\n                \n              \n              \n                SFX: ON\n                \n              \n            \n          ",
+          "x": 399.91717529296875,
+          "y": 40.389766693115234,
+          "width": 480.16558837890625,
+          "height": 639.220458984375,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "16px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "menu-high-score",
+          "className": "stat-val",
+          "text": "0",
+          "x": 530.399658203125,
+          "y": 234.45669555664062,
+          "width": 18.6939697265625,
+          "height": 28.0096435546875,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "22.4px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "menu-total-coins",
+          "className": "stat-val gold",
+          "text": "0",
+          "x": 718.4645385742188,
+          "y": 234.45669555664062,
+          "width": 18.69390869140625,
+          "height": 28.0096435546875,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "22.4px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "start-btn",
+          "className": "cyber-btn",
+          "text": "START RUN",
+          "x": 436.929931640625,
+          "y": 309.4825744628906,
+          "width": 406.14007568359375,
+          "height": 50.017242431640625,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "17.6px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "open-shop-btn",
+          "className": "cyber-btn secondary-btn",
+          "text": "SHOP & SKINS",
+          "x": 436.929931640625,
+          "y": 375.5053405761719,
+          "width": 406.14007568359375,
+          "height": 52.0179443359375,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "17.6px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "menu",
+      "mode": "F: 200% root size and synthetic long numbers/missing glyphs",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "elements": [
+        {
+          "id": "",
+          "className": "ui-card",
+          "text": "\n            SUBWAY SURFERS\n            \n              \n                BEST SCORE\n                999999999999 中文 Ω 😀\n              \n              \n                TOTAL CREDITS\n                999999999999 中文 Ω 😀\n              \n            \n            \n            START RUN\n            SHOP & SKINS\n            \n            \n              AD / ←→ Move\n              W / SPACE Jump\n              S Roll\n              ESC Pause\n            \n\n            \n              AUDIO SETTINGS\n              \n                MUSIC: ON\n                \n              \n              \n                SFX: ON\n                \n              \n            \n          ",
+          "x": 400,
+          "y": 0,
+          "width": 480,
+          "height": 720,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "32px",
+          "clippedByViewport": false,
+          "internalOverflow": true
+        },
+        {
+          "id": "",
+          "className": "stat-val",
+          "text": "999999999999 中文 Ω 😀",
+          "x": 452,
+          "y": 325,
+          "width": 445.140625,
+          "height": 121,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "44.8px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "stat-val gold",
+          "text": "999999999999 中文 Ω 😀",
+          "x": 897.140625,
+          "y": 325,
+          "width": 445.140625,
+          "height": 121,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "44.8px",
+          "clippedByViewport": true,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn",
+          "text": "START RUN",
+          "x": 437,
+          "y": 493,
+          "width": 406,
+          "height": 73,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "35.2px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn secondary-btn",
+          "text": "SHOP & SKINS",
+          "x": 437,
+          "y": 582,
+          "width": 406,
+          "height": 75,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "35.2px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "shop",
+      "mode": "N: natural app navigation",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "elements": [
+        {
+          "id": "",
+          "className": "ui-card shop-card",
+          "text": "\n            CYBER SHOP\n            \n              AVAILABLE CREDITS: 0\n            \n\n            \n        \n          \n          Cyber Cyan\n          Standard high-speed cyber runner suit.\n          \n            EQUIPPED\n          \n        \n      \n        \n          \n          Neon Magenta\n          Vibrant neon synthwave pulse color.\n          \n            BUY [50 ¢]\n          \n        \n      \n        \n          \n          Cyber Gold\n          Luxury gold casing with high-voltage luster.\n          \n            BUY [150 ¢]\n          \n        \n      \n        \n          \n          Matrix Emerald\n          Hacker-grade green matrix energy grid.\n          \n            BUY [300 ¢]\n          \n        \n      \n        \n          \n          Quantum Void\n          Mysterious dark matter quantum armor.\n          \n            BUY [500 ¢]\n          \n        \n      \n\n            BACK TO MENU\n          ",
+          "x": 315.48004150390625,
+          "y": 70.98929595947266,
+          "width": 649.0399780273438,
+          "height": 578.0214233398438,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "16px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "shop-coins",
+          "className": "stat-val gold",
+          "text": "0",
+          "x": 700.5791015625,
+          "y": 167.3908233642578,
+          "width": 14.018798828125,
+          "height": 20.99835205078125,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "17.6px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn skin-action-btn secondary-btn disabled",
+          "text": "\n            EQUIPPED\n          ",
+          "x": 365.11248779296875,
+          "y": 344.53460693359375,
+          "width": 152.07403564453125,
+          "height": 33.406463623046875,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "14px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn skin-action-btn secondary-btn disabled",
+          "text": "\n            BUY [50 ¢]\n          ",
+          "x": 561.0921630859375,
+          "y": 344.53460693359375,
+          "width": 152.073974609375,
+          "height": 33.406463623046875,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "14px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn skin-action-btn secondary-btn disabled",
+          "text": "\n            BUY [150 ¢]\n          ",
+          "x": 757.07177734375,
+          "y": 344.53460693359375,
+          "width": 152.07403564453125,
+          "height": 33.406463623046875,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "14px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn skin-action-btn secondary-btn disabled",
+          "text": "\n            BUY [300 ¢]\n          ",
+          "x": 365.11248779296875,
+          "y": 544.585693359375,
+          "width": 152.07403564453125,
+          "height": 33.406494140625,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "14px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn skin-action-btn secondary-btn disabled",
+          "text": "\n            BUY [500 ¢]\n          ",
+          "x": 561.0921630859375,
+          "y": 544.585693359375,
+          "width": 152.073974609375,
+          "height": 33.406494140625,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "14px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "close-shop-btn",
+          "className": "cyber-btn secondary-btn",
+          "text": "BACK TO MENU",
+          "x": 350.7954406738281,
+          "y": 564.0628662109375,
+          "width": 578.4091796875,
+          "height": 49.6324462890625,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "17.6px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "shop",
+      "mode": "F: 200% root size and synthetic long numbers/missing glyphs",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "elements": [
+        {
+          "id": "",
+          "className": "ui-card shop-card",
+          "text": "\n            CYBER SHOP\n            \n              AVAILABLE CREDITS: 999999999999 中文 Ω 😀\n            \n\n            \n        \n          \n          Cyber Cyan\n          Standard high-speed cyber runner suit.\n          \n            EQUIPPED\n          \n        \n      \n        \n          \n          Neon Magenta\n          Vibrant neon synthwave pulse color.\n          \n            BUY [50 ¢]\n          \n        \n      \n        \n          \n          Cyber Gold\n          Luxury gold casing with high-voltage luster.\n          \n            BUY [150 ¢]\n          \n        \n      \n        \n          \n          Matrix Emerald\n          Hacker-grade green matrix energy grid.\n          \n            BUY [300 ¢]\n          \n        \n      \n        \n          \n          Quantum Void\n          Mysterious dark matter quantum armor.\n          \n            BUY [500 ¢]\n          \n        \n      \n\n            BACK TO MENU\n          ",
+          "x": 300,
+          "y": 54,
+          "width": 680,
+          "height": 612,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "32px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "stat-val gold",
+          "text": "999999999999 中文 Ω 😀",
+          "x": 375.484375,
+          "y": 366,
+          "width": 529.015625,
+          "height": 45,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "35.2px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn skin-action-btn secondary-btn disabled",
+          "text": "\n            EQUIPPED\n          ",
+          "x": 352,
+          "y": 733.375,
+          "width": 159.328125,
+          "height": 53,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "28px",
+          "clippedByViewport": true,
+          "internalOverflow": true
+        },
+        {
+          "id": "",
+          "className": "cyber-btn skin-action-btn secondary-btn disabled",
+          "text": "\n            BUY [50 ¢]\n          ",
+          "x": 557.328125,
+          "y": 733.375,
+          "width": 159.328125,
+          "height": 88,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "28px",
+          "clippedByViewport": true,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn skin-action-btn secondary-btn disabled",
+          "text": "\n            BUY [150 ¢]\n          ",
+          "x": 762.65625,
+          "y": 733.375,
+          "width": 159.328125,
+          "height": 88,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "28px",
+          "clippedByViewport": true,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn skin-action-btn secondary-btn disabled",
+          "text": "\n            BUY [300 ¢]\n          ",
+          "x": 352,
+          "y": 1153.75,
+          "width": 159.328125,
+          "height": 88,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "28px",
+          "clippedByViewport": true,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn skin-action-btn secondary-btn disabled",
+          "text": "\n            BUY [500 ¢]\n          ",
+          "x": 557.328125,
+          "y": 1153.75,
+          "width": 159.328125,
+          "height": 88,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "28px",
+          "clippedByViewport": true,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn secondary-btn",
+          "text": "BACK TO MENU",
+          "x": 337,
+          "y": 554,
+          "width": 606,
+          "height": 75,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "35.2px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "HUD",
+      "mode": "N: natural app navigation",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "elements": [
+        {
+          "id": "",
+          "className": "hud-top-bar",
+          "text": "\n            \n              \n                \n                \n                  SCORE\n                  0\n                \n              \n              \n                \n                \n                  COINS\n                  0\n                \n              \n            \n            \n            \n              \n                \n              \n              \n                \n              \n            \n          ",
+          "x": 20,
+          "y": 20,
+          "width": 1240,
+          "height": 58.875,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "16px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "hud-score",
+          "className": "hud-val",
+          "text": "0",
+          "x": 67,
+          "y": 47,
+          "width": 50.046875,
+          "height": 22.875,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "20.8px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "hud-coins",
+          "className": "hud-val",
+          "text": "0",
+          "x": 193.046875,
+          "y": 47,
+          "width": 46.484375,
+          "height": 22.875,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "20.8px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "speedometer-wrap",
+          "text": "\n            \n              RUN SPEED\n              18 KM/H\n            \n            \n              \n            \n          ",
+          "x": 510,
+          "y": 649,
+          "width": 260,
+          "height": 47,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "16px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "HUD",
+      "mode": "F: 200% root size and synthetic long numbers/missing glyphs",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "elements": [
+        {
+          "id": "",
+          "className": "hud-top-bar",
+          "text": "\n            \n              \n                \n                \n                  SCORE\n                  999999999999 中文 Ω 😀\n                \n              \n              \n                \n                \n                  COINS\n                  999999999999 中文 Ω 😀\n                \n              \n            \n            \n            \n              \n                \n              \n              \n                \n              \n            \n          ",
+          "x": 20,
+          "y": 20,
+          "width": 1240,
+          "height": 144.5,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "32px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "hud-val",
+          "text": "999999999999 中文 Ω 😀",
+          "x": 63.1875,
+          "y": 64,
+          "width": 505.8125,
+          "height": 91.5,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "41.6px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "hud-val",
+          "text": "999999999999 中文 Ω 😀",
+          "x": 641.1875,
+          "y": 64,
+          "width": 505.8125,
+          "height": 91.5,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "41.6px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "speedometer-wrap",
+          "text": "\n            \n              RUN SPEED\n              18 KM/H\n            \n            \n              \n            \n          ",
+          "x": 510,
+          "y": 596,
+          "width": 260,
+          "height": 100,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "32px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "paused",
+      "mode": "N: natural app navigation",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "elements": [
+        {
+          "id": "",
+          "className": "hud-top-bar",
+          "text": "\n            \n              \n                \n                \n                  SCORE\n                  0\n                \n              \n              \n                \n                \n                  COINS\n                  0\n                \n              \n            \n            \n            \n              \n                \n              \n              \n                \n              \n            \n          ",
+          "x": 20,
+          "y": 20,
+          "width": 1240,
+          "height": 58.875,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "16px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "hud-score",
+          "className": "hud-val",
+          "text": "0",
+          "x": 67,
+          "y": 47,
+          "width": 50.046875,
+          "height": 22.875,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "20.8px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "hud-coins",
+          "className": "hud-val",
+          "text": "0",
+          "x": 193.046875,
+          "y": 47,
+          "width": 46.484375,
+          "height": 22.875,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "20.8px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "speedometer-wrap",
+          "text": "\n            \n              RUN SPEED\n              18 KM/H\n            \n            \n              \n            \n          ",
+          "x": 510,
+          "y": 649,
+          "width": 260,
+          "height": 47,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "16px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "ui-card",
+          "text": "\n            PAUSED\n            Game is currently paused.\n            RESUME RUN\n            RESTART\n            MAIN MENU\n          ",
+          "x": 410.9342041015625,
+          "y": 182.47402954101562,
+          "width": 458.131591796875,
+          "height": 355.0519714355469,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "16px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "resume-btn",
+          "className": "cyber-btn",
+          "text": "RESUME RUN",
+          "x": 446.2485046386719,
+          "y": 324.6856994628906,
+          "width": 387.5029602050781,
+          "height": 47.7220458984375,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "17.6px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "pause-restart-btn",
+          "className": "cyber-btn secondary-btn",
+          "text": "RESTART",
+          "x": 446.2485046386719,
+          "y": 387.6457214355469,
+          "width": 387.5029602050781,
+          "height": 49.63092041015625,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "17.6px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "pause-menu-btn",
+          "className": "cyber-btn secondary-btn",
+          "text": "MAIN MENU",
+          "x": 446.2485046386719,
+          "y": 452.5807800292969,
+          "width": 387.5029602050781,
+          "height": 49.63092041015625,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "17.6px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "paused",
+      "mode": "F: 200% root size and synthetic long numbers/missing glyphs",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "elements": [
+        {
+          "id": "",
+          "className": "hud-top-bar",
+          "text": "\n            \n              \n                \n                \n                  SCORE\n                  999999999999 中文 Ω 😀\n                \n              \n              \n                \n                \n                  COINS\n                  999999999999 中文 Ω 😀\n                \n              \n            \n            \n            \n              \n                \n              \n              \n                \n              \n            \n          ",
+          "x": 20,
+          "y": 20,
+          "width": 1240,
+          "height": 144.5,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "32px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "hud-val",
+          "text": "999999999999 中文 Ω 😀",
+          "x": 63.1875,
+          "y": 64,
+          "width": 505.8125,
+          "height": 91.5,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "41.6px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "hud-val",
+          "text": "999999999999 中文 Ω 😀",
+          "x": 641.1875,
+          "y": 64,
+          "width": 505.8125,
+          "height": 91.5,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "41.6px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "speedometer-wrap",
+          "text": "\n            \n              RUN SPEED\n              18 KM/H\n            \n            \n              \n            \n          ",
+          "x": 510,
+          "y": 596,
+          "width": 260,
+          "height": 100,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "32px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "ui-card",
+          "text": "\n            PAUSED\n            Game is currently paused.\n            RESUME RUN\n            RESTART\n            MAIN MENU\n          ",
+          "x": 400,
+          "y": 93,
+          "width": 480,
+          "height": 534,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "32px",
+          "clippedByViewport": false,
+          "internalOverflow": true
+        },
+        {
+          "id": "",
+          "className": "cyber-btn",
+          "text": "RESUME RUN",
+          "x": 437,
+          "y": 335,
+          "width": 406,
+          "height": 73,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "35.2px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn secondary-btn",
+          "text": "RESTART",
+          "x": 437,
+          "y": 424,
+          "width": 406,
+          "height": 75,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "35.2px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn secondary-btn",
+          "text": "MAIN MENU",
+          "x": 437,
+          "y": 515,
+          "width": 406,
+          "height": 75,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "35.2px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "gameover",
+      "mode": "N: natural app navigation",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "elements": [
+        {
+          "id": "",
+          "className": "ui-card",
+          "text": "\n            GAME OVER\n            NEW HIGH SCORE!\n\n            \n              \n                FINAL SCORE\n                169\n              \n              \n                COINS EARNED\n                +123\n              \n            \n\n            \n              BEST RECORD: 169\n            \n\n            REBOOT & RUN AGAIN\n            CYBER SHOP\n            MAIN MENU\n          ",
+          "x": 400,
+          "y": 103.5,
+          "width": 480,
+          "height": 513,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "16px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "go-final-score",
+          "className": "stat-val",
+          "text": "169",
+          "x": 519.703125,
+          "y": 284.5,
+          "width": 45.6875,
+          "height": 28,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "22.4px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "go-coins-earned",
+          "className": "stat-val gold",
+          "text": "+123",
+          "x": 702.609375,
+          "y": 284.5,
+          "width": 55.890625,
+          "height": 28,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "22.4px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "restart-btn",
+          "className": "cyber-btn danger-btn",
+          "text": "REBOOT & RUN AGAIN",
+          "x": 437,
+          "y": 391.5,
+          "width": 406,
+          "height": 50,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "17.6px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "go-shop-btn",
+          "className": "cyber-btn secondary-btn",
+          "text": "CYBER SHOP",
+          "x": 437,
+          "y": 459.5,
+          "width": 406,
+          "height": 52,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "17.6px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "go-menu-btn",
+          "className": "cyber-btn secondary-btn",
+          "text": "MAIN MENU",
+          "x": 437,
+          "y": 527.5,
+          "width": 406,
+          "height": 52,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "17.6px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "gameover",
+      "mode": "F: 200% root size and synthetic long numbers/missing glyphs",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "scroll": {
+        "width": 1280,
+        "height": 720
+      },
+      "elements": [
+        {
+          "id": "",
+          "className": "ui-card",
+          "text": "\n            GAME OVER\n            NEW HIGH SCORE!\n\n            \n              \n                FINAL SCORE\n                999999999999 中文 Ω 😀\n              \n              \n                COINS EARNED\n                999999999999 中文 Ω 😀\n              \n            \n\n            \n              BEST RECORD: 169\n            \n\n            REBOOT & RUN AGAIN\n            CYBER SHOP\n            MAIN MENU\n          ",
+          "x": 400,
+          "y": 0,
+          "width": 480,
+          "height": 720,
+          "font": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+          "fontSize": "32px",
+          "clippedByViewport": false,
+          "internalOverflow": true
+        },
+        {
+          "id": "",
+          "className": "stat-val",
+          "text": "999999999999 中文 Ω 😀",
+          "x": 452,
+          "y": 386,
+          "width": 445.140625,
+          "height": 121,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "44.8px",
+          "clippedByViewport": false,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "stat-val gold",
+          "text": "999999999999 中文 Ω 😀",
+          "x": 897.140625,
+          "y": 386,
+          "width": 445.140625,
+          "height": 121,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "44.8px",
+          "clippedByViewport": true,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn danger-btn",
+          "text": "REBOOT & RUN AGAIN",
+          "x": 437,
+          "y": 605,
+          "width": 406,
+          "height": 118,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "35.2px",
+          "clippedByViewport": true,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn secondary-btn",
+          "text": "CYBER SHOP",
+          "x": 437,
+          "y": 739,
+          "width": 406,
+          "height": 75,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "35.2px",
+          "clippedByViewport": true,
+          "internalOverflow": false
+        },
+        {
+          "id": "",
+          "className": "cyber-btn secondary-btn",
+          "text": "MAIN MENU",
+          "x": 437,
+          "y": 830,
+          "width": 406,
+          "height": 75,
+          "font": "Orbitron, sans-serif",
+          "fontSize": "35.2px",
+          "clippedByViewport": true,
+          "internalOverflow": false
+        }
+      ]
+    }
+  ],
+  "note": "Measurements report existing layout limits, including clipping; no UI/layout changes. F uses ID-free visual clones so live UI updates cannot erase long text; original DOM/root size restored after each capture. DOM-dispatched navigation is not a tap-target usability pass."
+}

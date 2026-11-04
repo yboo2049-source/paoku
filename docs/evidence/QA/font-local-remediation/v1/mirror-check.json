@@ -1,0 +1,233 @@
+[
+  {
+    "source": "tests/e2e/font-resources.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/font-resources.pw.ts",
+    "sourceSha256": "a8ed06c03f911a900731c9e78070d14e4f2f0e3a8d5c529c50c3cd3eceef773b",
+    "mirrorSha256": "a8ed06c03f911a900731c9e78070d14e4f2f0e3a8d5c529c50c3cd3eceef773b",
+    "inverseExact": true,
+    "replacements": []
+  },
+  {
+    "source": "tests/e2e/gameplay.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/gameplay.pw.ts",
+    "sourceSha256": "ac860d0781b57ec51735607c8e6d1441a5f02afcb9b27203f2f8e682d607ce64",
+    "mirrorSha256": "1edcc9f080eb9dcf998fef430d3e4dc34cd5fa5afadb5ebd848dc12d954a80e4",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "screenshot_1_menu.png",
+        ".pao18.local/font-remediation/final-full/root-shots/screenshot_1_menu.png"
+      ],
+      [
+        "screenshot_2_shop.png",
+        ".pao18.local/font-remediation/final-full/root-shots/screenshot_2_shop.png"
+      ],
+      [
+        "screenshot_3_gameplay_chase.png",
+        ".pao18.local/font-remediation/final-full/root-shots/screenshot_3_gameplay_chase.png"
+      ],
+      [
+        "screenshot_4_bank_tilt.png",
+        ".pao18.local/font-remediation/final-full/root-shots/screenshot_4_bank_tilt.png"
+      ],
+      [
+        "screenshot_5_jump_action.png",
+        ".pao18.local/font-remediation/final-full/root-shots/screenshot_5_jump_action.png"
+      ],
+      [
+        "screenshot_6_paused_screen.png",
+        ".pao18.local/font-remediation/final-full/root-shots/screenshot_6_paused_screen.png"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao10-review-fixes.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/pao10-review-fixes.pw.ts",
+    "sourceSha256": "21a92efee35f42f42912d8655d62eb1a6d4786494235ee84d9ff1ae8dab45892",
+    "mirrorSha256": "afb27012afb2024ab92035e47350815cd0f7a461fba628316e95d52d2556af84",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "docs/evidence/",
+        ".pao18.local/font-remediation/final-full/evidence/"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao10-simulation.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/pao10-simulation.pw.ts",
+    "sourceSha256": "4cb5069cfcec3a015c768ee5047403b8cd4c0c295529e1eda186866c6a921ebf",
+    "mirrorSha256": "7fd76a0c1186b3b31fd875d636067ad8c1b545e806c938683b1887797759ccdb",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "docs/evidence/",
+        ".pao18.local/font-remediation/final-full/evidence/"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao11-surfaces.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/pao11-surfaces.pw.ts",
+    "sourceSha256": "2e5cb1868763f2ddec33ae472f3497aeac1dffa6d7be0c80c1a41fa6842d868b",
+    "mirrorSha256": "7ed843ace546308637ce1ff812ff7c82a26df35201ce375da6011b360213b8eb",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "docs/evidence/",
+        ".pao18.local/font-remediation/final-full/evidence/"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao12-collision.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/pao12-collision.pw.ts",
+    "sourceSha256": "669125de620cfd8c0263b5ee7696cef53a2e48d9fac0548f5f095fd710371f1d",
+    "mirrorSha256": "1b94df97866159032100e6efd0e812ab52c2b4f6927e60a27554e6a8b029f1ad",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "docs/evidence/",
+        ".pao18.local/font-remediation/final-full/evidence/"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao13-track.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/pao13-track.pw.ts",
+    "sourceSha256": "03211f334c9ff5bf05b058bcb49c1d83d7b0eefe4800b3257453fecd8943a7a3",
+    "mirrorSha256": "3695e60e63bf62708e9d10bdb7034638cadbad6626406b5cdf397fbb27c738ca",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "docs/evidence/",
+        ".pao18.local/font-remediation/final-full/evidence/"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao14-application.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/pao14-application.pw.ts",
+    "sourceSha256": "06039b20c65000d94d819a45ce5332bd77731779bf851ea2eb9164988bba8f6a",
+    "mirrorSha256": "09d9fd04933c9635d6a7c24782eab73e32cf08afc6714167147b0b107cc79f8a",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "docs/evidence/",
+        ".pao18.local/font-remediation/final-full/evidence/"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao14-review.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/pao14-review.pw.ts",
+    "sourceSha256": "b20d8604e98ee5eb1013c458160522c97433475075e9e55bd32d957e5abda413",
+    "mirrorSha256": "910a82e6d40a325f65135d39152f655ebd708b395e0885192a150bbe7fee9284",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "docs/evidence/",
+        ".pao18.local/font-remediation/final-full/evidence/"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao14-unknown-commit.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/pao14-unknown-commit.pw.ts",
+    "sourceSha256": "2b8545a84b763bf0a0faa9a2a8cf8ac3a10af0040afe42b34754bc2cdc414520",
+    "mirrorSha256": "e7ef5453192791abce4520f0d50f983c1c23965e9c48b9d1baea6e0b7eac4450",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "docs/evidence/",
+        ".pao18.local/font-remediation/final-full/evidence/"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao17-lifecycle.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/pao17-lifecycle.pw.ts",
+    "sourceSha256": "87577c433ee531f1a5fabfc42885f21957dd5c784b5a7d75483139aaf57f6045",
+    "mirrorSha256": "ecca4e4a64498217e95cac5ac51e71b40c9fce4cf148842c9dd7c2c66b1fb442",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "docs/evidence/",
+        ".pao18.local/font-remediation/final-full/evidence/"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao17-ramp-view.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/pao17-ramp-view.pw.ts",
+    "sourceSha256": "128ee83e260e47c130539f97ace8ce38705afbbca582e0ef1a4cf8438750d214",
+    "mirrorSha256": "de22c284ff34bbf06664875f8a4076149b68c85093e3e0675ff48d40e209f833",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "docs/evidence/",
+        ".pao18.local/font-remediation/final-full/evidence/"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao17-structure.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/pao17-structure.pw.ts",
+    "sourceSha256": "8f592c4d925071d2bd31c0cc9323d03ce77669cc461b2ddccf563cf8e0d41f4c",
+    "mirrorSha256": "4355bbdf03a629f4de4f938610799089eb982b361a4a4f0863e227d5914f51a7",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "docs/evidence/",
+        ".pao18.local/font-remediation/final-full/evidence/"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao17-theme.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/pao17-theme.pw.ts",
+    "sourceSha256": "1afc77b291fdd3d07660ebd039bf67d5e3de66e158e6fc3d0b116c5b99cf177e",
+    "mirrorSha256": "ca3fe62fa1e7a813ecfc937587f726ef548f74cb708a3d70c99b991cf9361a5d",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "docs/evidence/",
+        ".pao18.local/font-remediation/final-full/evidence/"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao18-controller-camera.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/pao18-controller-camera.pw.ts",
+    "sourceSha256": "c25ee446fd85c66c8931385a65a4e1980a48707b9dd1f13f1488dd107b38a81e",
+    "mirrorSha256": "cf3826403e53a3569a7efa2a5cfb61a25db4420b9c9bce81b8dd4be97e1d5dac",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "page.goto('http://127.0.0.1:5188/')",
+        "page.goto('http://127.0.0.1:5198/')"
+      ],
+      [
+        "docs/evidence/",
+        ".pao18.local/font-remediation/final-full/evidence/"
+      ],
+      [
+        ".pao18.local/recording",
+        ".pao18.local/font-remediation/final-full/recording"
+      ]
+    ]
+  },
+  {
+    "source": "tests/e2e/pao6-baseline.spec.ts",
+    "mirror": ".pao18.local/font-remediation/final-full/suite/pao6-baseline.pw.ts",
+    "sourceSha256": "710cd0dc1d6fd938825b4c741f0c32798a2ada5c507209c48b2f57889f441df9",
+    "mirrorSha256": "1429727c1b4fa58ee9977f439249bd88055501f78b26901ba2fab6c542080771",
+    "inverseExact": true,
+    "replacements": [
+      [
+        "docs/evidence/",
+        ".pao18.local/font-remediation/final-full/evidence/"
+      ]
+    ]
+  }
+]

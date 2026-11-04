@@ -1,0 +1,66 @@
+{
+  "originalTrackedRegularFiles": 1219,
+  "originalFilesChanged": [
+    "index.html",
+    "src/style.css",
+    "vite.config.ts"
+  ],
+  "frozenFiles": 13,
+  "frozenChanged": [],
+  "rootScreenshotIncident": {
+    "cause": "initial mirror redirected docs/evidence paths but missed six direct gameplay root screenshot paths; original test unchanged; outputs retained, restoration waits for run to end",
+    "records": [
+      {
+        "path": "screenshot_1_menu.png",
+        "baselineSha256": "dc25282f324c46a3202cccdb9ef2280b8102ed61ce7b1493ea1397d73e2c5a3e",
+        "capturedSha256": "39fbefd6820737564613f8ce03fab7d75c9b734e4010644eff3a3cd73b68a10a",
+        "baselineGitBlobMatches": true,
+        "restored": true,
+        "restoredSha256": "dc25282f324c46a3202cccdb9ef2280b8102ed61ce7b1493ea1397d73e2c5a3e"
+      },
+      {
+        "path": "screenshot_2_shop.png",
+        "baselineSha256": "dfc980f031e73d7c2f64a64240c8ed346dccb4314b9ad97488a8fdf4bc60d673",
+        "capturedSha256": "eddcaaf0e19de7e7ccf08ae24aa16ae803cea55e9f3c7e526405fa6db68c77ef",
+        "baselineGitBlobMatches": true,
+        "restored": true,
+        "restoredSha256": "dfc980f031e73d7c2f64a64240c8ed346dccb4314b9ad97488a8fdf4bc60d673"
+      },
+      {
+        "path": "screenshot_3_gameplay_chase.png",
+        "baselineSha256": "af725839311297c3965600a6c2260b7884fbf6d1658c47409ebb74ccd6d27f86",
+        "capturedSha256": "92050152f4035ccadd115f09dd86abc8b11e7cb53cbc96fa89a8ebf516a4ec13",
+        "baselineGitBlobMatches": true,
+        "restored": true,
+        "restoredSha256": "af725839311297c3965600a6c2260b7884fbf6d1658c47409ebb74ccd6d27f86"
+      },
+      {
+        "path": "screenshot_4_bank_tilt.png",
+        "baselineSha256": "8389127cf44ea58590a75981198dd3caf07a22b3abdb282ca8e90cee435a564a",
+        "capturedSha256": "58205a6451e54202a710d6f2718a751b3205c24904569f7e6314f3a650f92cfe",
+        "baselineGitBlobMatches": true,
+        "restored": true,
+        "restoredSha256": "8389127cf44ea58590a75981198dd3caf07a22b3abdb282ca8e90cee435a564a"
+      },
+      {
+        "path": "screenshot_5_jump_action.png",
+        "baselineSha256": "4608007083acb86ea1fa5b3f3d9ad08d822ba3521eaf6cdc1b4bf12281c35e41",
+        "capturedSha256": "81e4c3ad1930cc2b232b77bfc463753351e316616a0d04da166c859b33ac6db1",
+        "baselineGitBlobMatches": true,
+        "restored": true,
+        "restoredSha256": "4608007083acb86ea1fa5b3f3d9ad08d822ba3521eaf6cdc1b4bf12281c35e41"
+      },
+      {
+        "path": "screenshot_6_paused_screen.png",
+        "baselineSha256": "edfb9798eba160f2bfe52e44dbb818c54336c2bba7e03a627fae2ec3fee527d8",
+        "capturedSha256": "bfa396e7d358205ca73adf40f428143be231f6b5e6fc194bc3abf4635e85a58e",
+        "baselineGitBlobMatches": true,
+        "restored": true,
+        "restoredSha256": "edfb9798eba160f2bfe52e44dbb818c54336c2bba7e03a627fae2ec3fee527d8"
+      }
+    ],
+    "restoredAt": "2026-11-03T13:45:35.332Z"
+  },
+  "originalDiagnosisUnchanged": true,
+  "verifiedAt": "2026-11-04T13:29:01.769Z"
+}

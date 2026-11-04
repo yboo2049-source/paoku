@@ -1,0 +1,16 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/font-remediation/pwa.config.ts
+
+[WebServer] (node:26592) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 1 test using 1 worker
+
+(node:12540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] .pao18.local\font-remediation\pwa.pw.ts:4:1 › production precache and cached offline font continuity
+  1 passed (4.7s)

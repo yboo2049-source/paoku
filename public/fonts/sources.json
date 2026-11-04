@@ -1,0 +1,642 @@
+{
+  "repository": "https://github.com/google/fonts",
+  "revision": "2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc",
+  "fonts": [
+    {
+      "family": "Outfit",
+      "style": "normal",
+      "names": [
+        {
+          "id": 257,
+          "text": "Weight"
+        },
+        {
+          "id": 258,
+          "text": "Thin"
+        },
+        {
+          "id": 259,
+          "text": "ExtraLight"
+        },
+        {
+          "id": 260,
+          "text": "Light"
+        },
+        {
+          "id": 261,
+          "text": "Regular"
+        },
+        {
+          "id": 262,
+          "text": "Medium"
+        },
+        {
+          "id": 263,
+          "text": "SemiBold"
+        },
+        {
+          "id": 264,
+          "text": "Bold"
+        },
+        {
+          "id": 265,
+          "text": "ExtraBold"
+        },
+        {
+          "id": 266,
+          "text": "Black"
+        },
+        {
+          "id": 0,
+          "text": "Copyright 2021 The Outfit Project Authors (https://github.com/Outfitio/Outfit-Fonts)"
+        },
+        {
+          "id": 1,
+          "text": "Outfit Thin"
+        },
+        {
+          "id": 2,
+          "text": "Regular"
+        },
+        {
+          "id": 3,
+          "text": "1.100;frag;Outfit-Thin"
+        },
+        {
+          "id": 4,
+          "text": "Outfit Thin"
+        },
+        {
+          "id": 5,
+          "text": "Version 1.100;gftools[0.9.27]"
+        },
+        {
+          "id": 6,
+          "text": "Outfit-Thin"
+        },
+        {
+          "id": 8,
+          "text": "fragTYPE"
+        },
+        {
+          "id": 9,
+          "text": "Rodrigo Fuenzalida"
+        },
+        {
+          "id": 11,
+          "text": "www.fragtypefoundry.xyz"
+        },
+        {
+          "id": 12,
+          "text": "www.rfuenzalida.com"
+        },
+        {
+          "id": 13,
+          "text": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL"
+        },
+        {
+          "id": 14,
+          "text": "https://scripts.sil.org/OFL"
+        },
+        {
+          "id": 16,
+          "text": "Outfit"
+        },
+        {
+          "id": 17,
+          "text": "Thin"
+        },
+        {
+          "id": 25,
+          "text": "Outfit"
+        },
+        {
+          "id": 256,
+          "text": "ss01"
+        }
+      ],
+      "weightRange": [
+        100,
+        900
+      ],
+      "unicodeRanges": [
+        [
+          13,
+          13
+        ],
+        [
+          32,
+          126
+        ],
+        [
+          160,
+          172
+        ],
+        [
+          174,
+          263
+        ],
+        [
+          266,
+          275
+        ],
+        [
+          278,
+          283
+        ],
+        [
+          286,
+          291
+        ],
+        [
+          294,
+          295
+        ],
+        [
+          298,
+          299
+        ],
+        [
+          302,
+          307
+        ],
+        [
+          310,
+          311
+        ],
+        [
+          313,
+          318
+        ],
+        [
+          321,
+          328
+        ],
+        [
+          330,
+          333
+        ],
+        [
+          336,
+          347
+        ],
+        [
+          350,
+          353
+        ],
+        [
+          356,
+          357
+        ],
+        [
+          362,
+          382
+        ],
+        [
+          461,
+          462
+        ],
+        [
+          536,
+          539
+        ],
+        [
+          567,
+          567
+        ],
+        [
+          700,
+          700
+        ],
+        [
+          710,
+          711
+        ],
+        [
+          728,
+          733
+        ],
+        [
+          768,
+          772
+        ],
+        [
+          774,
+          776
+        ],
+        [
+          778,
+          780
+        ],
+        [
+          786,
+          786
+        ],
+        [
+          806,
+          808
+        ],
+        [
+          7808,
+          7813
+        ],
+        [
+          7838,
+          7838
+        ],
+        [
+          7922,
+          7923
+        ],
+        [
+          8211,
+          8212
+        ],
+        [
+          8216,
+          8218
+        ],
+        [
+          8220,
+          8222
+        ],
+        [
+          8226,
+          8226
+        ],
+        [
+          8230,
+          8230
+        ],
+        [
+          8249,
+          8250
+        ],
+        [
+          8260,
+          8260
+        ],
+        [
+          8308,
+          8308
+        ],
+        [
+          8364,
+          8364
+        ],
+        [
+          8480,
+          8480
+        ],
+        [
+          8482,
+          8482
+        ],
+        [
+          8592,
+          8595
+        ],
+        [
+          8598,
+          8601
+        ],
+        [
+          8722,
+          8722
+        ],
+        [
+          8725,
+          8725
+        ],
+        [
+          10003,
+          10003
+        ],
+        [
+          64257,
+          64258
+        ]
+      ],
+      "glyphCoverageCount": 360,
+      "requiredWeights": [
+        400,
+        600,
+        700,
+        900
+      ],
+      "file": "Outfit-fc7287273e66.ttf",
+      "sha256": "fc7287273e66929776e2ba54f144fe699080bec29f61bf649d70d871468aeade",
+      "sourceSha256": "fc7287273e66929776e2ba54f144fe699080bec29f61bf649d70d871468aeade",
+      "byteSize": 110884,
+      "upstreamURL": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/outfit/Outfit%5Bwght%5D.ttf",
+      "licensePath": "Outfit-OFL.txt",
+      "licenseSha256": "e2a6bbb2589b85bac1690ec8f220b22a9c3af9bfda56df6391f7ab491c7a039f",
+      "metadataPath": "Outfit-METADATA.pb",
+      "metadataSha256": "4cd9d2154f15495ca97de561060d535eaba9f7007be4a87e40f3b58ea8111cf2",
+      "copyright": "Copyright 2021 The Outfit Project Authors (https://github.com/Outfitio/Outfit-Fonts)",
+      "reservedFontNames": [],
+      "license": "SIL-OFL-1.1",
+      "transformation": "none",
+      "cacheVersion": "fc7287273e66",
+      "cssWeightRange": [
+        100,
+        900
+      ],
+      "licenseSourceSha256": "c676351bf8576b9aba743cd5eaa8c0e7ee0d51f805d720447b4df4ddb6a2e416",
+      "licenseNormalization": "trim horizontal line-end whitespace; LF; wording and all notices unchanged"
+    },
+    {
+      "family": "Orbitron",
+      "style": "normal",
+      "names": [
+        {
+          "id": 25,
+          "text": "Orbitron"
+        },
+        {
+          "id": 256,
+          "text": "Weight"
+        },
+        {
+          "id": 257,
+          "text": "Regular"
+        },
+        {
+          "id": 258,
+          "text": "Medium"
+        },
+        {
+          "id": 259,
+          "text": "SemiBold"
+        },
+        {
+          "id": 260,
+          "text": "Bold"
+        },
+        {
+          "id": 261,
+          "text": "ExtraBold"
+        },
+        {
+          "id": 262,
+          "text": "Black"
+        },
+        {
+          "id": 263,
+          "text": "Orbitron-Regular"
+        },
+        {
+          "id": 264,
+          "text": "Orbitron-Medium"
+        },
+        {
+          "id": 265,
+          "text": "Orbitron-SemiBold"
+        },
+        {
+          "id": 266,
+          "text": "Orbitron-Bold"
+        },
+        {
+          "id": 267,
+          "text": "Orbitron-ExtraBold"
+        },
+        {
+          "id": 268,
+          "text": "Orbitron-Black"
+        },
+        {
+          "id": 0,
+          "text": "Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron), with Reserved Font Name: \"Orbitron\"."
+        },
+        {
+          "id": 1,
+          "text": "Orbitron"
+        },
+        {
+          "id": 2,
+          "text": "Regular"
+        },
+        {
+          "id": 3,
+          "text": "2.001;NONE;Orbitron-Regular"
+        },
+        {
+          "id": 4,
+          "text": "Orbitron Regular"
+        },
+        {
+          "id": 5,
+          "text": "Version 2.001"
+        },
+        {
+          "id": 6,
+          "text": "Orbitron-Regular"
+        },
+        {
+          "id": 8,
+          "text": "The League of Moveable Type"
+        },
+        {
+          "id": 9,
+          "text": "Matt McInerney"
+        },
+        {
+          "id": 11,
+          "text": "https://www.theleagueofmoveabletype.com/"
+        },
+        {
+          "id": 12,
+          "text": "http://matt.cc/"
+        },
+        {
+          "id": 13,
+          "text": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL"
+        },
+        {
+          "id": 14,
+          "text": "http://scripts.sil.org/OFL"
+        }
+      ],
+      "weightRange": [
+        400,
+        900
+      ],
+      "unicodeRanges": [
+        [
+          32,
+          93
+        ],
+        [
+          95,
+          126
+        ],
+        [
+          160,
+          163
+        ],
+        [
+          168,
+          168
+        ],
+        [
+          175,
+          176
+        ],
+        [
+          180,
+          180
+        ],
+        [
+          182,
+          182
+        ],
+        [
+          184,
+          184
+        ],
+        [
+          191,
+          207
+        ],
+        [
+          209,
+          215
+        ],
+        [
+          217,
+          221
+        ],
+        [
+          223,
+          239
+        ],
+        [
+          241,
+          247
+        ],
+        [
+          249,
+          253
+        ],
+        [
+          255,
+          255
+        ],
+        [
+          305,
+          305
+        ],
+        [
+          338,
+          339
+        ],
+        [
+          352,
+          353
+        ],
+        [
+          376,
+          376
+        ],
+        [
+          381,
+          382
+        ],
+        [
+          710,
+          711
+        ],
+        [
+          728,
+          732
+        ],
+        [
+          768,
+          771
+        ],
+        [
+          775,
+          776
+        ],
+        [
+          778,
+          778
+        ],
+        [
+          780,
+          780
+        ],
+        [
+          807,
+          807
+        ],
+        [
+          8211,
+          8212
+        ],
+        [
+          8216,
+          8217
+        ],
+        [
+          8220,
+          8221
+        ],
+        [
+          8226,
+          8226
+        ],
+        [
+          8230,
+          8230
+        ],
+        [
+          8364,
+          8364
+        ],
+        [
+          8722,
+          8722
+        ],
+        [
+          57346,
+          57347
+        ],
+        [
+          57349,
+          57356
+        ]
+      ],
+      "glyphCoverageCount": 207,
+      "requiredWeights": [
+        500,
+        700,
+        900
+      ],
+      "file": "Orbitron-f42db2dd16e6.ttf",
+      "sha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd",
+      "sourceSha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd",
+      "byteSize": 38576,
+      "upstreamURL": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/orbitron/Orbitron%5Bwght%5D.ttf",
+      "licensePath": "Orbitron-OFL.txt",
+      "licenseSha256": "dd6fdb6716fd179d1fe891759efb3f9200753fdf6abf513b55b712c4ae16e512",
+      "metadataPath": "Orbitron-METADATA.pb",
+      "metadataSha256": "6e897c83b8fcdeccb78accb132efd7b279267b684484aa0735b78aba711d0b36",
+      "copyright": "Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron)",
+      "reservedFontNames": [
+        "Orbitron"
+      ],
+      "license": "SIL-OFL-1.1",
+      "transformation": "none",
+      "cacheVersion": "f42db2dd16e6",
+      "cssWeightRange": [
+        500,
+        900
+      ],
+      "licenseSourceSha256": "ab609b0e110d622435ff337cdf233288556e011bbf9bd0550be98846c0630819",
+      "licenseNormalization": "trim horizontal line-end whitespace; LF; wording and all notices unchanged"
+    }
+  ],
+  "textHashConvention": "Upstream license/metadata SHA256 use original LF bytes; normalize checkout CRLF to LF for verification. Font binary SHA256 always uses raw bytes."
+}

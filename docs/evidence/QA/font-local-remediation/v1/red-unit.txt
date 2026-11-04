@@ -1,0 +1,29 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/fontResources.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18-font-diagnosis
+
+ ❯ tests/unit/fontResources.test.ts (1 test | 1 failed) 5ms
+     × ships pinned originals with matching licenses, weight axes and Unicode coverage 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/fontResources.test.ts > local font binary identity and distribution contract > ships pinned originals with matching licenses, weight axes and Unicode coverage
+Error: ENOENT: no such file or directory, open 'D:\worker\paoku-sessions\pao-18-font-diagnosis\public\fonts\sources.json'
+ ❯ tests/unit/fontResources.test.ts:8:33
+      6| describe('local font binary identity and distribution contract', () =>…
+      7|   it('ships pinned originals with matching licenses, weight axes and U…
+      8|     const manifest = JSON.parse(readFileSync(resolve('public/fonts/sou…
+       |                                 ^
+      9|     expect(manifest.repository).toBe('https://github.com/google/fonts'…
+     10|     expect(manifest.revision).toMatch(/^[a-f0-9]{40}$/);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  21:29:15
+   Duration  259ms (transform 22ms, setup 0ms, import 36ms, tests 5ms, environment 0ms)

@@ -1,0 +1,67 @@
+{
+  "mode": "F: DOM-only visible glyph probe; original source and fallback stacks unchanged",
+  "records": [
+    {
+      "family": "Outfit",
+      "text": "ABC 中文 Ω 😀",
+      "fonts": [
+        {
+          "familyName": "Segoe UI Emoji",
+          "postScriptName": "SegoeUIEmoji",
+          "isCustomFont": false,
+          "glyphCount": 1
+        },
+        {
+          "familyName": "Arial",
+          "postScriptName": "Arial-BoldMT",
+          "isCustomFont": false,
+          "glyphCount": 1
+        },
+        {
+          "familyName": "Outfit Thin",
+          "postScriptName": "Outfit-Bold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        },
+        {
+          "familyName": "Noto Sans SC",
+          "postScriptName": "Noto-Sans-SC-Bold",
+          "isCustomFont": false,
+          "glyphCount": 2
+        }
+      ]
+    },
+    {
+      "family": "Orbitron",
+      "text": "ABC 中文 Ω 😀",
+      "fonts": [
+        {
+          "familyName": "Segoe UI Emoji",
+          "postScriptName": "SegoeUIEmoji",
+          "isCustomFont": false,
+          "glyphCount": 1
+        },
+        {
+          "familyName": "Arial",
+          "postScriptName": "Arial-BoldMT",
+          "isCustomFont": false,
+          "glyphCount": 1
+        },
+        {
+          "familyName": "Noto Sans SC",
+          "postScriptName": "Noto-Sans-SC-Bold",
+          "isCustomFont": false,
+          "glyphCount": 2
+        },
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-Bold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "google": []
+}

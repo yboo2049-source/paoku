@@ -2,7 +2,21 @@
    Cyberpunk / Neon Dark Styling for Subway Surfers 3D
    ---------------------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap');
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/Outfit-fc7287273e66.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 500 900;
+  font-display: swap;
+  src: url('/fonts/Orbitron-f42db2dd16e6.ttf') format('truetype');
+}
 
 :root {
   --bg-dark: #090a0f;

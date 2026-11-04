@@ -1,0 +1,38 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/font-remediation/pwa.config.ts
+
+
+[WebServer] (node:25092) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:11104) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/1] .pao18.local\font-remediation\pwa.pw.ts:4:1 › production precache and cached offline font continuity
+  1) .pao18.local\font-remediation\pwa.pw.ts:4:1 › production precache and cached offline font continuity
+
+    Error: every production font must be precached
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      12 |  const cdp=await context.newCDPSession(page);await cdp.send('Network.clearBrowserCache');await context.setOffline(true);await page.reload({waitUntil:'load'});await page.waitForFunction(()=>!!(window as any).__GAME_SENSOR__);const offline=await faces();await page.screenshot({path:dir+'/offline.png'});
+      13 |  const record={mode:'production preview; isolated browser; HTTP cache cleared before offline; unchanged Vite config',online,offline,http,controller:await page.evaluate(()=>navigator.serviceWorker.controller?.scriptURL),fontPrecacheEntries:manifest.fonts.map((f:any)=>({file:f.file,inSW:sw.includes('fonts/'+f.file),inCache:cachesBefore.some(c=>c.urls.some(u=>u.includes('/fonts/'+f.file)))})),cachesBefore,responses,errors};await writeFile(dir+'/first-production.json',JSON.stringify(record,null,2));
+    > 14 |  expect(record.fontPrecacheEntries.every((f:any)=>f.inSW&&f.inCache),'every production font must be precached').toBe(true);expect(offline.every(f=>f.error===null&&f.faces.length>0&&f.faces.every(x=>x.status==='loaded'))).toBe(true);
+         |                                                                                                                 ^
+      15 | });
+      16 |
+      17 |
+        at D:\worker\paoku-sessions\pao-18-font-diagnosis\.pao18.local\font-remediation\pwa.pw.ts:14:113
+
+    Error Context: .pao18.local\font-remediation\pwa-cache-results\pwa.pw.ts-production-preca-4adab-hed-offline-font-continuity\error-context.md
+
+
+  1 failed
+    .pao18.local\font-remediation\pwa.pw.ts:4:1 › production precache and cached offline font continuity

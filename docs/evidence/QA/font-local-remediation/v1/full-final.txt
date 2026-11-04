@@ -1,0 +1,80 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/font-remediation/final-full.config.ts
+
+[WebServer] (node:26368) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 65 tests using 1 worker
+
+(node:24344) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/65] .pao18.local\font-remediation\final-full\suite\font-resources.pw.ts:40:1 › N real application uses local faces and glyphs with Google domains unavailable
+[2/65] .pao18.local\font-remediation\final-full\suite\font-resources.pw.ts:65:1 › F independent local font 404 remains visible to unchanged error sensors
+[3/65] .pao18.local\font-remediation\final-full\suite\font-resources.pw.ts:79:3 › N pages and F typography matrix 1280x720
+[4/65] .pao18.local\font-remediation\final-full\suite\font-resources.pw.ts:79:3 › N pages and F typography matrix 390x844
+[5/65] .pao18.local\font-remediation\final-full\suite\font-resources.pw.ts:79:3 › N pages and F typography matrix 844x390
+[6/65] .pao18.local\font-remediation\final-full\suite\gameplay.pw.ts:50:3 › 状态机（确定性） › MENU → PLAYING via start button
+[7/65] .pao18.local\font-remediation\final-full\suite\gameplay.pw.ts:56:3 › 状态机（确定性） › PLAYING → 切道（左/右 + 边界钳制）
+[8/65] .pao18.local\font-remediation\final-full\suite\gameplay.pw.ts:73:3 › 状态机（确定性） › PLAYING → 跳跃（isJumping=true）
+[9/65] .pao18.local\font-remediation\final-full\suite\gameplay.pw.ts:79:3 › 状态机（确定性） › PLAYING → 翻滚（isRolling=true）
+[10/65] .pao18.local\font-remediation\final-full\suite\gameplay.pw.ts:85:3 › 状态机（确定性） › PLAYING → PAUSED via Escape，再 resume 回到 PLAYING
+[11/65] .pao18.local\font-remediation\final-full\suite\gameplay.pw.ts:98:3 › 截图回放（确定性） › 捕获 6 张高保真截图（无 GAMEOVER 风险）
+[12/65] .pao18.local\font-remediation\final-full\suite\pao10-review-fixes.pw.ts:35:1 › native-menu-slider-and-start-space
+[13/65] .pao18.local\font-remediation\final-full\suite\pao10-review-fixes.pw.ts:48:1 › paused-rejects-motion-and-resume-space
+[14/65] .pao18.local\font-remediation\final-full\suite\pao10-review-fixes.pw.ts:67:1 › playing-interactive-arrows-do-not-move-player
+[15/65] .pao18.local\font-remediation\final-full\suite\pao10-simulation.pw.ts:29:1 › N-desktop-production-keyboard-flow
+[16/65] .pao18.local\font-remediation\final-full\suite\pao10-simulation.pw.ts:67:1 › N-mobile-production-touch
+[17/65] .pao18.local\font-remediation\final-full\suite\pao10-simulation.pw.ts:97:1 › F-lifecycle-clears-input-and-hidden-time
+[18/65] .pao18.local\font-remediation\final-full\suite\pao11-surfaces.pw.ts:95:3 › F-desktop-keyboard-ground-ramp-roof-jump-ground
+[19/65] .pao18.local\font-remediation\final-full\suite\pao11-surfaces.pw.ts:95:3 › F-portrait-touch-ground-ramp-roof-jump-ground
+[20/65] .pao18.local\font-remediation\final-full\suite\pao11-surfaces.pw.ts:124:1 › F-high-base-ramp-5-to-8-continuous-roof
+[21/65] .pao18.local\font-remediation\final-full\suite\pao11-surfaces.pw.ts:142:1 › N-production-input-and-supported-snapshot
+[22/65] .pao18.local\font-remediation\final-full\suite\pao12-collision.pw.ts:79:1 › F-desktop-relative-high-speed-thin-train-terminal-once
+[23/65] .pao18.local\font-remediation\final-full\suite\pao12-collision.pw.ts:119:1 › F-portrait-same-tick-shield-multi-hit-single-consumption
+[24/65] .pao18.local\font-remediation\final-full\suite\pao12-collision.pw.ts:144:1 › F-desktop-airborne-roll-uses-actual-height-box
+[25/65] .pao18.local\font-remediation\final-full\suite\pao12-collision.pw.ts:167:1 › F-browser-isolated-highest-speed-large-step-and-pose-matrix
+[26/65] .pao18.local\font-remediation\final-full\suite\pao12-collision.pw.ts:201:1 › F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position
+[27/65] .pao18.local\font-remediation\final-full\suite\pao13-track.pw.ts:78:1 › N-desktop-seeded-generation-keyboard-and-reset
+[28/65] .pao18.local\font-remediation\final-full\suite\pao13-track.pw.ts:109:1 › N-portrait-seeded-generation-touch
+[29/65] .pao18.local\font-remediation\final-full\suite\pao13-track.pw.ts:138:1 › F-isolated-browser-real-physics-segment-and-pair-witnesses
+[30/65] .pao18.local\font-remediation\final-full\suite\pao14-application.pw.ts:43:1 › N-desktop-pause-restart-stale-run-and-DOM-tamper
+[31/65] .pao18.local\font-remediation\final-full\suite\pao14-application.pw.ts:77:1 › N-portrait-touch-paused-input-and-return
+[32/65] .pao18.local\font-remediation\final-full\suite\pao14-application.pw.ts:94:1 › F-30-pickups-50-reward-save-failure-retry-and-repeat-finish
+[33/65] .pao18.local\font-remediation\final-full\suite\pao14-application.pw.ts:130:1 › F-legacy-rights-shop-purchase-and-refresh
+[34/65] .pao18.local\font-remediation\final-full\suite\pao14-application.pw.ts:147:1 › F-same-tick-terminal-pickup-and-gameover-shop
+[35/65] .pao18.local\font-remediation\final-full\suite\pao14-application.pw.ts:171:1 › F-two-tabs-conflicting-transactions-do-not-overwrite
+[36/65] .pao18.local\font-remediation\final-full\suite\pao14-application.pw.ts:190:1 › F-pause-isolates-input-while-save-lock-is-held
+[37/65] .pao18.local\font-remediation\final-full\suite\pao14-application.pw.ts:211:1 › F-reentrant-end-command-seals-complete-fatal-tick
+[38/65] .pao18.local\font-remediation\final-full\suite\pao14-application.pw.ts:231:1 › F-native-slider-preserves-draft-while-save-lock-is-held
+[39/65] .pao18.local\font-remediation\final-full\suite\pao14-review.pw.ts:54:1 › F-review-audio-different-fields-under-lock
+[40/65] .pao18.local\font-remediation\final-full\suite\pao14-review.pw.ts:78:1 › F-review-audio-repeated-toggle-under-lock
+[41/65] .pao18.local\font-remediation\final-full\suite\pao14-review.pw.ts:98:1 › F-review-audio-volume-and-toggle-queue
+[42/65] .pao18.local\font-remediation\final-full\suite\pao14-review.pw.ts:114:1 › F-review-shop-stale-funds-explicit-retry
+[43/65] .pao18.local\font-remediation\final-full\suite\pao14-unknown-commit.pw.ts:8:3 › F-unknown-toggle-1-confirmation-read-failures
+[44/65] .pao18.local\font-remediation\final-full\suite\pao14-unknown-commit.pw.ts:8:3 › F-unknown-toggle-2-confirmation-read-failures
+[45/65] .pao18.local\font-remediation\final-full\suite\pao17-lifecycle.pw.ts:11:1 › F real renderer fallback, 20 cycles / 10 resets, dispose/remount, late shared load and host canvas
+[46/65] .pao18.local\font-remediation\final-full\suite\pao17-lifecycle.pw.ts:53:1 › F production main dispose bridge releases the actual renderer engine and scene
+[47/65] .pao18.local\font-remediation\final-full\suite\pao17-ramp-view.pw.ts:5:29 › F actual wedge-roof walk, triangle support and exit at base Y=0
+[48/65] .pao18.local\font-remediation\final-full\suite\pao17-ramp-view.pw.ts:5:29 › F actual wedge-roof walk, triangle support and exit at base Y=5
+[49/65] .pao18.local\font-remediation\final-full\suite\pao17-structure.pw.ts:8:1 › F source raw and legacy HTTP identity
+[50/65] .pao18.local\font-remediation\final-full\suite\pao17-structure.pw.ts:23:37 › N desktop keyboard legacy start motion pause resume end restart
+[51/65] .pao18.local\font-remediation\final-full\suite\pao17-structure.pw.ts:23:37 › N 390 touch legacy start motion pause resume end restart
+[52/65] .pao18.local\font-remediation\final-full\suite\pao17-theme.pw.ts:7:1 › F successful legacy GLB and shadows warmed before 20 bounded recycles / 10 resets / full disposal
+[53/65] .pao18.local\font-remediation\final-full\suite\pao17-theme.pw.ts:50:37 › N bright desktop keyboard motion pause resume collision and restart
+[54/65] .pao18.local\font-remediation\final-full\suite\pao17-theme.pw.ts:50:37 › N bright 390 touch motion pause resume collision and restart
+[55/65] .pao18.local\font-remediation\final-full\suite\pao18-controller-camera.pw.ts:8:1 › F actual legacy renderer: 390 framing, actual group pause, support edges and stable resources
+[56/65] .pao18.local\font-remediation\final-full\suite\pao18-controller-camera.pw.ts:105:1 › F runtime modules raw identity and actual legacy GLB HTTP hash
+[57/65] .pao18.local\font-remediation\final-full\suite\pao18-controller-camera.pw.ts:119:37 › N desktop keyboard controls, real group pause, HUD profile and restart
+[58/65] .pao18.local\font-remediation\final-full\suite\pao18-controller-camera.pw.ts:119:37 › N 390 touch controls, real group pause, HUD profile and restart
+[59/65] .pao18.local\font-remediation\final-full\suite\pao18-controller-camera.pw.ts:157:1 › F recorded authoritative ramp-to-roof, jump/slide and pause with the production main
+[60/65] .pao18.local\font-remediation\final-full\suite\pao18-controller-camera.pw.ts:188:1 › F real legacy request delayed across reset: same asset ID, latest skin, dispose before completion
+[61/65] .pao18.local\font-remediation\final-full\suite\pao18-controller-camera.pw.ts:227:1 › F fixed old HUD five-row profile measured with actual CSS at 390 and desktop
+[62/65] .pao18.local\font-remediation\final-full\suite\pao6-baseline.pw.ts:64:1 › ramp-roof-jump-land
+[63/65] .pao18.local\font-remediation\final-full\suite\pao6-baseline.pw.ts:76:1 › obstacles-failure-restart
+[64/65] .pao18.local\font-remediation\final-full\suite\pao6-baseline.pw.ts:86:1 › powerups-shield-missions
+[65/65] .pao18.local\font-remediation\final-full\suite\pao6-baseline.pw.ts:98:1 › mobile-touch-layout
+  65 passed (8.4m)

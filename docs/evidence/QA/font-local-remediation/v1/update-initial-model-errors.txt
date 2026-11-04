@@ -1,0 +1,47 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/font-remediation/update.config.ts
+
+
+[WebServer] (node:24732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:26160) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] .pao18.local\font-remediation\update.pw.ts:3:1 › F production artifact A-B-A cache update and rollback with identical licensed font bytes
+  1) .pao18.local\font-remediation\update.pw.ts:3:1 › F production artifact A-B-A cache update and rollback with identical licensed font bytes
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 10
+
+    - Array []
+    + Array [
+    +   "http://127.0.0.1:5198/models/player.glb: net::ERR_INTERNET_DISCONNECTED",
+    +   "error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    +   "http://127.0.0.1:5198/assets/index-DhM3ldIj.css: net::ERR_INTERNET_DISCONNECTED",
+    +   "error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    +   "http://127.0.0.1:5198/models/player.glb: net::ERR_INTERNET_DISCONNECTED",
+    +   "error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    +   "http://127.0.0.1:5198/models/player.glb: net::ERR_INTERNET_DISCONNECTED",
+    +   "error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    + ]
+
+      19 |  async function update(index:string,sw:string){await writeFile(root+'/index.html',index);await writeFile(root+'/sw.js',sw);await page.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();await new Promise<void>((done,reject)=>{const timer=setTimeout(()=>reject(Error('controller update timed out')),20000);navigator.serviceWorker.addEventListener('controllerchange',()=>{clearTimeout(timer);done();},{once:true});reg!.update().catch(reject);});});}
+      20 |  try{await update(indexB,swB);await verify('B new immutable font URLs; original bytes',namesB,namesA,true);await update(indexA,swA);await verify('A rollback; B font cache invalidated',namesA,namesB,false);}finally{await writeFile(root+'/index.html',indexA);await writeFile(root+'/sw.js',swA);await context.setOffline(false);await writeFile(out+'/update-rollback.json',JSON.stringify({mode:'F: local deployed build copy; B changes immutable font URLs and shell revisions, preserves exact font bytes; not an external release',namesA,namesB,runs,errors},null,2));}
+    > 21 |  expect(errors).toEqual([]);
+         |                 ^
+      22 | });
+      23 |
+        at D:\worker\paoku-sessions\pao-18-font-diagnosis\.pao18.local\font-remediation\update.pw.ts:21:17
+
+    Error Context: .pao18.local\font-remediation\update-green-results\update.pw.ts-F-production--918d1-entical-licensed-font-bytes\error-context.md
+
+
+  1 failed
+    .pao18.local\font-remediation\update.pw.ts:3:1 › F production artifact A-B-A cache update and rollback with identical licensed font bytes

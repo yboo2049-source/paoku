@@ -1,0 +1,26 @@
+[
+  {
+    "path": "D:/worker/paoku/docs/reviews/2026-11-03-pao18-controller-camera-review.md",
+    "expectedSha256": "07d2b9d991d3a18603133889233310b7a8293d36e27d9c3bb2fe5a74819f3ba1",
+    "actualSha256": "07d2b9d991d3a18603133889233310b7a8293d36e27d9c3bb2fe5a74819f3ba1",
+    "matches": true
+  },
+  {
+    "path": "D:/worker/paoku-sessions/pao-18/.pao18.local/main-review-5bd31cc/full.json",
+    "expectedSha256": "064e5d372b3d41e950b99c8ac2e150c2c1d2acb2b1fea000611d86d85154d339",
+    "actualSha256": "064e5d372b3d41e950b99c8ac2e150c2c1d2acb2b1fea000611d86d85154d339",
+    "matches": true
+  },
+  {
+    "path": "D:/worker/paoku-sessions/pao-18/.pao18.local/main-review-5bd31cc/evidence/PAO-12/runs/final/F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position.json",
+    "expectedSha256": "624eab608f5f8b2862349bcbf4bf0091c0e8f5bb9037ea6e96dfc769bbcfcd8c",
+    "actualSha256": "624eab608f5f8b2862349bcbf4bf0091c0e8f5bb9037ea6e96dfc769bbcfcd8c",
+    "matches": true
+  },
+  {
+    "path": "D:/worker/paoku-sessions/pao-18/.pao18.local/main-review-5bd31cc/results/pao12-collision.pw.ts-F-de-c82f0-e-do-not-sweep-old-position/error-context.md",
+    "expectedSha256": "dd7eaff2fa2ff36653dbe6506ec79d15bc6cc53331aaa220620a4be39914a601",
+    "actualSha256": "dd7eaff2fa2ff36653dbe6506ec79d15bc6cc53331aaa220620a4be39914a601",
+    "matches": true
+  }
+]

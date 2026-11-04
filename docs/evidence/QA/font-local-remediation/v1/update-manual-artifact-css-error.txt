@@ -1,0 +1,36 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/font-remediation/update.config.ts
+
+
+[WebServer] (node:3284) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+
+(node:25744) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/1] .pao18.local\font-remediation\update.pw.ts:3:1 › F production artifact A-B-A cache update and rollback with identical licensed font bytes
+  1) .pao18.local\font-remediation\update.pw.ts:3:1 › F production artifact A-B-A cache update and rollback with identical licensed font bytes
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      21 |  // F offline deliberately disconnects the whole origin. Preserve every error: existing GLB is not precached.
+      22 |  expect(errors.some(e => e.includes('/models/player.glb: net::ERR_INTERNET_DISCONNECTED'))).toBe(true);
+    > 23 |  expect(errors.every(e => e.includes('/models/player.glb: net::ERR_INTERNET_DISCONNECTED') || e === 'error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED')).toBe(true);
+         |                                                                                                                                                                        ^
+      24 |  expect(errors.some(e => e.includes('/fonts/'))).toBe(false);
+      25 | });
+      26 |
+        at D:\worker\paoku-sessions\pao-18-font-diagnosis\.pao18.local\font-remediation\update.pw.ts:23:168
+
+    Error Context: .pao18.local\font-remediation\update-final-results\update.pw.ts-F-production--918d1-entical-licensed-font-bytes\error-context.md
+
+
+  1 failed
+    .pao18.local\font-remediation\update.pw.ts:3:1 › F production artifact A-B-A cache update and rollback with identical licensed font bytes

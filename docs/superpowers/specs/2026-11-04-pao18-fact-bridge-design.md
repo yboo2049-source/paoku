@@ -33,7 +33,16 @@
 
 候选仅两类：ACTION_STARTED覆盖JUMP、ROLL、CHANGE_LANE；PLAYER_LANDED覆盖地面、坡和车顶。纳入换道是为了迁移旧PLAYER_ACTION三种语义时不漏掉既有换道音效。HURT/FAIL、SUPPORT_CHANGED、拾取、护盾、任务完成和追逐变化不新增权威事件；终局/持续姿态继续读现有快照。无敌倒计时不产生受击事实，动画不决定动作成功、落地、roll时长或伤害。
 
-输入接缝推荐`applyInputAction`可选的显式production观测上下文/结构化结果：只在当前实际成功分支产生AppliedAction，复制输入前后lane及发生点位置。新模式关闭该调用原PLAYER_ACTION emit；legacy独立调用默认保持旧接口/旧emit。Simulation将InputCommand.tick/sequence/source与结果关联，得到动作实例身份；不能把所有acceptedInputs或flag差分都视为成功动作。即使同tick JUMP→ROLL→JUMP最后只剩jumping，也记录三次真实成功。
+输入接缝推荐`applyInputAction`可选的显式production观测上下文/结构化结果：只在当前实际成功分支产生AppliedAction，复制输入前后lane及发生点位置。新模式关闭该调用原PLAYER_ACTION emit；legacy独立调用默认保持旧接口/旧emit。Simulation将InputCommand.tick/sequence/source与结果关联，得到动作实例身份；不能把所有acceptedInputs或flag差分都视为成功动作。
+
+同tick序列须逐条遵循现有合法性。下表两例分别从`isJumping=false/isRolling=false`开始，命令之间不插入physics；状态栏依次为`isJumping/isRolling`。ROLL不清isJumping，JUMP成功时会清isRolling，不为示例修改input规则。
+
+| 对照序列 | 第一步 | 第二步 | 第三步 | 事实与既有副作用预期 |
+| --- | --- | --- | --- | --- |
+| JUMP→ROLL→JUMP（混合成功/拒绝） | JUMP成功：true/false | ROLL成功：true/true | JUMP拒绝：true/true | 仅两条ACTION_STARTED及两个actionInstanceId；JUMP/ROLL任务各计一次，第三条无动作音效、无actionInstanceId |
+| ROLL→JUMP→ROLL（三次成功） | ROLL成功：false/true | JUMP成功：true/false | ROLL成功：true/true | 三条ACTION_STARTED及三个不同actionInstanceId；ROLL任务计两次、JUMP计一次，运动音频按成功顺序各触发一次 |
+
+消费三条命令不保证三个成功动作；按真实成功分支分配事实身份，仍须保留同tick多事实，不能被最终flag覆盖。以上任务计数指对应任务尚未完成时沿用既有trackAction规则，不改变完成后停止计数的行为。
 
 physics接缝推荐可选的步内结果sink：在既有`didLand`分支采样位置、supportSurfaceId及对应Surface.kind，关闭该调用原PLAYER_LANDED emit。不改resolveSupport、碰撞、支撑选择、重力、积分或时长算法，不读车尾分支。当前solver给什么didLand就忠实记录；初始放置若现行solver报告didLand，不擅自改成不同玩法规则，也不从“首张snapshot”额外造一个landed。
 

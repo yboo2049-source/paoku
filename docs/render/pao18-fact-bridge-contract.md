@@ -104,7 +104,7 @@ main局部delivery屏障覆盖副作用、旧通知及receipt/cursor完成；obs
 | ID | 刺激 / 层级 | 失败断言和必须证明的行为 |
 | --- | --- | --- |
 | FB01 | unit：合法JUMP/ROLL/左右换道；边界、重复、队列拒绝 | 只有实际成功分支有action实例/事实；无效动作无声/不加任务，命令日志不等于动作日志 |
-| FB02 | unit：一个tick内JUMP→ROLL→JUMP和左右相反换道 | 全部真实成功按command顺序保留，不用最终flag覆盖；eventSequence/commandSequence分离且ID唯一 |
+| FB02 | unit：两例各自从jumping/rolling=false/false开始，同tick命令间无physics；JUMP→ROLL→JUMP、ROLL→JUMP→ROLL，另测左右相反换道 | 前例逐步成功true/false、成功true/true、拒绝true/true，仅两条ACTION_STARTED，JUMP/ROLL任务各一次，第三条无音效/实例ID；后例逐步成功false/true、成功true/false、成功true/true，共三条事实/不同实例ID，ROLL两次/JUMP一次，音频按成功顺序各一次。任务使用未完成夹具；仅真实成功按command顺序保留，不用最终flag覆盖，eventSequence/commandSequence分离，不改input规则 |
 | FB03 | unit+F：30/60/120fps与不规则补步，相同固定输入 | 相同模拟tick事件清单/身份/时间及任务/账本一致；最大5补步的每个提交批可见，丢弃未模拟墙钟不造事件 |
 | FB04 | unit+browser F：两个render之间下降落地又起跳，最终contact仍AIRBORNE | 新桥仍读到LAND及后续ACTION，顺序/receipt无漏，旧最终边沿法应失败；不能只测试手造数组 |
 | FB05 | unit+F：GROUND/RAMP/ROOF中心及非零高度落地、连续换面 | 实际didLand及发生点surfaceId/kind/position正确；持续贴面不重复，未知impact是null；不涉及车尾延期诊断 |

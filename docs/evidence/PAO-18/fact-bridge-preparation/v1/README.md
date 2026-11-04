@@ -64,3 +64,14 @@ PAO-9只读固定参考：`D:/worker/paoku-sessions/pao-9/docs/architecture/rebu
 - 本段是首次推送后的真实回执补记；将按相同正常hook另提交推送。最终回执提交自身SHA及远端一致性由最终交付提供，避免自引用或预填成功。
 
 交Dispatcher独立审查；本轮成果为候选设计，尚无事实桥生产实现、运行时验收或用户实施批准。不标18 Done，不调整依赖，不自动进入writing-plans/实现。
+
+## 主审修订记录（2026-11-04）
+
+接续送审HEAD `f5c1ec6b685be7278efe89189254a19b0c96ae1d`，实际目录/顶层、分支均与本记录一致，开始status干净。只读主仓`docs/reviews/2026-11-04-pao18-fact-bridge-design-review.md`及本树`src/systems/input.ts:140–157`逐分支核对；原spec误将JUMP→ROLL→JUMP写为三次成功，本次修正，不修改input规则或运行新实验。
+
+- spec §3保留混合对照：各例从false/false开始、命令间无physics；JUMP→ROLL→JUMP依次成功true/false、成功true/true、拒绝true/true，仅两条事实，第三条无动作音效/实例ID。
+- spec §3另列三次成功例：ROLL→JUMP→ROLL依次false/true、true/false、true/true；JUMP清rolling使第三条ROLL合法。FB02同步逐步状态、事实/实例数及任务/音频预期；任务以尚未完成夹具核对原规则。
+- 修改范围仍为原三份文档；内容审查核对两例各步合法性及spec/FB02一致性，本地Markdown引用逐一确认目标存在，提交前执行暂存diff检查。原FB01–FB17全部待执行，正常hook不算桥验收。
+- 其余路线A、扩围/预算/唯一写入者及实施审批边界保持待审。PAO-19继续独立并行，本轮不读取其活动成果；车尾/预览KI-001/002继续延期，不改字体/17主题，不进入实现。
+
+修订按正常hooks提交推送，固定SHA、实际检查结果及远端核验由最终交付回执提供；本段不预填尚未发生的提交成功。

@@ -4,13 +4,15 @@
 
 ## 1. 当前要做什么
 
+下一批为PAO-18真实运动/接触事实桥的**纯设计准备**，见[任务范围与手动提示词](../plans/2026-11-04-pao18-fact-bridge-design-brief.md)。复用字体树codex/pao18-font-diagnosis@826b10f，Git登记/顶层/分支/common-dir/干净状态/远端及18基线祖先已重新核实。只允许三份新设计文档，main/types/模拟及物理生产修改未开放；设计返回主审和用户批准后才实现。不新建树、不自动启动任务或Agent。
+
 用户已明确要求车尾问题先记录，当前不继续修复。当前入口为[已知问题KI-001/002](../KNOWN_ISSUES.md)及[暂停收口提示词](../plans/2026-11-03-roof-exit-deferred-handoff.md)。车尾修复和连带四动作ready超时调查均延期，不再重复实验/完整复验或沿历史提示词追修。恢复须用户明确要求，不自动派发Agent。
 
 车尾候选保留在原诊断树：HEAD/远端8af24af未变，暂存区空；2个跟踪修改、43个未跟踪文件包含本地修复/测试/证据，未验收、未提交、未推送。不要reset/clean/stash、删除/合并/移植或代提交。过去tsc/72目标单测和任务方49/50结果保留；原浏览器未再次失败不否认固定步曾复现，延期也不代表原失败关闭。
 
 字体修复826b10fd8c6200fbaec02a76f4ec9d5482d5bb12已推送且独立验收通过，见[字体主审](../reviews/2026-11-04-pao18-local-font-review.md)。主Agentbuild/293单测/显式tsc/完整65项E2E及生产字体离线1项通过，正常字体可读，横屏和200%长文本裁切保留。原字体树干净，原PAO-18仍5bd31cc尚未合入字体修复；不再派发同一字体修复，不自动合并或标父Done。用户在原任务聊天批准最小PWA includeAssets和镜像导航端口的回执已审；原聊天本身未读取。
 
-PAO-17已审主题不重派重验。原15完整45/46、18完整59/60首失败与父依赖保留；I-03/新runner/19 UI集成未自动开放。主Agent只维护文档、核对Git并保留现场，不自动启动任务或写游戏。
+PAO-17已审主题不重派重验。原15完整45/46、18完整59/60首失败与父依赖保留；I-03本次仅准许设计，生产实现/新runner/19 UI集成未开放。主Agent只维护文档、核对Git并保留现场，不自动启动任务或写游戏。
 
 ## 2. 工作树当前状态：唯一事实表
 
@@ -25,7 +27,7 @@ PAO-17已审主题不重派重验。原15完整45/46、18完整59/60首失败与
 | PAO-17 | D:/worker/paoku-sessions/pao-17 | codex/pao-17-render | 82d2d47 | 已审；原.pao17-local证据保留 |
 | PAO-18 | D:/worker/paoku-sessions/pao-18 | codex/pao-18-motion-camera | 5bd31cc | 干净，远端同SHA；首批工程检查通过，完整E2E59/60，最终验收暂缓 |
 | 车尾诊断/修复 | D:/worker/paoku-sessions/pao-15-roof-diagnosis | codex/pao15-roof-diagnosis | 8af24af | 用户延期，候选/证据未提交、暂存区空，保留脏树；不继续诊断/复验 |
-| 字体诊断/修复 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | 826b10f | 同源字体批次独立验收通过，干净、远端一致，未合并原18 |
+| 字体修复/18后续设计 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | 826b10f | 字体已审，干净、远端一致；复用准备事实桥纯设计，未合并原18 |
 | PAO-19 | D:/worker/paoku-sessions/pao-19 | codex/pao-19-ui | ed39cb9 | 已审Done |
 | 原资产只读树 | D:/worker/paoku-sessions/glb-review | detached | 7a2fb29 | 不覆盖原GLB |
 

@@ -2,6 +2,13 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-04] 下一批真实事实桥设计提示词准备就绪
+
+- 用户要求继续并询问下一步。回读Linear的PAO-18/16/20/5，18真实动作/接触身份与多tick事实仍有缺口，20/21不提前实施；[下一批设计任务及手动提示词](docs/plans/2026-11-04-pao18-fact-bridge-design-brief.md)推荐权威模拟步提交事实，经唯一入口供render只读消费，比较main包装旧总线/最终状态边沿两替代路线。本批仅设计，尚未批准实现。
+- 复用已验收字体树D:/worker/paoku-sessions/pao-18-font-diagnosis、codex/pao18-font-diagnosis@826b10fd8c6200fbaec02a76f4ec9d5482d5bb12；登记/顶层/分支/common-dir/status/远端一致，18工程5bd31cc与字体826b10f祖先exit0。无需新建树、合并原18或重做字体；本次未启动任务/Agent、安装依赖或重复游戏检查。
+- 仅允许任务方新增事实桥spec、候选契约/RED矩阵、准备证据三份文档。main/simulation/types与input/physics必要观测接缝只讨论未来最小写权，不改算法；真实producer/提交时点、多tick批次/去重/溢出/时间、暂停重开、旧音频至多一次必须设计清楚。方案返回主审并由用户批准后才写实现。
+- KI-001/002继续延期，车尾候选不动；17主题和字体不重派。新runner、动态19 UI、音频重构另批，父任务及依赖不变。
+
 ## [2026-11-04] 同源字体826b10f独立验收通过，未合并父任务
 
 - [字体主审](docs/reviews/2026-11-04-pao18-local-font-review.md)：复用原字体树，HEAD/远端826b10fd8c6200fbaec02a76f4ec9d5482d5bb12一致、status干净、诊断基线祖先通过。未建树/派Agent或写游戏。

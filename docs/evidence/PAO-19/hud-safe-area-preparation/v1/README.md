@@ -63,4 +63,13 @@ PAO-18 仅通过本树 `git show 826b10fd8c6200fbaec02a76f4ec9d5482d5bb12:<path>
 
 本轮静态审查已完成：6个本地链接/锚点、UTF-8与代码围栏有效；H01–H16共16项；Git范围核对仅有规定三份新增文档，无已有跟踪文件改动。最初 Python 检查入口因系统别名不可用退出，改用 Node 内存脚本执行同一审查，exit0，未创建辅助文件或安装依赖。
 
-提交前/后的diff检查、正常hooks和远端核对结果在完成对应操作后补入本节。提交号以Git对象及交付回复为准，不把尚未执行的步骤填成通过。
+## 4. 提交与推送回执
+
+- 设计提交：`a620a896da8dc2b0a9769b91ae16bca2422d562e`，`docs(pao-19): design dynamic HUD camera safe areas`。相对 ed39cb9 仅新增本批三份文档，354行；暂存区逐项检查无其他路径。
+- 提交前 `git diff --cached --check` 和提交后 `git diff ed39cb9 HEAD --check` 均exit0。内容/引用审查完成，未写生产代码或测试。
+- 正常pre-commit运行 `npm run build`（tsc/Vite）及 `npm run test`，exit0；17文件/252单测通过。这些是文档提交hook对未改源码的检查，不是新桥的RED/GREEN或浏览器成绩。现有Husky弃用/大chunk提示未改配置处理。
+- 本机沿用Git自带sh，将shell内npm函数委派到npm.cmd解决Windows启动入口；原hook原样执行，未跳过或修改hook、未设置HUSKY=0。
+- `git push` 成功：`ed39cb9..a620a89`，目标 `origin/codex/pao-19-ui`；随后 `git ls-remote origin refs/heads/codex/pao-19-ui` 返回完整 `a620a896da8dc2b0a9769b91ae16bca2422d562e`，与本地相同；status含未跟踪项为空。
+- 本段是首次推送成功后的回执补记，只改本README；补记提交也须走正常hook/push，其最终SHA与远端核验在交付回复报告，避免在提交自身写自引用SHA。
+
+没有运行本批E2E/浏览器/真机，H01–H16全为后续待执行；没有修改Linear状态/依赖。下一门禁是主Agent审查、用户批准设计和Dispatcher解锁未来白名单，不能由本次文档推送自动进入实现。

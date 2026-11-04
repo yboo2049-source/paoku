@@ -1,6 +1,6 @@
 # paoku主Agent交接：当前状态、工作树准备与下一批调度
 
-最后核验：2026-11-03（Asia/Shanghai），文件名沿用原交接入口。新会话先读D:/worker/paoku/AGENTS.md和本文件，再按需读当前任务的计划/报告。下列当前状态统一生效；旧状态仅查历史报告，不在本文件保留互相冲突的快照。
+最后核验：2026-11-04（Asia/Shanghai），文件名沿用原交接入口。新会话先读D:/worker/paoku/AGENTS.md和本文件，再按需读当前任务的计划/报告。下列当前状态统一生效；旧状态仅查历史报告，不在本文件保留互相冲突的快照。
 
 ## 1. 当前要做什么
 
@@ -8,24 +8,24 @@
 
 车尾候选保留在原诊断树：HEAD/远端8af24af未变，暂存区空；2个跟踪修改、43个未跟踪文件包含本地修复/测试/证据，未验收、未提交、未推送。不要reset/clean/stash、删除/合并/移植或代提交。过去tsc/72目标单测和任务方49/50结果保留；原浏览器未再次失败不否认固定步曾复现，延期也不代表原失败关闭。
 
-字体修复保持独立批准安排，原执行计划字体段仍有效；本轮仅Git只读核对到其树HEAD仍e6a52b1，index.html/style.css/vite.config.ts有跟踪改动，未审实现或配置扩围依据，等待任务方回执，不因车尾暂停替它判完成或停工。
+字体修复826b10fd8c6200fbaec02a76f4ec9d5482d5bb12已推送且独立验收通过，见[字体主审](../reviews/2026-11-04-pao18-local-font-review.md)。主Agentbuild/293单测/显式tsc/完整65项E2E及生产字体离线1项通过，正常字体可读，横屏和200%长文本裁切保留。原字体树干净，原PAO-18仍5bd31cc尚未合入字体修复；不再派发同一字体修复，不自动合并或标父Done。用户在原任务聊天批准最小PWA includeAssets和镜像导航端口的回执已审；原聊天本身未读取。
 
 PAO-17已审主题不重派重验。原15完整45/46、18完整59/60首失败与父依赖保留；I-03/新runner/19 UI集成未自动开放。主Agent只维护文档、核对Git并保留现场，不自动启动任务或写游戏。
 
 ## 2. 工作树当前状态：唯一事实表
 
-2026-11-03实际Git登记核验；后续HEAD若推进先审新增，不reset到旧值。
+原登记于2026-11-03核验；2026-11-04重新核对主仓登记和字体树，其他任务状态保留最近记录。后续HEAD若推进先审新增，不reset到旧值。
 
 | 任务 | 实际目录 | 分支 | 本次核验HEAD | 状态 |
 | --- | --- | --- | --- | --- |
-| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点4fc8164；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
+| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点2d25153；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
 | M1终点 | D:/worker/paoku-sessions/pao-14 | codex/pao-14-application | 19aa314 | 已审 |
 | PAO-15 | D:/worker/paoku-sessions/pao-15 | codex/pao-15-character-assets | 614179d | 干净，远端同SHA；技术样本链路通过，完整E2E45/46，最终验收暂缓 |
 | PAO-16 | D:/worker/paoku-sessions/pao-16 | codex/pao-16-world-assets | c7b09e6 | 不追加同类采样 |
 | PAO-17 | D:/worker/paoku-sessions/pao-17 | codex/pao-17-render | 82d2d47 | 已审；原.pao17-local证据保留 |
 | PAO-18 | D:/worker/paoku-sessions/pao-18 | codex/pao-18-motion-camera | 5bd31cc | 干净，远端同SHA；首批工程检查通过，完整E2E59/60，最终验收暂缓 |
 | 车尾诊断/修复 | D:/worker/paoku-sessions/pao-15-roof-diagnosis | codex/pao15-roof-diagnosis | 8af24af | 用户延期，候选/证据未提交、暂存区空，保留脏树；不继续诊断/复验 |
-| 字体诊断 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | e6a52b1 | A字体修复独立继续；HTML/CSS/Vite有本地改动，待回执/审查 |
+| 字体诊断/修复 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | 826b10f | 同源字体批次独立验收通过，干净、远端一致，未合并原18 |
 | PAO-19 | D:/worker/paoku-sessions/pao-19 | codex/pao-19-ui | ed39cb9 | 已审Done |
 | 原资产只读树 | D:/worker/paoku-sessions/glb-review | detached | 7a2fb29 | 不覆盖原GLB |
 
@@ -95,9 +95,9 @@ worktree已创建，不代表Codex新聊天已选中它；提示词写路径也�
 
 Web 3D跑酷，Vite/TypeScript/Babylon.js；不是Godot。主Agent只规划、约束、准备工作树、文档和独立验收，不直接写游戏实现。用户在任务聊天手动粘贴，禁止自动启动任务/子Agent/新任务聊天、合并或删除工作树。
 
-已批准的总体明亮城市轨道方向、M1及已审17主题不重审。15/18的A方案已批准且限定工程批次已交付，不重复执行整批；当前车尾与连带预览问题按用户要求延期，字体按独立批准继续，完整门禁原记录保留；人工刷权/拓扑/动作精修延期，无云上传/Tripo/Mixamo调用。已授权的可逆准备动作自行完成，不重复索取相同许可。
+已批准的总体明亮城市轨道方向、M1及已审17主题不重审。15/18的A方案已批准且限定工程批次已交付，不重复执行整批；当前车尾与连带预览问题按用户要求延期，字体修复批次已独立验收，完整门禁原记录保留；人工刷权/拓扑/动作精修延期，无云上传/Tripo/Mixamo调用。已授权的可逆准备动作自行完成，不重复索取相同许可。
 
-[原制作/控制器提示词](../plans/2026-11-03-pao15-pao18-approved-execution.md)和[两项诊断提示词](../plans/2026-11-03-regression-diagnosis-prompts.md)保留作历史，不重复派发。当前车尾只使用[暂停收口提示词](../plans/2026-11-03-roof-exit-deferred-handoff.md)，停止原修复及ready补充诊断，保留未提交候选；用户明确恢复前不再沿任何旧车尾提示词执行。字体仍按[批准执行计划](../plans/2026-11-03-regression-remediation-execution.md)字体段/第6节继续，等待回执。原15/18树不自动写入/移植或合并，不扩大字体授权。
+[原制作/控制器提示词](../plans/2026-11-03-pao15-pao18-approved-execution.md)和[两项诊断提示词](../plans/2026-11-03-regression-diagnosis-prompts.md)保留作历史，不重复派发。当前车尾只使用[暂停收口提示词](../plans/2026-11-03-roof-exit-deferred-handoff.md)，停止原修复及ready补充诊断，保留未提交候选；用户明确恢复前不再沿任何旧车尾提示词执行。字体修复已按[字体主审](../reviews/2026-11-04-pao18-local-font-review.md)完成批次验收，不沿旧提示词重复实施。原15/18树不自动写入/移植或合并，不扩大字体授权。
 
 ## 6. 已验收状态与来源
 
@@ -110,7 +110,7 @@ Project 492a7fa2-dba9-4b7b-9d22-154822bbe5a2，Workspace Paoku-v1，Team PAO，�
 | 15 | 614179d四技术clip链路检查通过；完整E2E45/46，最终验收暂缓，品质待修整 | Backlog |
 | 16 | 3de6e54和c7b09e6技术探针通过，四件生产资格false | Backlog |
 | 17 | fcddba1设计、536f54b结构/I-01/I-02、82d2d47明亮主题均已审 | Backlog |
-| 18 | 5bd31cc首批工程专项通过；完整E2E59/60，字体网络失败，最终验收暂缓 | Backlog |
+| 18 | 原工程5bd31cc完整59/60保留；派生字体826b10f已独立验收build/293单测/65E2E/PWA，通过但未合入原18，父验收未完成 | Backlog |
 | 19 | ed39cb9 UI最终复审通过，两项P2已关闭 | Done |
 
 按需查报告，不重复跑已审阶段：

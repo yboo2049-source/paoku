@@ -1,0 +1,147 @@
+{
+  "sampleFrame": 1,
+  "page": "PLAYING",
+  "runId": "F-layout",
+  "canvasRect": {
+    "x": 0,
+    "y": 0,
+    "width": 1440,
+    "height": 900
+  },
+  "viewport": {
+    "layoutWidth": 1440,
+    "layoutHeight": 900,
+    "visual": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 900
+    },
+    "visualScale": 1
+  },
+  "producerId": "pao19-layout-5486df75-57fe-497e-968e-9df38fd910f1",
+  "epoch": 0,
+  "layoutRevision": 1,
+  "status": "READY",
+  "reason": null,
+  "profile": "gameplay",
+  "modal": "none",
+  "deviceInsets": {
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "left": 0
+  },
+  "surfaces": [
+    {
+      "id": "audio",
+      "kind": "control",
+      "edge": "top",
+      "clientRect": {
+        "x": 1312,
+        "y": 24,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "id": "coins",
+      "kind": "readout",
+      "edge": "top",
+      "clientRect": {
+        "x": 312.015625,
+        "y": 24,
+        "width": 280.015625,
+        "height": 74
+      }
+    },
+    {
+      "id": "pause",
+      "kind": "control",
+      "edge": "top",
+      "clientRect": {
+        "x": 1368,
+        "y": 24,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "id": "powerup-DOUBLE_SCORE",
+      "kind": "powerup",
+      "edge": "none",
+      "clientRect": {
+        "x": 24,
+        "y": 716,
+        "width": 138.359375,
+        "height": 48
+      }
+    },
+    {
+      "id": "powerup-HOVERBOARD",
+      "kind": "powerup",
+      "edge": "none",
+      "clientRect": {
+        "x": 24,
+        "y": 828,
+        "width": 138.359375,
+        "height": 48
+      }
+    },
+    {
+      "id": "powerup-MAGNET",
+      "kind": "powerup",
+      "edge": "none",
+      "clientRect": {
+        "x": 24,
+        "y": 660,
+        "width": 138.359375,
+        "height": 48
+      }
+    },
+    {
+      "id": "powerup-SUPER_SNEAKERS",
+      "kind": "powerup",
+      "edge": "none",
+      "clientRect": {
+        "x": 24,
+        "y": 772,
+        "width": 138.359375,
+        "height": 48
+      }
+    },
+    {
+      "id": "score",
+      "kind": "readout",
+      "edge": "top",
+      "clientRect": {
+        "x": 24,
+        "y": 24,
+        "width": 280.015625,
+        "height": 74
+      }
+    },
+    {
+      "id": "speed",
+      "kind": "readout",
+      "edge": "top",
+      "clientRect": {
+        "x": 24,
+        "y": 106,
+        "width": 149.734375,
+        "height": 42
+      }
+    },
+    {
+      "id": "toast",
+      "kind": "toast",
+      "edge": "none",
+      "clientRect": {
+        "x": 24,
+        "y": 180,
+        "width": 240,
+        "height": 66
+      }
+    }
+  ]
+}

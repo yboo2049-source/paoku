@@ -1,0 +1,14 @@
+Producer stage RED/GREEN (2026-11-05 Asia/Shanghai)
+Baseline: ff02092344fcef2f5a96f29f9762a01ea5043907
+
+RED geometry/leases: 12 failed behavior assertions (API scaffold, not import/compiler errors).
+RED real DOM producer capability: desktop and 390 cases both failed (measureOcclusion undefined).
+Additional RED: 2 reentrant-first-read/stale-frame assertions; 2 reset-disposal/measurement-exception assertions; 2 recursive-reset/invalid-adapter assertions.
+GREEN unit: 18 new cases. Existing 252 assertions/tests preserved.
+GREEN targeted browser: 10 cases, zero retry/flaky/skipped; includes N keyboard and CDP touch plus explicitly labeled F measurement scheduling/layout fixtures.
+
+Tool/fixture fixes (not inherited failures): readonly Map proxy JSON copy + explicit Map reconstruction; use painted pause control rather than zero-height transparent HUD root as visibility oracle; decode Vite raw-string module before byte comparison; direct Node CLI for pipe-containing grep; TS6 ignoreConfig + existing external Node types.
+
+Full verification counts and immutable source hashes: verification.json (generated only after complete suite passes).
+Local first-failure logs: .pao19-hud.local/red-unit.log, red-producer.log, red-lease-reentry.log, red-lease-reset-observer.log, red-adapter-guards.log.
+Target/full logs and reversible old-suite mirror manifests stay ignored; no old assertion/timeout/error collection is changed.

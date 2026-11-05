@@ -1,0 +1,206 @@
+{
+  "date": "2026-11-05",
+  "baseline": "ff02092344fcef2f5a96f29f9762a01ea5043907",
+  "approvalInput": "17790f223873b6d322ce3690131904368391ade8",
+  "stage": "producer only; main/render not wired",
+  "versions": {
+    "node": "v24.18.1",
+    "typescript": "6.0.3",
+    "vite": "8.2.0",
+    "vitest": "4.1.10",
+    "@playwright/test": "1.62.1"
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "unit": {
+    "exitCode": 0,
+    "files": 18,
+    "tests": 270,
+    "newTests": 18
+  },
+  "newTestTypes": {
+    "exitCode": 0,
+    "existingExternalNodeTypes": true,
+    "dependenciesInstalled": false
+  },
+  "e2e": {
+    "exitCode": 0,
+    "startTime": "2026-11-05T13:22:06.812Z",
+    "duration": 512857.04099999997,
+    "expected": 70,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "tests": 70,
+    "old": 60,
+    "new": 10,
+    "retries": 0,
+    "resultCount": 70,
+    "config": {
+      "workers": 1,
+      "baseURL": "http://127.0.0.1:5189",
+      "launchArgs": [
+        "--use-gl=angle",
+        "--use-angle=d3d11",
+        "--enable-webgl",
+        "--ignore-gpu-blocklist"
+      ],
+      "webServer": {
+        "command": "npm.cmd run dev -- --host 127.0.0.1 --port 5189 --strictPort",
+        "cwd": "D:/worker/paoku-sessions/pao-19",
+        "url": "http://127.0.0.1:5189",
+        "reuseExistingServer": false
+      },
+      "timeout": 60000
+    }
+  },
+  "protection": {
+    "trackedFiles": 1259,
+    "changed": [
+      "src/ui/dom.ts"
+    ],
+    "restored": [],
+    "sourceFiles": 30,
+    "sourcesUnchangedDuringValidation": true,
+    "oldTestsUnchanged": true,
+    "oldPAO6ApprovedLineUnchanged": true,
+    "mirrors": [
+      {
+        "file": "gameplay.spec.ts",
+        "reversedExact": true,
+        "changes": 6
+      },
+      {
+        "file": "pao10-review-fixes.spec.ts",
+        "reversedExact": true,
+        "changes": 1
+      },
+      {
+        "file": "pao10-simulation.spec.ts",
+        "reversedExact": true,
+        "changes": 1
+      },
+      {
+        "file": "pao11-surfaces.spec.ts",
+        "reversedExact": true,
+        "changes": 1
+      },
+      {
+        "file": "pao12-collision.spec.ts",
+        "reversedExact": true,
+        "changes": 1
+      },
+      {
+        "file": "pao13-track.spec.ts",
+        "reversedExact": true,
+        "changes": 1
+      },
+      {
+        "file": "pao14-application.spec.ts",
+        "reversedExact": true,
+        "changes": 1
+      },
+      {
+        "file": "pao14-review.spec.ts",
+        "reversedExact": true,
+        "changes": 1
+      },
+      {
+        "file": "pao14-unknown-commit.spec.ts",
+        "reversedExact": true,
+        "changes": 1
+      },
+      {
+        "file": "pao19-hud-safe-area.spec.ts",
+        "reversedExact": true,
+        "changes": 0
+      },
+      {
+        "file": "pao6-baseline.spec.ts",
+        "reversedExact": true,
+        "changes": 1
+      },
+      {
+        "file": "rebuild-ui.spec.ts",
+        "reversedExact": true,
+        "changes": 1
+      }
+    ]
+  },
+  "sourceHashes": {
+    "src/application/appService.ts": "843d526e1ee1c71b97299d2dffe9013c6fbca175c8bbe3bf315534c9055a189f",
+    "src/application/saveRepository.ts": "9794bddd00971c6a415168c39c557987b0c4b291fc46d912d03ea6d9efabadde",
+    "src/application/skinCatalog.ts": "cfb40ed20eda910d897b86d24c1885056b6fabe8877b3285bc3f5a6001ba2a6f",
+    "src/application/types.ts": "7b9d24cedb0de02564f18d6eec6c239e7ca299792305b5814177c2088acced2b",
+    "src/core/eventBus.ts": "68848837bbd9d69fbe41bad07adb27208b0d2cd0e046b46cc8cf7defa4d730eb",
+    "src/core/gameLoop.ts": "7f3a1db99c20cf61348eeaa246ce7c745359721bbab8148a3ccd55dcfc69b2aa",
+    "src/core/inputQueue.ts": "6a07ad1407155c949ea62f8076e3106c94150b8ed84a346ac63470eb54f6f03c",
+    "src/core/simulation.ts": "792c6ec0604d66e4426ce5831a8132089e3573629fc4af767dc072c5b87bea97",
+    "src/core/snapshot.ts": "10a867da692178fdbe485dca50e4b44d4ce8f90fbbd23260b65f8a54f0d8cc49",
+    "src/data/modelBindings.ts": "8448dc8ecb19cc440dfa0b5ebc2975f8ec796cef467482a2aa09808480f8773c",
+    "src/data/trackSegments.ts": "dc3df6c0a25cdd447f34e0d7d1fde8992f247bed37d9ec06e9dafb6b3456765c",
+    "src/main.ts": "825a44845af15776f5c159fb836f7867235ac6fc73a05d6e710ce4b9bcf2ce57",
+    "src/render/babylon.ts": "d60e9885dd9d515635488b610877d29894312652f92b753cf8b870ca50fa7571",
+    "src/style.css": "94e5ee4ce6368ab7bc3ed88e6ca9e562eccee700bc959dc86a92d7b2232e3414",
+    "src/systems/audio.ts": "4bd8788eda9d47141ce2af6beb4ce39f25fb4c0b7ba9da894f7e5642a493a868",
+    "src/systems/contacts.ts": "ce4cf472f746680a81ead20e8344e16556fb4ddc48059c7aff6a688d9c54f9cd",
+    "src/systems/input.ts": "407c7cc8e5184f87756de0c2f847779b565976a5d2fe74d54e4ad11cd45853e9",
+    "src/systems/mission.ts": "479802ad2f8f20c908d9769e284edd9a34fa4f3c84850da955c822d2de66e738",
+    "src/systems/physics.ts": "2abbc7950295e1c493a98e6fb1f3db4f97442f2a5e9309863c7f469d72dfe34c",
+    "src/systems/runSettlement.ts": "f945346cbc69b06223533cff5a6a1d0662b0cfc017cd9e54dcf277ad434f9ae6",
+    "src/systems/scoring.ts": "535070292464bf6c80c07730d585203d7e7da308c5217e94c17cdddd091453ac",
+    "src/systems/spawner.ts": "105fd376b16c92c8357b57f944a54ff52d829514d8d87776b7d01f3e278d060c",
+    "src/systems/surfaces.ts": "14a734e726e1b2aadcb9add9e96207fbb29e3680a08e762682fa6ece73846484",
+    "src/systems/track.ts": "dba5b8e30e37b12c09ff1d28a56be60513360eecf00e425abc5be19d9addc922",
+    "src/types/contracts.ts": "3b9520d21a06c683d5250a7839c5a9537ae8666723fd0f6a8cace471489558e4",
+    "src/types/index.ts": "b2842de277d980ba890b0f75dabde2b029aedf4f01f5d0c0cff063c306fa4988",
+    "src/ui/dom.ts": "847abe119dc0ac90426d70fb16674ba024fd0caff6fdad14e93868049380d04c",
+    "src/ui/views/models.ts": "ba9e5e2453bbb28a85feae0ab457465b5db2182f3986bd4f8ca1f299e0ad0d0e",
+    "src/ui/views/screens.ts": "443aa4c061dc88a9b9860a8755bd3991816fce3f0d535d7261d4dff2b0f1b43c",
+    "src/presentation/hudSafeArea.ts": "2f242e44395b040591395c4132d6aaefc2800b17fa66573398eabbf5bbf2f3cc"
+  },
+  "rawSourceIdentity": [
+    {
+      "file": "src/ui/dom.ts",
+      "sha256": "847abe119dc0ac90426d70fb16674ba024fd0caff6fdad14e93868049380d04c"
+    },
+    {
+      "file": "src/presentation/hudSafeArea.ts",
+      "sha256": "2f242e44395b040591395c4132d6aaefc2800b17fa66573398eabbf5bbf2f3cc"
+    },
+    {
+      "file": "src/main.ts",
+      "sha256": "825a44845af15776f5c159fb836f7867235ac6fc73a05d6e710ce4b9bcf2ce57"
+    },
+    {
+      "file": "src/style.css",
+      "sha256": "94e5ee4ce6368ab7bc3ed88e6ca9e562eccee700bc959dc86a92d7b2232e3414"
+    },
+    {
+      "file": "src/ui/views/screens.ts",
+      "sha256": "443aa4c061dc88a9b9860a8755bd3991816fce3f0d535d7261d4dff2b0f1b43c"
+    }
+  ],
+  "dpr": {
+    "one": 1,
+    "two": 2,
+    "insetTop": 27,
+    "bufferSize": [
+      780,
+      1688
+    ]
+  },
+  "reviewImages": [
+    "F-hud-1440.png",
+    "F-hud-390.png",
+    "F-paused-rotated.png"
+  ],
+  "notImplemented": [
+    "production write/read/render scheduling",
+    "setHudSafeArea camera consumer",
+    "H13 actor projection",
+    "H14/H16 renderer policy",
+    "real-device not tested"
+  ]
+}

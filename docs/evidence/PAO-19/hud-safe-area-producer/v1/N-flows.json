@@ -1,0 +1,735 @@
+{
+  "keyboard": [
+    {
+      "sampleFrame": 1,
+      "page": "MENU",
+      "runId": null,
+      "canvasRect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "viewport": {
+        "layoutWidth": 1440,
+        "layoutHeight": 900,
+        "visual": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900
+        },
+        "visualScale": 1
+      },
+      "producerId": "pao19-layout-44f55a28-06d2-4065-80dc-1f323dd42052",
+      "epoch": 0,
+      "layoutRevision": 1,
+      "status": "READY",
+      "reason": null,
+      "profile": "menu",
+      "modal": "none",
+      "deviceInsets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "surfaces": [
+        {
+          "id": "menu-card",
+          "kind": "card",
+          "edge": "none",
+          "clientRect": {
+            "x": 24,
+            "y": 188.796875,
+            "width": 400,
+            "height": 522.390625
+          }
+        }
+      ]
+    },
+    {
+      "sampleFrame": 2,
+      "page": "SHOP",
+      "runId": null,
+      "canvasRect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "viewport": {
+        "layoutWidth": 1440,
+        "layoutHeight": 900,
+        "visual": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900
+        },
+        "visualScale": 1
+      },
+      "producerId": "pao19-layout-44f55a28-06d2-4065-80dc-1f323dd42052",
+      "epoch": 0,
+      "layoutRevision": 3,
+      "status": "READY",
+      "reason": null,
+      "profile": "modal",
+      "modal": "dimmed",
+      "deviceInsets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "surfaces": [
+        {
+          "id": "shop-card",
+          "kind": "card",
+          "edge": "none",
+          "clientRect": {
+            "x": 380,
+            "y": 42.796875,
+            "width": 680,
+            "height": 814.390625
+          }
+        }
+      ]
+    },
+    {
+      "sampleFrame": 3,
+      "page": "MENU",
+      "runId": null,
+      "canvasRect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "viewport": {
+        "layoutWidth": 1440,
+        "layoutHeight": 900,
+        "visual": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900
+        },
+        "visualScale": 1
+      },
+      "producerId": "pao19-layout-44f55a28-06d2-4065-80dc-1f323dd42052",
+      "epoch": 0,
+      "layoutRevision": 5,
+      "status": "READY",
+      "reason": null,
+      "profile": "menu",
+      "modal": "none",
+      "deviceInsets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "surfaces": [
+        {
+          "id": "menu-card",
+          "kind": "card",
+          "edge": "none",
+          "clientRect": {
+            "x": 24,
+            "y": 188.796875,
+            "width": 400,
+            "height": 522.390625
+          }
+        }
+      ]
+    },
+    {
+      "sampleFrame": 4,
+      "page": "PLAYING",
+      "runId": "run-c25c32be-7584-431c-889d-4179624f8a9b",
+      "canvasRect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "viewport": {
+        "layoutWidth": 1440,
+        "layoutHeight": 900,
+        "visual": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900
+        },
+        "visualScale": 1
+      },
+      "producerId": "pao19-layout-44f55a28-06d2-4065-80dc-1f323dd42052",
+      "epoch": 0,
+      "layoutRevision": 7,
+      "status": "READY",
+      "reason": null,
+      "profile": "gameplay",
+      "modal": "none",
+      "deviceInsets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "surfaces": [
+        {
+          "id": "audio",
+          "kind": "control",
+          "edge": "top",
+          "clientRect": {
+            "x": 1312,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          }
+        },
+        {
+          "id": "coins",
+          "kind": "readout",
+          "edge": "top",
+          "clientRect": {
+            "x": 118,
+            "y": 24,
+            "width": 114,
+            "height": 74
+          }
+        },
+        {
+          "id": "pause",
+          "kind": "control",
+          "edge": "top",
+          "clientRect": {
+            "x": 1368,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          }
+        },
+        {
+          "id": "score",
+          "kind": "readout",
+          "edge": "top",
+          "clientRect": {
+            "x": 24,
+            "y": 24,
+            "width": 86,
+            "height": 74
+          }
+        },
+        {
+          "id": "speed",
+          "kind": "readout",
+          "edge": "top",
+          "clientRect": {
+            "x": 24,
+            "y": 106,
+            "width": 149.734375,
+            "height": 42
+          }
+        }
+      ]
+    },
+    {
+      "sampleFrame": 5,
+      "page": "PAUSED",
+      "runId": "run-c25c32be-7584-431c-889d-4179624f8a9b",
+      "canvasRect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "viewport": {
+        "layoutWidth": 1440,
+        "layoutHeight": 900,
+        "visual": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900
+        },
+        "visualScale": 1
+      },
+      "producerId": "pao19-layout-44f55a28-06d2-4065-80dc-1f323dd42052",
+      "epoch": 0,
+      "layoutRevision": 9,
+      "status": "READY",
+      "reason": null,
+      "profile": "modal",
+      "modal": "dimmed",
+      "deviceInsets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "surfaces": [
+        {
+          "id": "audio",
+          "kind": "control",
+          "edge": "top",
+          "clientRect": {
+            "x": 1312,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          }
+        },
+        {
+          "id": "coins",
+          "kind": "readout",
+          "edge": "top",
+          "clientRect": {
+            "x": 118,
+            "y": 24,
+            "width": 114,
+            "height": 74
+          }
+        },
+        {
+          "id": "pause",
+          "kind": "control",
+          "edge": "top",
+          "clientRect": {
+            "x": 1368,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          }
+        },
+        {
+          "id": "paused-card",
+          "kind": "card",
+          "edge": "none",
+          "clientRect": {
+            "x": 520,
+            "y": 293.796875,
+            "width": 400,
+            "height": 312.390625
+          }
+        },
+        {
+          "id": "score",
+          "kind": "readout",
+          "edge": "top",
+          "clientRect": {
+            "x": 24,
+            "y": 24,
+            "width": 86,
+            "height": 74
+          }
+        },
+        {
+          "id": "speed",
+          "kind": "readout",
+          "edge": "top",
+          "clientRect": {
+            "x": 24,
+            "y": 106,
+            "width": 149.734375,
+            "height": 42
+          }
+        }
+      ]
+    },
+    {
+      "sampleFrame": 6,
+      "page": "GAMEOVER",
+      "runId": "run-c25c32be-7584-431c-889d-4179624f8a9b",
+      "canvasRect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "viewport": {
+        "layoutWidth": 1440,
+        "layoutHeight": 900,
+        "visual": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900
+        },
+        "visualScale": 1
+      },
+      "producerId": "pao19-layout-44f55a28-06d2-4065-80dc-1f323dd42052",
+      "epoch": 0,
+      "layoutRevision": 11,
+      "status": "READY",
+      "reason": null,
+      "profile": "modal",
+      "modal": "dimmed",
+      "deviceInsets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "surfaces": [
+        {
+          "id": "gameover-card",
+          "kind": "card",
+          "edge": "none",
+          "clientRect": {
+            "x": 500,
+            "y": 199.296875,
+            "width": 440,
+            "height": 501.390625
+          }
+        }
+      ]
+    },
+    {
+      "sampleFrame": 7,
+      "page": "MENU",
+      "runId": null,
+      "canvasRect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "viewport": {
+        "layoutWidth": 1440,
+        "layoutHeight": 900,
+        "visual": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900
+        },
+        "visualScale": 1
+      },
+      "producerId": "pao19-layout-44f55a28-06d2-4065-80dc-1f323dd42052",
+      "epoch": 0,
+      "layoutRevision": 13,
+      "status": "READY",
+      "reason": null,
+      "profile": "menu",
+      "modal": "none",
+      "deviceInsets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "surfaces": [
+        {
+          "id": "menu-card",
+          "kind": "card",
+          "edge": "none",
+          "clientRect": {
+            "x": 24,
+            "y": 188.796875,
+            "width": 400,
+            "height": 522.390625
+          }
+        }
+      ]
+    }
+  ],
+  "touch": {
+    "qaMode": false,
+    "records": [
+      {
+        "sampleFrame": 1,
+        "page": "PLAYING",
+        "runId": "run-085f3749-43c4-4070-8f68-e4b160e4393b",
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "viewport": {
+          "layoutWidth": 390,
+          "layoutHeight": 844,
+          "visual": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844
+          },
+          "visualScale": 1
+        },
+        "producerId": "pao19-layout-eb6b696f-de8f-4d87-a5a4-6c41acce5df5",
+        "epoch": 0,
+        "layoutRevision": 1,
+        "status": "READY",
+        "reason": null,
+        "profile": "gameplay",
+        "modal": "none",
+        "deviceInsets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "surfaces": [
+          {
+            "id": "audio",
+            "kind": "control",
+            "edge": "top",
+            "clientRect": {
+              "x": 270,
+              "y": 16,
+              "width": 48,
+              "height": 48
+            }
+          },
+          {
+            "id": "coins",
+            "kind": "readout",
+            "edge": "top",
+            "clientRect": {
+              "x": 143,
+              "y": 16,
+              "width": 119,
+              "height": 64
+            }
+          },
+          {
+            "id": "pause",
+            "kind": "control",
+            "edge": "top",
+            "clientRect": {
+              "x": 326,
+              "y": 16,
+              "width": 48,
+              "height": 48
+            }
+          },
+          {
+            "id": "score",
+            "kind": "readout",
+            "edge": "top",
+            "clientRect": {
+              "x": 16,
+              "y": 16,
+              "width": 119,
+              "height": 64
+            }
+          },
+          {
+            "id": "speed",
+            "kind": "readout",
+            "edge": "top",
+            "clientRect": {
+              "x": 16,
+              "y": 88,
+              "width": 149.734375,
+              "height": 42
+            }
+          }
+        ]
+      },
+      {
+        "sampleFrame": 2,
+        "page": "PAUSED",
+        "runId": "run-085f3749-43c4-4070-8f68-e4b160e4393b",
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "viewport": {
+          "layoutWidth": 390,
+          "layoutHeight": 844,
+          "visual": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844
+          },
+          "visualScale": 1
+        },
+        "producerId": "pao19-layout-eb6b696f-de8f-4d87-a5a4-6c41acce5df5",
+        "epoch": 0,
+        "layoutRevision": 3,
+        "status": "READY",
+        "reason": null,
+        "profile": "modal",
+        "modal": "dimmed",
+        "deviceInsets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "surfaces": [
+          {
+            "id": "audio",
+            "kind": "control",
+            "edge": "top",
+            "clientRect": {
+              "x": 270,
+              "y": 16,
+              "width": 48,
+              "height": 48
+            }
+          },
+          {
+            "id": "coins",
+            "kind": "readout",
+            "edge": "top",
+            "clientRect": {
+              "x": 143,
+              "y": 16,
+              "width": 119,
+              "height": 64
+            }
+          },
+          {
+            "id": "pause",
+            "kind": "control",
+            "edge": "top",
+            "clientRect": {
+              "x": 326,
+              "y": 16,
+              "width": 48,
+              "height": 48
+            }
+          },
+          {
+            "id": "paused-card",
+            "kind": "card",
+            "edge": "none",
+            "clientRect": {
+              "x": 16,
+              "y": 272.203125,
+              "width": 358,
+              "height": 299.59375
+            }
+          },
+          {
+            "id": "score",
+            "kind": "readout",
+            "edge": "top",
+            "clientRect": {
+              "x": 16,
+              "y": 16,
+              "width": 119,
+              "height": 64
+            }
+          },
+          {
+            "id": "speed",
+            "kind": "readout",
+            "edge": "top",
+            "clientRect": {
+              "x": 16,
+              "y": 88,
+              "width": 149.734375,
+              "height": 42
+            }
+          }
+        ]
+      },
+      {
+        "sampleFrame": 3,
+        "page": "GAMEOVER",
+        "runId": "run-085f3749-43c4-4070-8f68-e4b160e4393b",
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "viewport": {
+          "layoutWidth": 390,
+          "layoutHeight": 844,
+          "visual": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844
+          },
+          "visualScale": 1
+        },
+        "producerId": "pao19-layout-eb6b696f-de8f-4d87-a5a4-6c41acce5df5",
+        "epoch": 0,
+        "layoutRevision": 5,
+        "status": "READY",
+        "reason": null,
+        "profile": "modal",
+        "modal": "dimmed",
+        "deviceInsets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "surfaces": [
+          {
+            "id": "gameover-card",
+            "kind": "card",
+            "edge": "none",
+            "clientRect": {
+              "x": 16,
+              "y": 180.703125,
+              "width": 358,
+              "height": 482.59375
+            }
+          }
+        ]
+      },
+      {
+        "sampleFrame": 4,
+        "page": "MENU",
+        "runId": null,
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "viewport": {
+          "layoutWidth": 390,
+          "layoutHeight": 844,
+          "visual": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844
+          },
+          "visualScale": 1
+        },
+        "producerId": "pao19-layout-eb6b696f-de8f-4d87-a5a4-6c41acce5df5",
+        "epoch": 0,
+        "layoutRevision": 7,
+        "status": "READY",
+        "reason": null,
+        "profile": "menu",
+        "modal": "none",
+        "deviceInsets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "surfaces": [
+          {
+            "id": "menu-card",
+            "kind": "card",
+            "edge": "none",
+            "clientRect": {
+              "x": 16,
+              "y": 633,
+              "width": 358,
+              "height": 195
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

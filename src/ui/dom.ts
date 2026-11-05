@@ -12,9 +12,23 @@ export type { SkinConfig } from '../application/skinCatalog';
 import { CONSTANTS } from '../types';
 import { eventBus } from '../core/eventBus';
 import { audioEngine } from '../systems/audio';
+import { LayoutLease, axisAlignedTransform, clipRect } from '../presentation/hudSafeArea';
+import type { LayoutNotice, MeasureBasis, Measurement, Rect, Surface, UiLayoutSnapshot } from '../presentation/hudSafeArea';
 
 export class UIManager {
   private container: HTMLElement;
+  private static layoutOwners = new WeakMap<HTMLElement, UIManager>();
+  private layoutLease = new LayoutLease('pao19-layout-' + crypto.randomUUID());
+  private layoutLayer!: HTMLElement;
+  private layoutProbe: HTMLElement | null = null;
+  private layoutObserver: ResizeObserver | null = null;
+  private layoutCleanup: (() => void)[] = [];
+  private layoutSurfaces = new Map<string, { element: HTMLElement; kind: Surface['kind']; edge: Surface['edge'] }>();
+  private layoutFingerprint = '';
+  private layoutResourceEpoch = 0;
+  private layoutDisposed = false;
+  private layoutResetting = false;
+  private layoutMotion = new Map<EventTarget, Set<string>>();
 
   // DOM Elements
   private menuEl!: HTMLElement;
@@ -56,6 +70,8 @@ export class UIManager {
 
   constructor(container: HTMLElement, readApp: () => AppSnapshot) {
     this.container = container;
+    UIManager.layoutOwners.get(container)?.disposeLayout();
+    UIManager.layoutOwners.set(container, this);
     this.readApp = readApp;
     this.buildUI();
     this.setupGlobalEvents();
@@ -63,6 +79,8 @@ export class UIManager {
     const badges=this.hudEl.querySelector('.hud-badge-group')!;badges.replaceWith(readings);readings.append(badges,this.hudEl.querySelector('.speedometer-wrap')!);
     this.setupFocus();
     const feedback=document.createElement('div');feedback.className='hud-feedback';feedback.innerHTML='<div class="command-feedback" role="status"></div><div class="command-error" role="alert"></div>';this.hudEl.append(feedback);
+    this.layoutLayer = this.container.querySelector<HTMLElement>('#ui-layer')!;
+    this.setupLayoutResources();
   }
 
   public getSelectedSkin(): SkinConfig {
@@ -245,6 +263,9 @@ export class UIManager {
     this.renderAudioControls(app);
     this.toasts.advance(performance.now(),document.hidden || state!=='PLAYING');
     this.renderToast(state==='PLAYING');
+    this.refreshLayoutSurfaces();
+    const fingerprint = JSON.stringify([state, app.activeRunId, [...this.layoutSurfaces].map(([id, s]) => [id, s.element.textContent, s.element.style.display, s.element.hasAttribute('disabled')])]);
+    if (fingerprint !== this.layoutFingerprint) { this.layoutFingerprint = fingerprint; this.invalidateLayout(); }
   }
 
   /**
@@ -256,7 +277,7 @@ export class UIManager {
     if(this.hudBuffsEl.dataset.key===key)return;
     this.hudBuffsEl.dataset.key=key;
     this.hudBuffsEl.replaceChildren(...views.map(view=>{
-      const pill=document.createElement('div');pill.className='buff-pill';
+      const pill=document.createElement('div');pill.className='buff-pill';pill.dataset.powerup=view.id;
       pill.innerHTML='<svg aria-hidden="true" viewBox="0 0 24 24"><path d="'+view.path+'"/></svg>';
       const label=document.createElement('span');label.textContent=view.label+' '+view.time;pill.append(label);return pill;
     }));
@@ -439,5 +460,145 @@ export class UIManager {
       const modal=[this.menuEl,this.pausedEl,this.gameOverEl,this.shopEl].find(el=>!el.inert&&el.style.display!=='none');
       if(e.key==='Tab'&&modal){const controls=[...modal.querySelectorAll<HTMLElement>('button:not(:disabled),input,summary')].filter(el=>el.getClientRects().length);const first=controls[0],last=controls.at(-1);if(e.shiftKey&&(document.activeElement===first||document.activeElement===modal)){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}
     });
+  }
+
+  /** Explicit producer read phase. No production main/render consumer is installed here. */
+  public measureOcclusion(basis: MeasureBasis): UiLayoutSnapshot {
+    const app = this.readApp();
+    if (app.appState !== basis.page || app.activeRunId !== basis.runId || this.lastPage !== basis.page) this.invalidateLayout('STALE_LAYOUT');
+    if (!this.container.isConnected || !this.layoutLayer.isConnected) this.invalidateLayout('NOT_MOUNTED');
+    if (this.layoutMotion.size) this.invalidateLayout();
+    return this.layoutLease.sample(basis, () => {
+      if (!this.container.isConnected || !this.layoutLayer.isConnected) return this.emptyLayoutMeasurement('NOT_MOUNTED');
+      if (app.appState !== basis.page || app.activeRunId !== basis.runId || this.lastPage !== basis.page) return this.emptyLayoutMeasurement('STALE_LAYOUT');
+      return this.measureLayoutSurfaces(basis);
+    });
+  }
+
+  public readOcclusion(): UiLayoutSnapshot | null { return this.layoutLease.read(); }
+  public invalidateLayout(reason = 'DIRTY'): void { this.layoutLease.invalidate(reason); }
+  public subscribeLayoutInvalidation(listener: (notice: LayoutNotice) => void): () => void { return this.layoutLease.subscribe(listener); }
+
+  /** Only this bridge's observers/listeners/probe are reset; business leases stay untouched. */
+  public resetLayout(): void {
+    if (this.layoutDisposed || this.layoutResetting) return;
+    this.layoutResetting = true;
+    try {
+      this.clearLayoutResources(); this.layoutLease.reset();
+      if (!this.layoutDisposed) this.setupLayoutResources();
+    } finally { this.layoutResetting = false; }
+  }
+
+  public disposeLayout(): void {
+    if (this.layoutDisposed) return;
+    this.layoutDisposed = true; this.clearLayoutResources(); this.layoutLease.dispose();
+    if (UIManager.layoutOwners.get(this.container) === this) UIManager.layoutOwners.delete(this.container);
+  }
+
+  private clearLayoutResources(): void {
+    this.layoutResourceEpoch++; this.layoutObserver?.disconnect(); this.layoutObserver = null;
+    this.layoutCleanup.splice(0).forEach(cleanup => cleanup());
+    this.layoutProbe?.remove(); this.layoutProbe = null; this.layoutSurfaces.clear(); this.layoutMotion.clear();
+  }
+
+  private setupLayoutResources(): void {
+    const epoch = this.layoutResourceEpoch;
+    const current = () => !this.layoutDisposed && epoch === this.layoutResourceEpoch;
+    const dirty = () => { if (current()) this.invalidateLayout(); };
+    const probe = document.createElement('div'); probe.dataset.hudSafeAreaProbe = '';
+    probe.setAttribute('aria-hidden', 'true');
+    probe.style.cssText = 'position:fixed;visibility:hidden;pointer-events:none;width:0;height:0;padding-top:env(safe-area-inset-top,0px);padding-right:env(safe-area-inset-right,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px)';
+    this.container.append(probe); this.layoutProbe = probe;
+    if (typeof ResizeObserver !== 'undefined') this.layoutObserver = new ResizeObserver(dirty);
+    const listen = (target: EventTarget, type: string, listener: EventListener, capture = false) => {
+      target.addEventListener(type, listener, capture); this.layoutCleanup.push(() => target.removeEventListener(type, listener, capture));
+    };
+    const owned = (target: EventTarget | null) => target instanceof Node && (this.layoutLayer.contains(target) || this.container.querySelector('.cyber-toast')?.contains(target));
+    for (const type of ['scroll', 'toggle', 'focusin', 'focusout', 'pointerdown', 'pointerup', 'pointercancel', 'pointerover', 'pointerout', 'keydown', 'keyup']) {
+      listen(this.container, type, e => { if (owned(e.target)) dirty(); }, true);
+    }
+    for (const type of ['transitionrun', 'transitionend', 'transitioncancel', 'animationstart', 'animationend', 'animationcancel']) {
+      listen(this.container, type, e => {
+        if (!current() || !owned(e.target)) return;
+        const id = e instanceof TransitionEvent ? e.propertyName : (e as AnimationEvent).animationName;
+        const active = this.layoutMotion.get(e.target!) ?? new Set<string>();
+        if (type === 'transitionrun' || type === 'animationstart') active.add(id); else active.delete(id);
+        if (active.size) this.layoutMotion.set(e.target!, active); else this.layoutMotion.delete(e.target!);
+        dirty();
+      }, true);
+    }
+    if (document.fonts) {
+      void document.fonts.ready.then(dirty);
+      listen(document.fonts, 'loadingdone', dirty); listen(document.fonts, 'loadingerror', dirty);
+    }
+    this.refreshLayoutSurfaces();
+  }
+
+  private refreshLayoutSurfaces(): void {
+    if (this.layoutDisposed) return;
+    const next = new Map<string, { element: HTMLElement; kind: Surface['kind']; edge: Surface['edge'] }>();
+    const add = (id: string, element: HTMLElement | null, kind: Surface['kind'], edge: Surface['edge'] = 'none') => { if (element) next.set(id, { element, kind, edge }); };
+    add('score', this.hudScoreEl.closest<HTMLElement>('.hud-badge'), 'readout', 'top');
+    add('coins', this.hudCoinsEl.closest<HTMLElement>('.hud-badge'), 'readout', 'top');
+    add('speed', this.hudSpeedTextEl.closest<HTMLElement>('.speedometer-wrap'), 'readout', 'top');
+    add('audio', this.hudEl.querySelector('#audio-toggle-btn'), 'control', 'top');
+    add('pause', this.hudEl.querySelector('#hud-pause-btn'), 'control', 'top');
+    for (const element of this.hudBuffsEl.children) add('powerup-' + (element as HTMLElement).dataset.powerup, element as HTMLElement, 'powerup');
+    add('toast', this.container.querySelector('.cyber-toast'), 'toast');
+    add('hud-feedback', this.hudEl.querySelector('.hud-feedback'), 'feedback');
+    for (const [id, page] of [['menu-card', this.menuEl], ['paused-card', this.pausedEl], ['shop-card', this.shopEl], ['gameover-card', this.gameOverEl]] as const) add(id, page.querySelector('.ui-card'), 'card');
+    const changed = next.size !== this.layoutSurfaces.size || [...next].some(([id, s]) => this.layoutSurfaces.get(id)?.element !== s.element);
+    if (!changed) return;
+    this.layoutSurfaces = next; this.layoutObserver?.disconnect();
+    const nodes = new Set([this.layoutLayer, this.hudBuffsEl, ...[...next.values()].map(s => s.element)]);
+    nodes.forEach(el => this.layoutObserver?.observe(el)); this.invalidateLayout();
+  }
+
+  private emptyLayoutMeasurement(reason: string): Measurement {
+    return { deviceInsets: { top: 0, right: 0, bottom: 0, left: 0 }, surfaces: [], reason };
+  }
+
+  private measureLayoutSurfaces(basis: MeasureBasis): Measurement {
+    const styles = new Map<Element, CSSStyleDeclaration>(), rects = new Map<Element, Rect>();
+    const style = (el: Element) => { let value = styles.get(el); if (!value) { value = getComputedStyle(el); styles.set(el, value); } return value; };
+    const rect = (el: Element): Rect => { let value = rects.get(el); if (!value) { const r = el.getBoundingClientRect(); value = { x: r.x, y: r.y, width: r.width, height: r.height }; rects.set(el, value); } return value; };
+    const probe = this.layoutProbe && style(this.layoutProbe);
+    if (!probe) return this.emptyLayoutMeasurement('NOT_MOUNTED');
+    const deviceInsets = { top: parseFloat(probe.paddingTop), right: parseFloat(probe.paddingRight), bottom: parseFloat(probe.paddingBottom), left: parseFloat(probe.paddingLeft) };
+    const surfaces: Surface[] = [];
+    for (const [id, entry] of this.layoutSurfaces) {
+      const el = entry.element;
+      if (!el.isConnected) return this.emptyLayoutMeasurement('NOT_MOUNTED');
+      const ancestors: HTMLElement[] = [];
+      let hidden = false;
+      for (let node: HTMLElement | null = el; node; node = node.parentElement) {
+        const s = style(node);
+        if (s.display === 'none' || s.visibility === 'hidden' || s.visibility === 'collapse' || Number(s.opacity) === 0) { hidden = true; break; }
+        ancestors.push(node);
+      }
+      if (hidden) continue;
+      for (const node of ancestors) {
+        const s = style(node);
+        if (!axisAlignedTransform(s.transform) || (s.rotate !== 'none' && s.rotate !== '0deg') || (s.clipPath && s.clipPath !== 'none') || (s.maskImage && s.maskImage !== 'none')) return this.emptyLayoutMeasurement('UNSUPPORTED_TRANSFORM');
+      }
+      let r: Rect | null = rect(el);
+      if (![r.x, r.y, r.width, r.height].every(Number.isFinite) || r.width <= 0 || r.height <= 0) return this.emptyLayoutMeasurement('INVALID_RECT');
+      const ownStyle = style(el);
+      if (el.matches(':focus-visible') && ownStyle.outlineStyle !== 'none') {
+        const outset = Math.max(0, parseFloat(ownStyle.outlineWidth) + parseFloat(ownStyle.outlineOffset));
+        r = { x: r.x - outset, y: r.y - outset, width: r.width + 2 * outset, height: r.height + 2 * outset };
+      }
+      for (const parent of ancestors.slice(1)) {
+        const s = style(parent), clipX = /^(auto|scroll|hidden|clip)$/.test(s.overflowX), clipY = /^(auto|scroll|hidden|clip)$/.test(s.overflowY);
+        if (!clipX && !clipY) continue;
+        const box = rect(parent), sx = parent.offsetWidth ? box.width / parent.offsetWidth : 1, sy = parent.offsetHeight ? box.height / parent.offsetHeight : 1;
+        r = clipRect(r, { x: box.x + parent.clientLeft * sx, y: box.y + parent.clientTop * sy, width: parent.clientWidth * sx, height: parent.clientHeight * sy }, clipX, clipY);
+        if (!r) break;
+      }
+      if (r) r = clipRect(r, basis.viewport.visual);
+      if (r) r = clipRect(r, basis.canvasRect);
+      if (r) surfaces.push({ id, kind: entry.kind, edge: entry.edge, clientRect: r });
+    }
+    return { surfaces, deviceInsets };
   }
 }

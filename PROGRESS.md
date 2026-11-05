@@ -2,6 +2,13 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-05] 两桥实现独立主审：19 producer接收，18两处边界待修
+
+- [18独立预审及同树修复提示词](docs/reviews/2026-11-05-pao18-fact-bridge-local-review.md)：原字体树HEAD/远端仍c3a7eb6，8个生产修改及新测试/证据未提交，暂存区空；任务方build/313单测/新7项E2E通过，完整71/72的本地main.ts?raw ECONNRESET保留，原因未定。
+- 主Agent通过实际Simulation/CharacterView的只读SSR/NullEngine对照，复现换道覆盖跳跃时间锚点（playhead约0.0333秒变0）、restart后新局floorTick沿用旧tick。两项均在原批准范围内；先RED及最小修复，代码变化后一次完整门禁，若网络再失败保留现场交主审，不循环换绿。车尾/预览不恢复，不代提交未过批次。
+- [19 producer主审](docs/reviews/2026-11-05-pao19-hud-producer-review.md)：b474845a972005b83f1278884b7dbe02c8af9615已推送、干净。独立build/270单测/类型检查通过，浏览器58＋12累计覆盖全部70项通过，明确不是单次完整成绩；30项源码保护一致，3张量测图及额外N图已看。接受producer阶段，尚未接生产帧或相机。
+- 两原树继续复用，不新建/启动Agent/合并；18修复门禁及固定SHA独立验收后，再安排唯一集成者串行接19。17/字体不重验，父状态/依赖及新runner边界保持。
+
 ## [2026-11-04] 用户批准两桥限定实施，两树复用及执行提示词就绪
 
 - 用户在联合主审请求具体范围批准后回复“继续 给出提示词”，据此批准18事件桥A及19几何桥A的当前阶段。[实施计划](docs/plans/2026-11-04-pao18-pao19-approved-bridge-execution.md)已同步四份共享契约，再下发手动提示词；主Agent不写游戏、不自动启动Agent。

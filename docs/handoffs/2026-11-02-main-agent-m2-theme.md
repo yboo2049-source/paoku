@@ -4,9 +4,9 @@
 
 ## 1. 当前要做什么
 
-两桥限定设计已批准。PAO-18原字体树HEAD/远端仍c3a7eb64a7aa917e4a3cb7a88c1fb01a39dd4e85，本地8个生产修改及新增测试/计划/证据未提交，暂存区空。两项修复已由主Agent独立复核关闭：换道与JUMP/ROLL锚点分离、restart后floorTick归零；独立build/320单测/新测试类型检查通过。任务方修复后完整71/72，唯一失败变为旧HUD第三次goto等待load耗尽整项60秒，原PAO-11本次通过但历史ECONNRESET根因未知。[最新复核、超时分析及有界诊断提示词](../reviews/2026-11-06-pao18-fact-fixes-navigation-review.md)为当前入口；上轮修复提示词仅历史，不重复派发。
+两桥限定设计已批准。PAO-18原字体树HEAD/远端仍c3a7eb64a7aa917e4a3cb7a88c1fb01a39dd4e85，8个生产修改及新测试/计划/证据未提交，暂存区空。两项代码缺陷已经主Agent独立复核关闭，build/320单测/类型检查通过；最新任务方完整仍71/72，旧HUD第三次load超时。原ECONNRESET与本次超时根因均未建立，不把阶段结束当整批交付。
 
-事实桥整批尚未验收/提交。下一批仅同树只读诊断导航耗时：先查已有trace/服务日志，有假设才最多两次短实验，不跑完整suite、不改旧测试/超时/生产配置或游戏。已观察测试产物触发Vite reload及DEBUG tee日志，但本次超时因果尚未证明。保留现场，不重跑到绿或代提交。
+原任务有界诊断已停止：A筛选错误无行为、B关DEBUG单用例通过，缺少有效对照。主Agent已准备项目根外QA输出及两套本机配置，独立在DEBUG开启时旧HUD1/1通过，30项保护一致且无产物reload；不能据此关闭原长suite失败。[最新诊断主审、已准备配置及一次完整72项提示词](../reviews/2026-11-06-pao18-navigation-diagnosis-review.md)为当前入口。下一批直接用full现成配置执行一次完整门禁，不再短诊断或追修两项已关闭问题。完整未过仍不提交，不加超时/重试、不循环换绿。
 
 PAO-19 producer已提交推送b474845a972005b83f1278884b7dbe02c8af9615，原树干净且远端一致。只新增UI量测/中立值模块和专属测试，main/render未接线；producer阶段独立验收通过，过程见[19报告](../reviews/2026-11-05-pao19-hud-producer-review.md)。主Agent独立build/270单测/类型检查通过；浏览器初段58项和末12项均通过，累计覆盖全部70项，分开记录，不能称单次完整70项成绩。
 
@@ -26,14 +26,14 @@ PAO-17已审主题不重派重验。原15完整45/46、18完整59/60首失败与
 
 | 任务 | 实际目录 | 分支 | 本次核验HEAD | 状态 |
 | --- | --- | --- | --- | --- |
-| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点5d496b0；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
+| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点be8be38；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
 | M1终点 | D:/worker/paoku-sessions/pao-14 | codex/pao-14-application | 19aa314 | 已审 |
 | PAO-15 | D:/worker/paoku-sessions/pao-15 | codex/pao-15-character-assets | 614179d | 干净，远端同SHA；技术样本链路通过，完整E2E45/46，最终验收暂缓 |
 | PAO-16 | D:/worker/paoku-sessions/pao-16 | codex/pao-16-world-assets | c7b09e6 | 不追加同类采样 |
 | PAO-17 | D:/worker/paoku-sessions/pao-17 | codex/pao-17-render | 82d2d47 | 已审；原.pao17-local证据保留 |
 | PAO-18 | D:/worker/paoku-sessions/pao-18 | codex/pao-18-motion-camera | 5bd31cc | 干净，远端同SHA；首批工程检查通过，完整E2E59/60，最终验收暂缓 |
 | 车尾诊断/修复 | D:/worker/paoku-sessions/pao-15-roof-diagnosis | codex/pao15-roof-diagnosis | 8af24af | 用户延期，候选/证据未提交、暂存区空，保留脏树；不继续诊断/复验 |
-| 字体修复/18事实桥实现 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | c3a7eb6 | 字体已审；事实桥本地实现未提交，8生产修改及新测试/证据保留，两缺陷复核关闭，完整71/72导航超时待诊断 |
+| 字体修复/18事实桥实现 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | c3a7eb6 | 字体已审；事实桥本地实现未提交，8生产修改及新测试/证据保留，两缺陷关闭；诊断停止根因未定，外部输出HUD1项通过，待固定配置完整72项 |
 | PAO-19 | D:/worker/paoku-sessions/pao-19 | codex/pao-19-ui | b474845 | 原UI ed39cb9已审Done；安全区producer已独立验收，干净/远端一致；未接生产帧/相机 |
 | 原资产只读树 | D:/worker/paoku-sessions/glb-review | detached | 7a2fb29 | 不覆盖原GLB |
 
@@ -118,7 +118,7 @@ Project 492a7fa2-dba9-4b7b-9d22-154822bbe5a2，Workspace Paoku-v1，Team PAO，�
 | 15 | 614179d四技术clip链路检查通过；完整E2E45/46，最终验收暂缓，品质待修整 | Backlog |
 | 16 | 3de6e54和c7b09e6技术探针通过，四件生产资格false | Backlog |
 | 17 | fcddba1设计、536f54b结构/I-01/I-02、82d2d47明亮主题均已审 | Backlog |
-| 18 | 原工程59/60及字体已审保留；事实桥HEAD c3a7eb6、本地实现未提交，两缺陷复核关闭，最新完整71/72导航超时待诊断，父验收未完成 | Backlog |
+| 18 | 原工程59/60及字体已审保留；事实桥HEAD c3a7eb6、本地实现未提交，两缺陷关闭；完整71/72保留，外部输出HUD1项通过，待完整72项，父验收未完成 | Backlog |
 | 19 | ed39cb9原UI已审；新增producer b474845阶段独立验收通过，未接生产帧/相机 | Done |
 
 按需查报告，不重复跑已审阶段：

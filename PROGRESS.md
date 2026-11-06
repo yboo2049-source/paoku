@@ -2,6 +2,13 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-06] PAO-18导航有界诊断收口，根外输出配置准备并独立验证
+
+- [诊断主审及一次完整门禁提示词](docs/reviews/2026-11-06-pao18-navigation-diagnosis-review.md)：原树HEAD/远端仍c3a7eb6、WIP保留、暂存空；A筛选无用例、B关DEBUG通过不构成有效对照，接收停止结果，不认定原超时根因。两项代码缺陷已关闭，不重派修复；未验收整批18。
+- 主Agent准备本树忽略目录main-watch-output-20261106及根外D:/worker/paoku-diagnostics/pao18-navigation-20261106/main-review输出。17镜像逆变换与原测试一致，load/60秒/DEBUG/错误收集/1worker/retries0保持，仅纠正QA输出位置。先--list确认smoke1项、full72项/17文件并另存列举JSON，未启动其他任务或Agent。
+- 独立smoke仅执行一次，旧HUD约8.7秒通过，整会话18.197秒、0 skip/retry/flaky；3次goto约3.49/1.39/1.38秒，DEBUG开启、无产物reload，30相关文件保护一致。5198收尾无监听。未将短验证作为原71/72关闭或超时根因证明，未再次跑整套/改游戏。
+- 下一批允许现成full配置一次完整72门禁；失败保存现场停止，全部通过后再build/unit/types/真实图及正常提交推送，交固定SHA独立验收。主Agent未自动执行完整suite、代提交18、合并或接19，车尾/预览延期及父依赖保持。
+
 ## [2026-11-06] PAO-18两项修复独立复核关闭，完整门禁仍受旧HUD导航超时阻挡
 
 - [修复复核、trace分析及同树有界诊断提示词](docs/reviews/2026-11-06-pao18-fact-fixes-navigation-review.md)：复用原字体树，HEAD/指定远端仍c3a7eb6，暂存区空、WIP保留；8个生产文件SHA匹配本次disk/HTTP记录。主Agent未写游戏、代提交或启动其他Agent。

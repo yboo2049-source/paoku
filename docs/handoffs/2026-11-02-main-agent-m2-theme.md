@@ -1,10 +1,12 @@
 # paoku主Agent交接：当前状态、工作树准备与下一批调度
 
-最后核验：2026-11-05（Asia/Shanghai），文件名沿用原交接入口。新会话先读D:/worker/paoku/AGENTS.md和本文件，再按需读当前任务的计划/报告。下列当前状态统一生效；旧状态仅查历史报告，不在本文件保留互相冲突的快照。
+最后核验：2026-11-06（Asia/Shanghai），文件名沿用原交接入口。新会话先读D:/worker/paoku/AGENTS.md和本文件，再按需读当前任务的计划/报告。下列当前状态统一生效；旧状态仅查历史报告，不在本文件保留互相冲突的快照。
 
 ## 1. 当前要做什么
 
-两桥限定设计已批准，任务方已交回实现。PAO-18原字体树HEAD/远端仍c3a7eb64a7aa917e4a3cb7a88c1fb01a39dd4e85，本地8个生产修改及新增测试/计划/证据未提交，暂存区空。任务方build/313单测/新7项E2E通过，完整71/72唯一失败是旧PAO-11请求本地main.ts?raw的ECONNRESET，原因未定。主Agent独立复现换道覆盖跳跃时间锚点、restart后floorTick保留旧值两项缺陷，见[独立预审及同树修复提示词](../reviews/2026-11-05-pao18-fact-bridge-local-review.md)。保留脏树，不代提交；原批准范围内先RED修复，无需再批同一设计。
+两桥限定设计已批准。PAO-18原字体树HEAD/远端仍c3a7eb64a7aa917e4a3cb7a88c1fb01a39dd4e85，本地8个生产修改及新增测试/计划/证据未提交，暂存区空。两项修复已由主Agent独立复核关闭：换道与JUMP/ROLL锚点分离、restart后floorTick归零；独立build/320单测/新测试类型检查通过。任务方修复后完整71/72，唯一失败变为旧HUD第三次goto等待load耗尽整项60秒，原PAO-11本次通过但历史ECONNRESET根因未知。[最新复核、超时分析及有界诊断提示词](../reviews/2026-11-06-pao18-fact-fixes-navigation-review.md)为当前入口；上轮修复提示词仅历史，不重复派发。
+
+事实桥整批尚未验收/提交。下一批仅同树只读诊断导航耗时：先查已有trace/服务日志，有假设才最多两次短实验，不跑完整suite、不改旧测试/超时/生产配置或游戏。已观察测试产物触发Vite reload及DEBUG tee日志，但本次超时因果尚未证明。保留现场，不重跑到绿或代提交。
 
 PAO-19 producer已提交推送b474845a972005b83f1278884b7dbe02c8af9615，原树干净且远端一致。只新增UI量测/中立值模块和专属测试，main/render未接线；producer阶段独立验收通过，过程见[19报告](../reviews/2026-11-05-pao19-hud-producer-review.md)。主Agent独立build/270单测/类型检查通过；浏览器初段58项和末12项均通过，累计覆盖全部70项，分开记录，不能称单次完整70项成绩。
 
@@ -14,24 +16,24 @@ PAO-19 producer已提交推送b474845a972005b83f1278884b7dbe02c8af9615，原树�
 
 车尾候选保留在原诊断树：HEAD/远端8af24af未变，暂存区空；2个跟踪修改、43个未跟踪文件包含本地修复/测试/证据，未验收、未提交、未推送。不要reset/clean/stash、删除/合并/移植或代提交。过去tsc/72目标单测和任务方49/50结果保留；原浏览器未再次失败不否认固定步曾复现，延期也不代表原失败关闭。
 
-字体修复826b10fd8c6200fbaec02a76f4ec9d5482d5bb12已推送且独立验收通过，见[字体主审](../reviews/2026-11-04-pao18-local-font-review.md)。主Agentbuild/293单测/显式tsc/完整65项E2E及生产字体离线1项通过，正常字体可读，横屏和200%长文本裁切保留。原字体树干净，原PAO-18仍5bd31cc尚未合入字体修复；不再派发同一字体修复，不自动合并或标父Done。用户在原任务聊天批准最小PWA includeAssets和镜像导航端口的回执已审；原聊天本身未读取。
+字体修复826b10fd8c6200fbaec02a76f4ec9d5482d5bb12已推送且独立验收通过，见[字体主审](../reviews/2026-11-04-pao18-local-font-review.md)。主Agentbuild/293单测/显式tsc/完整65项E2E及生产字体离线1项通过，正常字体可读，横屏和200%长文本裁切保留。字体交付时树干净，现已接续事实桥WIP；原PAO-18仍5bd31cc尚未合入字体修复；不再派发同一字体修复，不自动合并或标父Done。用户在原任务聊天批准最小PWA includeAssets和镜像导航端口的回执已审；原聊天本身未读取。
 
 PAO-17已审主题不重派重验。原15完整45/46、18完整59/60首失败与父依赖保留；I-03限定事实桥实现已批准，仍待修复验收；新runner/19 UI集成未开放。主Agent只维护文档、核对Git并保留现场，不自动启动任务或写游戏。
 
 ## 2. 工作树当前状态：唯一事实表
 
-2026-11-05重新核对当前18字体树和19树，其他任务状态保留最近记录。后续HEAD若推进先审新增，不reset到旧值。
+2026-11-06重新核对18字体树；19保持2026-11-05独立验收记录，其他任务保留最近记录。后续HEAD若推进先审新增，不reset到旧值。
 
 | 任务 | 实际目录 | 分支 | 本次核验HEAD | 状态 |
 | --- | --- | --- | --- | --- |
-| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点17790f2；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
+| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点5d496b0；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
 | M1终点 | D:/worker/paoku-sessions/pao-14 | codex/pao-14-application | 19aa314 | 已审 |
 | PAO-15 | D:/worker/paoku-sessions/pao-15 | codex/pao-15-character-assets | 614179d | 干净，远端同SHA；技术样本链路通过，完整E2E45/46，最终验收暂缓 |
 | PAO-16 | D:/worker/paoku-sessions/pao-16 | codex/pao-16-world-assets | c7b09e6 | 不追加同类采样 |
 | PAO-17 | D:/worker/paoku-sessions/pao-17 | codex/pao-17-render | 82d2d47 | 已审；原.pao17-local证据保留 |
 | PAO-18 | D:/worker/paoku-sessions/pao-18 | codex/pao-18-motion-camera | 5bd31cc | 干净，远端同SHA；首批工程检查通过，完整E2E59/60，最终验收暂缓 |
 | 车尾诊断/修复 | D:/worker/paoku-sessions/pao-15-roof-diagnosis | codex/pao15-roof-diagnosis | 8af24af | 用户延期，候选/证据未提交、暂存区空，保留脏树；不继续诊断/复验 |
-| 字体修复/18事实桥实现 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | c3a7eb6 | 字体已审；事实桥本地实现未提交，8生产修改及新测试/证据保留，两缺陷待修 |
+| 字体修复/18事实桥实现 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | c3a7eb6 | 字体已审；事实桥本地实现未提交，8生产修改及新测试/证据保留，两缺陷复核关闭，完整71/72导航超时待诊断 |
 | PAO-19 | D:/worker/paoku-sessions/pao-19 | codex/pao-19-ui | b474845 | 原UI ed39cb9已审Done；安全区producer已独立验收，干净/远端一致；未接生产帧/相机 |
 | 原资产只读树 | D:/worker/paoku-sessions/glb-review | detached | 7a2fb29 | 不覆盖原GLB |
 
@@ -39,7 +41,7 @@ PAO-17已审主题不重派重验。原15完整45/46、18完整59/60首失败与
 
 15准备基线64c4f3120224f42995bc4b0fae544feae139d380、18准备基线82d2d47b333de2cc0da778591f99df8fe98084ed均为各自HEAD祖先，exit0。本轮直接复用，不建第二份树、不改写或代提交任务产物。linked worktree的.git是文件，不能用目录存在与否替代Git核验。
 
-原15/18工程批次曾独立运行build/unit/完整浏览器；本轮事实桥18为定向只读复现，19另做独立build/unit/分段浏览器，实际失败和边界见第1节/主审报告，不能混用成绩。临时服务已退出，无常驻验证会话。聊天是否选中对应目录仍由用户手动确认。 两诊断文本提交已推送，基线为8af24af083b369f3f8dc8bb883a861975b9972af与e6a52b1a88db911581c6b88b119d54c356ff9774；其源基线祖先检查通过。车尾当前HEAD未变，生产候选/测试/证据未提交，status不干净且暂存区为空；用户已暂停该线，不沿用诊断交付时clean快照或继续复验。主Agent独立重放车尾三对照，不重复完整回归或自然网络采集；定向成功不能关闭原完整失败。诊断端口5195/5198，原主审目录保留。7/8/9规划树仍为pao-7@c66b59e、pao-8@be6c7d5、pao-9@59fc682。
+原15/18工程批次曾独立运行build/unit/完整浏览器；本轮事实桥18为独立build/320单测/类型检查和定向只读复现，19前轮另做独立build/unit/分段浏览器，实际失败和边界见第1节/主审报告，不能混用成绩。临时服务已退出，无常驻验证会话。聊天是否选中对应目录仍由用户手动确认。 两诊断文本提交已推送，基线为8af24af083b369f3f8dc8bb883a861975b9972af与e6a52b1a88db911581c6b88b119d54c356ff9774；其源基线祖先检查通过。车尾当前HEAD未变，生产候选/测试/证据未提交，status不干净且暂存区为空；用户已暂停该线，不沿用诊断交付时clean快照或继续复验。主Agent独立重放车尾三对照，不重复完整回归或自然网络采集；定向成功不能关闭原完整失败。诊断端口5195/5198，原主审目录保留。7/8/9规划树仍为pao-7@c66b59e、pao-8@be6c7d5、pao-9@59fc682。
 
 ## 3. 主Agent下发提示词前必须完成的准备
 
@@ -116,7 +118,7 @@ Project 492a7fa2-dba9-4b7b-9d22-154822bbe5a2，Workspace Paoku-v1，Team PAO，�
 | 15 | 614179d四技术clip链路检查通过；完整E2E45/46，最终验收暂缓，品质待修整 | Backlog |
 | 16 | 3de6e54和c7b09e6技术探针通过，四件生产资格false | Backlog |
 | 17 | fcddba1设计、536f54b结构/I-01/I-02、82d2d47明亮主题均已审 | Backlog |
-| 18 | 原工程59/60及字体已审保留；事实桥HEAD c3a7eb6、本地实现未提交，71/72且两处独立复现缺陷待修，父验收未完成 | Backlog |
+| 18 | 原工程59/60及字体已审保留；事实桥HEAD c3a7eb6、本地实现未提交，两缺陷复核关闭，最新完整71/72导航超时待诊断，父验收未完成 | Backlog |
 | 19 | ed39cb9原UI已审；新增producer b474845阶段独立验收通过，未接生产帧/相机 | Done |
 
 按需查报告，不重复跑已审阶段：

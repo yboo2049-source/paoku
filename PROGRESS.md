@@ -2,6 +2,13 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-06] PAO-18两项修复独立复核关闭，完整门禁仍受旧HUD导航超时阻挡
+
+- [修复复核、trace分析及同树有界诊断提示词](docs/reviews/2026-11-06-pao18-fact-fixes-navigation-review.md)：复用原字体树，HEAD/指定远端仍c3a7eb6，暂存区空、WIP保留；8个生产文件SHA匹配本次disk/HTTP记录。主Agent未写游戏、代提交或启动其他Agent。
+- 独立build、31文件320单测、4个新测试显式tsc通过；原SSR/NullEngine对照确认换道不再重置跳跃相位（两组均约0.0333秒），新局floorTick=0。两项审查缺陷关闭，原记录及本次3张新图已审，不把legacy外观当正式runner验收。
+- 任务方修复后仅一次完整E2E为71/72，新增7项全过；原PAO-11此次通过，历史ECONNRESET根因不明。唯一失败为旧HUD第3次goto等待load耗尽整项60秒，前两次约15.4/23.3秒，第三次开始已用约40秒，主文档均200但TTFB约4/12.4/12.8秒。主Agent直接解析已有zip，未重跑浏览器或把此结果算全绿。
+- 测试产物HTML进入Vite watch并触发reload、DEBUG日志tee均有证据，与本次超时因果待证。下一批只准现有证据优先、最多两次短单变量诊断，不完整重跑/加timeout或改旧测试，不再追修已关闭两项。整批仍未提交/推送；19 producer已审，串行接线未开放，车尾/预览延期保持。
+
 ## [2026-11-05] 两桥实现独立主审：19 producer接收，18两处边界待修
 
 - [18独立预审及同树修复提示词](docs/reviews/2026-11-05-pao18-fact-bridge-local-review.md)：原字体树HEAD/远端仍c3a7eb6，8个生产修改及新测试/证据未提交，暂存区空；任务方build/313单测/新7项E2E通过，完整71/72的本地main.ts?raw ECONNRESET保留，原因未定。

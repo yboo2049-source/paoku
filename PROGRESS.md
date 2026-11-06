@@ -2,6 +2,13 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-06] PAO-18本地检查点已核实，下一项18/19限定集成准备
+
+- 用户告知18已提交并记录失败。独立核对本地代码3aa62fb、证据c5a9edd，工作树干净/暂存空；指定远端仍c3a7eb6，尚未推送。30项当前内容与固定验证版本全匹配，正常代码hooks build/320单测通过；未再跑游戏或代推送。
+- [检查点主审](docs/reviews/2026-11-06-pao18-checkpoint-review.md)接收为固定只读设计来源，不等于全门禁或父18 Done。完整71/72旧车尾场景失败及历史加载错误原证据已入本地提交，未知根因/延期保持，不继续诊断、移植候选或重复门禁。
+- [限定集成准备/手动提示词](docs/plans/2026-11-06-pao18-pao19-integration-preparation.md)：已核验复用干净18树c5a9edd，19只读固定b474845，后者干净/远端一致；共同祖先19aa314、源基线祖先均正确。只准新增三份准备文档，明确main/style/index迁入和同帧写读render，不自动写码/合并/启动Agent。
+- 静态发现19 index仍有Google字体链接、main为旧render→UI顺序，直接覆盖会撤回18字体/事实桥能力。下一步只补精确集成边界，不重做19 producer、15/16采样或17主题；实施窗口和18检查点同步待具体处理，父依赖保持。
+
 ## [2026-11-06] PAO-18固定门禁71/72收口，唯一车尾旧场景失败按延期记录
 
 - [独立结果审查与阶段例外裁定稿](docs/reviews/2026-11-06-pao18-final-gate-known-roof-failure.md)：解析实际result.json，完整72项/17文件、71通过/1失败、668.002秒、exit1、0 skip/retry/flaky。旧HUD及新增7项事实桥全部通过；DEBUG开启、无产物reload，不声称历史加载超时根因已修。

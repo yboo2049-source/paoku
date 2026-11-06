@@ -1,5 +1,11 @@
 # 测试用例与传感器计划 (Test Plan & Sensors)
 
+## 2026-11-06 已批准集成RED、旧布局兼容与单项阶段例外
+
+按[实施计划](plans/2026-11-06-pao18-pao19-approved-integration-execution.md)覆盖I01–I12剩余接线，旧producer原断言保留。旧controller-camera两段中的顶栏≤140/底部112/240px三组布局断言原样迁到固定真实旧DOM/CSS的F兼容夹具；原N输入/lane/实际骨骼和组暂停/无横向溢出/恢复重开/错误护栏仍跑生产新UI，不把整个N改夹具、删断言或skip。新UI普通桌面/390必须实际最终三实体投影成功，刻意无解/模态/不可用分报。19新迁入测试仅批准的host缓存读取、补齐替身和根外输出适配，源测试断言/故障注入/预算保持。
+
+源及新测试显式tsc、build/unit、raw/HTTP/hash/保护和真实图/录屏均须通过；5198独占strictPort/不复用、D3D11、DEBUG、原load/60秒/retries0，QA全部根外新目录。代码完成后只执行一次完整旧+迁入+新增suite，用例数实列举不沿用72。用户已明确批准：仅唯一仍是未改PAO-6 ramp-roof-jump-land/roof-exit-land同一PLAYING→GAMEOVER且其余全部检查通过，可记录真实exit1和失败后正常hooks阶段提交/推送待主审，不伪造全绿或expected failure。任何新/不同失败不豁免，保留首现场停止，不重跑换绿/扩修。此任务级例外覆盖历史“任何继承失败均不得提交”的对应限制，不改变其他任务门禁或车尾延期。
+
 ## 2026-11-04 两桥批准后的RED与阶段验收
 
 [执行计划](plans/2026-11-04-pao18-pao19-approved-bridge-execution.md)限定18的FB01–17真实producer/提交/去重/异常/旧副作用及实际动画消费；修正后的JUMP→ROLL→JUMP为2成功，ROLL→JUMP→ROLL为3成功。19只做H矩阵的producer/纯几何部分，新增专属E2E，不改旧断言；相机投影/生产接线留后续，不以纸面值或测量夹具声称生产避让。每步tsc/unit、最终各树build/test/完整旧+新增E2E、新测试类型检查及真实截图/录屏/保护检查；18=5198、19=5189独占不复用、retries0、D3D11，浏览器完整回归尽量错峰。保留首失败、N/F和阶段限制；继承车尾/预览失败不重试换绿、不扩修、未绿不提交生产批次。

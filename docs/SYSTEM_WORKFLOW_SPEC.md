@@ -1,5 +1,11 @@
 # 核心系统模块与纯函数规范 (System Workflow Spec)
 
+## 2026-11-06 已批准同帧UI写读与独立事实交付
+
+[实施计划](plans/2026-11-06-pao18-pao19-approved-integration-execution.md)固定主机顺序：一次捕获presentation/AppSnapshot及事实身份→建立帧作用域只读view与inDelivery屏障→UI update一次→基准/producer批量读→normalize/实际buffer适配→render(view,identity,hud)→原receipt确认→finally退出作用域。去除尾部第二次UI update/另取snapshot混帧；UI/量测异常只令布局不可用，不能阻断事实/实体、伪记RENDER_EXCEPTION或回退旧profile声称新UI safe。既有UI命令pending/result、commandId/完整summary和旧run回执守卫只在main兼容，不改业务权威。
+
+未就绪保留本局已呈现pose但继续原事实消费，最终投影按本帧真实三实体bounds计算；无实体/无READY不发布safe。PAUSED/GAMEOVER保留实际组和pose/FOV冻结，旋转可更新aspect/诊断；MENU/SHOP沿已有表现，仅诊断。成功新局撤销布局租约，暂停恢复只失效；dispose退订新增host资源并沿原释放链。检查点已同步，后续仍由原聊天手动实施、单一main/render写入者，不自动启动Agent/合并或恢复车尾。
+
 ## 2026-11-04 两桥获批阶段流程
 
 [执行计划](plans/2026-11-04-pao18-pao19-approved-bridge-execution.md)规定18真实成功producer→步内draft→成功提交snapshot/stamp与完整批→main单次原音频/旧通知及独立render游标。任务仍在成功输入点计数，先于原afterStep奖励，复投不能发奖励；失败步不发布/播音，以最后提交snapshot保护故障恢复。暂停保留pending且epoch不变，世界编辑/重开清旧代际，GAP显式诊断。19先独立量测/dirty/只读几何及租约，应用帧接线暂不实施；将来同次snapshot下UI写→批量读→render，不因布局不可用阻断事件消费。两方不并写main/babylon，19接线需后续固定基线。车尾/预览延期不变，本节只覆盖对应旧仅设计限制。

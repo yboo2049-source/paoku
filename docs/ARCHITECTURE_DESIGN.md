@@ -1,5 +1,11 @@
 # 系统架构与模块隔离设计 (Architecture Spec)
 
+## 2026-11-06 已批准唯一主机接线与纯值边界
+
+按[已批准实施计划](plans/2026-11-06-pao18-pao19-approved-integration-execution.md)，唯一执行方在原18树串行修改main/babylon，选择性组合style/index，原字节迁入19固定四份UI/纯几何TS，并新增presentation/hudCameraInput.ts。main捕获同次presentation/AppSnapshot、管理布局租约/采样和UI命令回执；renderer通过getPresentationSize和render第三个HudCameraFrame纯值参数接收布局，保留前两参、MotionReceipt及音频/render独立游标。布局frameId/consumerGeneration与producerId/epoch/revision不混用事实streamEpoch/eventId；CSS→buffer按实际尺寸仅换算一次，dirty/尺寸冲突不可冒称safe。
+
+四份UI TS取b474845固定对象；18事实桥/重入/故障保护和字体/PWA/17场景保留。cameraRig solver、characterView、simulation/input/physics、共享contracts、application/audio、资产及默认配置仍只读。旧HUD测试仅白名单局部归属调整，全部精确路径/提交例外见计划。本节是用户已批准的新接线写权，不是整枝merge/cherry-pick或全库修改授权。
+
 ## 2026-11-04 两桥限定实施写权
 
 [用户已批准范围及执行计划](plans/2026-11-04-pao18-pao19-approved-bridge-execution.md)第2节开放18的contracts/simulation、input与physics观测、main及三个render消费者，采用MotionFact/Stamp/Batch/Cursor/Read/Receipt最小子集，impact未知保持null；不改碰撞/支撑/动作合法性/奖励或audio/application。journal预算256批/1024事件、单tick64 draft，main音频暂存256调用及交付重入屏障/异常局保护纳入限定范围。19第3节仅dom.ts布局producer和新presentation/hudSafeArea.ts纯值模块/新测试；main/render/types/业务仍只读。19布局producerId/epoch/revision不与18事实身份混用。公共接线后续由主Agent统一，当前不merge。明确未就绪/坐标/包络与冻结策略按批准设计保留，不重构solver；本节覆盖旧相应“未授权实施”，不是全库写权。

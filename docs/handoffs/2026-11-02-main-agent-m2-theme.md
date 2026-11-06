@@ -4,15 +4,17 @@
 
 ## 1. 当前要做什么
 
-用户确认18已提交并记录失败，要求下一步。主Agent核实本地代码检查点3aa62fb81634702fb0d253228877a075eff843a0、证据检查点c5a9edd103eaf3677a058b432c67ad9260450e4e已存在，原字体树干净、暂存空；指定远端仍c3a7eb64a7aa917e4a3cb7a88c1fb01a39dd4e85，尚未推送。30项源码/测试/配置与此前已审版本全部一致，正常hooks的build/320单测通过。接收为固定只读准备来源，不将本地检查点视为父18验收或已同步远端。
+18/19集成准备已交本地d303633e2539a26ca595438b51216a02900df92f，目标原字体树干净/暂存空；相对c5a9edd仅三份文档。主Agent独立核对28引用（11本地/17固定Git对象）、6个UI blob及30项代码保护均通过，无运行时修改。远端仍c3a7eb6，3aa62fb/c5a9edd/d303633三笔尚未同步。
 
-[最新检查点主审](../reviews/2026-11-06-pao18-checkpoint-review.md)和[18/19限定集成准备提示词](../plans/2026-11-06-pao18-pao19-integration-preparation.md)为当前入口。直接复用干净18字体树做唯一准备目标，只读19@b474845 Git对象；本批只新增三份设计/契约/准备证据，核对UI迁入、main/style/index差异及同帧UI写→读→render，不写码、不合并、不代推送18历史链或自动启动Agent。19 index带有Google字体外链、main是旧顺序，不能整份覆盖18。具体接线实施待准备方案主审及写权确定。
+[最新集成设计主审与限定实施建议](../reviews/2026-11-06-pao18-pao19-integration-design-review.md)为当前入口：方案方向通过，无需再重做三份文档；等待用户批准新main/babylon串行接线、旧HUD布局断言转明确F兼容夹具的最小例外，以及检查点同步/单项已知车尾失败的阶段发布范围。原N输入/骨骼暂停/重开等断言须仍覆盖生产新UI，不能将整个N用例改夹具或删旧布局断言。普通桌面/390真实投影须成功，复杂无解另报。QA沿5198/根外输出，不修改cameraRig solver或业务/物理。
 
-最新完整仍71/72、exit1、0 skip/retry/flaky，唯一旧车尾roof-exit-land应PLAYING实际GAMEOVER；HUD及新7项通过。代码两缺陷继续已关闭，原失败证据与未知根因保留，不继续修复/诊断/复现/重复门禁。原WIP/门禁提示词已执行到检查点保存，不重复派发。用户只确认检查点事实，父18不标Done、依赖不解除。
+批准前不写实现计划/代码、不推送18历史链或自动启动任务。批准后先同步共享规范，再写独占实施计划和手动提示词，复用原树/重新核对Git，不再设计producer或主题。此前[准备任务书](../plans/2026-11-06-pao18-pao19-integration-preparation.md)已完成，不重复派发。
+
+18代码两项缺陷已关闭，代码检查点3aa62fb/证据c5a9edd固定；原完整仍71/72旧车尾失败，HUD及新7项通过，未知根因与延期保持。任何新失败不在建议例外内；当前尚未批准新集成或带失败发布，不标父18 Done、不解除依赖、不合并或恢复车尾/预览。
 
 PAO-19 producer已提交推送b474845a972005b83f1278884b7dbe02c8af9615，原树干净且远端一致。只新增UI量测/中立值模块和专属测试，main/render未接线；producer阶段独立验收通过，过程见[19报告](../reviews/2026-11-05-pao19-hud-producer-review.md)。主Agent独立build/270单测/类型检查通过；浏览器初段58项和末12项均通过，累计覆盖全部70项，分开记录，不能称单次完整70项成绩。
 
-继续复用两原树，不新建树或自动启动任务。当前可用18本地检查点准备19集成设计；生产接线须先确定同步/阶段风险边界及具体写权，再由唯一集成者串行实施；当前不自动合并、不开放19公共入口写权、不标父18 Done或改变依赖。[已批准分阶段实施计划](../plans/2026-11-04-pao18-pao19-approved-bridge-execution.md)范围继续生效。
+继续复用两原树，不新建树或自动启动任务。当前集成设计已主审，待用户批准具体接线/旧HUD测试归属及阶段发布范围，再由唯一集成者串行实施；当前不自动合并、不开放19公共入口写权、不标父18 Done或改变依赖。[已批准分阶段实施计划](../plans/2026-11-04-pao18-pao19-approved-bridge-execution.md)范围继续生效。
 
 用户已明确要求车尾问题先记录，当前不继续修复。当前入口为[已知问题KI-001/002](../KNOWN_ISSUES.md)及[暂停收口提示词](../plans/2026-11-03-roof-exit-deferred-handoff.md)。车尾修复和连带四动作ready超时调查均延期，不再重复实验/完整复验或沿历史提示词追修。恢复须用户明确要求，不自动派发Agent。
 
@@ -28,14 +30,14 @@ PAO-17已审主题不重派重验。原15完整45/46、18完整59/60首失败与
 
 | 任务 | 实际目录 | 分支 | 本次核验HEAD | 状态 |
 | --- | --- | --- | --- | --- |
-| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点55c5800；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
+| 主规划 | D:/worker/paoku | docs/pao-6-playtest-baseline | 本轮修订起点911b22a；以最终HEAD为准 | 旧运行时代码/56单测，不是实现起点 |
 | M1终点 | D:/worker/paoku-sessions/pao-14 | codex/pao-14-application | 19aa314 | 已审 |
 | PAO-15 | D:/worker/paoku-sessions/pao-15 | codex/pao-15-character-assets | 614179d | 干净，远端同SHA；技术样本链路通过，完整E2E45/46，最终验收暂缓 |
 | PAO-16 | D:/worker/paoku-sessions/pao-16 | codex/pao-16-world-assets | c7b09e6 | 不追加同类采样 |
 | PAO-17 | D:/worker/paoku-sessions/pao-17 | codex/pao-17-render | 82d2d47 | 已审；原.pao17-local证据保留 |
 | PAO-18 | D:/worker/paoku-sessions/pao-18 | codex/pao-18-motion-camera | 5bd31cc | 干净，远端同SHA；首批工程检查通过，完整E2E59/60，最终验收暂缓 |
 | 车尾诊断/修复 | D:/worker/paoku-sessions/pao-15-roof-diagnosis | codex/pao15-roof-diagnosis | 8af24af | 用户延期，候选/证据未提交、暂存区空，保留脏树；不继续诊断/复验 |
-| 字体修复/18事实桥实现 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | c5a9edd | 本地代码3aa62fb/证据c5a9edd已提交、干净；远端仍c3a7eb6；只读集成准备输入，71/72失败保留 |
+| 字体修复/18事实桥实现 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | d303633 | 本地代码/证据/集成设计三笔提交，干净；远端c3a7eb6；设计已主审，待限定实施批准 |
 | PAO-19 | D:/worker/paoku-sessions/pao-19 | codex/pao-19-ui | b474845 | 原UI ed39cb9已审Done；安全区producer已独立验收，干净/远端一致；未接生产帧/相机 |
 | 原资产只读树 | D:/worker/paoku-sessions/glb-review | detached | 7a2fb29 | 不覆盖原GLB |
 
@@ -120,7 +122,7 @@ Project 492a7fa2-dba9-4b7b-9d22-154822bbe5a2，Workspace Paoku-v1，Team PAO，�
 | 15 | 614179d四技术clip链路检查通过；完整E2E45/46，最终验收暂缓，品质待修整 | Backlog |
 | 16 | 3de6e54和c7b09e6技术探针通过，四件生产资格false | Backlog |
 | 17 | fcddba1设计、536f54b结构/I-01/I-02、82d2d47明亮主题均已审 | Backlog |
-| 18 | 原工程59/60及字体已审保留；事实桥HEAD c5a9edd，两缺陷关闭；本地检查点3aa62fb/c5a9edd干净未推送，71/72旧车尾失败保留，父验收未完成 | Backlog |
+| 18 | 原工程59/60及字体已审保留；代码3aa62fb/证据c5a9edd固定，两缺陷关闭；当前设计HEAD d303633干净未推送，71/72旧车尾失败保留，父验收未完成 | Backlog |
 | 19 | ed39cb9原UI已审；新增producer b474845阶段独立验收通过，未接生产帧/相机 | Done |
 
 按需查报告，不重复跑已审阶段：

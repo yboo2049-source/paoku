@@ -54,7 +54,7 @@
 
 1. 在新integration unit中为原main帧顺序及回执建立传感器：一次捕获view/app，update→measure→render、UI异常仍交事实、pending-before-dispatch、原身份/summary保留。原基线应在行为断言失败；不要把缺模块/缺mock方法当有效RED，必要时仅建立最小边界替身。
 2. 运行node node_modules/vitest/vitest.mjs run tests/unit/pao19-hud-camera-integration.test.ts，保存首次RED和失败断言。新浏览器RED只针对尚缺门面/生产接线，不重复producer矩阵。
-3. 按b474845迁入四份生产TS及四份专属测试，逐个核blob；仅调整批准的新迁入测试替身/host缓存读取/根外输出，保留其原断言与故障注入，记录补丁。
+3. 按b474845迁入四份生产TS及四份专属测试，逐个核blob；仅调整批准的新迁入测试替身/host缓存读取/根外输出及不改变URL/控制流程的必要类型适配，保留其原断言与故障注入，记录补丁。
 4. 建legacy fixture：固定c5a9edd的旧真实DOM/CSS来源与必要结构，保留原viewport/五行输入及三组布局数值断言。不伪造rect、不悄换生产CSS，不引Google；精确来源和装配方式入映射证据。fixture只供显式F兼容量测。
 5. 仅移动旧controller-camera两段中的布局断言/证据归属。其N键盘/触摸仍加载生产新UI，lane、实际骨骼/组暂停、无横向溢出、恢复/重开及错误收集保持。不得将整段N重定向夹具、删断言或skip；新UI真实布局另由I02/I03验证。
 6. 选择性适配style/index：19布局/断点/宿主层级，保留18两个同源font-face/public/PWA、原入口和17场景。源tsc及迁入unit检查；此时主机缺接线的行为RED仍保留，不能以复制UI算完成。
@@ -89,11 +89,17 @@
 
 仅两种情况允许本批代码阶段提交：完整suite全部通过；或**唯一失败**仍是未改tests/e2e/pao6-baseline.spec.ts的ramp-roof-jump-land在roof-exit-land预期PLAYING/实际GAMEOVER同一断言，且其余全部新旧门禁（含源/测试类型、build/unit、实际投影、图/录屏/保护）通过。后一情况来自用户本次明确例外，必须写真实计数/exit1和未知根因，不能写全绿、skip/expected failure或扩大豁免。
 
-若出现任何新失败（含旧HUD兼容/正常新UI投影/命令回执/资源）、不同车尾断言或其他继承失败：保留首现场/最终完整计数并停止交主审；不借本例外提交、不改旧断言/超时或循环重跑到绿。车尾/预览仍不修复/复现，旧候选不移植。
+实施中的普通编译/lint/导入类型/测试替身问题，以及已批准目标组内可定位的实现问题，应依AGENTS第4/5条在白名单和原语义内自主修正、复验，不视为一次新的设计审批。预定TDD RED也不触发此停止规则。不得忽略错误、降检查、改原断言/输入/预算或扩大生产范围。
+
+最终完整suite若出现新运行时失败（含旧HUD兼容/正常新UI投影/命令回执/资源）、不同车尾断言或其他继承失败，或目标问题需要越界/无法建立根因：保留首现场/最终计数并停止交主审；不借本例外提交、不改旧断言/超时或循环重跑到绿。车尾/预览仍不修复/复现，旧候选不移植。
 
 允许提交时逐项检查暂存区仅本白名单；正常hooks、明确commit、push当前任务分支并ls-remote核SHA，不强推、不跳hooks、不捎带本机配置或外部输出。全部检查与stage风险可先汇成精简证据，再一次提交；不要为每个RED/GREEN或可逆搬文件都提交半成品。
 
 交固定SHA、实际完整成绩/例外分类、N/F与真实图/录屏入口、保护清单和未实现项待Dispatcher独立主审。任务方不自动合并/继续20/21、不标父18 Done或解除依赖，也不将本批工程等同正式runner/13动作/真机预算验收。
+
+### 2026-11-06 类型停止点接续澄清
+
+[独立类型审查与完整接续提示词](../reviews/2026-11-06-pao18-pao19-integration-types-review.md)明确：当前rebuild-ui的同URL动态导入/有依据CDP非空收窄，及新增integration unit的局部spy方法类型修正，属于原测试迁入/替身适配。仅在这两份已批准测试文件修本次类型，不改四份固定生产源码或默认配置；类型通过后继续剩余已批准实现/验证，不再审批同一设计。原首失败保留，新的tsc/目标unit日志另存。
 
 ## 10. 给原PAO-18聊天的手动提示词
 
@@ -108,6 +114,6 @@
 主Agent不写实现，原聊天唯一执行方按计划落地。cameraRig solver、simulation/input/physics、application/audio、资产和其他旧测试只读；不合并整枝，不带19那条车尾等待行。
 
 QA沿5198 strictPort/不复用/DEBUG/原load60秒/retries0，全部产物根外新目录；源/新测试types、build/unit、I01–I12及一次完整旧+迁入+新增suite和本轮图/录屏/保护按计划完成。
-仅唯一仍为原PAO-6 roof-exit-land的PLAYING→GAMEOVER且其余全部通过时，才按已批准例外真实记录失败后正常hooks提交推送；任何新失败留首现场停止，不循环换绿。车尾/预览不恢复。
+仅唯一仍为原PAO-6 roof-exit-land的PLAYING→GAMEOVER且其余全部通过时，才按已批准例外真实记录失败后正常hooks提交推送；最终新的运行时失败或越界留首现场停止；中间普通编译/静态错误在原白名单内依日志自主修正，不重复申请批准。不得降检查或循环完整回归换绿，车尾/预览不恢复。
 返回固定SHA/远端核验和完整证据待独立验收；不自动合并、标父Done或启动20/21。
 ```

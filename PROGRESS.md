@@ -2,6 +2,13 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-11-06] PAO-18固定门禁71/72收口，唯一车尾旧场景失败按延期记录
+
+- [独立结果审查与阶段例外裁定稿](docs/reviews/2026-11-06-pao18-final-gate-known-roof-failure.md)：解析实际result.json，完整72项/17文件、71通过/1失败、668.002秒、exit1、0 skip/retry/flaky。旧HUD及新增7项事实桥全部通过；DEBUG开启、无产物reload，不声称历史加载超时根因已修。
+- 唯一失败是旧PAO-6 ramp-roof-jump-land的roof-exit-land状态预期PLAYING、实际GAMEOVER。补记KI-001证据，场景相同不等于根因相同；按用户延期不继续修复/复现、不移植车尾候选，不重复完整门禁。
+- 主Agent核对原18字体树HEAD/远端仍c3a7eb6，暂存空、WIP保留；30相关hash独立全匹配、diff检查通过、5198无监听。抽看新390暂停与多tick两图，未改游戏或重验17/19，未运行新浏览器/测试。
+- 两处代码缺陷保持关闭；当前整批未满足AGENTS第9条提交门禁，未提交/推送或标18 Done。已准备仅针对该单一失败的具体阶段提交例外供用户裁定，尚未批准，不默认以延期授权覆盖门禁；未自动启动任务、合并或接19。用户消息pao-8所附截图实际对应18，本轮不审改8。
+
 ## [2026-11-06] PAO-18导航有界诊断收口，根外输出配置准备并独立验证
 
 - [诊断主审及一次完整门禁提示词](docs/reviews/2026-11-06-pao18-navigation-diagnosis-review.md)：原树HEAD/远端仍c3a7eb6、WIP保留、暂存空；A筛选无用例、B关DEBUG通过不构成有效对照，接收停止结果，不认定原超时根因。两项代码缺陷已关闭，不重派修复；未验收整批18。

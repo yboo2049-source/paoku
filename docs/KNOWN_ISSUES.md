@@ -4,12 +4,13 @@
 
 ## KI-001 车尾下降接触连续性
 
-- **状态：用户明确延期，2026-11-03暂停继续修复和复验。** 原浏览器场景本次未再失败；历史固定步反例已复现，保留该事实，不再追修。
+- **状态：用户明确延期，2026-11-03暂停继续修复和复验。** 此前浏览器未再失败的记录保留；2026-11-06固定配置完整回归再次在旧车尾场景失败，仍不恢复修复或复现。历史固定步反例与本次失败不自动认定同根因。
 - 表现：旧PAO-6坡→车顶→跳跃→离顶用例曾GAMEOVER；特定输入下，已证顶面接触的同一步终点越过车尾，未保留departure，下一tick残余重叠被判致死。
 - 可追溯条件：STATIC_TRAIN33中心z33/depth18、top3；继承速度18.020833333333332、局部JUMP97；138→139的碰撞位置z42.11395833333329/y2.9183333333333388。相邻96/98成功。局部重建tick不冒充原浏览器缺失的绝对输入身份。
 - 诊断：[原始主审](reviews/2026-11-03-pao15-basic-motion-sample-review.md)、[诊断主审](reviews/2026-11-03-regression-diagnosis-review.md)、[本地修复预审](reviews/2026-11-03-roof-remediation-local-review.md)。原15完整45/46记录不删除。
 - 候选修复已在`D:/worker/paoku-sessions/pao-15-roof-diagnosis`本地实现，主Agenttsc/72目标单测通过；任务方完整49/50的车尾新增4项和旧PAO-6通过，但最终门禁未通过。**未验收、未提交、未推送、未移植**，不将其标为已交付修复。
 - 冻结接续：分支codex/pao15-roof-diagnosis，本地/远端HEAD均8af24af083b369f3f8dc8bb883a861975b9972af；暂存区空，当前2个跟踪修改、43个未跟踪文件保留。这个HEAD是诊断基线，不包含候选修复。物理源码及两份测试hash见本地预审，已重新核对一致。
+- 2026-11-06新增证据：[PAO-18固定门禁收口](reviews/2026-11-06-pao18-final-gate-known-roof-failure.md)。原字体接续树同一WIP版本完整71/72、exit1、0重试，唯一失败为旧ramp-roof-jump-land在roof-exit-land预期PLAYING、实际GAMEOVER；新7项事实桥及旧HUD均通过。现场保存在D:/worker/paoku-diagnostics/pao18-navigation-20261106/main-review/full/，不继续tick重建或碰撞调查，不据同场景声称同根因。
 - 处理：保留原目录、源码/测试改动、trace/截图/日志和本地候选；不reset/clean/stash、删除/合并、代提交或反复跑测试追绿。暂停不自动改变父15/18状态/依赖，也不把旧套件改成skip或忽略失败。
 
 ## KI-002 四动作独立预览偶发ready超时

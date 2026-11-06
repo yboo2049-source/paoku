@@ -5,6 +5,7 @@ import { GROUND, obstacleSurface, resolveSupport, sampleSurface, SURFACE_EPSILON
 import { compareContacts, sweepAABB } from './contacts';
 import type { SweptContact } from './contacts';
 import { recordCoinPickup } from './runSettlement';
+import type { MotionSink } from '../types/contracts';
 
 /** Called only by run/QA discontinuity owners, never by presentation. */
 export function resetPhysicsContacts(player: PlayerEntity): void {
@@ -120,6 +121,7 @@ export function updatePhysics(
   dt: number,
   obstaclesOverride?: ObstacleEntity[] | PhysicsStepStart,
   stepStart?: PhysicsStepStart,
+  motion?: MotionSink,
 ): void {
   let player: PlayerEntity;
   let obstacles: ObstacleEntity[];
@@ -179,7 +181,14 @@ export function updatePhysics(
 
   const surfacesAfter = [GROUND, ...obstacles.map(obstacleSurface).filter(s => s !== null)];
   const didLand = resolveSupport(player, dt, surfacesBefore, surfacesAfter);
-  if (didLand) eventBus.emit('PLAYER_LANDED', { y: player.y });
+  if (didLand) {
+    if (motion) {
+      const surface = surfacesAfter.find(s => s.id === player.supportSurfaceId);
+      motion.landed({ surfaceId: player.supportSurfaceId ?? null, surfaceKind: surface?.kind ?? null,
+        position: { x: player.x, y: player.y, z: player.z }, relativeImpactSpeedMps: null,
+        impactStatus: 'NOT_EXPOSED_BY_CURRENT_SOLVER', supportStatus: surface ? 'KNOWN' : 'MISSING' });
+    } else eventBus.emit('PLAYER_LANDED', { y: player.y });
+  }
   // 5. 翻滚计时器
   if (player.isRolling) {
     player.rollTimer -= dt;

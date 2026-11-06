@@ -18,6 +18,7 @@ import { createBrowserSaveRepository } from './application/saveRepository';
 import { SKINS } from './application/skinCatalog';
 import type { AppCommand, CommandResult } from './application/types';
 import { createRunSummary } from './systems/runSettlement';
+import type { InputAction, MotionCursor, MotionDraft, MotionReceipt } from './types/contracts';
 
 const appEl = document.getElementById('game-container') || document.body;
 
@@ -58,7 +59,12 @@ const application = new AppService(createBrowserSaveRepository());
 const uiManager = new UIManager(appEl, () => application.snapshot);
 const simulation = new Simulation(initialContext, {
   runId: 'podium', seed: 0x50414f10,
-  physics: (ctx, dt, stepStart) => updatePhysics(ctx, dt, undefined, stepStart),
+  motionMode: 'committed-motion-v1',
+  physics: (ctx, dt, stepStart, motion) => updatePhysics(ctx, dt, undefined, stepStart, motion),
+  onAppliedAction: (ctx, action) => {
+    if (action.action === 'JUMP' || action.action === 'ROLL') missionSystem.trackAction(ctx.missions, action.action);
+  },
+  onMotionDraft: (draft, ordinal) => stageAudio(() => deliverMotion(draft), { draft, ordinal }),
   afterStep: (ctx, _dt, _rng, frame) => updateLegacySystems(ctx, frame),
   generation: {
     reset: (runId, seed) => spawnerSystem.reset(runId, seed),
@@ -74,6 +80,75 @@ let observedTerminalRunId: string | null = null;
 let disposed = false;
 let inSimulationStep = false;
 let pendingPauseIntents = 0;
+let inDelivery = false;
+let deliveryGeneration = 0;
+let renderCursor = simulation.motionCursor();
+let audioCursor = simulation.motionCursor();
+type Cue = { call: () => void; motion?: { draft: MotionDraft; ordinal: number } };
+let stepAudio: Cue[] = [];
+let audioDropped = 0;
+let audioFailures = 0;
+let observerFailures = 0;
+let renderFailures = 0;
+let audioFactGaps = 0;
+const audioItems: { eventId: string; type: MotionDraft['type']; outcome: string }[] = [];
+const renderItems: MotionReceipt['items'][number][] = [];
+const committedItems: { eventId: string; type: string }[] = [];
+const motionErrors: string[] = [];
+function keepRecent<T>(items: T[], value: T): void { items.push(value); if (items.length > 256) items.shift(); }
+function stageAudio(call: () => void, motion?: Cue['motion']): void {
+  if (!inSimulationStep) { call(); return; }
+  if (stepAudio.length >= 256) { audioDropped++; return; }
+  stepAudio.push({ call, motion });
+}
+// AudioEngine has two legacy bus listeners of its own. Keep their calls in the
+// same main-owned step buffer without changing the audio module or bus protocol.
+const originalStopChase = audioEngine.stopChase;
+const originalSetChaseState = audioEngine.setChaseState;
+audioEngine.stopChase = () => stageAudio(() => originalStopChase.call(audioEngine));
+audioEngine.setChaseState = (distance, near) => stageAudio(() => originalSetChaseState.call(audioEngine, distance, near));
+function deliverMotion(draft: MotionDraft): void {
+  try {
+    if (draft.type === 'PLAYER_LANDED') audioEngine.playLanding();
+    else if (draft.payload.action === 'JUMP') audioEngine.playJump();
+    else if (draft.payload.action === 'ROLL') audioEngine.playRoll();
+    else audioEngine.playLaneChange(draft.payload.toLane > draft.payload.fromLane ? 1 : -1);
+  } finally {
+    try {
+      if (draft.type === 'PLAYER_LANDED') eventBus.emit('PLAYER_LANDED', { y: draft.payload.position.y });
+      else eventBus.emit('PLAYER_ACTION', { action: draft.payload.action, ...(draft.payload.action === 'CHANGE_LANE' ? {
+        lane: draft.payload.toLane, direction: draft.payload.toLane > draft.payload.fromLane ? 1 : -1,
+      } : {}) });
+    } catch { observerFailures++; }
+  }
+}
+function rebaseDelivery(): void {
+  deliveryGeneration++; stepAudio = [];
+  audioCursor = simulation.motionCursor(); renderCursor = simulation.motionCursor();
+}
+function flushStepAudio(before: MotionCursor): void {
+  const generation = deliveryGeneration, through = simulation.motionCursor();
+  const read = simulation.readMotionFacts(before, simulation.snapshot.motionStamp!);
+  const facts = read.status === 'OK' ? read.batches.flatMap(batch => batch.events) : [];
+  if (read.status === 'OK') for (const batch of read.batches) for (const fact of batch.events)
+    keepRecent(committedItems, { eventId: fact.eventId, type: fact.type });
+  inDelivery = true;
+  const pending = stepAudio; stepAudio = [];
+  try {
+    for (const cue of pending) {
+      if (disposed || generation !== deliveryGeneration || through.runId !== simulation.snapshot.runId || through.streamEpoch !== simulation.snapshot.motionStamp!.streamEpoch) break;
+      const fact = cue.motion && facts.find(value => value.sequence === before.throughSequence + cue.motion!.ordinal);
+      // Identity comes from the committed producer envelope. GAP audio cues can
+      // still attempt the original API, but cannot invent a published fact ID.
+      if (cue.motion && !fact) audioFactGaps++;
+      const item = fact ? { eventId: fact.eventId, type: fact.type, outcome: 'attempted' } : null;
+      if (item) keepRecent(audioItems, item); // mark before side effects; never retry.
+      try { cue.call(); if (item) item.outcome = 'handled'; }
+      catch { audioFailures++; if (item) item.outcome = 'attempt-failed'; }
+    }
+    if (!disposed && generation === deliveryGeneration) audioCursor = through;
+  } finally { inDelivery = false; }
+}
 
 function resetToPodium(ctx: GameContext): void {
   resetPhysicsContacts(ctx.player);
@@ -113,26 +188,24 @@ function syncApplicationProjection(): void {
   if (disposed) return;
   const app = application.snapshot;
   if (app.activeRunId && app.activeRunId !== appliedRunId) {
-    simulation.change(ctx => {
-      resetToPodium(ctx);
-      ctx.state = 'PLAYING';
-      ctx.score = 0;
-      ctx.speed = CONSTANTS.BASE_SPEED;
-      missionSystem.resetMissions(ctx.missions);
-    });
-    simulation.restart(app.activeRunId, 0x50414f10);
+    const fresh = structuredClone(initialContext);
+    resetToPodium(fresh); fresh.state = 'PLAYING'; fresh.score = 0; fresh.speed = CONSTANTS.BASE_SPEED;
+    missionSystem.resetMissions(fresh.missions);
+    simulation.restart(app.activeRunId, 0x50414f10, fresh);
+    rebaseDelivery();
     appliedRunId = app.activeRunId;
     observedTerminalRunId = null;
     inputSystem.clear();
   } else if (!app.activeRunId && (appliedRunId !== null || app.appState !== appliedState)) {
-    simulation.change(ctx => {
-      resetToPodium(ctx);
-      ctx.state = app.appState;
-    });
+    if (simulation.faulted) {
+      const fresh = structuredClone(initialContext); resetToPodium(fresh); fresh.state = app.appState;
+      simulation.restart('podium', 0x50414f10, fresh);
+    } else simulation.change(ctx => { resetToPodium(ctx); ctx.state = app.appState; });
+    rebaseDelivery();
     appliedRunId = null;
     inputSystem.clear();
   } else if (app.activeRunId && (app.appState === 'PAUSED' || app.appState === 'PLAYING') && app.appState !== appliedState) {
-    simulation.setPhase(app.appState === 'PLAYING' ? 'RUNNING' : 'PAUSED');
+    if (!simulation.faulted) simulation.setPhase(app.appState === 'PLAYING' ? 'RUNNING' : 'PAUSED');
     inputSystem.clear();
   }
   if (app.appState !== appliedState) {
@@ -151,7 +224,7 @@ function syncApplicationProjection(): void {
     appliedSkinId = app.selectedSkinId;
     eventBus.emit('SKIN_CHANGED', SKINS.find(s => s.id === app.selectedSkinId) || SKINS[0]);
   }
-  const accepting = simulation.snapshot.phase === 'RUNNING' && app.appState === 'PLAYING' && pendingPauseIntents === 0;
+  const accepting = !simulation.faulted && simulation.snapshot.phase === 'RUNNING' && app.appState === 'PLAYING' && pendingPauseIntents === 0;
   simulation.queue.setAccepting(accepting);
   gameLoop.setPaused(!accepting);
 }
@@ -174,13 +247,16 @@ function dispatchIntent(type: AppCommand['type'], payload?: Record<string, unkno
     ...(type === 'UPDATE_AUDIO' ? { audioOperation: payload as unknown as AppCommand['audioOperation'] } : {}),
   };
   const terminalCommand = type === 'RESTART_RUN' || type === 'GO_MENU' || type === 'OPEN_SHOP';
-  if (terminalCommand && inSimulationStep) {
+  if ((inDelivery || inSimulationStep) && (terminalCommand || type === 'PAUSE_RUN' || type === 'RESUME_RUN' || type === 'START_RUN')) {
     // A synchronous legacy fact listener can submit an intent mid-tick. Keep its
     // original identity, but seal only after the whole tick and collision observer.
     const captured = immutableCopy({ ...payload, commandId: command.commandId, runId: command.runId });
-    queueMicrotask(() => { if (!disposed) dispatchIntent(type, captured); });
+    const epoch = simulation.snapshot.motionStamp!.streamEpoch;
+    if (type === 'PAUSE_RUN') { inputSystem.clear(); simulation.queue.setAccepting(false); gameLoop.setPaused(true); }
+    queueMicrotask(() => { if (!disposed && epoch === simulation.snapshot.motionStamp!.streamEpoch) dispatchIntent(type, captured); });
     return;
   }
+  if (type === 'RESUME_RUN' && simulation.faulted) { uiManager.showToast?.('RUN FAULTED. Restart to recover.'); return; }
   const isolatePause = type === 'PAUSE_RUN' && app.appState === 'PLAYING' && app.activeRunId !== null && command.runId === app.activeRunId;
   let pauseBarrier = isolatePause;
   if (isolatePause) {
@@ -197,7 +273,7 @@ function dispatchIntent(type: AppCommand['type'], payload?: Record<string, unkno
     command.summary = app.summary ?? createRunSummary(simulation.snapshot, simulation.snapshot.phase === 'ENDED' ? 'COLLISION' : 'QUIT');
     inputSystem.clear();
     gameLoop.setPaused(true);
-    if (command.summary.endReason === 'QUIT') simulation.abandon();
+    if (command.summary.endReason === 'QUIT' && !simulation.faulted) simulation.abandon();
   }
   const result = application.dispatch(command);
   if (pauseBarrier && application.snapshot.appState === 'PAUSED' && application.snapshot.activeRunId === command.runId) {
@@ -246,36 +322,18 @@ function observeTerminalTick(): void {
   });
 }
 
-on('PLAYER_ACTION', (payload: any) => {
-  simulation.change(ctx => {
-    if (ctx.state !== 'PLAYING') return;
-
-    if (payload?.action === 'JUMP') {
-      audioEngine.playJump();
-      missionSystem.trackAction(ctx.missions, 'JUMP');
-    } else if (payload?.action === 'ROLL') {
-      audioEngine.playRoll();
-      missionSystem.trackAction(ctx.missions, 'ROLL');
-    } else if (payload?.action === 'CHANGE_LANE') {
-      audioEngine.playLaneChange(payload?.direction === 1 ? 1 : -1);
-    }
-  }, false);
-});
-
-on('PLAYER_LANDED', () => {
-  audioEngine.playLanding();
-});
+// Motion business side effects are exclusively delivered after commit above.
 
 on('COIN_COLLECTED', () => {
-  audioEngine.playCoin();
+  stageAudio(() => audioEngine.playCoin());
 });
 
 on('POWERUP_ACTIVATED', () => {
-  audioEngine.playPowerUp();
+  stageAudio(() => audioEngine.playPowerUp());
 });
 
 on('HOVERBOARD_SHIELD_SHATTER', (payload: any) => {
-  audioEngine.playShieldBreak();
+  stageAudio(() => audioEngine.playShieldBreak());
   if (payload?.position) {
     renderEngine.triggerShatterFX(
       new Vector3(payload.position.x, payload.position.y, payload.position.z)
@@ -284,9 +342,7 @@ on('HOVERBOARD_SHIELD_SHATTER', (payload: any) => {
 });
 
 on('COLLISION', () => {
-  audioEngine.playCrash();
-  audioEngine.stopBGM();
-  audioEngine.stopChase();
+  stageAudio(() => { audioEngine.playCrash(); audioEngine.stopBGM(); audioEngine.stopChase(); });
 });
 
 // 4. 主逻辑更新
@@ -330,22 +386,59 @@ function legacyView(context: typeof simulation.snapshot.context, app = applicati
   return view as GameContext;
 }
 
-const gameLoop = new GameLoop(() => {
-  inSimulationStep = true;
-  try { simulation.step(); } finally { inSimulationStep = false; }
+function stepSimulation(): void {
+  const stamp = simulation.snapshot.motionStamp!;
+  if (renderCursor.streamEpoch !== stamp.streamEpoch || audioCursor.streamEpoch !== stamp.streamEpoch) rebaseDelivery();
+  const before = simulation.motionCursor();
+  inSimulationStep = true; stepAudio = [];
+  try { simulation.step(); }
+  catch (error) {
+    stepAudio = []; keepRecent(motionErrors, String(error)); inputSystem.clear(); gameLoop.setPaused(true);
+    queueMicrotask(() => { if (!disposed && application.snapshot.appState === 'PLAYING') dispatchIntent('PAUSE_RUN'); });
+    return;
+  } finally { inSimulationStep = false; }
+  flushStepAudio(before);
   observeTerminalTick();
-}, {
+}
+function renderPresentation(alpha: number): void {
+  if (disposed) return;
+  const presentation = simulation.presentation(alpha);
+  const app = application.snapshot;
+  // A legacy adapter may provide only the original identity. Never combine its
+  // context with journal metadata from a different sample.
+  const candidate = presentation.motionStamp?.throughTick === presentation.tick &&
+    Math.abs(presentation.timeSec - presentation.tick * presentation.stepSec) < 1e-8
+    ? simulation.readMotionFacts(renderCursor, presentation.motionStamp) : undefined;
+  const motion = candidate?.through.runId === presentation.runId && candidate.through.throughTick === presentation.tick ? candidate : undefined;
+  const identity: RenderFrameIdentity = Object.freeze({
+    runId: presentation.runId, tick: presentation.tick,
+    discontinuity: presentation.discontinuity, appState: app.appState,
+    ...(motion ? { timeSec: presentation.timeSec, stepSec: presentation.stepSec, motion } : {}),
+  });
+  const generation = deliveryGeneration;
+  inDelivery = true;
+  try {
+    const receipt = renderEngine.render(legacyView(presentation.context, app), identity);
+    if (receipt?.status === 'COMPLETE' && generation === deliveryGeneration && receipt.through.runId === presentation.runId && receipt.through.streamEpoch === presentation.motionStamp!.streamEpoch) {
+      renderCursor = receipt.through; receipt.items.forEach(item => keepRecent(renderItems, item));
+    }
+    if (receipt?.status === 'REJECTED') { renderFailures++; keepRecent(motionErrors, 'Rejected motion delivery'); }
+  } catch (error) {
+    renderFailures++; keepRecent(motionErrors, String(error));
+    // An attempted consumer side effect cannot be rolled back or replayed
+    // safely. Account for every ID in this attempt, independently of audio.
+    if (motion?.status === 'OK' && generation === deliveryGeneration && !disposed) {
+      for (const batch of motion.batches) for (const fact of batch.events)
+        keepRecent(renderItems, { eventId: fact.eventId, outcome: 'attempt-failed', reason: 'RENDER_EXCEPTION' });
+      renderCursor = motion.through;
+    }
+  }
+  finally { inDelivery = false; }
+  uiManager.update(legacyView(simulation.snapshot.context, app));
+}
+const gameLoop = new GameLoop(stepSimulation, {
   stepSec: simulation.stepSec,
-  render: alpha => {
-    const presentation = simulation.presentation(alpha);
-    const app = application.snapshot;
-    const identity: RenderFrameIdentity = Object.freeze({
-      runId: presentation.runId, tick: presentation.tick,
-      discontinuity: presentation.discontinuity, appState: app.appState,
-    });
-    renderEngine.render(legacyView(presentation.context, app), identity);
-    uiManager.update(legacyView(simulation.snapshot.context, app));
-  },
+  render: renderPresentation,
 });
 gameLoop.setPaused(true);
 gameLoop.start();
@@ -362,6 +455,8 @@ document.addEventListener('visibilitychange', visibilityChanged);
 export function disposeGame(): void {
   if (disposed) return;
   disposed = true;
+  deliveryGeneration++; stepAudio = [];
+  audioEngine.stopChase = originalStopChase; audioEngine.setChaseState = originalSetChaseState;
   gameLoop.dispose(); inputSystem.dispose();
   subscriptions.splice(0).forEach(unsubscribe => unsubscribe());
   window.removeEventListener('blur', suspend);
@@ -377,6 +472,11 @@ const isQaMode = () => (window as any).__QA_MODE__ === true;
 (window as any).__GAME_SENSOR__ = {
   // —— 只读（生产与测试均可用，无害）——
   getAppSnapshot: () => application.snapshot,
+  getMotionBridge: () => immutableCopy({ mode: 'committed-motion-v1', faulted: simulation.faulted,
+    journal: simulation.motionDiagnostics, stamp: simulation.snapshot.motionStamp,
+    audio: { cursor: audioCursor, items: audioItems, dropped: audioDropped, factGaps: audioFactGaps, failures: audioFailures, observerFailures },
+    render: { cursor: renderCursor, items: renderItems, failures: renderFailures, ...renderEngine.motionDiagnostics },
+    committedItems, errors: motionErrors }),
   getSimulationSnapshot: () => simulation.snapshot,
   getSimulationDiagnostics: () => immutableCopy({ scheduler: gameLoop.diagnostics, input: simulation.queue.diagnostics }),
   getInputLog: () => simulation.acceptedInputs,
@@ -412,6 +512,17 @@ const isQaMode = () => (window as any).__QA_MODE__ === true;
   }),
 
   // —— 写控制面（仅 __QA_MODE__ 门控，避免污染生产暴露面）——
+  driveMotionForQa: (commands: readonly (readonly InputAction[])[], draw = true) => {
+    if (!isQaMode() || disposed || inDelivery || inSimulationStep) return;
+    gameLoop.setPaused(true);
+    for (const actions of commands) {
+      if (simulation.faulted || application.snapshot.appState !== 'PLAYING') break;
+      for (const action of actions) simulation.queue.collect(action, 'QA', simulation.tick);
+      stepSimulation();
+    }
+    if (draw) renderPresentation(1);
+    return (window as any).__GAME_SENSOR__.getMotionBridge();
+  },
   setPlayerPos: (x: number, y: number, z: number) => {
     if (!isQaMode()) return;
     simulation.change(ctx => {

@@ -1,7 +1,7 @@
 import { Matrix, Vector3, Viewport } from '@babylonjs/core';
 import type { TargetCamera, TransformNode } from '@babylonjs/core';
 import type { GameContext } from '../types';
-import type { DeepReadonly } from '../types/contracts';
+import type { DeepReadonly, MotionFact } from '../types/contracts';
 
 export interface SafeArea { readonly top: number; readonly bottom: number; readonly left: number; readonly right: number }
 export interface CameraInput {
@@ -61,14 +61,23 @@ export class CameraRig {
   private impulse = 0;
   private time = 0;
   private disposed = false;
+  private motionSequence = 0;
+  private landedFacts = 0;
   private projection: ReturnType<typeof projectActors> = { safe: false, reason: 'NOT_SAMPLED', actors: [] };
 
   constructor(camera: TargetCamera) { this.camera = camera; }
   get status() { return { supportHeight: this.supportHeight, positionHeight: this.positionHeight,
-    targetHeight: this.targetHeight, projection: this.projection }; }
+    targetHeight: this.targetHeight, projection: this.projection, landedFacts: this.landedFacts }; }
 
-  sync(ctx: DeepReadonly<GameContext>, actors: readonly ActorBounds[], input: CameraInput, dt: number, contactEdge = false): void {
+  sync(ctx: DeepReadonly<GameContext>, actors: readonly ActorBounds[], input: CameraInput, dt: number, contactEdge = false, facts?: readonly MotionFact[]): void {
     if (this.disposed || this.initialized && (ctx.state === 'PAUSED' || ctx.state === 'GAMEOVER')) return;
+    if (facts) {
+      contactEdge = false;
+      for (const fact of facts) if (fact.sequence > this.motionSequence) {
+        this.motionSequence = fact.sequence;
+        if (fact.type === 'PLAYER_LANDED') { contactEdge = true; this.landedFacts++; }
+      }
+    }
     dt = Math.min(0.05, Math.max(0, Number.isFinite(dt) ? dt : 0));
     const p = ctx.player;
     if (!this.initialized) {
@@ -119,6 +128,6 @@ export class CameraRig {
     aim(); // Status always describes the final camera, including roll/shake, not an intermediate proposal.
   }
 
-  reset(): void { this.initialized = false; this.roll = this.impulse = this.time = 0; }
+  reset(): void { this.initialized = false; this.roll = this.impulse = this.time = 0; this.motionSequence = this.landedFacts = 0; }
   dispose(): void { if (this.disposed) return; this.reset(); this.projection = { safe: false, reason: 'DISPOSED', actors: [] }; this.disposed = true; }
 }

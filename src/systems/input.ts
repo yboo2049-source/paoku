@@ -1,4 +1,4 @@
-import type { InputAction } from '../types/contracts';
+import type { AppliedAction, InputAction } from '../types/contracts';
 import { InputQueue } from '../core/inputQueue';
 import type { PlayerEntity, PowerUpType } from '../types';
 import { CONSTANTS } from '../types';
@@ -137,22 +137,27 @@ export class InputSystem {
 }
 
 /** Called only by the simulation tick in production. One legacy fact per accepted action. */
-export function applyInputAction(player: PlayerEntity, action: InputAction): void {
+export function applyInputAction(player: PlayerEntity, action: InputAction, observe?: (action: AppliedAction) => void): void {
+  const fromLane = player.lane;
+  const notify = (applied: AppliedAction['action'], legacy: { action: string; lane?: number; direction?: number }) => {
+    if (observe) observe({ action: applied, fromLane, toLane: player.lane, position: { x: player.x, y: player.y, z: player.z } });
+    else eventBus.emit('PLAYER_ACTION', legacy);
+  };
   if (action === 'LEFT' || action === 'RIGHT') {
     const direction = action === 'LEFT' ? -1 : 1;
     const newLane = Math.max(0, Math.min(2, player.lane + direction));
     if (newLane !== player.lane) {
       player.lane = newLane; player.targetX = CONSTANTS.LANE_X[newLane];
-      eventBus.emit('PLAYER_ACTION', { action: 'CHANGE_LANE', lane: newLane, direction });
+      notify('CHANGE_LANE', { action: 'CHANGE_LANE', lane: newLane, direction });
     }
   } else if (action === 'JUMP' && !player.isJumping) {
     player.isJumping = true; player.isRolling = false; player.rollTimer = 0;
     player.vy = computeJumpVelocity(player.activePowerUps);
-    eventBus.emit('PLAYER_ACTION', { action: 'JUMP' });
+    notify('JUMP', { action: 'JUMP' });
   } else if (action === 'ROLL' && !player.isRolling) {
     player.isRolling = true; player.rollTimer = CONSTANTS.ROLL_DURATION;
     if (player.isJumping) player.vy = -CONSTANTS.JUMP_VELOCITY * 1.5;
-    eventBus.emit('PLAYER_ACTION', { action: 'ROLL' });
+    notify('ROLL', { action: 'ROLL' });
   }
 }
 

@@ -1,7 +1,7 @@
 import { Matrix, Quaternion, Vector3 } from '@babylonjs/core';
 import type { AnimationGroup, Mesh, TransformNode } from '@babylonjs/core';
 import type { GameContext, PlayerEntity } from '../types';
-import type { DeepReadonly } from '../types/contracts';
+import type { DeepReadonly, MotionRead, MotionReceipt } from '../types/contracts';
 
 export type Motion = 'IDLE' | 'RUN' | 'ASCEND' | 'DESCEND' | 'AIR_TUCK' |
   'SLIDE_ENTER' | 'SLIDE_HOLD' | 'SLIDE_EXIT' | 'FAIL';
@@ -65,14 +65,22 @@ export class CharacterView {
   private phase: Motion = 'IDLE';
   private clock = 0;
   private disposed = false;
+  private motionSequence = 0;
+  private actionInstanceId: string | null = null;
+  private actionTimeSec = 0;
+  private laneActionInstanceId: string | null = null;
+  private laneActionTimeSec = 0;
+  private rollTimeSec: number | null = null;
+  private receipt: MotionReceipt | null = null;
   private snapshot = { phase: 'IDLE' as Motion, playhead: 0, blending: false, landed: false,
-    board: false, clip: null as string | null, degraded: true, factMode: 'CONTACT_EDGE_ONLY' as const };
+    board: false, clip: null as string | null, degraded: true, factMode: 'CONTACT_EDGE_ONLY' as 'CONTACT_EDGE_ONLY' | 'COMMITTED_MOTION' };
 
   constructor(root: TransformNode, visual: Mesh, board: Mesh, profile: ClipProfile = LEGACY) {
     this.root = root; this.visual = visual; this.board = board; this.profile = profile;
   }
 
-  get status() { return { ...this.snapshot }; }
+  get status() { return { ...this.snapshot, actionInstanceId: this.actionInstanceId, actionTimeSec: this.actionTimeSec,
+    laneActionInstanceId: this.laneActionInstanceId, laneActionTimeSec: this.laneActionTimeSec, receipt: this.receipt }; }
 
   attach(groups: readonly AnimationGroup[]): void {
     if (this.disposed) return;
@@ -115,27 +123,53 @@ export class CharacterView {
     if (this.blendFrom) this.channels.forEach((c, i) => writePose(c, mixPose(this.blendFrom![i], c.owner[c.property], weight)));
   }
 
-  sync(ctx: DeepReadonly<GameContext>, dt: number, reducedMotion = false): void {
+  sync(ctx: DeepReadonly<GameContext>, dt: number, reducedMotion = false, motion?: { read: MotionRead; timeSec: number }): void {
     if (this.disposed) return;
     const p = ctx.player;
     this.root.position.set(p.x, p.y, p.z); this.root.scaling.setAll(1);
     this.visual.scaling.setAll(1);
     if (ctx.state === 'PAUSED') {
+      if (motion) this.receipt = Object.freeze({ status: 'DEFERRED', through: motion.read.through, items: [] });
       this.groups.forEach(g => g.pause()); this.snapshot.landed = false; return;
     }
-    dt = Math.min(0.05, Math.max(0, Number.isFinite(dt) ? dt : 0));
+    let newAction = false, factLanded = false;
+    if (motion) {
+      const items: MotionReceipt['items'][number][] = [];
+      if (motion.read.status === 'OK') for (const batch of motion.read.batches) for (const fact of batch.events) {
+        if (fact.sequence <= this.motionSequence) continue;
+        this.motionSequence = fact.sequence;
+        const suppressed = ctx.state === 'GAMEOVER' || ctx.state === 'MENU' || ctx.state === 'SHOP';
+        items.push({ eventId: fact.eventId, outcome: suppressed ? 'suppressed' : 'handled', ...(suppressed ? { reason: 'LIFECYCLE' } : {}) });
+        if (suppressed) continue;
+        if (fact.type === 'ACTION_STARTED') {
+          if (fact.payload.action === 'CHANGE_LANE') {
+            // Lane overlays have an identity, but never restart or retime the pose clip.
+            this.laneActionInstanceId = fact.payload.actionInstanceId; this.laneActionTimeSec = fact.timeSec;
+          } else {
+            this.actionInstanceId = fact.payload.actionInstanceId; this.actionTimeSec = fact.timeSec;
+            this.rollTimeSec = fact.payload.action === 'ROLL' ? fact.timeSec : null;
+            newAction = true;
+          }
+        } else factLanded = true;
+      }
+      if (motion.read.status !== 'OK') { this.motionSequence = motion.read.through.throughSequence; this.rollTimeSec = null; }
+      this.receipt = Object.freeze({ status: 'COMPLETE', through: motion.read.through, items: Object.freeze(items) });
+    }
+    dt = Math.max(0, Number.isFinite(dt) ? motion ? dt : Math.min(0.05, dt) : 0);
     const elapsed = ctx.state === 'GAMEOVER' ? 0 : dt;
     this.clock += elapsed;
     this.rollingAge = p.isRolling ? (this.rolling ? this.rollingAge + elapsed : 0) : 0;
+    if (motion && p.isRolling && this.rollTimeSec !== null) this.rollingAge = Math.max(0, motion.timeSec - this.rollTimeSec);
     this.rolling = p.isRolling;
     const next = selectMotion(p, ctx.state, this.rollingAge);
     const binding = this.profile[next];
     const group = binding && this.groups.find(g => g.name.toLowerCase() === binding.name.toLowerCase());
-    if (group && (this.active?.group !== group || next !== this.phase && next === 'FAIL')) {
+    if (group && (newAction || this.active?.group !== group || next !== this.phase && next === 'FAIL')) {
       // Snapshot the displayed pose, including an interrupted blend. Only one paused group needs to stay live.
       this.blendFrom = this.active && next !== 'FAIL' ? this.channels.map(c => copyPose(c.owner[c.property])) : null;
       this.groups.forEach(g => g.stop());
       this.active = this.begin(group, binding!); this.blendAge = 0;
+      if (newAction && motion) this.active.seconds = Math.max(0, motion.timeSec - this.actionTimeSec);
     } else if (this.active && group === this.active.group && binding) {
       this.active.binding = binding;
     } else if (!group) {
@@ -145,7 +179,7 @@ export class CharacterView {
     this.phase = next;
     const rate = next === 'RUN' ? Math.min(1.4, Math.max(0.8, ctx.speed / 20)) : 1;
     if (this.active) {
-      this.active.seconds += elapsed * rate;
+      this.active.seconds += newAction ? 0 : elapsed * rate;
       this.blendAge += elapsed;
       const weight = this.blendFrom ? Math.min(1, this.blendAge / 0.1) : 1;
       this.sample(this.active, weight);
@@ -163,11 +197,11 @@ export class CharacterView {
         if (limb) limb.rotation.x = next === 'RUN' ? Math.sin(this.clock * ctx.speed * 0.8) * 0.45 * direction : 0;
       }
     }
-    const landed = ctx.state === 'PLAYING' && this.previousContact === 'AIRBORNE' && p.contact === 'SUPPORTED';
+    const landed = motion ? factLanded : ctx.state === 'PLAYING' && this.previousContact === 'AIRBORNE' && p.contact === 'SUPPORTED';
     this.previousContact = p.contact;
     this.snapshot = { phase: next, playhead: this.active?.seconds ?? 0, blending: !!this.blendFrom,
       landed, board, clip: this.active?.group.name ?? null,
-      degraded: this.profile === LEGACY || !group || p.contact === undefined, factMode: 'CONTACT_EDGE_ONLY' };
+      degraded: this.profile === LEGACY || !group || p.contact === undefined, factMode: motion ? 'COMMITTED_MOTION' : 'CONTACT_EDGE_ONLY' };
   }
 
   replay(): void {
@@ -181,6 +215,8 @@ export class CharacterView {
     if (this.disposed) return;
     this.groups.forEach(g => g.stop()); this.channels.forEach(c => writePose(c, c.rest));
     this.active = null; this.blendFrom = null;
+    this.motionSequence = 0; this.actionInstanceId = null; this.actionTimeSec = 0; this.rollTimeSec = null; this.receipt = null;
+    this.laneActionInstanceId = null; this.laneActionTimeSec = 0;
     this.previousContact = undefined; this.rolling = false; this.rollingAge = this.blendAge = this.clock = 0;
     this.phase = 'IDLE'; this.visual.position.setAll(0); this.visual.rotation.setAll(0); this.visual.scaling.setAll(1);
     this.snapshot = { phase: 'IDLE', playhead: 0, blending: false, landed: false, board: false,

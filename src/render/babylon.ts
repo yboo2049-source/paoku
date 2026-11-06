@@ -22,7 +22,7 @@ import {
   SceneLoader,
 } from '@babylonjs/core';
 import type { GameContext } from '../types';
-import type { DeepReadonly, SimSnapshot } from '../types/contracts';
+import type { DeepReadonly, MotionRead, MotionReceipt, SimSnapshot } from '../types/contracts';
 
 /** Identity belongs to the same presentation sample as the supplied context. */
 export interface RenderFrameIdentity {
@@ -30,6 +30,9 @@ export interface RenderFrameIdentity {
   readonly tick: SimSnapshot['tick'];
   readonly discontinuity: SimSnapshot['discontinuity'];
   readonly appState: GameContext['state'];
+  readonly timeSec?: number;
+  readonly stepSec?: number;
+  readonly motion?: MotionRead;
 }
 import { eventBus } from '../core/eventBus';
 import { AssetCache, SharedMaterials } from './assets';
@@ -40,6 +43,35 @@ import { CharacterView } from './characterView';
 import { CameraRig, actorBounds } from './cameraRig';
 import type { CameraInput } from './cameraRig';
 import type { AssetContainer } from '@babylonjs/core';
+
+/** Reject malformed/conflicting delivery before changing presentation watermarks. */
+export function validateMotionRead(read: MotionRead): boolean {
+  const end = read.through;
+  if (!end.runId || ![end.streamEpoch, end.throughTick, end.throughSequence].every(n => Number.isSafeInteger(n) && n >= 0)) return false;
+  if (read.status === 'REBASE') return read.reason !== 'INVALID_CURSOR';
+  if (read.status === 'FAULT') return Number.isSafeInteger(read.failedTick) && read.failedTick > end.throughTick;
+  if (read.status === 'GAP') return read.lostCount > 0 && read.fromSequence <= read.toSequence &&
+    read.lostCount === read.toSequence - read.fromSequence + 1 && read.toSequence <= end.throughSequence;
+  if (read.batches.length > 256) return false;
+  let previousTick = -1, previousSequence: number | null = null, events = 0;
+  for (const batch of read.batches) {
+    if (!batch.complete || batch.profile !== 'pao18-motion-v1' || batch.contractVersion !== 1 ||
+      batch.runId !== end.runId || batch.streamEpoch !== end.streamEpoch || batch.tick <= previousTick || batch.tick > end.throughTick ||
+      !Number.isSafeInteger(batch.tick) || !Number.isFinite(batch.stepSec) || batch.stepSec <= 0 ||
+      Math.abs(batch.timeSec - batch.tick * batch.stepSec) > 1e-8 || batch.events.length > 64 ||
+      previousSequence !== null && batch.previousSequence !== previousSequence) return false;
+    let sequence = batch.previousSequence;
+    for (const fact of batch.events) {
+      if (!Number.isSafeInteger(sequence + 1) || fact.sequence !== ++sequence || fact.profile !== 'pao18-motion-v1' || fact.contractVersion !== 1 ||
+        fact.runId !== end.runId || fact.tick !== batch.tick || fact.timeSec !== batch.timeSec ||
+        fact.eventId !== `${fact.runId}:${fact.tick}:${fact.sequence}` ||
+        ![fact.payload.position.x, fact.payload.position.y, fact.payload.position.z].every(Number.isFinite)) return false;
+    }
+    if (sequence !== batch.throughSequence || sequence > end.throughSequence) return false;
+    previousTick = batch.tick; previousSequence = sequence; events += batch.events.length;
+  }
+  return events <= 1024 && (previousSequence === null || previousSequence === end.throughSequence);
+}
 
 export class BabylonRenderEngine {
   private canvas: HTMLCanvasElement;
@@ -57,6 +89,8 @@ export class BabylonRenderEngine {
   private cancelPlayerLoads = new Set<() => void>();
   private epoch = 0;
   private frameRunId: string | null = null;
+  private frameMotionEpoch: number | null = null;
+  private lastSimTime: number | null = null;
   private discontinuityTick = -1;
   private boundaryPrepared = false;
   private disposed = false;
@@ -515,29 +549,46 @@ export class BabylonRenderEngine {
   /**
    * 每帧渲染与动态视觉同步逻辑
    */
-  public render(ctx: DeepReadonly<GameContext>, frame?: RenderFrameIdentity): void {
+  public get motionDiagnostics() {
+    return { character: this.characterView.status, camera: this.cameraRig.status,
+      root: { x: this.playerRoot.position.x, y: this.playerRoot.position.y, z: this.playerRoot.position.z },
+      groupsPaused: this.scene.animationGroups.every(g => !g.isPlaying) };
+  }
+
+  public render(ctx: DeepReadonly<GameContext>, frame?: RenderFrameIdentity): MotionReceipt | undefined {
     if (this.disposed) return;
+    if (frame?.motion) {
+      const through = frame.motion.through;
+      if (!validateMotionRead(frame.motion) || through.runId !== frame.runId || through.throughTick !== frame.tick || !Number.isFinite(frame.timeSec) ||
+        !Number.isFinite(frame.stepSec) || frame.stepSec! <= 0 || Math.abs(frame.timeSec! - frame.tick * frame.stepSec!) > 1e-8 ||
+        (this.frameMotionEpoch !== null && (through.streamEpoch < this.frameMotionEpoch ||
+          through.streamEpoch === this.frameMotionEpoch && this.lastSimTime !== null && frame.timeSec! < this.lastSimTime)))
+        return Object.freeze({ status: 'REJECTED', through, items: [] });
+    }
     if (frame) {
       const changedRun = frame.runId !== this.frameRunId;
       if (changedRun) this.discontinuityTick = -1;
-      const newBreak = frame.discontinuity && frame.tick > this.discontinuityTick;
+      const newBreak = frame.motion ? this.frameMotionEpoch !== frame.motion.through.streamEpoch : frame.discontinuity && frame.tick > this.discontinuityTick;
       if ((changedRun || newBreak) && !this.boundaryPrepared) this.reset();
       if (frame.discontinuity) this.discontinuityTick = Math.max(this.discontinuityTick, frame.tick);
       this.frameRunId = frame.runId;
+      this.frameMotionEpoch = frame.motion?.through.streamEpoch ?? null;
     }
     this.boundaryPrepared = false;
     const now = performance.now();
     const measured = this.engine.getDeltaTime() / 1000;
     const elapsed = measured > 0 ? measured : this.lastRenderTime === null ? 0 : (now - this.lastRenderTime) / 1000;
     this.lastRenderTime = now;
-    const dt = ctx.state === 'PAUSED' || ctx.state === 'GAMEOVER' ? 0 : Math.max(0, Math.min(elapsed, 0.05));
+    const simulated = frame?.motion && ctx.state !== 'MENU' && ctx.state !== 'SHOP' ? this.lastSimTime === null ? 0 : Math.max(0, frame.timeSec! - this.lastSimTime) : Math.min(elapsed, 0.05);
+    if (frame?.motion) this.lastSimTime = frame.timeSec!;
+    const dt = ctx.state === 'PAUSED' || ctx.state === 'GAMEOVER' ? 0 : Math.max(0, frame?.motion ? simulated : Math.min(elapsed, 0.05));
     this.totalTime += dt;
 
     this.environment.sync(ctx.player.z, ctx.state);
     this.sun.position.set(ctx.player.x + 25, ctx.player.y + 45, ctx.player.z + 25);
     this.ensurePlayerAsset(this.playerBodyMesh);
 
-    this.characterView.sync(ctx, dt, !!this.presentationOptions.reducedMotion);
+    this.characterView.sync(ctx, dt, !!this.presentationOptions.reducedMotion, frame?.motion ? { read: frame.motion, timeSec: frame.timeSec! } : undefined);
     const animSpeed = ctx.state === 'PLAYING' ? ctx.speed * 0.8 : 0;
 
     // 3. 追捕警官与警犬动态跟随 (Inspector & Dog Chase System, AC-PRD-17 & AC-PRD-19)
@@ -566,7 +617,8 @@ export class BabylonRenderEngine {
     // All three current visual bounds are measured after pose/root/chaser updates.
     const width = this.engine.getRenderWidth(), height = this.engine.getRenderHeight();
     const actors = [actorBounds('player', this.playerRoot), actorBounds('officer', this.inspectorRoot), actorBounds('dog', this.dogRoot)];
-    this.cameraRig.sync(ctx, actors, { width, height, ...this.presentationOptions }, dt, this.characterView.status.landed);
+    this.cameraRig.sync(ctx, actors, { width, height, ...this.presentationOptions }, dt, this.characterView.status.landed,
+      frame?.motion ? frame.motion.status === 'OK' ? frame.motion.batches.flatMap(b => b.events) : [] : undefined);
     const speedRatio = Math.max(0, Math.min(1, (ctx.speed - 18) / 27));
 
     // 6. 风阻拉线与碎片动效更新
@@ -581,6 +633,7 @@ export class BabylonRenderEngine {
 
     // 8. 执行渲染
     this.scene.render();
+    return frame?.motion ? this.characterView.status.receipt ?? undefined : undefined;
   }
 
   private activeFragments: Array<{ mesh: Mesh; vel: Vector3; rot: Vector3; life: number }> = [];
@@ -632,6 +685,7 @@ export class BabylonRenderEngine {
    * 重置渲染管线内部动态视效与实体锚点
    */
   public reset(): void {
+    this.lastSimTime = null;
     if (this.disposed || this.boundaryPrepared) return;
     this.boundaryPrepared = true;
     this.epoch++;

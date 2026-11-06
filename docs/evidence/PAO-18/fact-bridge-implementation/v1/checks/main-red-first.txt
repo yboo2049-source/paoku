@@ -1,0 +1,42 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/fact-bridge/playwright.config.ts pao18-fact-bridge.spec.ts
+
+[WebServer] (node:18216) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:13924) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 .pao18.local\fact-bridge\suite\pao18-fact-bridge.spec.ts:6:1 › N production exposes committed motion delivery and natural input is single-path (5.0s)
+
+
+  1) .pao18.local\fact-bridge\suite\pao18-fact-bridge.spec.ts:6:1 › N production exposes committed motion delivery and natural input is single-path 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "function"
+    Received: "undefined"
+
+       8 |   const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
+       9 |   await page.goto('/'); await page.click('#start-btn');
+    > 10 |   expect(await page.evaluate(() => typeof (window as any).__GAME_SENSOR__.getMotionBridge)).toBe('function');
+         |                                                                                             ^
+      11 |   await page.keyboard.press('ArrowUp'); await page.waitForTimeout(150); await page.keyboard.press('ArrowDown');
+      12 |   await page.keyboard.press('Escape'); await expect(page.locator('#resume-btn')).toBeVisible();
+      13 |   const report = await page.evaluate(() => (window as any).__GAME_SENSOR__.getMotionBridge());
+        at D:\worker\paoku-sessions\pao-18-font-diagnosis\.pao18.local\fact-bridge\suite\pao18-fact-bridge.spec.ts:10:93
+
+    Error Context: .pao18.local\fact-bridge\RESULT-artifacts\pao18-fact-bridge-N-produc-30525-atural-input-is-single-path\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    .pao18.local\fact-bridge\RESULT-artifacts\pao18-fact-bridge-N-produc-30525-atural-input-is-single-path\trace.zip
+    Usage:
+
+        npx playwright show-trace .pao18.local\fact-bridge\RESULT-artifacts\pao18-fact-bridge-N-produc-30525-atural-input-is-single-path\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    .pao18.local\fact-bridge\suite\pao18-fact-bridge.spec.ts:6:1 › N production exposes committed motion delivery and natural input is single-path 

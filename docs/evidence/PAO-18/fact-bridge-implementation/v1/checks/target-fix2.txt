@@ -1,0 +1,20 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/fact-bridge/playwright.config.ts pao18-fact-bridge.pw.ts
+
+[WebServer] (node:26100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 7 tests using 1 worker
+
+(node:3784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:4:1 › N production exposes committed motion delivery and natural input is single-path (6.2s)
+  ok 2 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:29:1 › F actual multi-step production bridge, sound order, duplicate render and reentrant pause (3.8s)
+  ok 3 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:75:1 › F failed real step keeps last commit and audio silent; original application restart recovers (3.8s)
+  ok 4 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:97:1 › F HTTP raw source identity witnesses (disk hash comparison recorded by the local harness) (315ms)
+  ok 5 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:111:1 › F original audio API ordering and throwing legacy observer do not drain render (3.3s)
+  ok 6 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:139:1 › N touch input and restart use the same committed bridge at 390 (4.2s)
+  ok 7 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:162:1 › F bounded audio overflow and render failure receipts remain independent (3.3s)
+
+  7 passed (28.1s)

@@ -1,0 +1,194 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao18-fact-journal.test.ts tests/unit/pao18-fact-lifecycle.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18-font-diagnosis
+
+ ❯ tests/unit/pao18-fact-journal.test.ts (8 tests | 1 failed) 35ms
+     × restarts its floor in the new tick domain without reusing sequences or accepting old cursors 7ms
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > keeps the JUMP anchor when lane input is same-after, including duplicate packets
+BJS - [22:25:35]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > keeps the JUMP anchor when lane input is same-before, including duplicate packets
+BJS - [22:25:35]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > keeps the JUMP anchor when lane input is later, including duplicate packets
+BJS - [22:25:35]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > keeps the ROLL anchor when lane input is same-after, including duplicate packets
+BJS - [22:25:35]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > keeps the ROLL anchor when lane input is same-before, including duplicate packets
+BJS - [22:25:35]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > keeps the ROLL anchor when lane input is later, including duplicate packets
+BJS - [22:25:35]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao18-fact-lifecycle.test.ts (12 tests | 6 failed) 44ms
+   × keeps the JUMP anchor when lane input is same-after, including duplicate packets 18ms
+   × keeps the JUMP anchor when lane input is same-before, including duplicate packets 6ms
+   × keeps the JUMP anchor when lane input is later, including duplicate packets 2ms
+   × keeps the ROLL anchor when lane input is same-after, including duplicate packets 2ms
+   × keeps the ROLL anchor when lane input is same-before, including duplicate packets 3ms
+   × keeps the ROLL anchor when lane input is later, including duplicate packets 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao18-fact-journal.test.ts > PAO18 committed fact journal > restarts its floor in the new tick domain without reusing sequences or accepting old cursors
+AssertionError: expected 3 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 3
+
+ ❯ tests/unit/pao18-fact-journal.test.ts:20:45
+     18|     expect(old.throughSequence).toBe(1);
+     19|     sim.restart('same', 123, initial());
+     20|     expect(sim.motionDiagnostics.floorTick).toBe(0);
+       |                                             ^
+     21|     const fresh = sim.motionCursor();
+     22|     expect(fresh).toMatchObject({ throughTick: 0, throughSequence: old…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  tests/unit/pao18-fact-lifecycle.test.ts > keeps the JUMP anchor when lane input is same-after, including duplicate packets
+ FAIL  tests/unit/pao18-fact-lifecycle.test.ts > keeps the ROLL anchor when lane input is same-after, including duplicate packets
+AssertionError: expected 'anchor/1/action/1/2' to be 'anchor/1/action/1/1' // Object.is equality
+
+Expected: "anchor/1/action/1/1"
+Received: "anchor/1/action/1/2"
+
+ ❯ tests/unit/pao18-fact-lifecycle.test.ts:50:54
+     48|       const lane = facts.find(f => f.type === 'ACTION_STARTED' && f.pa…
+     49|       if (vertical?.type !== 'ACTION_STARTED' || lane?.type !== 'ACTIO…
+     50|       expect(candidate.view.status.actionInstanceId).toBe(vertical.pay…
+       |                                                      ^
+     51|       expect(candidate.view.status.actionTimeSec).toBe(vertical.timeSe…
+     52|       expect(candidate.view.status).toMatchObject({ laneActionInstance…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  tests/unit/pao18-fact-lifecycle.test.ts > keeps the JUMP anchor when lane input is same-before, including duplicate packets
+AssertionError: expected { phase: 'ASCEND', …(10) } to match object { …(2) }
+(14 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "laneActionInstanceId": "anchor/1/action/1/1",
+-   "laneActionTimeSec": 0.016666666666666666,
++   "actionInstanceId": "anchor/1/action/1/2",
++   "actionTimeSec": 0.016666666666666666,
++   "blending": false,
++   "board": false,
++   "clip": "run",
++   "degraded": true,
++   "factMode": "COMMITTED_MOTION",
++   "landed": false,
++   "phase": "ASCEND",
++   "playhead": 0.03333333333333334,
++   "receipt": {
++     "items": [
++       {
++         "eventId": "anchor:1:1",
++         "outcome": "handled",
++       },
++       {
++         "eventId": "anchor:1:2",
++         "outcome": "handled",
++       },
++     ],
++     "status": "COMPLETE",
++     "through": {
++       "runId": "anchor",
++       "streamEpoch": 1,
++       "throughSequence": 2,
++       "throughTick": 3,
++     },
++   },
+  }
+
+ ❯ tests/unit/pao18-fact-lifecycle.test.ts:52:37
+     50|       expect(candidate.view.status.actionInstanceId).toBe(vertical.pay…
+     51|       expect(candidate.view.status.actionTimeSec).toBe(vertical.timeSe…
+     52|       expect(candidate.view.status).toMatchObject({ laneActionInstance…
+       |                                     ^
+     53|       expect(candidate.view.status.receipt?.items.map(i => i.eventId))…
+     54|       expect(candidate.view.status.receipt?.through).toEqual(candidate…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+ FAIL  tests/unit/pao18-fact-lifecycle.test.ts > keeps the JUMP anchor when lane input is later, including duplicate packets
+ FAIL  tests/unit/pao18-fact-lifecycle.test.ts > keeps the ROLL anchor when lane input is later, including duplicate packets
+AssertionError: expected +0 to be close to 0.03333333333333334, received difference is 0.03333333333333334, but expected 5e-13
+ ❯ tests/unit/pao18-fact-lifecycle.test.ts:42:46
+     40|     const baseline = build(false), candidate = build(true);
+     41|     try {
+     42|       expect(candidate.view.status.playhead).toBeCloseTo(baseline.view…
+       |                                              ^
+     43|       expect(candidate.view.status.playhead).toBeCloseTo(2 / 60, 12);
+     44|       expect(candidate.view.status.phase).toBe(baseline.view.status.ph…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+
+ FAIL  tests/unit/pao18-fact-lifecycle.test.ts > keeps the ROLL anchor when lane input is same-before, including duplicate packets
+AssertionError: expected { phase: 'SLIDE_ENTER', …(10) } to match object { …(2) }
+(14 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "laneActionInstanceId": "anchor/1/action/1/1",
+-   "laneActionTimeSec": 0.016666666666666666,
++   "actionInstanceId": "anchor/1/action/1/2",
++   "actionTimeSec": 0.016666666666666666,
++   "blending": false,
++   "board": false,
++   "clip": "sneak_pose",
++   "degraded": true,
++   "factMode": "COMMITTED_MOTION",
++   "landed": false,
++   "phase": "SLIDE_ENTER",
++   "playhead": 0.03333333333333334,
++   "receipt": {
++     "items": [
++       {
++         "eventId": "anchor:1:1",
++         "outcome": "handled",
++       },
++       {
++         "eventId": "anchor:1:2",
++         "outcome": "handled",
++       },
++     ],
++     "status": "COMPLETE",
++     "through": {
++       "runId": "anchor",
++       "streamEpoch": 1,
++       "throughSequence": 2,
++       "throughTick": 3,
++     },
++   },
+  }
+
+ ❯ tests/unit/pao18-fact-lifecycle.test.ts:52:37
+     50|       expect(candidate.view.status.actionInstanceId).toBe(vertical.pay…
+     51|       expect(candidate.view.status.actionTimeSec).toBe(vertical.timeSe…
+     52|       expect(candidate.view.status).toMatchObject({ laneActionInstance…
+       |                                     ^
+     53|       expect(candidate.view.status.receipt?.items.map(i => i.eventId))…
+     54|       expect(candidate.view.status.receipt?.through).toEqual(candidate…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  7 failed | 13 passed (20)
+   Start at  22:25:33
+   Duration  2.27s (transform 244ms, setup 0ms, import 2.06s, tests 79ms, environment 0ms)
+

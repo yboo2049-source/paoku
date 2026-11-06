@@ -1,0 +1,171 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao18-fact-producers.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18-font-diagnosis
+
+ ❯ tests/unit/pao18-fact-producers.test.ts (7 tests | 6 failed) 27ms
+     × observes successful branches only: JUMP -> ROLL -> JUMP 7ms
+     × observes successful branches only: ROLL -> JUMP -> ROLL 1ms
+     × keeps same-tick mission counting before reward update, ignoring ineffective inputs 2ms
+     × does not accept raw bus events as authority and suppresses production legacy emits 1ms
+     × captures actual ground/ramp/roof didLand identity and nonzero producer position 2ms
+     × keeps all intermediate landing/new jump facts when final state is airborne again 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao18-fact-producers.test.ts > PAO18 real producers > observes successful branches only: JUMP -> ROLL -> JUMP
+AssertionError: expected [] to deeply equal [ [ true, false ], [ true, true ] ]
+
+- Expected
++ Received
+
+- [
+-   [
+-     true,
+-     false,
+-   ],
+-   [
+-     true,
+-     true,
+-   ],
+- ]
++ []
+
+ ❯ tests/unit/pao18-fact-producers.test.ts:23:20
+     21|       onAppliedAction: ctx => states.push([ctx.player.isJumping, ctx.p…
+     22|     const start = sim.motionCursor(); for (const action of actions) si…
+     23|     expect(states).toEqual(expected);
+       |                    ^
+     24|     const read = sim.readMotionFacts(start, sim.snapshot.motionStamp!)…
+     25|     if (read.status === 'OK') {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  tests/unit/pao18-fact-producers.test.ts > PAO18 real producers > observes successful branches only: ROLL -> JUMP -> ROLL
+AssertionError: expected [] to deeply equal [ [ false, true ], …(2) ]
+
+- Expected
++ Received
+
+- [
+-   [
+-     false,
+-     true,
+-   ],
+-   [
+-     true,
+-     false,
+-   ],
+-   [
+-     true,
+-     true,
+-   ],
+- ]
++ []
+
+ ❯ tests/unit/pao18-fact-producers.test.ts:23:20
+     21|       onAppliedAction: ctx => states.push([ctx.player.isJumping, ctx.p…
+     22|     const start = sim.motionCursor(); for (const action of actions) si…
+     23|     expect(states).toEqual(expected);
+       |                    ^
+     24|     const read = sim.readMotionFacts(start, sim.snapshot.motionStamp!)…
+     25|     if (read.status === 'OK') {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  tests/unit/pao18-fact-producers.test.ts > PAO18 real producers > keeps same-tick mission counting before reward update, ignoring ineffective inputs
+AssertionError: expected { id: 'jump', type: 'JUMP', …(4) } to match object { completed: true, current: 1 }
+(4 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "completed": true,
+-   "current": 1,
++   "completed": false,
++   "current": 0,
+  }
+
+ ❯ tests/unit/pao18-fact-producers.test.ts:39:46
+     37|       afterStep: owned => missionSystem.update(owned, true) });
+     38|     sim.queue.collect('JUMP', 'QA', 0); sim.queue.collect('JUMP', 'QA'…
+     39|     expect(sim.snapshot.context.missions[0]).toMatchObject({ completed…
+       |                                              ^
+     40|   });
+     41|   it('does not accept raw bus events as authority and suppresses produ…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  tests/unit/pao18-fact-producers.test.ts > PAO18 real producers > does not accept raw bus events as authority and suppresses production legacy emits
+AssertionError: expected 2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/unit/pao18-fact-producers.test.ts:48:24
+     46|       const start = sim.motionCursor(); eventBus.emit('PLAYER_ACTION',…
+     47|       sim.queue.collect('LEFT', 'QA', 0); sim.queue.collect('LEFT', 'Q…
+     48|       expect(notified).toBe(1);
+       |                        ^
+     49|       const read = sim.readMotionFacts(start, sim.snapshot.motionStamp…
+     50|       if (read.status !== 'OK') throw new Error('Expected read'); expe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+
+ FAIL  tests/unit/pao18-fact-producers.test.ts > PAO18 real producers > captures actual ground/ramp/roof didLand identity and nonzero producer position
+ Test Files  1 failed (1)
+      Tests  6 failed | 1 passed (7)
+   Start at  22:49:54
+   Duration  400ms (transform 122ms, setup 0ms, import 152ms, tests 27ms, environment 0ms)
+
+AssertionError: expected undefined to match object { surfaceKind: 'GROUND', …(2) }
+
+- Expected:
+{
+  "relativeImpactSpeedMps": null,
+  "supportStatus": "KNOWN",
+  "surfaceKind": "GROUND",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/pao18-fact-producers.test.ts:64:31
+     62|       const read = sim.readMotionFacts(start, sim.snapshot.motionStamp…
+     63|       const landed = read.batches.flatMap(b => b.events).find(f => f.t…
+     64|       expect(landed?.payload).toMatchObject({ surfaceKind: kind, relat…
+       |                               ^
+     65|       expect(landed?.payload.position.z).toBeGreaterThan(0);
+     66|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  tests/unit/pao18-fact-producers.test.ts > PAO18 real producers > keeps all intermediate landing/new jump facts when final state is airborne again
+AssertionError: expected [] to deeply equal [ 'PLAYER_LANDED', 'ACTION_STARTED' ]
+
+- Expected
++ Received
+
+- [
+-   "PLAYER_LANDED",
+-   "ACTION_STARTED",
+- ]
++ []
+
+ ❯ tests/unit/pao18-fact-producers.test.ts:75:66
+     73|     const read = sim.readMotionFacts(start, sim.presentation(0.4).moti…
+     74|     if (read.status !== 'OK') throw new Error('Expected read');
+     75|     expect(read.batches.flatMap(b => b.events).map(f => f.type)).toEqu…
+       |                                                                  ^
+     76|   });
+     77|   it('has identical actual event identity/time at 30/60/120Hz and irre…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+

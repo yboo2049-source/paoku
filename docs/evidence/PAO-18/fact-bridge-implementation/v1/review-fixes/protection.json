@@ -1,0 +1,12 @@
+{
+  "baseCount": 1221,
+  "baseChanged": [],
+  "priorEvidenceCount": 52,
+  "priorEvidenceChanged": [],
+  "changedFromWip": [
+    "src/core/simulation.ts",
+    "src/render/characterView.ts",
+    "tests/unit/pao18-fact-journal.test.ts",
+    "tests/unit/pao18-fact-lifecycle.test.ts"
+  ]
+}

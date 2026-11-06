@@ -1,0 +1,10 @@
+{
+  "hashes": {
+    "src/render/babylon.ts": "722503e0e4871328d2f403cf35e35c4f6f7ca0aba15a8e7b5c3930499dfd42ef",
+    "src/render/characterView.ts": "060b4adde6b9b6b3a1eebcb52db587ab6d2c9407b8bac1cd64dd5ee6bc334b56",
+    "src/render/cameraRig.ts": "18271d6b4f3177078fdb5c2af538f5c521c195160b54b9182fbba94af0a57c05",
+    "src/main.ts": "7e72bd21de2c20cdd853c39066433bfa877a45e0dfe3f6ed0f275be77c2a477d"
+  },
+  "legacyGLB": "002f8d269de68e5dce3d25195caf390d1aa359bbfaae3fcf4c8dc78ec36c3ba5",
+  "baseURL": "http://127.0.0.1:5188"
+}

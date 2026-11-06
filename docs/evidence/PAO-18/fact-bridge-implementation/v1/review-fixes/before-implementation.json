@@ -1,0 +1,50 @@
+[
+  {
+    "path": "src/core/simulation.ts",
+    "sha256": "57F85C02B5F308FC2F322F828D0D2757B3D8146A7FD749622DBCA9277BA3B516"
+  },
+  {
+    "path": "src/main.ts",
+    "sha256": "7E72BD21DE2C20CDD853C39066433BFA877A45E0DFE3F6ED0F275BE77C2A477D"
+  },
+  {
+    "path": "src/render/babylon.ts",
+    "sha256": "722503E0E4871328D2F403CF35E35C4F6F7CA0ABA15A8E7B5C3930499DFD42EF"
+  },
+  {
+    "path": "src/render/cameraRig.ts",
+    "sha256": "18271D6B4F3177078FDB5C2AF538F5C521C195160B54B9182FBBA94AF0A57C05"
+  },
+  {
+    "path": "src/render/characterView.ts",
+    "sha256": "060B4ADDE6B9B6B3A1EEBCB52DB587AB6D2C9407B8BAC1CD64DD5EE6BC334B56"
+  },
+  {
+    "path": "src/systems/input.ts",
+    "sha256": "11A6AFAA61EFBB85D912CE8C02BA0BF5CE04B8F42BF44582EC356FE802DDEF99"
+  },
+  {
+    "path": "src/systems/physics.ts",
+    "sha256": "5E77C41A698CDC57E5E5627618F0F5EB53508AF0DE204DE5C454BBA942138F75"
+  },
+  {
+    "path": "src/types/contracts.ts",
+    "sha256": "B0A9EA56DA296E967B6AD9447054EFBCA61B4AEE01B442A055660876A5B2220E"
+  },
+  {
+    "path": "tests/unit/pao18-fact-journal.test.ts",
+    "sha256": "39570EC5CB2B406DF826E81BD9F59C8367FDC623AB6E23976534FDF75EFEB7AC"
+  },
+  {
+    "path": "tests/unit/pao18-fact-lifecycle.test.ts",
+    "sha256": "5DC851F4764C39EBEDBBDBE7BA4259C9FA7A59F2AF4421DFFE7240A259317023"
+  },
+  {
+    "path": "tests/unit/pao18-fact-producers.test.ts",
+    "sha256": "47E54DC315F88D007FDBB119A5FCB16DF4D76FCC2FCE137E4EAE266CD27DBB47"
+  },
+  {
+    "path": "tests/e2e/pao18-fact-bridge.spec.ts",
+    "sha256": "2322D697222D18E6BEA05329A2DB7548E67BD65FB32D4F1D53F402D3C30FE5D2"
+  }
+]

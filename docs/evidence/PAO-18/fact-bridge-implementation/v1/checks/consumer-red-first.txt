@@ -1,0 +1,37 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao18-fact-lifecycle.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18-font-diagnosis
+
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > consumes actual action identity and pauses real groups without root displacement
+BJS - [22:52:12]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao18-fact-lifecycle.test.ts (4 tests | 1 failed) 21ms
+   × consumes actual action identity and pauses real groups without root displacement 15ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao18-fact-lifecycle.test.ts > consumes actual action identity and pauses real groups without root displacement
+AssertionError: expected { phase: 'ASCEND', playhead: +0, …(6) } to have property "factMode" with value 'COMMITTED_MOTION'
+
+Expected: "COMMITTED_MOTION"
+Received: "CONTACT_EDGE_ONLY"
+
+ ❯ tests/unit/pao18-fact-lifecycle.test.ts:52:25
+     50|     const sync = view.sync.bind(view) as (...args: unknown[]) => void;
+     51|     sync(sim.snapshot.context, 0, false, { read, timeSec: sim.snapshot…
+     52|     expect(view.status).toHaveProperty('factMode', 'COMMITTED_MOTION');
+       |                         ^
+     53|     expect(root.position.z).toBe(sim.snapshot.context.player.z);
+     54|     const before = view.status.playhead; sim.setPhase('PAUSED');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  22:52:10
+   Duration  1.86s (transform 98ms, setup 0ms, import 1.65s, tests 21ms, environment 0ms)
+

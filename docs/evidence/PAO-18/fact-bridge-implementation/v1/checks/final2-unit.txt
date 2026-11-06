@@ -1,0 +1,13 @@
+
+> app@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18-font-diagnosis
+
+
+ Test Files  31 passed (31)
+      Tests  313 passed (313)
+   Start at  21:18:18
+   Duration  10.76s (transform 6.26s, setup 0ms, import 60.12s, tests 19.89s, environment 7ms)
+

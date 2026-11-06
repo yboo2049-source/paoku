@@ -1,0 +1,19 @@
+[
+  "font-resources.spec.ts",
+  "gameplay.spec.ts",
+  "pao10-review-fixes.spec.ts",
+  "pao10-simulation.spec.ts",
+  "pao11-surfaces.spec.ts",
+  "pao12-collision.spec.ts",
+  "pao13-track.spec.ts",
+  "pao14-application.spec.ts",
+  "pao14-review.spec.ts",
+  "pao14-unknown-commit.spec.ts",
+  "pao17-lifecycle.spec.ts",
+  "pao17-ramp-view.spec.ts",
+  "pao17-structure.spec.ts",
+  "pao17-theme.spec.ts",
+  "pao18-controller-camera.spec.ts",
+  "pao18-fact-bridge.spec.ts",
+  "pao6-baseline.spec.ts"
+]

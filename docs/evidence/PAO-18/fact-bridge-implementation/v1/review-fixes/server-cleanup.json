@@ -1,0 +1,7 @@
+{
+  "port": 5198,
+  "listenerCount": 0,
+  "stoppedByAgent": false,
+  "tcpProbe": "Connection refused",
+  "note": "Explicit State filter and netstat show only closed/TIME_WAIT connections; no Stop-Process executed"
+}

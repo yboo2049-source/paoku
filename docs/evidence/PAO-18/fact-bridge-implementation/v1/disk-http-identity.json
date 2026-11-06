@@ -1,0 +1,46 @@
+{
+  "report": "full-second",
+  "origin": "http://127.0.0.1:5198",
+  "sources": [
+    {
+      "path": "src/main.ts",
+      "sha256": "7e72bd21de2c20cdd853c39066433bfa877a45e0dfe3f6ed0f275be77c2a477d",
+      "exactMatch": true
+    },
+    {
+      "path": "src/types/contracts.ts",
+      "sha256": "b0a9ea56da296e967b6ad9447054efbca61b4aee01b442a055660876a5b2220e",
+      "exactMatch": true
+    },
+    {
+      "path": "src/core/simulation.ts",
+      "sha256": "57f85c02b5f308fc2f322f828d0d2757b3d8146a7fd749622dbca9277ba3b516",
+      "exactMatch": true
+    },
+    {
+      "path": "src/systems/input.ts",
+      "sha256": "11a6afaa61efbb85d912ce8c02ba0bf5ce04b8f42bf44582ec356fe802ddef99",
+      "exactMatch": true
+    },
+    {
+      "path": "src/systems/physics.ts",
+      "sha256": "5e77c41a698cdc57e5e5627618f0f5eb53508af0de204de5c454bba942138f75",
+      "exactMatch": true
+    },
+    {
+      "path": "src/render/babylon.ts",
+      "sha256": "722503e0e4871328d2f403cf35e35c4f6f7ca0aba15a8e7b5c3930499dfd42ef",
+      "exactMatch": true
+    },
+    {
+      "path": "src/render/characterView.ts",
+      "sha256": "060b4adde6b9b6b3a1eebcb52db587ab6d2c9407b8bac1cd64dd5ee6bc334b56",
+      "exactMatch": true
+    },
+    {
+      "path": "src/render/cameraRig.ts",
+      "sha256": "18271d6b4f3177078fdb5c2af538f5c521c195160b54b9182fbba94af0a57c05",
+      "exactMatch": true
+    }
+  ]
+}

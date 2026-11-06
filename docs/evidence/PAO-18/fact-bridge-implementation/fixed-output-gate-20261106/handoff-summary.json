@@ -1,0 +1,28 @@
+{
+  "baseline": "c3a7eb64a7aa917e4a3cb7a88c1fb01a39dd4e85",
+  "branch": "codex/pao18-font-diagnosis",
+  "exitCode": 1,
+  "stats": {
+    "startTime": "2026-11-06T12:43:34.252Z",
+    "duration": 668002.209,
+    "expected": 71,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "sourceProtection": {
+    "count": 30,
+    "changed": []
+  },
+  "actualListeners5198": 0,
+  "reloadLogLines": 0,
+  "failure": {
+    "test": "pao6-baseline: ramp-roof-jump-land",
+    "assertion": "roof-exit-land state",
+    "expected": "PLAYING",
+    "actual": "GAMEOVER",
+    "cause": "Not investigated; car-tail/preview remain deferred",
+    "trace": "D:/worker/paoku-diagnostics/pao18-navigation-20261106/main-review/full/artifacts/pao6-baseline.pw.ts-ramp-roof-jump-land/trace.zip"
+  },
+  "action": "Stopped after one complete run; no retry, code change, commit or push"
+}

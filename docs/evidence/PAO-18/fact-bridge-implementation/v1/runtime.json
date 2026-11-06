@@ -1,0 +1,20 @@
+{
+  "taskDate": "2026-11-04",
+  "handoffDate": "2026-11-05",
+  "timezone": "Asia/Shanghai",
+  "node": "v24.18.1",
+  "npm": "11.16.0",
+  "typescript": "6.0.3",
+  "playwright": "1.62.1",
+  "vite": "8.2.0",
+  "babylon": "9.19.0",
+  "baseURL": "http://127.0.0.1:5198",
+  "strictPort": true,
+  "reuseExistingServer": false,
+  "workers": 1,
+  "retries": 0,
+  "angle": "d3d11",
+  "fontEvidence": ".pao18.local/fact-bridge/fonts-final",
+  "dependenciesChanged": false,
+  "baseline": "c3a7eb64a7aa917e4a3cb7a88c1fb01a39dd4e85"
+}

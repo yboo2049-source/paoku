@@ -1,0 +1,14 @@
+import { spawn } from 'node:child_process';
+import { createWriteStream } from 'node:fs';
+import { resolve } from 'node:path';
+const log = createWriteStream(resolve('.pao18.local/fact-bridge/review-fixes/service.log'));
+const args = [resolve('node_modules/vite/bin/vite.js'), '--host', '127.0.0.1', '--port', '5198', '--strictPort'];
+log.write(JSON.stringify({ node: process.execPath, args, cwd: process.cwd(), debug: 'vite:time,vite:transform' }) + '\n');
+// Tee the unchanged Vite CLI. Only diagnostic logging is enabled; no request,
+// response, timeout, keep-alive, error-handling or retry behavior is replaced.
+const child = spawn(process.execPath, args, { cwd: process.cwd(), env: { ...process.env, DEBUG: 'vite:time,vite:transform' }, stdio: ['ignore', 'pipe', 'pipe'] });
+child.stdout.on('data', chunk => { log.write(chunk); process.stdout.write(chunk); });
+child.stderr.on('data', chunk => { log.write(chunk); process.stderr.write(chunk); });
+child.on('exit', (code, signal) => { log.end(JSON.stringify({ code, signal }) + '\n'); process.exitCode = code ?? 1; });
+process.once('SIGTERM', () => child.kill('SIGTERM'));
+process.once('SIGINT', () => child.kill('SIGINT'));

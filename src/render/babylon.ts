@@ -127,10 +127,13 @@ export class BabylonRenderEngine {
   private playerAssetState: 'PENDING' | 'READY' | 'FALLBACK' = 'PENDING';
   private officerLease: AssetLease | null = null;
   private dogLease: AssetLease | null = null;
+  private runnerLease: AssetLease | null = null;
   private officerPendingEpoch: number | null = null;
   private dogPendingEpoch: number | null = null;
+  private runnerPendingEpoch: number | null = null;
   private officerAssets: AssetCache<AssetContainer>;
   private dogAssets: AssetCache<AssetContainer>;
+  private runnerAssets: AssetCache<AssetContainer>;
   private lastRenderTime: number | null = null;
   private presentationOptions: Partial<CameraInput> = {};
   private hudState: Readonly<Record<string, unknown>> = Object.freeze({ status: 'UNREADY', reason: 'NOT_SAMPLED', safe: false });
@@ -221,6 +224,13 @@ export class BabylonRenderEngine {
     this.dogAssets = new AssetCache(
       () => this.loadDogAsset().catch(error => {
         if (!this.disposed) console.warn('[GLB] dog load failed; keeping primitives', error);
+        throw error;
+      }),
+      a => !this.disposed && a.meshes.length > 0
+    );
+    this.runnerAssets = new AssetCache(
+      () => this.loadRunnerAsset().catch(error => {
+        if (!this.disposed) console.warn('[GLB] runner load failed; keeping player', error);
         throw error;
       }),
       a => !this.disposed && a.meshes.length > 0
@@ -365,6 +375,11 @@ export class BabylonRenderEngine {
         for (const name of ['torso', 'armor', 'head', 'visor', 'armLeft', 'armRight', 'legLeft', 'legRight', 'pack']) {
           const mesh = this.scene.getMeshByName(name); if (mesh) mesh.isVisible = false;
         }
+        if (this.runnerLease) {
+          for (const name of ['Beta_Surface', 'Beta_Joints']) {
+            const mesh = this.scene.getMeshByName(name); if (mesh) mesh.isVisible = false;
+          }
+        }
         return { dispose: () => { this.characterView.detach(); for (const mesh of meshes) this.shadowGenerator.removeShadowCaster(mesh); entries.dispose(); } };
       } catch (error) {
         // Instantiation can fail part-way through cloning. Roll back only this synchronous attempt.
@@ -426,6 +441,22 @@ export class BabylonRenderEngine {
         return;
       }
       SceneLoader.LoadAssetContainerAsync('/models/', 'character_dog.glb', this.scene).then(
+        asset => {
+          if (this.disposed) { asset.dispose(); reject(new Error('Renderer disposed')); return; }
+          resolve(asset);
+        },
+        reject
+      );
+    });
+  }
+
+  private loadRunnerAsset(): Promise<AssetContainer> {
+    return new Promise((resolve, reject) => {
+      if (typeof window === 'undefined' || !SceneLoader.IsPluginForExtensionAvailable('.glb')) {
+        reject(new Error('GLB loader not available'));
+        return;
+      }
+      SceneLoader.LoadAssetContainerAsync('/models/', 'character_runner.glb', this.scene).then(
         asset => {
           if (this.disposed) { asset.dispose(); reject(new Error('Renderer disposed')); return; }
           resolve(asset);
@@ -524,6 +555,54 @@ export class BabylonRenderEngine {
     }).catch(error => {
       if (this.epoch === epoch) this.dogPendingEpoch = null;
       console.warn('[GLB] dog acquire failed; keeping primitives', error);
+    });
+  }
+
+  private ensureRunnerAsset(root: Mesh): void {
+    if (this.disposed || this.runnerLease || this.runnerPendingEpoch === this.epoch) return;
+    const epoch = this.epoch;
+    this.runnerPendingEpoch = epoch;
+    void this.runnerAssets.acquire('character_runner', () => !this.disposed && this.epoch === epoch, container => {
+      try {
+        const entries = container.instantiateModelsToScene(name => `runner_${name}`, false, { doNotInstantiate: true });
+        for (const node of entries.rootNodes) {
+          node.parent = root;
+          if (node instanceof TransformNode) {
+            // character_runner: height = 0.979m; scaled by 1.84 = ~1.80m tall
+            node.scaling.scaleInPlace(1.84);
+            node.position.y = 0;
+            node.rotation.y = Math.PI;
+          }
+        }
+        const meshes = entries.rootNodes.flatMap(n => n.getChildMeshes() as Mesh[]);
+        for (const mesh of meshes) this.shadowGenerator.addShadowCaster(mesh, false);
+
+        for (const name of ['Beta_Surface', 'Beta_Joints', 'torso', 'armor', 'head', 'visor', 'armLeft', 'armRight', 'legLeft', 'legRight', 'pack']) {
+          const m = this.scene.getMeshByName(name);
+          if (m) m.isVisible = false;
+        }
+
+        return {
+          dispose: () => {
+            for (const mesh of meshes) this.shadowGenerator.removeShadowCaster(mesh);
+            entries.dispose();
+          },
+        };
+      } catch (error) {
+        console.error('[GLB] runner instantiate error:', error);
+        return { dispose: () => {} };
+      }
+    }).then(lease => {
+      if (!this.disposed && this.epoch === epoch) {
+        this.runnerLease = lease;
+        this.runnerPendingEpoch = null;
+      } else {
+        this.runnerPendingEpoch = null;
+        lease?.release();
+      }
+    }).catch(error => {
+      if (this.epoch === epoch) this.runnerPendingEpoch = null;
+      console.warn('[GLB] runner acquire failed; keeping player', error);
     });
   }
 
@@ -788,6 +867,7 @@ export class BabylonRenderEngine {
     this.environment.sync(ctx.player.z, ctx.state);
     this.sun.position.set(ctx.player.x + 25, ctx.player.y + 45, ctx.player.z + 25);
     this.ensurePlayerAsset(this.playerBodyMesh);
+    this.ensureRunnerAsset(this.playerBodyMesh);
     this.ensureOfficerAsset(this.inspectorRoot);
     this.ensureDogAsset(this.dogRoot);
     this.ensureHoverboardAsset(this.hoverboardMesh);
@@ -806,8 +886,15 @@ export class BabylonRenderEngine {
       this.dogRoot.position.set(-1.8, Math.sin(this.totalTime * 3.0 + 1.0) * 0.012, -0.2);
       this.inspectorRoot.rotation.set(0, 0.15, 0);
       this.dogRoot.rotation.set(0, -0.1, 0);
+      if (this.runnerLease) {
+        this.playerBodyMesh.position.y = Math.sin(this.totalTime * 2.5) * 0.012;
+      }
     } else {
       // 奔跑中：警官沿相同车道追逐玩家，警犬伴随在身侧（保持同一条铁轨路线）
+      if (this.runnerLease && ctx.state === 'PLAYING') {
+        const runBounce = Math.abs(Math.sin(this.totalTime * animSpeed * 1.5)) * 0.07;
+        this.playerBodyMesh.position.y = runBounce;
+      }
       const targetOfficerX = ctx.player.x;
       const chaseDistance = ctx.chase.distance;
       const chaseZ = ctx.player.z - chaseDistance;
@@ -948,6 +1035,10 @@ export class BabylonRenderEngine {
     this.environment.reset();
     this.inspectorRoot.position.set(-1.3, 0, -0.6);
     this.dogRoot.position.set(-1.8, 0, -0.2);
+    this.runnerLease?.release();
+    this.runnerLease = null;
+    this.runnerPendingEpoch = null;
+    this.hoverboardAttached = false;
 
     // 清理残留破碎特效碎片
     this.activeFragments.forEach((f) => f.mesh.dispose());
@@ -967,15 +1058,17 @@ export class BabylonRenderEngine {
     eventBus.off('SKIN_CHANGED', this.skinHandler);
     this.entityViews.dispose();
     this.playerLease?.release(); this.playerLease = null;
+    this.runnerLease?.release(); this.runnerLease = null;
     this.officerLease?.release(); this.officerLease = null;
     this.dogLease?.release(); this.dogLease = null;
+    this.runnerPendingEpoch = null;
     this.officerPendingEpoch = null;
     this.dogPendingEpoch = null;
     this.characterView.dispose(); this.cameraRig.dispose();
     this.activeFragments.forEach(f => f.mesh.dispose()); this.activeFragments = [];
     this.speedlineSystem.stop(); this.speedlineSystem.dispose();
     this.environment.dispose();
-    this.playerAssets.dispose(); this.officerAssets.dispose(); this.dogAssets.dispose(); this.materials.dispose();
+    this.playerAssets.dispose(); this.runnerAssets.dispose(); this.officerAssets.dispose(); this.dogAssets.dispose(); this.materials.dispose();
     this.shadowGenerator.getShadowMap()!.renderList = [];
     this.shadowGenerator.dispose(); this.glowLayer.dispose(); this.pipeline.dispose();
     this.scene.dispose(); this.engine.dispose();

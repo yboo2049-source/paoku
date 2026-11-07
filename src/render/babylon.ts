@@ -45,6 +45,7 @@ import type { CameraInput } from './cameraRig';
 import { hudCameraInput } from '../presentation/hudCameraInput';
 import type { HudCameraFrame } from '../presentation/hudCameraInput';
 import { immutableValue } from '../presentation/hudSafeArea';
+import { QualityManager, type QualityDiagnostics, type QualityMode, type QualityPreset, type SceneResourceReport } from './qualityManager';
 import type { AssetContainer } from '@babylonjs/core';
 
 /** Reject malformed/conflicting delivery before changing presentation watermarks. */
@@ -122,6 +123,8 @@ export class BabylonRenderEngine {
 
   private characterView: CharacterView;
   private cameraRig: CameraRig;
+  private qualityManager: QualityManager;
+  private playerAssetState: 'PENDING' | 'READY' | 'FALLBACK' = 'PENDING';
   private lastRenderTime: number | null = null;
   private presentationOptions: Partial<CameraInput> = {};
   private hudState: Readonly<Record<string, unknown>> = Object.freeze({ status: 'UNREADY', reason: 'NOT_SAMPLED', safe: false });
@@ -212,6 +215,7 @@ export class BabylonRenderEngine {
     this.hoverboardMesh.isVisible = false;
     this.characterView = new CharacterView(this.playerRoot, this.playerBodyMesh, this.hoverboardMesh);
     this.cameraRig = new CameraRig(this.camera);
+    this.qualityManager = new QualityManager({ viewportWidth: width });
 
     // 8. 构建追捕警官与警犬
     this.inspectorRoot = this.buildInspectorMesh();
@@ -355,10 +359,10 @@ export class BabylonRenderEngine {
         throw error;
       }
     }).then(lease => {
-      if (!this.disposed && this.epoch === epoch) { this.playerLease = lease; this.playerPendingEpoch = null; }
+      if (!this.disposed && this.epoch === epoch) { this.playerLease = lease; this.playerPendingEpoch = null; this.playerAssetState = 'READY'; }
       else lease?.release();
     }).catch(error => {
-      if (this.epoch === epoch) this.playerPendingEpoch = null;
+      if (this.epoch === epoch) { this.playerPendingEpoch = null; this.playerAssetState = 'FALLBACK'; }
       console.error('[GLB] legacy player instance failed; keeping primitives', error);
     });
   }
@@ -419,6 +423,30 @@ export class BabylonRenderEngine {
   }
 
   public get hudDiagnostics() { return this.hudState; }
+
+  public get playerAssetLoadState(): 'PENDING' | 'READY' | 'FALLBACK' {
+    return this.playerAssetState;
+  }
+
+  public getPowerUpVisualDiagnostics() {
+    return this.entityViews.getPowerUpVisualDiagnostics();
+  }
+
+  public getPerformanceDiagnostics(): Readonly<{ quality: QualityDiagnostics; resources: SceneResourceReport }> {
+    return Object.freeze({
+      quality: this.qualityManager.getDiagnostics(),
+      resources: this.qualityManager.inspectSceneResources(this.scene),
+    });
+  }
+
+  public setQualityMode(mode: QualityMode): Readonly<QualityPreset> {
+    const preset = this.qualityManager.setMode(mode, this.engine.getRenderWidth());
+    if (!this.disposed) {
+      this.glowLayer.intensity = preset.glowEnabled ? preset.glowIntensity : 0;
+      this.pipeline.fxaaEnabled = preset.fxaaEnabled;
+    }
+    return preset;
+  }
 
   /**
    * 构建 Babylon 悬浮滑板 Mesh
@@ -589,6 +617,9 @@ export class BabylonRenderEngine {
     const now = performance.now();
     const measured = this.engine.getDeltaTime() / 1000;
     const elapsed = measured > 0 ? measured : this.lastRenderTime === null ? 0 : (now - this.lastRenderTime) / 1000;
+    if (elapsed > 0) {
+      this.qualityManager.recordFrame(elapsed * 1000, now);
+    }
     this.lastRenderTime = now;
     const simulated = frame?.motion && ctx.state !== 'MENU' && ctx.state !== 'SHOP' ? this.lastSimTime === null ? 0 : Math.max(0, frame.timeSec! - this.lastSimTime) : Math.min(elapsed, 0.05);
     if (frame?.motion) this.lastSimTime = frame.timeSec!;

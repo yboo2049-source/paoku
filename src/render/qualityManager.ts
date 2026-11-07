@@ -343,7 +343,14 @@ export class QualityManager {
       particleSystems?: readonly any[];
     } | null
   ): Readonly<SceneResourceReport> {
-    const meshCount = Array.isArray(scene?.meshes) ? scene.meshes.length : 0;
+    const rawMeshes = Array.isArray(scene?.meshes) ? scene.meshes : [];
+    const meshCount = rawMeshes.filter(
+      (m) =>
+        m &&
+        m.isVisible !== false &&
+        (typeof m.isEnabled !== 'function' || m.isEnabled()) &&
+        (typeof m.getTotalVertices !== 'function' || m.getTotalVertices() > 0)
+    ).length;
     const materialCount = Array.isArray(scene?.materials) ? scene.materials.length : 0;
     const textureCount = Array.isArray(scene?.textures) ? scene.textures.length : 0;
     const particleSystems = Array.isArray(scene?.particleSystems) ? scene.particleSystems : [];

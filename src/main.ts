@@ -20,6 +20,13 @@ import type { AppCommand, AppSnapshot, CommandResult } from './application/types
 import { normalizeOcclusion, toBufferGeometry } from './presentation/hudSafeArea';
 import type { HudCameraFrame } from './presentation/hudCameraInput';
 import { createRunSummary } from './systems/runSettlement';
+import { FeedbackLifecycleController, type FeedbackAudioPort } from './systems/feedbackLifecycle';
+import { ProgressionFlowController } from './systems/progressionFlow';
+import { resolveThemeZone } from './data/extendedTrackSegments';
+import { evaluateSpeedCurve } from './systems/speedCurve';
+import { POWERUP_CATALOG } from './systems/powerupCatalog';
+import { runVerticalSliceWitness, type VerticalSliceOptions } from './systems/verticalSlice';
+import type { QualityMode } from './render/qualityManager';
 import type { InputAction, MotionCursor, MotionDraft, MotionReceipt } from './types/contracts';
 
 const appEl = document.getElementById('game-container') || document.body;
@@ -58,6 +65,18 @@ const initialContext: GameContext = {
 // 2. 实例化子系统
 const renderEngine = new BabylonRenderEngine(appEl);
 const application = new AppService(createBrowserSaveRepository());
+const feedbackController = new FeedbackLifecycleController();
+const progressionController = new ProgressionFlowController();
+renderEngine.setPresentationOptions?.({ reducedMotion: progressionController.getPreferences().reducedMotion });
+renderEngine.setQualityMode?.(progressionController.getPreferences().qualityMode);
+if (typeof document !== 'undefined' && (document as any).fonts?.ready) {
+  void (document as any).fonts.ready.then(
+    () => progressionController.loading.markFontsReady(true),
+    () => progressionController.loading.markFontsReady(false)
+  );
+} else {
+  progressionController.loading.markFontsReady(true);
+}
 let frameApp: AppSnapshot | null = null;
 const uiManager = new UIManager(appEl, () => frameApp ?? application.snapshot);
 const hasLayoutProducer = typeof uiManager.measureOcclusion === 'function';
@@ -144,6 +163,24 @@ const originalStopChase = audioEngine.stopChase;
 const originalSetChaseState = audioEngine.setChaseState;
 audioEngine.stopChase = () => stageAudio(() => originalStopChase.call(audioEngine));
 audioEngine.setChaseState = (distance, near) => stageAudio(() => originalSetChaseState.call(audioEngine, distance, near));
+const directFeedbackAudio: FeedbackAudioPort = {
+  playPowerUpRefresh: () => audioEngine.playPowerUpRefresh?.(),
+  playPowerUpExpire: () => audioEngine.playPowerUpExpire?.(),
+  playTrainHorn: (pan?: number) => audioEngine.playTrainHorn?.(pan),
+  playTrainPass: (pan?: number) => audioEngine.playTrainPass?.(pan),
+  pauseAll: () => audioEngine.pauseAll?.(),
+  resumeAll: () => audioEngine.resumeAll?.(),
+  resetLifecycle: () => audioEngine.resetLifecycle?.(),
+};
+const stagedFeedbackAudio: FeedbackAudioPort = {
+  playPowerUpRefresh: () => stageAudio(() => audioEngine.playPowerUpRefresh?.()),
+  playPowerUpExpire: () => stageAudio(() => audioEngine.playPowerUpExpire?.()),
+  playTrainHorn: (pan?: number) => stageAudio(() => audioEngine.playTrainHorn?.(pan)),
+  playTrainPass: (pan?: number) => stageAudio(() => audioEngine.playTrainPass?.(pan)),
+  pauseAll: () => stageAudio(() => audioEngine.pauseAll?.()),
+  resumeAll: () => stageAudio(() => audioEngine.resumeAll?.()),
+  resetLifecycle: () => stageAudio(() => audioEngine.resetLifecycle?.()),
+};
 function deliverMotion(draft: MotionDraft): void {
   try {
     if (draft.type === 'PLAYER_LANDED') audioEngine.playLanding();
@@ -224,6 +261,7 @@ function on(event: string, handler: Parameters<typeof eventBus.on>[1]): void {
 function syncApplicationProjection(): void {
   if (disposed) return;
   const app = application.snapshot;
+  const previousAppliedRunId = appliedRunId;
   if (app.activeRunId && app.activeRunId !== appliedRunId) {
     const fresh = structuredClone(initialContext);
     resetToPodium(fresh); fresh.state = 'PLAYING'; fresh.score = 0; fresh.speed = CONSTANTS.BASE_SPEED;
@@ -246,8 +284,10 @@ function syncApplicationProjection(): void {
     if (!simulation.faulted) simulation.setPhase(app.appState === 'PLAYING' ? 'RUNNING' : 'PAUSED');
     inputSystem.clear();
   }
-  if (app.appState !== appliedState) {
-    invalidateHostLayout('STALE_LAYOUT');
+  if (app.appState !== appliedState || app.activeRunId !== previousAppliedRunId) {
+    if (app.appState !== appliedState) {
+      invalidateHostLayout('STALE_LAYOUT');
+    }
     if (app.appState === 'PLAYING') {
       audioEngine.startBGM();
       const chase = simulation.snapshot.context.chase;
@@ -256,6 +296,7 @@ function syncApplicationProjection(): void {
       audioEngine.stopBGM();
       audioEngine.stopChase();
     }
+    feedbackController.syncFrame(simulation.snapshot.context, app.activeRunId, app.appState, directFeedbackAudio);
     appliedState = app.appState;
   }
   audioEngine.applySettings(app.audio);
@@ -461,7 +502,15 @@ function stepSimulation(): void {
   if (renderCursor.streamEpoch !== stamp.streamEpoch || audioCursor.streamEpoch !== stamp.streamEpoch) rebaseDelivery();
   const before = simulation.motionCursor();
   inSimulationStep = true; stepAudio = [];
-  try { simulation.step(); }
+  try {
+    simulation.step();
+    feedbackController.syncFrame(
+      simulation.snapshot.context,
+      application.snapshot.activeRunId,
+      application.snapshot.appState,
+      stagedFeedbackAudio
+    );
+  }
   catch (error) {
     stepAudio = []; keepRecent(motionErrors, String(error)); inputSystem.clear(); gameLoop.setPaused(true);
     queueMicrotask(() => { if (!disposed && application.snapshot.appState === 'PLAYING') dispatchIntent('PAUSE_RUN'); });
@@ -548,7 +597,10 @@ const gameLoop = new GameLoop(stepSimulation, {
 setupHostLayout();
 gameLoop.setPaused(true);
 gameLoop.start();
-void application.initialize().then(reportResult);
+void application.initialize().then(result => {
+  progressionController.loading.markSaveInitialized(result.ok, result.ok ? null : result.errorCode ?? null);
+  reportResult(result);
+});
 
 function suspend(): void {
   inputSystem.clear();
@@ -566,7 +618,9 @@ export function disposeGame(): void {
   uiManager.disposeLayout?.();
   commandAttempts.clear(); frameApp = null;
   deliveryGeneration++; stepAudio = [];
+  feedbackController.dispose();
   audioEngine.stopChase = originalStopChase; audioEngine.setChaseState = originalSetChaseState;
+  audioEngine.dispose?.();
   gameLoop.dispose(); inputSystem.dispose();
   subscriptions.splice(0).forEach(unsubscribe => unsubscribe());
   window.removeEventListener('blur', suspend);
@@ -611,6 +665,31 @@ const isQaMode = () => (window as any).__QA_MODE__ === true;
       completed: m.completed,
     })),
   getChaseState: () => ({ ...simulation.snapshot.context.chase }),
+  getAudioDiagnostics: () => audioEngine.getDiagnostics?.() ?? null,
+  getFeedbackDiagnostics: () => feedbackController.getDiagnostics(),
+  getPerformanceMetrics: () => renderEngine.getPerformanceDiagnostics?.() ?? null,
+  getProgressionDiagnostics: () => {
+    const assetState = renderEngine.playerAssetLoadState;
+    if (assetState === 'READY' || assetState === 'FALLBACK') {
+      progressionController.loading.markPlayerAsset(assetState);
+    }
+    return immutableCopy({
+      loading: progressionController.getLoadingSnapshot(),
+      preferences: progressionController.getPreferences(),
+      shopCatalog: progressionController.getShopCatalogView(application.snapshot),
+      missions: progressionController.getMissionSummary(
+        simulation.snapshot.context.missions,
+        simulation.snapshot.context.runLedger ?? null
+      ),
+    });
+  },
+  getPowerUpVisuals: () =>
+    immutableCopy({
+      catalog: POWERUP_CATALOG,
+      activeMeshes: renderEngine.getPowerUpVisualDiagnostics?.() ?? [],
+    }),
+  getThemeZone: () => immutableCopy(resolveThemeZone(simulation.snapshot.context.player.z)),
+  getSpeedCurve: () => immutableCopy(evaluateSpeedCurve(simulation.snapshot.timeSec)),
   getSimulation: () => ({
     runId: simulation.snapshot.runId, tick: simulation.tick, timeSec: simulation.snapshot.timeSec,
     stepSec: simulation.stepSec, phase: simulation.snapshot.phase,
@@ -684,4 +763,55 @@ const isQaMode = () => (window as any).__QA_MODE__ === true;
     spawnerFrozen = frozen;
     });
   },
+  setQualityModeForQa: (mode: QualityMode) => {
+    if (!isQaMode()) return null;
+    progressionController.setQualityMode(mode);
+    renderEngine.setQualityMode?.(mode);
+    return renderEngine.getPerformanceDiagnostics?.() ?? null;
+  },
+  setReducedMotionForQa: (reducedMotion: boolean) => {
+    if (!isQaMode()) return null;
+    const prefs = progressionController.setReducedMotion(reducedMotion);
+    renderEngine.setPresentationOptions?.({ reducedMotion: prefs.reducedMotion });
+    return prefs;
+  },
+  spawnPowerUpForQa: (
+    type: 'MAGNET' | 'DOUBLE_SCORE' | 'SUPER_SNEAKERS' | 'HOVERBOARD',
+    zOffset = 15,
+    lane = 1
+  ) => {
+    if (!isQaMode()) return;
+    simulation.change(ctx => {
+      const l = Math.max(0, Math.min(2, lane));
+      ctx.powerUpEntities.push({
+        id: `qa-pu-${type}-${ctx.powerUpEntities.length}`,
+        type,
+        lane: l,
+        x: CONSTANTS.LANE_X[l],
+        y: 0.8,
+        z: ctx.player.z + zOffset,
+        collected: false,
+      });
+    });
+  },
+  spawnMovingTrainForQa: (zOffset = 38, lane = 0, speedZ = -10) => {
+    if (!isQaMode()) return;
+    simulation.change(ctx => {
+      const l = Math.max(0, Math.min(2, lane));
+      ctx.obstacles.push({
+        id: `qa-train-${ctx.obstacles.length}`,
+        type: 'MOVING_TRAIN',
+        lane: l,
+        x: CONSTANTS.LANE_X[l],
+        y: 0,
+        z: ctx.player.z + zOffset,
+        width: 2.4,
+        height: 3.0,
+        depth: 12,
+        speedZ,
+      });
+    });
+  },
+  runVerticalSliceForQa: (options?: VerticalSliceOptions) =>
+    isQaMode() ? runVerticalSliceWitness(options) : null,
 };

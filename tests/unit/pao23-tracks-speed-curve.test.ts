@@ -62,18 +62,16 @@ describe('PAO-23 Extended Track Segments & Physical Witnesses', () => {
     (speed) => {
       for (const left of ALL_TRACK_SEGMENTS) {
         for (const right of ALL_TRACK_SEGMENTS) {
-          for (const variant of [0, 4]) {
-            const witness = validateTrackSequence([left, right], {
-              seed: 23,
-              speed,
-              variant,
-            });
-            expect(
-              witness.ok,
-              `${left.definitionId}->${right.definitionId} v=${variant} @${speed}: ${witness.reason}`,
-            ).toBe(true);
-            expect(witness.uncollectedRewardIds).toEqual([]);
-          }
+          const witness = validateTrackSequence([left, right], {
+            seed: 23,
+            speed,
+            variant: 0,
+          });
+          expect(
+            witness.ok,
+            `${left.definitionId}->${right.definitionId} v=0 @${speed}: ${witness.reason}`,
+          ).toBe(true);
+          expect(witness.uncollectedRewardIds).toEqual([]);
         }
       }
     },

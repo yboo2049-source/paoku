@@ -38,17 +38,18 @@ const MODEL_DEFS: Record<WorldModelKey, ModelDef> = {
     file: 'train_ramp_or_car.glb',
     yaw: -Math.PI / 2,
     // Train in game: width=2.4 (game X), height=3.0 (game Y), depth=12.0 (game Z)
-    // Source: local X=0.979, local Y=0.439, local Z=0.381
-    // Rotated -90deg: local X maps to game +Z, local Z maps to game +X
-    scale: [2.4 / 0.381, 3.0 / 0.439, 12.0 / 0.979],
+    // Source: local X=0.9792 (length), local Y=0.4386 (height), local Z=0.3808 (width)
+    // With yaw=-90deg: local X maps to game Z (length), local Z maps to game X (width)
+    scale: [12.0 / 0.9792, 3.0 / 0.4386, 2.4 / 0.3808],
     offsetY: 0,
   },
   TRAIN_RAMP: {
     file: 'train_metro.glb',
     yaw: -Math.PI / 2,
-    // Ramp in game: width=2.4, height=3.0, depth=6.0
-    // Source: local X=1.000, local Y=0.311, local Z=0.321
-    scale: [2.4 / 0.321, 3.0 / 0.311, 6.0 / 1.0],
+    // Ramp in game: width=2.4 (game X), height=3.0 (game Y), depth=6.0 (game Z)
+    // Source: local X=1.000 (length with slope), local Y=0.311 (height), local Z=0.3208 (width)
+    // With yaw=-90deg: local -X (bottom of ramp) faces game -Z (towards player), local +X leads up to game +Z (roof)
+    scale: [6.0 / 1.0, 3.0 / 0.311, 2.4 / 0.3208],
     offsetY: 0,
   },
   OBSTACLE_HURDLE: {
@@ -240,6 +241,7 @@ export class WorldAssetManager {
           for (const rootNode of entries.rootNodes) {
             rootNode.parent = parentNode;
             if (rootNode instanceof TransformNode) {
+              rootNode.rotationQuaternion = null;
               rootNode.rotation.y = def.yaw;
               if (def.pitch) rootNode.rotation.x = def.pitch;
               if (def.roll) rootNode.rotation.z = def.roll;

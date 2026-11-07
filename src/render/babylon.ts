@@ -134,6 +134,8 @@ export class BabylonRenderEngine {
   private officerAssets: AssetCache<AssetContainer>;
   private dogAssets: AssetCache<AssetContainer>;
   private runnerAssets: AssetCache<AssetContainer>;
+  private runnerRootNode: TransformNode | null = null;
+  private lastState: GameContext['state'] = 'MENU';
   private runElapsed: number = 0;
   private stumbleTimer: number = 0;
   private currentChaseDistance: number = 2.8;
@@ -470,15 +472,15 @@ export class BabylonRenderEngine {
   }
 
   private ensureOfficerAsset(root: TransformNode): void {
-    if (this.disposed || this.officerLease || this.officerPendingEpoch === this.epoch) return;
-    const epoch = this.epoch;
-    this.officerPendingEpoch = epoch;
-    void this.officerAssets.acquire('character_police', () => !this.disposed && this.epoch === epoch, container => {
+    if (this.disposed || this.officerLease || this.officerPendingEpoch !== null) return;
+    this.officerPendingEpoch = 1;
+    void this.officerAssets.acquire('character_police', () => !this.disposed, container => {
       try {
         const entries = container.instantiateModelsToScene(name => `officer_${name}`, false, { doNotInstantiate: true });
         for (const node of entries.rootNodes) {
           node.parent = root;
           if (node instanceof TransformNode) {
+            node.rotationQuaternion = null;
             node.scaling.scaleInPlace(1.9);
             node.position.y = 0;
           }
@@ -502,7 +504,7 @@ export class BabylonRenderEngine {
         return { dispose: () => {} };
       }
     }).then(lease => {
-      if (!this.disposed && this.epoch === epoch) {
+      if (!this.disposed) {
         this.officerLease = lease;
         this.officerPendingEpoch = null;
       } else {
@@ -510,21 +512,21 @@ export class BabylonRenderEngine {
         lease?.release();
       }
     }).catch(error => {
-      if (this.epoch === epoch) this.officerPendingEpoch = null;
+      this.officerPendingEpoch = null;
       console.warn('[GLB] officer acquire failed; keeping primitives', error);
     });
   }
 
   private ensureDogAsset(root: TransformNode): void {
-    if (this.disposed || this.dogLease || this.dogPendingEpoch === this.epoch) return;
-    const epoch = this.epoch;
-    this.dogPendingEpoch = epoch;
-    void this.dogAssets.acquire('character_dog', () => !this.disposed && this.epoch === epoch, container => {
+    if (this.disposed || this.dogLease || this.dogPendingEpoch !== null) return;
+    this.dogPendingEpoch = 1;
+    void this.dogAssets.acquire('character_dog', () => !this.disposed, container => {
       try {
         const entries = container.instantiateModelsToScene(name => `dog_${name}`, false, { doNotInstantiate: true });
         for (const node of entries.rootNodes) {
           node.parent = root;
           if (node instanceof TransformNode) {
+            node.rotationQuaternion = null;
             node.scaling.scaleInPlace(0.85);
             node.position.y = 0;
           }
@@ -548,7 +550,7 @@ export class BabylonRenderEngine {
         return { dispose: () => {} };
       }
     }).then(lease => {
-      if (!this.disposed && this.epoch === epoch) {
+      if (!this.disposed) {
         this.dogLease = lease;
         this.dogPendingEpoch = null;
       } else {
@@ -556,7 +558,7 @@ export class BabylonRenderEngine {
         lease?.release();
       }
     }).catch(error => {
-      if (this.epoch === epoch) this.dogPendingEpoch = null;
+      this.dogPendingEpoch = null;
       console.warn('[GLB] dog acquire failed; keeping primitives', error);
     });
   }
@@ -581,19 +583,20 @@ export class BabylonRenderEngine {
   }
 
   private ensureRunnerAsset(root: Mesh): void {
-    if (this.disposed || this.runnerLease || this.runnerPendingEpoch === this.epoch) return;
-    const epoch = this.epoch;
-    this.runnerPendingEpoch = epoch;
-    void this.runnerAssets.acquire('character_runner', () => !this.disposed && this.epoch === epoch, container => {
+    if (this.disposed || this.runnerLease || this.runnerPendingEpoch !== null) return;
+    this.runnerPendingEpoch = 1;
+    void this.runnerAssets.acquire('character_runner', () => !this.disposed, container => {
       try {
         const entries = container.instantiateModelsToScene(name => `runner_${name}`, false, { doNotInstantiate: true });
         for (const node of entries.rootNodes) {
           node.parent = root;
           if (node instanceof TransformNode) {
+            node.rotationQuaternion = null;
+            this.runnerRootNode = node;
             // character_runner: height = 0.979m; scaled by 1.84 = ~1.80m tall
             node.scaling.scaleInPlace(1.84);
             node.position.y = 0;
-            node.rotation.y = Math.PI;
+            node.rotation.y = (this.lastState === 'MENU' || this.lastState === 'SHOP') ? 0 : Math.PI;
           }
         }
         const meshes = entries.rootNodes.flatMap(n => n.getChildMeshes() as Mesh[]);
@@ -615,7 +618,7 @@ export class BabylonRenderEngine {
         return { dispose: () => {} };
       }
     }).then(lease => {
-      if (!this.disposed && this.epoch === epoch) {
+      if (!this.disposed) {
         this.runnerLease = lease;
         this.runnerPendingEpoch = null;
       } else {
@@ -623,7 +626,7 @@ export class BabylonRenderEngine {
         lease?.release();
       }
     }).catch(error => {
-      if (this.epoch === epoch) this.runnerPendingEpoch = null;
+      this.runnerPendingEpoch = null;
       console.warn('[GLB] runner acquire failed; keeping player', error);
     });
   }
@@ -900,6 +903,25 @@ export class BabylonRenderEngine {
     }
     const animSpeed = ctx.state === 'PLAYING' ? ctx.speed * 0.8 : 0;
 
+    this.lastState = ctx.state;
+    if (this.runnerRootNode && !this.runnerRootNode.isDisposed()) {
+      this.runnerRootNode.rotation.y = (ctx.state === 'MENU' || ctx.state === 'SHOP') ? 0 : Math.PI;
+      if (ctx.state === 'PLAYING') {
+        const runBounce = Math.abs(Math.sin(this.totalTime * animSpeed * 1.5)) * 0.08;
+        this.runnerRootNode.position.y = runBounce;
+        this.runnerRootNode.rotation.z = Math.sin(this.totalTime * animSpeed * 1.5) * 0.04;
+      } else {
+        this.runnerRootNode.position.y = 0;
+        this.runnerRootNode.rotation.z = 0;
+      }
+    }
+    if (this.runnerLease) {
+      const b1 = this.scene.getMeshByName('Beta_Surface');
+      if (b1 && b1.isVisible) b1.isVisible = false;
+      const b2 = this.scene.getMeshByName('Beta_Joints');
+      if (b2 && b2.isVisible) b2.isVisible = false;
+    }
+
     // 3. 地铁跑酷经典追捕机制 (Subway Surfers Chase System)
     // - MENU/SHOP：警官与警犬站在右侧铁轨，呼吸微动
     // - 奔跑开局（前 2.6 秒）：开局前 1.0 秒警官在身后 2.8m 追赶，随后 1.6 秒玩家加速拉开距离脱离视野
@@ -1106,9 +1128,10 @@ export class BabylonRenderEngine {
     this.environment.reset();
     this.inspectorRoot.position.set(-1.3, 0, -0.6);
     this.dogRoot.position.set(-1.8, 0, -0.2);
-    this.runnerLease?.release();
-    this.runnerLease = null;
-    this.runnerPendingEpoch = null;
+    if (this.runnerRootNode && !this.runnerRootNode.isDisposed()) {
+      this.runnerRootNode.position.set(0, 0, 0);
+      this.runnerRootNode.rotation.set(0, 0, 0);
+    }
     this.hoverboardAttached = false;
 
     // 清理残留破碎特效碎片
@@ -1130,6 +1153,7 @@ export class BabylonRenderEngine {
     this.entityViews.dispose();
     this.playerLease?.release(); this.playerLease = null;
     this.runnerLease?.release(); this.runnerLease = null;
+    this.runnerRootNode = null;
     this.officerLease?.release(); this.officerLease = null;
     this.dogLease?.release(); this.dogLease = null;
     this.runnerPendingEpoch = null;

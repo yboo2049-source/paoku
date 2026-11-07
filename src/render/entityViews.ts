@@ -4,6 +4,7 @@ import type { DeepReadonly } from '../types/contracts';
 import type { GameContext, ObstacleEntity, PowerUpType } from '../types';
 import { POWERUP_CATALOG } from '../systems/powerupCatalog';
 import { SharedMaterials } from './assets';
+import { WorldAssetManager } from './worldAssetManager';
 
 export class ViewRegistry<T> extends Map<string, T> {
   private release: (view: T) => void;
@@ -23,8 +24,17 @@ export class EntityViews {
   private materials: SharedMaterials;
   private glow?: GlowLayer;
   private casters = new Set<Mesh>();
-  constructor(scene: Scene, shadowGenerator: ShadowGenerator, materials: SharedMaterials, glow?: GlowLayer) { this.scene = scene; this.shadowGenerator = shadowGenerator; this.materials = materials; this.glow = glow; }
+  private worldAssets: WorldAssetManager;
+  constructor(scene: Scene, shadowGenerator: ShadowGenerator, materials: SharedMaterials, glow?: GlowLayer) {
+    this.scene = scene;
+    this.shadowGenerator = shadowGenerator;
+    this.materials = materials;
+    this.glow = glow;
+    this.worldAssets = new WorldAssetManager(scene, shadowGenerator);
+    this.worldAssets.preload();
+  }
   private release(node: TransformNode): void {
+    this.worldAssets.releaseEntity(node.name);
     for (const mesh of node.getChildMeshes()) {
       this.shadowGenerator.removeShadowCaster(mesh); this.casters.delete(mesh as Mesh); this.glow?.removeIncludedOnlyMesh(mesh as Mesh);
     }
@@ -43,8 +53,16 @@ export class EntityViews {
   sync(ctx: DeepReadonly<GameContext>, totalTime: number, dt: number): void {
     this.syncObstacles(ctx); this.syncCoins(ctx, totalTime, dt); this.syncPowerUps(ctx, totalTime, dt);
   }
-  reset(): void { this.obstacleMeshes.clear(); this.coinMeshes.clear(); this.powerUpMeshes.clear(); }
-  dispose(): void { this.reset(); }
+  reset(): void {
+    this.worldAssets.reset();
+    this.obstacleMeshes.clear();
+    this.coinMeshes.clear();
+    this.powerUpMeshes.clear();
+  }
+  dispose(): void {
+    this.worldAssets.dispose();
+    this.reset();
+  }
   private triangleMesh(name: string, positions: number[], indices: number[]): Mesh {
     const mesh = new Mesh(name, this.scene); const data = new VertexData();
     // Babylon's default LH front-face winding is opposite to the geometric cross-product ordering above.
@@ -110,6 +128,16 @@ export class EntityViews {
             hl.parent = rootNode;
           });
 
+          // 挂载高精度 3D 列车模型 (并在就绪后隐退过程化占位网格)
+          this.worldAssets.attachModel(obs.id, 'TRAIN_CARRIAGE', node, () => {
+            body.isVisible = false;
+            roof.isVisible = false;
+            stripe.isVisible = false;
+            node.getChildMeshes().forEach((m) => {
+              if (m.name.startsWith(`hl_${obs.id}`)) m.isVisible = false;
+            });
+          });
+
         } else if (obs.type === 'RAMP') {
           const rampMat = this.getCachedMaterial('ramp_body', { diffuse: Color3.FromHexString('#D7A74A') });
           const ramp = this.buildWedge(obs);
@@ -125,6 +153,14 @@ export class EntityViews {
             const arrow = this.triangleMesh('arrow_' + obs.id + '_' + i, positions, [0, 1, 2]);
             arrow.material = arrowMat; arrow.parent = node;
           }
+
+          // 挂载高精度 3D 带坡工程车模型
+          this.worldAssets.attachModel(obs.id, 'TRAIN_RAMP', node, () => {
+            ramp.isVisible = false;
+            node.getChildMeshes().forEach((m) => {
+              if (m.name.startsWith(`arrow_${obs.id}`)) m.isVisible = false;
+            });
+          });
 
         } else {
           // 精细化低/高空障碍栅栏 (含有双侧红/黄闪烁警示灯与黄黑斜纹拉线)
@@ -147,6 +183,15 @@ export class EntityViews {
             lamp.position.set(lx, obs.height + 0.12, 0);
             lamp.material = lampMat;
             lamp.parent = rootNode;
+          });
+
+          // 挂载高精度 3D 障碍模型
+          const modelKey = isLow ? 'OBSTACLE_HURDLE' : 'OBSTACLE_SLIDE';
+          this.worldAssets.attachModel(obs.id, modelKey, node, () => {
+            bar.isVisible = false;
+            node.getChildMeshes().forEach((m) => {
+              if (m.name.startsWith(`lamp_${obs.id}`)) m.isVisible = false;
+            });
           });
         }
 
@@ -189,6 +234,13 @@ export class EntityViews {
         star.parent = coinMesh;
 
         this.glow?.addIncludedOnlyMesh(coinMesh); this.glow?.addIncludedOnlyMesh(star);
+
+        // 挂载高精度 3D 金币模型
+        this.worldAssets.attachModel(coin.id, 'PROP_COIN', coinMesh, () => {
+          star.isVisible = false;
+          coinMesh.visibility = 0;
+        });
+
         return coinMesh;
       });
 

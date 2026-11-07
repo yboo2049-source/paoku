@@ -125,6 +125,10 @@ export class BabylonRenderEngine {
   private cameraRig: CameraRig;
   private qualityManager: QualityManager;
   private playerAssetState: 'PENDING' | 'READY' | 'FALLBACK' = 'PENDING';
+  private officerLease: AssetLease | null = null;
+  private dogLease: AssetLease | null = null;
+  private officerAssets: AssetCache<AssetContainer>;
+  private dogAssets: AssetCache<AssetContainer>;
   private lastRenderTime: number | null = null;
   private presentationOptions: Partial<CameraInput> = {};
   private hudState: Readonly<Record<string, unknown>> = Object.freeze({ status: 'UNREADY', reason: 'NOT_SAMPLED', safe: false });
@@ -204,6 +208,21 @@ export class BabylonRenderEngine {
       if (!valid) console.warn('[GLB] empty player geometry; keeping primitives');
       return valid;
     });
+
+    this.officerAssets = new AssetCache(
+      () => this.loadOfficerAsset().catch(error => {
+        if (!this.disposed) console.warn('[GLB] officer load failed; keeping primitives', error);
+        throw error;
+      }),
+      a => !this.disposed && a.meshes.length > 0
+    );
+    this.dogAssets = new AssetCache(
+      () => this.loadDogAsset().catch(error => {
+        if (!this.disposed) console.warn('[GLB] dog load failed; keeping primitives', error);
+        throw error;
+      }),
+      a => !this.disposed && a.meshes.length > 0
+    );
 
     // 7. 构建玩家 3D 角色模型与悬浮滑板
     this.playerRoot = new TransformNode('playerRoot', this.scene);
@@ -382,6 +401,118 @@ export class BabylonRenderEngine {
     });
   }
 
+  private loadOfficerAsset(): Promise<AssetContainer> {
+    return new Promise((resolve, reject) => {
+      if (typeof window === 'undefined' || !SceneLoader.IsPluginForExtensionAvailable('.glb')) {
+        reject(new Error('GLB loader not available'));
+        return;
+      }
+      SceneLoader.LoadAssetContainerAsync('/models/', 'character_police.glb', this.scene).then(
+        asset => {
+          if (this.disposed) { asset.dispose(); reject(new Error('Renderer disposed')); return; }
+          resolve(asset);
+        },
+        reject
+      );
+    });
+  }
+
+  private loadDogAsset(): Promise<AssetContainer> {
+    return new Promise((resolve, reject) => {
+      if (typeof window === 'undefined' || !SceneLoader.IsPluginForExtensionAvailable('.glb')) {
+        reject(new Error('GLB loader not available'));
+        return;
+      }
+      SceneLoader.LoadAssetContainerAsync('/models/', 'character_dog.glb', this.scene).then(
+        asset => {
+          if (this.disposed) { asset.dispose(); reject(new Error('Renderer disposed')); return; }
+          resolve(asset);
+        },
+        reject
+      );
+    });
+  }
+
+  private ensureOfficerAsset(root: TransformNode): void {
+    if (this.disposed || this.officerLease) return;
+    const epoch = this.epoch;
+    void this.officerAssets.acquire('character_police', () => !this.disposed && this.epoch === epoch, container => {
+      try {
+        const entries = container.instantiateModelsToScene(name => `officer_${name}`, false, { doNotInstantiate: true });
+        for (const node of entries.rootNodes) {
+          node.parent = root;
+          if (node instanceof TransformNode) {
+            node.scaling.set(1.9, 1.9, 1.9);
+            node.rotation.y = Math.PI;
+            node.position.y = 0;
+          }
+        }
+        const meshes = entries.rootNodes.flatMap(n => n.getChildMeshes() as Mesh[]);
+        for (const mesh of meshes) this.shadowGenerator.addShadowCaster(mesh, false);
+
+        for (const name of ['officerTorso', 'officerHead', 'officerCap', 'officerBadge', 'sirenR', 'sirenB']) {
+          const m = this.scene.getMeshByName(name);
+          if (m) m.isVisible = false;
+        }
+
+        return {
+          dispose: () => {
+            for (const mesh of meshes) this.shadowGenerator.removeShadowCaster(mesh);
+            entries.dispose();
+          },
+        };
+      } catch {
+        return { dispose: () => {} };
+      }
+    }).then(lease => {
+      if (!this.disposed && this.epoch === epoch) {
+        this.officerLease = lease;
+      } else {
+        lease?.release();
+      }
+    });
+  }
+
+  private ensureDogAsset(root: TransformNode): void {
+    if (this.disposed || this.dogLease) return;
+    const epoch = this.epoch;
+    void this.dogAssets.acquire('character_dog', () => !this.disposed && this.epoch === epoch, container => {
+      try {
+        const entries = container.instantiateModelsToScene(name => `dog_${name}`, false, { doNotInstantiate: true });
+        for (const node of entries.rootNodes) {
+          node.parent = root;
+          if (node instanceof TransformNode) {
+            node.scaling.set(0.85, 0.85, 0.85);
+            node.rotation.y = Math.PI;
+            node.position.y = 0;
+          }
+        }
+        const meshes = entries.rootNodes.flatMap(n => n.getChildMeshes() as Mesh[]);
+        for (const mesh of meshes) this.shadowGenerator.addShadowCaster(mesh, false);
+
+        for (const name of ['dogBody', 'dogHead', 'dogCollar']) {
+          const m = this.scene.getMeshByName(name);
+          if (m) m.isVisible = false;
+        }
+
+        return {
+          dispose: () => {
+            for (const mesh of meshes) this.shadowGenerator.removeShadowCaster(mesh);
+            entries.dispose();
+          },
+        };
+      } catch {
+        return { dispose: () => {} };
+      }
+    }).then(lease => {
+      if (!this.disposed && this.epoch === epoch) {
+        this.dogLease = lease;
+      } else {
+        lease?.release();
+      }
+    });
+  }
+
   /**
    * 动态应用皮肤配色至 3D 角色（过程化材质与 GLB 蒙皮网格）
    */
@@ -519,6 +650,9 @@ export class BabylonRenderEngine {
     sirenB.material = sirenBlueMat;
     sirenB.parent = root;
 
+    // 挂载 3D 警官模型 (character_police.glb)
+    this.ensureOfficerAsset(root);
+
     return root;
   }
 
@@ -549,6 +683,9 @@ export class BabylonRenderEngine {
     collar.position.set(0, 0.55, 0.28);
     collar.material = collarMat;
     collar.parent = root;
+
+    // 挂载 3D 警犬模型 (character_dog.glb)
+    this.ensureDogAsset(root);
 
     return root;
   }
@@ -788,11 +925,13 @@ export class BabylonRenderEngine {
     eventBus.off('SKIN_CHANGED', this.skinHandler);
     this.entityViews.dispose();
     this.playerLease?.release(); this.playerLease = null;
+    this.officerLease?.release(); this.officerLease = null;
+    this.dogLease?.release(); this.dogLease = null;
     this.characterView.dispose(); this.cameraRig.dispose();
     this.activeFragments.forEach(f => f.mesh.dispose()); this.activeFragments = [];
     this.speedlineSystem.stop(); this.speedlineSystem.dispose();
     this.environment.dispose();
-    this.playerAssets.dispose(); this.materials.dispose();
+    this.playerAssets.dispose(); this.officerAssets.dispose(); this.dogAssets.dispose(); this.materials.dispose();
     this.shadowGenerator.getShadowMap()!.renderList = [];
     this.shadowGenerator.dispose(); this.glowLayer.dispose(); this.pipeline.dispose();
     this.scene.dispose(); this.engine.dispose();

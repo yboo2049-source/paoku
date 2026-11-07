@@ -128,7 +128,7 @@ export class EntityViews {
             hl.parent = rootNode;
           });
 
-          // 挂载高精度 3D 列车模型 (并在就绪后隐退过程化占位网格)
+          // 挂载高精度 3D 列车模型 (支持 1~6 节车厢无缝连挂平铺，并在就绪后隐退过程化占位网格)
           this.worldAssets.attachModel(obs.id, 'TRAIN_CARRIAGE', node, () => {
             body.isVisible = false;
             roof.isVisible = false;
@@ -136,7 +136,7 @@ export class EntityViews {
             node.getChildMeshes().forEach((m) => {
               if (m.name.startsWith(`hl_${obs.id}`)) m.isVisible = false;
             });
-          });
+          }, obs.depth);
 
         } else if (obs.type === 'RAMP') {
           const rampMat = this.getCachedMaterial('ramp_body', { diffuse: Color3.FromHexString('#D7A74A') });

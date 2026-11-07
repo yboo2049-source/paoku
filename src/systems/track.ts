@@ -40,9 +40,15 @@ export function validateTrackDefinition(d: TrackSegmentDefinition): string[] {
     if (!['LOW_OBSTACLE', 'HIGH_OBSTACLE', 'STATIC_TRAIN', 'MOVING_TRAIN', 'RAMP'].includes(o.type)) issues.push('unknown obstacle kind');
     const expectedDefinition = o.type === 'RAMP' || o.combinationId ? 'ramp-truck' : o.type === 'LOW_OBSTACLE' ? 'low-barrier' : o.type === 'HIGH_OBSTACLE' ? 'high-barrier' : 'carriage';
     if (o.definitionId !== expectedDefinition) issues.push('unknown obstacle definition');
-    const acceptedDimensions: Record<string, readonly number[]> = { RAMP: [2.4, 3, 6], STATIC_TRAIN: [2.4, 3, 12], MOVING_TRAIN: [2.4, 3, 12], LOW_OBSTACLE: [2.2, 1, 0.5], HIGH_OBSTACLE: [2.2, 1.8, 0.5] };
-    const size = acceptedDimensions[o.type];
-    if (size && (o.width !== size[0] || o.height !== size[1] || o.depth !== size[2])) issues.push('unaccepted logical dimensions');
+    const isTrain = o.type === 'STATIC_TRAIN' || o.type === 'MOVING_TRAIN';
+    if (isTrain) {
+      const isDepthValid = o.depth >= 12 && o.depth <= 72 && Math.abs((o.depth / 12) - Math.round(o.depth / 12)) < 1e-4;
+      if (o.width !== 2.4 || o.height !== 3 || !isDepthValid) issues.push('unaccepted logical dimensions');
+    } else {
+      const acceptedDimensions: Record<string, readonly number[]> = { RAMP: [2.4, 3, 6], LOW_OBSTACLE: [2.2, 1, 0.5], HIGH_OBSTACLE: [2.2, 1.8, 0.5] };
+      const size = acceptedDimensions[o.type];
+      if (size && (o.width !== size[0] || o.height !== size[1] || o.depth !== size[2])) issues.push('unaccepted logical dimensions');
+    }
     if (![0, 1, 2].includes(o.lane) || ![o.y, o.z, o.width, o.height, o.depth, o.speedZ ?? 0].every(finite) || o.width <= 0 || o.height <= 0 || o.depth <= 0 || o.y < 0 || o.z - o.depth / 2 < 0 || o.z + o.depth / 2 > d.length) issues.push('invalid obstacle bounds');
     if (o.type === 'MOVING_TRAIN' && (o.speedZ ?? 0) >= 0) issues.push('unsupported moving direction');
     if (o.type === 'MOVING_TRAIN' && reactionWindowSec(o.z - o.depth / 2 - CONSTANTS.PLAYER_DEPTH / 2, d.maxSpeed, o.speedZ ?? 0) < 1.5) issues.push('relative reaction window');

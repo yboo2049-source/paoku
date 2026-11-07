@@ -63,6 +63,7 @@ const trainObstacle = (
   lane: number,
   z: number,
   speedZ?: number,
+  depth = 12,
 ): TrackObstacle => ({
   localId,
   definitionId: 'carriage',
@@ -72,7 +73,7 @@ const trainObstacle = (
   z,
   width: 2.4,
   height: 3,
-  depth: 12,
+  depth,
   ...(speedZ === undefined ? {} : { speedZ }),
 });
 
@@ -81,8 +82,8 @@ const extendedDefinitions: TrackSegmentDefinition[] = [
     ...segmentBase('station-weave', ['INTRO', 'BUILD']),
     obstacles: [
       trainObstacle('entry-right', 2, 25),
-      trainObstacle('outer-left', 0, 65),
-      trainObstacle('outer-right', 2, 105),
+      trainObstacle('outer-left', 0, 65, undefined, 36), // 3节长列车 (36m)
+      trainObstacle('outer-right', 2, 105, undefined, 48), // 4节长列车 (48m)
       trainObstacle('exit-left', 0, 145),
     ],
     rewards: coinLine([25, 45, 65, 85, 105, 125, 145]),
@@ -215,8 +216,8 @@ const extendedDefinitions: TrackSegmentDefinition[] = [
     ...segmentBase('recovery-promenade', ['RECOVERY']),
     obstacles: [
       trainObstacle('promenade-entry-left', 0, 25),
-      trainObstacle('promenade-left', 0, 80),
-      trainObstacle('promenade-right', 2, 80),
+      trainObstacle('promenade-left', 0, 80, undefined, 60), // 5节超长列车 (60m)
+      trainObstacle('promenade-right', 2, 80, undefined, 48), // 4节长列车 (48m)
       trainObstacle('promenade-exit-right', 2, 135),
     ],
     rewards: coinLine([25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145]),

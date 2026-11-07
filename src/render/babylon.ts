@@ -135,6 +135,12 @@ export class BabylonRenderEngine {
   private dogAssets: AssetCache<AssetContainer>;
   private runnerAssets: AssetCache<AssetContainer>;
   private runnerRootNode: TransformNode | null = null;
+  private runnerLeftArmPivot: TransformNode | null = null;
+  private runnerRightArmPivot: TransformNode | null = null;
+  private runnerLeftLegPivot: TransformNode | null = null;
+  private runnerRightLegPivot: TransformNode | null = null;
+  private runnerHeadPivot: TransformNode | null = null;
+  private runnerTorsoPivot: TransformNode | null = null;
   private lastState: GameContext['state'] = 'MENU';
   private runElapsed: number = 0;
   private stumbleTimer: number = 0;
@@ -597,11 +603,73 @@ export class BabylonRenderEngine {
             node.scaling.scaleInPlace(1.84);
             node.position.y = 0;
             node.rotation.y = (this.lastState === 'MENU' || this.lastState === 'SHOP') ? 0 : Math.PI;
+
+            // 建立 6 个解剖学运动学骨骼 Pivot 节点
+            const leftArm = new TransformNode('runner_p_leftArm', this.scene);
+            leftArm.parent = node;
+            leftArm.position.set(0.184, 0.68, -0.02);
+            this.runnerLeftArmPivot = leftArm;
+
+            const rightArm = new TransformNode('runner_p_rightArm', this.scene);
+            rightArm.parent = node;
+            rightArm.position.set(-0.177, 0.68, -0.02);
+            this.runnerRightArmPivot = rightArm;
+
+            const leftLeg = new TransformNode('runner_p_leftLeg', this.scene);
+            leftLeg.parent = node;
+            leftLeg.position.set(0.065, 0.40, -0.01);
+            this.runnerLeftLegPivot = leftLeg;
+
+            const rightLeg = new TransformNode('runner_p_rightLeg', this.scene);
+            rightLeg.parent = node;
+            rightLeg.position.set(-0.064, 0.40, -0.01);
+            this.runnerRightLegPivot = rightLeg;
+
+            const head = new TransformNode('runner_p_head', this.scene);
+            head.parent = node;
+            head.position.set(0, 0.72, 0.02);
+            this.runnerHeadPivot = head;
+
+            const torso = new TransformNode('runner_p_torso', this.scene);
+            torso.parent = node;
+            torso.position.set(0, 0.48, 0);
+            this.runnerTorsoPivot = torso;
           }
         }
         const meshes = entries.rootNodes.flatMap(n => n.getChildMeshes() as Mesh[]);
         for (const mesh of meshes) this.shadowGenerator.addShadowCaster(mesh, false);
 
+        // 将 34 个子零件无损重定向挂接到对应的 6 组运动学 Pivot 节点
+        if (
+          this.runnerLeftArmPivot &&
+          this.runnerRightArmPivot &&
+          this.runnerLeftLegPivot &&
+          this.runnerRightLegPivot &&
+          this.runnerHeadPivot &&
+          this.runnerTorsoPivot
+        ) {
+          const meshMap = new Map<string, Mesh>();
+          for (const m of meshes) {
+            meshMap.set(m.name, m);
+          }
+          const reparentParts = (partIndices: number[], pivot: TransformNode) => {
+            for (const idx of partIndices) {
+              const mesh = meshMap.get(`runner_tripo_part_${idx}`);
+              if (mesh) {
+                mesh.setParent(pivot);
+              }
+            }
+          };
+
+          reparentParts([5, 11, 13, 19, 20], this.runnerLeftArmPivot);
+          reparentParts([4, 9, 21, 22, 24], this.runnerRightArmPivot);
+          reparentParts([3, 6, 14, 17, 30], this.runnerLeftLegPivot);
+          reparentParts([2, 7, 18, 27, 28, 29], this.runnerRightLegPivot);
+          reparentParts([1, 8, 10, 12, 15, 16, 26, 31, 32, 33], this.runnerHeadPivot);
+          reparentParts([0, 23, 25], this.runnerTorsoPivot);
+        }
+
+        // 彻底隐退旧版粉红机器人网格
         for (const name of ['Beta_Surface', 'Beta_Joints', 'torso', 'armor', 'head', 'visor', 'armLeft', 'armRight', 'legLeft', 'legRight', 'pack']) {
           const m = this.scene.getMeshByName(name);
           if (m) m.isVisible = false;
@@ -610,6 +678,18 @@ export class BabylonRenderEngine {
         return {
           dispose: () => {
             for (const mesh of meshes) this.shadowGenerator.removeShadowCaster(mesh);
+            this.runnerLeftArmPivot?.dispose();
+            this.runnerRightArmPivot?.dispose();
+            this.runnerLeftLegPivot?.dispose();
+            this.runnerRightLegPivot?.dispose();
+            this.runnerHeadPivot?.dispose();
+            this.runnerTorsoPivot?.dispose();
+            this.runnerLeftArmPivot = null;
+            this.runnerRightArmPivot = null;
+            this.runnerLeftLegPivot = null;
+            this.runnerRightLegPivot = null;
+            this.runnerHeadPivot = null;
+            this.runnerTorsoPivot = null;
             entries.dispose();
           },
         };
@@ -621,6 +701,10 @@ export class BabylonRenderEngine {
       if (!this.disposed) {
         this.runnerLease = lease;
         this.runnerPendingEpoch = null;
+        if (this.playerLease) {
+          this.playerLease.release();
+          this.playerLease = null;
+        }
       } else {
         this.runnerPendingEpoch = null;
         lease?.release();
@@ -891,7 +975,9 @@ export class BabylonRenderEngine {
 
     this.environment.sync(ctx.player.z, ctx.state);
     this.sun.position.set(ctx.player.x + 25, ctx.player.y + 45, ctx.player.z + 25);
-    this.ensurePlayerAsset(this.playerBodyMesh);
+    if (!this.runnerLease) {
+      this.ensurePlayerAsset(this.playerBodyMesh);
+    }
     this.ensureRunnerAsset(this.playerBodyMesh);
     this.ensureOfficerAsset(this.inspectorRoot);
     this.ensureDogAsset(this.dogRoot);
@@ -905,21 +991,178 @@ export class BabylonRenderEngine {
 
     this.lastState = ctx.state;
     if (this.runnerRootNode && !this.runnerRootNode.isDisposed()) {
-      this.runnerRootNode.rotation.y = (ctx.state === 'MENU' || ctx.state === 'SHOP') ? 0 : Math.PI;
-      if (ctx.state === 'PLAYING') {
-        const runBounce = Math.abs(Math.sin(this.totalTime * animSpeed * 1.5)) * 0.08;
-        this.runnerRootNode.position.y = runBounce;
-        this.runnerRootNode.rotation.z = Math.sin(this.totalTime * animSpeed * 1.5) * 0.04;
+      const isMenu = ctx.state === 'MENU' || ctx.state === 'SHOP';
+      this.runnerRootNode.rotation.y = isMenu ? 0 : Math.PI;
+
+      if (isMenu) {
+        // 菜单与商店状态：自然呼吸待机
+        const breath = Math.sin(this.totalTime * 2.2);
+        this.runnerRootNode.position.y = 0;
+        this.runnerRootNode.rotation.z = 0;
+        this.runnerRootNode.rotation.x = 0;
+
+        if (this.runnerTorsoPivot && !this.runnerTorsoPivot.isDisposed()) {
+          this.runnerTorsoPivot.rotation.set(breath * 0.025, 0, 0);
+        }
+        if (this.runnerHeadPivot && !this.runnerHeadPivot.isDisposed()) {
+          this.runnerHeadPivot.rotation.set(breath * 0.02, Math.sin(this.totalTime * 0.9) * 0.08, 0);
+        }
+        if (this.runnerLeftArmPivot && !this.runnerLeftArmPivot.isDisposed()) {
+          this.runnerLeftArmPivot.rotation.set(breath * 0.04, 0.05, -0.06);
+        }
+        if (this.runnerRightArmPivot && !this.runnerRightArmPivot.isDisposed()) {
+          this.runnerRightArmPivot.rotation.set(-breath * 0.04, -0.05, 0.06);
+        }
+        if (this.runnerLeftLegPivot && !this.runnerLeftLegPivot.isDisposed()) {
+          this.runnerLeftLegPivot.rotation.set(0, 0, 0);
+        }
+        if (this.runnerRightLegPivot && !this.runnerRightLegPivot.isDisposed()) {
+          this.runnerRightLegPivot.rotation.set(0, 0, 0);
+        }
+      } else if (ctx.state === 'PLAYING') {
+        const isJumping = ctx.player.isJumping || ctx.player.y > 0.15;
+        const isRolling = ctx.player.isRolling || ctx.player.rollTimer > 0;
+        const isSurfing = !!ctx.player.hoverboardActive;
+
+        if (isRolling) {
+          // 下滚滑铲翻滚姿态：身体紧凑下潜，躯干前倾，腿部与手臂收拢
+          this.runnerRootNode.position.y = -0.35;
+          this.runnerRootNode.rotation.z = 0;
+          this.runnerRootNode.rotation.x = 0.25;
+
+          if (this.runnerTorsoPivot && !this.runnerTorsoPivot.isDisposed()) {
+            this.runnerTorsoPivot.rotation.set(0.65, 0, 0);
+          }
+          if (this.runnerHeadPivot && !this.runnerHeadPivot.isDisposed()) {
+            this.runnerHeadPivot.rotation.set(-0.45, 0, 0);
+          }
+          if (this.runnerLeftLegPivot && !this.runnerLeftLegPivot.isDisposed()) {
+            this.runnerLeftLegPivot.rotation.set(0.75, 0, -0.05);
+          }
+          if (this.runnerRightLegPivot && !this.runnerRightLegPivot.isDisposed()) {
+            this.runnerRightLegPivot.rotation.set(-0.35, 0, 0.05);
+          }
+          if (this.runnerLeftArmPivot && !this.runnerLeftArmPivot.isDisposed()) {
+            this.runnerLeftArmPivot.rotation.set(0.6, 0.1, -0.2);
+          }
+          if (this.runnerRightArmPivot && !this.runnerRightArmPivot.isDisposed()) {
+            this.runnerRightArmPivot.rotation.set(0.6, -0.1, 0.2);
+          }
+        } else if (isJumping) {
+          // 跳跃腾空姿态：双腿收曲展腹，手臂高举平衡
+          this.runnerRootNode.position.y = 0;
+          this.runnerRootNode.rotation.z = 0;
+          this.runnerRootNode.rotation.x = -0.08;
+
+          if (this.runnerTorsoPivot && !this.runnerTorsoPivot.isDisposed()) {
+            this.runnerTorsoPivot.rotation.set(-0.08, 0, 0);
+          }
+          if (this.runnerHeadPivot && !this.runnerHeadPivot.isDisposed()) {
+            this.runnerHeadPivot.rotation.set(-0.12, 0, 0);
+          }
+          if (this.runnerLeftLegPivot && !this.runnerLeftLegPivot.isDisposed()) {
+            this.runnerLeftLegPivot.rotation.set(-0.55, 0.05, -0.05);
+          }
+          if (this.runnerRightLegPivot && !this.runnerRightLegPivot.isDisposed()) {
+            this.runnerRightLegPivot.rotation.set(0.45, -0.05, 0.05);
+          }
+          if (this.runnerLeftArmPivot && !this.runnerLeftArmPivot.isDisposed()) {
+            this.runnerLeftArmPivot.rotation.set(-0.85, 0.15, -0.25);
+          }
+          if (this.runnerRightArmPivot && !this.runnerRightArmPivot.isDisposed()) {
+            this.runnerRightArmPivot.rotation.set(-0.85, -0.15, 0.25);
+          }
+        } else if (isSurfing) {
+          // 滑板冲浪姿态：侧身迎风，前后脚错落微屈，双臂张开保持平衡
+          const surfSway = Math.sin(this.totalTime * 7.0) * 0.03;
+          this.runnerRootNode.position.y = surfSway;
+          this.runnerRootNode.rotation.z = surfSway * 0.5;
+          this.runnerRootNode.rotation.x = 0.06;
+
+          if (this.runnerTorsoPivot && !this.runnerTorsoPivot.isDisposed()) {
+            this.runnerTorsoPivot.rotation.set(0.08, 0.45, 0);
+          }
+          if (this.runnerHeadPivot && !this.runnerHeadPivot.isDisposed()) {
+            this.runnerHeadPivot.rotation.set(0, -0.45, 0);
+          }
+          if (this.runnerLeftLegPivot && !this.runnerLeftLegPivot.isDisposed()) {
+            this.runnerLeftLegPivot.rotation.set(-0.25, 0.2, -0.08);
+          }
+          if (this.runnerRightLegPivot && !this.runnerRightLegPivot.isDisposed()) {
+            this.runnerRightLegPivot.rotation.set(0.25, -0.2, 0.08);
+          }
+          if (this.runnerLeftArmPivot && !this.runnerLeftArmPivot.isDisposed()) {
+            this.runnerLeftArmPivot.rotation.set(-0.35, 0.1, -0.4);
+          }
+          if (this.runnerRightArmPivot && !this.runnerRightArmPivot.isDisposed()) {
+            this.runnerRightArmPivot.rotation.set(0.35, -0.1, 0.4);
+          }
+        } else {
+          // 经典疾驰跑步步态 (Authentic Subway Surfers Running Gait):
+          // 双臂大副摆动、双腿前后交替迈步、躯干前倾微扭、头部微动
+          const animCadence = this.totalTime * Math.max(10, animSpeed) * 0.75;
+          const stride = Math.sin(animCadence);
+          const armSwing = stride * 0.85; // ~49度前后大摆臂
+          const legStride = stride * 0.80; // ~46度大跨步踢腿
+          const runBounce = Math.abs(Math.sin(animCadence)) * 0.07;
+
+          this.runnerRootNode.position.y = runBounce;
+          this.runnerRootNode.rotation.z = stride * 0.025;
+          this.runnerRootNode.rotation.x = 0.10; // 冲刺前倾
+
+          if (this.runnerLeftArmPivot && !this.runnerLeftArmPivot.isDisposed()) {
+            this.runnerLeftArmPivot.rotation.set(
+              -armSwing,
+              0.12,
+              -0.12 - Math.abs(stride) * 0.08
+            );
+          }
+          if (this.runnerRightArmPivot && !this.runnerRightArmPivot.isDisposed()) {
+            this.runnerRightArmPivot.rotation.set(
+              armSwing,
+              -0.12,
+              0.12 + Math.abs(stride) * 0.08
+            );
+          }
+          if (this.runnerLeftLegPivot && !this.runnerLeftLegPivot.isDisposed()) {
+            this.runnerLeftLegPivot.rotation.set(
+              legStride,
+              0,
+              -0.02
+            );
+          }
+          if (this.runnerRightLegPivot && !this.runnerRightLegPivot.isDisposed()) {
+            this.runnerRightLegPivot.rotation.set(
+              -legStride,
+              0,
+              0.02
+            );
+          }
+          if (this.runnerTorsoPivot && !this.runnerTorsoPivot.isDisposed()) {
+            this.runnerTorsoPivot.rotation.set(
+              0.12,
+              -stride * 0.12,
+              stride * 0.03
+            );
+          }
+          if (this.runnerHeadPivot && !this.runnerHeadPivot.isDisposed()) {
+            this.runnerHeadPivot.rotation.set(
+              -0.08 + Math.cos(animCadence * 2) * 0.03,
+              stride * 0.04,
+              0
+            );
+          }
+        }
       } else {
         this.runnerRootNode.position.y = 0;
         this.runnerRootNode.rotation.z = 0;
       }
     }
     if (this.runnerLease) {
-      const b1 = this.scene.getMeshByName('Beta_Surface');
-      if (b1 && b1.isVisible) b1.isVisible = false;
-      const b2 = this.scene.getMeshByName('Beta_Joints');
-      if (b2 && b2.isVisible) b2.isVisible = false;
+      for (const name of ['Beta_Surface', 'Beta_Joints', 'torso', 'armor', 'head', 'visor', 'armLeft', 'armRight', 'legLeft', 'legRight', 'pack']) {
+        const m = this.scene.getMeshByName(name);
+        if (m && m.isVisible) m.isVisible = false;
+      }
     }
 
     // 3. 地铁跑酷经典追捕机制 (Subway Surfers Chase System)
@@ -1154,6 +1397,12 @@ export class BabylonRenderEngine {
     this.playerLease?.release(); this.playerLease = null;
     this.runnerLease?.release(); this.runnerLease = null;
     this.runnerRootNode = null;
+    this.runnerLeftArmPivot = null;
+    this.runnerRightArmPivot = null;
+    this.runnerLeftLegPivot = null;
+    this.runnerRightLegPivot = null;
+    this.runnerHeadPivot = null;
+    this.runnerTorsoPivot = null;
     this.officerLease?.release(); this.officerLease = null;
     this.dogLease?.release(); this.dogLease = null;
     this.runnerPendingEpoch = null;

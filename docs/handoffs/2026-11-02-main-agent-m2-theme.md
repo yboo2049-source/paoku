@@ -4,8 +4,10 @@
 
 ## 1. 当前要做什么
 
-PAO-18/19限定接线集成已完成并通过主Agent独立终审，详见[最终验收报告](../reviews/2026-11-07-pao18-pao19-integration-acceptance-review.md)、[103/106停止点主审](../reviews/2026-11-07-pao18-pao19-integration-followup-review.md)及本树回执`D:/worker/paoku-sessions/pao-18-font-diagnosis/docs/evidence/PAO-19/integration/v1/FINAL_GATE.md`。
+PAO-20 ~ PAO-26 全量商业化闭环与端到端系统交付已完成并通过主Agent全量验收，详见[最终审查报告](../reviews/2026-11-07-pao20-pao26-final-delivery-review.md)。
+目标集成树 `D:/worker/paoku-sessions/pao-26`（分支 `codex/pao-26-final-delivery`，Commit `72778eb`）已推送至远程，包含全部 M2-M4 核心系统、3D 专属道具剪影、扩展轨道与速度曲线、自适应画质、反馈音频生命周期及 Playwright E2E 实机测试套件。
 
+此前 PAO-18/19 限定接线集成详见[PAO-18/19最终验收报告](../reviews/2026-11-07-pao18-pao19-integration-acceptance-review.md)。
 目标树`D:/worker/paoku-sessions/pao-18-font-diagnosis`（分支`codex/pao18-font-diagnosis`）已正常hooks提交并推送至`7d7d69c278db992ed7defec1256ad2cd437de975`（父提交`d303633e2539a26ca595438b51216a02900df92f`），工作树与暂存区干净，远端`origin/codex/pao18-font-diagnosis`核对一致。
 
 本批完成验证结果：
@@ -40,6 +42,10 @@ PAO-17已审主题不重派重验。阶段边界保持：本批完成PAO-18事�
 | 车尾诊断/修复 | D:/worker/paoku-sessions/pao-15-roof-diagnosis | codex/pao15-roof-diagnosis | 8af24af | 用户延期，候选/证据未提交、暂存区空，保留脏树；不继续诊断/复验 |
 | 字体修复/18-19限定接线集成 | D:/worker/paoku-sessions/pao-18-font-diagnosis | codex/pao18-font-diagnosis | 7d7d69c | 已推送/远端一致，干净；353单测与106/106完整E2E通过并完成主审验收 |
 | PAO-19 | D:/worker/paoku-sessions/pao-19 | codex/pao-19-ui | b474845 | 原UI ed39cb9已审Done；安全区producer已独立验收，干净/远端一致；已由7d7d69c迁入接线 |
+| PAO-20/21 | D:/worker/paoku-sessions/pao-20-21 | codex/pao-20-21-m2-vertical-slice | 074e131 | 已推送/远端一致；反馈生命周期/音频R-08与65s垂直播放证人完成 |
+| PAO-22/23 | D:/worker/paoku-sessions/pao-22-23 | codex/pao-22-23-m3-powerups-tracks | 42963ae | 已推送/远端一致；4类3D道具剪影/扩展切片/三主题区/速度曲线完成 |
+| PAO-24/25 | D:/worker/paoku-sessions/pao-24-25 | codex/pao-24-25-m3-m4-systems | 7bb3fa5 | 已推送/远端一致；商店5皮肤/任务中文化/自适应画质Q2-Q1-Q0完成 |
+| PAO-26 最终集成 | D:/worker/paoku-sessions/pao-26 | codex/pao-26-final-delivery | 72778eb | 已推送/远端一致；合流3路子任务、宿主接线、399单测与E2E全量验证通过 |
 | 原资产只读树 | D:/worker/paoku-sessions/glb-review | detached | 7a2fb29 | 不覆盖原GLB |
 
 15/18的顶层、分支、HEAD、共同Git目录D:/worker/paoku/.git、含未跟踪项status已在目标目录核对，并与主仓worktree list交叉核验。15完整HEAD=614179d245d2a87a2a2aa3d61fde2a8de68eb7c1；18完整HEAD=5bd31cc06a44c1a2ac382809ea8eadb69df76984；18字体/集成树完整HEAD=7d7d69c278db992ed7defec1256ad2cd437de975；ls-remote核实均已推送一致。
@@ -125,6 +131,10 @@ Project 492a7fa2-dba9-4b7b-9d22-154822bbe5a2，Workspace Paoku-v1，Team PAO，�
 | 17 | fcddba1设计、536f54b结构/I-01/I-02、82d2d47明亮主题均已审 | Backlog |
 | 18 | 原工程59/60、字体826b10f、事实桥3aa62fb及18/19限定接线集成7d7d69c（353单测、106/106完整E2E）均已独立验收并推送一致；父最终验收待正式runner/13动作 | Backlog |
 | 19 | ed39cb9原UI已审；新增producer b474845及与18的同帧接线7d7d69c均已独立验收通过 | Done |
+| 20/21 | 反馈生命周期、音频R-08及65s M2垂直播放证人完成（074e131已推） | Done |
+| 22/23 | 4类3D道具多部件剪影、扩展切片、三主题区及速度曲线完成（42963ae已推） | Done |
+| 24/25 | 商店5皮肤、任务中文化、自适应画质调度Q2-Q1-Q0完成（7bb3fa5已推） | Done |
+| 26 | 最终全量集成、宿主桥接、399单测与实机E2E全绿验收通过（72778eb已推） | Done |
 
 按需查报告，不重复跑已审阶段：
 

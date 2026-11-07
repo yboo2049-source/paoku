@@ -4,6 +4,16 @@
 
 ## 最新进展 (Latest Updates)
 
+### PAO-20 ~ PAO-26 全量系统闭环与商业化交付 (Full M2-M4 Systems & E2E Delivery) - 2026-11-07
+*   **PAO-20 反馈生命周期与音频 R-08 对齐**：引入 `FeedbackLifecycleController`，实现道具刷新与过期生命周期音效、来向列车单次鸣笛与错车声相反馈；在 `AudioEngine` 中实现 `pauseAll/resumeAll/resetLifecycle/dispose`，彻底消除暂停与跨局残留音效。
+*   **PAO-21 M2 垂直播放证人 (Vertical Slice Witness)**：实现 65s (3900 tick) 覆盖 6 大核心阶段的物理与逻辑垂直播放证人（起跑换道、高低障翻滚跳跃、斜坡车顶穿越、来车规避、道具拾取与护盾破碎、终端碰撞结算与幂等重开）。
+*   **PAO-22 4 大类道具机制与 3D 专属剪影**：构建 `POWERUP_CATALOG` 规范机制；在 `EntityViews` 中构建多部件 3D 网格（磁铁 `HORSESHOE_MAGNET`、双倍得分 `STAR_MULTIPLIER`、跑鞋 `WINGED_BOOT`、滑板 `THRUSTER_BOARD`），零泄漏共享材质复用。
+*   **PAO-23 扩展切片、主题分区与速度曲线**：新增 6 组扩展轨道切片并通过全量 10 个切片、8 个变体及两两组合的物理证人；实现 360m 周期性三大阳光主题分区与 $V(t) = \min(18 + 0.25t, 45)$ 速度难度曲线。
+*   **PAO-24 商店/设置/任务中文化与加载控制**：实现 4 大核心任务中文描述与 `RunLedger` 事实驱动视图；实现 5 套外观商店状态投影与持久化偏好；规范非致命降级不阻塞可交互就绪的加载状态机。
+*   **PAO-25 自适应画质调度 (Quality Manager R-09)**：规范 Q2/Q1/Q0 画质档位与资源预算，支持视口自适应、3 窗口超标降级、12 窗口余量升级、30s 冷却与用户手动锁定优先。
+*   **PAO-26 最终集成与端到端守护**：在 `src/main.ts` 与 `src/render/babylon.ts` 接入全部控制器与 QA 传感器，全量单测 40 文件 / 399 用例全部通过，Playwright 实机 WebGL 运行通过桌面 1440×900 与移动 390×844 端到端验证。
+*   **交付审查报告**：详见 [`docs/reviews/2026-11-07-pao20-pao26-final-delivery-review.md`](reviews/2026-11-07-pao20-pao26-final-delivery-review.md)。
+
 ### Superpowers 驱动重构 + 质量守护闭环 (obra/superpowers Overhaul) - 2026-08-19
 *   **方法论落地**：基于 `obra/superpowers` v6.3.0（14 个 skill 已安装至 `~/.workbuddy/skills/`），按 `brainstorming → writing-plans → TDD → verification` 标准闭环完成本轮全部交付。
 *   **文档体系对齐实际代码**：`AGENTS.md` 全面重写 —— 修正引擎事实（**Three.js → Babylon.js**）、修正文件路径（`src/render/three.ts → babylon.ts`、`src/systems/collision.ts → physics.ts`）、修正导航表（删除不存在的 `V4_PRODUCT_DOCUMENT.md`、新增 `SUPERPOWERS_WORKFLOW.md`）、新增 **Superpowers Skill ↔ Subagent 角色映射表**（14 skill 显式绑定到 5 Subagent + Dispatcher）、新增第 8 条方法论门禁（`brainstorming` HARD-GATE）。

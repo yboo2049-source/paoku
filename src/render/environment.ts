@@ -46,8 +46,10 @@ export class LegacyEnvironment {
     backdrop.position.y = -0.101; backdrop.material = mats.ground;
     const podium = MeshBuilder.CreateCylinder('menuPodium', { diameter: 4.6, height: 0.2, tessellation: 48 }, scene);
     podium.position.y = -0.1; podium.material = mats.platform; podium.receiveShadows = true;
+    podium.isVisible = false;
     const ring = MeshBuilder.CreateTorus('podiumRing', { diameter: 4.5, thickness: 0.035, tessellation: 48 }, scene);
     ring.material = mats.edge; ring.position.y = 0.012;
+    ring.isVisible = false;
     for (const mesh of [backdrop, podium, ring]) { mesh.metadata = { themeRole: 'podium' }; mesh.isPickable = false; this.meshes.push(mesh); this.podium.push(mesh); }
     this.sync(0, 'MENU');
   }

@@ -1,6 +1,7 @@
 import type { ObstacleEntity, CoinEntity, PowerUpEntity, TrackGenerationFrame, TrackGenerationState } from '../types';
 import type { VersionedRng } from '../types/contracts';
 import { TRACK_SEGMENTS, TRACK_CONTENT_REVISION, stageForCursor } from '../data/trackSegments';
+import { ALL_TRACK_SEGMENTS } from '../data/extendedTrackSegments';
 import { instantiateTrackSegment, MAX_SEGMENTS_PER_UPDATE, TRACK_VARIANTS, validateTrackDefinition } from './track';
 import type { TrackSegmentInstance } from './track';
 
@@ -18,7 +19,11 @@ export class SpawnerSystem {
   private state!: TrackGenerationState;
   private rng!: VersionedRng;
   private instances: TrackSegmentInstance[] = [];
-  constructor() { this.reset(); }
+  private segments: readonly TrackSegmentDefinition[];
+  constructor(segments: readonly TrackSegmentDefinition[] = TRACK_SEGMENTS) {
+    this.segments = segments;
+    this.reset();
+  }
   get generationState(): TrackGenerationState { return { ...this.state, rngState: this.rng.state }; }
   /** Bounded active metadata for future presentation; no models loaded here. */
   get activeSegments(): readonly TrackSegmentInstance[] { return structuredClone(this.instances); }
@@ -36,10 +41,10 @@ export class SpawnerSystem {
     }
     for (let n = 0; n < MAX_SEGMENTS_PER_UPDATE && this.state.nextZ - playerZ < 150; n++) {
       const stage = stageForCursor(this.state.cursor);
-      const candidates = TRACK_SEGMENTS.filter(d => d.stages.includes(stage));
+      const candidates = this.segments.filter(d => d.stages.includes(stage));
       let d = candidates[Math.floor(this.rng.next() * candidates.length)];
       const variant = Math.floor(this.rng.next() * TRACK_VARIANTS);
-      if (!d || validateTrackDefinition(d).length) { d = TRACK_SEGMENTS[0]; this.state.fallbackCount++; }
+      if (!d || validateTrackDefinition(d).length) { d = this.segments[0]; this.state.fallbackCount++; }
       const instance = instantiateTrackSegment(d, { runId: this.state.runId, cursor: this.state.cursor, startZ: this.state.nextZ, variant });
       obstacles.push(...instance.obstacles); coins.push(...instance.coins); powerUps.push(...instance.powerUps);
       this.instances.push(instance); this.state.cursor++; this.state.nextZ += d.length;
@@ -55,9 +60,9 @@ export class SpawnerSystem {
     const name = forcedPattern ?? names[Math.floor(this.rng.next() * names.length)];
     const definitionId = ({ ZigZag_Trains: 'ramp-truck', Under_Over: 'under-over', Moving_Rush: 'moving-rush', Coin_Frenzy: 'calm' } as const)[name];
     if (!definitionId) throw new Error('unknown pattern');
-    const d = TRACK_SEGMENTS.find(d => d.definitionId === definitionId)!;
+    const d = this.segments.find(d => d.definitionId === definitionId)!;
     const instance = instantiateTrackSegment(d, { runId: this.state.runId, cursor: this.state.cursor++, startZ: spawnZ, variant: 0 });
     obstacles.push(...instance.obstacles); coins.push(...instance.coins); powerUps.push(...instance.powerUps);
   }
 }
-export const spawnerSystem = new SpawnerSystem();
+export const spawnerSystem = new SpawnerSystem(ALL_TRACK_SEGMENTS);

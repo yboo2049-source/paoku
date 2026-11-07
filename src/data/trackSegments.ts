@@ -24,7 +24,12 @@ const train = (localId: string, lane: number, z: number, speedZ?: number): Track
 
 /** Finite, reviewed logical dimensions. Model raw bounds are deliberately absent. */
 const definitions: TrackSegmentDefinition[] = [
-  { ...base('calm', ['INTRO', 'RECOVERY']), rewards: rewards([25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 140, 145, 150]) },
+  { ...base('calm', ['INTRO', 'RECOVERY']),
+    obstacles: [
+      train('calm-side-left', 0, 45),
+      train('calm-side-right', 2, 115),
+    ],
+    rewards: rewards([25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 140, 145, 150]) },
   { ...base('under-over', ['BUILD', 'CHALLENGE']),
     obstacles: [
       { localId: 'low', definitionId: 'low-barrier', type: 'LOW_OBSTACLE', lane: 1, y: 0, z: 70, width: 2.2, height: 1, depth: 0.5 },
@@ -49,6 +54,6 @@ export const TRACK_SEGMENTS: readonly TrackSegmentDefinition[] = freezeContent(d
 
 export const SUPPORTED_POWER_UPS: readonly PowerUpType[] = Object.freeze(['MAGNET', 'DOUBLE_SCORE', 'SUPER_SNEAKERS', 'HOVERBOARD']);
 export function stageForCursor(cursor: number): TrackStage {
-  if (cursor < 2) return 'INTRO';
-  return (['BUILD', 'CHALLENGE', 'CHALLENGE', 'RECOVERY'] as const)[(cursor - 2) % 4];
+  if (cursor < 1) return 'INTRO';
+  return (['BUILD', 'CHALLENGE', 'CHALLENGE', 'RECOVERY'] as const)[(cursor - 1) % 4];
 }

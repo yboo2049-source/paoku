@@ -80,14 +80,17 @@ const extendedDefinitions: TrackSegmentDefinition[] = [
   {
     ...segmentBase('station-weave', ['INTRO', 'BUILD']),
     obstacles: [
+      trainObstacle('entry-right', 2, 25),
       trainObstacle('outer-left', 0, 65),
       trainObstacle('outer-right', 2, 105),
+      trainObstacle('exit-left', 0, 145),
     ],
     rewards: coinLine([25, 45, 65, 85, 105, 125, 145]),
   },
   {
     ...segmentBase('canyon-sprint', ['BUILD', 'CHALLENGE']),
     obstacles: [
+      trainObstacle('canyon-entry-right', 2, 20),
       trainObstacle('canyon-left-a', 0, 60),
       trainObstacle('canyon-right-a', 2, 60),
       {
@@ -103,6 +106,7 @@ const extendedDefinitions: TrackSegmentDefinition[] = [
       },
       trainObstacle('canyon-left-b', 0, 110),
       trainObstacle('canyon-right-b', 2, 110),
+      trainObstacle('canyon-exit-left', 0, 145),
     ],
     rewards: coinLine([30, 45, 135, 145]),
     routes: [{ id: 'main', commands: [{ atZ: 70, action: 'JUMP', leadSec: 0.3 }] }],
@@ -110,6 +114,7 @@ const extendedDefinitions: TrackSegmentDefinition[] = [
   {
     ...segmentBase('high-low-combo', ['BUILD', 'CHALLENGE']),
     obstacles: [
+      trainObstacle('combo-entry-left', 0, 20),
       {
         localId: 'combo-high',
         definitionId: 'high-barrier',
@@ -132,6 +137,7 @@ const extendedDefinitions: TrackSegmentDefinition[] = [
         height: 1,
         depth: 0.5,
       },
+      trainObstacle('combo-exit-right', 2, 125),
     ],
     rewards: coinLine([25, 34, 130, 145]),
     routes: [
@@ -147,6 +153,7 @@ const extendedDefinitions: TrackSegmentDefinition[] = [
   {
     ...segmentBase('maintenance-ramp', ['BUILD', 'CHALLENGE']),
     obstacles: [
+      trainObstacle('maint-entry-right', 2, 22),
       {
         localId: 'maint-ramp',
         definitionId: 'ramp-truck',
@@ -175,6 +182,7 @@ const extendedDefinitions: TrackSegmentDefinition[] = [
         height: 1.8,
         depth: 0.5,
       },
+      trainObstacle('maint-exit-left', 0, 145),
     ],
     rewards: [
       ...coinLine([25, 40, 102, 138, 148]),
@@ -185,6 +193,7 @@ const extendedDefinitions: TrackSegmentDefinition[] = [
   {
     ...segmentBase('oncoming-express', ['CHALLENGE']),
     obstacles: [
+      trainObstacle('express-entry-left', 0, 22),
       {
         localId: 'express-low',
         definitionId: 'low-barrier',
@@ -205,8 +214,10 @@ const extendedDefinitions: TrackSegmentDefinition[] = [
   {
     ...segmentBase('recovery-promenade', ['RECOVERY']),
     obstacles: [
+      trainObstacle('promenade-entry-left', 0, 25),
       trainObstacle('promenade-left', 0, 80),
       trainObstacle('promenade-right', 2, 80),
+      trainObstacle('promenade-exit-right', 2, 135),
     ],
     rewards: coinLine([25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145]),
   },

@@ -995,29 +995,44 @@ export class BabylonRenderEngine {
       this.runnerRootNode.rotation.y = isMenu ? 0 : Math.PI;
 
       if (isMenu) {
-        // 菜单与商店状态：自然呼吸待机
-        const breath = Math.sin(this.totalTime * 2.2);
-        this.runnerRootNode.position.y = 0;
+        // 菜单与商店状态：生动的待机呼吸与重心微移动作 (不再是僵硬木偶)
+        const idleTime = this.totalTime;
+        const breath = Math.sin(idleTime * 2.2);
+        const shift = Math.sin(idleTime * 1.1);
+
+        this.runnerRootNode.position.y = breath * 0.02;
         this.runnerRootNode.rotation.z = 0;
         this.runnerRootNode.rotation.x = 0;
 
         if (this.runnerTorsoPivot && !this.runnerTorsoPivot.isDisposed()) {
-          this.runnerTorsoPivot.rotation.set(breath * 0.025, 0, 0);
+          this.runnerTorsoPivot.rotation.set(breath * 0.06, shift * 0.08, shift * 0.03);
         }
         if (this.runnerHeadPivot && !this.runnerHeadPivot.isDisposed()) {
-          this.runnerHeadPivot.rotation.set(breath * 0.02, Math.sin(this.totalTime * 0.9) * 0.08, 0);
+          this.runnerHeadPivot.rotation.set(
+            breath * 0.04 - 0.04,
+            Math.sin(idleTime * 0.8) * 0.22, // 自然环视
+            Math.sin(idleTime * 0.8) * 0.04
+          );
         }
         if (this.runnerLeftArmPivot && !this.runnerLeftArmPivot.isDisposed()) {
-          this.runnerLeftArmPivot.rotation.set(breath * 0.04, 0.05, -0.06);
+          this.runnerLeftArmPivot.rotation.set(
+            breath * 0.12,
+            0.15,
+            -0.28 + breath * 0.06 // 手臂微张下垂，呼吸微摆
+          );
         }
         if (this.runnerRightArmPivot && !this.runnerRightArmPivot.isDisposed()) {
-          this.runnerRightArmPivot.rotation.set(-breath * 0.04, -0.05, 0.06);
+          this.runnerRightArmPivot.rotation.set(
+            -breath * 0.12,
+            -0.15,
+            0.28 - breath * 0.06
+          );
         }
         if (this.runnerLeftLegPivot && !this.runnerLeftLegPivot.isDisposed()) {
-          this.runnerLeftLegPivot.rotation.set(0, 0, 0);
+          this.runnerLeftLegPivot.rotation.set(0, 0, -0.06); // 自然微外八站姿
         }
         if (this.runnerRightLegPivot && !this.runnerRightLegPivot.isDisposed()) {
-          this.runnerRightLegPivot.rotation.set(0, 0, 0);
+          this.runnerRightLegPivot.rotation.set(0, 0, 0.06);
         }
       } else if (ctx.state === 'PLAYING') {
         const isJumping = ctx.player.isJumping || ctx.player.y > 0.15;
@@ -1025,130 +1040,134 @@ export class BabylonRenderEngine {
         const isSurfing = !!ctx.player.hoverboardActive;
 
         if (isRolling) {
-          // 下滚滑铲翻滚姿态：身体紧凑下潜，躯干前倾，腿部与手臂收拢
-          this.runnerRootNode.position.y = -0.35;
+          // 下滚滑铲翻滚姿态：身体大幅下潜，躯干前折，四肢团身
+          this.runnerRootNode.position.y = -0.42;
           this.runnerRootNode.rotation.z = 0;
-          this.runnerRootNode.rotation.x = 0.25;
+          this.runnerRootNode.rotation.x = 0.35;
 
           if (this.runnerTorsoPivot && !this.runnerTorsoPivot.isDisposed()) {
-            this.runnerTorsoPivot.rotation.set(0.65, 0, 0);
+            this.runnerTorsoPivot.rotation.set(0.85, 0, 0);
           }
           if (this.runnerHeadPivot && !this.runnerHeadPivot.isDisposed()) {
-            this.runnerHeadPivot.rotation.set(-0.45, 0, 0);
+            this.runnerHeadPivot.rotation.set(-0.65, 0, 0);
           }
           if (this.runnerLeftLegPivot && !this.runnerLeftLegPivot.isDisposed()) {
-            this.runnerLeftLegPivot.rotation.set(0.75, 0, -0.05);
+            this.runnerLeftLegPivot.rotation.set(0.95, 0.1, -0.15);
           }
           if (this.runnerRightLegPivot && !this.runnerRightLegPivot.isDisposed()) {
-            this.runnerRightLegPivot.rotation.set(-0.35, 0, 0.05);
+            this.runnerRightLegPivot.rotation.set(-0.45, -0.1, 0.15);
           }
           if (this.runnerLeftArmPivot && !this.runnerLeftArmPivot.isDisposed()) {
-            this.runnerLeftArmPivot.rotation.set(0.6, 0.1, -0.2);
+            this.runnerLeftArmPivot.rotation.set(0.8, 0.25, -0.4);
           }
           if (this.runnerRightArmPivot && !this.runnerRightArmPivot.isDisposed()) {
-            this.runnerRightArmPivot.rotation.set(0.6, -0.1, 0.2);
+            this.runnerRightArmPivot.rotation.set(0.8, -0.25, 0.4);
           }
         } else if (isJumping) {
-          // 跳跃腾空姿态：双腿收曲展腹，手臂高举平衡
+          // 腾空跳跃姿态：展腹提膝，双臂大幅向外上方张开维持平衡
           this.runnerRootNode.position.y = 0;
           this.runnerRootNode.rotation.z = 0;
-          this.runnerRootNode.rotation.x = -0.08;
+          this.runnerRootNode.rotation.x = -0.12;
 
           if (this.runnerTorsoPivot && !this.runnerTorsoPivot.isDisposed()) {
-            this.runnerTorsoPivot.rotation.set(-0.08, 0, 0);
+            this.runnerTorsoPivot.rotation.set(-0.12, 0, 0);
           }
           if (this.runnerHeadPivot && !this.runnerHeadPivot.isDisposed()) {
-            this.runnerHeadPivot.rotation.set(-0.12, 0, 0);
+            this.runnerHeadPivot.rotation.set(-0.18, 0, 0);
           }
           if (this.runnerLeftLegPivot && !this.runnerLeftLegPivot.isDisposed()) {
-            this.runnerLeftLegPivot.rotation.set(-0.55, 0.05, -0.05);
+            this.runnerLeftLegPivot.rotation.set(-0.75, 0.12, -0.15); // 屈膝向前提
           }
           if (this.runnerRightLegPivot && !this.runnerRightLegPivot.isDisposed()) {
-            this.runnerRightLegPivot.rotation.set(0.45, -0.05, 0.05);
+            this.runnerRightLegPivot.rotation.set(0.65, -0.12, 0.15); // 蹬腿向后折
           }
           if (this.runnerLeftArmPivot && !this.runnerLeftArmPivot.isDisposed()) {
-            this.runnerLeftArmPivot.rotation.set(-0.85, 0.15, -0.25);
+            this.runnerLeftArmPivot.rotation.set(-1.1, 0.3, -0.55); // 臂向上外侧高举
           }
           if (this.runnerRightArmPivot && !this.runnerRightArmPivot.isDisposed()) {
-            this.runnerRightArmPivot.rotation.set(-0.85, -0.15, 0.25);
+            this.runnerRightArmPivot.rotation.set(-1.1, -0.3, 0.55);
           }
         } else if (isSurfing) {
           // 滑板冲浪姿态：侧身迎风，前后脚错落微屈，双臂张开保持平衡
-          const surfSway = Math.sin(this.totalTime * 7.0) * 0.03;
+          const surfSway = Math.sin(this.totalTime * 7.0) * 0.04;
           this.runnerRootNode.position.y = surfSway;
-          this.runnerRootNode.rotation.z = surfSway * 0.5;
-          this.runnerRootNode.rotation.x = 0.06;
+          this.runnerRootNode.rotation.z = surfSway * 0.4;
+          this.runnerRootNode.rotation.x = 0.08;
 
           if (this.runnerTorsoPivot && !this.runnerTorsoPivot.isDisposed()) {
-            this.runnerTorsoPivot.rotation.set(0.08, 0.45, 0);
+            this.runnerTorsoPivot.rotation.set(0.1, 0.55, 0);
           }
           if (this.runnerHeadPivot && !this.runnerHeadPivot.isDisposed()) {
-            this.runnerHeadPivot.rotation.set(0, -0.45, 0);
+            this.runnerHeadPivot.rotation.set(0, -0.55, 0);
           }
           if (this.runnerLeftLegPivot && !this.runnerLeftLegPivot.isDisposed()) {
-            this.runnerLeftLegPivot.rotation.set(-0.25, 0.2, -0.08);
+            this.runnerLeftLegPivot.rotation.set(-0.35, 0.25, -0.15);
           }
           if (this.runnerRightLegPivot && !this.runnerRightLegPivot.isDisposed()) {
-            this.runnerRightLegPivot.rotation.set(0.25, -0.2, 0.08);
+            this.runnerRightLegPivot.rotation.set(0.35, -0.25, 0.15);
           }
           if (this.runnerLeftArmPivot && !this.runnerLeftArmPivot.isDisposed()) {
-            this.runnerLeftArmPivot.rotation.set(-0.35, 0.1, -0.4);
+            this.runnerLeftArmPivot.rotation.set(-0.45, 0.2, -0.6);
           }
           if (this.runnerRightArmPivot && !this.runnerRightArmPivot.isDisposed()) {
-            this.runnerRightArmPivot.rotation.set(0.35, -0.1, 0.4);
+            this.runnerRightArmPivot.rotation.set(0.45, -0.2, 0.6);
           }
         } else {
-          // 经典疾驰跑步步态 (Authentic Subway Surfers Running Gait):
-          // 双臂大副摆动、双腿前后交替迈步、躯干前倾微扭、头部微动
+          // 地铁跑酷正宗冲刺奔跑步态 (Authentic Dynamic Locomotion):
+          // 双臂向外展开并大幅交替摆动（从身后第三人称视角极其清晰可见），双腿大幅度交替跨步与蹬地
           const animCadence = this.totalTime * Math.max(10, animSpeed) * 0.75;
           const stride = Math.sin(animCadence);
-          const armSwing = stride * 0.85; // ~49度前后大摆臂
-          const legStride = stride * 0.80; // ~46度大跨步踢腿
-          const runBounce = Math.abs(Math.sin(animCadence)) * 0.07;
+          const armSwing = stride * 1.05; // ~60度前后大幅摆臂
+          const legStride = stride * 0.95; // ~54度大跨度前后迈步
+          const runBounce = Math.abs(Math.sin(animCadence)) * 0.08;
 
           this.runnerRootNode.position.y = runBounce;
-          this.runnerRootNode.rotation.z = stride * 0.025;
-          this.runnerRootNode.rotation.x = 0.10; // 冲刺前倾
+          this.runnerRootNode.rotation.z = 0; // 去除僵硬卡片式左右晃动，让肢体关节主导运动
+          this.runnerRootNode.rotation.x = 0.16; // 强烈冲刺前倾
 
+          // 手臂关节：除了 X 轴前后大摆臂，增加 Z 轴外展与 Y 轴内弯，使手肘和手掌在身体两侧清晰展现
           if (this.runnerLeftArmPivot && !this.runnerLeftArmPivot.isDisposed()) {
             this.runnerLeftArmPivot.rotation.set(
               -armSwing,
-              0.12,
-              -0.12 - Math.abs(stride) * 0.08
+              stride * 0.35,
+              -0.38 - Math.abs(stride) * 0.18
             );
           }
           if (this.runnerRightArmPivot && !this.runnerRightArmPivot.isDisposed()) {
             this.runnerRightArmPivot.rotation.set(
               armSwing,
-              -0.12,
-              0.12 + Math.abs(stride) * 0.08
+              -stride * 0.35,
+              0.38 + Math.abs(stride) * 0.18
             );
           }
+          // 腿部关节：大跨度交替迈步
           if (this.runnerLeftLegPivot && !this.runnerLeftLegPivot.isDisposed()) {
             this.runnerLeftLegPivot.rotation.set(
               legStride,
               0,
-              -0.02
+              -0.08
             );
           }
           if (this.runnerRightLegPivot && !this.runnerRightLegPivot.isDisposed()) {
             this.runnerRightLegPivot.rotation.set(
               -legStride,
               0,
-              0.02
+              0.08
             );
           }
+          // 躯干逆向回旋与起伏
           if (this.runnerTorsoPivot && !this.runnerTorsoPivot.isDisposed()) {
             this.runnerTorsoPivot.rotation.set(
-              0.12,
-              -stride * 0.12,
-              stride * 0.03
+              0.16,
+              -stride * 0.22,
+              0
             );
           }
+          // 头部平视前方，伴随脚步落地微震
           if (this.runnerHeadPivot && !this.runnerHeadPivot.isDisposed()) {
             this.runnerHeadPivot.rotation.set(
-              -0.08 + Math.cos(animCadence * 2) * 0.03,
-              stride * 0.04,
+              -0.12 + Math.cos(animCadence * 2) * 0.05,
+              stride * 0.06,
               0
             );
           }

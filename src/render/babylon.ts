@@ -134,6 +134,9 @@ export class BabylonRenderEngine {
   private officerAssets: AssetCache<AssetContainer>;
   private dogAssets: AssetCache<AssetContainer>;
   private runnerAssets: AssetCache<AssetContainer>;
+  private runElapsed: number = 0;
+  private stumbleTimer: number = 0;
+  private currentChaseDistance: number = 2.8;
   private lastRenderTime: number | null = null;
   private presentationOptions: Partial<CameraInput> = {};
   private hudState: Readonly<Record<string, unknown>> = Object.freeze({ status: 'UNREADY', reason: 'NOT_SAMPLED', safe: false });
@@ -558,6 +561,25 @@ export class BabylonRenderEngine {
     });
   }
 
+  private setChaserVisibility(visible: boolean): void {
+    const officerPrimitives = new Set(['officerTorso', 'officerHead', 'officerCap', 'officerBadge', 'sirenR', 'sirenB']);
+    for (const mesh of this.inspectorRoot.getChildMeshes()) {
+      if (this.officerLease) {
+        mesh.isVisible = visible && !officerPrimitives.has(mesh.name);
+      } else {
+        mesh.isVisible = visible;
+      }
+    }
+    const dogPrimitives = new Set(['dogBody', 'dogHead', 'dogCollar']);
+    for (const mesh of this.dogRoot.getChildMeshes()) {
+      if (this.dogLease) {
+        mesh.isVisible = visible && !dogPrimitives.has(mesh.name);
+      } else {
+        mesh.isVisible = visible;
+      }
+    }
+  }
+
   private ensureRunnerAsset(root: Mesh): void {
     if (this.disposed || this.runnerLease || this.runnerPendingEpoch === this.epoch) return;
     const epoch = this.epoch;
@@ -878,9 +900,16 @@ export class BabylonRenderEngine {
     }
     const animSpeed = ctx.state === 'PLAYING' ? ctx.speed * 0.8 : 0;
 
-    // 3. 追捕警官与警犬动态跟随 (Inspector & Dog Chase System, AC-PRD-17 & AC-PRD-19)
-    // 追逐距离由逻辑层维护（ctx.chase），渲染层只读，避免逻辑散落在视觉层
+    // 3. 地铁跑酷经典追捕机制 (Subway Surfers Chase System)
+    // - MENU/SHOP：警官与警犬站在右侧铁轨，呼吸微动
+    // - 奔跑开局（前 2.6 秒）：开局前 1.0 秒警官在身后 2.8m 追赶，随后 1.6 秒玩家加速拉开距离脱离视野
+    // - 正常奔跑：警员与警犬退出视野（隐藏），主角独自在铁轨疾驰
+    // - 撞障绊倒（invulnerableTimer > 0 或 chase.isNear）：警官警犬迅速冲上前（1.8m）追捕，恢复平稳后拉开距离退出视野
     if (ctx.state === 'MENU' || ctx.state === 'SHOP') {
+      this.runElapsed = 0;
+      this.stumbleTimer = 0;
+      this.currentChaseDistance = 2.8;
+      this.setChaserVisibility(true);
       // 菜单与商店状态：警官与警犬站在 3D 展台上右侧前方，完全避开左侧 UI 卡片遮挡，面部与身形清晰可见
       this.inspectorRoot.position.set(-1.3, Math.sin(this.totalTime * 2.5) * 0.015, -0.6);
       this.dogRoot.position.set(-1.8, Math.sin(this.totalTime * 3.0 + 1.0) * 0.012, -0.2);
@@ -890,14 +919,53 @@ export class BabylonRenderEngine {
         this.playerBodyMesh.position.y = Math.sin(this.totalTime * 2.5) * 0.012;
       }
     } else {
-      // 奔跑中：警官沿相同车道追逐玩家，警犬伴随在身侧（保持同一条铁轨路线）
+      if (ctx.state === 'PLAYING') {
+        this.runElapsed += dt;
+        if (ctx.player.invulnerableTimer > 0 || (ctx.chase && ctx.chase.isNear)) {
+          this.stumbleTimer = 2.8;
+        } else if (this.stumbleTimer > 0) {
+          this.stumbleTimer = Math.max(0, this.stumbleTimer - dt);
+        }
+      }
+
+      const OPENING_HOLD = 1.0;
+      const OPENING_TOTAL = 2.6;
+      let isChaseVisible = false;
+      let targetChaseDist = 2.8;
+
+      if (this.runElapsed < OPENING_TOTAL) {
+        if (this.runElapsed <= OPENING_HOLD) {
+          targetChaseDist = ctx.chase?.distance ?? 2.8;
+          isChaseVisible = true;
+        } else {
+          const t = (this.runElapsed - OPENING_HOLD) / (OPENING_TOTAL - OPENING_HOLD);
+          targetChaseDist = Scalar.Lerp(2.8, 14.0, t * t);
+          isChaseVisible = targetChaseDist < 11.5;
+        }
+      } else if (this.stumbleTimer > 0) {
+        if (this.stumbleTimer > 1.2) {
+          targetChaseDist = 1.8;
+          isChaseVisible = true;
+        } else {
+          const t = (1.2 - this.stumbleTimer) / 1.2;
+          targetChaseDist = Scalar.Lerp(1.8, 14.0, t * t);
+          isChaseVisible = targetChaseDist < 11.5;
+        }
+      }
+
+      this.setChaserVisibility(isChaseVisible);
+
       if (this.runnerLease && ctx.state === 'PLAYING') {
         const runBounce = Math.abs(Math.sin(this.totalTime * animSpeed * 1.5)) * 0.07;
         this.playerBodyMesh.position.y = runBounce;
       }
+
       const targetOfficerX = ctx.player.x;
-      const chaseDistance = ctx.chase.distance;
-      const chaseZ = ctx.player.z - chaseDistance;
+      this.currentChaseDistance = isChaseVisible
+        ? Scalar.Lerp(this.currentChaseDistance, targetChaseDist, Math.min(1, dt * 8.0))
+        : 25.0;
+      const chaseZ = ctx.player.z - this.currentChaseDistance;
+
       const isInitialPlayFrame =
         Math.abs(this.inspectorRoot.position.z - -0.6) < 1e-3 &&
         Math.abs(this.inspectorRoot.position.x - -1.3) < 1e-3;
@@ -907,16 +975,16 @@ export class BabylonRenderEngine {
       const dogSide = chaseX >= 1.0 ? -0.45 : 0.45;
 
       const runCadence = this.totalTime * animSpeed * 1.5;
-      const officerBounce = ctx.state === 'PLAYING' ? Math.abs(Math.sin(runCadence)) * 0.11 : 0;
-      const officerSway = ctx.state === 'PLAYING' ? Math.sin(runCadence) * 0.07 : 0;
-      const officerLean = ctx.state === 'PLAYING' ? 0.08 : 0;
+      const officerBounce = ctx.state === 'PLAYING' && isChaseVisible ? Math.abs(Math.sin(runCadence)) * 0.11 : 0;
+      const officerSway = ctx.state === 'PLAYING' && isChaseVisible ? Math.sin(runCadence) * 0.07 : 0;
+      const officerLean = ctx.state === 'PLAYING' && isChaseVisible ? 0.08 : 0;
 
       this.inspectorRoot.position.set(chaseX, ctx.player.y * 0.5 + officerBounce, chaseZ);
       this.inspectorRoot.rotation.set(-officerLean, -officerSway * 0.4, officerSway);
 
       const dogCadence = this.totalTime * animSpeed * 2.2;
-      const dogBounce = ctx.state === 'PLAYING' ? Math.abs(Math.sin(dogCadence)) * 0.13 : 0;
-      const dogPitch = ctx.state === 'PLAYING' ? Math.sin(dogCadence) * 0.11 : 0;
+      const dogBounce = ctx.state === 'PLAYING' && isChaseVisible ? Math.abs(Math.sin(dogCadence)) * 0.13 : 0;
+      const dogPitch = ctx.state === 'PLAYING' && isChaseVisible ? Math.sin(dogCadence) * 0.11 : 0;
 
       this.dogRoot.position.set(chaseX + dogSide, ctx.player.y * 0.5 + dogBounce, chaseZ + 0.35);
       this.dogRoot.rotation.set(dogPitch, 0, 0);
@@ -1029,6 +1097,9 @@ export class BabylonRenderEngine {
     this.hudState = Object.freeze({ status: 'UNREADY', reason: 'RESET', safe: false });
     this.epoch++;
     this.totalTime = 0;
+    this.runElapsed = 0;
+    this.stumbleTimer = 0;
+    this.currentChaseDistance = 2.8;
     this.characterView.reset();
     this.cameraRig.reset();
     this.lastRenderTime = null;

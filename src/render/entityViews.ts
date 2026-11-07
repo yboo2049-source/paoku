@@ -1,7 +1,8 @@
 import { Color3, Mesh, MeshBuilder, TransformNode, VertexData } from '@babylonjs/core';
 import type { GlowLayer, Scene, ShadowGenerator } from '@babylonjs/core';
 import type { DeepReadonly } from '../types/contracts';
-import type { GameContext, ObstacleEntity } from '../types';
+import type { GameContext, ObstacleEntity, PowerUpType } from '../types';
+import { POWERUP_CATALOG } from '../systems/powerupCatalog';
 import { SharedMaterials } from './assets';
 
 export class ViewRegistry<T> extends Map<string, T> {
@@ -199,6 +200,106 @@ export class EntityViews {
     this.coinMeshes.retain(activeIds);
   }
 
+  private buildPowerUpSilhouette(id: string, type: PowerUpType): TransformNode {
+    const descriptor = POWERUP_CATALOG[type];
+    const node = new TransformNode(id, this.scene);
+    const primaryColor = Color3.FromHexString(descriptor.primaryHex);
+    const secondaryColor = Color3.FromHexString(descriptor.secondaryHex);
+
+    const primaryMat = this.getCachedMaterial(`powerup_${type}_primary`, {
+      diffuse: primaryColor,
+      emissive: primaryColor.scale(0.14),
+    });
+    const secondaryMat = this.getCachedMaterial(`powerup_${type}_secondary`, {
+      diffuse: secondaryColor,
+      emissive: secondaryColor.scale(0.08),
+    });
+
+    const attachPart = (partName: string, mesh: Mesh, material: typeof primaryMat): Mesh => {
+      mesh.material = material;
+      mesh.parent = node;
+      mesh.metadata = { partName, powerUpType: type, silhouetteKind: descriptor.silhouetteKind };
+      return mesh;
+    };
+
+    if (type === 'MAGNET') {
+      const archLeft = MeshBuilder.CreateBox(`pu_${id}_arch_left`, { width: 0.18, height: 0.52, depth: 0.18 }, this.scene);
+      archLeft.position.set(-0.22, 0.06, 0);
+      attachPart('arch_left', archLeft, primaryMat);
+
+      const archRight = MeshBuilder.CreateBox(`pu_${id}_arch_right`, { width: 0.18, height: 0.52, depth: 0.18 }, this.scene);
+      archRight.position.set(0.22, 0.06, 0);
+      attachPart('arch_right', archRight, primaryMat);
+
+      const archBridge = MeshBuilder.CreateBox(`pu_${id}_arch_bridge`, { width: 0.62, height: 0.18, depth: 0.18 }, this.scene);
+      archBridge.position.set(0, 0.34, 0);
+      attachPart('arch_bridge', archBridge, primaryMat);
+
+      const tipLeft = MeshBuilder.CreateBox(`pu_${id}_tip_left`, { width: 0.2, height: 0.14, depth: 0.2 }, this.scene);
+      tipLeft.position.set(-0.22, -0.24, 0);
+      attachPart('tip_left', tipLeft, secondaryMat);
+
+      const tipRight = MeshBuilder.CreateBox(`pu_${id}_tip_right`, { width: 0.2, height: 0.14, depth: 0.2 }, this.scene);
+      tipRight.position.set(0.22, -0.24, 0);
+      attachPart('tip_right', tipRight, secondaryMat);
+    } else if (type === 'DOUBLE_SCORE') {
+      const coreOcta = MeshBuilder.CreatePolyhedron(`pu_${id}_core_octa`, { type: 1, size: 0.28 }, this.scene);
+      coreOcta.position.set(0, 0, 0);
+      attachPart('core_octa', coreOcta, primaryMat);
+
+      const ringOrbit = MeshBuilder.CreateTorus(`pu_${id}_ring_orbit`, { diameter: 0.78, thickness: 0.08, tessellation: 24 }, this.scene);
+      ringOrbit.rotation.x = Math.PI / 3;
+      attachPart('ring_orbit', ringOrbit, secondaryMat);
+
+      const crestTop = MeshBuilder.CreateBox(`pu_${id}_crest_top`, { width: 0.22, height: 0.22, depth: 0.12 }, this.scene);
+      crestTop.position.set(0, 0.44, 0);
+      crestTop.rotation.z = Math.PI / 4;
+      attachPart('crest_top', crestTop, primaryMat);
+    } else if (type === 'SUPER_SNEAKERS') {
+      const bootSole = MeshBuilder.CreateBox(`pu_${id}_boot_sole`, { width: 0.34, height: 0.16, depth: 0.64 }, this.scene);
+      bootSole.position.set(0, -0.2, 0.04);
+      attachPart('boot_sole', bootSole, secondaryMat);
+
+      const bootUpper = MeshBuilder.CreateBox(`pu_${id}_boot_upper`, { width: 0.3, height: 0.42, depth: 0.34 }, this.scene);
+      bootUpper.position.set(0, 0.08, -0.08);
+      attachPart('boot_upper', bootUpper, primaryMat);
+
+      const wingLeft = MeshBuilder.CreateBox(`pu_${id}_wing_left`, { width: 0.06, height: 0.24, depth: 0.42 }, this.scene);
+      wingLeft.position.set(-0.22, 0.16, -0.14);
+      wingLeft.rotation.z = 0.35;
+      attachPart('wing_left', wingLeft, secondaryMat);
+
+      const wingRight = MeshBuilder.CreateBox(`pu_${id}_wing_right`, { width: 0.06, height: 0.24, depth: 0.42 }, this.scene);
+      wingRight.position.set(0.22, 0.16, -0.14);
+      wingRight.rotation.z = -0.35;
+      attachPart('wing_right', wingRight, secondaryMat);
+    } else {
+      const deckMain = MeshBuilder.CreateBox(`pu_${id}_deck_main`, { width: 0.48, height: 0.09, depth: 0.92 }, this.scene);
+      deckMain.position.set(0, 0.04, 0);
+      attachPart('deck_main', deckMain, primaryMat);
+
+      const railLeft = MeshBuilder.CreateBox(`pu_${id}_rail_left`, { width: 0.08, height: 0.12, depth: 0.86 }, this.scene);
+      railLeft.position.set(-0.26, 0.06, 0);
+      attachPart('rail_left', railLeft, secondaryMat);
+
+      const railRight = MeshBuilder.CreateBox(`pu_${id}_rail_right`, { width: 0.08, height: 0.12, depth: 0.86 }, this.scene);
+      railRight.position.set(0.26, 0.06, 0);
+      attachPart('rail_right', railRight, secondaryMat);
+
+      const thrusterCore = MeshBuilder.CreateCylinder(`pu_${id}_thruster_core`, { diameter: 0.32, height: 0.1 }, this.scene);
+      thrusterCore.position.set(0, -0.06, 0);
+      attachPart('thruster_core', thrusterCore, secondaryMat);
+    }
+
+    node.metadata = {
+      powerUpType: type,
+      silhouetteKind: descriptor.silhouetteKind,
+      partNames: descriptor.partNames,
+    };
+
+    return node;
+  }
+
   private syncPowerUps(ctx: DeepReadonly<GameContext>, totalTime: number, dt: number): void {
     const activeIds = new Set<string>();
 
@@ -212,21 +313,7 @@ export class EntityViews {
       }
 
       activeIds.add(pu.id);
-      const node = this.powerUpMeshes.ensure(pu.id, () => {
-        const node = new TransformNode(pu.id, this.scene);
-        const mesh = MeshBuilder.CreateBox(`pu_mesh_${pu.id}`, { size: 0.7 }, this.scene);
-
-        let color = new Color3(0, 0.95, 1.0);
-        if (pu.type === 'MAGNET') color = new Color3(1.0, 0, 0.3);
-        else if (pu.type === 'DOUBLE_SCORE') color = new Color3(1.0, 0.85, 0);
-        else if (pu.type === 'SUPER_SNEAKERS') color = new Color3(0, 1.0, 0.4);
-
-        const pMat = this.getCachedMaterial(`powerup_${pu.type}`, { diffuse: color, emissive: color.scale(0.12) });
-        mesh.material = pMat;
-        mesh.parent = node;
-
-        return node;
-      });
+      const node = this.powerUpMeshes.ensure(pu.id, () => this.buildPowerUpSilhouette(pu.id, pu.type));
 
       const floatY = Math.sin(totalTime * 3.0 + pu.x) * 0.15;
       node.position.set(pu.x, pu.y + floatY, pu.z);
@@ -234,6 +321,38 @@ export class EntityViews {
     });
 
     this.powerUpMeshes.retain(activeIds);
+  }
+
+  getPowerUpVisualDiagnostics(): ReadonlyArray<{
+    id: string;
+    type: PowerUpType;
+    silhouetteKind: string;
+    meshCount: number;
+    partNames: readonly string[];
+  }> {
+    const diagnostics: Array<{
+      id: string;
+      type: PowerUpType;
+      silhouetteKind: string;
+      meshCount: number;
+      partNames: readonly string[];
+    }> = [];
+    for (const [id, node] of this.powerUpMeshes.entries()) {
+      const childMeshes = node.getChildMeshes(true);
+      const meta = (node.metadata ?? {}) as {
+        powerUpType?: PowerUpType;
+        silhouetteKind?: string;
+        partNames?: readonly string[];
+      };
+      diagnostics.push({
+        id,
+        type: meta.powerUpType ?? 'MAGNET',
+        silhouetteKind: meta.silhouetteKind ?? 'UNKNOWN',
+        meshCount: childMeshes.length,
+        partNames: meta.partNames ?? childMeshes.map((m) => String(m.metadata?.partName ?? m.name)),
+      });
+    }
+    return Object.freeze(diagnostics);
   }
 
 }

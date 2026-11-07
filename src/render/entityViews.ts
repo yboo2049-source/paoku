@@ -4,7 +4,7 @@ import type { DeepReadonly } from '../types/contracts';
 import type { GameContext, ObstacleEntity, PowerUpType } from '../types';
 import { POWERUP_CATALOG } from '../systems/powerupCatalog';
 import { SharedMaterials } from './assets';
-import { WorldAssetManager } from './worldAssetManager';
+import { WorldAssetManager, type WorldModelKey } from './worldAssetManager';
 
 export class ViewRegistry<T> extends Map<string, T> {
   private release: (view: T) => void;
@@ -352,6 +352,8 @@ export class EntityViews {
     return node;
   }
 
+  public get assets(): WorldAssetManager { return this.worldAssets; }
+
   private syncPowerUps(ctx: DeepReadonly<GameContext>, totalTime: number, dt: number): void {
     const activeIds = new Set<string>();
 
@@ -359,13 +361,33 @@ export class EntityViews {
       if (pu.collected) {
         const node = this.powerUpMeshes.get(pu.id);
         if (node) {
+          this.worldAssets.releaseEntity(pu.id);
           this.powerUpMeshes.delete(pu.id);
         }
         return;
       }
 
       activeIds.add(pu.id);
-      const node = this.powerUpMeshes.ensure(pu.id, () => this.buildPowerUpSilhouette(pu.id, pu.type));
+      const node = this.powerUpMeshes.ensure(pu.id, () => {
+        const node = this.buildPowerUpSilhouette(pu.id, pu.type);
+        const puKeyMap: Record<PowerUpType, WorldModelKey> = {
+          MAGNET: 'PROP_MAGNET',
+          DOUBLE_SCORE: 'PROP_MULTIPLIER_2X',
+          SUPER_SNEAKERS: 'PROP_SNEAKERS',
+          HOVERBOARD: 'PROP_HOVERBOARD',
+        };
+        const modelKey = puKeyMap[pu.type];
+        if (modelKey) {
+          this.worldAssets.attachModel(pu.id, modelKey, node, () => {
+            for (const child of node.getChildMeshes()) {
+              if (child.metadata?.partName) {
+                child.isVisible = false;
+              }
+            }
+          });
+        }
+        return node;
+      });
 
       const floatY = Math.sin(totalTime * 3.0 + pu.x) * 0.15;
       node.position.set(pu.x, pu.y + floatY, pu.z);

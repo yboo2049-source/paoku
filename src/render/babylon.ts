@@ -527,6 +527,15 @@ export class BabylonRenderEngine {
     });
   }
 
+  private hoverboardAttached = false;
+  private ensureHoverboardAsset(root: Mesh): void {
+    if (this.disposed || this.hoverboardAttached) return;
+    this.hoverboardAttached = true;
+    this.entityViews.assets.attachModel('player_hoverboard', 'PROP_HOVERBOARD', root, () => {
+      root.visibility = 0;
+    });
+  }
+
   /**
    * 动态应用皮肤配色至 3D 角色（过程化材质与 GLB 蒙皮网格）
    */
@@ -550,11 +559,16 @@ export class BabylonRenderEngine {
     const surfaceMesh = this.scene.getMeshByName('Beta_Surface');
     if (surfaceMesh && surfaceMesh.material instanceof PBRMaterial) {
       surfaceMesh.material.albedoColor = primaryColor;
-      surfaceMesh.material.emissiveColor = primaryColor.scale(0.2);
+      surfaceMesh.material.metallic = 0.65;
+      surfaceMesh.material.roughness = 0.35;
+      surfaceMesh.material.emissiveColor = primaryColor.scale(0.12);
     }
     const jointsMesh = this.scene.getMeshByName('Beta_Joints');
     if (jointsMesh && jointsMesh.material instanceof PBRMaterial) {
       jointsMesh.material.albedoColor = secondaryColor;
+      jointsMesh.material.metallic = 0.85;
+      jointsMesh.material.roughness = 0.2;
+      jointsMesh.material.emissiveColor = secondaryColor.scale(0.25);
     }
   }
 
@@ -776,16 +790,22 @@ export class BabylonRenderEngine {
     this.ensurePlayerAsset(this.playerBodyMesh);
     this.ensureOfficerAsset(this.inspectorRoot);
     this.ensureDogAsset(this.dogRoot);
+    this.ensureHoverboardAsset(this.hoverboardMesh);
 
     this.characterView.sync(ctx, dt, !!this.presentationOptions.reducedMotion, frame?.motion ? { read: frame.motion, timeSec: frame.timeSec! } : undefined);
+    for (const child of this.hoverboardMesh.getChildMeshes()) {
+      child.isVisible = this.hoverboardMesh.isVisible;
+    }
     const animSpeed = ctx.state === 'PLAYING' ? ctx.speed * 0.8 : 0;
 
     // 3. 追捕警官与警犬动态跟随 (Inspector & Dog Chase System, AC-PRD-17 & AC-PRD-19)
     // 追逐距离由逻辑层维护（ctx.chase），渲染层只读，避免逻辑散落在视觉层
     if (ctx.state === 'MENU' || ctx.state === 'SHOP') {
       // 菜单与商店状态：警官与警犬站在 3D 展台上右侧前方，完全避开左侧 UI 卡片遮挡，面部与身形清晰可见
-      this.inspectorRoot.position.set(-1.3, 0, -0.6);
-      this.dogRoot.position.set(-1.8, 0, -0.2);
+      this.inspectorRoot.position.set(-1.3, Math.sin(this.totalTime * 2.5) * 0.015, -0.6);
+      this.dogRoot.position.set(-1.8, Math.sin(this.totalTime * 3.0 + 1.0) * 0.012, -0.2);
+      this.inspectorRoot.rotation.set(0, 0.15, 0);
+      this.dogRoot.rotation.set(0, -0.1, 0);
     } else {
       // 奔跑中：警官沿相同车道追逐玩家，警犬伴随在身侧（保持同一条铁轨路线）
       const targetOfficerX = ctx.player.x;
@@ -799,8 +819,20 @@ export class BabylonRenderEngine {
         : Scalar.Lerp(this.inspectorRoot.position.x, targetOfficerX, Math.min(1, dt * 10.0));
       const dogSide = chaseX >= 1.0 ? -0.45 : 0.45;
 
-      this.inspectorRoot.position.set(chaseX, ctx.player.y * 0.5, chaseZ);
-      this.dogRoot.position.set(chaseX + dogSide, ctx.player.y * 0.5, chaseZ + 0.2);
+      const runCadence = this.totalTime * animSpeed * 1.5;
+      const officerBounce = ctx.state === 'PLAYING' ? Math.abs(Math.sin(runCadence)) * 0.11 : 0;
+      const officerSway = ctx.state === 'PLAYING' ? Math.sin(runCadence) * 0.07 : 0;
+      const officerLean = ctx.state === 'PLAYING' ? 0.08 : 0;
+
+      this.inspectorRoot.position.set(chaseX, ctx.player.y * 0.5 + officerBounce, chaseZ);
+      this.inspectorRoot.rotation.set(-officerLean, -officerSway * 0.4, officerSway);
+
+      const dogCadence = this.totalTime * animSpeed * 2.2;
+      const dogBounce = ctx.state === 'PLAYING' ? Math.abs(Math.sin(dogCadence)) * 0.13 : 0;
+      const dogPitch = ctx.state === 'PLAYING' ? Math.sin(dogCadence) * 0.11 : 0;
+
+      this.dogRoot.position.set(chaseX + dogSide, ctx.player.y * 0.5 + dogBounce, chaseZ + 0.35);
+      this.dogRoot.rotation.set(dogPitch, 0, 0);
     }
 
     const officerTorso = this.scene.getMeshByName('officerTorso');

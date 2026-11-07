@@ -64,6 +64,7 @@ const initialContext: GameContext = {
 
 // 2. 实例化子系统
 const renderEngine = new BabylonRenderEngine(appEl);
+(window as any).__renderEngine = renderEngine;
 const application = new AppService(createBrowserSaveRepository());
 const feedbackController = new FeedbackLifecycleController();
 const progressionController = new ProgressionFlowController();

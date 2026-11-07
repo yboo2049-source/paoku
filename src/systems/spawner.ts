@@ -1,6 +1,6 @@
 import type { ObstacleEntity, CoinEntity, PowerUpEntity, TrackGenerationFrame, TrackGenerationState } from '../types';
 import type { VersionedRng } from '../types/contracts';
-import { TRACK_SEGMENTS, TRACK_CONTENT_REVISION, stageForCursor } from '../data/trackSegments';
+import { TRACK_SEGMENTS, TRACK_CONTENT_REVISION, stageForCursor, type TrackSegmentDefinition } from '../data/trackSegments';
 import { ALL_TRACK_SEGMENTS } from '../data/extendedTrackSegments';
 import { instantiateTrackSegment, MAX_SEGMENTS_PER_UPDATE, TRACK_VARIANTS, validateTrackDefinition } from './track';
 import type { TrackSegmentInstance } from './track';
@@ -9,11 +9,13 @@ export type PatternType = 'ZigZag_Trains' | 'Under_Over' | 'Moving_Rush' | 'Coin
 /** Standalone compatibility RNG; production receives the simulation's versioned stream. */
 function localRng(seed: number): VersionedRng {
   let state = seed >>> 0;
-  return { algorithmVersion: 'mulberry32-v1', get state() { return state; }, next() {
-    state = (state + 0x6D2B79F5) >>> 0;
-    let t = Math.imul(state ^ (state >>> 15), 1 | state); t ^= t + Math.imul(t ^ (t >>> 7), 61 | t);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  } };
+  return {
+    algorithmVersion: 'mulberry32-v1', get state() { return state; }, next() {
+      state = (state + 0x6D2B79F5) >>> 0;
+      let t = Math.imul(state ^ (state >>> 15), 1 | state); t ^= t + Math.imul(t ^ (t >>> 7), 61 | t);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    }
+  };
 }
 export class SpawnerSystem {
   private state!: TrackGenerationState;

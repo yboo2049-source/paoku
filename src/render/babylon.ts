@@ -640,15 +640,20 @@ export class BabylonRenderEngine {
       this.inspectorRoot.position.set(1.2, 0, -1.8);
       this.dogRoot.position.set(1.75, 0, -1.5);
     } else {
-      // 奔跑中：警官沿相邻侧翼（Flank）追逐，避免恰好位于摄像机与角色之间造成严重遮挡
-      const sideOffset = ctx.player.x >= 1.0 ? -1.25 : 1.25;
-      const targetOfficerX = ctx.player.x + sideOffset;
+      // 奔跑中：警官沿相同车道追逐玩家，警犬伴随在身侧（保持同一条铁轨路线）
+      const targetOfficerX = ctx.player.x;
       const chaseDistance = ctx.chase.distance;
       const chaseZ = ctx.player.z - chaseDistance;
-      const chaseX = Scalar.Lerp(this.inspectorRoot.position.x, targetOfficerX, dt * 8.0);
-      
+      const isInitialPlayFrame =
+        Math.abs(this.inspectorRoot.position.z - -1.8) < 1e-3 &&
+        Math.abs(this.inspectorRoot.position.x - 1.2) < 1e-3;
+      const chaseX = isInitialPlayFrame
+        ? targetOfficerX
+        : Scalar.Lerp(this.inspectorRoot.position.x, targetOfficerX, Math.min(1, dt * 10.0));
+      const dogSide = chaseX >= 1.0 ? -0.45 : 0.45;
+
       this.inspectorRoot.position.set(chaseX, ctx.player.y * 0.5, chaseZ);
-      this.dogRoot.position.set(chaseX + (sideOffset > 0 ? 0.55 : -0.55), ctx.player.y * 0.5, chaseZ + 0.2);
+      this.dogRoot.position.set(chaseX + dogSide, ctx.player.y * 0.5, chaseZ + 0.2);
     }
 
     const officerTorso = this.scene.getMeshByName('officerTorso');

@@ -1,0 +1,51 @@
+{
+  "source": "b474845a972005b83f1278884b7dbe02c8af9615",
+  "copied": [
+    {
+      "path": "src/ui/dom.ts",
+      "sha256": "847abe119dc0ac90426d70fb16674ba024fd0caff6fdad14e93868049380d04c",
+      "blob": "3909d2dbdeefc70fb34ebc9f2221bed11c93c9c4"
+    },
+    {
+      "path": "src/ui/views/models.ts",
+      "sha256": "cf0d16f1fe8325b659eccf4edfcfa1c742a7bbebceb18756d95f5c6b71ec4a71",
+      "blob": "67a9c3ecf60ca97329fd88aa4ee0dfe10d9c5d77"
+    },
+    {
+      "path": "src/ui/views/screens.ts",
+      "sha256": "41e39b81cf8f947dcc7288d31b5e401ef8639c43ca9e675675fc757fd477b062",
+      "blob": "865ecdd56b9fb6defcfb89ce451020ebf0b0f878"
+    },
+    {
+      "path": "src/presentation/hudSafeArea.ts",
+      "sha256": "2f242e44395b040591395c4132d6aaefc2800b17fa66573398eabbf5bbf2f3cc",
+      "blob": "e402beb9dd4824d3a1b360a78058099fa8d13db5"
+    },
+    {
+      "path": "tests/unit/pao19-ui.test.ts",
+      "sha256": "c863399cb5df41b3b80bcb9dfe17968ff34d4eb0403256d03122d720882a10a2",
+      "blob": "958c58229b8e98226a87d856646f0a8c5bd654a0"
+    },
+    {
+      "path": "tests/unit/pao19-hud-safe-area.test.ts",
+      "sha256": "6c476e4e1962831ba9b361c31d46035a3549087f4cc666d39dfc308c2ed5300f",
+      "blob": "bf39e3775630e146999243836eda6fe8026d37d1"
+    },
+    {
+      "path": "tests/e2e/rebuild-ui.spec.ts",
+      "sha256": "191b9c930864d792e4fe7f7b8c5a3dd690de97a972874192788c179f50065b83",
+      "blob": "1c0a0b46bd8653d1540c7b2de42d5f7ad4a6af5a"
+    },
+    {
+      "path": "tests/e2e/pao19-hud-safe-area.spec.ts",
+      "sha256": "e2ca243c841ff2a58afa2e1cefd7b66058f8ee52000571dcadb57f2ee5d6208e",
+      "blob": "14f0dfd78f8c299ccef3f2aea5202ab55e606e56"
+    }
+  ],
+  "legacy": {
+    "source": "c5a9edd103eaf3677a058b432c67ad9260450e4e",
+    "domBlob": "adf86f8eb4fcd0bff328e0236179732aa9e1bc67",
+    "cssBlob": "984487a96df760a0dbb516a5f3e732f0def185a9",
+    "assembly": "static old uiHTML template and complete old CSS in explicit routed F page; no simulated rectangles"
+  }
+}

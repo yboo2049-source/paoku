@@ -1,0 +1,989 @@
+{
+  "head": "d303633e2539a26ca595438b51216a02900df92f",
+  "stats": {
+    "startTime": "2026-11-06T14:55:03.465Z",
+    "duration": 945240.3770000001,
+    "expected": 103,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  },
+  "listed": 106,
+  "exitCode": 1,
+  "failures": [
+    {
+      "file": "pao18-fact-bridge.pw.ts",
+      "line": 75,
+      "title": "F failed real step keeps last commit and audio silent; original application restart recovers",
+      "path": "pao18-fact-bridge.pw.ts / F failed real step keeps last commit and audio silent; original application restart recovers",
+      "status": "unexpected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "timedOut",
+          "retry": 0,
+          "duration": 60528,
+          "errors": [
+            {
+              "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+            },
+            {
+              "location": {
+                "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao18-fact-bridge.pw.ts",
+                "column": 54,
+                "line": 92
+              },
+              "message": "Error: page.waitForFunction: Test timeout of 60000ms exceeded.\n\n  90 |   expect(result.report.audio.items).toEqual(result.audio);\n  91 |   await expect(page.locator('#pause-restart-btn')).toBeVisible();\n> 92 |   await page.click('#pause-restart-btn'); await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getGameState() === 'PLAYING');\n     |                                                      ^\n  93 |   expect(await page.evaluate(() => (window as any).__GAME_SENSOR__.getMotionBridge().faulted)).toBe(false);\n  94 |   await attachJson('F-fault.json', result);\n  95 | });\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao18-fact-bridge.pw.ts:92:54"
+            }
+          ],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao18-fact-bridge.pw.ts-F--80905-pplication-restart-recovers\\error-context.md"
+            },
+            {
+              "name": "trace",
+              "contentType": "application/zip",
+              "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao18-fact-bridge.pw.ts-F--80905-pplication-restart-recovers\\trace.zip"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "pao19-hud-safe-area.pw.ts",
+      "line": 70,
+      "title": "H02/H06/H15 N keyboard lifecycle with F read-only producer scheduling",
+      "path": "pao19-hud-safe-area.pw.ts / H02/H06/H15 N keyboard lifecycle with F read-only producer scheduling",
+      "status": "unexpected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "failed",
+          "retry": 0,
+          "duration": 2844,
+          "errors": [
+            {
+              "location": {
+                "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao19-hud-safe-area.pw.ts",
+                "column": 97,
+                "line": 50
+              },
+              "message": "Error: DIRTY\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"READY\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mUN\u001b[27mREADY\"\u001b[39m\n\n  48 |   });\n  49 | }\n> 50 | async function ready(page: Page) { let s = await sample(page); expect(s.status, s.reason || '').toBe('READY'); return s; }\n     |                                                                                                 ^\n  51 | async function setPage(page: Page, state: string, max = false) {\n  52 |   await page.evaluate(({ state, max }) => {\n  53 |     const f = (window as any).__hud; f.app.appState = state; f.app.activeRunId = state === 'MENU' || state === 'SHOP' ? null : 'F-layout';\n    at ready (D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao19-hud-safe-area.pw.ts:50:97)\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao19-hud-safe-area.pw.ts:76:111"
+            }
+          ],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao19-hud-safe-area.pw.ts--6122d-ad-only-producer-scheduling\\error-context.md"
+            },
+            {
+              "name": "trace",
+              "contentType": "application/zip",
+              "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao19-hud-safe-area.pw.ts--6122d-ad-only-producer-scheduling\\trace.zip"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "pao19-hud-safe-area.pw.ts",
+      "line": 191,
+      "title": "H06/H15 N CDP touch lifecycle with F read-only measurement scheduling",
+      "path": "pao19-hud-safe-area.pw.ts / H06/H15 N CDP touch lifecycle with F read-only measurement scheduling",
+      "status": "unexpected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "failed",
+          "retry": 0,
+          "duration": 50672,
+          "errors": [
+            {
+              "location": {
+                "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao19-hud-safe-area.pw.ts",
+                "column": 97,
+                "line": 50
+              },
+              "message": "Error: DIRTY\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"READY\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mUN\u001b[27mREADY\"\u001b[39m\n\n  48 |   });\n  49 | }\n> 50 | async function ready(page: Page) { let s = await sample(page); expect(s.status, s.reason || '').toBe('READY'); return s; }\n     |                                                                                                 ^\n  51 | async function setPage(page: Page, state: string, max = false) {\n  52 |   await page.evaluate(({ state, max }) => {\n  53 |     const f = (window as any).__hud; f.app.appState = state; f.app.activeRunId = state === 'MENU' || state === 'SHOP' ? null : 'F-layout';\n    at ready (D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao19-hud-safe-area.pw.ts:50:97)\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao19-hud-safe-area.pw.ts:198:235"
+            }
+          ],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao19-hud-safe-area.pw.ts--e4ab4-only-measurement-scheduling\\error-context.md"
+            },
+            {
+              "name": "trace",
+              "contentType": "application/zip",
+              "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao19-hud-safe-area.pw.ts--e4ab4-only-measurement-scheduling\\trace.zip"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "retries": 0,
+  "protectedChecks": [
+    {
+      "path": "package-lock.json",
+      "sha256": "707d847448a738130fdfe31a209a7e0595b692c112c349809eb8432c08ccaf7e",
+      "unchanged": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "ccec3423d2fc43eb3b8088e545eebbb4fbbc1fdb145a89fe9a2f12209a86b67c",
+      "unchanged": true
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "04da21971bc487875843434c7b6df2b9fba2cc2e4b22d637fbce67c09b267c27",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/Orbitron-METADATA.pb",
+      "sha256": "6e897c83b8fcdeccb78accb132efd7b279267b684484aa0735b78aba711d0b36",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/Orbitron-OFL.txt",
+      "sha256": "dd6fdb6716fd179d1fe891759efb3f9200753fdf6abf513b55b712c4ae16e512",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/Orbitron-f42db2dd16e6.ttf",
+      "sha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/Outfit-METADATA.pb",
+      "sha256": "4cd9d2154f15495ca97de561060d535eaba9f7007be4a87e40f3b58ea8111cf2",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/Outfit-OFL.txt",
+      "sha256": "e2a6bbb2589b85bac1690ec8f220b22a9c3af9bfda56df6391f7ab491c7a039f",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/Outfit-fc7287273e66.ttf",
+      "sha256": "fc7287273e66929776e2ba54f144fe699080bec29f61bf649d70d871468aeade",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/README.md",
+      "sha256": "81e590d6cec4588247b498aa556b9c7dda859386aa9d93ffc6d190cafe7f3e11",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/sources.json",
+      "sha256": "5a7d48a56e7b60b9374745e29b4dddbe3e66f8ae79fd6393da36a2d38dcd2cf9",
+      "unchanged": true
+    },
+    {
+      "path": "src/application/appService.ts",
+      "sha256": "843d526e1ee1c71b97299d2dffe9013c6fbca175c8bbe3bf315534c9055a189f",
+      "unchanged": true
+    },
+    {
+      "path": "src/application/saveRepository.ts",
+      "sha256": "9794bddd00971c6a415168c39c557987b0c4b291fc46d912d03ea6d9efabadde",
+      "unchanged": true
+    },
+    {
+      "path": "src/application/skinCatalog.ts",
+      "sha256": "cfb40ed20eda910d897b86d24c1885056b6fabe8877b3285bc3f5a6001ba2a6f",
+      "unchanged": true
+    },
+    {
+      "path": "src/application/types.ts",
+      "sha256": "7b9d24cedb0de02564f18d6eec6c239e7ca299792305b5814177c2088acced2b",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/eventBus.ts",
+      "sha256": "68848837bbd9d69fbe41bad07adb27208b0d2cd0e046b46cc8cf7defa4d730eb",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/gameLoop.ts",
+      "sha256": "7f3a1db99c20cf61348eeaa246ce7c745359721bbab8148a3ccd55dcfc69b2aa",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/inputQueue.ts",
+      "sha256": "6a07ad1407155c949ea62f8076e3106c94150b8ed84a346ac63470eb54f6f03c",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/simulation.ts",
+      "sha256": "fbc8edcb6532774f364deee2dffe7ce7643bc319ef96e8ae619a500aef2bbe66",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/snapshot.ts",
+      "sha256": "10a867da692178fdbe485dca50e4b44d4ce8f90fbbd23260b65f8a54f0d8cc49",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/assets.ts",
+      "sha256": "167c770b7928a9f974abfa0145cfa9579375da3dd56aee3f9874f7062a5d8e54",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/cameraRig.ts",
+      "sha256": "18271d6b4f3177078fdb5c2af538f5c521c195160b54b9182fbba94af0a57c05",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/characterView.ts",
+      "sha256": "76c1d7235ba9afe6a245bb55008a9047f34c721ac8e8e5558c415b8835267b7b",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/entityViews.ts",
+      "sha256": "0f428bb4ca993081ea6d3813d4ec96bb31cc23ce6615332fe6f9676cdcd68a57",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/environment.ts",
+      "sha256": "e90772b179763a016fc2cca223f000be683beeea983f98d8546e37a5e7eb4bb1",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/audio.ts",
+      "sha256": "4bd8788eda9d47141ce2af6beb4ce39f25fb4c0b7ba9da894f7e5642a493a868",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/contacts.ts",
+      "sha256": "ce4cf472f746680a81ead20e8344e16556fb4ddc48059c7aff6a688d9c54f9cd",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/input.ts",
+      "sha256": "11a6afaa61efbb85d912ce8c02ba0bf5ce04b8f42bf44582ec356fe802ddef99",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/mission.ts",
+      "sha256": "479802ad2f8f20c908d9769e284edd9a34fa4f3c84850da955c822d2de66e738",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/physics.ts",
+      "sha256": "5e77c41a698cdc57e5e5627618f0f5eb53508af0de204de5c454bba942138f75",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/runSettlement.ts",
+      "sha256": "f945346cbc69b06223533cff5a6a1d0662b0cfc017cd9e54dcf277ad434f9ae6",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/scoring.ts",
+      "sha256": "535070292464bf6c80c07730d585203d7e7da308c5217e94c17cdddd091453ac",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/spawner.ts",
+      "sha256": "105fd376b16c92c8357b57f944a54ff52d829514d8d87776b7d01f3e278d060c",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/surfaces.ts",
+      "sha256": "14a734e726e1b2aadcb9add9e96207fbb29e3680a08e762682fa6ece73846484",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/track.ts",
+      "sha256": "dba5b8e30e37b12c09ff1d28a56be60513360eecf00e425abc5be19d9addc922",
+      "unchanged": true
+    },
+    {
+      "path": "src/types/contracts.ts",
+      "sha256": "b0a9ea56da296e967b6ad9447054efbca61b4aee01b442a055660876a5b2220e",
+      "unchanged": true
+    },
+    {
+      "path": "src/types/index.ts",
+      "sha256": "b2842de277d980ba890b0f75dabde2b029aedf4f01f5d0c0cff063c306fa4988",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/font-resources.spec.ts",
+      "sha256": "a8ed06c03f911a900731c9e78070d14e4f2f0e3a8d5c529c50c3cd3eceef773b",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/gameplay.spec.ts",
+      "sha256": "ac860d0781b57ec51735607c8e6d1441a5f02afcb9b27203f2f8e682d607ce64",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao10-review-fixes.spec.ts",
+      "sha256": "21a92efee35f42f42912d8655d62eb1a6d4786494235ee84d9ff1ae8dab45892",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao10-simulation.spec.ts",
+      "sha256": "4cb5069cfcec3a015c768ee5047403b8cd4c0c295529e1eda186866c6a921ebf",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao11-surfaces.spec.ts",
+      "sha256": "2e5cb1868763f2ddec33ae472f3497aeac1dffa6d7be0c80c1a41fa6842d868b",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao12-collision.spec.ts",
+      "sha256": "669125de620cfd8c0263b5ee7696cef53a2e48d9fac0548f5f095fd710371f1d",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao13-track.spec.ts",
+      "sha256": "03211f334c9ff5bf05b058bcb49c1d83d7b0eefe4800b3257453fecd8943a7a3",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao14-application.spec.ts",
+      "sha256": "06039b20c65000d94d819a45ce5332bd77731779bf851ea2eb9164988bba8f6a",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao14-review.spec.ts",
+      "sha256": "b20d8604e98ee5eb1013c458160522c97433475075e9e55bd32d957e5abda413",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao14-unknown-commit.spec.ts",
+      "sha256": "2b8545a84b763bf0a0faa9a2a8cf8ac3a10af0040afe42b34754bc2cdc414520",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao17-lifecycle.spec.ts",
+      "sha256": "87577c433ee531f1a5fabfc42885f21957dd5c784b5a7d75483139aaf57f6045",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao17-ramp-view.spec.ts",
+      "sha256": "128ee83e260e47c130539f97ace8ce38705afbbca582e0ef1a4cf8438750d214",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao17-structure.spec.ts",
+      "sha256": "8f592c4d925071d2bd31c0cc9323d03ce77669cc461b2ddccf563cf8e0d41f4c",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao17-theme.spec.ts",
+      "sha256": "1afc77b291fdd3d07660ebd039bf67d5e3de66e158e6fc3d0b116c5b99cf177e",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao18-fact-bridge.spec.ts",
+      "sha256": "2322d697222d18e6bea05329a2db7548e67bd65fb32d4f1d53f402d3c30fe5d2",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao6-baseline.spec.ts",
+      "sha256": "710cd0dc1d6fd938825b4c741f0c32798a2ada5c507209c48b2f57889f441df9",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao6.config.ts",
+      "sha256": "587a93fd211357f2cfd3f0e06c4b396fd97f86711cd2536798e1551a87cdb547",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/application.test.ts",
+      "sha256": "49b5ec3f0d4c4e7d38b4ccfefc5e60e9f5c964dbba7f1ba788583f397f94f88d",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/audio.test.ts",
+      "sha256": "79ad7a9e70b157ac05624409fd481000cc687aad0dd8abe2d0d5d47dbb1bc3cc",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/fontResources.test.ts",
+      "sha256": "dab0623e340e22d3d408e3419f26765f56cfc853726def76871759915526f5c8",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/inputQueue.test.ts",
+      "sha256": "ad5028ab5457a711c1c79fef45d59f075919695f4575c9385a19993a02b13aaa",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/mission.test.ts",
+      "sha256": "6c936e0020a7a93822c8a353985e26e7c749639a4fed6313e8828c90c69e1901",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao10-main.test.ts",
+      "sha256": "df6b63d9ccee6aa65a019fd2416eee1214010e7d943b99bc8f34728c557c29e8",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-assets.test.ts",
+      "sha256": "5a150bd2eb960273ffc091fe33612ed63fee86eb69e5cfc9d824f11f0c466084",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-frame.test.ts",
+      "sha256": "e9fabb6798eedbdc69376b204477537e22b552d40b6b42097b798de961f4bcea",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-lifecycle.test.ts",
+      "sha256": "90dbfd42647952eeb2ac41eff3b3c884195da80553b289c26695069954736431",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-main.test.ts",
+      "sha256": "b6da70803baec82bb0b9aeb8b25d6a6e31574b56ac59977dd6fa827773955f88",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-ramp-view.test.ts",
+      "sha256": "16563686079e168802714c1fc8c8b02b9085515ed65b622ab1dc622096275f50",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-theme-lifecycle.test.ts",
+      "sha256": "b68566a26c8963b2a583ee35e480a822889988ea557d6b4f7d71258cf27050f9",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-theme.test.ts",
+      "sha256": "eca63d7df055161e36154079c5e46e746ab5cd04baf60c6d2059a324707a3baf",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-views.test.ts",
+      "sha256": "7217e1dcc438bc4bec7cd0289ab9808bf83eedfa71d6b8792647d5172874d24a",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao18-camera.test.ts",
+      "sha256": "6d3742d8df56e206ecea41793862f9d2e12d61b89f90038720c99a43dc7628d2",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao18-character.test.ts",
+      "sha256": "b506b6a108ff9783bdc76aa3f5a4615c815523ba34f1f89feae8d506148c14c3",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao18-facade.test.ts",
+      "sha256": "582335a8bbac5a5d3468aaa8715bf0f4616a1a2f37c88575eed36d7bac59881a",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao18-fact-journal.test.ts",
+      "sha256": "a4231dcb08369f8974514a0eaa243126d0684aaa75194b5d437c706624dc4e3e",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao18-fact-lifecycle.test.ts",
+      "sha256": "5e00596aff9f5206caf14f6b2b92ebe629e9d85d7b7fe9829221f8e44370dda5",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao18-fact-producers.test.ts",
+      "sha256": "47e54dc315f88d007fdbb119a5fcb16df4d76fcc2fce137e4eae266cd27dbb47",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/physics.test.ts",
+      "sha256": "0d69f18455efe0c006bfb2474f3e38b7548dff35318a8d3f7f3bde7d407fb83c",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/powerups.test.ts",
+      "sha256": "2232566a5fd0d4b151c1caec488cbf7afa8d9c876a3c866f1db463f673545553",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/redteam_fixes.test.ts",
+      "sha256": "2e5b6877e5fec412eb929a765e7950e5ad2dbff6bf128f4cdd7c5427a4840d6c",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/runSettlement.test.ts",
+      "sha256": "33c350754e151fc55fa7614bae532eac4f1384c93861bb9af104dc3cfbb4de51",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/saveMigration.test.ts",
+      "sha256": "1b0b187419c7a69da65c3203deb239a6bf6585341723bb300158d3c91e452010",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/shopTransactions.test.ts",
+      "sha256": "00d66761e5e7a034a75f7c3d2fca1a52152937c2a6423a9dcab5b8047b17971d",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/simulation.test.ts",
+      "sha256": "8daa2210d1d561e508f3a4d2f3a82a274d418535adca528d15ce1163c12d8306",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/snapshot.test.ts",
+      "sha256": "f46e175a6eb6a91c9e969f347314f9c36c694ea424b751abe9bc551e1d3e14e9",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/surfaces.test.ts",
+      "sha256": "a63b81f09d946824ca23c551467f5f056d569e981198ded913352143849e6813",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/sweptCollision.test.ts",
+      "sha256": "7a287436505450a7076e2759ba1f31439f97a8c64a574e10460e12e3c8b24612",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/trackSegments.test.ts",
+      "sha256": "931767d57254a905a661a3e753c3d264dbe3cfc16bbf52336902ba4192c372f3",
+      "unchanged": true
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "6933bb7f71023b4b79ab72f3167f884d63c278088e36357e019171dcebf14487",
+      "unchanged": true
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "8c665e7882997d89d7f685dd4f5ab12c87d89d61f4ab211c0934e6af0e6cdcdc",
+      "unchanged": true
+    }
+  ],
+  "fixed": [
+    {
+      "path": "src/ui/dom.ts",
+      "blob": "3909d2dbdeefc70fb34ebc9f2221bed11c93c9c4",
+      "actual": "3909d2dbdeefc70fb34ebc9f2221bed11c93c9c4"
+    },
+    {
+      "path": "src/ui/views/models.ts",
+      "blob": "67a9c3ecf60ca97329fd88aa4ee0dfe10d9c5d77",
+      "actual": "67a9c3ecf60ca97329fd88aa4ee0dfe10d9c5d77"
+    },
+    {
+      "path": "src/ui/views/screens.ts",
+      "blob": "865ecdd56b9fb6defcfb89ce451020ebf0b0f878",
+      "actual": "865ecdd56b9fb6defcfb89ce451020ebf0b0f878"
+    },
+    {
+      "path": "src/presentation/hudSafeArea.ts",
+      "blob": "e402beb9dd4824d3a1b360a78058099fa8d13db5",
+      "actual": "e402beb9dd4824d3a1b360a78058099fa8d13db5"
+    }
+  ],
+  "mirrors": [
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/font-resources.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/font-resources.pw.ts",
+      "sha256": "a8ed06c03f911a900731c9e78070d14e4f2f0e3a8d5c529c50c3cd3eceef773b",
+      "mirrorSha256": "a8ed06c03f911a900731c9e78070d14e4f2f0e3a8d5c529c50c3cd3eceef773b",
+      "reverseEqual": true,
+      "replacements": [],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/gameplay.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/gameplay.pw.ts",
+      "sha256": "ac860d0781b57ec51735607c8e6d1441a5f02afcb9b27203f2f8e682d607ce64",
+      "mirrorSha256": "ac860d0781b57ec51735607c8e6d1441a5f02afcb9b27203f2f8e682d607ce64",
+      "reverseEqual": true,
+      "replacements": [],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao10-review-fixes.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao10-review-fixes.pw.ts",
+      "sha256": "21a92efee35f42f42912d8655d62eb1a6d4786494235ee84d9ff1ae8dab45892",
+      "mirrorSha256": "a532893caf88e9e72fa93ae66e65dc28b2c31883d11f9c99d4bba6dc3d89c4b9",
+      "reverseEqual": true,
+      "replacements": [
+        {
+          "from": "'docs/evidence/PAO-10/review-fixes'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/legacy/PAO-10/review-fixes'"
+        }
+      ],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao10-simulation.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao10-simulation.pw.ts",
+      "sha256": "4cb5069cfcec3a015c768ee5047403b8cd4c0c295529e1eda186866c6a921ebf",
+      "mirrorSha256": "8f781b4f3d5c4a295875240e301a90eac2f02e776f0dcd14cc66ef4ffdaf8498",
+      "reverseEqual": true,
+      "replacements": [
+        {
+          "from": "'docs/evidence/PAO-10'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/legacy/PAO-10'"
+        }
+      ],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao11-surfaces.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao11-surfaces.pw.ts",
+      "sha256": "2e5cb1868763f2ddec33ae472f3497aeac1dffa6d7be0c80c1a41fa6842d868b",
+      "mirrorSha256": "79badf66b1cb42861733cb86c203823a1a9e9037809407290bdbd9ec5b0d3512",
+      "reverseEqual": true,
+      "replacements": [
+        {
+          "from": "'docs/evidence/PAO-11/runs'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/legacy/PAO-11/runs'"
+        }
+      ],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao12-collision.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao12-collision.pw.ts",
+      "sha256": "669125de620cfd8c0263b5ee7696cef53a2e48d9fac0548f5f095fd710371f1d",
+      "mirrorSha256": "6ca53c33b8904d066a4f75ea2e9eac7c169b23a2860070ef92d1b875a4e3a522",
+      "reverseEqual": true,
+      "replacements": [
+        {
+          "from": "'docs/evidence/PAO-12/runs'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/legacy/PAO-12/runs'"
+        }
+      ],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao13-track.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao13-track.pw.ts",
+      "sha256": "03211f334c9ff5bf05b058bcb49c1d83d7b0eefe4800b3257453fecd8943a7a3",
+      "mirrorSha256": "ae1f4664ccb307dfdf9eefaf740eef4030d7040eede6984eda8b0982223926a1",
+      "reverseEqual": true,
+      "replacements": [
+        {
+          "from": "'docs/evidence/PAO-13/runs'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/legacy/PAO-13/runs'"
+        }
+      ],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao14-application.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao14-application.pw.ts",
+      "sha256": "06039b20c65000d94d819a45ce5332bd77731779bf851ea2eb9164988bba8f6a",
+      "mirrorSha256": "54d4a17e428125707927f4c88d47af7123e765b2bb621bef14b15739af34be3a",
+      "reverseEqual": true,
+      "replacements": [
+        {
+          "from": "'docs/evidence/PAO-14/runs'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/legacy/PAO-14/runs'"
+        }
+      ],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao14-review.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao14-review.pw.ts",
+      "sha256": "b20d8604e98ee5eb1013c458160522c97433475075e9e55bd32d957e5abda413",
+      "mirrorSha256": "1196355b9995ceeccf8ada77db20580d5e4b14ec8f80735d27380b6aaf22ae32",
+      "reverseEqual": true,
+      "replacements": [
+        {
+          "from": "'docs/evidence/PAO-14/runs'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/legacy/PAO-14/runs'"
+        }
+      ],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao14-unknown-commit.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao14-unknown-commit.pw.ts",
+      "sha256": "2b8545a84b763bf0a0faa9a2a8cf8ac3a10af0040afe42b34754bc2cdc414520",
+      "mirrorSha256": "46c26a074566e7fc563ab83bc8776a55a3b42d964bae61ecd7ee7a30ad00f40c",
+      "reverseEqual": true,
+      "replacements": [
+        {
+          "from": "'docs/evidence/PAO-14/runs'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/legacy/PAO-14/runs'"
+        }
+      ],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao17-lifecycle.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao17-lifecycle.pw.ts",
+      "sha256": "87577c433ee531f1a5fabfc42885f21957dd5c784b5a7d75483139aaf57f6045",
+      "mirrorSha256": "6e466fc0aa2252734742334a33fad370c914e306d7fd10861ecba6ce02930f42",
+      "reverseEqual": true,
+      "replacements": [
+        {
+          "from": "'docs/evidence/PAO-17/structure-lifecycle'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/legacy/PAO-17/structure-lifecycle'"
+        }
+      ],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao17-ramp-view.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao17-ramp-view.pw.ts",
+      "sha256": "128ee83e260e47c130539f97ace8ce38705afbbca582e0ef1a4cf8438750d214",
+      "mirrorSha256": "45478219bda089f377bf587f6709fc75aaa6823808f59a8ed2e0662e6c735c9a",
+      "reverseEqual": true,
+      "replacements": [
+        {
+          "from": "'docs/evidence/PAO-17/bright-theme-preview'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/legacy/PAO-17/bright-theme-preview'"
+        }
+      ],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao17-structure.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao17-structure.pw.ts",
+      "sha256": "8f592c4d925071d2bd31c0cc9323d03ce77669cc461b2ddccf563cf8e0d41f4c",
+      "mirrorSha256": "9093710eb53b1e99a8ed4bd3a4ff9d5d5a8cc24a0c43ef9f650576cc5a8e4689",
+      "reverseEqual": true,
+      "replacements": [
+        {
+          "from": "'docs/evidence/PAO-17/structure-lifecycle'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/legacy/PAO-17/structure-lifecycle'"
+        }
+      ],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao17-theme.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao17-theme.pw.ts",
+      "sha256": "1afc77b291fdd3d07660ebd039bf67d5e3de66e158e6fc3d0b116c5b99cf177e",
+      "mirrorSha256": "364f1f55884d584b67608f7232ad4a70d99e97b06e2676ccb67d54be16d607d3",
+      "reverseEqual": true,
+      "replacements": [
+        {
+          "from": "'docs/evidence/PAO-17/bright-theme-preview'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/legacy/PAO-17/bright-theme-preview'"
+        }
+      ],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao18-controller-camera.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao18-controller-camera.pw.ts",
+      "sha256": "a73d95def7c0369315858022e44afb5a0609b4601271c2b1535df166d2683f04",
+      "mirrorSha256": "4ea10a214b3330d8d7f637de03f70d984ad1646abe98316dd0cdde08d43ac1c9",
+      "reverseEqual": true,
+      "replacements": [
+        {
+          "from": "'docs/evidence/PAO-18/controller-camera/v1'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/legacy/PAO-18/controller-camera/v1'"
+        },
+        {
+          "from": "'.pao18.local/recording'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/recording'"
+        },
+        {
+          "from": "await page.goto('http://127.0.0.1:5188/')",
+          "to": "await page.goto('http://127.0.0.1:5198/')"
+        }
+      ],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao18-fact-bridge.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao18-fact-bridge.pw.ts",
+      "sha256": "2322d697222d18e6bea05329a2db7548e67bd65fb32d4f1d53f402d3c30fe5d2",
+      "mirrorSha256": "2322d697222d18e6bea05329a2db7548e67bd65fb32d4f1d53f402d3c30fe5d2",
+      "reverseEqual": true,
+      "replacements": [],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao19-hud-camera-integration.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao19-hud-camera-integration.pw.ts",
+      "sha256": "67093b51f856ef3f556f16b527f78439d69727ff2c2c26154ce43f09f7e2132a",
+      "mirrorSha256": "67093b51f856ef3f556f16b527f78439d69727ff2c2c26154ce43f09f7e2132a",
+      "reverseEqual": true,
+      "replacements": [],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao19-hud-safe-area.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao19-hud-safe-area.pw.ts",
+      "sha256": "38ee8c8128b0055cfc1b7fd984397f10b5a52a3f64938c3b3f9dfb648385457c",
+      "mirrorSha256": "38ee8c8128b0055cfc1b7fd984397f10b5a52a3f64938c3b3f9dfb648385457c",
+      "reverseEqual": true,
+      "replacements": [],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/pao6-baseline.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao6-baseline.pw.ts",
+      "sha256": "710cd0dc1d6fd938825b4c741f0c32798a2ada5c507209c48b2f57889f441df9",
+      "mirrorSha256": "06bc27bee2e241f6f63ddc3b89f1069781ab88e4e8ac1583ed13afc25b19b858",
+      "reverseEqual": true,
+      "replacements": [
+        {
+          "from": "'docs/evidence/PAO-6'",
+          "to": "'D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/legacy/PAO-6'"
+        }
+      ],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    },
+    {
+      "phase": "full-final",
+      "source": "tests/e2e/rebuild-ui.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/rebuild-ui.pw.ts",
+      "sha256": "59a8730f17037a8cab601f66ffe68beb9d8abeefa8cf1afdd9e25eed1a257ce8",
+      "mirrorSha256": "59a8730f17037a8cab601f66ffe68beb9d8abeefa8cf1afdd9e25eed1a257ce8",
+      "reverseEqual": true,
+      "replacements": [],
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true
+    }
+  ],
+  "passedNewIntegration": [
+    {
+      "title": "I01/I02 N production input, final three actors and real animation freeze 1440",
+      "tests": [
+        "expected"
+      ]
+    },
+    {
+      "title": "I01/I02 N production input, final three actors and real animation freeze 390",
+      "tests": [
+        "expected"
+      ]
+    },
+    {
+      "title": "I02/I03 F same-frame maximal real DOM and final projection 1440",
+      "tests": [
+        "expected"
+      ]
+    },
+    {
+      "title": "I02/I03 F same-frame maximal real DOM and final projection 390",
+      "tests": [
+        "expected"
+      ]
+    },
+    {
+      "title": "I04/I05/I08 F unavailable UI preserves facts, then paused rotation freezes real groups and pose",
+      "tests": [
+        "expected"
+      ]
+    },
+    {
+      "title": "I07/I09/I11 F warm host resource stability for 20 rounds, 10 resets and terminal dispose",
+      "tests": [
+        "expected"
+      ]
+    },
+    {
+      "title": "F offset content and real non-default backbuffer are scaled once",
+      "tests": [
+        "expected"
+      ]
+    }
+  ],
+  "carTail": [
+    {
+      "file": "pao6-baseline.pw.ts",
+      "tests": [
+        "expected"
+      ]
+    }
+  ],
+  "rawWitnesses": [
+    {
+      "file": "pao17-structure.pw.ts",
+      "title": "F source raw and legacy HTTP identity",
+      "status": [
+        "expected"
+      ]
+    },
+    {
+      "file": "pao18-controller-camera.pw.ts",
+      "title": "F runtime modules raw identity and actual legacy GLB HTTP hash",
+      "status": [
+        "expected"
+      ]
+    },
+    {
+      "file": "pao18-fact-bridge.pw.ts",
+      "title": "F HTTP raw source identity witnesses (disk hash comparison recorded by the local harness)",
+      "status": [
+        "expected"
+      ]
+    },
+    {
+      "file": "pao19-hud-safe-area.pw.ts",
+      "title": "offset canvas, explicit inset and raw source identity",
+      "status": [
+        "expected"
+      ]
+    },
+    {
+      "file": "pao19-hud-safe-area.pw.ts",
+      "title": "offset canvas, explicit inset and raw source identity",
+      "status": [
+        "expected"
+      ]
+    }
+  ],
+  "publication": "NOT_ELIGIBLE: three new full-suite runtime failures; no commit or push",
+  "rawRoot": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106",
+  "sourceHashes": {
+    "src/main.ts": "15bf2a805952542f2c3158c9d047dc9b7dd19748871c0470ea6d832dfb7e7a16",
+    "src/render/babylon.ts": "76e27757135cfab872b69e857cc8817ab520fdeb33143ac07ccf2233aedc0f69",
+    "src/presentation/hudCameraInput.ts": "5716042a665c13f97ed60cb3f4f43a775405a866dad9f8c39f561ac1f5b431ed",
+    "src/ui/dom.ts": "847abe119dc0ac90426d70fb16674ba024fd0caff6fdad14e93868049380d04c",
+    "src/presentation/hudSafeArea.ts": "2f242e44395b040591395c4132d6aaefc2800b17fa66573398eabbf5bbf2f3cc",
+    "src/style.css": "99885e665c4e50e555cb9c015375ca817dd58bed9b9d62ab1491e8ec2d727a21",
+    "index.html": "8cf65624f629c45df49a15d702e306c77100291523c9c7ccdabf275dd11368f2"
+  }
+}

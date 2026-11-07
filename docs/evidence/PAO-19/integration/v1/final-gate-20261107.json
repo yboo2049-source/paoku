@@ -1,0 +1,561 @@
+{
+  "date": "2026-11-07",
+  "headBeforeCommit": "d303633e2539a26ca595438b51216a02900df92f",
+  "branch": "codex/pao18-font-diagnosis",
+  "stats": {
+    "startTime": "2026-11-07T09:06:32.620Z",
+    "duration": 989077.155,
+    "expected": 106,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "listed": 106,
+  "exitCode": 0,
+  "failures": [],
+  "retries": 0,
+  "fixedMatchAll": true,
+  "fixed": [
+    {
+      "path": "src/ui/dom.ts",
+      "blob": "3909d2dbdeefc70fb34ebc9f2221bed11c93c9c4",
+      "actual": "3909d2dbdeefc70fb34ebc9f2221bed11c93c9c4",
+      "match": true
+    },
+    {
+      "path": "src/ui/views/models.ts",
+      "blob": "67a9c3ecf60ca97329fd88aa4ee0dfe10d9c5d77",
+      "actual": "67a9c3ecf60ca97329fd88aa4ee0dfe10d9c5d77",
+      "match": true
+    },
+    {
+      "path": "src/ui/views/screens.ts",
+      "blob": "865ecdd56b9fb6defcfb89ce451020ebf0b0f878",
+      "actual": "865ecdd56b9fb6defcfb89ce451020ebf0b0f878",
+      "match": true
+    },
+    {
+      "path": "src/presentation/hudSafeArea.ts",
+      "blob": "e402beb9dd4824d3a1b360a78058099fa8d13db5",
+      "actual": "e402beb9dd4824d3a1b360a78058099fa8d13db5",
+      "match": true
+    }
+  ],
+  "protectedTotal": 93,
+  "protectedUnchangedAll": true,
+  "rootScreenshotsUnchangedAll": true,
+  "rootScreenshots": [
+    {
+      "path": "screenshot_1_menu.png",
+      "sha256": "dc25282f324c46a3202cccdb9ef2280b8102ed61ce7b1493ea1397d73e2c5a3e",
+      "gitBlob": "be0f626ee619cedcca91a65be0ef417595aa84bb",
+      "headBlob": "be0f626ee619cedcca91a65be0ef417595aa84bb",
+      "unchanged": true,
+      "redirectedOutputExists": true,
+      "redirectedOutputSha256": "07e2235c790779d4345278f88525fe3fe7dad235cd9371e0c50ea2d1dc194dac"
+    },
+    {
+      "path": "screenshot_2_shop.png",
+      "sha256": "dfc980f031e73d7c2f64a64240c8ed346dccb4314b9ad97488a8fdf4bc60d673",
+      "gitBlob": "baf928594b696f94bd9174a9242feba7e1bc47a3",
+      "headBlob": "baf928594b696f94bd9174a9242feba7e1bc47a3",
+      "unchanged": true,
+      "redirectedOutputExists": true,
+      "redirectedOutputSha256": "c0586ad15ce99d73e61060899f9af353867cc7bfc2910f445e903994ae82e8af"
+    },
+    {
+      "path": "screenshot_3_gameplay_chase.png",
+      "sha256": "af725839311297c3965600a6c2260b7884fbf6d1658c47409ebb74ccd6d27f86",
+      "gitBlob": "0800695b0d2adc6363dd0730bbbe20e1566c7940",
+      "headBlob": "0800695b0d2adc6363dd0730bbbe20e1566c7940",
+      "unchanged": true,
+      "redirectedOutputExists": true,
+      "redirectedOutputSha256": "55c40b2ff6ac6c2ff8e59476351c02ef3ae3e193b0577974c86f466ca2fba2b6"
+    },
+    {
+      "path": "screenshot_4_bank_tilt.png",
+      "sha256": "8389127cf44ea58590a75981198dd3caf07a22b3abdb282ca8e90cee435a564a",
+      "gitBlob": "6f5f42c5ac4fc04249e77dfb95b47c8c0871191e",
+      "headBlob": "6f5f42c5ac4fc04249e77dfb95b47c8c0871191e",
+      "unchanged": true,
+      "redirectedOutputExists": true,
+      "redirectedOutputSha256": "f47a8a38275f8df3ac3246579f094694bac8a645295cfe0a24c6d80dcca26ad8"
+    },
+    {
+      "path": "screenshot_5_jump_action.png",
+      "sha256": "4608007083acb86ea1fa5b3f3d9ad08d822ba3521eaf6cdc1b4bf12281c35e41",
+      "gitBlob": "4b23567a9b6b727e167287a314adb790aba2599b",
+      "headBlob": "4b23567a9b6b727e167287a314adb790aba2599b",
+      "unchanged": true,
+      "redirectedOutputExists": true,
+      "redirectedOutputSha256": "d1764ffb7b97164ecafad9d29da0f3b1e6b0a937d9a57e079827427a7025a14c"
+    },
+    {
+      "path": "screenshot_6_paused_screen.png",
+      "sha256": "edfb9798eba160f2bfe52e44dbb818c54336c2bba7e03a627fae2ec3fee527d8",
+      "gitBlob": "68b3958f37f8ed978b03fa6d7aa3ed40093eb8ad",
+      "headBlob": "68b3958f37f8ed978b03fa6d7aa3ed40093eb8ad",
+      "unchanged": true,
+      "redirectedOutputExists": true,
+      "redirectedOutputSha256": "2721a410e703fae5296b42e69995ce67c2aff16ff219453fda10d7e390f6f2ff"
+    }
+  ],
+  "mirrorsTotal": 20,
+  "mirrorsReverseEqualAll": true,
+  "mirrors": [
+    {
+      "source": "tests/e2e/font-resources.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/font-resources.pw.ts",
+      "sha256": "a8ed06c03f911a900731c9e78070d14e4f2f0e3a8d5c529c50c3cd3eceef773b",
+      "mirrorSha256": "a8ed06c03f911a900731c9e78070d14e4f2f0e3a8d5c529c50c3cd3eceef773b",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 0
+    },
+    {
+      "source": "tests/e2e/gameplay.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/gameplay.pw.ts",
+      "sha256": "ac860d0781b57ec51735607c8e6d1441a5f02afcb9b27203f2f8e682d607ce64",
+      "mirrorSha256": "335253d4f36830d03fe34e0ab82ade02e006712f7dd465f2a75cfb2f2e0483d3",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 6
+    },
+    {
+      "source": "tests/e2e/pao10-review-fixes.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao10-review-fixes.pw.ts",
+      "sha256": "21a92efee35f42f42912d8655d62eb1a6d4786494235ee84d9ff1ae8dab45892",
+      "mirrorSha256": "d7fd03a388900b8a4796759dcd58eddebb4732095e05b8ce25b11b48247a54ea",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 1
+    },
+    {
+      "source": "tests/e2e/pao10-simulation.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao10-simulation.pw.ts",
+      "sha256": "4cb5069cfcec3a015c768ee5047403b8cd4c0c295529e1eda186866c6a921ebf",
+      "mirrorSha256": "d68d756e52b1c592d9bbb4e84a0d4572a0e049b7bd77be65ab1312d853ea0d31",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 1
+    },
+    {
+      "source": "tests/e2e/pao11-surfaces.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao11-surfaces.pw.ts",
+      "sha256": "2e5cb1868763f2ddec33ae472f3497aeac1dffa6d7be0c80c1a41fa6842d868b",
+      "mirrorSha256": "c455e5f4478f71501aab1630ab0c1e17768412cd16b9ed9aa2e97376d17abfe5",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 1
+    },
+    {
+      "source": "tests/e2e/pao12-collision.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao12-collision.pw.ts",
+      "sha256": "669125de620cfd8c0263b5ee7696cef53a2e48d9fac0548f5f095fd710371f1d",
+      "mirrorSha256": "fcd3a5b0f3e80ed1c9ce2df3a97dd2eed5aa1a4cf254909196c28cdde81b21f4",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 1
+    },
+    {
+      "source": "tests/e2e/pao13-track.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao13-track.pw.ts",
+      "sha256": "03211f334c9ff5bf05b058bcb49c1d83d7b0eefe4800b3257453fecd8943a7a3",
+      "mirrorSha256": "f54ab8455f4647e96367bdbf5d4f075592ef9f9702ccf600a19e38111ce6b12a",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 1
+    },
+    {
+      "source": "tests/e2e/pao14-application.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao14-application.pw.ts",
+      "sha256": "06039b20c65000d94d819a45ce5332bd77731779bf851ea2eb9164988bba8f6a",
+      "mirrorSha256": "a03ef9db6f5df364890c32723f1495e6aef93111c3f387090731a2e20ea3f401",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 1
+    },
+    {
+      "source": "tests/e2e/pao14-review.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao14-review.pw.ts",
+      "sha256": "b20d8604e98ee5eb1013c458160522c97433475075e9e55bd32d957e5abda413",
+      "mirrorSha256": "937229c4bf50b4e6432222f69bf79a739d1f7590adfe67e834fad9415f40a0dd",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 1
+    },
+    {
+      "source": "tests/e2e/pao14-unknown-commit.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao14-unknown-commit.pw.ts",
+      "sha256": "2b8545a84b763bf0a0faa9a2a8cf8ac3a10af0040afe42b34754bc2cdc414520",
+      "mirrorSha256": "21560b815b41624c43499b7f5b88ee791890d5b4ee10e34a5b58725246600a89",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 1
+    },
+    {
+      "source": "tests/e2e/pao17-lifecycle.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao17-lifecycle.pw.ts",
+      "sha256": "87577c433ee531f1a5fabfc42885f21957dd5c784b5a7d75483139aaf57f6045",
+      "mirrorSha256": "40499ea96655d40c83d74eb73c4f4afb077ffc832bbdad82c41ac24fb9b4acc8",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 1
+    },
+    {
+      "source": "tests/e2e/pao17-ramp-view.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao17-ramp-view.pw.ts",
+      "sha256": "128ee83e260e47c130539f97ace8ce38705afbbca582e0ef1a4cf8438750d214",
+      "mirrorSha256": "4b5a129d013188e621d58b683c75bc14b5ee29eed0e7b07b4ad40168fdb8df83",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 1
+    },
+    {
+      "source": "tests/e2e/pao17-structure.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao17-structure.pw.ts",
+      "sha256": "8f592c4d925071d2bd31c0cc9323d03ce77669cc461b2ddccf563cf8e0d41f4c",
+      "mirrorSha256": "9c053ba172b4b5cb937f9ccd2de2cf9246fdaf2ac0d759d87312084f9b0f0f29",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 1
+    },
+    {
+      "source": "tests/e2e/pao17-theme.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao17-theme.pw.ts",
+      "sha256": "1afc77b291fdd3d07660ebd039bf67d5e3de66e158e6fc3d0b116c5b99cf177e",
+      "mirrorSha256": "73bc8eaeec1de53c28c4794303b985b1617c079770f295342691a2618509bf06",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 1
+    },
+    {
+      "source": "tests/e2e/pao18-controller-camera.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao18-controller-camera.pw.ts",
+      "sha256": "a73d95def7c0369315858022e44afb5a0609b4601271c2b1535df166d2683f04",
+      "mirrorSha256": "dc78dc4acea4d12f0703e784109f0f120d728dd79428ac27d72d67577804bcec",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 3
+    },
+    {
+      "source": "tests/e2e/pao18-fact-bridge.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao18-fact-bridge.pw.ts",
+      "sha256": "2322d697222d18e6bea05329a2db7548e67bd65fb32d4f1d53f402d3c30fe5d2",
+      "mirrorSha256": "2322d697222d18e6bea05329a2db7548e67bd65fb32d4f1d53f402d3c30fe5d2",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 0
+    },
+    {
+      "source": "tests/e2e/pao19-hud-camera-integration.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao19-hud-camera-integration.pw.ts",
+      "sha256": "67093b51f856ef3f556f16b527f78439d69727ff2c2c26154ce43f09f7e2132a",
+      "mirrorSha256": "67093b51f856ef3f556f16b527f78439d69727ff2c2c26154ce43f09f7e2132a",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 0
+    },
+    {
+      "source": "tests/e2e/pao19-hud-safe-area.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao19-hud-safe-area.pw.ts",
+      "sha256": "cbcca0ee66a1058727de8ac7e83713cf32201319dec0bc88477cf96fbc78effc",
+      "mirrorSha256": "cbcca0ee66a1058727de8ac7e83713cf32201319dec0bc88477cf96fbc78effc",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 0
+    },
+    {
+      "source": "tests/e2e/pao6-baseline.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/pao6-baseline.pw.ts",
+      "sha256": "710cd0dc1d6fd938825b4c741f0c32798a2ada5c507209c48b2f57889f441df9",
+      "mirrorSha256": "77bb23e2bc170afa25ebc64b492063fc16763ed88008aecc922a0f912406da6d",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 1
+    },
+    {
+      "source": "tests/e2e/rebuild-ui.spec.ts",
+      "mirror": ".pao18.local/pao19-integration/full-final/suite/rebuild-ui.pw.ts",
+      "sha256": "59a8730f17037a8cab601f66ffe68beb9d8abeefa8cf1afdd9e25eed1a257ce8",
+      "mirrorSha256": "59a8730f17037a8cab601f66ffe68beb9d8abeefa8cf1afdd9e25eed1a257ce8",
+      "sourceUnchanged": true,
+      "mirrorUnchanged": true,
+      "reverseByteEqual": true,
+      "replacementsCount": 0
+    }
+  ],
+  "previouslyFailedThree": [
+    {
+      "file": "pao18-fact-bridge.pw.ts",
+      "line": 75,
+      "title": "F failed real step keeps last commit and audio silent; original application restart recovers",
+      "status": [
+        "expected"
+      ]
+    },
+    {
+      "file": "pao19-hud-safe-area.pw.ts",
+      "line": 78,
+      "title": "H02/H06/H15 N keyboard lifecycle with F read-only producer scheduling",
+      "status": [
+        "expected"
+      ]
+    },
+    {
+      "file": "pao19-hud-safe-area.pw.ts",
+      "line": 199,
+      "title": "H06/H15 N CDP touch lifecycle with F read-only measurement scheduling",
+      "status": [
+        "expected"
+      ]
+    }
+  ],
+  "passedNewIntegration": [
+    {
+      "title": "I01/I02 N production input, final three actors and real animation freeze 1440",
+      "tests": [
+        "expected"
+      ]
+    },
+    {
+      "title": "I01/I02 N production input, final three actors and real animation freeze 390",
+      "tests": [
+        "expected"
+      ]
+    },
+    {
+      "title": "I02/I03 F same-frame maximal real DOM and final projection 1440",
+      "tests": [
+        "expected"
+      ]
+    },
+    {
+      "title": "I02/I03 F same-frame maximal real DOM and final projection 390",
+      "tests": [
+        "expected"
+      ]
+    },
+    {
+      "title": "I04/I05/I08 F unavailable UI preserves facts, then paused rotation freezes real groups and pose",
+      "tests": [
+        "expected"
+      ]
+    },
+    {
+      "title": "I07/I09/I11 F warm host resource stability for 20 rounds, 10 resets and terminal dispose",
+      "tests": [
+        "expected"
+      ]
+    },
+    {
+      "title": "F offset content and real non-default backbuffer are scaled once",
+      "tests": [
+        "expected"
+      ]
+    }
+  ],
+  "carTail": [
+    {
+      "file": "pao6-baseline.pw.ts",
+      "tests": [
+        "expected"
+      ]
+    }
+  ],
+  "resources": {
+    "rounds": 20,
+    "resets": 10,
+    "before": {
+      "host": {
+        "measurements": 33,
+        "failures": 0,
+        "invalidations": 4,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 33,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    "after": {
+      "host": {
+        "measurements": 431,
+        "failures": 0,
+        "invalidations": 99,
+        "resets": 11,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 431,
+        "consumerGeneration": 11,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    "disposed": {
+      "measurements": 439,
+      "failures": 0,
+      "invalidations": 101,
+      "resets": 11,
+      "listeners": 0,
+      "observers": 0,
+      "subscriptions": 0,
+      "frameId": 439,
+      "consumerGeneration": 12,
+      "disposed": true
+    }
+  },
+  "layout": [
+    {
+      "width": 1440,
+      "safe": true,
+      "status": "READY",
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 550.5134313346953,
+          "maxX": 627.4293586980268,
+          "minY": 355.3208348122631,
+          "maxY": 568.5076978101978,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 718.6729189434271,
+          "maxX": 838.7166234402861,
+          "minY": 415.06411282494406,
+          "maxY": 640.669029558321,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 798.9337316740107,
+          "maxX": 886.1896831544993,
+          "minY": 541.1271717644904,
+          "maxY": 690.5499228597245,
+          "safe": true
+        }
+      ],
+      "speed": {
+        "x": 24,
+        "y": 106,
+        "width": 149.734375,
+        "height": 42
+      },
+      "toast": {
+        "x": 24,
+        "y": 180,
+        "width": 238.515625,
+        "height": 46
+      },
+      "hudIntersection": {
+        "width": 149.734375,
+        "height": 0
+      }
+    },
+    {
+      "width": 390,
+      "safe": true,
+      "status": "READY",
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 36.4637573497672,
+          "maxX": 108.45176171832313,
+          "minY": 354.6183745012341,
+          "maxY": 554.2611565169135,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 192.99734994948642,
+          "maxX": 306.6967957150282,
+          "minY": 409.1611263237205,
+          "maxY": 622.2363906865493,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 269.11906851979086,
+          "maxX": 351.2939767814933,
+          "minY": 527.8412813627361,
+          "maxY": 668.7527462078533,
+          "safe": true
+        }
+      ],
+      "speed": {
+        "x": 16,
+        "y": 144,
+        "width": 149.734375,
+        "height": 42
+      },
+      "toast": {
+        "x": 16,
+        "y": 172,
+        "width": 238.515625,
+        "height": 46
+      },
+      "hudIntersection": {
+        "width": 149.734375,
+        "height": 14
+      }
+    }
+  ],
+  "rawRoot": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107",
+  "sourceHashes": {
+    "src/main.ts": "1e7772121c6437b222b839ff1ce1d9c235937759f87a2c33dc6725c38a5e1941",
+    "src/render/babylon.ts": "76e27757135cfab872b69e857cc8817ab520fdeb33143ac07ccf2233aedc0f69",
+    "src/presentation/hudCameraInput.ts": "cc461e530227b2b857dcda5fa0fb61eebf64a43dc369eba0bfd614ea59962093",
+    "src/ui/dom.ts": "847abe119dc0ac90426d70fb16674ba024fd0caff6fdad14e93868049380d04c",
+    "src/ui/views/models.ts": "cf0d16f1fe8325b659eccf4edfcfa1c742a7bbebceb18756d95f5c6b71ec4a71",
+    "src/ui/views/screens.ts": "41e39b81cf8f947dcc7288d31b5e401ef8639c43ca9e675675fc757fd477b062",
+    "src/presentation/hudSafeArea.ts": "2f242e44395b040591395c4132d6aaefc2800b17fa66573398eabbf5bbf2f3cc",
+    "src/style.css": "99885e665c4e50e555cb9c015375ca817dd58bed9b9d62ab1491e8ec2d727a21",
+    "index.html": "8cf65624f629c45df49a15d702e306c77100291523c9c7ccdabf275dd11368f2",
+    "tests/unit/pao19-hud-camera-integration.test.ts": "558e937e2ed76a27c4bd1679f457499d41c05a713cc7046d63ff787b7b8b9f07",
+    "tests/e2e/pao19-hud-safe-area.spec.ts": "cbcca0ee66a1058727de8ac7e83713cf32201319dec0bc88477cf96fbc78effc",
+    "tests/e2e/pao19-hud-camera-integration.spec.ts": "67093b51f856ef3f556f16b527f78439d69727ff2c2c26154ce43f09f7e2132a",
+    "tests/e2e/rebuild-ui.spec.ts": "59a8730f17037a8cab601f66ffe68beb9d8abeefa8cf1afdd9e25eed1a257ce8",
+    "tests/e2e/pao18-controller-camera.spec.ts": "a73d95def7c0369315858022e44afb5a0609b4601271c2b1535df166d2683f04",
+    "tests/fixtures/pao18-legacy-hud.ts": "e5f0e6f8dce9ae850afa9a4369af6cc67c9f97f3f292a8403f863a92b556dd0e"
+  }
+}

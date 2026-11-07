@@ -16,7 +16,9 @@ import { UIManager } from './ui/dom';
 import { AppService } from './application/appService';
 import { createBrowserSaveRepository } from './application/saveRepository';
 import { SKINS } from './application/skinCatalog';
-import type { AppCommand, CommandResult } from './application/types';
+import type { AppCommand, AppSnapshot, CommandResult } from './application/types';
+import { normalizeOcclusion, toBufferGeometry } from './presentation/hudSafeArea';
+import type { HudCameraFrame } from './presentation/hudCameraInput';
 import { createRunSummary } from './systems/runSettlement';
 import type { InputAction, MotionCursor, MotionDraft, MotionReceipt } from './types/contracts';
 
@@ -56,7 +58,9 @@ const initialContext: GameContext = {
 // 2. 实例化子系统
 const renderEngine = new BabylonRenderEngine(appEl);
 const application = new AppService(createBrowserSaveRepository());
-const uiManager = new UIManager(appEl, () => application.snapshot);
+let frameApp: AppSnapshot | null = null;
+const uiManager = new UIManager(appEl, () => frameApp ?? application.snapshot);
+const hasLayoutProducer = typeof uiManager.measureOcclusion === 'function';
 const simulation = new Simulation(initialContext, {
   runId: 'podium', seed: 0x50414f10,
   motionMode: 'committed-motion-v1',
@@ -84,6 +88,39 @@ let inDelivery = false;
 let deliveryGeneration = 0;
 let renderCursor = simulation.motionCursor();
 let audioCursor = simulation.motionCursor();
+const commandAttempts = new Map<string, { signature: string; command: AppCommand; pending: boolean }>();
+let layoutFrameId = 0;
+let layoutGeneration = 0;
+let layoutInvalidation = 0;
+const layoutCleanup: (() => void)[] = [];
+const layoutStats = { measurements: 0, failures: 0, invalidations: 0, resets: 0, listeners: 0, observers: 0, subscriptions: 0 };
+function invalidateHostLayout(reason = 'DIRTY'): void {
+  if (!hasLayoutProducer || disposed) return;
+  uiManager.invalidateLayout(reason);
+}
+function resetHostLayout(): void {
+  if (!hasLayoutProducer || disposed) return;
+  layoutGeneration++; layoutStats.resets++; uiManager.resetLayout();
+}
+function setupHostLayout(): void {
+  if (!hasLayoutProducer) return;
+  const off = uiManager.subscribeLayoutInvalidation(() => { layoutInvalidation++; layoutStats.invalidations++; });
+  layoutStats.subscriptions++;
+  layoutCleanup.push(() => { off(); layoutStats.subscriptions--; });
+  const listen = (target: EventTarget, event: string) => {
+    const dirty = () => invalidateHostLayout();
+    target.addEventListener(event, dirty); layoutStats.listeners++;
+    layoutCleanup.push(() => { target.removeEventListener(event, dirty); layoutStats.listeners--; });
+  };
+  listen(window, 'resize'); listen(window, 'scroll');
+  if (window.visualViewport) { listen(window.visualViewport, 'resize'); listen(window.visualViewport, 'scroll'); }
+  const canvas = appEl.querySelector?.('canvas');
+  if (typeof ResizeObserver !== 'undefined' && canvas) {
+    const observer = new ResizeObserver(() => invalidateHostLayout());
+    observer.observe(appEl); observer.observe(canvas); layoutStats.observers++;
+    layoutCleanup.push(() => { observer.disconnect(); layoutStats.observers--; });
+  }
+}
 type Cue = { call: () => void; motion?: { draft: MotionDraft; ordinal: number } };
 let stepAudio: Cue[] = [];
 let audioDropped = 0;
@@ -194,6 +231,7 @@ function syncApplicationProjection(): void {
     simulation.restart(app.activeRunId, 0x50414f10, fresh);
     rebaseDelivery();
     appliedRunId = app.activeRunId;
+    resetHostLayout();
     observedTerminalRunId = null;
     inputSystem.clear();
   } else if (!app.activeRunId && (appliedRunId !== null || app.appState !== appliedState)) {
@@ -209,6 +247,7 @@ function syncApplicationProjection(): void {
     inputSystem.clear();
   }
   if (app.appState !== appliedState) {
+    invalidateHostLayout('STALE_LAYOUT');
     if (app.appState === 'PLAYING') {
       audioEngine.startBGM();
       const chase = simulation.snapshot.context.chase;
@@ -232,13 +271,14 @@ function syncApplicationProjection(): void {
 function reportResult(result: CommandResult): void {
   if (disposed) return;
   syncApplicationProjection();
-  if (!result.ok) uiManager.showToast?.('ACTION FAILED: ' + result.errorCode + '. Retry the action.');
+  if (uiManager.notifyCommandResult) uiManager.notifyCommandResult(result);
+  else if (!result.ok) uiManager.showToast?.('ACTION FAILED: ' + result.errorCode + '. Retry the action.');
 }
 
 function dispatchIntent(type: AppCommand['type'], payload?: Record<string, unknown>): void {
   const app = application.snapshot;
   const hasRunId = payload != null && Object.prototype.hasOwnProperty.call(payload, 'runId');
-  const command: AppCommand = {
+  let command: AppCommand = {
     commandId: typeof payload?.commandId === 'string' ? payload.commandId : 'ui-' + (++commandSequence),
     type,
     ...(type === 'START_RUN' || type === 'BUY_SKIN' || type === 'EQUIP_SKIN' || type === 'SET_AUDIO' || type === 'UPDATE_AUDIO' ? {} : { runId: hasRunId ? payload!.runId as string | null : app.activeRunId }),
@@ -256,7 +296,18 @@ function dispatchIntent(type: AppCommand['type'], payload?: Record<string, unkno
     queueMicrotask(() => { if (!disposed && epoch === simulation.snapshot.motionStamp!.streamEpoch) dispatchIntent(type, captured); });
     return;
   }
-  if (type === 'RESUME_RUN' && simulation.faulted) { uiManager.showToast?.('RUN FAULTED. Restart to recover.'); return; }
+  const signature = JSON.stringify(command);
+  const previous = commandAttempts.get(command.commandId);
+  if (previous?.signature === signature) {
+    if (previous.pending) return;
+    command = { ...previous.command };
+  }
+  if (type === 'RESUME_RUN' && simulation.faulted) {
+    uiManager.notifyCommandPending?.({ commandId: command.commandId, type, runId: command.runId ?? app.activeRunId });
+    if (uiManager.notifyCommandResult) uiManager.notifyCommandResult({ commandId: command.commandId, ok: false, errorCode: 'INVALID_STATE' });
+    else uiManager.showToast?.('RUN FAULTED. Restart to recover.');
+    return;
+  }
   const isolatePause = type === 'PAUSE_RUN' && app.appState === 'PLAYING' && app.activeRunId !== null && command.runId === app.activeRunId;
   let pauseBarrier = isolatePause;
   if (isolatePause) {
@@ -270,11 +321,14 @@ function dispatchIntent(type: AppCommand['type'], payload?: Record<string, unkno
   const allowedTerminal = type === 'GO_MENU' || (type === 'RESTART_RUN' && (app.appState === 'PAUSED' || app.appState === 'GAMEOVER')) || (type === 'OPEN_SHOP' && app.appState === 'GAMEOVER');
   if (terminalCommand && allowedTerminal && app.activeRunId && command.runId === app.activeRunId) {
     // Seal before changing phase, clearing the world or resetting any mission.
-    command.summary = app.summary ?? createRunSummary(simulation.snapshot, simulation.snapshot.phase === 'ENDED' ? 'COLLISION' : 'QUIT');
+    command.summary = command.summary ?? app.summary ?? createRunSummary(simulation.snapshot, simulation.snapshot.phase === 'ENDED' ? 'COLLISION' : 'QUIT');
     inputSystem.clear();
     gameLoop.setPaused(true);
     if (command.summary.endReason === 'QUIT' && !simulation.faulted) simulation.abandon();
   }
+  const attempt = { signature, command: immutableCopy(command) as AppCommand, pending: true };
+  commandAttempts.set(command.commandId, attempt);
+  uiManager.notifyCommandPending?.({ commandId: command.commandId, type: command.type, runId: command.runId ?? app.activeRunId });
   const result = application.dispatch(command);
   if (pauseBarrier && application.snapshot.appState === 'PAUSED' && application.snapshot.activeRunId === command.runId) {
     pendingPauseIntents--;
@@ -284,12 +338,28 @@ function dispatchIntent(type: AppCommand['type'], payload?: Record<string, unkno
   if (type === 'START_RUN' || type === 'PAUSE_RUN' || type === 'RESUME_RUN') syncApplicationProjection();
   void result.then(result => {
     if (pauseBarrier) pendingPauseIntents--;
+    attempt.pending = false;
+    if (result.ok && commandAttempts.get(command.commandId) === attempt) commandAttempts.delete(command.commandId);
     reportResult(result);
   });
 }
 
+let lastRestartIntentAt = -Infinity;
 on('START_GAME', payload => dispatchIntent('START_RUN', payload));
-on('RESTART', payload => dispatchIntent('RESTART_RUN', payload));
+on('RESTART', payload => { lastRestartIntentAt = performance.now(); dispatchIntent('RESTART_RUN', payload); });
+for (const [id, expectedState] of [['pause-restart-btn', 'PAUSED'], ['restart-btn', 'GAMEOVER']] as const) {
+  const btn = document.getElementById?.(id) as HTMLButtonElement | null;
+  if (!btn?.addEventListener) continue;
+  const onRestartClick = () => {
+    if (!disposed && !btn.disabled && application.snapshot.appState === expectedState && performance.now() - lastRestartIntentAt >= 300) {
+      lastRestartIntentAt = performance.now();
+      if (typeof (uiManager as any).intent === 'function') (uiManager as any).intent('RESTART');
+      else dispatchIntent('RESTART_RUN');
+    }
+  };
+  btn.addEventListener('click', onRestartClick);
+  subscriptions.push(() => btn.removeEventListener('click', onRestartClick));
+}
 on('GO_MENU', payload => dispatchIntent('GO_MENU', payload));
 on('OPEN_SHOP', payload => dispatchIntent('OPEN_SHOP', payload));
 on('BUY_SKIN', payload => dispatchIntent('BUY_SKIN', payload));
@@ -300,8 +370,8 @@ on('TOGGLE_PAUSE', payload => {
   const state = application.snapshot.appState;
   dispatchIntent(state === 'PAUSED' ? 'RESUME_RUN' : 'PAUSE_RUN', payload);
 });
-on('TOGGLE_AUDIO', () => {
-  dispatchIntent('UPDATE_AUDIO', { kind: 'TOGGLE', field: 'masterMuted' });
+on('TOGGLE_AUDIO', payload => {
+  dispatchIntent('UPDATE_AUDIO', { ...payload, kind: 'TOGGLE', field: 'masterMuted' });
 });
 
 /** Observe only complete committed ticks; DOM update and render never settle. */
@@ -416,9 +486,45 @@ function renderPresentation(alpha: number): void {
     ...(motion ? { timeSec: presentation.timeSec, stepSec: presentation.stepSec, motion } : {}),
   });
   const generation = deliveryGeneration;
+  const view = legacyView(presentation.context, app);
+  let hud: HudCameraFrame | undefined;
+  const frameId = ++layoutFrameId;
+  frameApp = app;
   inDelivery = true;
   try {
-    const receipt = renderEngine.render(legacyView(presentation.context, app), identity);
+    uiManager.update(view);
+    if (hasLayoutProducer) {
+      hud = { frameId, consumerGeneration: layoutGeneration, page: app.appState, runId: app.activeRunId, geometry: null, unavailableReason: document.hidden ? 'HIDDEN' : 'NOT_MOUNTED' };
+      const canvas = appEl.querySelector?.('canvas');
+      if (canvas && !document.hidden) {
+        const rect = canvas.getBoundingClientRect(), style = getComputedStyle(canvas), viewport = window.visualViewport;
+        const edge = (value: string) => Number.parseFloat(value) || 0;
+        const left = edge(style.borderLeftWidth) + edge(style.paddingLeft), right = edge(style.borderRightWidth) + edge(style.paddingRight);
+        const top = edge(style.borderTopWidth) + edge(style.paddingTop), bottom = edge(style.borderBottomWidth) + edge(style.paddingBottom);
+        // Current host has no canvas border/padding. Reject unsupported content-box transforms rather than mixing spaces.
+        const contentBoxValid = left === 0 && right === 0 && top === 0 && bottom === 0;
+        layoutStats.measurements++;
+        const sample = uiManager.measureOcclusion({ sampleFrame: frameId, page: app.appState, runId: app.activeRunId,
+          canvasRect: { x: rect.x + left, y: rect.y + top, width: rect.width - left - right, height: rect.height - top - bottom },
+          canvasTransform: contentBoxValid ? style.transform : 'unsupported-content-box',
+          viewport: { layoutWidth: document.documentElement.clientWidth, layoutHeight: document.documentElement.clientHeight,
+            visual: { x: viewport?.offsetLeft ?? 0, y: viewport?.offsetTop ?? 0, width: viewport?.width ?? window.innerWidth, height: viewport?.height ?? window.innerHeight }, visualScale: viewport?.scale ?? 1 } });
+        const invalidation = layoutInvalidation;
+        const size = renderEngine.getPresentationSize();
+        const geometry = toBufferGeometry(normalizeOcclusion(sample), size.width, size.height);
+        const current = uiManager.readOcclusion();
+        const valid = invalidation === layoutInvalidation && current === sample && sample.page === app.appState && sample.runId === app.activeRunId;
+        hud = { ...hud, geometry: valid ? geometry : null, unavailableReason: valid ? geometry.reason : 'DIRTY' };
+      }
+    }
+  } catch {
+    layoutStats.failures++;
+    invalidateHostLayout('HOST_MEASUREMENT_FAILED');
+    hud = { frameId, consumerGeneration: layoutGeneration, page: app.appState, runId: app.activeRunId, geometry: null, unavailableReason: 'HOST_MEASUREMENT_FAILED' };
+  }
+  try {
+    if (disposed || generation !== deliveryGeneration) return;
+    const receipt = renderEngine.render(view, identity, hud);
     if (receipt?.status === 'COMPLETE' && generation === deliveryGeneration && receipt.through.runId === presentation.runId && receipt.through.streamEpoch === presentation.motionStamp!.streamEpoch) {
       renderCursor = receipt.through; receipt.items.forEach(item => keepRecent(renderItems, item));
     }
@@ -433,13 +539,13 @@ function renderPresentation(alpha: number): void {
       renderCursor = motion.through;
     }
   }
-  finally { inDelivery = false; }
-  uiManager.update(legacyView(simulation.snapshot.context, app));
+  finally { inDelivery = false; frameApp = null; }
 }
 const gameLoop = new GameLoop(stepSimulation, {
   stepSec: simulation.stepSec,
   render: renderPresentation,
 });
+setupHostLayout();
 gameLoop.setPaused(true);
 gameLoop.start();
 void application.initialize().then(reportResult);
@@ -449,12 +555,16 @@ function suspend(): void {
   if (simulation.snapshot.phase === 'RUNNING') eventBus.emit('TOGGLE_PAUSE');
   gameLoop.resetClock();
 }
-function visibilityChanged(): void { if (document.hidden) suspend(); else gameLoop.resetClock(); }
+function visibilityChanged(): void { invalidateHostLayout('DIRTY'); if (document.hidden) suspend(); else gameLoop.resetClock(); }
 window.addEventListener('blur', suspend);
 document.addEventListener('visibilitychange', visibilityChanged);
 export function disposeGame(): void {
   if (disposed) return;
   disposed = true;
+  layoutGeneration++;
+  layoutCleanup.splice(0).forEach(cleanup => cleanup());
+  uiManager.disposeLayout?.();
+  commandAttempts.clear(); frameApp = null;
   deliveryGeneration++; stepAudio = [];
   audioEngine.stopChase = originalStopChase; audioEngine.setChaseState = originalSetChaseState;
   gameLoop.dispose(); inputSystem.dispose();
@@ -470,6 +580,7 @@ if (import.meta.hot) import.meta.hot.dispose(disposeGame);
 const isQaMode = () => (window as any).__QA_MODE__ === true;
 
 (window as any).__GAME_SENSOR__ = {
+  getHudBridge: () => immutableCopy({ layout: uiManager.readOcclusion?.() ?? null, renderer: renderEngine.hudDiagnostics ?? null, host: { ...layoutStats, frameId: layoutFrameId, consumerGeneration: layoutGeneration, disposed } }),
   // —— 只读（生产与测试均可用，无害）——
   getAppSnapshot: () => application.snapshot,
   getMotionBridge: () => immutableCopy({ mode: 'committed-motion-v1', faulted: simulation.faulted,

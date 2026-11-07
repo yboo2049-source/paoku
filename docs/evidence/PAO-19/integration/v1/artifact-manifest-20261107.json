@@ -1,0 +1,75 @@
+{
+  "rawRoot": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107",
+  "artifacts": [
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107/full-final/result.json",
+      "bytes": 430253,
+      "sha256": "6f5c82bb306f518ef7681df2f0ef7a90c1bfb93f94f51b4743460eea3166cdf8"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107/full-once.txt",
+      "bytes": 2876341,
+      "sha256": "f9ce37004b99eb26718ceab77c3c4dfbdee72a268d1ce8c0f82a6a5c75eb8c66"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107/full-final/service.log",
+      "bytes": 3093093,
+      "sha256": "570aad8d2f2ec5dd01d107e73b401dec35ad20ac4ab878a47525d6a57b6b7cda"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107/full-final/service-owner.json",
+      "bytes": 134,
+      "sha256": "9d6c564bc47cc13edd2b2643c3a5df35e004fd1c3f6682c2519c8a24821e19fc"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107/full-final/integration/F-maximal-1440.png",
+      "bytes": 156103,
+      "sha256": "b710879dd944008104513bb0fafd6ffdb50797a1d9e948286a62f8d20f7ccf2f"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107/full-final/integration/F-maximal-390.png",
+      "bytes": 63283,
+      "sha256": "23c97a2fc7f19112368cd4864464f5ae011cb72988632e086acdc8c02caae672"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107/full-final/integration/F-paused-rotation.png",
+      "bytes": 52935,
+      "sha256": "a882510ecae5f27dbd85939b65396948fb14ac8f3149cc8e0e0c3c82a98d6cb6"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107/full-final/integration/F-resources.json",
+      "bytes": 14951,
+      "sha256": "a34a641103dd8d88c368cf1a89a9a3074ecbc0f63f2abc573bca0ff239173097"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107/full-final/legacy/screenshot_1_menu.png",
+      "bytes": 150977,
+      "sha256": "07e2235c790779d4345278f88525fe3fe7dad235cd9371e0c50ea2d1dc194dac"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107/full-final/legacy/screenshot_2_shop.png",
+      "bytes": 89083,
+      "sha256": "c0586ad15ce99d73e61060899f9af353867cc7bfc2910f445e903994ae82e8af"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107/full-final/legacy/screenshot_3_gameplay_chase.png",
+      "bytes": 115827,
+      "sha256": "55c40b2ff6ac6c2ff8e59476351c02ef3ae3e193b0577974c86f466ca2fba2b6"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107/full-final/legacy/screenshot_4_bank_tilt.png",
+      "bytes": 106352,
+      "sha256": "f47a8a38275f8df3ac3246579f094694bac8a645295cfe0a24c6d80dcca26ad8"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107/full-final/legacy/screenshot_5_jump_action.png",
+      "bytes": 97846,
+      "sha256": "d1764ffb7b97164ecafad9d29da0f3b1e6b0a937d9a57e079827427a7025a14c"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261107/full-final/legacy/screenshot_6_paused_screen.png",
+      "bytes": 87073,
+      "sha256": "2721a410e703fae5296b42e69995ce67c2aff16ff219453fda10d7e390f6f2ff"
+    }
+  ]
+}

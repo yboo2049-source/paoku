@@ -1,0 +1,215 @@
+{
+  "assertionProtection": {
+    "count": 130,
+    "equal": true,
+    "source": "b474845:tests/e2e/rebuild-ui.spec.ts",
+    "urlsEqual": true,
+    "noTypeIgnores": true
+  },
+  "resource": {
+    "rounds": 20,
+    "resets": 10,
+    "before": {
+      "host": {
+        "measurements": 23,
+        "failures": 0,
+        "invalidations": 4,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 23,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    "after": {
+      "host": {
+        "measurements": 330,
+        "failures": 0,
+        "invalidations": 98,
+        "resets": 11,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 330,
+        "consumerGeneration": 11,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    "disposed": {
+      "h": {
+        "layout": {
+          "sampleFrame": 324,
+          "page": "PLAYING",
+          "runId": "run-f805a3ae-5791-4e56-b609-11c04b6414ff",
+          "canvasRect": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+          },
+          "canvasTransform": "none",
+          "viewport": {
+            "layoutWidth": 1280,
+            "layoutHeight": 720,
+            "visual": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            },
+            "visualScale": 1
+          },
+          "producerId": "pao19-layout-ce9c1c22-a97e-455b-ab74-8e85c0288d3b",
+          "epoch": 11,
+          "layoutRevision": 188,
+          "status": "RELEASED",
+          "reason": "DISPOSED",
+          "profile": "gameplay",
+          "modal": "none",
+          "deviceInsets": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "surfaces": []
+        },
+        "renderer": {
+          "status": "RELEASED",
+          "reason": "DISPOSED",
+          "safe": false
+        },
+        "host": {
+          "measurements": 331,
+          "failures": 0,
+          "invalidations": 98,
+          "resets": 11,
+          "listeners": 0,
+          "observers": 0,
+          "subscriptions": 0,
+          "frameId": 331,
+          "consumerGeneration": 12,
+          "disposed": true
+        }
+      },
+      "probe": 0,
+      "sceneDisposed": true
+    }
+  },
+  "layout": [
+    {
+      "width": 1440,
+      "safe": true,
+      "status": "READY",
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 550.5845090138796,
+          "maxX": 626.0459859405672,
+          "minY": 353.9826513288588,
+          "maxY": 564.6080076684763,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 720.8832599316308,
+          "maxX": 836.6314548661899,
+          "minY": 416.1089462159773,
+          "maxY": 639.0264360492922,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 798.7924801228148,
+          "maxX": 886.0354518736276,
+          "minY": 542.0376335694773,
+          "maxY": 691.7035542164729,
+          "safe": true
+        }
+      ],
+      "speed": {
+        "x": 24,
+        "y": 106,
+        "width": 149.734375,
+        "height": 42
+      },
+      "toast": {
+        "x": 24,
+        "y": 180,
+        "width": 238.515625,
+        "height": 46
+      },
+      "hudIntersection": {
+        "width": 149.734375,
+        "height": 0
+      }
+    },
+    {
+      "width": 390,
+      "safe": true,
+      "status": "READY",
+      "actors": [
+        {
+          "name": "player",
+          "front": true,
+          "minX": 36.253211958277184,
+          "maxX": 106.6289226325465,
+          "minY": 352.6315767543338,
+          "maxY": 550.331816100694,
+          "safe": true
+        },
+        {
+          "name": "officer",
+          "front": true,
+          "minX": 195.8564764123882,
+          "maxX": 304.6137838648377,
+          "minY": 410.74884410764275,
+          "maxY": 620.6188007118665,
+          "safe": true
+        },
+        {
+          "name": "dog",
+          "front": true,
+          "minX": 269.2248830447746,
+          "maxX": 351.40647259748147,
+          "minY": 529.0508222430219,
+          "maxY": 670.5154698910636,
+          "safe": true
+        }
+      ],
+      "speed": {
+        "x": 16,
+        "y": 144,
+        "width": 149.734375,
+        "height": 42
+      },
+      "toast": {
+        "x": 16,
+        "y": 172,
+        "width": 238.515625,
+        "height": 46
+      },
+      "hudIntersection": {
+        "width": 149.734375,
+        "height": 14
+      }
+    }
+  ]
+}

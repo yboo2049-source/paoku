@@ -2,6 +2,7 @@ import { expect, test } from '@playwright/test';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { resolve } from 'node:path';
+import { mountLegacyHud, legacySource } from '../fixtures/pao18-legacy-hud';
 const dir = resolve('docs/evidence/PAO-18/controller-camera/v1');
 test.beforeEach(async () => { await mkdir(dir, { recursive: true }); });
 
@@ -146,12 +147,10 @@ for (const mobile of [false, true]) test(`N ${mobile ? '390 touch' : 'desktop ke
   const before = await getState(); await page.waitForTimeout(180); const paused = await getState();
   expect(before.pose.length).toBe(1); expect(paused.pose).toEqual(before.pose); expect(paused.groups.every((g: { playing: boolean }) => !g.playing)).toBe(true);
   expect(before.player.lane).toBe(0); expect(before.viewport.scroll).toBeLessThanOrEqual(before.viewport.width);
-  const top = before.rects.find(r => r.name === 'hud-top-bar')!; expect(top.y + top.height).toBeLessThanOrEqual(140);
-  for (const r of before.rects.filter(r => r.name !== 'hud-top-bar')) expect(r.y).toBeGreaterThanOrEqual(before.viewport.height - 112);
   await page.click('#resume-btn'); await page.waitForTimeout(100); await page.keyboard.press('Escape');
   await page.click('#pause-restart-btn'); await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getGameState() === 'PLAYING');
   const restarted = await getState(); expect(restarted.sim.runId).not.toBe(before.sim.runId); expect(errors).toEqual([]);
-  await writeFile(resolve(dir, `N-${mobile ? '390' : 'desktop'}.json`), JSON.stringify({ before, paused, restarted, errors, mode: 'N: no simulation injection', profile: 'legacy-css@f2680f4; no dynamic UI bridge' }, null, 2));
+  await writeFile(resolve(dir, `N-${mobile ? '390' : 'desktop'}.json`), JSON.stringify({ before, paused, restarted, errors, mode: 'N: no simulation injection', profile: 'production-ui@b474845; real host layout bridge' }, null, 2));
 });
 
 test('F recorded authoritative ramp-to-roof, jump/slide and pause with the production main', async ({ browser }) => {
@@ -227,7 +226,13 @@ test('F real legacy request delayed across reset: same asset ID, latest skin, di
 test('F fixed old HUD five-row profile measured with actual CSS at 390 and desktop', async ({ page }) => {
   const measurements = [];
   for (const viewport of [{ width: 390, height: 667 }, { width: 390, height: 844 }, { width: 1440, height: 900 }]) {
-    await page.setViewportSize(viewport); await page.goto('/'); await page.click('#start-btn'); await page.keyboard.press('Escape');
+    await page.setViewportSize(viewport); await mountLegacyHud(page);
+    const before = await page.evaluate(() => ({
+      rects: [...document.querySelectorAll('.hud-top-bar,.speedometer-wrap,.buffs-wrap')].map(el => { const r = el.getBoundingClientRect(); return { name: el.className, x: r.x, y: r.y, width: r.width, height: r.height }; }),
+      viewport: { width: innerWidth, height: innerHeight, scroll: document.documentElement.scrollWidth },
+    }));
+    const top = before.rects.find(r => r.name === 'hud-top-bar')!; expect(top.y + top.height).toBeLessThanOrEqual(140);
+    for (const r of before.rects.filter(r => r.name !== 'hud-top-bar')) expect(r.y).toBeGreaterThanOrEqual(before.viewport.height - 112);
     const rect = await page.evaluate(() => {
       const el = document.querySelector('#hud-buffs')!;
       el.innerHTML = ['HOVERBOARD ACTIVE', 'MAGNET (30.0s)', 'DOUBLE_SCORE (30.0s)', 'SUPER_SNEAKERS (30.0s)', 'HOVERBOARD (30.0s)'].map(text => `<div class="buff-pill"><span>${text}</span></div>`).join('');
@@ -235,5 +240,5 @@ test('F fixed old HUD five-row profile measured with actual CSS at 390 and deskt
     });
     expect(rect.top).toBeGreaterThanOrEqual(viewport.height - 240); measurements.push({ viewport, rect });
   }
-  await writeFile(resolve(dir, 'F-legacy-HUD-profile.json'), JSON.stringify({ profile: { top: 140, bottom: 240, left: 8, right: 8 }, mode: 'F: exact legacy CSS with maximum five synthetic buff rows, no production DOM bridge', measurements }, null, 2));
+  await writeFile(resolve(dir, 'F-legacy-HUD-profile.json'), JSON.stringify({ source: legacySource, profile: { top: 140, bottom: 240, left: 8, right: 8 }, mode: 'F: exact legacy DOM/CSS with maximum five synthetic buff rows; separate from production N', measurements }, null, 2));
 });

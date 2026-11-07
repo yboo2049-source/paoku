@@ -1,0 +1,12 @@
+{"cwd":"D:\\worker\\paoku-sessions\\pao-18-font-diagnosis","exe":"node","args":["node_modules/vitest/vitest.mjs","run","tests/unit/pao19-hud-camera-integration.test.ts","tests/unit/pao19-ui.test.ts","tests/unit/pao19-hud-safe-area.test.ts","tests/unit/pao17-main.test.ts","tests/unit/pao10-main.test.ts"],"start":"2026-11-06T14:24:49.769Z"}
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18-font-diagnosis
+
+
+ Test Files  5 passed (5)
+      Tests  37 passed (37)
+   Start at  22:24:50
+   Duration  4.09s (transform 879ms, setup 0ms, import 3.18s, tests 4.23s, environment 1ms)
+
+
+{"label":"target-green-02","code":0,"start":"2026-11-06T14:24:49.769Z","end":"2026-11-06T14:24:54.500Z","file":"D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\target-green-02.txt"}

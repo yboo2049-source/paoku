@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "startTime": "2026-11-06T14:55:03.465Z",
+    "duration": 945240.3770000001,
+    "expected": 103,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "file": "pao18-fact-bridge.pw.ts",
+      "line": 75,
+      "title": "F failed real step keeps last commit and audio silent; original application restart recovers",
+      "path": "pao18-fact-bridge.pw.ts / F failed real step keeps last commit and audio silent; original application restart recovers",
+      "status": "unexpected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "timedOut",
+          "retry": 0,
+          "duration": 60528,
+          "errors": [
+            {
+              "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+            },
+            {
+              "location": {
+                "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao18-fact-bridge.pw.ts",
+                "column": 54,
+                "line": 92
+              },
+              "message": "Error: page.waitForFunction: Test timeout of 60000ms exceeded.\n\n  90 |   expect(result.report.audio.items).toEqual(result.audio);\n  91 |   await expect(page.locator('#pause-restart-btn')).toBeVisible();\n> 92 |   await page.click('#pause-restart-btn'); await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getGameState() === 'PLAYING');\n     |                                                      ^\n  93 |   expect(await page.evaluate(() => (window as any).__GAME_SENSOR__.getMotionBridge().faulted)).toBe(false);\n  94 |   await attachJson('F-fault.json', result);\n  95 | });\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao18-fact-bridge.pw.ts:92:54"
+            }
+          ],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao18-fact-bridge.pw.ts-F--80905-pplication-restart-recovers\\error-context.md"
+            },
+            {
+              "name": "trace",
+              "contentType": "application/zip",
+              "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao18-fact-bridge.pw.ts-F--80905-pplication-restart-recovers\\trace.zip"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "pao19-hud-safe-area.pw.ts",
+      "line": 70,
+      "title": "H02/H06/H15 N keyboard lifecycle with F read-only producer scheduling",
+      "path": "pao19-hud-safe-area.pw.ts / H02/H06/H15 N keyboard lifecycle with F read-only producer scheduling",
+      "status": "unexpected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "failed",
+          "retry": 0,
+          "duration": 2844,
+          "errors": [
+            {
+              "location": {
+                "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao19-hud-safe-area.pw.ts",
+                "column": 97,
+                "line": 50
+              },
+              "message": "Error: DIRTY\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"READY\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mUN\u001b[27mREADY\"\u001b[39m\n\n  48 |   });\n  49 | }\n> 50 | async function ready(page: Page) { let s = await sample(page); expect(s.status, s.reason || '').toBe('READY'); return s; }\n     |                                                                                                 ^\n  51 | async function setPage(page: Page, state: string, max = false) {\n  52 |   await page.evaluate(({ state, max }) => {\n  53 |     const f = (window as any).__hud; f.app.appState = state; f.app.activeRunId = state === 'MENU' || state === 'SHOP' ? null : 'F-layout';\n    at ready (D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao19-hud-safe-area.pw.ts:50:97)\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao19-hud-safe-area.pw.ts:76:111"
+            }
+          ],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao19-hud-safe-area.pw.ts--6122d-ad-only-producer-scheduling\\error-context.md"
+            },
+            {
+              "name": "trace",
+              "contentType": "application/zip",
+              "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao19-hud-safe-area.pw.ts--6122d-ad-only-producer-scheduling\\trace.zip"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "pao19-hud-safe-area.pw.ts",
+      "line": 191,
+      "title": "H06/H15 N CDP touch lifecycle with F read-only measurement scheduling",
+      "path": "pao19-hud-safe-area.pw.ts / H06/H15 N CDP touch lifecycle with F read-only measurement scheduling",
+      "status": "unexpected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "failed",
+          "retry": 0,
+          "duration": 50672,
+          "errors": [
+            {
+              "location": {
+                "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao19-hud-safe-area.pw.ts",
+                "column": 97,
+                "line": 50
+              },
+              "message": "Error: DIRTY\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"READY\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mUN\u001b[27mREADY\"\u001b[39m\n\n  48 |   });\n  49 | }\n> 50 | async function ready(page: Page) { let s = await sample(page); expect(s.status, s.reason || '').toBe('READY'); return s; }\n     |                                                                                                 ^\n  51 | async function setPage(page: Page, state: string, max = false) {\n  52 |   await page.evaluate(({ state, max }) => {\n  53 |     const f = (window as any).__hud; f.app.appState = state; f.app.activeRunId = state === 'MENU' || state === 'SHOP' ? null : 'F-layout';\n    at ready (D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao19-hud-safe-area.pw.ts:50:97)\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\pao19-integration\\full-final\\suite\\pao19-hud-safe-area.pw.ts:198:235"
+            }
+          ],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao19-hud-safe-area.pw.ts--e4ab4-only-measurement-scheduling\\error-context.md"
+            },
+            {
+              "name": "trace",
+              "contentType": "application/zip",
+              "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao19-hud-safe-area.pw.ts--e4ab4-only-measurement-scheduling\\trace.zip"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

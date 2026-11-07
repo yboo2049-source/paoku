@@ -1,0 +1,707 @@
+{
+  "mode": "F read-only counters and actual lifecycle inputs; late font/resize after dispose",
+  "before": {
+    "host": {
+      "measurements": 23,
+      "failures": 0,
+      "invalidations": 4,
+      "resets": 1,
+      "listeners": 4,
+      "observers": 1,
+      "subscriptions": 1,
+      "frameId": 23,
+      "consumerGeneration": 1,
+      "disposed": false
+    },
+    "probe": 1,
+    "meshes": 102,
+    "materials": 26,
+    "textures": 8,
+    "groups": 7,
+    "skeletons": 1
+  },
+  "rounds": [
+    {
+      "host": {
+        "measurements": 25,
+        "failures": 0,
+        "invalidations": 6,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 25,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 28,
+        "failures": 0,
+        "invalidations": 7,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 28,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 31,
+        "failures": 0,
+        "invalidations": 9,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 31,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 34,
+        "failures": 0,
+        "invalidations": 10,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 34,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 37,
+        "failures": 0,
+        "invalidations": 11,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 37,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 40,
+        "failures": 0,
+        "invalidations": 12,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 40,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 43,
+        "failures": 0,
+        "invalidations": 13,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 43,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 47,
+        "failures": 0,
+        "invalidations": 14,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 47,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 50,
+        "failures": 0,
+        "invalidations": 15,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 50,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 53,
+        "failures": 0,
+        "invalidations": 16,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 53,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 56,
+        "failures": 0,
+        "invalidations": 18,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 56,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 59,
+        "failures": 0,
+        "invalidations": 19,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 59,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 61,
+        "failures": 0,
+        "invalidations": 20,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 61,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 64,
+        "failures": 0,
+        "invalidations": 21,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 64,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 66,
+        "failures": 0,
+        "invalidations": 22,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 66,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 69,
+        "failures": 0,
+        "invalidations": 23,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 69,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 72,
+        "failures": 0,
+        "invalidations": 24,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 72,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 75,
+        "failures": 0,
+        "invalidations": 25,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 75,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 78,
+        "failures": 0,
+        "invalidations": 26,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 78,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 81,
+        "failures": 0,
+        "invalidations": 28,
+        "resets": 1,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 81,
+        "consumerGeneration": 1,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 102,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    }
+  ],
+  "resets": [
+    {
+      "host": {
+        "measurements": 88,
+        "failures": 0,
+        "invalidations": 34,
+        "resets": 2,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 88,
+        "consumerGeneration": 2,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 71,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 115,
+        "failures": 0,
+        "invalidations": 41,
+        "resets": 3,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 115,
+        "consumerGeneration": 3,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 71,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 139,
+        "failures": 0,
+        "invalidations": 48,
+        "resets": 4,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 139,
+        "consumerGeneration": 4,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 71,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 164,
+        "failures": 0,
+        "invalidations": 55,
+        "resets": 5,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 164,
+        "consumerGeneration": 5,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 71,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 188,
+        "failures": 0,
+        "invalidations": 62,
+        "resets": 6,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 188,
+        "consumerGeneration": 6,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 71,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 213,
+        "failures": 0,
+        "invalidations": 69,
+        "resets": 7,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 213,
+        "consumerGeneration": 7,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 71,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 238,
+        "failures": 0,
+        "invalidations": 76,
+        "resets": 8,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 238,
+        "consumerGeneration": 8,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 71,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 262,
+        "failures": 0,
+        "invalidations": 83,
+        "resets": 9,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 262,
+        "consumerGeneration": 9,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 71,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 286,
+        "failures": 0,
+        "invalidations": 90,
+        "resets": 10,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 286,
+        "consumerGeneration": 10,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 71,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    },
+    {
+      "host": {
+        "measurements": 311,
+        "failures": 0,
+        "invalidations": 97,
+        "resets": 11,
+        "listeners": 4,
+        "observers": 1,
+        "subscriptions": 1,
+        "frameId": 311,
+        "consumerGeneration": 11,
+        "disposed": false
+      },
+      "probe": 1,
+      "meshes": 71,
+      "materials": 26,
+      "textures": 8,
+      "groups": 7,
+      "skeletons": 1
+    }
+  ],
+  "after": {
+    "host": {
+      "measurements": 330,
+      "failures": 0,
+      "invalidations": 98,
+      "resets": 11,
+      "listeners": 4,
+      "observers": 1,
+      "subscriptions": 1,
+      "frameId": 330,
+      "consumerGeneration": 11,
+      "disposed": false
+    },
+    "probe": 1,
+    "meshes": 102,
+    "materials": 26,
+    "textures": 8,
+    "groups": 7,
+    "skeletons": 1
+  },
+  "disposed": {
+    "h": {
+      "layout": {
+        "sampleFrame": 324,
+        "page": "PLAYING",
+        "runId": "run-f805a3ae-5791-4e56-b609-11c04b6414ff",
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "canvasTransform": "none",
+        "viewport": {
+          "layoutWidth": 1280,
+          "layoutHeight": 720,
+          "visual": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+          },
+          "visualScale": 1
+        },
+        "producerId": "pao19-layout-ce9c1c22-a97e-455b-ab74-8e85c0288d3b",
+        "epoch": 11,
+        "layoutRevision": 188,
+        "status": "RELEASED",
+        "reason": "DISPOSED",
+        "profile": "gameplay",
+        "modal": "none",
+        "deviceInsets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "surfaces": []
+      },
+      "renderer": {
+        "status": "RELEASED",
+        "reason": "DISPOSED",
+        "safe": false
+      },
+      "host": {
+        "measurements": 331,
+        "failures": 0,
+        "invalidations": 98,
+        "resets": 11,
+        "listeners": 0,
+        "observers": 0,
+        "subscriptions": 0,
+        "frameId": 331,
+        "consumerGeneration": 12,
+        "disposed": true
+      }
+    },
+    "probe": 0,
+    "sceneDisposed": true
+  }
+}

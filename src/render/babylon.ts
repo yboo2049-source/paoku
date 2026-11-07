@@ -40,8 +40,11 @@ import type { AssetLease } from './assets';
 import { BRIGHT_THEME, LegacyEnvironment } from './environment';
 import { EntityViews } from './entityViews';
 import { CharacterView } from './characterView';
-import { CameraRig, actorBounds } from './cameraRig';
+import { CameraRig, actorBounds, projectActors } from './cameraRig';
 import type { CameraInput } from './cameraRig';
+import { hudCameraInput } from '../presentation/hudCameraInput';
+import type { HudCameraFrame } from '../presentation/hudCameraInput';
+import { immutableValue } from '../presentation/hudSafeArea';
 import type { AssetContainer } from '@babylonjs/core';
 
 /** Reject malformed/conflicting delivery before changing presentation watermarks. */
@@ -121,6 +124,8 @@ export class BabylonRenderEngine {
   private cameraRig: CameraRig;
   private lastRenderTime: number | null = null;
   private presentationOptions: Partial<CameraInput> = {};
+  private hudState: Readonly<Record<string, unknown>> = Object.freeze({ status: 'UNREADY', reason: 'NOT_SAMPLED', safe: false });
+  private presentedPose: { position: Vector3; rotation: Vector3; target: Vector3; fov: number } | null = null;
 
   private totalTime: number = 0;
 
@@ -409,6 +414,12 @@ export class BabylonRenderEngine {
     if (!this.disposed) this.presentationOptions = { ...options };
   }
 
+  public getPresentationSize(): Readonly<{ width: number; height: number }> {
+    return Object.freeze({ width: this.engine.getRenderWidth(), height: this.engine.getRenderHeight() });
+  }
+
+  public get hudDiagnostics() { return this.hudState; }
+
   /**
    * 构建 Babylon 悬浮滑板 Mesh
    */
@@ -555,7 +566,7 @@ export class BabylonRenderEngine {
       groupsPaused: this.scene.animationGroups.every(g => !g.isPlaying) };
   }
 
-  public render(ctx: DeepReadonly<GameContext>, frame?: RenderFrameIdentity): MotionReceipt | undefined {
+  public render(ctx: DeepReadonly<GameContext>, frame?: RenderFrameIdentity, hud?: HudCameraFrame): MotionReceipt | undefined {
     if (this.disposed) return;
     if (frame?.motion) {
       const through = frame.motion.through;
@@ -617,8 +628,31 @@ export class BabylonRenderEngine {
     // All three current visual bounds are measured after pose/root/chaser updates.
     const width = this.engine.getRenderWidth(), height = this.engine.getRenderHeight();
     const actors = [actorBounds('player', this.playerRoot), actorBounds('officer', this.inspectorRoot), actorBounds('dog', this.dogRoot)];
-    this.cameraRig.sync(ctx, actors, { width, height, ...this.presentationOptions }, dt, this.characterView.status.landed,
+    const layout = hudCameraInput(this.presentationOptions, width, height, ctx.state, hud);
+    const holding = !!hud && !layout.ready && ctx.state === 'PLAYING' && this.presentedPose !== null;
+    // Consume facts even while layout is unavailable; only the final visible camera pose is held.
+    this.cameraRig.sync(ctx, actors, layout.input, dt, this.characterView.status.landed,
       frame?.motion ? frame.motion.status === 'OK' ? frame.motion.batches.flatMap(b => b.events) : [] : undefined);
+    if (holding) {
+      const pose = this.presentedPose!;
+      this.camera.position.copyFrom(pose.position); this.camera.setTarget(pose.target);
+      this.camera.rotation.copyFrom(pose.rotation); this.camera.fov = pose.fov;
+    }
+    const projection = projectActors(this.camera, actors, layout.input);
+    const complete = actors.length === 3 && actors.every(a => a.corners.length > 0);
+    this.hudState = immutableValue({
+      frameId: hud?.frameId ?? null, consumerGeneration: hud?.consumerGeneration ?? null,
+      page: ctx.state, runId: hud?.runId ?? frame?.runId ?? null,
+      producerId: hud?.geometry?.producerId ?? null, epoch: hud?.geometry?.epoch ?? null,
+      layoutRevision: hud?.geometry?.layoutRevision ?? null, sampleFrame: hud?.geometry?.sampleFrame ?? null,
+      status: layout.status, reason: layout.reason, input: layout.input,
+      rawReservedRects: layout.ready ? hud!.geometry!.rawReservedRects : [],
+      projection, rawProjection: projectActors(this.camera, actors, { ...layout.input, reservedRects: layout.ready ? hud!.geometry!.rawReservedRects : [] }),
+      safe: layout.ready && complete && projection.safe,
+      conflict: !complete ? 'MISSING_ACTOR' : layout.ready ? projection.reason : 'LAYOUT_UNAVAILABLE',
+      frozen: ctx.state === 'PAUSED' || ctx.state === 'GAMEOVER', holding,
+      pose: { position: this.camera.position.asArray(), rotation: this.camera.rotation.asArray(), target: this.camera.getTarget().asArray(), fov: this.camera.fov },
+    });
     const speedRatio = Math.max(0, Math.min(1, (ctx.speed - 18) / 27));
 
     // 6. 风阻拉线与碎片动效更新
@@ -633,6 +667,7 @@ export class BabylonRenderEngine {
 
     // 8. 执行渲染
     this.scene.render();
+    this.presentedPose = { position: this.camera.position.clone(), rotation: this.camera.rotation.clone(), target: this.camera.getTarget().clone(), fov: this.camera.fov };
     return frame?.motion ? this.characterView.status.receipt ?? undefined : undefined;
   }
 
@@ -688,6 +723,8 @@ export class BabylonRenderEngine {
     this.lastSimTime = null;
     if (this.disposed || this.boundaryPrepared) return;
     this.boundaryPrepared = true;
+    this.presentedPose = null;
+    this.hudState = Object.freeze({ status: 'UNREADY', reason: 'RESET', safe: false });
     this.epoch++;
     this.totalTime = 0;
     this.characterView.reset();
@@ -707,6 +744,8 @@ export class BabylonRenderEngine {
   public dispose(): void {
     if (this.disposed) return;
     this.disposed = true;
+    this.presentedPose = null;
+    this.hudState = Object.freeze({ status: 'RELEASED', reason: 'DISPOSED', safe: false });
     this.epoch++;
     this.cancelPlayerLoads.forEach(cancel => cancel()); this.cancelPlayerLoads.clear();
     window.removeEventListener('resize', this.resizeHandler);

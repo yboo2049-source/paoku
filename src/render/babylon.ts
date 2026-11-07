@@ -127,6 +127,8 @@ export class BabylonRenderEngine {
   private playerAssetState: 'PENDING' | 'READY' | 'FALLBACK' = 'PENDING';
   private officerLease: AssetLease | null = null;
   private dogLease: AssetLease | null = null;
+  private officerPendingEpoch: number | null = null;
+  private dogPendingEpoch: number | null = null;
   private officerAssets: AssetCache<AssetContainer>;
   private dogAssets: AssetCache<AssetContainer>;
   private lastRenderTime: number | null = null;
@@ -434,16 +436,16 @@ export class BabylonRenderEngine {
   }
 
   private ensureOfficerAsset(root: TransformNode): void {
-    if (this.disposed || this.officerLease) return;
+    if (this.disposed || this.officerLease || this.officerPendingEpoch === this.epoch) return;
     const epoch = this.epoch;
+    this.officerPendingEpoch = epoch;
     void this.officerAssets.acquire('character_police', () => !this.disposed && this.epoch === epoch, container => {
       try {
         const entries = container.instantiateModelsToScene(name => `officer_${name}`, false, { doNotInstantiate: true });
         for (const node of entries.rootNodes) {
           node.parent = root;
           if (node instanceof TransformNode) {
-            node.scaling.set(1.9, 1.9, 1.9);
-            node.rotation.y = Math.PI;
+            node.scaling.scaleInPlace(1.9);
             node.position.y = 0;
           }
         }
@@ -461,29 +463,35 @@ export class BabylonRenderEngine {
             entries.dispose();
           },
         };
-      } catch {
+      } catch (error) {
+        console.error('[GLB] officer instantiate error:', error);
         return { dispose: () => {} };
       }
     }).then(lease => {
       if (!this.disposed && this.epoch === epoch) {
         this.officerLease = lease;
+        this.officerPendingEpoch = null;
       } else {
+        this.officerPendingEpoch = null;
         lease?.release();
       }
+    }).catch(error => {
+      if (this.epoch === epoch) this.officerPendingEpoch = null;
+      console.warn('[GLB] officer acquire failed; keeping primitives', error);
     });
   }
 
   private ensureDogAsset(root: TransformNode): void {
-    if (this.disposed || this.dogLease) return;
+    if (this.disposed || this.dogLease || this.dogPendingEpoch === this.epoch) return;
     const epoch = this.epoch;
+    this.dogPendingEpoch = epoch;
     void this.dogAssets.acquire('character_dog', () => !this.disposed && this.epoch === epoch, container => {
       try {
         const entries = container.instantiateModelsToScene(name => `dog_${name}`, false, { doNotInstantiate: true });
         for (const node of entries.rootNodes) {
           node.parent = root;
           if (node instanceof TransformNode) {
-            node.scaling.set(0.85, 0.85, 0.85);
-            node.rotation.y = Math.PI;
+            node.scaling.scaleInPlace(0.85);
             node.position.y = 0;
           }
         }
@@ -501,15 +509,21 @@ export class BabylonRenderEngine {
             entries.dispose();
           },
         };
-      } catch {
+      } catch (error) {
+        console.error('[GLB] dog instantiate error:', error);
         return { dispose: () => {} };
       }
     }).then(lease => {
       if (!this.disposed && this.epoch === epoch) {
         this.dogLease = lease;
+        this.dogPendingEpoch = null;
       } else {
+        this.dogPendingEpoch = null;
         lease?.release();
       }
+    }).catch(error => {
+      if (this.epoch === epoch) this.dogPendingEpoch = null;
+      console.warn('[GLB] dog acquire failed; keeping primitives', error);
     });
   }
 
@@ -650,9 +664,6 @@ export class BabylonRenderEngine {
     sirenB.material = sirenBlueMat;
     sirenB.parent = root;
 
-    // 挂载 3D 警官模型 (character_police.glb)
-    this.ensureOfficerAsset(root);
-
     return root;
   }
 
@@ -683,9 +694,6 @@ export class BabylonRenderEngine {
     collar.position.set(0, 0.55, 0.28);
     collar.material = collarMat;
     collar.parent = root;
-
-    // 挂载 3D 警犬模型 (character_dog.glb)
-    this.ensureDogAsset(root);
 
     return root;
   }
@@ -766,6 +774,8 @@ export class BabylonRenderEngine {
     this.environment.sync(ctx.player.z, ctx.state);
     this.sun.position.set(ctx.player.x + 25, ctx.player.y + 45, ctx.player.z + 25);
     this.ensurePlayerAsset(this.playerBodyMesh);
+    this.ensureOfficerAsset(this.inspectorRoot);
+    this.ensureDogAsset(this.dogRoot);
 
     this.characterView.sync(ctx, dt, !!this.presentationOptions.reducedMotion, frame?.motion ? { read: frame.motion, timeSec: frame.timeSec! } : undefined);
     const animSpeed = ctx.state === 'PLAYING' ? ctx.speed * 0.8 : 0;
@@ -773,17 +783,17 @@ export class BabylonRenderEngine {
     // 3. 追捕警官与警犬动态跟随 (Inspector & Dog Chase System, AC-PRD-17 & AC-PRD-19)
     // 追逐距离由逻辑层维护（ctx.chase），渲染层只读，避免逻辑散落在视觉层
     if (ctx.state === 'MENU' || ctx.state === 'SHOP') {
-      // 菜单与商店状态：警官与警犬站在 3D 展台上侧后方，不遮挡角色且在 360° 环视中清晰可见
-      this.inspectorRoot.position.set(1.2, 0, -1.8);
-      this.dogRoot.position.set(1.75, 0, -1.5);
+      // 菜单与商店状态：警官与警犬站在 3D 展台上右侧前方，完全避开左侧 UI 卡片遮挡，面部与身形清晰可见
+      this.inspectorRoot.position.set(-1.3, 0, -0.6);
+      this.dogRoot.position.set(-1.8, 0, -0.2);
     } else {
       // 奔跑中：警官沿相同车道追逐玩家，警犬伴随在身侧（保持同一条铁轨路线）
       const targetOfficerX = ctx.player.x;
       const chaseDistance = ctx.chase.distance;
       const chaseZ = ctx.player.z - chaseDistance;
       const isInitialPlayFrame =
-        Math.abs(this.inspectorRoot.position.z - -1.8) < 1e-3 &&
-        Math.abs(this.inspectorRoot.position.x - 1.2) < 1e-3;
+        Math.abs(this.inspectorRoot.position.z - -0.6) < 1e-3 &&
+        Math.abs(this.inspectorRoot.position.x - -1.3) < 1e-3;
       const chaseX = isInitialPlayFrame
         ? targetOfficerX
         : Scalar.Lerp(this.inspectorRoot.position.x, targetOfficerX, Math.min(1, dt * 10.0));
@@ -904,8 +914,8 @@ export class BabylonRenderEngine {
     this.cameraRig.reset();
     this.lastRenderTime = null;
     this.environment.reset();
-    this.inspectorRoot.position.set(1.2, 0, -1.8);
-    this.dogRoot.position.set(1.75, 0, -1.5);
+    this.inspectorRoot.position.set(-1.3, 0, -0.6);
+    this.dogRoot.position.set(-1.8, 0, -0.2);
 
     // 清理残留破碎特效碎片
     this.activeFragments.forEach((f) => f.mesh.dispose());
@@ -927,6 +937,8 @@ export class BabylonRenderEngine {
     this.playerLease?.release(); this.playerLease = null;
     this.officerLease?.release(); this.officerLease = null;
     this.dogLease?.release(); this.dogLease = null;
+    this.officerPendingEpoch = null;
+    this.dogPendingEpoch = null;
     this.characterView.dispose(); this.cameraRig.dispose();
     this.activeFragments.forEach(f => f.mesh.dispose()); this.activeFragments = [];
     this.speedlineSystem.stop(); this.speedlineSystem.dispose();

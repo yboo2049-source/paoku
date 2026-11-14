@@ -1,0 +1,12 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao17-lifecycle.test.ts tests/unit/pao17-assets.test.ts tests/unit/pao17-frame.test.ts tests/unit/pao17-main.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+
+ Test Files  4 passed (4)
+      Tests  14 passed (14)
+   Start at  21:04:11
+   Duration  6.41s (transform 519ms, setup 0ms, import 6.84s, tests 10.72s, environment 1ms)

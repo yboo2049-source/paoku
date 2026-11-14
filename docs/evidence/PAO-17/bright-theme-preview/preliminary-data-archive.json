@@ -1,0 +1,112 @@
+[
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview\\F-bright-ramp-Y0.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\preview\\F-bright-ramp-Y0.json",
+    "sha256": "62a4876e599bbd7664af714d881c27f362bf76b1439b6127f92c4ff4b6dc701a"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview\\F-bright-ramp-Y5.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\preview\\F-bright-ramp-Y5.json",
+    "sha256": "31db6535c0c3ccfc9bdfed501bb0eb53430ce30cdbd225afea26283871971faa"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview\\F-successful-warm-resources.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\preview\\F-successful-warm-resources.json",
+    "sha256": "b8f5eea414b881cd2b9142350aff1cfbd31e2e80b51ab1604a55a67fbcc5bff7"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview\\N-bright-390.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\preview\\N-bright-390.json",
+    "sha256": "c19330120ae953735c79df0385a201c0e5ebd98252114c12d59a792475ff4fbe"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview\\N-bright-desktop.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\preview\\N-bright-desktop.json",
+    "sha256": "65bcf37ab8ebd3b540fb3c27b267cfb730190ca9e51c8a3067454cdb55d1c09d"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview2\\F-bright-ramp-Y0.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\preview2\\F-bright-ramp-Y0.json",
+    "sha256": "508dcd1cf3e399792b9d4a943fa0866d93063c04354a05b6c0919c946036ff16"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview2\\F-bright-ramp-Y5.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\preview2\\F-bright-ramp-Y5.json",
+    "sha256": "b9506437c60537d9b812e19c2e41e8e5aff25a622b79f8c73c5f0902ea9ec943"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview2\\F-successful-warm-resources.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\preview2\\F-successful-warm-resources.json",
+    "sha256": "5970cce2b00b8af5c68c001dfc48e91b70a82a72cb22169fd65d38e27c8d1d66"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview2\\N-bright-390.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\preview2\\N-bright-390.json",
+    "sha256": "dc7fbb76b8ee12f8c4ab1665a65d6aee3a242f7e0df72b9b2a42a14e4e0501d8"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\preview2\\N-bright-desktop.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\preview2\\N-bright-desktop.json",
+    "sha256": "567f5e6f67241b7ca697ce3ff1822894f20adee2fbb397486c0247da3b2aa8c5"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\shadow-preview\\F-bright-ramp-Y0.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\shadow-preview\\F-bright-ramp-Y0.json",
+    "sha256": "5422be2a419cf3e1456142574c35a8a2e46026fbd5f4513e9c9a314d820f2403"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\shadow-preview\\F-bright-ramp-Y5.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\shadow-preview\\F-bright-ramp-Y5.json",
+    "sha256": "fbbb1f7c2ae4287670841d07e4a2bb3904b41784021ce187bf9ed5a022eb1893"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-first\\F-bright-ramp-Y0.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\full-first\\F-bright-ramp-Y0.json",
+    "sha256": "31c21b1b9cb5c90b30016e5eb1873797d02934dc055b1073a9b7f9ce199897a4"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-first\\F-bright-ramp-Y5.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\full-first\\F-bright-ramp-Y5.json",
+    "sha256": "e29e44d21eccf4e282143d20df002e60d445047fbd243c48b38e71ad810d8ba9"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-first\\F-successful-warm-resources.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\full-first\\F-successful-warm-resources.json",
+    "sha256": "7b4afc113ffbb94bfd1fded071977dc5fd2aa7f76adf36f64d50fb5c9bf7ef75"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-first\\N-bright-390.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\full-first\\N-bright-390.json",
+    "sha256": "3b5538da406c2c3311ca1a94038108900c31a55c9ccbd587100a845d2eb2df27"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-first\\N-bright-desktop.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\full-first\\N-bright-desktop.json",
+    "sha256": "4f3b8f60671cd695f65738c703d74ea8e9c9ec9c3216b229437854aea9c8879a"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-final\\F-bright-ramp-Y0.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\full-final\\F-bright-ramp-Y0.json",
+    "sha256": "cc2a8c87737b6748da4ae8bba613ad9131c7570ddd113f1a7c169168fcf97479"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-final\\F-bright-ramp-Y5.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\full-final\\F-bright-ramp-Y5.json",
+    "sha256": "0fcd3f7fd0fe6cd9386bbaf9569fad076463628f8d59fd6c5b4016c20db18eb1"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-final\\F-successful-warm-resources.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\full-final\\F-successful-warm-resources.json",
+    "sha256": "7297af08af974333bb577d1f77ec929f0599f862200fcd8557f27c9a4004f299"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-final\\N-bright-390.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\full-final\\N-bright-390.json",
+    "sha256": "83b45e0304b09d2b92883138f71286a03ab3d13430c6b9784ecf16e8074d46aa"
+  },
+  {
+    "from": "docs\\evidence\\PAO-17\\bright-theme-preview\\full-final\\N-bright-desktop.json",
+    "to": ".pao17-local\\bright-theme\\preliminary-data\\full-final\\N-bright-desktop.json",
+    "sha256": "30902fa51d6d400465116a13d5d9769234117a25a338874fd72f16c71449af16"
+  }
+]

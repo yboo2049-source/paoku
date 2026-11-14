@@ -1,0 +1,120 @@
+
+> app@0.0.0 test
+> vitest run --run tests/unit/application.test.ts tests/unit/shopTransactions.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-14
+
+ ❯ tests/unit/shopTransactions.test.ts (7 tests | 3 failed) 14ms
+     × reports stale low balance as CONFLICT before rejection and reloads only on explicit retry 7ms
+     × checks freshness before rejecting an equip whose rights another service just purchased 1ms
+     × checks freshness even before an already-owned BUY idempotent success 2ms
+ ❯ tests/unit/application.test.ts (25 tests | 13 failed) 25ms
+     × applies queued audio intents against committed settings: distinct toggles 9ms
+     × applies queued audio intents against committed settings: same toggle twice 1ms
+     × applies queued audio intents against committed settings: master toggle twice 1ms
+     × applies queued audio intents against committed settings: volume and toggles interleaved 1ms
+     × retries a failed audio operation without a fake publication and deduplicates its commandId 2ms
+     × rejects invalid audio operation without storing: null 0ms
+     × rejects invalid audio operation without storing: {"kind":"TOGGLE","field":"bgmVolume"} 0ms
+     × rejects invalid audio operation without storing: {"kind":"TOGGLE","field":"unknown"} 0ms
+     × rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"bgmEnabled","value":0.5} 0ms
+     × rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"bgmVolume","value":null} 0ms
+     × rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"sfxVolume","value":null} 0ms
+     × rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"sfxVolume","value":-0.1} 0ms
+     × rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"sfxVolume","value":1.1} 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 16 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > applies queued audio intents against committed settings: distinct toggles
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > applies queued audio intents against committed settings: same toggle twice
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > applies queued audio intents against committed settings: master toggle twice
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > applies queued audio intents against committed settings: volume and toggles interleaved
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/application.test.ts:24:94
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/16]⎯
+
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > retries a failed audio operation without a fake publication and deduplicates its commandId
+AssertionError: expected 'INVALID_COMMAND' to be 'SAVE_FAILED' // Object.is equality
+
+Expected: "SAVE_FAILED"
+Received: "INVALID_COMMAND"
+
+ ❯ tests/unit/application.test.ts:27:187
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/16]⎯
+
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: null
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: {"kind":"TOGGLE","field":"bgmVolume"}
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: {"kind":"TOGGLE","field":"unknown"}
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"bgmEnabled","value":0.5}
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"bgmVolume","value":null}
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"sfxVolume","value":null}
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"sfxVolume","value":-0.1}
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > rejects invalid audio operation without storing: {"kind":"SET_VOLUME","field":"sfxVolume","value":1.1}
+AssertionError: expected 'INVALID_COMMAND' to be 'INVALID_AUDIO' // Object.is equality
+
+Expected: "INVALID_AUDIO"
+Received: "INVALID_COMMAND"
+
+ ❯ tests/unit/application.test.ts:30:106
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/16]⎯
+
+ FAIL  tests/unit/shopTransactions.test.ts > PAO-14 shop atomic transactions > reports stale low balance as CONFLICT before rejection and reloads only on explicit retry
+AssertionError: expected 'INSUFFICIENT_FUNDS' to be 'CONFLICT' // Object.is equality
+
+Expected: "CONFLICT"
+Received: "INSUFFICIENT_FUNDS"
+
+ ❯ tests/unit/shopTransactions.test.ts:13:47
+
+     11|     await b.finish({runId:'other-run',scoreInt:1,pickupCount:100,picku…
+     12|     const buy={commandId:'buy',type:'BUY_SKIN' as const,skinId:'pink'};
+     13|     expect((await a.dispatch(buy)).errorCode).toBe('CONFLICT');expect(…
+       |                                               ^
+     14|     expect((await a.dispatch(buy)).ok).toBe(true);expect(a.snapshot.wa…
+     15|   });
+ Test Files  2 failed (2)
+      Tests  16 failed | 16 passed (32)
+   Start at  13:32:10
+   Duration  343ms (transform 109ms, setup 0ms, import 148ms, tests 39ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/16]⎯
+
+ FAIL  tests/unit/shopTransactions.test.ts > PAO-14 shop atomic transactions > checks freshness before rejecting an equip whose rights another service just purchased
+AssertionError: expected 'NOT_OWNED' to be 'CONFLICT' // Object.is equality
+
+Expected: "CONFLICT"
+Received: "NOT_OWNED"
+
+ ❯ tests/unit/shopTransactions.test.ts:18:122
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/16]⎯
+
+ FAIL  tests/unit/shopTransactions.test.ts > PAO-14 shop atomic transactions > checks freshness even before an already-owned BUY idempotent success
+AssertionError: expected undefined to be 'CONFLICT' // Object.is equality
+
+- Expected:
+"CONFLICT"
+
++ Received:
+undefined
+
+ ❯ tests/unit/shopTransactions.test.ts:22:114
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/16]⎯

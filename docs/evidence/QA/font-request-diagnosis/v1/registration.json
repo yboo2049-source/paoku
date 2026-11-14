@@ -1,0 +1,19 @@
+{
+  "registeredAt": "2026-11-03T13:10:14.478Z",
+  "baseline": "build/unit before diagnosis",
+  "original": {
+    "sampleCount": 3,
+    "retries": 0,
+    "filter": "F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position",
+    "network": "unmodified; original F means physics fixture, not network failure"
+  },
+  "network": {
+    "natural": "3 fresh contexts, each cold then warm reload; no routing, browser default cache",
+    "failure": "1 independent fresh page abort googleapis connectionclosed; 1 independent fresh page abort gstatic connectionclosed",
+    "timing": "15 seconds bounded font settle plus 2 seconds; unresolved reported",
+    "port": 5198,
+    "strictPort": true,
+    "reuseExistingServer": false,
+    "angle": "d3d11"
+  }
+}

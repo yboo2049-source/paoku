@@ -1,0 +1,46 @@
+
+> app@0.0.0 test
+> vitest run --run tests/unit/application.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-14
+
+ ❯ tests/unit/application.test.ts (12 tests | 2 failed) 17ms
+     × retries interrupted initialization within the same live run 9ms
+     × reloads a conflicting repository on retry while preserving the sealed summary 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > retries interrupted initialization within the same live run
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/application.test.ts:10:421
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > reloads a conflicting repository on retry while preserving the sealed summary
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/application.test.ts:11:398
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 10 passed (12)
+   Start at  12:41:23
+   Duration  438ms (transform 133ms, setup 0ms, import 172ms, tests 17ms, environment 0ms)

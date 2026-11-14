@@ -1,0 +1,2019 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\worker\\paoku-sessions\\pao-17\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      ".pao17-local/theme-acceptance.config.ts",
+      "--retries=0"
+    ],
+    "configFile": "D:\\worker\\paoku-sessions\\pao-17\\.pao17-local\\theme-acceptance.config.ts",
+    "rootDir": "D:/worker/paoku-sessions/pao-17",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/worker/paoku-sessions/pao-17/.pao17-local/bright-theme/results-full-first",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/worker/paoku-sessions/pao-17",
+        "testIgnore": [],
+        "testMatch": [
+          ".pao17-local/bright-theme/mirror-full-first/*.pw.ts",
+          "tests/e2e/pao17-theme.spec.ts",
+          "tests/e2e/pao17-ramp-view.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\worker\\paoku-sessions\\pao-17\\docs\\evidence\\PAO-17\\bright-theme-preview\\full-first-playwright.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 5187 --strictPort",
+      "cwd": "D:\\worker\\paoku-sessions\\pao-17",
+      "url": "http://127.0.0.1:5187",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": ".pao17-local\\bright-theme\\mirror-full-first\\gameplay.pw.ts",
+      "file": ".pao17-local/bright-theme/mirror-full-first/gameplay.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "状态机（确定性）",
+          "file": ".pao17-local/bright-theme/mirror-full-first/gameplay.pw.ts",
+          "line": 49,
+          "column": 6,
+          "specs": [
+            {
+              "title": "MENU → PLAYING via start button",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2891,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T14:56:06.532Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dde76924e4a2e03ba564-d1cf44eb8f82662363eb",
+              "file": ".pao17-local/bright-theme/mirror-full-first/gameplay.pw.ts",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → 切道（左/右 + 边界钳制）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2439,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T14:56:09.870Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dde76924e4a2e03ba564-d3990354338bac231a72",
+              "file": ".pao17-local/bright-theme/mirror-full-first/gameplay.pw.ts",
+              "line": 56,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → 跳跃（isJumping=true）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2339,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T14:56:12.328Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dde76924e4a2e03ba564-a16c1fe419754e1ea5d7",
+              "file": ".pao17-local/bright-theme/mirror-full-first/gameplay.pw.ts",
+              "line": 73,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → 翻滚（isRolling=true）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2629,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T14:56:14.681Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dde76924e4a2e03ba564-9ae75fc5884b4cda7773",
+              "file": ".pao17-local/bright-theme/mirror-full-first/gameplay.pw.ts",
+              "line": 79,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → PAUSED via Escape，再 resume 回到 PLAYING",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2640,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T14:56:17.323Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dde76924e4a2e03ba564-73172333b87113f5f1bf",
+              "file": ".pao17-local/bright-theme/mirror-full-first/gameplay.pw.ts",
+              "line": 85,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "截图回放（确定性）",
+          "file": ".pao17-local/bright-theme/mirror-full-first/gameplay.pw.ts",
+          "line": 97,
+          "column": 6,
+          "specs": [
+            {
+              "title": "捕获 6 张高保真截图（无 GAMEOVER 风险）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8966,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T14:56:19.979Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dde76924e4a2e03ba564-8eef4628ea4b32425d51",
+              "file": ".pao17-local/bright-theme/mirror-full-first/gameplay.pw.ts",
+              "line": 98,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\bright-theme\\mirror-full-first\\pao10-review-fixes.pw.ts",
+      "file": ".pao17-local/bright-theme/mirror-full-first/pao10-review-fixes.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "native-menu-slider-and-start-space",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2337,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:56:28.986Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "75bc7236beb8af3705e0-f8a3cf37c465e8a8a31c",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao10-review-fixes.pw.ts",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "paused-rejects-motion-and-resume-space",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3285,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:56:31.340Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "75bc7236beb8af3705e0-95d1676dce51d7f18ad6",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao10-review-fixes.pw.ts",
+          "line": 48,
+          "column": 1
+        },
+        {
+          "title": "playing-interactive-arrows-do-not-move-player",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2803,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:56:34.649Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "75bc7236beb8af3705e0-dffc6862e443b5ae17f6",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao10-review-fixes.pw.ts",
+          "line": 67,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\bright-theme\\mirror-full-first\\pao10-simulation.pw.ts",
+      "file": ".pao17-local/bright-theme/mirror-full-first/pao10-simulation.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "N-desktop-production-keyboard-flow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 50720,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:56:37.488Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1074bc4ab80089fe3929-a1701e9758c1fd12a688",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao10-simulation.pw.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "N-mobile-production-touch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5798,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:57:28.230Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1074bc4ab80089fe3929-7be15a51a35715f3bacc",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao10-simulation.pw.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "F-lifecycle-clears-input-and-hidden-time",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3864,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:57:34.048Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1074bc4ab80089fe3929-bf509fc0d0c2d740a3c6",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao10-simulation.pw.ts",
+          "line": 97,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\bright-theme\\mirror-full-first\\pao11-surfaces.pw.ts",
+      "file": ".pao17-local/bright-theme/mirror-full-first/pao11-surfaces.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F-desktop-keyboard-ground-ramp-roof-jump-ground",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6116,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:57:37.949Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9eb8069f25cb912c224c-83e1fcc3e6145f9eacb0",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao11-surfaces.pw.ts",
+          "line": 95,
+          "column": 3
+        },
+        {
+          "title": "F-portrait-touch-ground-ramp-roof-jump-ground",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6809,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:57:44.080Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9eb8069f25cb912c224c-54bc675079c8824187f7",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao11-surfaces.pw.ts",
+          "line": 95,
+          "column": 3
+        },
+        {
+          "title": "F-high-base-ramp-5-to-8-continuous-roof",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9834,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:57:50.904Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9eb8069f25cb912c224c-0317535e4f717813ded9",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao11-surfaces.pw.ts",
+          "line": 124,
+          "column": 1
+        },
+        {
+          "title": "N-production-input-and-supported-snapshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3246,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:00.753Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9eb8069f25cb912c224c-808be9e9f3886ef207a1",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao11-surfaces.pw.ts",
+          "line": 142,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\bright-theme\\mirror-full-first\\pao12-collision.pw.ts",
+      "file": ".pao17-local/bright-theme/mirror-full-first/pao12-collision.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F-desktop-relative-high-speed-thin-train-terminal-once",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4579,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:04.042Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8228213885f7471f8cb-ab0d1922eaf78e549c4e",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao12-collision.pw.ts",
+          "line": 79,
+          "column": 1
+        },
+        {
+          "title": "F-portrait-same-tick-shield-multi-hit-single-consumption",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3916,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:08.635Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8228213885f7471f8cb-ea0d63a3511390b90b1f",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao12-collision.pw.ts",
+          "line": 119,
+          "column": 1
+        },
+        {
+          "title": "F-desktop-airborne-roll-uses-actual-height-box",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3421,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:12.567Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8228213885f7471f8cb-8fe4c5cf366e1b2b4fda",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao12-collision.pw.ts",
+          "line": 144,
+          "column": 1
+        },
+        {
+          "title": "F-browser-isolated-highest-speed-large-step-and-pose-matrix",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2281,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:16.001Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8228213885f7471f8cb-2cc7cff6d21829662f59",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao12-collision.pw.ts",
+          "line": 167,
+          "column": 1
+        },
+        {
+          "title": "F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4315,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:18.298Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8228213885f7471f8cb-ef700b54f002459ebca0",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao12-collision.pw.ts",
+          "line": 201,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\bright-theme\\mirror-full-first\\pao13-track.pw.ts",
+      "file": ".pao17-local/bright-theme/mirror-full-first/pao13-track.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "N-desktop-seeded-generation-keyboard-and-reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3695,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:22.651Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12116b976080169590ad-2621ee98df34bc492625",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao13-track.pw.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "N-portrait-seeded-generation-touch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3532,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:26.365Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12116b976080169590ad-65a9d892ae64c0e93d8a",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao13-track.pw.ts",
+          "line": 109,
+          "column": 1
+        },
+        {
+          "title": "F-isolated-browser-real-physics-segment-and-pair-witnesses",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3079,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:29.916Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12116b976080169590ad-4c053a7011f007c365a2",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao13-track.pw.ts",
+          "line": 138,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\bright-theme\\mirror-full-first\\pao14-application.pw.ts",
+      "file": ".pao17-local/bright-theme/mirror-full-first/pao14-application.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "N-desktop-pause-restart-stale-run-and-DOM-tamper",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5323,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:33.039Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "775a2d6fb45658dcf2a4-5c23a3c1165cac1ba7eb",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-application.pw.ts",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "N-portrait-touch-paused-input-and-return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4629,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:38.379Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "775a2d6fb45658dcf2a4-05fefd64ddefd536c9b7",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-application.pw.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "F-30-pickups-50-reward-save-failure-retry-and-repeat-finish",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5657,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:43.022Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "775a2d6fb45658dcf2a4-f7a8770e7f06ec2c269a",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-application.pw.ts",
+          "line": 94,
+          "column": 1
+        },
+        {
+          "title": "F-legacy-rights-shop-purchase-and-refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4217,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:48.694Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "775a2d6fb45658dcf2a4-dc06c56f1e87d93f2c71",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-application.pw.ts",
+          "line": 130,
+          "column": 1
+        },
+        {
+          "title": "F-same-tick-terminal-pickup-and-gameover-shop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3334,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:52.923Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "775a2d6fb45658dcf2a4-7560a8c99b6801fc9ed5",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-application.pw.ts",
+          "line": 147,
+          "column": 1
+        },
+        {
+          "title": "F-two-tabs-conflicting-transactions-do-not-overwrite",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5793,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:58:56.270Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "775a2d6fb45658dcf2a4-a0d0e152cd319fd6bd70",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-application.pw.ts",
+          "line": 171,
+          "column": 1
+        },
+        {
+          "title": "F-pause-isolates-input-while-save-lock-is-held",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2507,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:59:02.076Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "775a2d6fb45658dcf2a4-d47cee3e42af8e2c5219",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-application.pw.ts",
+          "line": 190,
+          "column": 1
+        },
+        {
+          "title": "F-reentrant-end-command-seals-complete-fatal-tick",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2426,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:59:04.595Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "775a2d6fb45658dcf2a4-24dc7874a270517eaf09",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-application.pw.ts",
+          "line": 211,
+          "column": 1
+        },
+        {
+          "title": "F-native-slider-preserves-draft-while-save-lock-is-held",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2113,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:59:07.034Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "775a2d6fb45658dcf2a4-f005954d9d0a7322971f",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-application.pw.ts",
+          "line": 231,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\bright-theme\\mirror-full-first\\pao14-review.pw.ts",
+      "file": ".pao17-local/bright-theme/mirror-full-first/pao14-review.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F-review-audio-different-fields-under-lock",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3926,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:59:09.177Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "52e51c26c4532399568c-4808ed18e451bec71fc8",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-review.pw.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "F-review-audio-repeated-toggle-under-lock",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2504,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:59:13.115Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "52e51c26c4532399568c-d77a9ebd15daabffbaf3",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-review.pw.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "F-review-audio-volume-and-toggle-queue",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3679,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:59:15.629Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "52e51c26c4532399568c-f848de624d39259eb16a",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-review.pw.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "F-review-shop-stale-funds-explicit-retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7727,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:59:19.318Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "52e51c26c4532399568c-46abdb99669e6e37cebd",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-review.pw.ts",
+          "line": 114,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\bright-theme\\mirror-full-first\\pao14-unknown-commit.pw.ts",
+      "file": ".pao17-local/bright-theme/mirror-full-first/pao14-unknown-commit.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F-unknown-toggle-1-confirmation-read-failures",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5500,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:59:27.070Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8bb1f3443a2424cbefdb-95236da4e8b28854499d",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-unknown-commit.pw.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "F-unknown-toggle-2-confirmation-read-failures",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2384,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:59:32.583Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8bb1f3443a2424cbefdb-558dc74f94ea30e495f9",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao14-unknown-commit.pw.ts",
+          "line": 8,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\bright-theme\\mirror-full-first\\pao17-lifecycle.pw.ts",
+      "file": ".pao17-local/bright-theme/mirror-full-first/pao17-lifecycle.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F real renderer fallback, 20 cycles / 10 resets, dispose/remount, late shared load and host canvas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2428,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:59:35.008Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f4b4791521adbcaf705-6ff7f87ce414bfeaf662",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao17-lifecycle.pw.ts",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "F production main dispose bridge releases the actual renderer engine and scene",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2315,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:59:37.450Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f4b4791521adbcaf705-4a2d2809267e31fc3a79",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao17-lifecycle.pw.ts",
+          "line": 53,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\bright-theme\\mirror-full-first\\pao17-structure.pw.ts",
+      "file": ".pao17-local/bright-theme/mirror-full-first/pao17-structure.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F source raw and legacy HTTP identity",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 89,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:59:39.803Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "890bbe380ee1761052d2-365781cf8962d92fd5f8",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao17-structure.pw.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "N desktop keyboard legacy start motion pause resume end restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28895,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:59:39.904Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "890bbe380ee1761052d2-cd1d08c4638310e4ff6e",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao17-structure.pw.ts",
+          "line": 23,
+          "column": 37
+        },
+        {
+          "title": "N 390 touch legacy start motion pause resume end restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 29144,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T15:00:08.810Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "890bbe380ee1761052d2-f0469bf8f722c3ca96fe",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao17-structure.pw.ts",
+          "line": 23,
+          "column": 37
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\bright-theme\\mirror-full-first\\pao6-baseline.pw.ts",
+      "file": ".pao17-local/bright-theme/mirror-full-first/pao6-baseline.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ramp-roof-jump-land",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6702,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T15:00:37.982Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8679e2af22a9a4c5530-60e255c5964b58b4a711",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao6-baseline.pw.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "obstacles-failure-restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7076,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T15:00:44.696Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8679e2af22a9a4c5530-abb7bdc94a9fb6cd6d49",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao6-baseline.pw.ts",
+          "line": 76,
+          "column": 1
+        },
+        {
+          "title": "powerups-shield-missions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10176,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T15:00:51.788Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8679e2af22a9a4c5530-01cdf22e3a0d5bd0a9f7",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao6-baseline.pw.ts",
+          "line": 86,
+          "column": 1
+        },
+        {
+          "title": "mobile-touch-layout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5224,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T15:01:01.985Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8679e2af22a9a4c5530-036b9038db760b7ff5c0",
+          "file": ".pao17-local/bright-theme/mirror-full-first/pao6-baseline.pw.ts",
+          "line": 98,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "tests\\e2e\\pao17-ramp-view.spec.ts",
+      "file": "tests/e2e/pao17-ramp-view.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F actual wedge-roof walk, triangle support and exit at base Y=0",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6947,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T15:01:07.233Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b2c909525a8039d9edce-e67a949af44bb1e449fb",
+          "file": "tests/e2e/pao17-ramp-view.spec.ts",
+          "line": 5,
+          "column": 29
+        },
+        {
+          "title": "F actual wedge-roof walk, triangle support and exit at base Y=5",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5238,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T15:01:14.193Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b2c909525a8039d9edce-a73b0b7a06e2363dfcf7",
+          "file": "tests/e2e/pao17-ramp-view.spec.ts",
+          "line": 5,
+          "column": 29
+        }
+      ]
+    },
+    {
+      "title": "tests\\e2e\\pao17-theme.spec.ts",
+      "file": "tests/e2e/pao17-theme.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F successful legacy GLB and shadows warmed before 20 bounded recycles / 10 resets / full disposal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3541,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T15:01:19.466Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7e333a8255792597835f-4acd6c4e69da3c89d430",
+          "file": "tests/e2e/pao17-theme.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "N bright desktop keyboard motion pause resume collision and restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 29199,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T15:01:23.019Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7e333a8255792597835f-f5c03c73cc9ba8a052b3",
+          "file": "tests/e2e/pao17-theme.spec.ts",
+          "line": 50,
+          "column": 37
+        },
+        {
+          "title": "N bright 390 touch motion pause resume collision and restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28700,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T15:01:52.231Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7e333a8255792597835f-1714c350f6cee49bfbbe",
+          "file": "tests/e2e/pao17-theme.spec.ts",
+          "line": 50,
+          "column": 37
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-02T14:56:02.856Z",
+    "duration": 378931.803,
+    "expected": 53,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

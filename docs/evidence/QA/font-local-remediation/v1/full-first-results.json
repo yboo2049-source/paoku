@@ -1,0 +1,2498 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      ".pao18.local/font-remediation/full.config.ts"
+    ],
+    "configFile": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full.config.ts",
+    "rootDir": "D:/worker/paoku-sessions/pao-18-font-diagnosis/.pao18.local/font-remediation/full/suite",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/worker/paoku-sessions/pao-18-font-diagnosis/.pao18.local/font-remediation/full/results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/worker/paoku-sessions/pao-18-font-diagnosis/.pao18.local/font-remediation/full/suite",
+        "testIgnore": [],
+        "testMatch": [
+          "*.pw.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\results.json"
+        }
+      ],
+      [
+        "line",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 5198 --strictPort",
+      "url": "http://127.0.0.1:5198",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "font-resources.pw.ts",
+      "file": "font-resources.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "N real application uses local faces and glyphs with Google domains unavailable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2925,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:36:55.299Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2f301bc1c487641764b-b2057795c47af5d70f3a",
+          "file": "font-resources.pw.ts",
+          "line": 40,
+          "column": 1
+        },
+        {
+          "title": "F independent local font 404 remains visible to unchanged error sensors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2165,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:36:58.652Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2f301bc1c487641764b-4e8a4d4dff994b3c16f3",
+          "file": "font-resources.pw.ts",
+          "line": 63,
+          "column": 1
+        },
+        {
+          "title": "N pages and F typography matrix 1280x720",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 50097,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:37:00.828Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2f301bc1c487641764b-8f387a0dee3c7e7aa7bf",
+          "file": "font-resources.pw.ts",
+          "line": 77,
+          "column": 3
+        },
+        {
+          "title": "N pages and F typography matrix 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 48521,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:37:50.939Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2f301bc1c487641764b-9940ae3228dab3f7ae27",
+          "file": "font-resources.pw.ts",
+          "line": 77,
+          "column": 3
+        },
+        {
+          "title": "N pages and F typography matrix 844x390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 48909,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:38:39.470Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2f301bc1c487641764b-ad19d8f65e4956d20c42",
+          "file": "font-resources.pw.ts",
+          "line": 77,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "gameplay.pw.ts",
+      "file": "gameplay.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "状态机（确定性）",
+          "file": "gameplay.pw.ts",
+          "line": 49,
+          "column": 6,
+          "specs": [
+            {
+              "title": "MENU → PLAYING via start button",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1947,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-03T13:39:28.403Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1b9b4bc49bfdc4175b77-5b154b74d8189f799b71",
+              "file": "gameplay.pw.ts",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → 切道（左/右 + 边界钳制）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2235,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-03T13:39:30.367Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1b9b4bc49bfdc4175b77-f7b2f9edfa8f0daf2e72",
+              "file": "gameplay.pw.ts",
+              "line": 56,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → 跳跃（isJumping=true）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1878,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-03T13:39:32.615Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1b9b4bc49bfdc4175b77-2598fd2d8990149de275",
+              "file": "gameplay.pw.ts",
+              "line": 73,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → 翻滚（isRolling=true）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1817,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-03T13:39:34.505Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1b9b4bc49bfdc4175b77-05de59530124d720ce80",
+              "file": "gameplay.pw.ts",
+              "line": 79,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → PAUSED via Escape，再 resume 回到 PLAYING",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2103,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-03T13:39:36.330Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1b9b4bc49bfdc4175b77-fb448b10cd8d53436efc",
+              "file": "gameplay.pw.ts",
+              "line": 85,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "截图回放（确定性）",
+          "file": "gameplay.pw.ts",
+          "line": 97,
+          "column": 6,
+          "specs": [
+            {
+              "title": "捕获 6 张高保真截图（无 GAMEOVER 风险）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3085,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-03T13:39:38.443Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1b9b4bc49bfdc4175b77-9a86bf2c762b3157416f",
+              "file": "gameplay.pw.ts",
+              "line": 98,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "pao10-review-fixes.pw.ts",
+      "file": "pao10-review-fixes.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "native-menu-slider-and-start-space",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1603,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:39:41.557Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "740f31102a085d89688f-38dd058c1356d71419ad",
+          "file": "pao10-review-fixes.pw.ts",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "paused-rejects-motion-and-resume-space",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2527,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:39:43.171Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "740f31102a085d89688f-0486a2cdb995110b3819",
+          "file": "pao10-review-fixes.pw.ts",
+          "line": 48,
+          "column": 1
+        },
+        {
+          "title": "playing-interactive-arrows-do-not-move-player",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1911,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:39:45.710Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "740f31102a085d89688f-59b402c227b04aeced68",
+          "file": "pao10-review-fixes.pw.ts",
+          "line": 67,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pao10-simulation.pw.ts",
+      "file": "pao10-simulation.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "N-desktop-production-keyboard-flow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 49784,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:39:47.646Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "be9e82af994da71a1e11-5e1b2f2ba4d606bf032e",
+          "file": "pao10-simulation.pw.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "N-mobile-production-touch",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1913,
+                  "error": {
+                    "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation",
+                    "stack": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation\n    at sensor (D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao10-simulation.pw.ts:5:37)\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao10-simulation.pw.ts:78:73\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao10-simulation.pw.ts:78:36",
+                    "location": {
+                      "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao10-simulation.pw.ts",
+                      "column": 37,
+                      "line": 5
+                    },
+                    "snippet": "  3 | import { resolve } from 'node:path';\n  4 | const evidence = resolve('.pao18.local/font-remediation/full/evidence/PAO-10');\n> 5 | const sensor = (page: Page) => page.evaluate(() => {\n    |                                     ^\n  6 |   const s = (window as any).__GAME_SENSOR__;\n  7 |   return { ...s.getSimulationSnapshot(), ...s.getSimulationDiagnostics(), inputs: s.getInputLog(), state: s.getGameState(), player: s.getPlayerState(), position: s.getPlayerPos(), score: s.getScore(), coins: s.getCoins() };\n  8 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao10-simulation.pw.ts",
+                        "column": 37,
+                        "line": 5
+                      },
+                      "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation\n\n  3 | import { resolve } from 'node:path';\n  4 | const evidence = resolve('.pao18.local/font-remediation/full/evidence/PAO-10');\n> 5 | const sensor = (page: Page) => page.evaluate(() => {\n    |                                     ^\n  6 |   const s = (window as any).__GAME_SENSOR__;\n  7 |   return { ...s.getSimulationSnapshot(), ...s.getSimulationDiagnostics(), inputs: s.getInputLog(), state: s.getGameState(), player: s.getPlayerState(), position: s.getPlayerPos(), score: s.getScore(), coins: s.getCoins() };\n  8 | });\n    at sensor (D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao10-simulation.pw.ts:5:37)\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao10-simulation.pw.ts:78:73\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao10-simulation.pw.ts:78:36"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:40:37.442Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\results\\pao10-simulation.pw.ts-N-mobile-production-touch\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao10-simulation.pw.ts",
+                    "column": 37,
+                    "line": 5
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "be9e82af994da71a1e11-920a3da2b6ce8ff21767",
+          "file": "pao10-simulation.pw.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "F-lifecycle-clears-input-and-hidden-time",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3420,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:40:40.170Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "be9e82af994da71a1e11-480fa2f3bc9343ae2754",
+          "file": "pao10-simulation.pw.ts",
+          "line": 97,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pao11-surfaces.pw.ts",
+      "file": "pao11-surfaces.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F-desktop-keyboard-ground-ramp-roof-jump-ground",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5127,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:40:43.950Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "13d24e07052e33b89f39-074779900ae0461cb914",
+          "file": "pao11-surfaces.pw.ts",
+          "line": 95,
+          "column": 3
+        },
+        {
+          "title": "F-portrait-touch-ground-ramp-roof-jump-ground",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5046,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:40:49.090Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "13d24e07052e33b89f39-100ca5fd87bf0cdd34c3",
+          "file": "pao11-surfaces.pw.ts",
+          "line": 95,
+          "column": 3
+        },
+        {
+          "title": "F-high-base-ramp-5-to-8-continuous-roof",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3617,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:40:54.149Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "13d24e07052e33b89f39-d1ed5cd40753a0532685",
+          "file": "pao11-surfaces.pw.ts",
+          "line": 124,
+          "column": 1
+        },
+        {
+          "title": "N-production-input-and-supported-snapshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2356,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:40:57.782Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "13d24e07052e33b89f39-374b2f1aa8d78980e762",
+          "file": "pao11-surfaces.pw.ts",
+          "line": 142,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pao12-collision.pw.ts",
+      "file": "pao12-collision.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F-desktop-relative-high-speed-thin-train-terminal-once",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3528,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:00.173Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "df4105b85a92062c42b0-eea2af4ed17ba5e69732",
+          "file": "pao12-collision.pw.ts",
+          "line": 79,
+          "column": 1
+        },
+        {
+          "title": "F-portrait-same-tick-shield-multi-hit-single-consumption",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2742,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:03.710Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "df4105b85a92062c42b0-5558fab76adf9f532d34",
+          "file": "pao12-collision.pw.ts",
+          "line": 119,
+          "column": 1
+        },
+        {
+          "title": "F-desktop-airborne-roll-uses-actual-height-box",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3042,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:06.463Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "df4105b85a92062c42b0-28b399d22554e952ae90",
+          "file": "pao12-collision.pw.ts",
+          "line": 144,
+          "column": 1
+        },
+        {
+          "title": "F-browser-isolated-highest-speed-large-step-and-pose-matrix",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1483,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:09.517Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "df4105b85a92062c42b0-e23b9476fc9224bd6a2f",
+          "file": "pao12-collision.pw.ts",
+          "line": 167,
+          "column": 1
+        },
+        {
+          "title": "F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3033,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:11.014Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "df4105b85a92062c42b0-6b22c9c01e08a514755c",
+          "file": "pao12-collision.pw.ts",
+          "line": 201,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pao13-track.pw.ts",
+      "file": "pao13-track.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "N-desktop-seeded-generation-keyboard-and-reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2670,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:14.077Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5950132306462bac58d8-f46038089bf26164d91d",
+          "file": "pao13-track.pw.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "N-portrait-seeded-generation-touch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2751,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:16.763Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5950132306462bac58d8-06e7f595d41da20cedd1",
+          "file": "pao13-track.pw.ts",
+          "line": 109,
+          "column": 1
+        },
+        {
+          "title": "F-isolated-browser-real-physics-segment-and-pair-witnesses",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2052,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:19.524Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5950132306462bac58d8-eb57a5c82639b4456e7b",
+          "file": "pao13-track.pw.ts",
+          "line": 138,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pao14-application.pw.ts",
+      "file": "pao14-application.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "N-desktop-pause-restart-stale-run-and-DOM-tamper",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3951,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:21.595Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "60e0be539d84a1ed251c-99abfabf2d7f8871a121",
+          "file": "pao14-application.pw.ts",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "N-portrait-touch-paused-input-and-return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3618,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:25.559Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "60e0be539d84a1ed251c-011c0f2a9b07e3333463",
+          "file": "pao14-application.pw.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "F-30-pickups-50-reward-save-failure-retry-and-repeat-finish",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4218,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:29.189Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "60e0be539d84a1ed251c-c2a76e4976806fab3da5",
+          "file": "pao14-application.pw.ts",
+          "line": 94,
+          "column": 1
+        },
+        {
+          "title": "F-legacy-rights-shop-purchase-and-refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3172,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:33.420Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "60e0be539d84a1ed251c-52eadd8f372854672576",
+          "file": "pao14-application.pw.ts",
+          "line": 130,
+          "column": 1
+        },
+        {
+          "title": "F-same-tick-terminal-pickup-and-gameover-shop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3569,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:36.602Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "60e0be539d84a1ed251c-f0e11765e2d101ba7ff4",
+          "file": "pao14-application.pw.ts",
+          "line": 147,
+          "column": 1
+        },
+        {
+          "title": "F-two-tabs-conflicting-transactions-do-not-overwrite",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5176,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:40.185Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "60e0be539d84a1ed251c-f67b5228d23ba9143c1b",
+          "file": "pao14-application.pw.ts",
+          "line": 171,
+          "column": 1
+        },
+        {
+          "title": "F-pause-isolates-input-while-save-lock-is-held",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2537,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:45.375Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "60e0be539d84a1ed251c-45d385bacf4681cbc35f",
+          "file": "pao14-application.pw.ts",
+          "line": 190,
+          "column": 1
+        },
+        {
+          "title": "F-reentrant-end-command-seals-complete-fatal-tick",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2071,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:47.929Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "60e0be539d84a1ed251c-6fed8cdbfb2d22ac2db9",
+          "file": "pao14-application.pw.ts",
+          "line": 211,
+          "column": 1
+        },
+        {
+          "title": "F-native-slider-preserves-draft-while-save-lock-is-held",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1552,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:50.014Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "60e0be539d84a1ed251c-9b2cd3375bb0a75f4fa4",
+          "file": "pao14-application.pw.ts",
+          "line": 231,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pao14-review.pw.ts",
+      "file": "pao14-review.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F-review-audio-different-fields-under-lock",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2798,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:51.588Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7122b83840bb43c1e4db-2814ba092ed2ead3957a",
+          "file": "pao14-review.pw.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "F-review-audio-repeated-toggle-under-lock",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2353,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:54.399Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7122b83840bb43c1e4db-9b48a09e8983c6d3b0a4",
+          "file": "pao14-review.pw.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "F-review-audio-volume-and-toggle-queue",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2800,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:56.763Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7122b83840bb43c1e4db-8abd20edc7e91b22e177",
+          "file": "pao14-review.pw.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "F-review-shop-stale-funds-explicit-retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7305,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:41:59.584Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7122b83840bb43c1e4db-bb3b46ccf06e9cb36bf2",
+          "file": "pao14-review.pw.ts",
+          "line": 114,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pao14-unknown-commit.pw.ts",
+      "file": "pao14-unknown-commit.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F-unknown-toggle-1-confirmation-read-failures",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1659,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:42:06.914Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ce81986600f283c900d7-e7e32c94e2b03c359505",
+          "file": "pao14-unknown-commit.pw.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "F-unknown-toggle-2-confirmation-read-failures",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1392,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:42:08.586Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ce81986600f283c900d7-8a3c9d33f86356c3c8e5",
+          "file": "pao14-unknown-commit.pw.ts",
+          "line": 8,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "pao17-lifecycle.pw.ts",
+      "file": "pao17-lifecycle.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F real renderer fallback, 20 cycles / 10 resets, dispose/remount, late shared load and host canvas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1587,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:42:10.003Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "36847b762ec59cbd991c-043a7f87aaf24c7e1548",
+          "file": "pao17-lifecycle.pw.ts",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "F production main dispose bridge releases the actual renderer engine and scene",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1514,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:42:11.600Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "36847b762ec59cbd991c-e3d48e1aa89489800318",
+          "file": "pao17-lifecycle.pw.ts",
+          "line": 53,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pao17-ramp-view.pw.ts",
+      "file": "pao17-ramp-view.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F actual wedge-roof walk, triangle support and exit at base Y=0",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3780,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:42:13.137Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7011e7f0318979d4b04b-dbdb0e78ac66895ff8ef",
+          "file": "pao17-ramp-view.pw.ts",
+          "line": 5,
+          "column": 29
+        },
+        {
+          "title": "F actual wedge-roof walk, triangle support and exit at base Y=5",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4227,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:42:16.926Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7011e7f0318979d4b04b-b1e278ba216ef21509d1",
+          "file": "pao17-ramp-view.pw.ts",
+          "line": 5,
+          "column": 29
+        }
+      ]
+    },
+    {
+      "title": "pao17-structure.pw.ts",
+      "file": "pao17-structure.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F source raw and legacy HTTP identity",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 62,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:42:21.178Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ccfcbb41de6239e9769f-997f9a9dab7c09b2e8de",
+          "file": "pao17-structure.pw.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "N desktop keyboard legacy start motion pause resume end restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28363,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:42:21.252Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ccfcbb41de6239e9769f-6b7c66756e8ae348150c",
+          "file": "pao17-structure.pw.ts",
+          "line": 23,
+          "column": 37
+        },
+        {
+          "title": "N 390 touch legacy start motion pause resume end restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28150,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:42:49.626Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ccfcbb41de6239e9769f-6448850d33cb923201d3",
+          "file": "pao17-structure.pw.ts",
+          "line": 23,
+          "column": 37
+        }
+      ]
+    },
+    {
+      "title": "pao17-theme.pw.ts",
+      "file": "pao17-theme.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F successful legacy GLB and shadows warmed before 20 bounded recycles / 10 resets / full disposal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2658,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:43:17.798Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0a22262b360c1bfbc6bf-3d34b8c78ef3a95f48cf",
+          "file": "pao17-theme.pw.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "N bright desktop keyboard motion pause resume collision and restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28031,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:43:20.466Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0a22262b360c1bfbc6bf-be81e7da9d1a56216422",
+          "file": "pao17-theme.pw.ts",
+          "line": 50,
+          "column": 37
+        },
+        {
+          "title": "N bright 390 touch motion pause resume collision and restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28091,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:43:48.506Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0a22262b360c1bfbc6bf-7fa82bf3214b97b4f145",
+          "file": "pao17-theme.pw.ts",
+          "line": 50,
+          "column": 37
+        }
+      ]
+    },
+    {
+      "title": "pao18-controller-camera.pw.ts",
+      "file": "pao18-controller-camera.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F actual legacy renderer: 390 framing, actual group pause, support edges and stable resources",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20746,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:44:16.618Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5e9821faab915e15854c-5ee06991b69917a5815d",
+          "file": "pao18-controller-camera.pw.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "F runtime modules raw identity and actual legacy GLB HTTP hash",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 57,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:44:37.377Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5e9821faab915e15854c-946e6ea03084b36b1095",
+          "file": "pao18-controller-camera.pw.ts",
+          "line": 105,
+          "column": 1
+        },
+        {
+          "title": "N desktop keyboard controls, real group pause, HUD profile and restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2607,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:44:37.444Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5e9821faab915e15854c-0bc8a5c9e1b3fa3bc89e",
+          "file": "pao18-controller-camera.pw.ts",
+          "line": 119,
+          "column": 37
+        },
+        {
+          "title": "N 390 touch controls, real group pause, HUD profile and restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3375,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:44:40.059Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5e9821faab915e15854c-ea4fef297d2f84eee102",
+          "file": "pao18-controller-camera.pw.ts",
+          "line": 119,
+          "column": 37
+        },
+        {
+          "title": "F recorded authoritative ramp-to-roof, jump/slide and pause with the production main",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2146,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5188/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:5188/\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5188/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:5188/\", waiting until \"load\"\u001b[22m\n\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao18-controller-camera.pw.ts:161:14",
+                    "location": {
+                      "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao18-controller-camera.pw.ts",
+                      "column": 14,
+                      "line": 161
+                    },
+                    "snippet": "  159 |   const page = await context.newPage(); const video = page.video()!; const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));\n  160 |   await page.addInitScript(() => { (window as any).__QA_MODE__ = true; });\n> 161 |   await page.goto('http://127.0.0.1:5188/');\n      |              ^\n  162 |   await page.evaluate(async () => {\n  163 |     const load = (url: string) => import(/* @vite-ignore */ url);\n  164 |     const { spawnerSystem } = await load('/src/systems/spawner.ts');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao18-controller-camera.pw.ts",
+                        "column": 14,
+                        "line": 161
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5188/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:5188/\", waiting until \"load\"\u001b[22m\n\n\n  159 |   const page = await context.newPage(); const video = page.video()!; const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));\n  160 |   await page.addInitScript(() => { (window as any).__QA_MODE__ = true; });\n> 161 |   await page.goto('http://127.0.0.1:5188/');\n      |              ^\n  162 |   await page.evaluate(async () => {\n  163 |     const load = (url: string) => import(/* @vite-ignore */ url);\n  164 |     const { spawnerSystem } = await load('/src/systems/spawner.ts');\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao18-controller-camera.pw.ts:161:14"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:44:43.443Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\results\\pao18-controller-camera.pw-4a4c5-se-with-the-production-main\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao18-controller-camera.pw.ts",
+                    "column": 14,
+                    "line": 161
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "5e9821faab915e15854c-ed765a1a4efac412cd84",
+          "file": "pao18-controller-camera.pw.ts",
+          "line": 157,
+          "column": 1
+        },
+        {
+          "title": "F real legacy request delayed across reset: same asset ID, latest skin, dispose before completion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1645,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:44:47.804Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5e9821faab915e15854c-5efbc586d83d47408a39",
+          "file": "pao18-controller-camera.pw.ts",
+          "line": 188,
+          "column": 1
+        },
+        {
+          "title": "F fixed old HUD five-row profile measured with actual CSS at 390 and desktop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3218,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:44:49.760Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5e9821faab915e15854c-192ba9d3a317f45a7886",
+          "file": "pao18-controller-camera.pw.ts",
+          "line": 227,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pao6-baseline.pw.ts",
+      "file": "pao6-baseline.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ramp-roof-jump-land",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5546,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:44:52.995Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "79b82c7abe5b49fd4753-4354690a685babd4ba14",
+          "file": "pao6-baseline.pw.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "obstacles-failure-restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5917,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:44:58.553Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "79b82c7abe5b49fd4753-d999a1ad1255b11d62ef",
+          "file": "pao6-baseline.pw.ts",
+          "line": 76,
+          "column": 1
+        },
+        {
+          "title": "powerups-shield-missions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8465,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:45:04.480Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "79b82c7abe5b49fd4753-76e14de5cf3609ceaf8b",
+          "file": "pao6-baseline.pw.ts",
+          "line": 86,
+          "column": 1
+        },
+        {
+          "title": "mobile-touch-layout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5431,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:45:12.957Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "79b82c7abe5b49fd4753-f43632ce5cf74ed48bad",
+          "file": "pao6-baseline.pw.ts",
+          "line": 98,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-03T13:36:51.679Z",
+    "duration": 507419.708,
+    "expected": 63,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

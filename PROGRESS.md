@@ -2,6 +2,25 @@
 
 本项目基于 Harness Engineering 范式，通过此文件追踪开发迭代（Iterative Progress）、失败教训（Lessons Learned）以及架构重构的演进。
 
+## [2026-10-31] PAO-7/8/9 一致性审查与下一批派发规划
+
+- 已读取三个独立工作树的固定提交ea6867d/be6c7d5/2eac04b、Linear正文/送审评论和PAO-6至26的原生依赖。PAO-6为Done，PAO-7/8/9保持In Review；交付完成不等于最终人工冻结。
+- [审查报告](docs/reviews/2026-10-31-pao-7-8-9-consistency.md)：限定PAO-10技术工作go；4条预算/原点/写权差异按职责裁定。贴图预算归PAO-8、Q0另配LOD、坡道边界转换一次、PAO-10/14入口串行；色板、机型和玩法假设不代替用户决定。
+- 文档先行：已同步主架构和系统工作流的M1有效口径与权威来源，旧示例不再作为本批实现契约。目标为固定步长、输入tick/sequence、模拟单写与深只读插值快照；步长/补步上限需任务测试验证，保持兼容玩法。
+- 机器计划输出至`D:/worker/paoku-sessions/harness/dispatch-plan.json`；仅安排PAO-10在`D:/worker/paoku-sessions/pao-10`独立工作树执行，max_parallel=2但本批只有一个入口写方。PAO-14因main.ts/types共享延期；11/12/13按前置等待，正式资产待人工冻结。
+- 派发基线使用本轮文档固定提交，避免main缺少PAO-6及审查材料；不合并三个送审分支。只生成计划，本Dispatcher未启动实现、未修改游戏代码，也不宣称PAO-10已完成。
+- 验证：纯文档内容/引用审查、git diff --check及JSON解析与约束校验；提交正常hooks，构建/测试及推送结果以本轮交付日志与JSON notes为准。执行者仍须先失败测试，再通过build/test/e2e并查看真实截图，最后提交push并送In Review。
+
+## [2026-10-31] 全面重构规划
+
+- 已确认用户要求整体改造，覆盖场景、角色动作、渲染、全 UI、斜坡、火车和道具。
+- 已完成渲染、物理/生成、UI 三个职责域的只读初查；采用 brainstorming、art-direction、game-designer、game-ui-support，并结合 art-3d-production、art-animation-vfx 的交付规范。
+- 已产出 [整体重构设计稿 v0.1](docs/superpowers/specs/2026-10-31-paoku-complete-rebuild-design.md)：现状证据、三种改造路线、三种风格候选、动作/镜头/资产目标、数据契约、M0–M4 路线图和验收矩阵。
+- 状态：用户已批准总体方案和明亮风格化城市轨道方向；本轮仅方案和任务管理，未修改游戏代码。浏览器试玩基线、目标设备性能、GLB 质量仍待 M0 验证，本文不宣称已完成视觉验收。
+- 建议：整体设计逐段替换，先完成含角色、坡道、火车、道具、HUD 与结算的完整可玩样板，再扩大内容。
+- 本轮为纯文档交付，按项目规则进行内容审查及 git diff --check；不为文档修改运行游戏测试。提交推送结果以本轮交付说明为准。
+- Linear：已创建“paoku 全面重构”项目、M0–M4 五个里程碑、总纲 PAO-5 及 PAO-6 至 PAO-26 共21个子任务；均为 Backlog，含职责、文件、交付、验收及前置关系。详见 [任务计划与链接](docs/plans/2026-10-31-paoku-rebuild-linear-plan.md)。开发未启动，不擅自分配负责人或工期。
+
 ---
 
 ## 📅 [2026-08-01] Harness 架构重构
@@ -125,3 +144,18 @@
   - TypeScript 类型检查 0 报错（`npx tsc --noEmit`）；
   - 生产构建完成（`npm run build`）；
   - Playwright E2E 测试全通过（6/6 passed）并完成最新视觉截图自验。
+
+## 2026-10-31 PAO-6 真实试玩与旧功能迁移基线
+
+- 已读取 AGENTS.md、PAO-6 和已批准整体重构设计；Linear 已进入 In Progress。
+- 任务范围：记录真实浏览器核心流程、截图录像、console、旧功能与九项持久化键；不修改 src/ 或游戏实现。
+- 验证计划见 docs/TEST_PLAN_AND_SENSORS.md 的 PAO-6 节；证据放在 docs/evidence/PAO-6。
+- 自然试玩与 QA 夹具验证严格分开，旧问题只记录；仅处理 PAO-6。
+
+### PAO-6 本地验证完成
+
+- N自然输入：菜单/商店/开始、换道、跳跃、空中滚动、暂停恢复、失败、重开、回菜单、九键存档刷新；自然录像75.72秒。
+- F固定夹具：坡到车顶再跳离落地、低高障碍、四道具、磁吸/任务/护盾、390×844 CDP触摸；最终4/4通过，截图与四段录像归档。
+- 独立只读QA复核功能与九键存档盘点；报告明确N/F/S/H以及未测范围。复现坡体遮挡角色的视觉问题，只登记不修实现。
+- build通过（chunk体积提示）；56/56单测；原有6/6 E2E；专用4/4 E2E；真实截图和录像抽帧已查看。提交前检查diff与证据hash。
+- 默认E2E生成的历史截图已恢复；新增仅文档、QA脚本和证据。Linear开始时已设In Progress；连接中断后已恢复，提交推送后回写报告、证据、提交号和分支，再设In Review等待审查。

@@ -1,0 +1,45 @@
+[
+  {
+    "phase": "unknown-red",
+    "stats": {
+      "startTime": "2026-11-01T05:53:16.83Z",
+      "duration": 20092.873,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/unknown-red"
+  },
+  {
+    "phase": "unknown-focused",
+    "stats": {
+      "startTime": "2026-11-01T05:56:23.181Z",
+      "duration": 20443.697,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "archive": ".pao14-local/prior-runs/unknown-focused"
+  },
+  {
+    "phase": "unknown-full",
+    "stats": {
+      "startTime": "2026-11-01T05:57:53.383Z",
+      "duration": 322716.628,
+      "expected": 42,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "historyAllVerified": true,
+    "sourceUnchanged": true,
+    "failure": "Google Fonts ERR_CONNECTION_CLOSED in old PAO-12 afterEach error assertion",
+    "archive": ".pao14-local/prior-runs/unknown-full"
+  }
+]

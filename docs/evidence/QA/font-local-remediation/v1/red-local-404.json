@@ -1,0 +1,113 @@
+{
+  "errors": [],
+  "google": [
+    "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap",
+    "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap",
+    "https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2",
+    "https://fonts.gstatic.com/s/orbitron/v35/yMJRMIlzdpvBhQQL_Qq7dy0.woff2"
+  ],
+  "local": [],
+  "statuses": [],
+  "faces": [
+    {
+      "family": "Outfit",
+      "weight": 400,
+      "faces": [
+        {
+          "family": "Outfit",
+          "status": "loaded",
+          "weight": "400"
+        },
+        {
+          "family": "Outfit",
+          "status": "loaded",
+          "weight": "400"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Outfit",
+      "weight": 600,
+      "faces": [
+        {
+          "family": "Outfit",
+          "status": "loaded",
+          "weight": "600"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Outfit",
+      "weight": 700,
+      "faces": [
+        {
+          "family": "Outfit",
+          "status": "loaded",
+          "weight": "700"
+        },
+        {
+          "family": "Outfit",
+          "status": "loaded",
+          "weight": "700"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Outfit",
+      "weight": 900,
+      "faces": [
+        {
+          "family": "Outfit",
+          "status": "loaded",
+          "weight": "900"
+        },
+        {
+          "family": "Outfit",
+          "status": "loaded",
+          "weight": "900"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Orbitron",
+      "weight": 500,
+      "faces": [
+        {
+          "family": "Orbitron",
+          "status": "loaded",
+          "weight": "500"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Orbitron",
+      "weight": 700,
+      "faces": [
+        {
+          "family": "Orbitron",
+          "status": "loaded",
+          "weight": "700"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Orbitron",
+      "weight": 900,
+      "faces": [
+        {
+          "family": "Orbitron",
+          "status": "loaded",
+          "weight": "900"
+        }
+      ],
+      "error": null
+    }
+  ],
+  "mode": "F only; no error filtering or success response"
+}

@@ -1,0 +1,35 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config docs/evidence/PAO-14/playwright.config.ts tests/e2e/pao14-application.spec.ts --grep N-portrait
+
+[WebServer] (node:19028) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:9572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\pao14-application.spec.ts:71:1 › N-portrait-touch-paused-input-and-return (3.5s)
+
+
+  1) tests\e2e\pao14-application.spec.ts:71:1 › N-portrait-touch-paused-input-and-return ───────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "function"
+    Received: "undefined"
+
+      16 |   await page.goto('/');
+      17 |   await page.waitForFunction(() => !!(window as any).__GAME_SENSOR__);
+    > 18 |   expect(await page.evaluate(() => typeof (window as any).__GAME_SENSOR__.getAppSnapshot)).toBe('function');
+         |                                                                                            ^
+      19 |   await expect(page.locator('#start-btn')).toBeVisible();
+      20 | }
+      21 | async function emit(page: Page, name: string, payload: unknown) {
+        at boot (D:\worker\paoku-sessions\pao-14\tests\e2e\pao14-application.spec.ts:18:92)
+        at D:\worker\paoku-sessions\pao-14\tests\e2e\pao14-application.spec.ts:72:60
+
+    Error Context: .pao14-local\red\test-results\pao14-application-N-portrait-touch-paused-input-and-return\error-context.md
+
+  1 failed
+    tests\e2e\pao14-application.spec.ts:71:1 › N-portrait-touch-paused-input-and-return ────────────

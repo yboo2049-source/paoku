@@ -1,0 +1,39 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao18-facade.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18
+
+stdout | tests/unit/pao18-facade.test.ts > settles its own pending asset consumer on dispose even when the external loader never settles
+BJS - [20:32:11]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao18-facade.test.ts (3 tests | 1 failed) 378ms
+   × settles its own pending asset consumer on dispose even when the external loader never settles 78ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao18-facade.test.ts > settles its own pending asset consumer on dispose even when the external loader never settles
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/pao18-facade.test.ts:57:19
+     55|   let settled = false; pending.promise.then(() => { settled = true; });
+     56|   renderer!.dispose(); await new Promise(resolve => setTimeout(resolve…
+     57|   expect(settled).toBe(true); expect(r.playerAssets.counts.resources).…
+       |                   ^
+     58| });
+     59|
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  20:32:08
+   Duration  2.69s (transform 147ms, setup 0ms, import 2.12s, tests 378ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯

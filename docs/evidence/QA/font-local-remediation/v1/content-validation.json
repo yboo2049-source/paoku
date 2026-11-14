@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-04",
+  "localReferencesChecked": true,
+  "JSONParsed": true,
+  "writeWhitelist": true,
+  "sourceAssociation": true,
+  "fullGate": {
+    "passed": 65,
+    "unexpected": 0,
+    "skip": 0,
+    "flaky": 0,
+    "retry": 0
+  },
+  "originalInputHashesMatch": true,
+  "sensitiveFieldScan": "no matching credential/auth/cookie field",
+  "protectedOriginals": "1216 unchanged, three approved source/config files modified; six image writes restored and incident retained"
+}

@@ -1,0 +1,47 @@
+{
+  "profile": {
+    "top": 140,
+    "bottom": 240,
+    "left": 8,
+    "right": 8
+  },
+  "mode": "F: exact legacy CSS with maximum five synthetic buff rows, no production DOM bridge",
+  "measurements": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 667
+      },
+      "rect": {
+        "top": 450,
+        "bottom": 637,
+        "height": 187,
+        "viewportHeight": 667
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "rect": {
+        "top": 627,
+        "bottom": 814,
+        "height": 187,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "rect": {
+        "top": 683,
+        "bottom": 870,
+        "height": 187,
+        "viewportHeight": 900
+      }
+    }
+  ]
+}

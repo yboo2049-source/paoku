@@ -1,0 +1,41 @@
+{
+  "phase": "RUN",
+  "scale": [
+    1,
+    1,
+    1
+  ],
+  "projection": {
+    "safe": true,
+    "reason": null,
+    "actors": [
+      {
+        "name": "player",
+        "front": true,
+        "minX": 85.57218125737674,
+        "maxX": 144.66366375367278,
+        "minY": 292.32723161524973,
+        "maxY": 448.18789277811476,
+        "safe": true
+      },
+      {
+        "name": "officer",
+        "front": true,
+        "minX": 192.76188139678445,
+        "maxX": 270.09164726164823,
+        "minY": 296.0109100657696,
+        "maxY": 443.4906162401237,
+        "safe": true
+      },
+      {
+        "name": "dog",
+        "front": true,
+        "minX": 246.61367875001247,
+        "maxX": 301.0500725254233,
+        "minY": 386.04458018231793,
+        "maxY": 478.3275791788945,
+        "safe": true
+      }
+    ]
+  }
+}

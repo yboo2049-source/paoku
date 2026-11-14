@@ -1,0 +1,237 @@
+{
+  "mode": "production preview; isolated browser; HTTP cache cleared before offline; unchanged Vite config",
+  "online": [
+    {
+      "family": "Outfit",
+      "faces": [
+        {
+          "family": "Outfit",
+          "status": "loaded"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Orbitron",
+      "faces": [
+        {
+          "family": "Orbitron",
+          "status": "loaded"
+        }
+      ],
+      "error": null
+    }
+  ],
+  "offline": [
+    {
+      "family": "Outfit",
+      "faces": [
+        {
+          "family": "Outfit",
+          "status": "loaded"
+        }
+      ],
+      "error": null
+    },
+    {
+      "family": "Orbitron",
+      "faces": [
+        {
+          "family": "Orbitron",
+          "status": "loaded"
+        }
+      ],
+      "error": null
+    }
+  ],
+  "http": [
+    {
+      "file": "Outfit-fc7287273e66.ttf",
+      "status": 200,
+      "bytes": 110884
+    },
+    {
+      "file": "Orbitron-f42db2dd16e6.ttf",
+      "status": 200,
+      "bytes": 38576
+    }
+  ],
+  "controller": "http://127.0.0.1:5198/sw.js",
+  "fontPrecacheEntries": [
+    {
+      "file": "Outfit-fc7287273e66.ttf",
+      "inSW": true,
+      "inCache": true
+    },
+    {
+      "file": "Orbitron-f42db2dd16e6.ttf",
+      "inSW": true,
+      "inCache": true
+    }
+  ],
+  "cachesBefore": [
+    {
+      "name": "workbox-precache-v2-http://127.0.0.1:5198/",
+      "urls": [
+        "http://127.0.0.1:5198/registerSW.js?__WB_REVISION__=1872c500de691dce40960bb85481de07",
+        "http://127.0.0.1:5198/index.html?__WB_REVISION__=4b6fd22cf29d9b74c342d873f8a0d2f7",
+        "http://127.0.0.1:5198/assets/workerPool-aLlzPuNn.js",
+        "http://127.0.0.1:5198/assets/webRequest-CNElM_Yd.js",
+        "http://127.0.0.1:5198/assets/webAudioMainBus-DaUM3nZL.js",
+        "http://127.0.0.1:5198/assets/webAudioBus--Z7P38Qc.js",
+        "http://127.0.0.1:5198/assets/webAudioBaseSubGraph-CQOPTOxj.js",
+        "http://127.0.0.1:5198/assets/volumetricLightingRenderVolume.vertex-C6FZxDYC.js",
+        "http://127.0.0.1:5198/assets/volumetricLightingRenderVolume.vertex-BpgbpF1p.js",
+        "http://127.0.0.1:5198/assets/volumetricLightingRenderVolume.fragment-CrTHNwfJ.js",
+        "http://127.0.0.1:5198/assets/volumetricLightingRenderVolume.fragment--stnBwf_.js",
+        "http://127.0.0.1:5198/assets/volumetricLightingBlendVolume.fragment-DIkNb-c4.js",
+        "http://127.0.0.1:5198/assets/volumetricLightingBlendVolume.fragment-Bz5yiNiY.js",
+        "http://127.0.0.1:5198/assets/utils-N5rsUTjt.js",
+        "http://127.0.0.1:5198/assets/typeStore-Cu_sj2zM.js",
+        "http://127.0.0.1:5198/assets/tools.pure-DhLm8IC4.js",
+        "http://127.0.0.1:5198/assets/tools.functions-CqW-SPU8.js",
+        "http://127.0.0.1:5198/assets/timingTools-RPUZXZ-r.js",
+        "http://127.0.0.1:5198/assets/thinEngine.pure-Cns2J7bh.js",
+        "http://127.0.0.1:5198/assets/tgaTextureLoader-CFcrZUxj.js",
+        "http://127.0.0.1:5198/assets/textureProcessor.fragment-D-awtrDP.js",
+        "http://127.0.0.1:5198/assets/textureProcessor.fragment-B-hqHgey.js",
+        "http://127.0.0.1:5198/assets/texture.pure-CPzwTjqM.js",
+        "http://127.0.0.1:5198/assets/subSurfaceScattering.fragment-BJfbFx73.js",
+        "http://127.0.0.1:5198/assets/subSurfaceScattering.fragment-BIqnosGz.js",
+        "http://127.0.0.1:5198/assets/smartArray-BRfcgNbX.js",
+        "http://127.0.0.1:5198/assets/shaderStore-D-XQlhUT.js",
+        "http://127.0.0.1:5198/assets/selectionOutline.fragment-lN_28Eg-.js",
+        "http://127.0.0.1:5198/assets/selectionOutline.fragment-CwDO4qmT.js",
+        "http://127.0.0.1:5198/assets/selection.vertex-tl2NNjGV.js",
+        "http://127.0.0.1:5198/assets/selection.vertex-ChLvH-Ff.js",
+        "http://127.0.0.1:5198/assets/selection.fragment-DbZ4WviT.js",
+        "http://127.0.0.1:5198/assets/selection.fragment-BfjXN1P4.js",
+        "http://127.0.0.1:5198/assets/screenSpaceCurvature.fragment-DGKqBbuS.js",
+        "http://127.0.0.1:5198/assets/sceneUboDeclaration-B96Tfx7b.js",
+        "http://127.0.0.1:5198/assets/sceneUboDeclaration-B5VhSG0v.js",
+        "http://127.0.0.1:5198/assets/sceneComponent-DmDiaKBz.js",
+        "http://127.0.0.1:5198/assets/scene.pure-Dz2rIbC-.js",
+        "http://127.0.0.1:5198/assets/samplerFragmentDeclaration-CEHqUfAO.js",
+        "http://127.0.0.1:5198/assets/samplerFragmentDeclaration-3yaLawFX.js",
+        "http://127.0.0.1:5198/assets/renderTargetTexture.pure-CzPMfU_D.js",
+        "http://127.0.0.1:5198/assets/preload-helper-Czpn1I53.js",
+        "http://127.0.0.1:5198/assets/precisionDate-Uyb-ubD0.js",
+        "http://127.0.0.1:5198/assets/postProcess.pure-D9tWm2xy.js",
+        "http://127.0.0.1:5198/assets/pointerEvents-ClGH9_WY.js",
+        "http://127.0.0.1:5198/assets/performanceConfigurator-UtxC_Odd.js",
+        "http://127.0.0.1:5198/assets/oitFinalSimpleBlend.fragment-Q5Yng1yZ.js",
+        "http://127.0.0.1:5198/assets/oitFinalSimpleBlend.fragment-nGYFumis.js",
+        "http://127.0.0.1:5198/assets/observable.pure-CJ4J1f_C.js",
+        "http://127.0.0.1:5198/assets/noise.fragment-LuZEVkT0.js",
+        "http://127.0.0.1:5198/assets/noise.fragment-DEbzbasH.js",
+        "http://127.0.0.1:5198/assets/node-Bfs4n_km.js",
+        "http://127.0.0.1:5198/assets/meshUboDeclaration-BmNu2KU_.js",
+        "http://127.0.0.1:5198/assets/meshUboDeclaration-BATNZvmb.js",
+        "http://127.0.0.1:5198/assets/math.vector.pure-g0sMBw-P.js",
+        "http://127.0.0.1:5198/assets/math.size-DwjlzITU.js",
+        "http://127.0.0.1:5198/assets/math.scalar.functions-BWXNux-o.js",
+        "http://127.0.0.1:5198/assets/math.plane-F35iyAlF.js",
+        "http://127.0.0.1:5198/assets/math.color.pure-DuH-Spkv.js",
+        "http://127.0.0.1:5198/assets/mainUVVaryingDeclaration-B_7d0nc3.js",
+        "http://127.0.0.1:5198/assets/mainUVVaryingDeclaration-BBamQlxR.js",
+        "http://127.0.0.1:5198/assets/ltcHelperFunctions-DS3Utz6C.js",
+        "http://127.0.0.1:5198/assets/ltcHelperFunctions-D8BySwCQ.js",
+        "http://127.0.0.1:5198/assets/logger-CuBYPcDK.js",
+        "http://127.0.0.1:5198/assets/lod3D.fragment-yRlWVCij.js",
+        "http://127.0.0.1:5198/assets/lod3D.fragment-y-jhIqg5.js",
+        "http://127.0.0.1:5198/assets/lightConstants-DTtuDj_w.js",
+        "http://127.0.0.1:5198/assets/ktxTextureLoader-CZ1Toyt7.js",
+        "http://127.0.0.1:5198/assets/keyboardEvents-CGYiptFb.js",
+        "http://127.0.0.1:5198/assets/internalTexture-BPP-KicJ.js",
+        "http://127.0.0.1:5198/assets/index-C9oC04IO.js",
+        "http://127.0.0.1:5198/assets/index-B-Rz5iz6.css",
+        "http://127.0.0.1:5198/assets/iesTextureLoader-DAb-PWX1.js",
+        "http://127.0.0.1:5198/assets/hdrTextureLoader-NL7yT6QW.js",
+        "http://127.0.0.1:5198/assets/halfFloat-Ce77JD5z.js",
+        "http://127.0.0.1:5198/assets/guid-BXdVC_j_.js",
+        "http://127.0.0.1:5198/assets/gpuRenderParticles.vertex-BH0dlzOL.js",
+        "http://127.0.0.1:5198/assets/gpuRenderParticles.fragment-DoEUUwyv.js",
+        "http://127.0.0.1:5198/assets/gaussianSplattingVoxel.vertex-DQAuNfN2.js",
+        "http://127.0.0.1:5198/assets/gaussianSplattingVoxel.vertex-Cvh4J5gs.js",
+        "http://127.0.0.1:5198/assets/gaussianSplattingVoxel.fragment-D_ycHy0d.js",
+        "http://127.0.0.1:5198/assets/gaussianSplattingVoxel.fragment-BEqZ9WEG.js",
+        "http://127.0.0.1:5198/assets/gaussianSplatting.vertex-D5MW0oGl.js",
+        "http://127.0.0.1:5198/assets/gaussianSplatting.vertex-CyJT5tRI.js",
+        "http://127.0.0.1:5198/assets/gaussianSplatting.fragment-perMdtM_.js",
+        "http://127.0.0.1:5198/assets/gaussianSplatting.fragment-Cfb8YnbP.js",
+        "http://127.0.0.1:5198/assets/flowGraphPointerUpEventBlock-Bf2X_KKl.js",
+        "http://127.0.0.1:5198/assets/flowGraphPointerMoveEventBlock-iADccxj4.js",
+        "http://127.0.0.1:5198/assets/flowGraphPointerDownEventBlock-DcdMayYW.js",
+        "http://127.0.0.1:5198/assets/flowGraphGLTFDataProvider-xJImq4Ys.js",
+        "http://127.0.0.1:5198/assets/flowGraphExecutionBlockWithOutSignal-C7l29tev.js",
+        "http://127.0.0.1:5198/assets/flowGraphExecutionBlock-DR1cfCQ2.js",
+        "http://127.0.0.1:5198/assets/flowGraphEventBlock-Cm1zVP5w.js",
+        "http://127.0.0.1:5198/assets/flowGraphDebugBlock-DDLt2SXE.js",
+        "http://127.0.0.1:5198/assets/flowGraphCachedOperationBlock-BmucTSuU.js",
+        "http://127.0.0.1:5198/assets/flowGraphBlock-DYaDHn4M.js",
+        "http://127.0.0.1:5198/assets/flowGraphAsyncExecutionBlock-D02sJAmZ.js",
+        "http://127.0.0.1:5198/assets/fileTools.pure-BFA2O_s8.js",
+        "http://127.0.0.1:5198/assets/envTextureLoader-Bnct7DYu.js",
+        "http://127.0.0.1:5198/assets/engineStore-jCzRdxTp.js",
+        "http://127.0.0.1:5198/assets/effectRenderer.pure-DEYtwUYU.js",
+        "http://127.0.0.1:5198/assets/dumpTools-Cf0y00GC.js",
+        "http://127.0.0.1:5198/assets/drawWrapper-UyHZYncs.js",
+        "http://127.0.0.1:5198/assets/domManagement-BqltO0ki.js",
+        "http://127.0.0.1:5198/assets/devTools-Bh3wKyVb.js",
+        "http://127.0.0.1:5198/assets/decorators-D3kDnvNy.js",
+        "http://127.0.0.1:5198/assets/ddsTextureLoader-SNvyEO1R.js",
+        "http://127.0.0.1:5198/assets/clusteredLightingFunctions-DNqaoQCj.js",
+        "http://127.0.0.1:5198/assets/clusteredLightingFunctions-BFCOODPn.js",
+        "http://127.0.0.1:5198/assets/bufferUtils-BzL83JPG.js",
+        "http://127.0.0.1:5198/assets/buffer.pure-B60eVyAC.js",
+        "http://127.0.0.1:5198/assets/basisTextureLoader-CwsZ3Qgj.js",
+        "http://127.0.0.1:5198/assets/baseTexture.pure-Dqpxw_zw.js",
+        "http://127.0.0.1:5198/assets/animation.pure-DvmZNrBO.js",
+        "http://127.0.0.1:5198/assets/abstractSoundSource-Dq4fcLfQ.js",
+        "http://127.0.0.1:5198/assets/abstractEngine.pure-DzwviiY9.js",
+        "http://127.0.0.1:5198/assets/abstractAudioBus-CCxSPUgF.js",
+        "http://127.0.0.1:5198/fonts/Orbitron-f42db2dd16e6.ttf?__WB_REVISION__=a4ff8249fc28b57cab2c57139c5a4bcd",
+        "http://127.0.0.1:5198/fonts/Orbitron-OFL.txt?__WB_REVISION__=c4d5100c9145e33da2478b8fef51c1a4",
+        "http://127.0.0.1:5198/fonts/Outfit-fc7287273e66.ttf?__WB_REVISION__=e31a3aa5fce3366bcadb8e9027f26178",
+        "http://127.0.0.1:5198/fonts/Outfit-OFL.txt?__WB_REVISION__=46d20f6b2f9263fba25116882b8a635e",
+        "http://127.0.0.1:5198/manifest.webmanifest?__WB_REVISION__=4a6412941829817a91bab1c8cd66c057"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "url": "http://127.0.0.1:5198/fonts/Outfit-fc7287273e66.ttf",
+      "status": 200,
+      "serviceWorker": false
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/Orbitron-f42db2dd16e6.ttf",
+      "status": 200,
+      "serviceWorker": false
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/Outfit-fc7287273e66.ttf",
+      "status": 200,
+      "serviceWorker": true
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/Orbitron-f42db2dd16e6.ttf",
+      "status": 200,
+      "serviceWorker": true
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/Outfit-fc7287273e66.ttf",
+      "status": 200,
+      "serviceWorker": true
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/Orbitron-f42db2dd16e6.ttf",
+      "status": 200,
+      "serviceWorker": true
+    }
+  ],
+  "errors": [
+    "http://127.0.0.1:5198/models/player.glb: net::ERR_INTERNET_DISCONNECTED",
+    "error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+  ]
+}

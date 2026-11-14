@@ -1,0 +1,42 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/inputQueue.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-10
+
+ ❯ tests/unit/inputQueue.test.ts (5 tests | 1 failed) 12ms
+     × collects keyboard/touch without mutating player or emitting action facts, clears partial touch on blur 6ms
+node.exe :
+所在位置 行:1 字符: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/inputQueue.test.ts > PAO-10 tick input > collects keyboard/touch without mutating player or emitting
+action facts, clears partial touch on blur
+TypeError: Cannot read properties of undefined (reading 'isJumping')
+ ❯ applyInputAction src/systems/input.ts:138:43
+    136|       eventBus.emit('PLAYER_ACTION', { action: 'CHANGE_LANE', lane: ne…
+    137|     }
+    138|   } else if (action === 'JUMP' && !player.isJumping) {
+       |                                           ^
+    139|     player.isJumping = true; player.isRolling = false; player.rollTime…
+    140|     player.vy = computeJumpVelocity(player.activePowerUps);
+ ❯ InputSystem.jump src/systems/input.ts:125:46
+ ❯ InputSystem.handleTouchEnd src/systems/input.ts:119:26
+ ❯ boundTouchEnd src/systems/input.ts:35:38
+ ❯ tests/unit/inputQueue.test.ts:61:30
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  20:06:10
+   Duration  706ms (transform 118ms, setup 0ms, import 160ms, tests 12ms, environment 0ms)
+
+EXIT_CODE=1

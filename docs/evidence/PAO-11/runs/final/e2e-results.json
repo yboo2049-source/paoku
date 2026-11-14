@@ -1,0 +1,851 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\worker\\paoku-sessions\\pao-11\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "docs/evidence/PAO-11/playwright.config.ts"
+    ],
+    "configFile": "D:\\worker\\paoku-sessions\\pao-11\\docs\\evidence\\PAO-11\\playwright.config.ts",
+    "rootDir": "D:/worker/paoku-sessions/pao-11/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/worker/paoku-sessions/pao-11/docs/evidence/PAO-11/runs/final/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/worker/paoku-sessions/pao-11/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\worker\\paoku-sessions\\pao-11\\docs\\evidence\\PAO-11\\runs\\final\\e2e-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 5182 --strictPort",
+      "url": "http://127.0.0.1:5182",
+      "reuseExistingServer": false,
+      "cwd": "D:\\worker\\paoku-sessions\\pao-11"
+    }
+  },
+  "suites": [
+    {
+      "title": "gameplay.spec.ts",
+      "file": "gameplay.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "状态机（确定性）",
+          "file": "gameplay.spec.ts",
+          "line": 49,
+          "column": 6,
+          "specs": [
+            {
+              "title": "MENU → PLAYING via start button",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2423,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-31T17:29:06.879Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a8475ef9564cfbc88065-5d45f1b2850fc381990f",
+              "file": "gameplay.spec.ts",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → 切道（左/右 + 边界钳制）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2360,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-31T17:29:09.752Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a8475ef9564cfbc88065-3317ff363a717d1e24b0",
+              "file": "gameplay.spec.ts",
+              "line": 56,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → 跳跃（isJumping=true）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2030,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-31T17:29:12.128Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a8475ef9564cfbc88065-2ec67555476e6b9d9f50",
+              "file": "gameplay.spec.ts",
+              "line": 73,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → 翻滚（isRolling=true）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2238,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-31T17:29:14.177Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a8475ef9564cfbc88065-5f20fa5bc3d6763c8a5b",
+              "file": "gameplay.spec.ts",
+              "line": 79,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → PAUSED via Escape，再 resume 回到 PLAYING",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2417,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-31T17:29:16.431Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a8475ef9564cfbc88065-1ad0dcb9ab585e5851b9",
+              "file": "gameplay.spec.ts",
+              "line": 85,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "截图回放（确定性）",
+          "file": "gameplay.spec.ts",
+          "line": 97,
+          "column": 6,
+          "specs": [
+            {
+              "title": "捕获 6 张高保真截图（无 GAMEOVER 风险）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4209,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-31T17:29:18.862Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a8475ef9564cfbc88065-6755dea33be7f6e5abbc",
+              "file": "gameplay.spec.ts",
+              "line": 98,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "pao10-review-fixes.spec.ts",
+      "file": "pao10-review-fixes.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "native-menu-slider-and-start-space",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2288,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T17:29:23.110Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6f5d2f77e6880b19e7fa-130893149f31c664045f",
+          "file": "pao10-review-fixes.spec.ts",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "paused-rejects-motion-and-resume-space",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3284,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T17:29:25.414Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6f5d2f77e6880b19e7fa-8dbda7cf01050d32d073",
+          "file": "pao10-review-fixes.spec.ts",
+          "line": 48,
+          "column": 1
+        },
+        {
+          "title": "playing-interactive-arrows-do-not-move-player",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3522,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T17:29:28.710Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6f5d2f77e6880b19e7fa-8163ad40691652059ed2",
+          "file": "pao10-review-fixes.spec.ts",
+          "line": 67,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pao10-simulation.spec.ts",
+      "file": "pao10-simulation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "N-desktop-production-keyboard-flow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8418,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T17:29:32.255Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f5de647b666c1c1b6215-2fd27a3ababd5186790c",
+          "file": "pao10-simulation.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "N-mobile-production-touch",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 9728,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at D:\\worker\\paoku-sessions\\pao-11\\tests\\e2e\\pao10-simulation.spec.ts:83:105",
+                    "location": {
+                      "file": "D:\\worker\\paoku-sessions\\pao-11\\tests\\e2e\\pao10-simulation.spec.ts",
+                      "column": 105,
+                      "line": 83
+                    },
+                    "snippet": "  81 |   await page.waitForFunction(() => Math.abs((window as any).__GAME_SENSOR__.getPlayerPos().x) < .1);\n  82 |   await capture(page, 'N-mobile-centered');\n> 83 |   await swipe(180, 500, 180, 300); await expect.poll(async () => (await sensor(page)).player.isJumping).toBe(true);\n     |                                                                                                         ^\n  84 |   await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getPlayerPos().y > .8);\n  85 |   await capture(page, 'N-mobile-jump');\n  86 |   await swipe(180, 350, 180, 550); await expect.poll(async () => (await sensor(page)).player.isRolling).toBe(true);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\worker\\paoku-sessions\\pao-11\\tests\\e2e\\pao10-simulation.spec.ts",
+                        "column": 105,
+                        "line": 83
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  81 |   await page.waitForFunction(() => Math.abs((window as any).__GAME_SENSOR__.getPlayerPos().x) < .1);\n  82 |   await capture(page, 'N-mobile-centered');\n> 83 |   await swipe(180, 500, 180, 300); await expect.poll(async () => (await sensor(page)).player.isJumping).toBe(true);\n     |                                                                                                         ^\n  84 |   await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getPlayerPos().y > .8);\n  85 |   await capture(page, 'N-mobile-jump');\n  86 |   await swipe(180, 350, 180, 550); await expect.poll(async () => (await sensor(page)).player.isRolling).toBe(true);\n    at D:\\worker\\paoku-sessions\\pao-11\\tests\\e2e\\pao10-simulation.spec.ts:83:105"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T17:29:40.685Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\worker\\paoku-sessions\\pao-11\\docs\\evidence\\PAO-11\\runs\\final\\test-results\\pao10-simulation-N-mobile-production-touch\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\worker\\paoku-sessions\\pao-11\\tests\\e2e\\pao10-simulation.spec.ts",
+                    "column": 105,
+                    "line": 83
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f5de647b666c1c1b6215-a835107ba138cedae3d8",
+          "file": "pao10-simulation.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "F-lifecycle-clears-input-and-hidden-time",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3524,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T17:29:51.190Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f5de647b666c1c1b6215-81c334a4e3ac5a498bda",
+          "file": "pao10-simulation.spec.ts",
+          "line": 97,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pao11-surfaces.spec.ts",
+      "file": "pao11-surfaces.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F-desktop-keyboard-ground-ramp-roof-jump-ground",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5933,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T17:29:55.139Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f29ba13f59cc8b670b14-2ccf29e54ffef407010d",
+          "file": "pao11-surfaces.spec.ts",
+          "line": 95,
+          "column": 3
+        },
+        {
+          "title": "F-portrait-touch-ground-ramp-roof-jump-ground",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5522,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T17:30:01.085Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f29ba13f59cc8b670b14-f755cdf0d7a8401286b0",
+          "file": "pao11-surfaces.spec.ts",
+          "line": 95,
+          "column": 3
+        },
+        {
+          "title": "F-high-base-ramp-5-to-8-continuous-roof",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4247,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T17:30:06.623Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f29ba13f59cc8b670b14-a12752a83090ab60af12",
+          "file": "pao11-surfaces.spec.ts",
+          "line": 124,
+          "column": 1
+        },
+        {
+          "title": "N-production-input-and-supported-snapshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4298,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T17:30:10.885Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f29ba13f59cc8b670b14-79dda0bc5bada6391b80",
+          "file": "pao11-surfaces.spec.ts",
+          "line": 142,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pao6-baseline.spec.ts",
+      "file": "pao6-baseline.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ramp-roof-jump-land",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6446,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T17:30:15.216Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a61ca73a382f0cb361f-becfdc5236ec15d7b3ca",
+          "file": "pao6-baseline.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "obstacles-failure-restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8740,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T17:30:21.681Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a61ca73a382f0cb361f-874c10fd19b1c97b3e5f",
+          "file": "pao6-baseline.spec.ts",
+          "line": 76,
+          "column": 1
+        },
+        {
+          "title": "powerups-shield-missions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10145,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T17:30:30.447Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a61ca73a382f0cb361f-db27764172e9e2ac8d6d",
+          "file": "pao6-baseline.spec.ts",
+          "line": 86,
+          "column": 1
+        },
+        {
+          "title": "mobile-touch-layout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4918,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-31T17:30:40.614Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a61ca73a382f0cb361f-d75ea9d24a0e4ad7edf5",
+          "file": "pao6-baseline.spec.ts",
+          "line": 98,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-31T17:29:05.261Z",
+    "duration": 101142.312,
+    "expected": 19,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

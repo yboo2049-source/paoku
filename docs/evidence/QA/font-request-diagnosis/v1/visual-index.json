@@ -1,0 +1,20 @@
+[
+  {
+    "label": "N1",
+    "path": "D:/worker/paoku-sessions/pao-18-font-diagnosis/.pao18.local/font-diagnosis/network/N1.png",
+    "sha256": "9b0f834341c1c3cdf0a90b8be374ed88a792f8d206f2a06185a482691bc6c0fe",
+    "tracked": false
+  },
+  {
+    "label": "F-css",
+    "path": "D:/worker/paoku-sessions/pao-18-font-diagnosis/.pao18.local/font-diagnosis/network/F-css.png",
+    "sha256": "57160154bbe28fa9f3a4e0a8c8075c5fbee87664f07dce25168a9bbc703ec6c4",
+    "tracked": false
+  },
+  {
+    "label": "F-font",
+    "path": "D:/worker/paoku-sessions/pao-18-font-diagnosis/.pao18.local/font-diagnosis/network/F-font.png",
+    "sha256": "de0e3a03d0e96b54a942781f004044d6e39de9cbdddc6401d42575c01a493d41",
+    "tracked": false
+  }
+]

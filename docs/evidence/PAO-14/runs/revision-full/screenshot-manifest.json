@@ -1,0 +1,32 @@
+[
+  {
+    "path": "docs/evidence/PAO-14/runs/revision-full/screenshots/F-desktop-stable-terminal-summary.png",
+    "sha256": "de7251852bea33eba19002fc688fe44467592b85eab8f6ff9f7f8d1b356af52c",
+    "bytes": 485901
+  },
+  {
+    "path": "docs/evidence/PAO-14/runs/revision-full/screenshots/F-review-desktop-audio-both-off.png",
+    "sha256": "8e2b612b20667986b7f97ffb92e4bcceecd7c3a7cb11519bcac18a37b5f05eee",
+    "bytes": 449023
+  },
+  {
+    "path": "docs/evidence/PAO-14/runs/revision-full/screenshots/F-review-portrait-shop-retry.png",
+    "sha256": "899bf5d7d64acde01c98a4d1dc614a36ffd91bd67a2d5056cc4ce4a980e5b8bb",
+    "bytes": 105624
+  },
+  {
+    "path": "docs/evidence/PAO-14/runs/revision-full/screenshots/N-desktop-stable-paused.png",
+    "sha256": "ec40c36e0e5a0b6a4c566a5b831fe818d5ff9bb20d1e6486d36019a5e6f861b4",
+    "bytes": 495137
+  },
+  {
+    "path": "docs/evidence/PAO-14/runs/revision-full/screenshots/N-portrait-stable-paused.png",
+    "sha256": "a59ab08e869f49f79780c5cd16143042a900bc5f0b54bfd568816a3b72d6e50f",
+    "bytes": 155543
+  },
+  {
+    "path": "docs/evidence/PAO-14/runs/revision-full/screenshots/N-portrait-stable-shop.png",
+    "sha256": "e88119695c29dd9a7e8bdfeea5605375a62a651ad848b50c5c07e2738d955af5",
+    "bytes": 102486
+  }
+]

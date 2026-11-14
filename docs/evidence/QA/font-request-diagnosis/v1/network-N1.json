@@ -1,0 +1,1220 @@
+{
+  "label": "N1",
+  "failDomain": null,
+  "cacheNote": "default browser cache; fresh context cold then same-page reload",
+  "browser": "151.0.7922.34",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+  "visits": [
+    {
+      "kind": "cold",
+      "start": "2026-11-03T13:10:50.049Z",
+      "end": "2026-11-03T13:10:53.889Z",
+      "eventOffset": 0,
+      "fontsReady": true,
+      "navigationError": null,
+      "state": {
+        "fontsStatus": "loaded",
+        "faces": [
+          {
+            "family": "Outfit",
+            "weight": "400",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "400",
+            "status": "loaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "700",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "700",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "900",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "900",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Orbitron",
+            "weight": "500",
+            "status": "loaded",
+            "display": "swap"
+          },
+          {
+            "family": "Orbitron",
+            "weight": "700",
+            "status": "loaded",
+            "display": "swap"
+          },
+          {
+            "family": "Orbitron",
+            "weight": "900",
+            "status": "loaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "400",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "400",
+            "status": "loaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "600",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "600",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "700",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "700",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "900",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "900",
+            "status": "unloaded",
+            "display": "swap"
+          }
+        ],
+        "resources": [
+          {
+            "name": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap",
+            "initiatorType": "link",
+            "startTime": 172.60000000009313,
+            "duration": 611.1000000000931,
+            "transferSize": 717,
+            "encodedBodySize": 417,
+            "responseStatus": 0
+          },
+          {
+            "name": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap",
+            "initiatorType": "css",
+            "startTime": 669.7000000001863,
+            "duration": 248.39999999990687,
+            "transferSize": 796,
+            "encodedBodySize": 496,
+            "responseStatus": 0
+          }
+        ],
+        "serviceWorker": false,
+        "main": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+        "display": "Orbitron, sans-serif",
+        "overflow": false
+      }
+    },
+    {
+      "kind": "warm",
+      "start": "2026-11-03T13:10:54.057Z",
+      "end": "2026-11-03T13:10:56.592Z",
+      "eventOffset": 13,
+      "fontsReady": true,
+      "navigationError": null,
+      "state": {
+        "fontsStatus": "loaded",
+        "faces": [
+          {
+            "family": "Outfit",
+            "weight": "400",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "400",
+            "status": "loaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "700",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "700",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "900",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "900",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Orbitron",
+            "weight": "500",
+            "status": "loaded",
+            "display": "swap"
+          },
+          {
+            "family": "Orbitron",
+            "weight": "700",
+            "status": "loaded",
+            "display": "swap"
+          },
+          {
+            "family": "Orbitron",
+            "weight": "900",
+            "status": "loaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "400",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "400",
+            "status": "loaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "600",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "600",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "700",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "700",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "900",
+            "status": "unloaded",
+            "display": "swap"
+          },
+          {
+            "family": "Outfit",
+            "weight": "900",
+            "status": "unloaded",
+            "display": "swap"
+          }
+        ],
+        "resources": [
+          {
+            "name": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap",
+            "initiatorType": "link",
+            "startTime": 22.899999999906868,
+            "duration": 0,
+            "transferSize": 0,
+            "encodedBodySize": 417,
+            "responseStatus": 0
+          },
+          {
+            "name": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap",
+            "initiatorType": "css",
+            "startTime": 25.899999999906868,
+            "duration": 0,
+            "transferSize": 0,
+            "encodedBodySize": 496,
+            "responseStatus": 0
+          },
+          {
+            "name": "https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2",
+            "initiatorType": "css",
+            "startTime": 27.5,
+            "duration": 0,
+            "transferSize": 0,
+            "encodedBodySize": 32292,
+            "responseStatus": 200
+          },
+          {
+            "name": "https://fonts.gstatic.com/s/orbitron/v35/yMJRMIlzdpvBhQQL_Qq7dy0.woff2",
+            "initiatorType": "css",
+            "startTime": 27.699999999720603,
+            "duration": 0,
+            "transferSize": 0,
+            "encodedBodySize": 11800,
+            "responseStatus": 200
+          },
+          {
+            "name": "https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2",
+            "initiatorType": "css",
+            "startTime": 27.899999999906868,
+            "duration": 0,
+            "transferSize": 0,
+            "encodedBodySize": 32292,
+            "responseStatus": 200
+          }
+        ],
+        "serviceWorker": false,
+        "main": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+        "display": "Orbitron, sans-serif",
+        "overflow": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "request",
+      "at": "2026-11-03T13:10:50.230Z",
+      "id": "23656.3",
+      "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap",
+      "documentURL": "http://127.0.0.1:5198/",
+      "type": "Stylesheet",
+      "initiator": {
+        "type": "parser",
+        "url": "http://127.0.0.1:5198/",
+        "lineNumber": 8,
+        "columnNumber": 112
+      },
+      "timestamp": 3022.981379,
+      "wallTime": 1793711450.228188,
+      "redirect": null
+    },
+    {
+      "event": "request",
+      "at": "2026-11-03T13:10:50.725Z",
+      "id": "23656.40",
+      "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap",
+      "documentURL": "http://127.0.0.1:5198/",
+      "type": "Stylesheet",
+      "initiator": {
+        "type": "parser",
+        "url": "http://127.0.0.1:5198/src/style.css",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": 3023.478444,
+      "wallTime": 1793711450.725259,
+      "redirect": null
+    },
+    {
+      "event": "response",
+      "at": "2026-11-03T13:10:50.840Z",
+      "id": "23656.3",
+      "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap",
+      "status": 200,
+      "protocol": "h2",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "timing": {
+        "requestTime": 3022.986315,
+        "proxyStart": -1,
+        "proxyEnd": -1,
+        "dnsStart": -1,
+        "dnsEnd": -1,
+        "connectStart": 0.112,
+        "connectEnd": 423.617,
+        "sslStart": 2.402,
+        "sslEnd": 423.594,
+        "workerStart": -1,
+        "workerReady": -1,
+        "workerFetchStart": -1,
+        "workerRespondWithSettled": -1,
+        "sendStart": 423.972,
+        "sendEnd": 425.026,
+        "pushStart": 0,
+        "pushEnd": 0,
+        "receiveHeadersStart": 605.333,
+        "receiveHeadersEnd": 605.571
+      },
+      "securityDetails": {
+        "protocol": "TLS 1.3",
+        "issuer": "WE2",
+        "validFrom": 1791400151,
+        "validTo": 1798657750
+      },
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "cache-control": "private, max-age=86400, stale-while-revalidate=604800",
+        "access-control-allow-origin": "*"
+      }
+    },
+    {
+      "event": "finished",
+      "id": "23656.3",
+      "at": "2026-11-03T13:10:50.841Z",
+      "timestamp": 3023.592506,
+      "encodedDataLength": 890,
+      "cssSha256": "3e45b373ff5fdc802958afc36a2614947a6d60cfa54e73c585a71dafd57005c2",
+      "fontFaces": [
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "400",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2) format('woff2')",
+          "unicode-range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "400",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "700",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2) format('woff2')",
+          "unicode-range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "700",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "900",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2) format('woff2')",
+          "unicode-range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "900",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        }
+      ]
+    },
+    {
+      "event": "response",
+      "at": "2026-11-03T13:10:51.007Z",
+      "id": "23656.40",
+      "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap",
+      "status": 200,
+      "protocol": "h2",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "timing": {
+        "requestTime": 3023.478746,
+        "proxyStart": -1,
+        "proxyEnd": -1,
+        "dnsStart": -1,
+        "dnsEnd": -1,
+        "connectStart": -1,
+        "connectEnd": -1,
+        "sslStart": -1,
+        "sslEnd": -1,
+        "workerStart": -1,
+        "workerReady": -1,
+        "workerFetchStart": -1,
+        "workerRespondWithSettled": -1,
+        "sendStart": 0.169,
+        "sendEnd": 0.437,
+        "pushStart": 0,
+        "pushEnd": 0,
+        "receiveHeadersStart": 247.64,
+        "receiveHeadersEnd": 247.764
+      },
+      "securityDetails": {
+        "protocol": "TLS 1.3",
+        "issuer": "WE2",
+        "validFrom": 1791400151,
+        "validTo": 1798657750
+      },
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "cache-control": "private, max-age=86400, stale-while-revalidate=604800",
+        "access-control-allow-origin": "*"
+      }
+    },
+    {
+      "event": "request",
+      "at": "2026-11-03T13:10:51.058Z",
+      "id": "23656.259",
+      "url": "https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2",
+      "documentURL": "http://127.0.0.1:5198/",
+      "type": "Font",
+      "initiator": {
+        "type": "parser",
+        "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap"
+      },
+      "timestamp": 3023.788379,
+      "wallTime": 1793711451.035226,
+      "redirect": null
+    },
+    {
+      "event": "request",
+      "at": "2026-11-03T13:10:51.058Z",
+      "id": "23656.264",
+      "url": "https://fonts.gstatic.com/s/orbitron/v35/yMJRMIlzdpvBhQQL_Qq7dy0.woff2",
+      "documentURL": "http://127.0.0.1:5198/",
+      "type": "Font",
+      "initiator": {
+        "type": "parser",
+        "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap"
+      },
+      "timestamp": 3023.788612,
+      "wallTime": 1793711451.035422,
+      "redirect": null
+    },
+    {
+      "event": "finished",
+      "id": "23656.40",
+      "at": "2026-11-03T13:10:51.028Z",
+      "timestamp": 3023.726889,
+      "encodedDataLength": 598,
+      "cssSha256": "49e83a05b1b3cf1d3b3e6956f06aefec650caa4e358a01e3d93717b93c766a35",
+      "fontFaces": [
+        {
+          "font-family": "'Orbitron'",
+          "font-style": "normal",
+          "font-weight": "500",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/orbitron/v35/yMJRMIlzdpvBhQQL_Qq7dy0.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Orbitron'",
+          "font-style": "normal",
+          "font-weight": "700",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/orbitron/v35/yMJRMIlzdpvBhQQL_Qq7dy0.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Orbitron'",
+          "font-style": "normal",
+          "font-weight": "900",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/orbitron/v35/yMJRMIlzdpvBhQQL_Qq7dy0.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "400",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2) format('woff2')",
+          "unicode-range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "400",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "600",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2) format('woff2')",
+          "unicode-range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "600",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "700",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2) format('woff2')",
+          "unicode-range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "700",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "900",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2) format('woff2')",
+          "unicode-range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "900",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        }
+      ]
+    },
+    {
+      "event": "response",
+      "at": "2026-11-03T13:10:51.820Z",
+      "id": "23656.259",
+      "url": "https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2",
+      "status": 200,
+      "protocol": "h2",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "timing": {
+        "requestTime": 3023.812836,
+        "proxyStart": -1,
+        "proxyEnd": -1,
+        "dnsStart": -1,
+        "dnsEnd": -1,
+        "connectStart": 0.166,
+        "connectEnd": 427.624,
+        "sslStart": 6.204,
+        "sslEnd": 427.61,
+        "workerStart": -1,
+        "workerReady": -1,
+        "workerFetchStart": -1,
+        "workerRespondWithSettled": -1,
+        "sendStart": 427.88,
+        "sendEnd": 428.474,
+        "pushStart": 0,
+        "pushEnd": 0,
+        "receiveHeadersStart": 565.132,
+        "receiveHeadersEnd": 565.329
+      },
+      "securityDetails": {
+        "protocol": "TLS 1.3",
+        "issuer": "WE2",
+        "validFrom": 1791400150,
+        "validTo": 1798657749
+      },
+      "headers": {
+        "age": "284809",
+        "content-type": "font/woff2",
+        "cache-control": "public, max-age=31536000",
+        "access-control-allow-origin": "*",
+        "content-length": "32292"
+      }
+    },
+    {
+      "event": "finished",
+      "id": "23656.259",
+      "at": "2026-11-03T13:10:51.820Z",
+      "timestamp": 3024.51215,
+      "encodedDataLength": 32834
+    },
+    {
+      "event": "response",
+      "at": "2026-11-03T13:10:51.823Z",
+      "id": "23656.264",
+      "url": "https://fonts.gstatic.com/s/orbitron/v35/yMJRMIlzdpvBhQQL_Qq7dy0.woff2",
+      "status": 200,
+      "protocol": "h2",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "timing": {
+        "requestTime": 3023.814579,
+        "proxyStart": -1,
+        "proxyEnd": -1,
+        "dnsStart": -1,
+        "dnsEnd": -1,
+        "connectStart": -1,
+        "connectEnd": -1,
+        "sslStart": -1,
+        "sslEnd": -1,
+        "workerStart": -1,
+        "workerReady": -1,
+        "workerFetchStart": -1,
+        "workerRespondWithSettled": -1,
+        "sendStart": 426.689,
+        "sendEnd": 426.801,
+        "pushStart": 0,
+        "pushEnd": 0,
+        "receiveHeadersStart": 697.768,
+        "receiveHeadersEnd": 697.957
+      },
+      "securityDetails": {
+        "protocol": "TLS 1.3",
+        "issuer": "WE2",
+        "validFrom": 1791400150,
+        "validTo": 1798657749
+      },
+      "headers": {
+        "age": "286579",
+        "content-type": "font/woff2",
+        "cache-control": "public, max-age=31536000",
+        "access-control-allow-origin": "*",
+        "content-length": "11800"
+      }
+    },
+    {
+      "event": "finished",
+      "id": "23656.264",
+      "at": "2026-11-03T13:10:51.823Z",
+      "timestamp": 3024.549251,
+      "encodedDataLength": 11918
+    },
+    {
+      "event": "request",
+      "at": "2026-11-03T13:10:54.089Z",
+      "id": "23656.302",
+      "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap",
+      "documentURL": "http://127.0.0.1:5198/",
+      "type": "Stylesheet",
+      "initiator": {
+        "type": "parser",
+        "url": "http://127.0.0.1:5198/",
+        "lineNumber": 8,
+        "columnNumber": 112
+      },
+      "timestamp": 3026.83686,
+      "wallTime": 1793711454.083667,
+      "redirect": null
+    },
+    {
+      "event": "cache",
+      "id": "23656.302",
+      "at": "2026-11-03T13:10:54.089Z"
+    },
+    {
+      "event": "response",
+      "at": "2026-11-03T13:10:54.089Z",
+      "id": "23656.302",
+      "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap",
+      "status": 200,
+      "protocol": "h2",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "timing": {
+        "requestTime": 3022.986315,
+        "proxyStart": -1,
+        "proxyEnd": -1,
+        "dnsStart": -1,
+        "dnsEnd": -1,
+        "connectStart": 0.112,
+        "connectEnd": 423.617,
+        "sslStart": 2.402,
+        "sslEnd": 423.594,
+        "workerStart": -1,
+        "workerReady": -1,
+        "workerFetchStart": -1,
+        "workerRespondWithSettled": -1,
+        "sendStart": 423.972,
+        "sendEnd": 425.026,
+        "pushStart": 0,
+        "pushEnd": 0,
+        "receiveHeadersStart": 605.333,
+        "receiveHeadersEnd": 605.571
+      },
+      "securityDetails": {
+        "protocol": "TLS 1.3",
+        "issuer": "WE2",
+        "validFrom": 1791400151,
+        "validTo": 1798657750
+      },
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "cache-control": "private, max-age=86400, stale-while-revalidate=604800",
+        "access-control-allow-origin": "*"
+      }
+    },
+    {
+      "event": "request",
+      "at": "2026-11-03T13:10:54.093Z",
+      "id": "23656.309",
+      "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap",
+      "documentURL": "http://127.0.0.1:5198/",
+      "type": "Stylesheet",
+      "initiator": {
+        "type": "parser",
+        "url": "http://127.0.0.1:5198/src/style.css",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": 3026.839801,
+      "wallTime": 1793711454.086616,
+      "redirect": null
+    },
+    {
+      "event": "cache",
+      "id": "23656.309",
+      "at": "2026-11-03T13:10:54.093Z"
+    },
+    {
+      "event": "response",
+      "at": "2026-11-03T13:10:54.093Z",
+      "id": "23656.309",
+      "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap",
+      "status": 200,
+      "protocol": "h2",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "timing": {
+        "requestTime": 3023.478746,
+        "proxyStart": -1,
+        "proxyEnd": -1,
+        "dnsStart": -1,
+        "dnsEnd": -1,
+        "connectStart": -1,
+        "connectEnd": -1,
+        "sslStart": -1,
+        "sslEnd": -1,
+        "workerStart": -1,
+        "workerReady": -1,
+        "workerFetchStart": -1,
+        "workerRespondWithSettled": -1,
+        "sendStart": 0.169,
+        "sendEnd": 0.437,
+        "pushStart": 0,
+        "pushEnd": 0,
+        "receiveHeadersStart": 247.64,
+        "receiveHeadersEnd": 247.764
+      },
+      "securityDetails": {
+        "protocol": "TLS 1.3",
+        "issuer": "WE2",
+        "validFrom": 1791400151,
+        "validTo": 1798657750
+      },
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "cache-control": "private, max-age=86400, stale-while-revalidate=604800",
+        "access-control-allow-origin": "*"
+      }
+    },
+    {
+      "event": "request",
+      "at": "2026-11-03T13:10:54.094Z",
+      "id": "23656.311",
+      "url": "https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2",
+      "documentURL": "http://127.0.0.1:5198/",
+      "type": "Font",
+      "initiator": {
+        "type": "parser",
+        "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap"
+      },
+      "timestamp": 3026.841438,
+      "wallTime": 1793711454.088263,
+      "redirect": null
+    },
+    {
+      "event": "cache",
+      "id": "23656.311",
+      "at": "2026-11-03T13:10:54.095Z"
+    },
+    {
+      "event": "response",
+      "at": "2026-11-03T13:10:54.095Z",
+      "id": "23656.311",
+      "url": "https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2",
+      "status": 200,
+      "protocol": "h2",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "timing": {
+        "requestTime": 3023.812836,
+        "proxyStart": -1,
+        "proxyEnd": -1,
+        "dnsStart": -1,
+        "dnsEnd": -1,
+        "connectStart": 0.166,
+        "connectEnd": 427.624,
+        "sslStart": 6.204,
+        "sslEnd": 427.61,
+        "workerStart": -1,
+        "workerReady": -1,
+        "workerFetchStart": -1,
+        "workerRespondWithSettled": -1,
+        "sendStart": 427.88,
+        "sendEnd": 428.474,
+        "pushStart": 0,
+        "pushEnd": 0,
+        "receiveHeadersStart": 565.132,
+        "receiveHeadersEnd": 565.329
+      },
+      "securityDetails": {
+        "protocol": "TLS 1.3",
+        "issuer": "WE2",
+        "validFrom": 1791400150,
+        "validTo": 1798657749
+      },
+      "headers": {
+        "age": "284809",
+        "content-type": "font/woff2",
+        "cache-control": "public, max-age=31536000",
+        "access-control-allow-origin": "*",
+        "content-length": "32292"
+      }
+    },
+    {
+      "event": "finished",
+      "id": "23656.311",
+      "at": "2026-11-03T13:10:54.095Z",
+      "timestamp": 3026.841577,
+      "encodedDataLength": 0
+    },
+    {
+      "event": "request",
+      "at": "2026-11-03T13:10:54.095Z",
+      "id": "23656.312",
+      "url": "https://fonts.gstatic.com/s/orbitron/v35/yMJRMIlzdpvBhQQL_Qq7dy0.woff2",
+      "documentURL": "http://127.0.0.1:5198/",
+      "type": "Font",
+      "initiator": {
+        "type": "parser",
+        "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap"
+      },
+      "timestamp": 3026.84171,
+      "wallTime": 1793711454.088513,
+      "redirect": null
+    },
+    {
+      "event": "cache",
+      "id": "23656.312",
+      "at": "2026-11-03T13:10:54.095Z"
+    },
+    {
+      "event": "response",
+      "at": "2026-11-03T13:10:54.095Z",
+      "id": "23656.312",
+      "url": "https://fonts.gstatic.com/s/orbitron/v35/yMJRMIlzdpvBhQQL_Qq7dy0.woff2",
+      "status": 200,
+      "protocol": "h2",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "timing": {
+        "requestTime": 3023.814579,
+        "proxyStart": -1,
+        "proxyEnd": -1,
+        "dnsStart": -1,
+        "dnsEnd": -1,
+        "connectStart": -1,
+        "connectEnd": -1,
+        "sslStart": -1,
+        "sslEnd": -1,
+        "workerStart": -1,
+        "workerReady": -1,
+        "workerFetchStart": -1,
+        "workerRespondWithSettled": -1,
+        "sendStart": 426.689,
+        "sendEnd": 426.801,
+        "pushStart": 0,
+        "pushEnd": 0,
+        "receiveHeadersStart": 697.768,
+        "receiveHeadersEnd": 697.957
+      },
+      "securityDetails": {
+        "protocol": "TLS 1.3",
+        "issuer": "WE2",
+        "validFrom": 1791400150,
+        "validTo": 1798657749
+      },
+      "headers": {
+        "age": "286579",
+        "content-type": "font/woff2",
+        "cache-control": "public, max-age=31536000",
+        "access-control-allow-origin": "*",
+        "content-length": "11800"
+      }
+    },
+    {
+      "event": "finished",
+      "id": "23656.312",
+      "at": "2026-11-03T13:10:54.095Z",
+      "timestamp": 3026.841794,
+      "encodedDataLength": 0
+    },
+    {
+      "event": "request",
+      "at": "2026-11-03T13:10:54.095Z",
+      "id": "23656.316",
+      "url": "https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2",
+      "documentURL": "http://127.0.0.1:5198/",
+      "type": "Font",
+      "initiator": {
+        "type": "parser",
+        "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap"
+      },
+      "timestamp": 3026.841898,
+      "wallTime": 1793711454.088695,
+      "redirect": null
+    },
+    {
+      "event": "cache",
+      "id": "23656.316",
+      "at": "2026-11-03T13:10:54.095Z"
+    },
+    {
+      "event": "response",
+      "at": "2026-11-03T13:10:54.095Z",
+      "id": "23656.316",
+      "url": "https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2",
+      "status": 200,
+      "protocol": "h2",
+      "fromDiskCache": false,
+      "fromServiceWorker": false,
+      "timing": {
+        "requestTime": 3023.812836,
+        "proxyStart": -1,
+        "proxyEnd": -1,
+        "dnsStart": -1,
+        "dnsEnd": -1,
+        "connectStart": 0.166,
+        "connectEnd": 427.624,
+        "sslStart": 6.204,
+        "sslEnd": 427.61,
+        "workerStart": -1,
+        "workerReady": -1,
+        "workerFetchStart": -1,
+        "workerRespondWithSettled": -1,
+        "sendStart": 427.88,
+        "sendEnd": 428.474,
+        "pushStart": 0,
+        "pushEnd": 0,
+        "receiveHeadersStart": 565.132,
+        "receiveHeadersEnd": 565.329
+      },
+      "securityDetails": {
+        "protocol": "TLS 1.3",
+        "issuer": "WE2",
+        "validFrom": 1791400150,
+        "validTo": 1798657749
+      },
+      "headers": {
+        "age": "284809",
+        "content-type": "font/woff2",
+        "cache-control": "public, max-age=31536000",
+        "access-control-allow-origin": "*",
+        "content-length": "32292"
+      }
+    },
+    {
+      "event": "finished",
+      "id": "23656.316",
+      "at": "2026-11-03T13:10:54.095Z",
+      "timestamp": 3026.841967,
+      "encodedDataLength": 0
+    },
+    {
+      "event": "finished",
+      "id": "23656.302",
+      "at": "2026-11-03T13:10:54.089Z",
+      "timestamp": 3026.837034,
+      "encodedDataLength": 0,
+      "cssSha256": "3e45b373ff5fdc802958afc36a2614947a6d60cfa54e73c585a71dafd57005c2",
+      "fontFaces": [
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "400",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2) format('woff2')",
+          "unicode-range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "400",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "700",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2) format('woff2')",
+          "unicode-range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "700",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "900",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2) format('woff2')",
+          "unicode-range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "900",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        }
+      ]
+    },
+    {
+      "event": "finished",
+      "id": "23656.309",
+      "at": "2026-11-03T13:10:54.093Z",
+      "timestamp": 3026.839988,
+      "encodedDataLength": 0,
+      "cssSha256": "49e83a05b1b3cf1d3b3e6956f06aefec650caa4e358a01e3d93717b93c766a35",
+      "fontFaces": [
+        {
+          "font-family": "'Orbitron'",
+          "font-style": "normal",
+          "font-weight": "500",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/orbitron/v35/yMJRMIlzdpvBhQQL_Qq7dy0.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Orbitron'",
+          "font-style": "normal",
+          "font-weight": "700",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/orbitron/v35/yMJRMIlzdpvBhQQL_Qq7dy0.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Orbitron'",
+          "font-style": "normal",
+          "font-weight": "900",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/orbitron/v35/yMJRMIlzdpvBhQQL_Qq7dy0.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "400",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2) format('woff2')",
+          "unicode-range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "400",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "600",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2) format('woff2')",
+          "unicode-range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "600",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "700",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2) format('woff2')",
+          "unicode-range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "700",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "900",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2) format('woff2')",
+          "unicode-range": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+        },
+        {
+          "font-family": "'Outfit'",
+          "font-style": "normal",
+          "font-weight": "900",
+          "font-display": "swap",
+          "src": "url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2')",
+          "unicode-range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

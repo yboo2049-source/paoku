@@ -1,0 +1,68 @@
+{
+  "trace": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\review-fixes\\failure-traces\\pao18-controller-camera.pw-4ef52-tual-CSS-at-390-and-desktop.zip",
+  "navigation": [
+    {
+      "callId": "pw:api@33",
+      "startTime": 818952.84,
+      "title": "Navigate to \"/\"",
+      "url": "/",
+      "waitUntil": "load"
+    },
+    {
+      "callId": "pw:api@39",
+      "startTime": 834940.096,
+      "title": "Navigate to \"/\"",
+      "url": "/",
+      "waitUntil": "load"
+    },
+    {
+      "callId": "pw:api@45",
+      "startTime": 858879.103,
+      "title": "Navigate to \"/\"",
+      "url": "/",
+      "waitUntil": "load"
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+      "stack": []
+    },
+    {
+      "message": "Error: page.goto: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:5198/\", waiting until \"load\"\u001b[22m\n",
+      "stack": [
+        {
+          "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\fact-bridge\\review-fixes\\suite\\pao18-controller-camera.pw.ts",
+          "line": 230,
+          "column": 54
+        }
+      ]
+    }
+  ],
+  "documentResponses": [
+    {
+      "url": "http://127.0.0.1:5198/",
+      "method": "GET",
+      "status": 200,
+      "statusText": "OK",
+      "startedDateTime": "2026-11-05T14:42:02.758Z",
+      "time": 4006.195
+    },
+    {
+      "url": "http://127.0.0.1:5198/",
+      "method": "GET",
+      "status": 200,
+      "statusText": "OK",
+      "startedDateTime": "2026-11-05T14:42:18.746Z",
+      "time": 12389.853
+    },
+    {
+      "url": "http://127.0.0.1:5198/",
+      "method": "GET",
+      "status": 200,
+      "statusText": "OK",
+      "startedDateTime": "2026-11-05T14:42:42.716Z",
+      "time": 12758.245
+    }
+  ]
+}

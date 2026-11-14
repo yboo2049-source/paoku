@@ -1,0 +1,115 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/inputQueue.test.ts tests/unit/snapshot.test.ts tests/unit/simulation.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-10
+
+ ❯ tests/unit/snapshot.test.ts (6 tests | 1 failed) 12ms
+   × uses final positions at every alpha for all non-running phases 6ms
+ ❯ tests/unit/inputQueue.test.ts (9 tests | 2 failed) 12ms
+     × leaves inactive native arrow/space keys available while diagnosing rejected movement 6ms
+     × keeps native control keys out of gameplay even while the run accepts movement 1ms
+ ❯ tests/unit/simulation.test.ts (7 tests | 1 failed) 33ms
+     × shows the final committed position for every alpha after a tick ends the run 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/inputQueue.test.ts > PAO-10 tick input > leaves inactive native arrow/space keys available while diagnosing rejected movement
+AssertionError: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st vi.fn() call:
+
+    Array []
+
+
+Number of calls: 1
+
+ ❯ tests/unit/inputQueue.test.ts:23:36
+     21|         const preventDefault = vi.fn();
+     22|         listeners.get('keydown')!({ key, preventDefault });
+     23|         expect(preventDefault).not.toHaveBeenCalled();
+       |                                    ^
+     24|       }
+     25|       expect(q.consume(1)).toEqual([]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/unit/inputQueue.test.ts > PAO-10 tick input > keeps native control keys out of gameplay even while the run accepts movement
+AssertionError: input: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st vi.fn() call:
+
+    Array []
+
+
+Number of calls: 1
+
+ ❯ tests/unit/inputQueue.test.ts:39:41
+     37|         const target = { closest: (selector: string) => selector.inclu…
+     38|         listeners.get('keydown')!({ key: tag === 'input' ? 'ArrowRight…
+     39|         expect(preventDefault, tag).not.toHaveBeenCalled();
+       |                                         ^
+     40|       }
+     41|       expect(q.consume(1)).toEqual([]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/unit/simulation.test.ts > PAO-10 reproducible controlled simulation (legacy spawner excluded) > shows the final committed position for every alpha after a tick ends the run
+AssertionError: expected +0 to be 0.30006944444444444 // Object.is equality
+
+- Expected
++ Received
+
+- 0.30006944444444444
++ 0
+
+ ❯ tests/unit/simulation.test.ts:40:56
+     38|     expect(sim.snapshot.context.player.z).toBeGreaterThan(0);
+     39|     for (const alpha of [0, 0.25, 0.5, 0.75, 1]) {
+     40|       expect(sim.presentation(alpha).context.player.z).toBe(sim.snapsh…
+       |                                                        ^
+     41|       expect(sim.presentation(alpha).context.score).toBe(sim.snapshot.…
+     42|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/unit/snapshot.test.ts > uses final positions at every alpha for all non-running phases
+AssertionError: expected { x: +0, y: +0, z: +0, lane: 2, …(2) } to match object { x: 10, y: 20, z: 30, lane: 2, …(2) }
+
+- Expected
++ Received
+
+@@ -2,9 +2,9 @@
+    "activePowerUps": Map {
+      "MAGNET" => 2,
+    },
+    "isJumping": true,
+    "lane": 2,
+-   "x": 10,
+-   "y": 20,
+-   "z": 30,
++   "x": 0,
++   "y": 0,
++   "z": 0,
+  }
+
+ ❯ tests/unit/snapshot.test.ts:64:28
+     62|     for (const alpha of [0, 0.25, 0.75, 1]) {
+     63|       const shown = interpolateSnapshots(previous, current, alpha);
+     64|       expect(shown.player).toMatchObject(current.player);
+       |                            ^
+     65|       expect(shown.coinEntities).toEqual(current.coinEntities);
+     66|       expect(shown).toMatchObject({ tick: 2, phase, score: 2, coins: 2…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  3 failed (3)
+      Tests  4 failed | 18 passed (22)
+   Start at  22:40:11
+   Duration  430ms (transform 188ms, setup 0ms, import 263ms, tests 57ms, environment 0ms)

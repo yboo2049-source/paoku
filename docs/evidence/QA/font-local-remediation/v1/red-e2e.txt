@@ -1,0 +1,71 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/font-remediation/target.config.ts
+
+[WebServer] (node:1660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+
+(node:22648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/2] tests\e2e\font-resources.spec.ts:39:1 › N real application uses local faces and glyphs with Google domains unavailable
+  1) tests\e2e\font-resources.spec.ts:39:1 › N real application uses local faces and glyphs with Google domains unavailable
+
+    Error: runtime must not request Google fonts
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 4
+
+    - Array []
+    + Array [
+    +   "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap",
+    +   "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap",
+    + ]
+
+      43 |   const faces = await loadFaces(page), glyphs = await actualFonts(page);
+      44 |   await writeFile(resolve(evidence, 'N-fonts.json'), JSON.stringify({ ...record, faces, glyphs }, null, 2));
+    > 45 |   expect(record.google, 'runtime must not request Google fonts').toEqual([]);
+         |                                                                  ^
+      46 |   expect(record.local.length, 'real local font requests').toBeGreaterThanOrEqual(2);
+      47 |   for (const item of faces) { expect(item.error).toBeNull(); expect(item.faces.length).toBeGreaterThan(0); expect(item.faces.every(f => f.family === item.family && f.status === 'loaded')).toBe(true); }
+      48 |   for (const item of glyphs) expect(item.fonts.some(f => f.isCustomFont && f.familyName === item.family && f.glyphCount > 0), `${item.family} ${item.weight} actual custom glyphs`).toBe(true);
+        at D:\worker\paoku-sessions\pao-18-font-diagnosis\tests\e2e\font-resources.spec.ts:45:66
+
+    Error Context: .pao18.local\font-remediation\red-results\font-resources-N-real-appl-50a13--Google-domains-unavailable\error-context.md
+
+
+(node:10728) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2/2] tests\e2e\font-resources.spec.ts:54:1 › F independent local font 404 remains visible to unchanged error sensors
+  2) tests\e2e\font-resources.spec.ts:54:1 › F independent local font 404 remains visible to unchanged error sensors
+
+    Error: fixture must reach actual local font URLs
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 2
+    Received:    0
+
+      59 |   const faces = await loadFaces(page); await page.waitForTimeout(200);
+      60 |   await writeFile(resolve(evidence, 'F-font-404.json'), JSON.stringify({ ...record, statuses, faces, mode: 'F only; no error filtering or success response' }, null, 2));
+    > 61 |   expect(record.local.length, 'fixture must reach actual local font URLs').toBeGreaterThanOrEqual(2);
+         |                                                                            ^
+      62 |   expect(statuses.length).toBeGreaterThanOrEqual(2);
+      63 |   expect(faces.some(f => f.error !== null)).toBe(true);
+      64 |   expect(record.errors.some(e => /404|ERR_|Failed to load/.test(e))).toBe(true);
+        at D:\worker\paoku-sessions\pao-18-font-diagnosis\tests\e2e\font-resources.spec.ts:61:76
+
+    Error Context: .pao18.local\font-remediation\red-results\font-resources-F-independe-79fa8--to-unchanged-error-sensors\error-context.md
+
+
+  2 failed
+    tests\e2e\font-resources.spec.ts:39:1 › N real application uses local faces and glyphs with Google domains unavailable
+    tests\e2e\font-resources.spec.ts:54:1 › F independent local font 404 remains visible to unchanged error sensors

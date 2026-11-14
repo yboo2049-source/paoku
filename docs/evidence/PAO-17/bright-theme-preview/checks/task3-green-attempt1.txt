@@ -1,0 +1,49 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao17-ramp-view.test.ts tests/unit/pao17-theme.test.ts tests/unit/pao17-theme-lifecycle.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+stdout | tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {}
+BJS - [22:32:48]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {"x":2.7,"y":5}
+BJS - [22:32:48]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {"x":-3,"y":5.5,"z":-12.5,"width":3.3,"height":2.35,"depth":7.5}
+BJS - [22:32:48]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao17-ramp-view.test.ts (6 tests | 3 failed) 90ms
+   × matches true wedge triangles to Surface at foot/mid/top and both sides: {} 55ms
+   × matches true wedge triangles to Surface at foot/mid/top and both sides: {"x":2.7,"y":5} 8ms
+   × matches true wedge triangles to Surface at foot/mid/top and both sides: {"x":-3,"y":5.5,"z":-12.5,"width":3.3,"height":2.35,"depth":7.5} 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {}
+ FAIL  tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {"x":2.7,"y":5}
+ FAIL  tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {"x":-3,"y":5.5,"z":-12.5,"width":3.3,"height":2.35,"depth":7.5}
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/pao17-ramp-view.test.ts:41:147
+     39|   const normals = mesh.getVerticesData(VertexBuffer.NormalKind)!;
+     40|   const slope = new Vector3(0, obs.depth, -obs.height).normalize();
+     41|   expect(Array.from({ length: normals.length / 3 }, (_, i) => Vector3.…
+       |                                                                                                                                                   ^
+     42|   expect(JSON.stringify(obs)).toBe(before);
+     43| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  3 failed | 8 passed (11)
+   Start at  22:32:45
+   Duration  3.54s (transform 215ms, setup 0ms, import 8.23s, tests 823ms, environment 0ms)

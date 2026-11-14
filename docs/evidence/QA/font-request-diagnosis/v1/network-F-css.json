@@ -1,0 +1,123 @@
+{
+  "label": "F-css",
+  "failDomain": "fonts.googleapis.com",
+  "cacheNote": "routing disables HTTP cache; independent failure case",
+  "browser": "151.0.7922.34",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+  "visits": [
+    {
+      "kind": "cold",
+      "start": "2026-11-03T13:11:09.171Z",
+      "end": "2026-11-03T13:11:12.693Z",
+      "eventOffset": 0,
+      "fontsReady": true,
+      "navigationError": null,
+      "state": {
+        "fontsStatus": "loaded",
+        "faces": [],
+        "resources": [
+          {
+            "name": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap",
+            "initiatorType": "link",
+            "startTime": 12.899999999906868,
+            "duration": 8,
+            "transferSize": 0,
+            "encodedBodySize": 0,
+            "responseStatus": 0
+          },
+          {
+            "name": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap",
+            "initiatorType": "css",
+            "startTime": 31.700000000186265,
+            "duration": 6,
+            "transferSize": 0,
+            "encodedBodySize": 0,
+            "responseStatus": 0
+          }
+        ],
+        "serviceWorker": false,
+        "main": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif",
+        "display": "Orbitron, sans-serif",
+        "overflow": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "request",
+      "at": "2026-11-03T13:11:09.191Z",
+      "id": "2604.3",
+      "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap",
+      "documentURL": "http://127.0.0.1:5198/",
+      "type": "Stylesheet",
+      "initiator": {
+        "type": "parser",
+        "url": "http://127.0.0.1:5198/",
+        "lineNumber": 8,
+        "columnNumber": 112
+      },
+      "timestamp": 3041.943382,
+      "wallTime": 1793711469.190194,
+      "redirect": null
+    },
+    {
+      "event": "loadingFailed",
+      "id": "2604.3",
+      "at": "2026-11-03T13:11:09.199Z",
+      "timestamp": 3041.95192,
+      "errorText": "net::ERR_CONNECTION_CLOSED",
+      "canceled": false,
+      "type": "Stylesheet"
+    },
+    {
+      "event": "request",
+      "at": "2026-11-03T13:11:09.210Z",
+      "id": "2604.10",
+      "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap",
+      "documentURL": "http://127.0.0.1:5198/",
+      "type": "Stylesheet",
+      "initiator": {
+        "type": "parser",
+        "url": "http://127.0.0.1:5198/src/style.css",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": 3041.96214,
+      "wallTime": 1793711469.208973,
+      "redirect": null
+    },
+    {
+      "event": "loadingFailed",
+      "id": "2604.10",
+      "at": "2026-11-03T13:11:09.239Z",
+      "timestamp": 3041.968429,
+      "errorText": "net::ERR_CONNECTION_CLOSED",
+      "canceled": false,
+      "type": "Stylesheet"
+    }
+  ],
+  "errors": [
+    {
+      "kind": "requestfailed",
+      "at": "2026-11-03T13:11:09.198Z",
+      "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap",
+      "error": "net::ERR_CONNECTION_CLOSED"
+    },
+    {
+      "kind": "error",
+      "at": "2026-11-03T13:11:09.198Z",
+      "message": "Failed to load resource: net::ERR_CONNECTION_CLOSED"
+    },
+    {
+      "kind": "requestfailed",
+      "at": "2026-11-03T13:11:09.239Z",
+      "url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap",
+      "error": "net::ERR_CONNECTION_CLOSED"
+    },
+    {
+      "kind": "error",
+      "at": "2026-11-03T13:11:09.239Z",
+      "message": "Failed to load resource: net::ERR_CONNECTION_CLOSED"
+    }
+  ]
+}

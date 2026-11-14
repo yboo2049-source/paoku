@@ -1,0 +1,85 @@
+{
+  "algorithm": "sha256",
+  "byteDomain": "UTF-8 text normalized to LF, matching Git blobs; original input and local-artifact hashes in other files use original raw bytes",
+  "files": [
+    {
+      "path": "checks.json",
+      "bytes": 2741,
+      "sha256": "4ce4ea5a9dbdb045ff8103f13041d3521ee5922ab5c8920b8545381dee0ac913"
+    },
+    {
+      "path": "content-validation.json",
+      "bytes": 346,
+      "sha256": "aa51f135168706d627ce542a9f7631914708f184865af3bd43877571e811ce4e"
+    },
+    {
+      "path": "environment.json",
+      "bytes": 247,
+      "sha256": "e8175ef3c589599141edeb3dd538a4cd36129467be93c60b5ba4c70263fff0ad"
+    },
+    {
+      "path": "inherited-failure.json",
+      "bytes": 1526,
+      "sha256": "a47e5312e2f80e35daa4a54f1ceadd7f7ffa2c45f9ad699eef26cbd87d6ba8ba"
+    },
+    {
+      "path": "input-integrity.json",
+      "bytes": 1880,
+      "sha256": "f79d54f8ff3b8d57c98b274ecff2e3a0c13705a9294bc8d47455a18f01a8d29a"
+    },
+    {
+      "path": "mirror-check.json",
+      "bytes": 210,
+      "sha256": "8e909963b61a0416ad445f49b44bd9db6aeabf97af14fd2df8550ac5cc2461f8"
+    },
+    {
+      "path": "network-F-css.json",
+      "bytes": 3874,
+      "sha256": "335084365742e7c8cabaa14d98002ea36ed058ae29d51752a1f4f5a0fd0247c6"
+    },
+    {
+      "path": "network-F-font.json",
+      "bytes": 18617,
+      "sha256": "ae1023ba6507c41f13b5dcb18b3f815a89d23ae47290470a7a0319e5942dac37"
+    },
+    {
+      "path": "network-N1.json",
+      "bytes": 43528,
+      "sha256": "4d3bb68b8d4ff2109916a18096e0286ac0d8bcd580565076e33f77b109007c0e"
+    },
+    {
+      "path": "network-N2.json",
+      "bytes": 43476,
+      "sha256": "7b77489f022e883a5223937e4c246ab12e4a610fa6857835d464372a2ebbaadb"
+    },
+    {
+      "path": "network-N3.json",
+      "bytes": 43512,
+      "sha256": "81cd2875005cf8e575f2219cd7800ae4ce4988cc3dac5c88ea113c4dc6f80fdc"
+    },
+    {
+      "path": "protection.json",
+      "bytes": 215,
+      "sha256": "193d5dc6b8f6c2f920b0c227573e049b62be94e9a2413032dc0069e33068201e"
+    },
+    {
+      "path": "registration.json",
+      "bytes": 754,
+      "sha256": "8a2a69a9a974c0551f1bfb236ad94cfdd0b43e662169ec407f95546a9eba21c2"
+    },
+    {
+      "path": "targeted-results.json",
+      "bytes": 1345,
+      "sha256": "13454eb6cf361c7bbee771e2a07f7fc6d43abe87ef7fa06a3708a21c6d88e00a"
+    },
+    {
+      "path": "visual-index.json",
+      "bytes": 725,
+      "sha256": "7d2d201f746579c9a1af6960b79b38fbae41ae468c100b2072cf9dfc000e07a9"
+    }
+  ],
+  "report": {
+    "path": "docs/reviews/2026-11-03-font-request-diagnosis.md",
+    "sha256": "e031e550f852c6d9d5628360a3f998ee504a24c16ca1c3658fc94c1f89d240ea"
+  }
+}

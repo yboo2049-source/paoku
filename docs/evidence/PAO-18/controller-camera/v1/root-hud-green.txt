@@ -1,0 +1,12 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao18-character.test.ts tests/unit/pao18-camera.test.ts tests/unit/pao18-facade.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18
+
+
+ Test Files  3 passed (3)
+      Tests  17 passed (17)
+   Start at  00:40:58
+   Duration  2.53s (transform 197ms, setup 0ms, import 5.52s, tests 313ms, environment 0ms)

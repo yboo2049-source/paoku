@@ -1,0 +1,393 @@
+{
+  "image": "N-bright-390.png",
+  "before": {
+    "simulation": {
+      "runId": "run-23d0165b-c699-42fd-8190-94ffe53023a4",
+      "tick": 22,
+      "timeSec": 0.36666666666666664,
+      "stepSec": 0.016666666666666666,
+      "phase": "RUNNING",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "seed": 1346457360,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "contentRevision": "pao13-track-v1",
+      "generation": {
+        "runId": "run-23d0165b-c699-42fd-8190-94ffe53023a4",
+        "seed": 1346457360,
+        "contentRevision": "pao13-track-v1",
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "rngState": 714621690,
+        "cursor": 1,
+        "nextZ": 190,
+        "lastTick": 22,
+        "stage": "INTRO",
+        "lastSegmentId": "run-23d0165b-c699-42fd-8190-94ffe53023a4/pao13-track-v1/segment-0",
+        "fallbackCount": 0
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 0,
+        "droppedSec": 0
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 0,
+        "invalid": 0,
+        "cleared": 0
+      },
+      "inputs": [
+        {
+          "runId": "run-23d0165b-c699-42fd-8190-94ffe53023a4",
+          "tick": 19,
+          "sequence": 1,
+          "action": "JUMP",
+          "source": "TOUCH"
+        }
+      ]
+    },
+    "state": "PLAYING",
+    "player": {
+      "x": 0,
+      "y": 0.7944444444444445,
+      "z": 6.6175694444444435
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "dpr": 1,
+      "scroll": 390
+    }
+  },
+  "after": {
+    "simulation": {
+      "runId": "run-23d0165b-c699-42fd-8190-94ffe53023a4",
+      "tick": 28,
+      "timeSec": 0.4666666666666667,
+      "stepSec": 0.016666666666666666,
+      "phase": "RUNNING",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "seed": 1346457360,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "contentRevision": "pao13-track-v1",
+      "generation": {
+        "runId": "run-23d0165b-c699-42fd-8190-94ffe53023a4",
+        "seed": 1346457360,
+        "contentRevision": "pao13-track-v1",
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "rngState": 714621690,
+        "cursor": 1,
+        "nextZ": 190,
+        "lastTick": 28,
+        "stage": "INTRO",
+        "lastSegmentId": "run-23d0165b-c699-42fd-8190-94ffe53023a4/pao13-track-v1/segment-0",
+        "fallbackCount": 0
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 0,
+        "droppedSec": 0
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 0,
+        "invalid": 0,
+        "cleared": 0
+      },
+      "inputs": [
+        {
+          "runId": "run-23d0165b-c699-42fd-8190-94ffe53023a4",
+          "tick": 19,
+          "sequence": 1,
+          "action": "JUMP",
+          "source": "TOUCH"
+        }
+      ]
+    },
+    "state": "PLAYING",
+    "player": {
+      "x": 0,
+      "y": 1.6694444444444447,
+      "z": 8.428194444444443
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "dpr": 1,
+      "scroll": 390
+    }
+  },
+  "restarted": {
+    "simulation": {
+      "runId": "run-d35a03cd-7cfd-4347-8f0c-d43800ec03fb",
+      "tick": 0,
+      "timeSec": 0,
+      "stepSec": 0.016666666666666666,
+      "phase": "RUNNING",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "seed": 1346457360,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "contentRevision": "pao13-track-v1",
+      "generation": {
+        "runId": "run-d35a03cd-7cfd-4347-8f0c-d43800ec03fb",
+        "seed": 1346457360,
+        "contentRevision": "pao13-track-v1",
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "rngState": 1346457360,
+        "cursor": 0,
+        "nextZ": 30,
+        "lastTick": 0,
+        "stage": "INTRO",
+        "lastSegmentId": null,
+        "fallbackCount": 0
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 12,
+        "droppedSec": 0.2
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 0,
+        "invalid": 0,
+        "cleared": 0
+      },
+      "inputs": []
+    },
+    "state": "PLAYING",
+    "player": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "dpr": 1,
+      "scroll": 390
+    }
+  },
+  "steering": [
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 0
+    },
+    {
+      "state": "PLAYING",
+      "lane": 0,
+      "target": 2
+    },
+    {
+      "state": "PLAYING",
+      "lane": 1,
+      "target": 2
+    },
+    {
+      "state": "PLAYING",
+      "lane": 2,
+      "target": 2
+    },
+    {
+      "state": "PLAYING",
+      "lane": 2,
+      "target": 2
+    },
+    {
+      "state": "GAMEOVER",
+      "lane": 2,
+      "target": 2
+    }
+  ],
+  "errors": [],
+  "browser": "151.0.7922.34"
+}

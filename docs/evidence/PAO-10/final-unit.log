@@ -1,0 +1,15 @@
+
+> app@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-10
+
+
+ Test Files  9 passed (9)
+      Tests  76 passed (76)
+   Start at  20:10:48
+   Duration  1.13s (transform 1.48s, setup 0ms, import 1.87s, tests 355ms, environment 1ms)
+
+
+EXIT_CODE=0

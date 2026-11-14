@@ -1,0 +1,107 @@
+
+> app@0.0.0 test
+> vitest run --run tests/unit/application.test.ts tests/unit/saveMigration.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-14
+
+ ❯ tests/unit/application.test.ts (30 tests | 5 failed) 25ms
+     × confirms the exact written candidate after unreadable acknowledgment without toggling twice 9ms
+     × keeps an unknown candidate unpublished while all confirmation reads keep failing 2ms
+     × does not let another queued command claim the unknown receipt or late retry overwrite it 1ms
+     × retains unknown transaction identity through load and freshness checks 1ms
+     × protects an unresolved candidate against an unrelated third token 1ms
+ ❯ tests/unit/saveMigration.test.ts (14 tests | 1 failed) 15ms
+     × retries the original candidate rather than rerunning its mutator when an unknown write was not applied 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > confirms the exact written candidate after unreadable acknowledgment without toggling twice
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/application.test.ts:24:52
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > keeps an unknown candidate unpublished while all confirmation reads keep failing
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/application.test.ts:29:127
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > does not let another queued command claim the unknown receipt or late retry overwrite it
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/application.test.ts:33:66
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > retains unknown transaction identity through load and freshness checks
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/application.test.ts:37:315
+
+
+ Test Files  2 failed (2)
+      Tests  6 failed | 38 passed (44)
+   Start at  13:53:12
+   Duration  503ms (transform 140ms, setup 0ms, import 204ms, tests 40ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > protects an unresolved candidate against an unrelated third token
+AssertionError: expected undefined to be 'CONFLICT' // Object.is equality
+
+- Expected:
+"CONFLICT"
+
++ Received:
+undefined
+
+ ❯ tests/unit/application.test.ts:41:119
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  tests/unit/saveMigration.test.ts > PAO-14 migration and protected saves > retries the original candidate rather than rerunning its mutator when an unknown write was not applied
+AssertionError: expected 2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/unit/saveMigration.test.ts:14:363
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯

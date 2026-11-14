@@ -1,0 +1,352 @@
+{
+  "algorithm": "sha256",
+  "byteDomain": "Git blobs: text normalized to LF by Git; font/image binaries raw. Manifest excludes itself.",
+  "base": "e6a52b1a88db911581c6b88b119d54c356ff9774",
+  "files": [
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/F-390-200percent-long-text.png",
+      "bytes": 126646,
+      "sha256": "d5bafb5a16277a18d4155dcbf47e6d6ff8ef32be761966b54e3e5f5be7e52899"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/F-local-404.json",
+      "bytes": 1726,
+      "sha256": "9e0e4c0e278a67eb815c529126d46286d9da6f98a030e05c1778ec9270bd9793"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/N-390-HUD.png",
+      "bytes": 62298,
+      "sha256": "52b62318147f247ffacffccbee09291f5c9dd2fda14367b9dc475c003b4bb011"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/N-desktop-menu.png",
+      "bytes": 340273,
+      "sha256": "a1da20f6e53c157ee9533cce13b31b1f5d35c37102b24a86069e786fd659d66d"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/N-fonts.json",
+      "bytes": 3927,
+      "sha256": "5526a00bd846ca09d270e2750eaa81999ac3b215433cbb5f934558710e803b19"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/N-http-identity.json",
+      "bytes": 515,
+      "sha256": "507be72306f9cb04bc683604729434062eff4d7d460369f6b8d937e0c94f4b70"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/README.md",
+      "bytes": 10510,
+      "sha256": "ddeffcc23da4e554cce5cde429bc52c8036172061de705c1936ba7f6229345c9"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/baseline-build.txt",
+      "bytes": 12332,
+      "sha256": "707595c591cf72faa1068f20e31d69bd59a1442b715a6bdcea006024c882ce3a"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/baseline-original-390-stress.png",
+      "bytes": 146680,
+      "sha256": "8bb7192bd157840c1de3c5b7eedf1b41757d98120e30bd61f19a9064c1c60f4c"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/baseline-unit.txt",
+      "bytes": 270,
+      "sha256": "bc1c4af67622f9958fb8c4dc1eaddd27dd0253318852faf9d60ca2e0a0008823"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/checks.json",
+      "bytes": 28393,
+      "sha256": "189e79970e21a1689fca7d4aef0208cf9fdce78971701b92dffadf7e049ea1a6"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/content-validation.json",
+      "bytes": 484,
+      "sha256": "4a6432f39de57981b7dd13656535933cb94160c6c4a1d8b8493b44cc7490dcd7"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/fallback-check.txt",
+      "bytes": 631,
+      "sha256": "be9b17416c27a00de02db3042f04e720a88301aeca822ed8d5a07d1105b6e543"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/fallback-glyphs.json",
+      "bytes": 1650,
+      "sha256": "0aa676f0f5012cd5f38f57aabd9f930cafb15343e4a0574227d03f427db1a975"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/final-build.txt",
+      "bytes": 12332,
+      "sha256": "817518c86d5ef809a071f0a0431dd421fdc7352c028440e0d29dbf4903676674"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/final-unit.txt",
+      "bytes": 270,
+      "sha256": "d024f786af5b5b99cc075dad882450afddde0e062e202c595c6b3b2d614006b5"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/first-glyph-probe-failure.txt",
+      "bytes": 2955,
+      "sha256": "264640bb2279b100ddc95399dbd814f8b51707326df8382dc1414b002ee01759"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/first-glyph-probe.json",
+      "bytes": 3117,
+      "sha256": "0c868b9d7a9d021df9d11262e4f03852a1c7b5373cae84f6f88b0a0fcf59c928"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/font-source-verification.json",
+      "bytes": 3994,
+      "sha256": "6fe931f84dcdd4a9ce8f67ad43cb7fab996e297a914a504267f5c25b5984f9c2"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/frozen-before-license-normalization.json",
+      "bytes": 1392,
+      "sha256": "be77862cb17273af05b345cdfec6f0742e7492a4c3e99cbe9ea41e636451da49"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/frozen-inputs.json",
+      "bytes": 1392,
+      "sha256": "e2bf34d17b43bb603985070aeb6bd211316e6096f040539acf4446b3ffa645e8"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/full-before-license-normalization-results.json",
+      "bytes": 73563,
+      "sha256": "3c86bc3b3f1610b47556daed5e65a62ee014368924efdbc0824505e1e4d8e3d2"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/full-final-results.json",
+      "bytes": 73563,
+      "sha256": "b4cdf8bd76f0f1aac8e0b90a31fcc5fcd9b2fe2abe3d430e227b0337aaa4f457"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/full-final.txt",
+      "bytes": 9692,
+      "sha256": "6c7d5fc5357e3591c8d220bae260d942237d09d7a94adc0efda607c1adb1fac1"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/full-first-results.json",
+      "bytes": 80449,
+      "sha256": "7abed88d79afef01bdb21b412eb0cf403292133676d9feb38dfcb2d647fd6d72"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/full-first.txt",
+      "bytes": 12338,
+      "sha256": "3305e8333c8a455880512d4cd0dca28bc14cf8d538c19bdc12d3f93ea0879a93"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/local-qa-artifacts.json",
+      "bytes": 12561,
+      "sha256": "1f04d3fc0a9ff163a53195a6c2a3748f3fedbc2a9ceaf486930259102f553f21"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/log-normalization.json",
+      "bytes": 9218,
+      "sha256": "a7ec81bcc7b5f488fb47193b3fd96dd5b00d1896e945b7cee6d6cc2da378d0d5"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/matrix-1280.json",
+      "bytes": 34158,
+      "sha256": "01c4f0b072fd0b6ad6dcfbdecef6c5810b10beb5758d9b7e64fb92361e131723"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/matrix-390.json",
+      "bytes": 34490,
+      "sha256": "df8ee4105149fcaaf16eee05ef17f1ea3b7e3ec027c3879b81dfc175538c29bb"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/matrix-844.json",
+      "bytes": 34129,
+      "sha256": "33f8c626fec385f09e6f9a1a5b6f9f6915b7a5b94ff5be456867dd1a1c19ed6c"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/mirror-check.json",
+      "bytes": 8536,
+      "sha256": "d6a72e3356ee794cace927d382ba0899c2d2ef8b6f42a48d4bcaeb9e432c5eeb"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/new-tests-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/original-inputs-integrity.json",
+      "bytes": 1354,
+      "sha256": "c1cc55ce2b56fc237fd3cc2c2d0197190882bf07fc98e8f404d83dbed56e2121"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/original-menu-comparison.json",
+      "bytes": 8954,
+      "sha256": "dbf9bf537fedbad528970a013420ffeeb96815ee7de2d57866efa0f11c06ed72"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/original-menu-comparison.txt",
+      "bytes": 649,
+      "sha256": "1967d6e1d56d2eac79b59a78d7d7c4b1b9443dd01495e868462834b41d176068"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/protection.json",
+      "bytes": 3017,
+      "sha256": "ae7c04a64eb6ef8ba78e286c9edc65136887366912d3af5127c824ed9863dfa5"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/pwa-final.json",
+      "bytes": 11390,
+      "sha256": "a1513b77ce920d4f1bb23aad4b32447b6ed635fd13bc69495afbacb0c54871cf"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/pwa-final.txt",
+      "bytes": 608,
+      "sha256": "8385fa0caeabb05d99295924a7252fa9102a9af79e2341c9e506eec1ab9ab2dc"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/pwa-first-qa-error.txt",
+      "bytes": 1489,
+      "sha256": "2c5628b0827374ad06a796eb053f246cd23b3f90d5bd05d5b06254d4aa3b3d9d"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/pwa-missing-fonts.json",
+      "bytes": 10924,
+      "sha256": "d8cd582ec33195889c52a2aa90d5c4725ae97de02fb5f71761afd8565c60748b"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/pwa-missing-fonts.txt",
+      "bytes": 2452,
+      "sha256": "4bb89f4d2ac57581de2706180c7461608339c83a38cd5f0235d30672a8765ad0"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/red-app-fonts.json",
+      "bytes": 2304,
+      "sha256": "7b06879d00b6de46c35f8e37cc241adb5fc3e3099afd2a070ea882cc7980196e"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/red-e2e.txt",
+      "bytes": 3995,
+      "sha256": "9fbd54a23071779e72dfd7a2b49350c77c64d5bb6e101dacbf7963f7b61cdcb7"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/red-local-404.json",
+      "bytes": 2321,
+      "sha256": "aca6939308c345f34ec6009086ef7dd9f36a1c2ac407e19026c5c19999262d32"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/red-unit.txt",
+      "bytes": 1372,
+      "sha256": "6fcf335377f45c3daba08add0b71a6e3560b249ab0c84f5f5521f0624737279c"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/root-screenshot-incident.json",
+      "bytes": 2620,
+      "sha256": "63de9a7d0b6d23171c468a365c60f7b4d455d6c534485c07c06c82113679692b"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/targeted-green.txt",
+      "bytes": 750,
+      "sha256": "5d22c59b7a46d01ba47518f9a8c1c474d0639ec1d944b4eee6cf025c870f75d6"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/update-clean.json",
+      "bytes": 31231,
+      "sha256": "20df12887b371da0e439f62ba18e6abfed35378257fb36422dedd09defc7283e"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/update-clean.txt",
+      "bytes": 655,
+      "sha256": "ae0b2c638626677a782d0abb16ca0120f720debbf5722969bb6586c262090eb2"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/update-first-marker-error.txt",
+      "bytes": 2591,
+      "sha256": "66fb0e296fc16c5d417879547eda8b74d86ef48af6fccd76c74e31d6198573f9"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/update-initial-model-errors.txt",
+      "bytes": 3122,
+      "sha256": "1730fab8944f343c6fe424d41acfe391eb92a1831bd10a2e8e73d2b1a8b03849"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/update-manual-artifact-css-error.txt",
+      "bytes": 2000,
+      "sha256": "4ab07785696a2be78e63256ecc2724c1c85cbbfc5b71b714a9f63fc6faca402a"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/update-manual-artifact-errors.json",
+      "bytes": 31323,
+      "sha256": "0b0eef555d6c3aaddf359e6bb93e216cb21d3270c78b1a4715dc75d2ad663edf"
+    },
+    {
+      "path": "docs/evidence/QA/font-local-remediation/v1/visual-index.json",
+      "bytes": 1259,
+      "sha256": "bfea19e233088dbb7af5e36caec1c78e32e0cac5b0eb4545d8ad7997117d1c8d"
+    },
+    {
+      "path": "docs/plans/2026-11-03-font-local-remediation-execution.md",
+      "bytes": 9581,
+      "sha256": "0edd6970bb01541b52786cc177c3a0e693ae531c3900388a67bde5a80ecf441b"
+    },
+    {
+      "path": "index.html",
+      "bytes": 3801,
+      "sha256": "aa57b338f5d4112fe2af56c72f978ea986f26a9dd2917fd3ee16ac4d5bacbbf6"
+    },
+    {
+      "path": "public/fonts/Orbitron-METADATA.pb",
+      "bytes": 679,
+      "sha256": "6e897c83b8fcdeccb78accb132efd7b279267b684484aa0735b78aba711d0b36"
+    },
+    {
+      "path": "public/fonts/Orbitron-OFL.txt",
+      "bytes": 4425,
+      "sha256": "dd6fdb6716fd179d1fe891759efb3f9200753fdf6abf513b55b712c4ae16e512"
+    },
+    {
+      "path": "public/fonts/Orbitron-f42db2dd16e6.ttf",
+      "bytes": 38576,
+      "sha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd"
+    },
+    {
+      "path": "public/fonts/Outfit-METADATA.pb",
+      "bytes": 835,
+      "sha256": "4cd9d2154f15495ca97de561060d535eaba9f7007be4a87e40f3b58ea8111cf2"
+    },
+    {
+      "path": "public/fonts/Outfit-OFL.txt",
+      "bytes": 4388,
+      "sha256": "e2a6bbb2589b85bac1690ec8f220b22a9c3af9bfda56df6391f7ab491c7a039f"
+    },
+    {
+      "path": "public/fonts/Outfit-fc7287273e66.ttf",
+      "bytes": 110884,
+      "sha256": "fc7287273e66929776e2ba54f144fe699080bec29f61bf649d70d871468aeade"
+    },
+    {
+      "path": "public/fonts/README.md",
+      "bytes": 2644,
+      "sha256": "0d1d75f3c75f111f6d4423072cc20ea3ecaad3065dbcd0038a5af9a6bd62ded4"
+    },
+    {
+      "path": "public/fonts/sources.json",
+      "bytes": 12022,
+      "sha256": "5a7d48a56e7b60b9374745e29b4dddbe3e66f8ae79fd6393da36a2d38dcd2cf9"
+    },
+    {
+      "path": "src/style.css",
+      "bytes": 13842,
+      "sha256": "aecead8d0d3ffe039829db6a3e1c096f0c3904a8428dbbd14229a8f6c67be231"
+    },
+    {
+      "path": "tests/e2e/font-resources.spec.ts",
+      "bytes": 11077,
+      "sha256": "a14fad47ce53143c14607c45df8531e6c2f61d5871475fa86e44cf0d6f0de006"
+    },
+    {
+      "path": "tests/unit/fontResources.test.ts",
+      "bytes": 2728,
+      "sha256": "0e1b4799a62fcbdb0a37118f8829b4ec835a1b8d3890c72ab8718837237ff774"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 519,
+      "sha256": "43c288ffe567de90bb1aecc27935a09a1764df2076e0a5ac707570db75287f8d"
+    }
+  ]
+}

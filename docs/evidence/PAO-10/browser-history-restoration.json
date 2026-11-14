@@ -1,0 +1,172 @@
+[
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-double-score.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-double-score.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-failure.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-failure.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-high-obstacle-result.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-high-obstacle-result.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-high-obstacle-roll.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-high-obstacle-roll.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-hoverboard.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-hoverboard.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-low-obstacle-jump.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-low-obstacle-jump.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-low-obstacle-result.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-low-obstacle-result.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-magnet.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-magnet.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-mission-status.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mission-status.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-mobile-jump.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-jump.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-mobile-left.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-left.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-mobile-menu.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-menu.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-mobile-paused.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-paused.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-mobile-roll.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-roll.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-mobile-shop.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-shop.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-mobile-touch-layout.json",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-touch-layout.json",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-obstacles-failure-restart.json",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-obstacles-failure-restart.json",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-powerups-shield-missions.json",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-powerups-shield-missions.json",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-ramp-approach.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-ramp-approach.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-ramp-ascent.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-ramp-ascent.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-ramp-roof-jump-land.json",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-ramp-roof-jump-land.json",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-restart.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-restart.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-roof-contact.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-roof-contact.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-roof-exit-land.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-roof-exit-land.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-roof-jump.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-roof-jump.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-shield-break.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-shield-break.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-super-jump.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-super-jump.png",
+    "restored": true
+  },
+  {
+    "path": "docs\\evidence\\PAO-6\\fixture-super-sneakers.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-super-sneakers.png",
+    "restored": true
+  },
+  {
+    "path": "screenshot_1_menu.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_1_menu.png",
+    "restored": true
+  },
+  {
+    "path": "screenshot_2_shop.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_2_shop.png",
+    "restored": true
+  },
+  {
+    "path": "screenshot_3_gameplay_chase.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_3_gameplay_chase.png",
+    "restored": true
+  },
+  {
+    "path": "screenshot_4_bank_tilt.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_4_bank_tilt.png",
+    "restored": true
+  },
+  {
+    "path": "screenshot_5_jump_action.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_5_jump_action.png",
+    "restored": true
+  },
+  {
+    "path": "screenshot_6_paused_screen.png",
+    "evidence": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_6_paused_screen.png",
+    "restored": true
+  }
+]

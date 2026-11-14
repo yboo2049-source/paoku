@@ -6,6 +6,7 @@
 // - 追逐音：监听 CHASE_STATE_CHANGED，驱动警官警笛 loop 与警犬吠（距离衰减）
 
 import { eventBus } from '../core/eventBus';
+import type { AudioSettings } from '../application/types';
 
 const AUDIO_STORAGE = {
   MASTER_MUTED: 'paoku_audio_master_muted',
@@ -34,6 +35,59 @@ const SIREN_LFO_DEPTH = 280; // 扫频幅度（基频 ±280Hz）
 function clamp01(v: number): number {
   if (Number.isNaN(v)) return 0;
   return Math.max(0, Math.min(1, v));
+}
+
+export type AudioCueName =
+  | 'jump'
+  | 'roll'
+  | 'laneChange'
+  | 'landing'
+  | 'coin'
+  | 'powerUp'
+  | 'powerUpRefresh'
+  | 'powerUpExpire'
+  | 'missionComplete'
+  | 'newRecord'
+  | 'shieldBreak'
+  | 'crash'
+  | 'trainHorn'
+  | 'trainPass';
+
+export type AudioLifecycleState = 'IDLE' | 'PLAYING' | 'PAUSED' | 'STOPPED' | 'DISPOSED';
+
+export interface AudioDiagnostics {
+  readonly initialized: boolean;
+  readonly lifecycleState: 'IDLE' | 'PLAYING' | 'PAUSED' | 'STOPPED' | 'DISPOSED';
+  readonly isMuted: boolean;
+  readonly bgmEnabled: boolean;
+  readonly sfxEnabled: boolean;
+  readonly bgmVolume: number;
+  readonly sfxVolume: number;
+  readonly isBgmPlaying: boolean;
+  readonly hasBgmScheduler: boolean;
+  readonly activeBgmSourceCount: number;
+  readonly isChasing: boolean;
+  readonly hasBarkTimer: boolean;
+  readonly cueCounts: Readonly<Record<string, number>>;
+}
+
+function createInitialCueCounts(): Record<AudioCueName, number> {
+  return {
+    jump: 0,
+    roll: 0,
+    laneChange: 0,
+    landing: 0,
+    coin: 0,
+    powerUp: 0,
+    powerUpRefresh: 0,
+    powerUpExpire: 0,
+    missionComplete: 0,
+    newRecord: 0,
+    shieldBreak: 0,
+    crash: 0,
+    trainHorn: 0,
+    trainPass: 0,
+  };
 }
 
 export class AudioEngine {
@@ -70,26 +124,38 @@ export class AudioEngine {
   private isChasing = false;
   private barkTimerId: number | null = null;
 
-  constructor() {
-    this.loadPersistence();
+  // PAO-20 音效触发计数与生命周期状态
+  private cueCounts: Record<AudioCueName, number> = createInitialCueCounts();
+  private lifecycleState: AudioLifecycleState = 'IDLE';
+
+  private readonly legacyPersistence: boolean;
+  private readonly onChaseStateChanged = (payload: any) => {
+    if (this.lifecycleState === 'DISPOSED') return;
+    this.setChaseState(payload?.distance ?? 2.8, payload?.isNear === true);
+  };
+  private readonly onCollision = () => {
+    this.stopChase();
+  };
+  private readonly onVisibilityChange = () => {
+    if (this.lifecycleState === 'DISPOSED') return;
+    if (typeof document !== 'undefined' && document.hidden) {
+      this.pauseBgmScheduler();
+    } else if (this.isBgmPlaying && this.ctx && this.lifecycleState !== 'PAUSED') {
+      this.nextBgmNoteTime = this.ctx.currentTime + 0.05;
+      this.startBgmScheduler();
+    }
+  };
+
+  constructor(legacyPersistence = true) {
+    this.legacyPersistence = legacyPersistence;
+    if (this.legacyPersistence) this.loadPersistence();
     // 追逐状态：监听 CHASE_STATE_CHANGED，驱动警笛 loop 与警犬吠
-    eventBus.on('CHASE_STATE_CHANGED', (payload: any) => {
-      this.setChaseState(payload?.distance ?? 2.8, payload?.isNear === true);
-    });
+    eventBus.on('CHASE_STATE_CHANGED', this.onChaseStateChanged);
     // 碰撞/游戏结束时，立即终止追逐警笛与警犬吠
-    eventBus.on('COLLISION', () => {
-      this.stopChase();
-    });
+    eventBus.on('COLLISION', this.onCollision);
     // 移动端/后台：页面隐藏时暂停调度，恢复时续排（避免后台节流造成空隙/跑拍）
-    if (typeof document !== 'undefined') {
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          this.pauseBgmScheduler();
-        } else if (this.isBgmPlaying && this.ctx) {
-          this.nextBgmNoteTime = this.ctx.currentTime + 0.05;
-          this.startBgmScheduler();
-        }
-      });
+    if (typeof document !== 'undefined' && typeof document.addEventListener === 'function') {
+      document.addEventListener('visibilitychange', this.onVisibilityChange);
     }
   }
 
@@ -110,6 +176,7 @@ export class AudioEngine {
   }
 
   private savePersistence(): void {
+    if (!this.legacyPersistence) return;
     try {
       localStorage.setItem(AUDIO_STORAGE.MASTER_MUTED, this.isMuted ? '1' : '0');
       localStorage.setItem(AUDIO_STORAGE.BGM_ENABLED, this.bgmEnabled ? '1' : '0');
@@ -121,11 +188,21 @@ export class AudioEngine {
     }
   }
 
+  /** Preferences are applied only after the application commits the versioned save. */
+  public applySettings(settings: Readonly<AudioSettings>): void {
+    if (this.isMuted !== settings.masterMuted) this.toggleMute();
+    if (this.bgmEnabled !== settings.bgmEnabled) this.setBgmEnabled(settings.bgmEnabled);
+    if (this.sfxEnabled !== settings.sfxEnabled) this.setSfxEnabled(settings.sfxEnabled);
+    if (this.bgmVolume !== settings.bgmVolume) this.setBgmVolume(settings.bgmVolume);
+    if (this.sfxVolume !== settings.sfxVolume) this.setSfxVolume(settings.sfxVolume);
+  }
+
   // ===== 上下文与总线初始化 =====
 
   private initCtx(): void {
-    if (this.ctx) return;
-    const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+    if (this.ctx || this.lifecycleState === 'DISPOSED') return;
+    const AudioContextClass =
+      typeof window !== 'undefined' ? window.AudioContext || (window as any).webkitAudioContext : undefined;
     if (!AudioContextClass) return;
 
     this.ctx = new AudioContextClass();
@@ -306,8 +383,10 @@ export class AudioEngine {
   // ===== SFX 音效 =====
 
   public playJump(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
     this.ensureContext();
     if (!this.ctx || !this.sfxBus || this.isMuted || !this.sfxEnabled) return;
+    this.cueCounts.jump++;
 
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
@@ -334,8 +413,10 @@ export class AudioEngine {
   }
 
   public playRoll(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
     this.ensureContext();
     if (!this.ctx || !this.sfxBus || this.isMuted || !this.sfxEnabled) return;
+    this.cueCounts.roll++;
 
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
@@ -363,11 +444,13 @@ export class AudioEngine {
 
   /** 切道 whoosh（带左右 pan） */
   public playLaneChange(direction: -1 | 1): void {
+    if (this.lifecycleState === 'DISPOSED') return;
     this.ensureContext();
     if (!this.ctx || !this.sfxBus || this.isMuted || !this.sfxEnabled) return;
 
     const buffer = this.getNoiseBuffer();
     if (!buffer) return;
+    this.cueCounts.laneChange++;
 
     const now = this.ctx.currentTime;
     const source = this.ctx.createBufferSource();
@@ -406,8 +489,10 @@ export class AudioEngine {
 
   /** 落地闷响 */
   public playLanding(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
     this.ensureContext();
     if (!this.ctx || !this.sfxBus || this.isMuted || !this.sfxEnabled) return;
+    this.cueCounts.landing++;
 
     const now = this.ctx.currentTime;
     const osc = this.ctx.createOscillator();
@@ -435,8 +520,10 @@ export class AudioEngine {
   }
 
   public playCoin(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
     this.ensureContext();
     if (!this.ctx || !this.sfxBus || this.isMuted || !this.sfxEnabled) return;
+    this.cueCounts.coin++;
 
     const now = this.ctx.currentTime;
     // 清脆双音 B5 -> E6
@@ -445,8 +532,10 @@ export class AudioEngine {
   }
 
   public playPowerUp(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
     this.ensureContext();
     if (!this.ctx || !this.sfxBus || this.isMuted || !this.sfxEnabled) return;
+    this.cueCounts.powerUp++;
 
     const now = this.ctx.currentTime;
     const notes = [440, 554.37, 659.25, 880]; // A Major Arpeggio
@@ -455,10 +544,118 @@ export class AudioEngine {
     });
   }
 
-  /** 任务完成提示音 */
-  public playMissionComplete(): void {
+  /** 道具续时刷新提示音：上行双音 chime (D5 -> A5) */
+  public playPowerUpRefresh(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
     this.ensureContext();
     if (!this.ctx || !this.sfxBus || this.isMuted || !this.sfxEnabled) return;
+    this.cueCounts.powerUpRefresh++;
+
+    const now = this.ctx.currentTime;
+    this.playTone(587.33, 'sine', now, 0.09, 0.25);
+    this.playTone(880, 'triangle', now + 0.05, 0.14, 0.28);
+  }
+
+  /** 道具到期结束提示音：下行柔和三角波 (E5 -> E4) */
+  public playPowerUpExpire(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
+    this.ensureContext();
+    if (!this.ctx || !this.sfxBus || this.isMuted || !this.sfxEnabled) return;
+    this.cueCounts.powerUpExpire++;
+
+    const now = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(659.25, now);
+    osc.frequency.exponentialRampToValueAtTime(329.63, now + 0.18);
+
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.28, now + 0.015);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
+
+    osc.connect(gain);
+    gain.connect(this.sfxBus);
+
+    osc.start(now);
+    osc.stop(now + 0.2);
+    osc.onended = () => {
+      try {
+        osc.disconnect();
+        gain.disconnect();
+      } catch {}
+    };
+  }
+
+  /** 迎面列车预警鸣笛：双音低频铜管号角 (A3 + C#4，带立体声 pan) */
+  public playTrainHorn(pan = 0): void {
+    if (this.lifecycleState === 'DISPOSED') return;
+    this.ensureContext();
+    if (!this.ctx || !this.sfxBus || this.isMuted || !this.sfxEnabled) return;
+    this.cueCounts.trainHorn++;
+
+    const clampedPan = Number.isFinite(pan) ? Math.max(-1, Math.min(1, pan)) : 0;
+    const now = this.ctx.currentTime;
+    this.duckBgm(0.28);
+    this.playTone(220, 'sawtooth', now, 0.28, 0.26, clampedPan);
+    this.playTone(277.18, 'triangle', now, 0.28, 0.22, clampedPan);
+  }
+
+  /** 迎面列车掠过呼啸：多普勒带通下扫 + 低频轰鸣 (900Hz -> 260Hz) */
+  public playTrainPass(pan = 0): void {
+    if (this.lifecycleState === 'DISPOSED') return;
+    this.ensureContext();
+    if (!this.ctx || !this.sfxBus || this.isMuted || !this.sfxEnabled) return;
+
+    const buffer = this.getNoiseBuffer();
+    if (!buffer) return;
+    this.cueCounts.trainPass++;
+
+    const clampedPan = Number.isFinite(pan) ? Math.max(-1, Math.min(1, pan)) : 0;
+    const now = this.ctx.currentTime;
+    const source = this.ctx.createBufferSource();
+    source.buffer = buffer;
+
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.Q.value = 1.4;
+    filter.frequency.setValueAtTime(900, now);
+    filter.frequency.exponentialRampToValueAtTime(260, now + 0.24);
+
+    const gain = this.ctx.createGain();
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.38, now + 0.04);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.24);
+
+    const panner = this.ctx.createStereoPanner();
+    panner.pan.value = clampedPan;
+
+    source.connect(filter);
+    filter.connect(gain);
+    gain.connect(panner);
+    panner.connect(this.sfxBus);
+
+    source.start(now);
+    source.stop(now + 0.26);
+    source.onended = () => {
+      try {
+        source.disconnect();
+        filter.disconnect();
+        gain.disconnect();
+        panner.disconnect();
+      } catch {}
+    };
+
+    this.playTone(110, 'triangle', now, 0.22, 0.18, clampedPan);
+  }
+
+  /** 任务完成提示音 */
+  public playMissionComplete(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
+    this.ensureContext();
+    if (!this.ctx || !this.sfxBus || this.isMuted || !this.sfxEnabled) return;
+    this.cueCounts.missionComplete++;
 
     this.duckBgm(0.4);
     const now = this.ctx.currentTime;
@@ -470,8 +667,10 @@ export class AudioEngine {
 
   /** 新纪录 fanfare */
   public playNewRecord(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
     this.ensureContext();
     if (!this.ctx || !this.sfxBus || this.isMuted || !this.sfxEnabled) return;
+    this.cueCounts.newRecord++;
 
     this.duckBgm(0.7);
     const now = this.ctx.currentTime;
@@ -486,11 +685,13 @@ export class AudioEngine {
   }
 
   public playShieldBreak(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
     this.ensureContext();
     if (!this.ctx || !this.sfxBus || this.isMuted || !this.sfxEnabled) return;
 
     const buffer = this.getNoiseBuffer();
     if (!buffer) return;
+    this.cueCounts.shieldBreak++;
 
     const now = this.ctx.currentTime;
     const noise = this.ctx.createBufferSource();
@@ -524,8 +725,10 @@ export class AudioEngine {
   }
 
   public playCrash(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
     this.ensureContext();
     if (!this.ctx || !this.sfxBus || this.isMuted || !this.sfxEnabled) return;
+    this.cueCounts.crash++;
 
     const now = this.ctx.currentTime;
     const osc = this.ctx.createOscillator();
@@ -556,6 +759,7 @@ export class AudioEngine {
 
   /** 由 CHASE_STATE_CHANGED 驱动：isNear 转 true 淡入启动，转 false 淡出停止 */
   public setChaseState(distance: number, isNear: boolean): void {
+    if (this.lifecycleState === 'DISPOSED') return;
     if (isNear && !this.isChasing) {
       this.isChasing = true;
       this.ensureContext();
@@ -575,7 +779,7 @@ export class AudioEngine {
 
   /** 强制终止追逐警笛与警犬吠（撞击/暂停/返回菜单/重启时调用） */
   public stopChase(): void {
-    if (this.isChasing) {
+    if (this.isChasing || this.barkTimerId !== null) {
       this.isChasing = false;
       this.stopSiren();
       this.stopBarkTimer();
@@ -704,11 +908,16 @@ export class AudioEngine {
   // ===== BGM 采样级调度 =====
 
   public startBGM(): void {
-    if (this.isBgmPlaying) return;
+    if (this.lifecycleState === 'DISPOSED') return;
+    if (this.isBgmPlaying) {
+      this.lifecycleState = 'PLAYING';
+      return;
+    }
     this.ensureContext();
     if (!this.ctx || !this.bgmBus) return;
 
     this.isBgmPlaying = true;
+    this.lifecycleState = 'PLAYING';
     this.bgmStep = 0;
     this.nextBgmNoteTime = this.ctx.currentTime + 0.05;
 
@@ -718,11 +927,95 @@ export class AudioEngine {
   }
 
   public stopBGM(): void {
+    this.pauseBgmScheduler();
     if (!this.isBgmPlaying) return;
     this.isBgmPlaying = false;
-    this.pauseBgmScheduler();
     // 淡出（已排期音符经由衰减后的 bgmBus 自然收尾）
     this.applyBgmGain(0, 0.08);
+  }
+
+  /** R-08 暂停所有持续音频与调度，保持可恢复状态 */
+  public pauseAll(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
+    this.pauseBgmScheduler();
+    this.applyBgmGain(0, 0.08);
+    this.stopChase();
+    this.lifecycleState = 'PAUSED';
+  }
+
+  /** R-08 从暂停恢复音频调度 */
+  public resumeAll(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
+    this.lifecycleState = 'PLAYING';
+    this.ensureContext();
+    if (this.isBgmPlaying && this.ctx) {
+      this.nextBgmNoteTime = this.ctx.currentTime + 0.05;
+      this.applyBgmGain(this.bgmEnabled ? this.bgmVolume : 0, 0.15);
+      this.startBgmScheduler();
+    }
+  }
+
+  /** R-08 结束/返回菜单/重开时清空所有持续音、调度器与活跃音源 */
+  public resetLifecycle(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
+    this.stopBGM();
+    this.stopChase();
+    this.bgmActiveSources.forEach((osc) => {
+      try {
+        osc.stop();
+        (osc as any).disconnect?.();
+      } catch {}
+    });
+    this.bgmActiveSources.clear();
+    this.lifecycleState = 'STOPPED';
+  }
+
+  /** R-08 幂等销毁，彻底释放调度器、持续振荡器与全局监听 */
+  public dispose(): void {
+    if (this.lifecycleState === 'DISPOSED') return;
+    this.resetLifecycle();
+    if (this.sirenOsc) {
+      try {
+        this.sirenOsc.stop();
+        (this.sirenOsc as any).disconnect?.();
+      } catch {}
+      this.sirenOsc = null;
+    }
+    if (this.sirenLfo) {
+      try {
+        this.sirenLfo.stop();
+        (this.sirenLfo as any).disconnect?.();
+      } catch {}
+      this.sirenLfo = null;
+    }
+    this.sirenLfoDepth = null;
+    this.sirenFilter = null;
+    this.sirenEnvGain = null;
+    eventBus.off('CHASE_STATE_CHANGED', this.onChaseStateChanged);
+    eventBus.off('COLLISION', this.onCollision);
+    if (typeof document !== 'undefined' && typeof document.removeEventListener === 'function') {
+      document.removeEventListener('visibilitychange', this.onVisibilityChange);
+    }
+    this.lifecycleState = 'DISPOSED';
+  }
+
+  /** 返回冻结的音频诊断快照 */
+  public getDiagnostics(): AudioDiagnostics {
+    return Object.freeze({
+      initialized: this.ctx !== null,
+      lifecycleState: this.lifecycleState,
+      isMuted: this.isMuted,
+      bgmEnabled: this.bgmEnabled,
+      sfxEnabled: this.sfxEnabled,
+      bgmVolume: this.bgmVolume,
+      sfxVolume: this.sfxVolume,
+      isBgmPlaying: this.isBgmPlaying,
+      hasBgmScheduler: this.bgmSchedulerId !== null,
+      activeBgmSourceCount: this.bgmActiveSources.size,
+      isChasing: this.isChasing,
+      hasBarkTimer: this.barkTimerId !== null,
+      cueCounts: Object.freeze({ ...this.cueCounts }),
+    });
   }
 
   private startBgmScheduler(): void {
@@ -778,4 +1071,6 @@ export class AudioEngine {
   }
 }
 
-export const audioEngine = new AudioEngine();
+// Standalone instances keep the legacy settings adapter for existing clients.
+// Production uses only the versioned application repository and injected settings.
+export const audioEngine = new AudioEngine(false);

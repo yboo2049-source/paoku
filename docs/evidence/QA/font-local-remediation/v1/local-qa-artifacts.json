@@ -1,0 +1,265 @@
+{
+  "note": "temporary QA and build fixtures remain ignored; no processing/conversion tool added to product",
+  "files": [
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\archive-normalization.cjs",
+      "sha256": "ca590608bfe858c2513aa56172938f318866b57033696e76a1e6c33f71f4c554",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\baseline-setup.cjs",
+      "sha256": "de418fbd080fbab28e647ca37c5f44f38b3850b0066bdeed45f947f9a3b3211c",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\baseline-visual.config.ts",
+      "sha256": "251f4109604d4d79da091f226166e65b8c1651f40eeaf15c846aad27383ca1a2",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\baseline-visual.pw.ts",
+      "sha256": "943d8162ba09671d5a9a05df345ef1b488ef7488dc03d1b0845237cb9c2f53d2",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\buildB-clean.config.ts",
+      "sha256": "7b22df85541d065c806bed22ddb10d3a22c626aaff779a8f49cee829cc67a777",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\buildB-setup.cjs",
+      "sha256": "4ced4c229afbddcde50e82b5ecd44132b039cdd52e3b617bb8a7cb72a5ad9e2c",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\buildB.config.ts",
+      "sha256": "1490c937fc6c96341ff4442793d07fc6abd02b54138b763006e5602cd65a7171",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\cache-config.cjs",
+      "sha256": "9ba26700f3acdb99592601540e0b77b5819da8fe2cd3892ca943fe8d1308d961",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\clean-B-setup.cjs",
+      "sha256": "bfd03de230cea922a06f15c377ea11ece25611dfa61e3cde6d83c02c509814bc",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\deploy-setup.cjs",
+      "sha256": "6a2e71b620a7bfaca292695a5573319b9cd8e4b8117e0a7ae2754c7beb74a66e",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\export-green-log.cjs",
+      "sha256": "54f6671d5f381e3fdc7dcbbb8b1d244adb1bb2831ced6a1ecd93b0b7b873f4e1",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\export-remediation.cjs",
+      "sha256": "51d8a4615ffc70e0a24a44b70319d4974287ad553be80d2c96fd1658a486876f",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\fallback.config.ts",
+      "sha256": "86b1c604517cbd87305688945d778ea10ae23e1eba98d3f2ef50dffced5ef75c",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\fallback.pw.ts",
+      "sha256": "50f6b9dd8ac8f5f90408f84821ef18b39e86c8034fb727a53a4afffaabffe8e7",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\fetch.cjs",
+      "sha256": "78bce94d7d47a2d662669425bab2e50007adca4a6fb3bff22c81f9c94e21bc8f",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\final-full-setup.cjs",
+      "sha256": "26ca3854aaafcfc0ac797ddafed373ed67a81cdc5c2258fa4a235347d3d65b83",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\final-full.config.ts",
+      "sha256": "d59ccd591669a1f70b58e6435a7b48e4a8dead61a65cfd9f37ef05fa7e5dad22",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\final-mirror-prepare.cjs",
+      "sha256": "fc117d8458faa466c0967a627bca8f886786c5a45a10d7cf24ed9983978175f5",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\first-full-summary.cjs",
+      "sha256": "9cb8464e494f7632009bcb1e6160b5f49a12ffb55e883a585bbcd1c44d56a36f",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\freeze-check.cjs",
+      "sha256": "ead8a8d81932aaea6811f9768a6d6c69704d85c0ef564342351e585cf58ee8a2",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\freeze-prepare.cjs",
+      "sha256": "2296d3c4c03d01426a8f2fb3f9d551868b490123abbc24fa8f21d4e0110be8b5",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\freeze.cjs",
+      "sha256": "5f771a3573b80f89d549eef923f3d9c97c911e87acf6b2c2387b5dbea4da1fb7",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full-setup.cjs",
+      "sha256": "25863fa10115dccd62331714f8d9c82c1f85f845d2a89311b4e314b218e90c14",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full.config.ts",
+      "sha256": "200b34a10f64e5b453cbb00c8763718af6db2da5524932940f1a51d747e53bcf",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\http-evidence.cjs",
+      "sha256": "2a0328421a98611f08db942e8633bae9033d8db4ef6a5a91a5ea8e43e6550e2b",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\implement.cjs",
+      "sha256": "481a405916eb945fcfbd36b086940447b550c6f1b10de3bcfd94614b0bb00fac",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\inspect-fonts.cjs",
+      "sha256": "4d7b79862730c8912f810092aff425224cf1372f5fb8509087a48d5dd391084d",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\matrix-summary.cjs",
+      "sha256": "e17339e0f23b660afa554db02742c2b2312f13f123f1e7469960eddf0117e713",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\menu-image-compare.cjs",
+      "sha256": "e6379351e2882c3eaf8e09eb49626fc0bef179e727a045b22f646adf7060dc48",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\normalize-distribution-text.cjs",
+      "sha256": "bb7e5f2514bbfaf1af4548082a89a567677dce7b014d1bffa7765bb0fc32fb33",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\payload.cjs",
+      "sha256": "c22e8f55bea2966170bb012b5a4bc8e8ddff49cbd8b855c16a51df801f28be87",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\preserve-weight-matching.cjs",
+      "sha256": "f40a3c2ff05995e3ea27985e49ea762f2be0f2c9ac70f14b78d52803e3c050a2",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\protect.cjs",
+      "sha256": "c6dbd165547bb6ab60ce438163238f35c3f2553697ffc8e3a762818bc401643c",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\pwa-green-setup.cjs",
+      "sha256": "518729badae3c5ff8acdbbc653b83df09d00a9c3d2381562c4c1da640bac97f4",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\pwa.config.ts",
+      "sha256": "bd4df5a0139454d1bdecd9ed9f26c67d357c5f90572e1e69a117f7bc15942fbd",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\pwa.pw.ts",
+      "sha256": "460ff551dd8f90917af805d18ea9c89bd5b2436ca4df8539c7e08c8fb6abd9ff",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\refine-probe.cjs",
+      "sha256": "a3e1f3df95de04c9bc28af3b7362f0559f7a6e5c98b997d08652ea9dc1617909",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\restore-root-shots.cjs",
+      "sha256": "04bce575260e086d7b766bbe48fa1d715f7d168df4c6a5ee6d74cf55b2e9a675",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\root-shot-save.cjs",
+      "sha256": "e59ede23c7453130c464ce16148d98a57b5154bf3eff7894f5dee0fbf4708bab",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\scope-check.cjs",
+      "sha256": "07faebed68209a08e903b564172b31afe291bfe6cbb8d787db8964de3782145b",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\stress-clones.cjs",
+      "sha256": "f1e7b3a2f2b59e6043f4b8f9740d408220867a3835b2699e9628aa0ffe06bb51",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\target.config.ts",
+      "sha256": "49ebe89e1d70647bafe95a66e8daf033b37884183395ba31f03d81724753cabb",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\update-clean.config.ts",
+      "sha256": "53cde39bed29cb00fa2191c0253f91ba8e0f0caf02172c0c6da0d0395640638d",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\update-clean.pw.ts",
+      "sha256": "3307fb03df51043f2b3ca10bf4714198758a547c24453a52447883fa92d026c3",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\update-real-build.config.ts",
+      "sha256": "8cf2494eb86be72bda8e42b64e8e61b0d06501ef127ce7c1a8031c87fb5f7cd4",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\update-real-build.pw.ts",
+      "sha256": "bf755e9b57cb1e0b495ce8efabf84c9742b4a47708dbc6a2d8086c32e1bf6312",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\update-refine.cjs",
+      "sha256": "3c3a463a86dd36ad828db21254e189b94f33879b8ca3cd30f4362c7eff47c751",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\update-scope.cjs",
+      "sha256": "0f63b0edc904ec395733ed94ed60cc3c6b6d4394fc0cf07e3db1ac9c62d6a4f5",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\update.config.ts",
+      "sha256": "6e15582c00754a03a54963b75dd6e72642ae30d862ed6c7db92479bb62bca842",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\update.pw.ts",
+      "sha256": "4bedcdf3d7a17403c8120508d2f9e2535b20ee0bb140161b8cdd3216556f7009",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\validate-delivery.cjs",
+      "sha256": "e0d04dc609b819146e2d513592700ff13db5a1930203ec3b45ba275cf9661a34",
+      "tracked": false
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\verify-license-text.cjs",
+      "sha256": "49f5e0d4c4c708a7aed2790184642a047c15724deb4fd8b7926b9c68d95b5919",
+      "tracked": false
+    }
+  ]
+}

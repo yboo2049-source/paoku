@@ -1,0 +1,2665 @@
+{
+  "mode": "runtime spawner fixture, real input, godMode=false",
+  "title": "obstacles-failure-restart",
+  "browser": {
+    "baseURL": "http://127.0.0.1:5180",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "launchOptions": {
+      "args": [
+        "--use-gl=angle",
+        "--use-angle=d3d11",
+        "--enable-webgl",
+        "--ignore-gpu-blocklist"
+      ]
+    }
+  },
+  "logs": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "log",
+      "text": "BJS - [00:50:32]: Babylon.js v9.19.0 - WebGL2 - Parallel shader compilation"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "states": [
+    {
+      "name": "low-obstacle-jump",
+      "layout": {
+        "viewportWidth": 1440,
+        "viewportHeight": 900,
+        "scrollWidth": 1440,
+        "scrollHeight": 900
+      },
+      "at": "2026-10-31T16:50:34.253Z",
+      "state": "PAUSED",
+      "position": {
+        "x": 0,
+        "y": 2.2100000000000013,
+        "z": 8.131874999999997
+      },
+      "player": {
+        "lane": 1,
+        "isJumping": true,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "score": 0.9032291666666664,
+      "coins": 0,
+      "speed": 18.124999999999993,
+      "missions": [
+        {
+          "type": "COLLECT_COINS",
+          "current": 0,
+          "target": 30,
+          "completed": false
+        },
+        {
+          "type": "JUMP_TIMES",
+          "current": 1,
+          "target": 10,
+          "completed": false
+        },
+        {
+          "type": "ROLL_TIMES",
+          "current": 0,
+          "target": 8,
+          "completed": false
+        },
+        {
+          "type": "SCORE_REACH",
+          "current": 0,
+          "target": 500,
+          "completed": false
+        }
+      ],
+      "hud": "",
+      "events": [
+        {
+          "name": "PLAYER_ACTION",
+          "payload": {
+            "action": "JUMP"
+          },
+          "t": 2770.5
+        }
+      ]
+    },
+    {
+      "name": "low-obstacle-result",
+      "layout": {
+        "viewportWidth": 1440,
+        "viewportHeight": 900,
+        "scrollWidth": 1440,
+        "scrollHeight": 900
+      },
+      "at": "2026-10-31T16:50:34.836Z",
+      "state": "PAUSED",
+      "position": {
+        "x": 0,
+        "y": 0.34444444444444966,
+        "z": 15.098958333333327
+      },
+      "player": {
+        "lane": 1,
+        "isJumping": true,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "score": 1.5999374999999991,
+      "coins": 0,
+      "speed": 18.22083333333332,
+      "missions": [
+        {
+          "type": "COLLECT_COINS",
+          "current": 0,
+          "target": 30,
+          "completed": false
+        },
+        {
+          "type": "JUMP_TIMES",
+          "current": 1,
+          "target": 10,
+          "completed": false
+        },
+        {
+          "type": "ROLL_TIMES",
+          "current": 0,
+          "target": 8,
+          "completed": false
+        },
+        {
+          "type": "SCORE_REACH",
+          "current": 1,
+          "target": 500,
+          "completed": false
+        }
+      ],
+      "hud": "",
+      "events": [
+        {
+          "name": "PLAYER_ACTION",
+          "payload": {
+            "action": "JUMP"
+          },
+          "t": 2770.5
+        }
+      ]
+    },
+    {
+      "name": "high-obstacle-roll",
+      "layout": {
+        "viewportWidth": 1440,
+        "viewportHeight": 900,
+        "scrollWidth": 1440,
+        "scrollHeight": 900
+      },
+      "at": "2026-10-31T16:50:35.505Z",
+      "state": "PAUSED",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 8.225624999999992
+      },
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": true,
+        "invulnerableTimer": 0
+      },
+      "score": 2.4224999999999985,
+      "coins": 0,
+      "speed": 18.333333333333314,
+      "missions": [
+        {
+          "type": "COLLECT_COINS",
+          "current": 0,
+          "target": 30,
+          "completed": false
+        },
+        {
+          "type": "JUMP_TIMES",
+          "current": 1,
+          "target": 10,
+          "completed": false
+        },
+        {
+          "type": "ROLL_TIMES",
+          "current": 1,
+          "target": 8,
+          "completed": false
+        },
+        {
+          "type": "SCORE_REACH",
+          "current": 2,
+          "target": 500,
+          "completed": false
+        }
+      ],
+      "hud": "",
+      "events": [
+        {
+          "name": "PLAYER_ACTION",
+          "payload": {
+            "action": "JUMP"
+          },
+          "t": 2770.5
+        },
+        {
+          "name": "PLAYER_ACTION",
+          "payload": {
+            "action": "ROLL"
+          },
+          "t": 4037.7999999970198
+        }
+      ]
+    },
+    {
+      "name": "high-obstacle-result",
+      "layout": {
+        "viewportWidth": 1440,
+        "viewportHeight": 900,
+        "scrollWidth": 1440,
+        "scrollHeight": 900
+      },
+      "at": "2026-10-31T16:50:36.122Z",
+      "state": "PAUSED",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 15.579791666666651
+      },
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": true,
+        "invulnerableTimer": 0
+      },
+      "score": 3.1579166666666643,
+      "coins": 0,
+      "speed": 18.43333333333331,
+      "missions": [
+        {
+          "type": "COLLECT_COINS",
+          "current": 0,
+          "target": 30,
+          "completed": false
+        },
+        {
+          "type": "JUMP_TIMES",
+          "current": 1,
+          "target": 10,
+          "completed": false
+        },
+        {
+          "type": "ROLL_TIMES",
+          "current": 1,
+          "target": 8,
+          "completed": false
+        },
+        {
+          "type": "SCORE_REACH",
+          "current": 3,
+          "target": 500,
+          "completed": false
+        }
+      ],
+      "hud": "",
+      "events": [
+        {
+          "name": "PLAYER_ACTION",
+          "payload": {
+            "action": "JUMP"
+          },
+          "t": 2770.5
+        },
+        {
+          "name": "PLAYER_ACTION",
+          "payload": {
+            "action": "ROLL"
+          },
+          "t": 4037.7999999970198
+        }
+      ]
+    },
+    {
+      "name": "failure",
+      "layout": {
+        "viewportWidth": 1440,
+        "viewportHeight": 900,
+        "scrollWidth": 1440,
+        "scrollHeight": 900
+      },
+      "at": "2026-10-31T16:50:37.189Z",
+      "state": "GAMEOVER",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 7.3941666666666555
+      },
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "score": 3.8973333333333295,
+      "coins": 0,
+      "speed": 18.533333333333303,
+      "missions": [
+        {
+          "type": "COLLECT_COINS",
+          "current": 0,
+          "target": 30,
+          "completed": false
+        },
+        {
+          "type": "JUMP_TIMES",
+          "current": 1,
+          "target": 10,
+          "completed": false
+        },
+        {
+          "type": "ROLL_TIMES",
+          "current": 1,
+          "target": 8,
+          "completed": false
+        },
+        {
+          "type": "SCORE_REACH",
+          "current": 3,
+          "target": 500,
+          "completed": false
+        }
+      ],
+      "hud": "",
+      "events": [
+        {
+          "name": "PLAYER_ACTION",
+          "payload": {
+            "action": "JUMP"
+          },
+          "t": 2770.5
+        },
+        {
+          "name": "PLAYER_ACTION",
+          "payload": {
+            "action": "ROLL"
+          },
+          "t": 4037.7999999970198
+        },
+        {
+          "name": "COLLISION",
+          "payload": {
+            "targetType": "STATIC_TRAIN",
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 7.3941666666666555
+            }
+          },
+          "t": 5520.20000000298
+        }
+      ]
+    },
+    {
+      "name": "restart",
+      "layout": {
+        "viewportWidth": 1440,
+        "viewportHeight": 900,
+        "scrollWidth": 1440,
+        "scrollHeight": 900
+      },
+      "at": "2026-10-31T16:50:37.888Z",
+      "state": "PLAYING",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 8.126249999999999
+      },
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "score": 0.8126249999999998,
+      "coins": 0,
+      "speed": 18.112499999999994,
+      "missions": [
+        {
+          "type": "COLLECT_COINS",
+          "current": 0,
+          "target": 30,
+          "completed": false
+        },
+        {
+          "type": "JUMP_TIMES",
+          "current": 0,
+          "target": 10,
+          "completed": false
+        },
+        {
+          "type": "ROLL_TIMES",
+          "current": 0,
+          "target": 8,
+          "completed": false
+        },
+        {
+          "type": "SCORE_REACH",
+          "current": 0,
+          "target": 500,
+          "completed": false
+        }
+      ],
+      "hud": "",
+      "events": [
+        {
+          "name": "PLAYER_ACTION",
+          "payload": {
+            "action": "JUMP"
+          },
+          "t": 2770.5
+        },
+        {
+          "name": "PLAYER_ACTION",
+          "payload": {
+            "action": "ROLL"
+          },
+          "t": 4037.7999999970198
+        },
+        {
+          "name": "COLLISION",
+          "payload": {
+            "targetType": "STATIC_TRAIN",
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 7.3941666666666555
+            }
+          },
+          "t": 5520.20000000298
+        }
+      ]
+    }
+  ],
+  "trace": [
+    {
+      "t": 2139,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0,
+      "coins": 0,
+      "speed": 18
+    },
+    {
+      "t": 2146.39999999851,
+      "x": 0,
+      "y": 0,
+      "z": 0.30006944444444444,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.030006944444444447,
+      "coins": 0,
+      "speed": 18.004166666666666
+    },
+    {
+      "t": 2157,
+      "x": 0,
+      "y": 0,
+      "z": 0.6003472222222221,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.09004166666666667,
+      "coins": 0,
+      "speed": 18.0125
+    },
+    {
+      "t": 2595.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.09004166666666667,
+      "coins": 0,
+      "speed": 18.0125
+    },
+    {
+      "t": 2606.2999999970198,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.09004166666666667,
+      "coins": 0,
+      "speed": 18.0125
+    },
+    {
+      "t": 2622.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 0.30027777777777775,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.12006944444444445,
+      "coins": 0,
+      "speed": 18.016666666666666
+    },
+    {
+      "t": 2639.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 0.9010416666666666,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.18014583333333334,
+      "coins": 0,
+      "speed": 18.025
+    },
+    {
+      "t": 2655.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 1.2015277777777778,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.21019444444444446,
+      "coins": 0,
+      "speed": 18.029166666666665
+    },
+    {
+      "t": 2672.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 1.5020833333333332,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.24025000000000002,
+      "coins": 0,
+      "speed": 18.03333333333333
+    },
+    {
+      "t": 2689,
+      "x": 0,
+      "y": 0,
+      "z": 1.8027083333333331,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.2703125,
+      "coins": 0,
+      "speed": 18.037499999999998
+    },
+    {
+      "t": 2705.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 2.1034027777777773,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.30038194444444444,
+      "coins": 0,
+      "speed": 18.041666666666664
+    },
+    {
+      "t": 2722.7000000029802,
+      "x": 0,
+      "y": 0,
+      "z": 2.1034027777777773,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.30038194444444444,
+      "coins": 0,
+      "speed": 18.041666666666664
+    },
+    {
+      "t": 2738.7999999970198,
+      "x": 0,
+      "y": 0,
+      "z": 2.704999999999999,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.36054166666666665,
+      "coins": 0,
+      "speed": 18.049999999999997
+    },
+    {
+      "t": 2755.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 3.005902777777777,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.39063194444444443,
+      "coins": 0,
+      "speed": 18.054166666666664
+    },
+    {
+      "t": 2773,
+      "x": 0,
+      "y": 0.21444444444444444,
+      "z": 3.3068749999999993,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.42072916666666665,
+      "coins": 0,
+      "speed": 18.05833333333333
+    },
+    {
+      "t": 2788.2999999970198,
+      "x": 0,
+      "y": 0.41833333333333333,
+      "z": 3.6079166666666658,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.4508333333333333,
+      "coins": 0,
+      "speed": 18.062499999999996
+    },
+    {
+      "t": 2805,
+      "x": 0,
+      "y": 0.6116666666666667,
+      "z": 3.909027777777777,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.4809444444444444,
+      "coins": 0,
+      "speed": 18.066666666666663
+    },
+    {
+      "t": 2822.2999999970198,
+      "x": 0,
+      "y": 0.6116666666666667,
+      "z": 3.909027777777777,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.4809444444444444,
+      "coins": 0,
+      "speed": 18.066666666666663
+    },
+    {
+      "t": 2838.89999999851,
+      "x": 0,
+      "y": 0.9666666666666668,
+      "z": 4.511458333333332,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.5411874999999999,
+      "coins": 0,
+      "speed": 18.074999999999996
+    },
+    {
+      "t": 2855.7000000029802,
+      "x": 0,
+      "y": 1.1283333333333334,
+      "z": 4.812777777777776,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.5713194444444444,
+      "coins": 0,
+      "speed": 18.079166666666662
+    },
+    {
+      "t": 2871.39999999851,
+      "x": 0,
+      "y": 1.1283333333333334,
+      "z": 4.812777777777776,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.5713194444444444,
+      "coins": 0,
+      "speed": 18.079166666666662
+    },
+    {
+      "t": 2888.60000000149,
+      "x": 0,
+      "y": 1.4200000000000002,
+      "z": 5.415624999999999,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.6316041666666665,
+      "coins": 0,
+      "speed": 18.087499999999995
+    },
+    {
+      "t": 2906.2000000029802,
+      "x": 0,
+      "y": 1.4200000000000002,
+      "z": 5.415624999999999,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.6316041666666665,
+      "coins": 0,
+      "speed": 18.087499999999995
+    },
+    {
+      "t": 2922.39999999851,
+      "x": 0,
+      "y": 1.6694444444444447,
+      "z": 6.018749999999998,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.6919166666666665,
+      "coins": 0,
+      "speed": 18.095833333333328
+    },
+    {
+      "t": 2940.5,
+      "x": 0,
+      "y": 1.7783333333333338,
+      "z": 6.320416666666665,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.7220833333333332,
+      "coins": 0,
+      "speed": 18.099999999999994
+    },
+    {
+      "t": 2954.7999999970198,
+      "x": 0,
+      "y": 1.8766666666666671,
+      "z": 6.622152777777776,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.7522569444444442,
+      "coins": 0,
+      "speed": 18.10416666666666
+    },
+    {
+      "t": 2972.10000000149,
+      "x": 0,
+      "y": 1.8766666666666671,
+      "z": 6.622152777777776,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.7522569444444442,
+      "coins": 0,
+      "speed": 18.10416666666666
+    },
+    {
+      "t": 2989.2000000029802,
+      "x": 0,
+      "y": 2.0416666666666674,
+      "z": 7.225833333333331,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.8126249999999998,
+      "coins": 0,
+      "speed": 18.112499999999994
+    },
+    {
+      "t": 3005.39999999851,
+      "x": 0,
+      "y": 2.0416666666666674,
+      "z": 7.225833333333331,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.8126249999999998,
+      "coins": 0,
+      "speed": 18.112499999999994
+    },
+    {
+      "t": 3021.2999999970198,
+      "x": 0,
+      "y": 2.1083333333333343,
+      "z": 7.527777777777776,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.8428194444444442,
+      "coins": 0,
+      "speed": 18.11666666666666
+    },
+    {
+      "t": 3038.60000000149,
+      "x": 0,
+      "y": 2.2100000000000013,
+      "z": 8.131874999999997,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.9032291666666664,
+      "coins": 0,
+      "speed": 18.124999999999993
+    },
+    {
+      "t": 3238.60000000149,
+      "x": 0,
+      "y": 2.2100000000000013,
+      "z": 8.131874999999997,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.9032291666666664,
+      "coins": 0,
+      "speed": 18.124999999999993
+    },
+    {
+      "t": 3255.2999999970198,
+      "x": 0,
+      "y": 2.2450000000000014,
+      "z": 8.434027777777775,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.9334444444444442,
+      "coins": 0,
+      "speed": 18.12916666666666
+    },
+    {
+      "t": 3272.10000000149,
+      "x": 0,
+      "y": 2.269444444444446,
+      "z": 8.736249999999997,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.9636666666666664,
+      "coins": 0,
+      "speed": 18.133333333333326
+    },
+    {
+      "t": 3288.7999999970198,
+      "x": 0,
+      "y": 2.283333333333335,
+      "z": 9.038541666666664,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.9938958333333331,
+      "coins": 0,
+      "speed": 18.137499999999992
+    },
+    {
+      "t": 3305.5,
+      "x": 0,
+      "y": 2.2866666666666684,
+      "z": 9.340902777777774,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.024131944444444,
+      "coins": 0,
+      "speed": 18.14166666666666
+    },
+    {
+      "t": 3321.7999999970198,
+      "x": 0,
+      "y": 2.2794444444444464,
+      "z": 9.643333333333329,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.0543749999999996,
+      "coins": 0,
+      "speed": 18.145833333333325
+    },
+    {
+      "t": 3338.7000000029802,
+      "x": 0,
+      "y": 2.261666666666669,
+      "z": 9.94583333333333,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.0846249999999995,
+      "coins": 0,
+      "speed": 18.14999999999999
+    },
+    {
+      "t": 3355.7999999970198,
+      "x": 0,
+      "y": 2.2333333333333356,
+      "z": 10.248402777777773,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.114881944444444,
+      "coins": 0,
+      "speed": 18.154166666666658
+    },
+    {
+      "t": 3371.5,
+      "x": 0,
+      "y": 2.194444444444447,
+      "z": 10.551041666666663,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.1451458333333329,
+      "coins": 0,
+      "speed": 18.158333333333324
+    },
+    {
+      "t": 3388.2000000029802,
+      "x": 0,
+      "y": 2.1450000000000027,
+      "z": 10.853749999999996,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.175416666666666,
+      "coins": 0,
+      "speed": 18.16249999999999
+    },
+    {
+      "t": 3405.89999999851,
+      "x": 0,
+      "y": 2.0850000000000026,
+      "z": 11.156527777777773,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.205694444444444,
+      "coins": 0,
+      "speed": 18.166666666666657
+    },
+    {
+      "t": 3422.39999999851,
+      "x": 0,
+      "y": 2.014444444444447,
+      "z": 11.459374999999996,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.2359791666666662,
+      "coins": 0,
+      "speed": 18.170833333333324
+    },
+    {
+      "t": 3438.60000000149,
+      "x": 0,
+      "y": 1.9333333333333362,
+      "z": 11.762291666666663,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.2662708333333328,
+      "coins": 0,
+      "speed": 18.17499999999999
+    },
+    {
+      "t": 3454.2999999970198,
+      "x": 0,
+      "y": 1.8416666666666697,
+      "z": 12.065277777777773,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.2965694444444438,
+      "coins": 0,
+      "speed": 18.179166666666656
+    },
+    {
+      "t": 3472.60000000149,
+      "x": 0,
+      "y": 1.7394444444444477,
+      "z": 12.368333333333329,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.3268749999999994,
+      "coins": 0,
+      "speed": 18.183333333333323
+    },
+    {
+      "t": 3489.2000000029802,
+      "x": 0,
+      "y": 1.62666666666667,
+      "z": 12.671458333333328,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.3571874999999993,
+      "coins": 0,
+      "speed": 18.18749999999999
+    },
+    {
+      "t": 3505.39999999851,
+      "x": 0,
+      "y": 1.503333333333337,
+      "z": 12.974652777777772,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.3875069444444437,
+      "coins": 0,
+      "speed": 18.191666666666656
+    },
+    {
+      "t": 3522.60000000149,
+      "x": 0,
+      "y": 1.3694444444444482,
+      "z": 13.27791666666666,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.4178333333333326,
+      "coins": 0,
+      "speed": 18.195833333333322
+    },
+    {
+      "t": 3538.2000000029802,
+      "x": 0,
+      "y": 1.225000000000004,
+      "z": 13.581249999999994,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.448166666666666,
+      "coins": 0,
+      "speed": 18.19999999999999
+    },
+    {
+      "t": 3554.89999999851,
+      "x": 0,
+      "y": 1.0700000000000043,
+      "z": 13.884652777777772,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.4785069444444436,
+      "coins": 0,
+      "speed": 18.204166666666655
+    },
+    {
+      "t": 3571.5,
+      "x": 0,
+      "y": 0.9044444444444489,
+      "z": 14.188124999999994,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.508854166666666,
+      "coins": 0,
+      "speed": 18.20833333333332
+    },
+    {
+      "t": 3588.60000000149,
+      "x": 0,
+      "y": 0.728333333333338,
+      "z": 14.49166666666666,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.5392083333333326,
+      "coins": 0,
+      "speed": 18.212499999999988
+    },
+    {
+      "t": 3604.7000000029802,
+      "x": 0,
+      "y": 0.5416666666666716,
+      "z": 14.795277777777772,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.5695694444444437,
+      "coins": 0,
+      "speed": 18.216666666666654
+    },
+    {
+      "t": 3622.10000000149,
+      "x": 0,
+      "y": 0.34444444444444966,
+      "z": 15.098958333333327,
+      "lane": 1,
+      "isJumping": true,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.5999374999999991,
+      "coins": 0,
+      "speed": 18.22083333333332
+    },
+    {
+      "t": 3842.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.5999374999999991,
+      "coins": 0,
+      "speed": 18.22083333333332
+    },
+    {
+      "t": 3855.2000000029802,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.5999374999999991,
+      "coins": 0,
+      "speed": 18.22083333333332
+    },
+    {
+      "t": 3871.7000000029802,
+      "x": 0,
+      "y": 0,
+      "z": 0.3037499999999998,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.6303124999999992,
+      "coins": 0,
+      "speed": 18.224999999999987
+    },
+    {
+      "t": 3889.2000000029802,
+      "x": 0,
+      "y": 0,
+      "z": 0.9114583333333326,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.6910833333333324,
+      "coins": 0,
+      "speed": 18.23333333333332
+    },
+    {
+      "t": 3905.7999999970198,
+      "x": 0,
+      "y": 0,
+      "z": 0.9114583333333326,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.6910833333333324,
+      "coins": 0,
+      "speed": 18.23333333333332
+    },
+    {
+      "t": 3921.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 1.2154166666666657,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.7214791666666658,
+      "coins": 0,
+      "speed": 18.237499999999986
+    },
+    {
+      "t": 3938.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 1.8235416666666653,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.7822916666666657,
+      "coins": 0,
+      "speed": 18.24583333333332
+    },
+    {
+      "t": 3957.2000000029802,
+      "x": 0,
+      "y": 0,
+      "z": 2.1277083333333318,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.8127083333333323,
+      "coins": 0,
+      "speed": 18.249999999999986
+    },
+    {
+      "t": 3971.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 2.1277083333333318,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.8127083333333323,
+      "coins": 0,
+      "speed": 18.249999999999986
+    },
+    {
+      "t": 3989.5,
+      "x": 0,
+      "y": 0,
+      "z": 2.736249999999998,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.873562499999999,
+      "coins": 0,
+      "speed": 18.25833333333332
+    },
+    {
+      "t": 4005.5,
+      "x": 0,
+      "y": 0,
+      "z": 2.736249999999998,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.873562499999999,
+      "coins": 0,
+      "speed": 18.25833333333332
+    },
+    {
+      "t": 4021.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 3.0406249999999977,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.9039999999999988,
+      "coins": 0,
+      "speed": 18.262499999999985
+    },
+    {
+      "t": 4050.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 3.6495833333333305,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 1.9648958333333322,
+      "coins": 0,
+      "speed": 18.270833333333318
+    },
+    {
+      "t": 4059.2000000029802,
+      "x": 0,
+      "y": 0,
+      "z": 3.6495833333333305,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 1.9648958333333322,
+      "coins": 0,
+      "speed": 18.270833333333318
+    },
+    {
+      "t": 4072.7000000029802,
+      "x": 0,
+      "y": 0,
+      "z": 3.9541666666666635,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 1.9953541666666654,
+      "coins": 0,
+      "speed": 18.274999999999984
+    },
+    {
+      "t": 4089.39999999851,
+      "x": 0,
+      "y": 0,
+      "z": 4.563541666666663,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.0562916666666653,
+      "coins": 0,
+      "speed": 18.283333333333317
+    },
+    {
+      "t": 4106.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 4.563541666666663,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.0562916666666653,
+      "coins": 0,
+      "speed": 18.283333333333317
+    },
+    {
+      "t": 4122.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 4.86833333333333,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.086770833333332,
+      "coins": 0,
+      "speed": 18.287499999999984
+    },
+    {
+      "t": 4139.20000000298,
+      "x": 0,
+      "y": 0,
+      "z": 5.478124999999996,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.147749999999999,
+      "coins": 0,
+      "speed": 18.295833333333317
+    },
+    {
+      "t": 4156.10000000149,
+      "x": 0,
+      "y": 0,
+      "z": 5.478124999999996,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.147749999999999,
+      "coins": 0,
+      "speed": 18.295833333333317
+    },
+    {
+      "t": 4171.29999999702,
+      "x": 0,
+      "y": 0,
+      "z": 5.783124999999996,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.178249999999999,
+      "coins": 0,
+      "speed": 18.299999999999983
+    },
+    {
+      "t": 4187.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 6.393333333333328,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.239270833333332,
+      "coins": 0,
+      "speed": 18.308333333333316
+    },
+    {
+      "t": 4205.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 6.393333333333328,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.239270833333332,
+      "coins": 0,
+      "speed": 18.308333333333316
+    },
+    {
+      "t": 4222.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 6.698541666666661,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.269791666666665,
+      "coins": 0,
+      "speed": 18.312499999999982
+    },
+    {
+      "t": 4237.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 7.003819444444439,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.300319444444443,
+      "coins": 0,
+      "speed": 18.31666666666665
+    },
+    {
+      "t": 4255.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 7.309166666666661,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.3308541666666653,
+      "coins": 0,
+      "speed": 18.320833333333315
+    },
+    {
+      "t": 4272.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 7.614583333333327,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.361395833333332,
+      "coins": 0,
+      "speed": 18.32499999999998
+    },
+    {
+      "t": 4287.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 8.225624999999992,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.4224999999999985,
+      "coins": 0,
+      "speed": 18.333333333333314
+    },
+    {
+      "t": 4506.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 8.225624999999992,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.4224999999999985,
+      "coins": 0,
+      "speed": 18.333333333333314
+    },
+    {
+      "t": 4521.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 8.225624999999992,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.4224999999999985,
+      "coins": 0,
+      "speed": 18.333333333333314
+    },
+    {
+      "t": 4538.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 8.531249999999991,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.4530624999999984,
+      "coins": 0,
+      "speed": 18.33749999999998
+    },
+    {
+      "t": 4556.39999999851,
+      "x": 0,
+      "y": 0,
+      "z": 9.142708333333324,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.5142083333333316,
+      "coins": 0,
+      "speed": 18.345833333333314
+    },
+    {
+      "t": 4572,
+      "x": 0,
+      "y": 0,
+      "z": 9.448541666666657,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.544791666666665,
+      "coins": 0,
+      "speed": 18.34999999999998
+    },
+    {
+      "t": 4589.79999999702,
+      "x": 0,
+      "y": 0,
+      "z": 9.448541666666657,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.544791666666665,
+      "coins": 0,
+      "speed": 18.34999999999998
+    },
+    {
+      "t": 4605.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 10.060416666666656,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.605979166666665,
+      "coins": 0,
+      "speed": 18.358333333333313
+    },
+    {
+      "t": 4621.10000000149,
+      "x": 0,
+      "y": 0,
+      "z": 10.060416666666656,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.605979166666665,
+      "coins": 0,
+      "speed": 18.358333333333313
+    },
+    {
+      "t": 4638.10000000149,
+      "x": 0,
+      "y": 0,
+      "z": 10.366458333333323,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.6365833333333315,
+      "coins": 0,
+      "speed": 18.36249999999998
+    },
+    {
+      "t": 4656.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 10.672569444444434,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.6671944444444424,
+      "coins": 0,
+      "speed": 18.366666666666646
+    },
+    {
+      "t": 4672.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 10.97874999999999,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.6978124999999977,
+      "coins": 0,
+      "speed": 18.370833333333312
+    },
+    {
+      "t": 4688.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 11.28499999999999,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.728437499999998,
+      "coins": 0,
+      "speed": 18.37499999999998
+    },
+    {
+      "t": 4704.79999999702,
+      "x": 0,
+      "y": 0,
+      "z": 11.897708333333322,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.7897083333333312,
+      "coins": 0,
+      "speed": 18.38333333333331
+    },
+    {
+      "t": 4722.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 11.897708333333322,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.7897083333333312,
+      "coins": 0,
+      "speed": 18.38333333333331
+    },
+    {
+      "t": 4739.20000000298,
+      "x": 0,
+      "y": 0,
+      "z": 12.204166666666655,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.8203541666666645,
+      "coins": 0,
+      "speed": 18.387499999999978
+    },
+    {
+      "t": 4755.10000000149,
+      "x": 0,
+      "y": 0,
+      "z": 12.817291666666653,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.881666666666664,
+      "coins": 0,
+      "speed": 18.39583333333331
+    },
+    {
+      "t": 4771.29999999702,
+      "x": 0,
+      "y": 0,
+      "z": 13.12395833333332,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.912333333333331,
+      "coins": 0,
+      "speed": 18.399999999999977
+    },
+    {
+      "t": 4788.39999999851,
+      "x": 0,
+      "y": 0,
+      "z": 13.12395833333332,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.912333333333331,
+      "coins": 0,
+      "speed": 18.399999999999977
+    },
+    {
+      "t": 4806.39999999851,
+      "x": 0,
+      "y": 0,
+      "z": 13.43069444444443,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.943006944444442,
+      "coins": 0,
+      "speed": 18.404166666666644
+    },
+    {
+      "t": 4821.79999999702,
+      "x": 0,
+      "y": 0,
+      "z": 13.737499999999986,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 2.973687499999998,
+      "coins": 0,
+      "speed": 18.40833333333331
+    },
+    {
+      "t": 4838.39999999851,
+      "x": 0,
+      "y": 0,
+      "z": 14.35131944444443,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 3.035069444444442,
+      "coins": 0,
+      "speed": 18.416666666666643
+    },
+    {
+      "t": 4855,
+      "x": 0,
+      "y": 0,
+      "z": 14.658333333333319,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 3.065770833333331,
+      "coins": 0,
+      "speed": 18.42083333333331
+    },
+    {
+      "t": 4871.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 14.658333333333319,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 3.065770833333331,
+      "coins": 0,
+      "speed": 18.42083333333331
+    },
+    {
+      "t": 4888.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 14.965416666666652,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 3.096479166666664,
+      "coins": 0,
+      "speed": 18.424999999999976
+    },
+    {
+      "t": 4905.39999999851,
+      "x": 0,
+      "y": 0,
+      "z": 15.579791666666651,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": true,
+      "invulnerableTimer": 0,
+      "score": 3.1579166666666643,
+      "coins": 0,
+      "speed": 18.43333333333331
+    },
+    {
+      "t": 5127,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.1579166666666643,
+      "coins": 0,
+      "speed": 18.43333333333331
+    },
+    {
+      "t": 5139.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 0.30729166666666624,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.188645833333331,
+      "coins": 0,
+      "speed": 18.437499999999975
+    },
+    {
+      "t": 5156.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 0.30729166666666624,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.188645833333331,
+      "coins": 0,
+      "speed": 18.437499999999975
+    },
+    {
+      "t": 5172.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 0.922083333333332,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.2501249999999975,
+      "coins": 0,
+      "speed": 18.445833333333308
+    },
+    {
+      "t": 5189.10000000149,
+      "x": 0,
+      "y": 0,
+      "z": 1.2295833333333315,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.2808749999999973,
+      "coins": 0,
+      "speed": 18.449999999999974
+    },
+    {
+      "t": 5205.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 1.5371527777777754,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.3116319444444415,
+      "coins": 0,
+      "speed": 18.45416666666664
+    },
+    {
+      "t": 5223.29999999702,
+      "x": 0,
+      "y": 0,
+      "z": 1.844791666666664,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.3423958333333306,
+      "coins": 0,
+      "speed": 18.458333333333307
+    },
+    {
+      "t": 5239,
+      "x": 0,
+      "y": 0,
+      "z": 2.1524999999999967,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.373166666666664,
+      "coins": 0,
+      "speed": 18.462499999999974
+    },
+    {
+      "t": 5255.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 2.4602777777777742,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.4039444444444418,
+      "coins": 0,
+      "speed": 18.46666666666664
+    },
+    {
+      "t": 5272.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 2.768124999999996,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.434729166666664,
+      "coins": 0,
+      "speed": 18.470833333333307
+    },
+    {
+      "t": 5289,
+      "x": 0,
+      "y": 0,
+      "z": 3.0760416666666623,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.4655208333333305,
+      "coins": 0,
+      "speed": 18.474999999999973
+    },
+    {
+      "t": 5306.5,
+      "x": 0,
+      "y": 0,
+      "z": 3.0760416666666623,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.4655208333333305,
+      "coins": 0,
+      "speed": 18.474999999999973
+    },
+    {
+      "t": 5324.20000000298,
+      "x": 0,
+      "y": 0,
+      "z": 3.6920833333333283,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.5271249999999967,
+      "coins": 0,
+      "speed": 18.483333333333306
+    },
+    {
+      "t": 5340,
+      "x": 0,
+      "y": 0,
+      "z": 4.000208333333328,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.557937499999997,
+      "coins": 0,
+      "speed": 18.487499999999972
+    },
+    {
+      "t": 5355.5,
+      "x": 0,
+      "y": 0,
+      "z": 4.308402777777772,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.5887569444444414,
+      "coins": 0,
+      "speed": 18.49166666666664
+    },
+    {
+      "t": 5372.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 4.61666666666666,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.6195833333333303,
+      "coins": 0,
+      "speed": 18.495833333333305
+    },
+    {
+      "t": 5389.79999999702,
+      "x": 0,
+      "y": 0,
+      "z": 4.924999999999993,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.6504166666666635,
+      "coins": 0,
+      "speed": 18.49999999999997
+    },
+    {
+      "t": 5404.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 4.924999999999993,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.6504166666666635,
+      "coins": 0,
+      "speed": 18.49999999999997
+    },
+    {
+      "t": 5422.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 5.541874999999992,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.712104166666663,
+      "coins": 0,
+      "speed": 18.508333333333304
+    },
+    {
+      "t": 5439.10000000149,
+      "x": 0,
+      "y": 0,
+      "z": 5.850416666666658,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.7429583333333296,
+      "coins": 0,
+      "speed": 18.51249999999997
+    },
+    {
+      "t": 5456.10000000149,
+      "x": 0,
+      "y": 0,
+      "z": 5.850416666666658,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.7429583333333296,
+      "coins": 0,
+      "speed": 18.51249999999997
+    },
+    {
+      "t": 5473,
+      "x": 0,
+      "y": 0,
+      "z": 6.467708333333324,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.8046874999999964,
+      "coins": 0,
+      "speed": 18.520833333333304
+    },
+    {
+      "t": 5488.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 6.7764583333333235,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.8355624999999964,
+      "coins": 0,
+      "speed": 18.52499999999997
+    },
+    {
+      "t": 5505.79999999702,
+      "x": 0,
+      "y": 0,
+      "z": 7.085277777777767,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 3.866444444444441,
+      "coins": 0,
+      "speed": 18.529166666666637
+    },
+    {
+      "t": 6221.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0,
+      "coins": 0,
+      "speed": 18
+    },
+    {
+      "t": 6238.79999999702,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0,
+      "coins": 0,
+      "speed": 18
+    },
+    {
+      "t": 6254.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 0.30006944444444444,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.030006944444444447,
+      "coins": 0,
+      "speed": 18.004166666666666
+    },
+    {
+      "t": 6271.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 0.6002083333333333,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.06002083333333334,
+      "coins": 0,
+      "speed": 18.008333333333333
+    },
+    {
+      "t": 6289,
+      "x": 0,
+      "y": 0,
+      "z": 1.2006944444444443,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.12006944444444445,
+      "coins": 0,
+      "speed": 18.016666666666666
+    },
+    {
+      "t": 6304.79999999702,
+      "x": 0,
+      "y": 0,
+      "z": 1.2006944444444443,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.12006944444444445,
+      "coins": 0,
+      "speed": 18.016666666666666
+    },
+    {
+      "t": 6321.89999999851,
+      "x": 0,
+      "y": 0,
+      "z": 1.8014583333333332,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.18014583333333334,
+      "coins": 0,
+      "speed": 18.025
+    },
+    {
+      "t": 6339.29999999702,
+      "x": 0,
+      "y": 0,
+      "z": 1.8014583333333332,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.18014583333333334,
+      "coins": 0,
+      "speed": 18.025
+    },
+    {
+      "t": 6356,
+      "x": 0,
+      "y": 0,
+      "z": 2.1019444444444444,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.21019444444444446,
+      "coins": 0,
+      "speed": 18.029166666666665
+    },
+    {
+      "t": 6371.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 2.703125,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.2703125,
+      "coins": 0,
+      "speed": 18.037499999999998
+    },
+    {
+      "t": 6388.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 3.0038194444444444,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.30038194444444444,
+      "coins": 0,
+      "speed": 18.041666666666664
+    },
+    {
+      "t": 6404.79999999702,
+      "x": 0,
+      "y": 0,
+      "z": 3.0038194444444444,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.30038194444444444,
+      "coins": 0,
+      "speed": 18.041666666666664
+    },
+    {
+      "t": 6421.20000000298,
+      "x": 0,
+      "y": 0,
+      "z": 3.6054166666666667,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.36054166666666665,
+      "coins": 0,
+      "speed": 18.049999999999997
+    },
+    {
+      "t": 6439.5,
+      "x": 0,
+      "y": 0,
+      "z": 3.9063194444444447,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.39063194444444443,
+      "coins": 0,
+      "speed": 18.054166666666664
+    },
+    {
+      "t": 6455.29999999702,
+      "x": 0,
+      "y": 0,
+      "z": 3.9063194444444447,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.39063194444444443,
+      "coins": 0,
+      "speed": 18.054166666666664
+    },
+    {
+      "t": 6471.20000000298,
+      "x": 0,
+      "y": 0,
+      "z": 4.508333333333333,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.4508333333333333,
+      "coins": 0,
+      "speed": 18.062499999999996
+    },
+    {
+      "t": 6487.79999999702,
+      "x": 0,
+      "y": 0,
+      "z": 4.809444444444444,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.4809444444444444,
+      "coins": 0,
+      "speed": 18.066666666666663
+    },
+    {
+      "t": 6505.60000000149,
+      "x": 0,
+      "y": 0,
+      "z": 4.809444444444444,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.4809444444444444,
+      "coins": 0,
+      "speed": 18.066666666666663
+    },
+    {
+      "t": 6522.10000000149,
+      "x": 0,
+      "y": 0,
+      "z": 5.411874999999999,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.5411874999999999,
+      "coins": 0,
+      "speed": 18.074999999999996
+    },
+    {
+      "t": 6538.5,
+      "x": 0,
+      "y": 0,
+      "z": 5.713194444444444,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.5713194444444444,
+      "coins": 0,
+      "speed": 18.079166666666662
+    },
+    {
+      "t": 6556.10000000149,
+      "x": 0,
+      "y": 0,
+      "z": 5.713194444444444,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.5713194444444444,
+      "coins": 0,
+      "speed": 18.079166666666662
+    },
+    {
+      "t": 6571.79999999702,
+      "x": 0,
+      "y": 0,
+      "z": 6.316041666666666,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.6316041666666665,
+      "coins": 0,
+      "speed": 18.087499999999995
+    },
+    {
+      "t": 6588.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 6.6175694444444435,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.6617569444444443,
+      "coins": 0,
+      "speed": 18.09166666666666
+    },
+    {
+      "t": 6604.20000000298,
+      "x": 0,
+      "y": 0,
+      "z": 6.6175694444444435,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.6617569444444443,
+      "coins": 0,
+      "speed": 18.09166666666666
+    },
+    {
+      "t": 6621.79999999702,
+      "x": 0,
+      "y": 0,
+      "z": 7.220833333333332,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.7220833333333332,
+      "coins": 0,
+      "speed": 18.099999999999994
+    },
+    {
+      "t": 6639.10000000149,
+      "x": 0,
+      "y": 0,
+      "z": 7.220833333333332,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.7220833333333332,
+      "coins": 0,
+      "speed": 18.099999999999994
+    },
+    {
+      "t": 6654.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 7.522569444444443,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.7522569444444442,
+      "coins": 0,
+      "speed": 18.10416666666666
+    },
+    {
+      "t": 6671.39999999851,
+      "x": 0,
+      "y": 0,
+      "z": 8.126249999999999,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.8126249999999998,
+      "coins": 0,
+      "speed": 18.112499999999994
+    },
+    {
+      "t": 6689.79999999702,
+      "x": 0,
+      "y": 0,
+      "z": 8.126249999999999,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.8126249999999998,
+      "coins": 0,
+      "speed": 18.112499999999994
+    },
+    {
+      "t": 6706.10000000149,
+      "x": 0,
+      "y": 0,
+      "z": 8.428194444444443,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.8428194444444442,
+      "coins": 0,
+      "speed": 18.11666666666666
+    },
+    {
+      "t": 6721.70000000298,
+      "x": 0,
+      "y": 0,
+      "z": 9.032291666666666,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.9032291666666664,
+      "coins": 0,
+      "speed": 18.124999999999993
+    },
+    {
+      "t": 6740,
+      "x": 0,
+      "y": 0,
+      "z": 9.334444444444443,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.9334444444444442,
+      "coins": 0,
+      "speed": 18.12916666666666
+    },
+    {
+      "t": 6755.20000000298,
+      "x": 0,
+      "y": 0,
+      "z": 9.334444444444443,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.9334444444444442,
+      "coins": 0,
+      "speed": 18.12916666666666
+    },
+    {
+      "t": 6772,
+      "x": 0,
+      "y": 0,
+      "z": 9.938958333333332,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.9938958333333331,
+      "coins": 0,
+      "speed": 18.137499999999992
+    },
+    {
+      "t": 6789.20000000298,
+      "x": 0,
+      "y": 0,
+      "z": 9.938958333333332,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 0.9938958333333331,
+      "coins": 0,
+      "speed": 18.137499999999992
+    },
+    {
+      "t": 6804.79999999702,
+      "x": 0,
+      "y": 0,
+      "z": 10.241319444444443,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.024131944444444,
+      "coins": 0,
+      "speed": 18.14166666666666
+    },
+    {
+      "t": 6822.20000000298,
+      "x": 0,
+      "y": 0,
+      "z": 10.846249999999998,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.0846249999999995,
+      "coins": 0,
+      "speed": 18.14999999999999
+    },
+    {
+      "t": 6839.5,
+      "x": 0,
+      "y": 0,
+      "z": 10.846249999999998,
+      "lane": 1,
+      "isJumping": false,
+      "isRolling": false,
+      "invulnerableTimer": 0,
+      "score": 1.0846249999999995,
+      "coins": 0,
+      "speed": 18.14999999999999
+    }
+  ]
+}

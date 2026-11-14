@@ -1,0 +1,1869 @@
+{
+  "allVerified": true,
+  "files": [
+    {
+      "path": "docs\\evidence\\PAO-6\\01-menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "3cb8ff5a6e8df607ef96ee24bd08cea843141ec33201679a97e55d209589a2f9",
+      "restoredSha256": "3cb8ff5a6e8df607ef96ee24bd08cea843141ec33201679a97e55d209589a2f9",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\02-shop.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "7661e936215456be0d9402262a79ebb260f19384cce704810d35572c9f9a8d51",
+      "restoredSha256": "7661e936215456be0d9402262a79ebb260f19384cce704810d35572c9f9a8d51",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\03-natural-left.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "6496b2acf05fe4894d45273537a7d5d940a024b26ea53288cccf638abe153295",
+      "restoredSha256": "6496b2acf05fe4894d45273537a7d5d940a024b26ea53288cccf638abe153295",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\04-natural-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "83ac704f0d69641613ed6813c55fff2621b5bf58ad0b58100e913c09d37321f1",
+      "restoredSha256": "83ac704f0d69641613ed6813c55fff2621b5bf58ad0b58100e913c09d37321f1",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\05-natural-roll.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "f56875e7a4e32e8e83ea224c0a450806286ee164ac961fc050912f3c9d271146",
+      "restoredSha256": "f56875e7a4e32e8e83ea224c0a450806286ee164ac961fc050912f3c9d271146",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\06-natural-paused.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "823dd369b1a4add800f3aff132dde9e082d65e07a64a35d2e3c6f498b06db082",
+      "restoredSha256": "823dd369b1a4add800f3aff132dde9e082d65e07a64a35d2e3c6f498b06db082",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\07-natural-gameover.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "ff91c2960dc02a9247fa5d44bac6c489b301afc702e8ee70388b0454984ed037",
+      "restoredSha256": "ff91c2960dc02a9247fa5d44bac6c489b301afc702e8ee70388b0454984ed037",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\08-natural-restart.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "762be0ea21e649e75dd58f2fc888820d72c5e3c5dd3432a681f4009df582e06f",
+      "restoredSha256": "762be0ea21e649e75dd58f2fc888820d72c5e3c5dd3432a681f4009df582e06f",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-double-score.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "fe29c9f6436e4bb70c53b6b3bd34e3c30931e6ef922c25ef3985c6dea2f0adb1",
+      "restoredSha256": "fe29c9f6436e4bb70c53b6b3bd34e3c30931e6ef922c25ef3985c6dea2f0adb1",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-failure.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "0459873e3d7494a403091e98162dc25eb9bcc840c0a2f8b12753f30bc0eaa784",
+      "restoredSha256": "0459873e3d7494a403091e98162dc25eb9bcc840c0a2f8b12753f30bc0eaa784",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-high-obstacle-result.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "0aff415d60d5b03f4164da40ada9cf0ab22c2ba6ead3061ecbe73620ae0e398d",
+      "restoredSha256": "0aff415d60d5b03f4164da40ada9cf0ab22c2ba6ead3061ecbe73620ae0e398d",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-high-obstacle-roll.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "848c23233e89da92d92c40354de17cd8a134516760b436292d047fd0265e9a1d",
+      "restoredSha256": "848c23233e89da92d92c40354de17cd8a134516760b436292d047fd0265e9a1d",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-hoverboard.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "1f65073ea1ba7b25ac6a911a003e76cc37828aee9c32786cb1caa8c3adfb946b",
+      "restoredSha256": "1f65073ea1ba7b25ac6a911a003e76cc37828aee9c32786cb1caa8c3adfb946b",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-low-obstacle-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "635820e2389479469e488b537653909731d233aac38f9291ce9be02e90ba2029",
+      "restoredSha256": "635820e2389479469e488b537653909731d233aac38f9291ce9be02e90ba2029",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-low-obstacle-result.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "a2e085d36a8d0f57535f2e6b54e1aceba77daadf6190107a802ebe9dd780eefb",
+      "restoredSha256": "a2e085d36a8d0f57535f2e6b54e1aceba77daadf6190107a802ebe9dd780eefb",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-magnet.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "af34d6143e313793f2b17836a538713b1f14ee22f9110b53e9128355bad2717c",
+      "restoredSha256": "af34d6143e313793f2b17836a538713b1f14ee22f9110b53e9128355bad2717c",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mission-status.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "667df9e5ca8b964602664e24ab95df267586bda5fec2938d4fdb143436aadef4",
+      "restoredSha256": "667df9e5ca8b964602664e24ab95df267586bda5fec2938d4fdb143436aadef4",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mobile-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "18759953ae0d725232a2e048305662c14dda5c78042d3234c2c2a8a528de9952",
+      "restoredSha256": "18759953ae0d725232a2e048305662c14dda5c78042d3234c2c2a8a528de9952",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mobile-left.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "62dc4f73d87a541875168d0cbfd76e70142910e00efc2fe7cc027746dd36995f",
+      "restoredSha256": "62dc4f73d87a541875168d0cbfd76e70142910e00efc2fe7cc027746dd36995f",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mobile-menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "f96cf62f002cdd5ab3906b653f89dcc8600f00afcaf79ebd42b9f21b0c61bae5",
+      "restoredSha256": "f96cf62f002cdd5ab3906b653f89dcc8600f00afcaf79ebd42b9f21b0c61bae5",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mobile-paused.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "790e1cd35a4f481607055a75183de8e637171b315a6d0343ca6c0852449ce030",
+      "restoredSha256": "790e1cd35a4f481607055a75183de8e637171b315a6d0343ca6c0852449ce030",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mobile-roll.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "024162594b01afbaf029fbe4e82fd01801d8c9d61752a49135f9eb5eb396589a",
+      "restoredSha256": "024162594b01afbaf029fbe4e82fd01801d8c9d61752a49135f9eb5eb396589a",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mobile-shop.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "5f53331ddcecb84908d29afed586cca4eef58d6fc876fa52be5d758908cd1b51",
+      "restoredSha256": "5f53331ddcecb84908d29afed586cca4eef58d6fc876fa52be5d758908cd1b51",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mobile-touch-layout.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "9973bfef125b8d773860bb851216c4b24894addae49ef2ea0e252e27bc4ad3d3",
+      "restoredSha256": "9973bfef125b8d773860bb851216c4b24894addae49ef2ea0e252e27bc4ad3d3",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-obstacles-failure-restart.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "6325df8efb093035e628e2d3b3e8aa765b65fbff5da4620d4be69e16869d0243",
+      "restoredSha256": "6325df8efb093035e628e2d3b3e8aa765b65fbff5da4620d4be69e16869d0243",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-powerups-shield-missions.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "3d632f20446a4d28ab31ec7b421c37e3749fb2c66bf87dce84526b1aca932920",
+      "restoredSha256": "3d632f20446a4d28ab31ec7b421c37e3749fb2c66bf87dce84526b1aca932920",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-ramp-approach.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "0abdecce3c7de06aebc92612488a1875863c4e46eb712a97b4964ee738a29404",
+      "restoredSha256": "0abdecce3c7de06aebc92612488a1875863c4e46eb712a97b4964ee738a29404",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-ramp-ascent.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "9d0d579289d985b2aa2afcc9efa1f60a880f2d8d11d558ef46f8c8deb2a1c6d1",
+      "restoredSha256": "9d0d579289d985b2aa2afcc9efa1f60a880f2d8d11d558ef46f8c8deb2a1c6d1",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-ramp-roof-jump-land.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "5f04bbea6caf87a5db19f5f7459341b01baaa07eaaf265667180537efefc4afe",
+      "restoredSha256": "5f04bbea6caf87a5db19f5f7459341b01baaa07eaaf265667180537efefc4afe",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-restart.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "b859db282920591b55f79ae5d03c1383c0286b47f2982a9273da4707f008408c",
+      "restoredSha256": "b859db282920591b55f79ae5d03c1383c0286b47f2982a9273da4707f008408c",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-results\\.last-run.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "d73c748bbd999a5ec3437ec97303e04ac1e89ce51cc1c336c1b9f179ffe82420",
+      "restoredSha256": "d73c748bbd999a5ec3437ec97303e04ac1e89ce51cc1c336c1b9f179ffe82420",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-results\\pao6-baseline-mobile-touch-layout\\video.webm",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "f3f0a81c42cd4e391f9a0f90374601dee72cd884edc434a8e1268ecacd748ec6",
+      "restoredSha256": "f3f0a81c42cd4e391f9a0f90374601dee72cd884edc434a8e1268ecacd748ec6",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-results\\pao6-baseline-obstacles-failure-restart\\video.webm",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "505c89d46a7373b82592c5a157449451f7a5f62e0df6d65dc6ce782c88884d00",
+      "restoredSha256": "505c89d46a7373b82592c5a157449451f7a5f62e0df6d65dc6ce782c88884d00",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-results\\pao6-baseline-powerups-shield-missions\\video.webm",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "b867d3962e8be3d6f3c748026f805a0205c9f74d8f730f72beb07ad51aac5c2f",
+      "restoredSha256": "b867d3962e8be3d6f3c748026f805a0205c9f74d8f730f72beb07ad51aac5c2f",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-results\\pao6-baseline-ramp-roof-jump-land\\video.webm",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "2eff5ca719004ee6c88b9fc2acb285d5c221c8a935adf637df73e71fb7f658e4",
+      "restoredSha256": "2eff5ca719004ee6c88b9fc2acb285d5c221c8a935adf637df73e71fb7f658e4",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-roof-contact.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "868cd3a7034e5414cfda1bdd09a1282222afe49615c1ebf540f1d52801dcebae",
+      "restoredSha256": "868cd3a7034e5414cfda1bdd09a1282222afe49615c1ebf540f1d52801dcebae",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-roof-exit-land.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "dda1d2a37dadb09622faa185b5cc72a0214dcf4533a77665ed73666994d04fbd",
+      "restoredSha256": "dda1d2a37dadb09622faa185b5cc72a0214dcf4533a77665ed73666994d04fbd",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-roof-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "c3806b185c5e8a688af759bf1a98441e54123c2fcc232b03b2a15ab144dde9d3",
+      "restoredSha256": "c3806b185c5e8a688af759bf1a98441e54123c2fcc232b03b2a15ab144dde9d3",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-shield-break.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "d089529c4d0384602a56415c64f6fe96a0a5175aeb4cdd24081aef66e3f2be35",
+      "restoredSha256": "d089529c4d0384602a56415c64f6fe96a0a5175aeb4cdd24081aef66e3f2be35",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-super-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "4716756f76b9e9fad8a22dc4cd3fab85fd2e38e8d5798cb80da11c568c11d691",
+      "restoredSha256": "4716756f76b9e9fad8a22dc4cd3fab85fd2e38e8d5798cb80da11c568c11d691",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-super-sneakers.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "2163981fb1a38f3b4c045f0fd241460599926caa7dbbab15e09fa10a6ce9583f",
+      "restoredSha256": "2163981fb1a38f3b4c045f0fd241460599926caa7dbbab15e09fa10a6ce9583f",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-test-results.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "31a1ff1e5434f14e2938bfedae38c138b3b98aa4c5366418a3808cb5d7338dbc",
+      "restoredSha256": "31a1ff1e5434f14e2938bfedae38c138b3b98aa4c5366418a3808cb5d7338dbc",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\natural-session.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "15f3487e537fac3105e2d736d8e79ae23048f492f9edf31125d717850df1b35b",
+      "restoredSha256": "15f3487e537fac3105e2d736d8e79ae23048f492f9edf31125d717850df1b35b",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\README.md",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "d2aca8b6bd1887ab9f841fb5746570e0b9bd9683297fdbafcbb805ec80ae267b",
+      "restoredSha256": "d2aca8b6bd1887ab9f841fb5746570e0b9bd9683297fdbafcbb805ec80ae267b",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\SHA256SUMS.txt",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "1dc20ef732722aa2d9f8cf4ebd8634af8f71d5391d6a84cb2921fdd3a3032feb",
+      "restoredSha256": "1dc20ef732722aa2d9f8cf4ebd8634af8f71d5391d6a84cb2921fdd3a3032feb",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\video\\fixture-roof-frame-1s.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "4928b1ada7017a60e8e506f2c32de2eb1b22782c715a5c308f0f9db3ef97c368",
+      "restoredSha256": "4928b1ada7017a60e8e506f2c32de2eb1b22782c715a5c308f0f9db3ef97c368",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\video\\natural-desktop.webm",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "aa4cdffdb9bfa9b05116df4e21020aceb6a3daaede9c24b167704933546c4dea",
+      "restoredSha256": "aa4cdffdb9bfa9b05116df4e21020aceb6a3daaede9c24b167704933546c4dea",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\video\\natural-frame-4s.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "eebb0fd58adf8b91e00dcd3b1a2d05738969e9176b6986afe7079ce3511d65d5",
+      "restoredSha256": "eebb0fd58adf8b91e00dcd3b1a2d05738969e9176b6986afe7079ce3511d65d5",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\browser-attempt-1-lifecycle.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "9231dfabdc58ff935c4b9fe7e329a8bf1d42d321b36c71ab24e28a2c96bd29ce",
+      "restoredSha256": "9231dfabdc58ff935c4b9fe7e329a8bf1d42d321b36c71ab24e28a2c96bd29ce",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\browser-F-lifecycle-queue-and-readonly.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "9231dfabdc58ff935c4b9fe7e329a8bf1d42d321b36c71ab24e28a2c96bd29ce",
+      "restoredSha256": "9231dfabdc58ff935c4b9fe7e329a8bf1d42d321b36c71ab24e28a2c96bd29ce",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\browser-F-portrait-touch-flow.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "e1cd21ac723c74f24529721a7b3f1eb9e156c51172368f26c74c02a8694c4c8a",
+      "restoredSha256": "e1cd21ac723c74f24529721a7b3f1eb9e156c51172368f26c74c02a8694c4c8a",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\browser-history-restoration.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "cc729f6e12fb0432a983fecea33e9b4e982327ed62dbe290c70e76a82550f80a",
+      "restoredSha256": "cc729f6e12fb0432a983fecea33e9b4e982327ed62dbe290c70e76a82550f80a",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\browser-N-keyboard-playable-flow.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "60cb82bc0284b02b54a7d5d1b4aa694b18e3b45150dc22387c1c70622e420ec9",
+      "restoredSha256": "60cb82bc0284b02b54a7d5d1b4aa694b18e3b45150dc22387c1c70622e420ec9",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\browser-runner.mjs",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "77140d9d8d2b20c02cc15fe80838441d55ac7a759c111e79ea03f819e946c767",
+      "restoredSha256": "77140d9d8d2b20c02cc15fe80838441d55ac7a759c111e79ea03f819e946c767",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\browser-source-identity.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "645c3b9704aae88a40059c695addf65a44b7d44ef3edec3e9f551a6d52ed03a6",
+      "restoredSha256": "645c3b9704aae88a40059c695addf65a44b7d44ef3edec3e9f551a6d52ed03a6",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\build-attempt-1.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "2d6336889af5bf4bb32da9410897a2bfcafe608f789d56f35bc5662225905bb1",
+      "restoredSha256": "2d6336889af5bf4bb32da9410897a2bfcafe608f789d56f35bc5662225905bb1",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\build-attempt-2.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "6bb46c79060688ca4ae21823ccaa2aa96fbd5c466bd797fac9b5948cab8e4c28",
+      "restoredSha256": "6bb46c79060688ca4ae21823ccaa2aa96fbd5c466bd797fac9b5948cab8e4c28",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\build.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "d41fc8d22f6ed8eb89c9138c910109e0b8c28f1e69caba764ec10ee3b652a9cf",
+      "restoredSha256": "d41fc8d22f6ed8eb89c9138c910109e0b8c28f1e69caba764ec10ee3b652a9cf",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\core-review-full-unit.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "55af4f287c9cb9fa65f982a2948db0410ea94e4b139e5cb02db97a2f2f4295a0",
+      "restoredSha256": "55af4f287c9cb9fa65f982a2948db0410ea94e4b139e5cb02db97a2f2f4295a0",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\core-review-green.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "6e0a2a6ac81fb2502d7e23fb847b3fc51843a1557a06e8f35e48b312fd5e2ee0",
+      "restoredSha256": "6e0a2a6ac81fb2502d7e23fb847b3fc51843a1557a06e8f35e48b312fd5e2ee0",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\core-review-red.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "036fd07a3f15579cba21f1b5dfe778d3f51dc93ebbd88e226f0bfd4552d78ab6",
+      "restoredSha256": "036fd07a3f15579cba21f1b5dfe778d3f51dc93ebbd88e226f0bfd4552d78ab6",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\e2e-attempt-1.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "e74fef557e4352bce0f9adbb9b753c7a32886b11d7ce416ad334b801ea216520",
+      "restoredSha256": "e74fef557e4352bce0f9adbb9b753c7a32886b11d7ce416ad334b801ea216520",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\e2e-attempt-2.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "b3701838584c0ca322e259d2ce4ac01f847bb64a6320dce63f18ba47429750b6",
+      "restoredSha256": "b3701838584c0ca322e259d2ce4ac01f847bb64a6320dce63f18ba47429750b6",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\e2e.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "7327e5c907e9f1885f1671cceb0abc7bae79146d1b94fb3cc151bd2c5caa7f50",
+      "restoredSha256": "7327e5c907e9f1885f1671cceb0abc7bae79146d1b94fb3cc151bd2c5caa7f50",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\F-lifecycle-clears-input-and-hidden-time.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "636bd72b7d74d9ed381490f7469222f9c72b78b73da77da0a8d17dfe7185e72b",
+      "restoredSha256": "636bd72b7d74d9ed381490f7469222f9c72b78b73da77da0a8d17dfe7185e72b",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\final-build.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "71b779d25f76ef85389aae529b7fd278a15df21e5f9d8f36b339a8137660dfd2",
+      "restoredSha256": "71b779d25f76ef85389aae529b7fd278a15df21e5f9d8f36b339a8137660dfd2",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\final-e2e.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "8a740868ce159bdd837337f86901134ee8b524445b0cb0c7c157a68198d4cb48",
+      "restoredSha256": "8a740868ce159bdd837337f86901134ee8b524445b0cb0c7c157a68198d4cb48",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\final-unit.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "830149d615b56f4801d0489c3d7bba55fba2f608961428b2236b9347c4b583ed",
+      "restoredSha256": "830149d615b56f4801d0489c3d7bba55fba2f608961428b2236b9347c4b583ed",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\green-attempt-1.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "647d7f29b39e867a8ea6b507c16f320172e3872d24f5cc3d7aa91bf189757874",
+      "restoredSha256": "647d7f29b39e867a8ea6b507c16f320172e3872d24f5cc3d7aa91bf189757874",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\green.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "bfa5ff17d17eb6482b242e6551523d2e02c339588be269a95796b9311ce6bc59",
+      "restoredSha256": "bfa5ff17d17eb6482b242e6551523d2e02c339588be269a95796b9311ce6bc59",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\implementation-plan.md",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "a772104414be9f5a3ab8cba9dc7007ceaffba23ad2fc8e443efa0e73c3d4ff2b",
+      "restoredSha256": "a772104414be9f5a3ab8cba9dc7007ceaffba23ad2fc8e443efa0e73c3d4ff2b",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\main-build.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "833c116f39ee7b53a96c6e475970866170ee85087f522e0aa188c39e267250f6",
+      "restoredSha256": "833c116f39ee7b53a96c6e475970866170ee85087f522e0aa188c39e267250f6",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\main-full-test.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "09acb5a1bdb1ddc6871f97e00e88a8b36f046f2d4c6639c5da85085daaf77223",
+      "restoredSha256": "09acb5a1bdb1ddc6871f97e00e88a8b36f046f2d4c6639c5da85085daaf77223",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\main-green.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "8861781615d19d555cd0f0307d9959aef18591cc356d11863da602256f909a46",
+      "restoredSha256": "8861781615d19d555cd0f0307d9959aef18591cc356d11863da602256f909a46",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\main-red.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "2fe0aba0ba202c325891eae8f275d0746f41712e80a16a8bd13f909f1dff8f9f",
+      "restoredSha256": "2fe0aba0ba202c325891eae8f275d0746f41712e80a16a8bd13f909f1dff8f9f",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\main-typecheck.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "restoredSha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\N-desktop-production-keyboard-flow.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "4ac5be853f12b147ce2311cd964f4dd34ccbd8c0e9fbf1f0f2afc9775831a82a",
+      "restoredSha256": "4ac5be853f12b147ce2311cd964f4dd34ccbd8c0e9fbf1f0f2afc9775831a82a",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\N-mobile-production-touch.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "a6eec01da0f7df81c630e53e39ba66b5873654f8740968f29cc1a826a1f879cb",
+      "restoredSha256": "a6eec01da0f7df81c630e53e39ba66b5873654f8740968f29cc1a826a1f879cb",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\playwright.config.ts",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "36645840c3981ba3e87963cecc3cdd8fedba53b9ec410ed0b9f6ec31fc123cc7",
+      "restoredSha256": "36645840c3981ba3e87963cecc3cdd8fedba53b9ec410ed0b9f6ec31fc123cc7",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\proposed-pao6-tick-sync.patch",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "063b580ee5587a17f3b3c21fb3948a9ae3ba4eb271fd61f1e36f6c261d309b31",
+      "restoredSha256": "063b580ee5587a17f3b3c21fb3948a9ae3ba4eb271fd61f1e36f6c261d309b31",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\README.md",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "17525b30ba71f7baf4195eb1fcaba71691f2544afb953f77576eecf81a727f7e",
+      "restoredSha256": "17525b30ba71f7baf4195eb1fcaba71691f2544afb953f77576eecf81a727f7e",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\red-touch.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "9bf90273fdfdf2f6fee0881498d697b6a337bef7e3dfd9719fedbc8d1739e700",
+      "restoredSha256": "9bf90273fdfdf2f6fee0881498d697b6a337bef7e3dfd9719fedbc8d1739e700",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\red.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "a9c198797b74045b0ce5ac1c43c6528107f38fe70d5a4b7f379913c6ebd6ad32",
+      "restoredSha256": "a9c198797b74045b0ce5ac1c43c6528107f38fe70d5a4b7f379913c6ebd6ad32",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\reentrant-commit-verification.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "fa47beddaf779c19a8c4688d95470eeba471896a4815febee6ecddce2052b62e",
+      "restoredSha256": "fa47beddaf779c19a8c4688d95470eeba471896a4815febee6ecddce2052b62e",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-double-score.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "ebb90320ad848e4ff5ead728ae1543628b5b46736eb6e8a86a2e58c87d45eab7",
+      "restoredSha256": "ebb90320ad848e4ff5ead728ae1543628b5b46736eb6e8a86a2e58c87d45eab7",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-failure.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "dec9d105793c65c4ef85885505e3eed7154196c8600b7bd03b1671dbd07930b3",
+      "restoredSha256": "dec9d105793c65c4ef85885505e3eed7154196c8600b7bd03b1671dbd07930b3",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-high-obstacle-result.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "159bc80e31bc25de49bbf76cbf6bf2c05846592462f604578e846fbe944e12a7",
+      "restoredSha256": "159bc80e31bc25de49bbf76cbf6bf2c05846592462f604578e846fbe944e12a7",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-high-obstacle-roll.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "34ac7a0dfece5064ac834092689ddfd8c63ff6a3a89b3149d0ea12bfd356e779",
+      "restoredSha256": "34ac7a0dfece5064ac834092689ddfd8c63ff6a3a89b3149d0ea12bfd356e779",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-hoverboard.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "c431bd73090b98f9d2899a12d3297c9f64c26e31502f337b7f8ffe0ae1fab0fe",
+      "restoredSha256": "c431bd73090b98f9d2899a12d3297c9f64c26e31502f337b7f8ffe0ae1fab0fe",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-low-obstacle-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "7a37c7dafd017c2d86e480ad3f5efcd346fa3f4bd96ef97b9e762f93af89220b",
+      "restoredSha256": "7a37c7dafd017c2d86e480ad3f5efcd346fa3f4bd96ef97b9e762f93af89220b",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-low-obstacle-result.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "78f3ec3e022f3c998edee1a7e3425b0fac5611d490db7b128a3c08f2f3f0eddd",
+      "restoredSha256": "78f3ec3e022f3c998edee1a7e3425b0fac5611d490db7b128a3c08f2f3f0eddd",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-magnet.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "6851cbae6231d9182495148d92946eb715ec84c8254a01c7cd94a7a72ad8eade",
+      "restoredSha256": "6851cbae6231d9182495148d92946eb715ec84c8254a01c7cd94a7a72ad8eade",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mission-status.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "0ba435f08e5f446cac459df5e7473da60fb5551f0beda15239f6dcfff55cc9bc",
+      "restoredSha256": "0ba435f08e5f446cac459df5e7473da60fb5551f0beda15239f6dcfff55cc9bc",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "412da3c5ff24c0c40b37a7c9842b81beae9954f524b117b46547f8fa65984894",
+      "restoredSha256": "412da3c5ff24c0c40b37a7c9842b81beae9954f524b117b46547f8fa65984894",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-left.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "69f77f685f87f2e6a5a3f79dea8567550f46c431863ce2146835cc173547e5ec",
+      "restoredSha256": "69f77f685f87f2e6a5a3f79dea8567550f46c431863ce2146835cc173547e5ec",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "ecbda51feac4e96fab193cf777de9d63ec0ea310ab60ec24bc55c3b8b495588c",
+      "restoredSha256": "ecbda51feac4e96fab193cf777de9d63ec0ea310ab60ec24bc55c3b8b495588c",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-paused.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "911d3abb62404439aee7ef75cfadad01fcd54e22339593e7587c6bfd410a102d",
+      "restoredSha256": "911d3abb62404439aee7ef75cfadad01fcd54e22339593e7587c6bfd410a102d",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-roll.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "d9e260fb8ac784d2e96ed39abc256bd156879a258eb686f858c33fa82b57b2ba",
+      "restoredSha256": "d9e260fb8ac784d2e96ed39abc256bd156879a258eb686f858c33fa82b57b2ba",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-shop.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "4960524fea7496d8eb19fbdd9a4bb2ddb972a998917dcdac9b5bf800e7fe2736",
+      "restoredSha256": "4960524fea7496d8eb19fbdd9a4bb2ddb972a998917dcdac9b5bf800e7fe2736",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-touch-layout.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "61e7cee324064916e68b1747ec6d186e4644c6ac0ff3c018435d117835bf8e1c",
+      "restoredSha256": "61e7cee324064916e68b1747ec6d186e4644c6ac0ff3c018435d117835bf8e1c",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-obstacles-failure-restart.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "8ea03d33e980c29753fdcae5834c8fda68a0493d1402898a1e09bd5d55d0a9a2",
+      "restoredSha256": "8ea03d33e980c29753fdcae5834c8fda68a0493d1402898a1e09bd5d55d0a9a2",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-powerups-shield-missions.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "66082302382cc4569f4204f6b51df4acfeefe1bc0dd8f464225d2f6b90921228",
+      "restoredSha256": "66082302382cc4569f4204f6b51df4acfeefe1bc0dd8f464225d2f6b90921228",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-ramp-approach.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "d8ca7f88d55d3a387486755c14cbeaec4f6d90308a00269592895b0aa1ee918a",
+      "restoredSha256": "d8ca7f88d55d3a387486755c14cbeaec4f6d90308a00269592895b0aa1ee918a",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-ramp-ascent.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "9bfa16868ddbde1af62f65654110213e231a9abf24e3a098d669a89a59b4c2aa",
+      "restoredSha256": "9bfa16868ddbde1af62f65654110213e231a9abf24e3a098d669a89a59b4c2aa",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-ramp-roof-jump-land.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "0be6c543977ea3742d16e710c2ddaee46ba9df0b1c967245a28f728dcc1b5ff6",
+      "restoredSha256": "0be6c543977ea3742d16e710c2ddaee46ba9df0b1c967245a28f728dcc1b5ff6",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-restart.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "123e034e7b9255f1e3cec951b38f9f82282c7e7c5a637d747f43a00e33ca18cc",
+      "restoredSha256": "123e034e7b9255f1e3cec951b38f9f82282c7e7c5a637d747f43a00e33ca18cc",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-roof-contact.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "33bd09af11b232f25d3379994781dcff35701de5d7fc205b7fea5f486e946667",
+      "restoredSha256": "33bd09af11b232f25d3379994781dcff35701de5d7fc205b7fea5f486e946667",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-roof-exit-land.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "735fa4d85d88ed22e9f07ce2d5c12a23248649e80f034f80c6d282f9e53106be",
+      "restoredSha256": "735fa4d85d88ed22e9f07ce2d5c12a23248649e80f034f80c6d282f9e53106be",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-roof-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "85f96abad3765db7f88afecba3aad71f13c8de826e4360e8c983728f55c91807",
+      "restoredSha256": "85f96abad3765db7f88afecba3aad71f13c8de826e4360e8c983728f55c91807",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-shield-break.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "78d45d8e231177df0dc1a0aefbd98bf083676e2677b5ea4fce69d59a7b2c2f71",
+      "restoredSha256": "78d45d8e231177df0dc1a0aefbd98bf083676e2677b5ea4fce69d59a7b2c2f71",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-super-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "7cd5fe1c25b91222e15f053c7906266718f0ddfb118e47dad3e713fafdbece20",
+      "restoredSha256": "7cd5fe1c25b91222e15f053c7906266718f0ddfb118e47dad3e713fafdbece20",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-super-sneakers.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "b3ba8f736e7623d2300cda10c434017394467b5a9b1783e68fe2a515ca5c1442",
+      "restoredSha256": "b3ba8f736e7623d2300cda10c434017394467b5a9b1783e68fe2a515ca5c1442",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_1_menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "9486676c0cd7a8999c52e31fb09ef4d3abda58fdaaed7ae1eecae6af113af29a",
+      "restoredSha256": "9486676c0cd7a8999c52e31fb09ef4d3abda58fdaaed7ae1eecae6af113af29a",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_2_shop.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "e70a97475df3be7644646a9908271585a90499f206ec5059e80e58a5c864cc1d",
+      "restoredSha256": "e70a97475df3be7644646a9908271585a90499f206ec5059e80e58a5c864cc1d",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_3_gameplay_chase.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "6b65574312cf815834ed62f4fe8c07ca0ca12677ddeb74265b0515f1a9a37c0e",
+      "restoredSha256": "6b65574312cf815834ed62f4fe8c07ca0ca12677ddeb74265b0515f1a9a37c0e",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_4_bank_tilt.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "54171cbf412abc94c8ae946f1c780820fe546d4e1d7704b02bc9540acbbdf0b5",
+      "restoredSha256": "54171cbf412abc94c8ae946f1c780820fe546d4e1d7704b02bc9540acbbdf0b5",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_5_jump_action.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "2d4bd36f6e4f7ba8d50381b0c4e4343c54eb78d055babf40b98fc8ae67fa2659",
+      "restoredSha256": "2d4bd36f6e4f7ba8d50381b0c4e4343c54eb78d055babf40b98fc8ae67fa2659",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_6_paused_screen.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "4a8613fb4725f96dae642c5a7855f8009667b4c109b9c37625219847d9d2e4a8",
+      "restoredSha256": "4a8613fb4725f96dae642c5a7855f8009667b4c109b9c37625219847d9d2e4a8",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\browser-final.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "f124c4550ed88387b4215ad6d40f396a9bfd5cb2884fcd4664f4bcc70a42542f",
+      "restoredSha256": "f124c4550ed88387b4215ad6d40f396a9bfd5cb2884fcd4664f4bcc70a42542f",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\browser-green.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "f124c4550ed88387b4215ad6d40f396a9bfd5cb2884fcd4664f4bcc70a42542f",
+      "restoredSha256": "f124c4550ed88387b4215ad6d40f396a9bfd5cb2884fcd4664f4bcc70a42542f",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\browser-red.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "01deba16211e828d2c9b708b10984020b4a62d6925250f38077f8b775ca9b7ff",
+      "restoredSha256": "01deba16211e828d2c9b708b10984020b4a62d6925250f38077f8b775ca9b7ff",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\browser-report.md",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "86a9f581e7257580e0652b1247841a986120ed2eaed61affafed0ac475e722f1",
+      "restoredSha256": "86a9f581e7257580e0652b1247841a986120ed2eaed61affafed0ac475e722f1",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\browser-runner.mjs",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "d090d4ece3cc4fcd4685cf7e437da153ec744d57e0170863ad3fb96f834e0be5",
+      "restoredSha256": "d090d4ece3cc4fcd4685cf7e437da153ec744d57e0170863ad3fb96f834e0be5",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\browser-summary.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "6903e5a4941c5607481b9d194519a1075ee9357e381c898a515f2fee4745614c",
+      "restoredSha256": "6903e5a4941c5607481b9d194519a1075ee9357e381c898a515f2fee4745614c",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\core-build.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "88b510f6c2e8c77b589d927873254627c80b97a0f867e724e2b551dadaa568ee",
+      "restoredSha256": "88b510f6c2e8c77b589d927873254627c80b97a0f867e724e2b551dadaa568ee",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\core-green.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "44f6be73600fce92303b12cb49b5113eb818090a0f0963472ded11bd6bd7a922",
+      "restoredSha256": "44f6be73600fce92303b12cb49b5113eb818090a0f0963472ded11bd6bd7a922",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\core-red.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "013357ecad461c55bfc2616056deebcea70749400d67f8ee08c56e68e1c81491",
+      "restoredSha256": "013357ecad461c55bfc2616056deebcea70749400d67f8ee08c56e68e1c81491",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\core-unit.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "28d1275957eb59f6008a89bd7b7b3a3aa6da6a31c59c7d6146163ae64cf1709d",
+      "restoredSha256": "28d1275957eb59f6008a89bd7b7b3a3aa6da6a31c59c7d6146163ae64cf1709d",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\final-e2e.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "13f925960d5950d4705074004b723a62493ba9220071d3bdbc69c1b89c9e974a",
+      "restoredSha256": "13f925960d5950d4705074004b723a62493ba9220071d3bdbc69c1b89c9e974a",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\final-native-menu-slider-and-start-space.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "060272bf1f34ad92d3ca78cd2e740fdf79687ca0c350e991edb3abb1a746b852",
+      "restoredSha256": "060272bf1f34ad92d3ca78cd2e740fdf79687ca0c350e991edb3abb1a746b852",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\final-paused-rejects-motion-and-resume-space.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "2798c87481db6b42574ce4e1fd4c3a0d168cba4a8aa9867728ab831d91cceaf0",
+      "restoredSha256": "2798c87481db6b42574ce4e1fd4c3a0d168cba4a8aa9867728ab831d91cceaf0",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\final-playing-interactive-arrows-do-not-move-player.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "3672893941a4fdf48bac52338cfea15b378bf5f78a4b34cb1898639cda898436",
+      "restoredSha256": "3672893941a4fdf48bac52338cfea15b378bf5f78a4b34cb1898639cda898436",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\final-source-identity.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "1c60c9e36bd39283ab7fd702d625e5ca1dbe377902d63115a60251c8e9ebad49",
+      "restoredSha256": "1c60c9e36bd39283ab7fd702d625e5ca1dbe377902d63115a60251c8e9ebad49",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\history-restoration.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "f91be531083def49fe3d8535338f3ccca2c43d3a0dc2c541ff330ad8db845978",
+      "restoredSha256": "f91be531083def49fe3d8535338f3ccca2c43d3a0dc2c541ff330ad8db845978",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\playwright.config.ts",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "0b8ad27b901930f5958d1f5e33d951908a8d596fda065a53d9403d991847a119",
+      "restoredSha256": "0b8ad27b901930f5958d1f5e33d951908a8d596fda065a53d9403d991847a119",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\README.md",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "a7736996760076764654713b2480a8c6975d049f5969518caed6447fc20cfa49",
+      "restoredSha256": "a7736996760076764654713b2480a8c6975d049f5969518caed6447fc20cfa49",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\red-e2e.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "127b67e9e21fac8e5e2e852ff5f28546906029559f73565b96868fa6e4e242b9",
+      "restoredSha256": "127b67e9e21fac8e5e2e852ff5f28546906029559f73565b96868fa6e4e242b9",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\red-native-menu-slider-and-start-space.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "8f346bc43dc8188ef2397a5c4342709130d4e20406e98bef21f0a404dc7bc23b",
+      "restoredSha256": "8f346bc43dc8188ef2397a5c4342709130d4e20406e98bef21f0a404dc7bc23b",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\red-paused-rejects-motion-and-resume-space.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "8f346bc43dc8188ef2397a5c4342709130d4e20406e98bef21f0a404dc7bc23b",
+      "restoredSha256": "8f346bc43dc8188ef2397a5c4342709130d4e20406e98bef21f0a404dc7bc23b",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\red-playing-interactive-arrows-do-not-move-player.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "8f346bc43dc8188ef2397a5c4342709130d4e20406e98bef21f0a404dc7bc23b",
+      "restoredSha256": "8f346bc43dc8188ef2397a5c4342709130d4e20406e98bef21f0a404dc7bc23b",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\red-results\\pao10-review-fixes-native-menu-slider-and-start-space\\error-context.md",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "d8c66edb964e8c3eb4e373fbff8ffc363984311bd34be878a5dabd9d7148851a",
+      "restoredSha256": "d8c66edb964e8c3eb4e373fbff8ffc363984311bd34be878a5dabd9d7148851a",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\red-results\\pao10-review-fixes-paused-rejects-motion-and-resume-space\\error-context.md",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "2b11ca222bd2b07d1d7b54be4ef81711fe7dda351036061cb208606a9ab87431",
+      "restoredSha256": "2b11ca222bd2b07d1d7b54be4ef81711fe7dda351036061cb208606a9ab87431",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\red-results\\pao10-review-fixes-playing-3ca7d-e-arrows-do-not-move-player\\error-context.md",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "fc8d0244bb11ed10a92322d7ef732ebb4a618e55a3c74ba0a115c76aba6bd73d",
+      "restoredSha256": "fc8d0244bb11ed10a92322d7ef732ebb4a618e55a3c74ba0a115c76aba6bd73d",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\F-lifecycle-clears-input-and-hidden-time.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "3d9a5d9eb771194786aabf7b763ec76c3ebbca4ebc3d8a26977c07a87d280a3a",
+      "restoredSha256": "3d9a5d9eb771194786aabf7b763ec76c3ebbca4ebc3d8a26977c07a87d280a3a",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\N-desktop-production-keyboard-flow.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "fbec4553626e8be4c3c8fb349871f75e7877906fc4a92df3ff56097dffd80ed0",
+      "restoredSha256": "fbec4553626e8be4c3c8fb349871f75e7877906fc4a92df3ff56097dffd80ed0",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\N-mobile-production-touch.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "3a79797d9efbf2c1ff29bc7f727c1e004f41575a7534895a9bcd9a8c9310fcba",
+      "restoredSha256": "3a79797d9efbf2c1ff29bc7f727c1e004f41575a7534895a9bcd9a8c9310fcba",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\F-lifecycle-readonly.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "134854b36cece0e06fb1133d1cb99e0dca7dd58cd465add3e0319bdcc942ef1e",
+      "restoredSha256": "134854b36cece0e06fb1133d1cb99e0dca7dd58cd465add3e0319bdcc942ef1e",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\F-lifecycle-resumed.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "41387b52aa9b1a2e9a1ac8adaf05f324f4373f55a265d0c7035c738e23f5bca5",
+      "restoredSha256": "41387b52aa9b1a2e9a1ac8adaf05f324f4373f55a265d0c7035c738e23f5bca5",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-desktop-failure.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "adeecb6a84f148deafd9dc53abd036171882c682c12ba54b89ea5b733469990a",
+      "restoredSha256": "adeecb6a84f148deafd9dc53abd036171882c682c12ba54b89ea5b733469990a",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-desktop-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "517ca9c77967c6a95e9ff165d49b0cb55bc384d899763f50a4ae8c9d2787bbd8",
+      "restoredSha256": "517ca9c77967c6a95e9ff165d49b0cb55bc384d899763f50a4ae8c9d2787bbd8",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-desktop-menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "e61f66768614b5b65085ed577e4cb55669b423dd82973a2a9b8d53e3ec03d72c",
+      "restoredSha256": "e61f66768614b5b65085ed577e4cb55669b423dd82973a2a9b8d53e3ec03d72c",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-desktop-paused.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "ef96644ac7aff5214ff59fab304c2367defa305caecafe0342db200cce02b317",
+      "restoredSha256": "ef96644ac7aff5214ff59fab304c2367defa305caecafe0342db200cce02b317",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-desktop-restart.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "d04fa02d9ec6450c2360375b1b5ee98bba42b9e6ea59a486c03037f2b5c635a5",
+      "restoredSha256": "d04fa02d9ec6450c2360375b1b5ee98bba42b9e6ea59a486c03037f2b5c635a5",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-desktop-return-menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "715d09ba43afa0580ba60bbcd7f4be2b535a04faa94bc7a99df41505bf8ac27f",
+      "restoredSha256": "715d09ba43afa0580ba60bbcd7f4be2b535a04faa94bc7a99df41505bf8ac27f",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-desktop-roll.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "a83d5c8bb34bf2622bbbf2829874e2a946206c61dbe52839ac616933141a787e",
+      "restoredSha256": "a83d5c8bb34bf2622bbbf2829874e2a946206c61dbe52839ac616933141a787e",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-mobile-centered.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "868f909651df62820e97e71fd0b790122fa2cd83eb3a141c487f5130cb50b4be",
+      "restoredSha256": "868f909651df62820e97e71fd0b790122fa2cd83eb3a141c487f5130cb50b4be",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-mobile-gameplay.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "3a98331504a393242e35d22c826f0f6b4c644a7a8d08296fb11349c0614f9e97",
+      "restoredSha256": "3a98331504a393242e35d22c826f0f6b4c644a7a8d08296fb11349c0614f9e97",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-mobile-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "76a87d5828b6a98df13bc7525caa524d16c5349047e58e5e5fff78638f1baa50",
+      "restoredSha256": "76a87d5828b6a98df13bc7525caa524d16c5349047e58e5e5fff78638f1baa50",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-mobile-left.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "7c12d426b731bf0e860c398ecb166d4d62a4f7d6303aea2490fb89d417931795",
+      "restoredSha256": "7c12d426b731bf0e860c398ecb166d4d62a4f7d6303aea2490fb89d417931795",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-mobile-menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "afd03ed760011a7fb0d575ac54108b638bf62ee0258f4c479f9342a11fad9fc7",
+      "restoredSha256": "afd03ed760011a7fb0d575ac54108b638bf62ee0258f4c479f9342a11fad9fc7",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-mobile-paused.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "b3386395549bf91f84141f6785c82b6f81613fc056fb8b7acee59df3f3bd45ab",
+      "restoredSha256": "b3386395549bf91f84141f6785c82b6f81613fc056fb8b7acee59df3f3bd45ab",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-double-score.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "362bc90aa9887ca8938e44329098f4b565e8801687cd2a60481021cc09b20915",
+      "restoredSha256": "362bc90aa9887ca8938e44329098f4b565e8801687cd2a60481021cc09b20915",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-failure.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "091b5ec93d9ad81fa0f0fc9d6fafc2a5aab424afd6c9626df4d29b9efc84a304",
+      "restoredSha256": "091b5ec93d9ad81fa0f0fc9d6fafc2a5aab424afd6c9626df4d29b9efc84a304",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-high-obstacle-result.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "f7424107d3eebbe7a4aab9f8ba4fd6cbecdabba805d1ecd43ee9e611c5affa4a",
+      "restoredSha256": "f7424107d3eebbe7a4aab9f8ba4fd6cbecdabba805d1ecd43ee9e611c5affa4a",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-high-obstacle-roll.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "bc2166d3f1184f685ee4280018ec9e1d634f6e151333f7be113de6dca93d0737",
+      "restoredSha256": "bc2166d3f1184f685ee4280018ec9e1d634f6e151333f7be113de6dca93d0737",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-hoverboard.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "6045a58261b868346adac1e2ed961cd102947523e38de05deb7451bba6686847",
+      "restoredSha256": "6045a58261b868346adac1e2ed961cd102947523e38de05deb7451bba6686847",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-low-obstacle-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "6d1ae8c36d387c136a302e3915a6e19e10831571af571b03bc8e1fe443a18ce2",
+      "restoredSha256": "6d1ae8c36d387c136a302e3915a6e19e10831571af571b03bc8e1fe443a18ce2",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-low-obstacle-result.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "f6bf95425fe619ca30e92887aa22a077d3d9d7dcfa5ca786f266f33818eddd17",
+      "restoredSha256": "f6bf95425fe619ca30e92887aa22a077d3d9d7dcfa5ca786f266f33818eddd17",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-magnet.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "2adf84e189fd258ea27352669e7ee6bef61bb8b1b4031a554b53d0dd6a48420b",
+      "restoredSha256": "2adf84e189fd258ea27352669e7ee6bef61bb8b1b4031a554b53d0dd6a48420b",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mission-status.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "adb8cabae73582c1675aef3e536bcb4de35db47520d3ee9fae7a763eb7c8d08b",
+      "restoredSha256": "adb8cabae73582c1675aef3e536bcb4de35db47520d3ee9fae7a763eb7c8d08b",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mobile-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "383991caa4e9c4fddb3970fd1132c08dc56d33122d32aa7816abfe18fd3d9a6c",
+      "restoredSha256": "383991caa4e9c4fddb3970fd1132c08dc56d33122d32aa7816abfe18fd3d9a6c",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mobile-left.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "d8d692d31b96ddc1941bdde752a92840e8b9e446d4e8206d20b692199b9e17ae",
+      "restoredSha256": "d8d692d31b96ddc1941bdde752a92840e8b9e446d4e8206d20b692199b9e17ae",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mobile-menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "fce1bd80b4f5cbf1a60a0c8ece64ec0ed42100545c9daece9b21d119e65316a1",
+      "restoredSha256": "fce1bd80b4f5cbf1a60a0c8ece64ec0ed42100545c9daece9b21d119e65316a1",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mobile-paused.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "35f5bfaeef5a9d44889b5abc03b14bd86e8a7da012486d902be57530da9a1f1f",
+      "restoredSha256": "35f5bfaeef5a9d44889b5abc03b14bd86e8a7da012486d902be57530da9a1f1f",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mobile-roll.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "d41203d1ef1af11e9e85ae33d2b574bc2286e7e19d4280fe4ddcfb97c658a8a5",
+      "restoredSha256": "d41203d1ef1af11e9e85ae33d2b574bc2286e7e19d4280fe4ddcfb97c658a8a5",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mobile-shop.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "a981e0e4fa5f04a63bb6c044e6f05e324d09372fc97d7eee2004b09d1912093e",
+      "restoredSha256": "a981e0e4fa5f04a63bb6c044e6f05e324d09372fc97d7eee2004b09d1912093e",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mobile-touch-layout.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "718470acedda78eada7fa48e327b3c0c2b9753198f312e7215c18920f22eebe0",
+      "restoredSha256": "718470acedda78eada7fa48e327b3c0c2b9753198f312e7215c18920f22eebe0",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-obstacles-failure-restart.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "6e3d99a39ba8c57b264d4c192778c6ab34c1e8840d2b4709e2afeed6dfb3dfc3",
+      "restoredSha256": "6e3d99a39ba8c57b264d4c192778c6ab34c1e8840d2b4709e2afeed6dfb3dfc3",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-powerups-shield-missions.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "5418cc6efebbeb7dea0a45a786e8d58ae09df3a3ac31ad799f31f2d243519415",
+      "restoredSha256": "5418cc6efebbeb7dea0a45a786e8d58ae09df3a3ac31ad799f31f2d243519415",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-ramp-approach.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "112da9d952eacb8df7cb9bc08d40d06d6595ca406837f0a4dcd12153809177aa",
+      "restoredSha256": "112da9d952eacb8df7cb9bc08d40d06d6595ca406837f0a4dcd12153809177aa",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-ramp-ascent.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "5c2d206d66f3ed96505061544afd0e023250f44fb5d51327e99a21cde9a143a3",
+      "restoredSha256": "5c2d206d66f3ed96505061544afd0e023250f44fb5d51327e99a21cde9a143a3",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-ramp-roof-jump-land.json",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "f7423c0736499a686c54861a5516e111ee0c04237772d2c18a7d2d675d423ed9",
+      "restoredSha256": "f7423c0736499a686c54861a5516e111ee0c04237772d2c18a7d2d675d423ed9",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-restart.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "94e4fb1df8d36b7729c15a1fa96bccbb82355c5130ccb1144efe77fe3fb679fb",
+      "restoredSha256": "94e4fb1df8d36b7729c15a1fa96bccbb82355c5130ccb1144efe77fe3fb679fb",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-roof-contact.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "a0ff160005e8b8b14036d74dc59963b2e158bfe20a2724a59da71a3ef204a148",
+      "restoredSha256": "a0ff160005e8b8b14036d74dc59963b2e158bfe20a2724a59da71a3ef204a148",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-roof-exit-land.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "f4cca4de50c4aff98d4d73db4c2562d831814189f558be4b1a61a561e668abb8",
+      "restoredSha256": "f4cca4de50c4aff98d4d73db4c2562d831814189f558be4b1a61a561e668abb8",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-roof-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "f398a927be6ed309ea2f96905cbcd94979cef297ea417d18d1bc7900a562cc6f",
+      "restoredSha256": "f398a927be6ed309ea2f96905cbcd94979cef297ea417d18d1bc7900a562cc6f",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-shield-break.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "8ddd4da0606227f93a71c38f79230d99f58cc08389c10c8b441413d68cff6008",
+      "restoredSha256": "8ddd4da0606227f93a71c38f79230d99f58cc08389c10c8b441413d68cff6008",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-super-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "b361a7718cd9ce8335488c75cb1407a9fed476c760ab7ba196525e23539b0f8c",
+      "restoredSha256": "b361a7718cd9ce8335488c75cb1407a9fed476c760ab7ba196525e23539b0f8c",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-super-sneakers.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "6ecd71033d0690956d6cae418ec466ed9f9a92d7ee2fc6d2bf08752fc0467064",
+      "restoredSha256": "6ecd71033d0690956d6cae418ec466ed9f9a92d7ee2fc6d2bf08752fc0467064",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\screenshot_1_menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "b5176c811172135794798cfd7a2f10fdf82c799b1c142f15670c3cee1c194b76",
+      "restoredSha256": "b5176c811172135794798cfd7a2f10fdf82c799b1c142f15670c3cee1c194b76",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\screenshot_2_shop.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "be38f15c27a100daf02275e179940ebd6eb4b3ba9e09fd95ecf4ae8f60483faa",
+      "restoredSha256": "be38f15c27a100daf02275e179940ebd6eb4b3ba9e09fd95ecf4ae8f60483faa",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\screenshot_3_gameplay_chase.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "5d6f3d2d6fa0cefda72ad30fbca858b0c8d6a863b28c3d7ba53fae05f89f38b2",
+      "restoredSha256": "5d6f3d2d6fa0cefda72ad30fbca858b0c8d6a863b28c3d7ba53fae05f89f38b2",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\screenshot_4_bank_tilt.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "aed81ff5e6e6cee32c8782bc4a294d1d16a5bf6bef21940c1d3d610a772dde6b",
+      "restoredSha256": "aed81ff5e6e6cee32c8782bc4a294d1d16a5bf6bef21940c1d3d610a772dde6b",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\screenshot_5_jump_action.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "a237c8028a5abb4069f7dca2d71354280945b318f5d234a893f16a09fc54758a",
+      "restoredSha256": "a237c8028a5abb4069f7dca2d71354280945b318f5d234a893f16a09fc54758a",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\screenshot_6_paused_screen.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "15fc851685339015cd0b2b10f9269036ec21eb498df5de88ff8383ca334b4aba",
+      "restoredSha256": "15fc851685339015cd0b2b10f9269036ec21eb498df5de88ff8383ca334b4aba",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\screenshots\\final-desktop-interactive-arrow.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "cc108938a4e023d837019bbfd6088db4196d2d246c6c0b1aa9ffd87d05b623b8",
+      "restoredSha256": "cc108938a4e023d837019bbfd6088db4196d2d246c6c0b1aa9ffd87d05b623b8",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\screenshots\\final-desktop-native-start.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "7b0302a6313a86ec631c43be66beeb350d95f4a1590fdb3ea231109701fb5087",
+      "restoredSha256": "7b0302a6313a86ec631c43be66beeb350d95f4a1590fdb3ea231109701fb5087",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\screenshots\\final-portrait-native-resume.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "904b3bdac8fa2f33061c40efd104d7a4baf16e75ce72830e36c8d22b2993c408",
+      "restoredSha256": "904b3bdac8fa2f33061c40efd104d7a4baf16e75ce72830e36c8d22b2993c408",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\screenshots\\final-portrait-stable-paused.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "def77b6cbe93b4f51b8e753bfa67c44f1653a2a45524388bb1b4e299f7745b1c",
+      "restoredSha256": "def77b6cbe93b4f51b8e753bfa67c44f1653a2a45524388bb1b4e299f7745b1c",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes-plan.md",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "f1545e98106bbafb2e948bf9032827fdb698df27d9d526ddaa83f3baf372f8bf",
+      "restoredSha256": "f1545e98106bbafb2e948bf9032827fdb698df27d9d526ddaa83f3baf372f8bf",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\desktop-gameover.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "c3c2686b35ec9a27ac13853c0f364153e4d55cf068f40451e37ebd2fc1e3083e",
+      "restoredSha256": "c3c2686b35ec9a27ac13853c0f364153e4d55cf068f40451e37ebd2fc1e3083e",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\desktop-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "32af8a2a0b04a587edb338b2445c05043278ba4eabfea9c83376458975799194",
+      "restoredSha256": "32af8a2a0b04a587edb338b2445c05043278ba4eabfea9c83376458975799194",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\desktop-menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "13b24f36ddb501b4580a290cb55068df10b06ed2335ac1c9cc9764297c0d61e5",
+      "restoredSha256": "13b24f36ddb501b4580a290cb55068df10b06ed2335ac1c9cc9764297c0d61e5",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\desktop-paused.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "9b1f18cc23ce357f3f4ae44380c2e97fe798ba7e043e5a5ac867b3e2e0067452",
+      "restoredSha256": "9b1f18cc23ce357f3f4ae44380c2e97fe798ba7e043e5a5ac867b3e2e0067452",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\desktop-restarted.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "f66c7904ffcb8341153dac1c42dc38820b137de0982312efcf28ed5f983fdda0",
+      "restoredSha256": "f66c7904ffcb8341153dac1c42dc38820b137de0982312efcf28ed5f983fdda0",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\desktop-roll.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "cf624f00ba2af00cda933b5bf733fe0f68d1c5712f1d769d1339c098a62b7f05",
+      "restoredSha256": "cf624f00ba2af00cda933b5bf733fe0f68d1c5712f1d769d1339c098a62b7f05",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\F-lifecycle-readonly.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "33cdd96c54c5ecf88fca6cee6a3a5acb935ae4970c280b9b7803e2ac54d0f57b",
+      "restoredSha256": "33cdd96c54c5ecf88fca6cee6a3a5acb935ae4970c280b9b7803e2ac54d0f57b",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\F-lifecycle-resumed.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "9547e685a4ac4d16e5dfa08341493f24befad72247e09b482d82469356bcd4f2",
+      "restoredSha256": "9547e685a4ac4d16e5dfa08341493f24befad72247e09b482d82469356bcd4f2",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-desktop-failure.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "9ee959522c7e7ad8ca7409c75fb684c8a0eee52e033c265c7be66ca5de204a15",
+      "restoredSha256": "9ee959522c7e7ad8ca7409c75fb684c8a0eee52e033c265c7be66ca5de204a15",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-desktop-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "e274e67ec84bf730d2af56dd719777ce9c882b05bd2c65b127f0b657227d8f01",
+      "restoredSha256": "e274e67ec84bf730d2af56dd719777ce9c882b05bd2c65b127f0b657227d8f01",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-desktop-menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "c25dfa9c714a131665007caf513f970c61a30a2d7a66758e8a5671c1cb05eb3d",
+      "restoredSha256": "c25dfa9c714a131665007caf513f970c61a30a2d7a66758e8a5671c1cb05eb3d",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-desktop-paused.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "00003a1dc1fd309a3529174aeee3908f35d3f02a5457e6b612210cb7b85b1bab",
+      "restoredSha256": "00003a1dc1fd309a3529174aeee3908f35d3f02a5457e6b612210cb7b85b1bab",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-desktop-restart.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "7da99edcd4081ff92386989e91dde9a9ca0083106149ea9e8b5df1ede4b9e177",
+      "restoredSha256": "7da99edcd4081ff92386989e91dde9a9ca0083106149ea9e8b5df1ede4b9e177",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-desktop-return-menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "66e31d5cbfe6e27bda2c1165ca233214ae3f96523aa2ab8e914024af44c372f6",
+      "restoredSha256": "66e31d5cbfe6e27bda2c1165ca233214ae3f96523aa2ab8e914024af44c372f6",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-desktop-roll.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "9d59adfc2bfbd4bcd2765531b068966941e3b6f74148cdd6b15419e7ef02a61f",
+      "restoredSha256": "9d59adfc2bfbd4bcd2765531b068966941e3b6f74148cdd6b15419e7ef02a61f",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-mobile-centered.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "07d881fd0e819c42fdba9733859049d6c63af96269f79367170e677127e9086e",
+      "restoredSha256": "07d881fd0e819c42fdba9733859049d6c63af96269f79367170e677127e9086e",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-mobile-gameplay.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "01212e7327febd44af3a2e5130b74bbed26ccb829a85359c49ee5977d7ae2ec2",
+      "restoredSha256": "01212e7327febd44af3a2e5130b74bbed26ccb829a85359c49ee5977d7ae2ec2",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-mobile-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "811f9615cc7c0c5757919a0267c5dc42324a00e826fcdb0412dd11405c79a7a2",
+      "restoredSha256": "811f9615cc7c0c5757919a0267c5dc42324a00e826fcdb0412dd11405c79a7a2",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-mobile-left.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "55cac00d244f9debcf2bb60270cbf52438baa7ff380960d26927d044a8e5e4b8",
+      "restoredSha256": "55cac00d244f9debcf2bb60270cbf52438baa7ff380960d26927d044a8e5e4b8",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-mobile-menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "4ee92b125b5d362a6bb8939ce8bcd5d4f1196d6182dd98ae0204470714884241",
+      "restoredSha256": "4ee92b125b5d362a6bb8939ce8bcd5d4f1196d6182dd98ae0204470714884241",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-mobile-paused.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "10544cee764c525cbd5fccbb595bfe0bba5098a65fa6e3b43060e96effee05cf",
+      "restoredSha256": "10544cee764c525cbd5fccbb595bfe0bba5098a65fa6e3b43060e96effee05cf",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\portrait-jump.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "576e6bf4f95cb7fe373ef1774d434dcad99b53408959eaeb90c1f2a383a4791d",
+      "restoredSha256": "576e6bf4f95cb7fe373ef1774d434dcad99b53408959eaeb90c1f2a383a4791d",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\portrait-left.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "22a062e824e470acb2c0491f40ca51cd1238585fadbd642be3d9ea50fa39323d",
+      "restoredSha256": "22a062e824e470acb2c0491f40ca51cd1238585fadbd642be3d9ea50fa39323d",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\portrait-menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "c539ee54bd0dead90dc0b0d2937b18aa94f165aded00af77ca4b2924fbb6993a",
+      "restoredSha256": "c539ee54bd0dead90dc0b0d2937b18aa94f165aded00af77ca4b2924fbb6993a",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\portrait-paused.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "03844ccc6a80af30322439a8b12dd71cfdebfdb26baaf5bbe5051b9d6d4617f7",
+      "restoredSha256": "03844ccc6a80af30322439a8b12dd71cfdebfdb26baaf5bbe5051b9d6d4617f7",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\portrait-roll.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "68e37f1ceb179826faef49903a17114ce13d0b96fe4da902f679c1f5536a94b4",
+      "restoredSha256": "68e37f1ceb179826faef49903a17114ce13d0b96fe4da902f679c1f5536a94b4",
+      "verified": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\unit.log",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "e32ace84f3357265ea5c70d5599b4d321bfba6157586bf190e89d2e0e6ba2590",
+      "restoredSha256": "e32ace84f3357265ea5c70d5599b4d321bfba6157586bf190e89d2e0e6ba2590",
+      "verified": true
+    },
+    {
+      "path": "screenshot_1_menu.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "dc25282f324c46a3202cccdb9ef2280b8102ed61ce7b1493ea1397d73e2c5a3e",
+      "restoredSha256": "dc25282f324c46a3202cccdb9ef2280b8102ed61ce7b1493ea1397d73e2c5a3e",
+      "verified": true
+    },
+    {
+      "path": "screenshot_2_shop.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "dfc980f031e73d7c2f64a64240c8ed346dccb4314b9ad97488a8fdf4bc60d673",
+      "restoredSha256": "dfc980f031e73d7c2f64a64240c8ed346dccb4314b9ad97488a8fdf4bc60d673",
+      "verified": true
+    },
+    {
+      "path": "screenshot_3_gameplay_chase.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "af725839311297c3965600a6c2260b7884fbf6d1658c47409ebb74ccd6d27f86",
+      "restoredSha256": "af725839311297c3965600a6c2260b7884fbf6d1658c47409ebb74ccd6d27f86",
+      "verified": true
+    },
+    {
+      "path": "screenshot_4_bank_tilt.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "8389127cf44ea58590a75981198dd3caf07a22b3abdb282ca8e90cee435a564a",
+      "restoredSha256": "8389127cf44ea58590a75981198dd3caf07a22b3abdb282ca8e90cee435a564a",
+      "verified": true
+    },
+    {
+      "path": "screenshot_5_jump_action.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "4608007083acb86ea1fa5b3f3d9ad08d822ba3521eaf6cdc1b4bf12281c35e41",
+      "restoredSha256": "4608007083acb86ea1fa5b3f3d9ad08d822ba3521eaf6cdc1b4bf12281c35e41",
+      "verified": true
+    },
+    {
+      "path": "screenshot_6_paused_screen.png",
+      "changed": false,
+      "captured": null,
+      "beforeSha256": "edfb9798eba160f2bfe52e44dbb818c54336c2bba7e03a627fae2ec3fee527d8",
+      "restoredSha256": "edfb9798eba160f2bfe52e44dbb818c54336c2bba7e03a627fae2ec3fee527d8",
+      "verified": true
+    }
+  ]
+}

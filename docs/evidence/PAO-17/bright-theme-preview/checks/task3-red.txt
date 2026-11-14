@@ -1,0 +1,90 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao17-ramp-view.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+stdout | tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {}
+BJS - [22:31:42]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {"x":2.7,"y":5}
+BJS - [22:31:42]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {"x":-3,"y":5.5,"z":-12.5,"width":3.3,"height":2.35,"depth":7.5}
+BJS - [22:31:42]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-ramp-view.test.ts > covers the complete ROOF at exact support height, with continuous ramp entry/roof exit (base Y=0)
+BJS - [22:31:42]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-ramp-view.test.ts > covers the complete ROOF at exact support height, with continuous ramp entry/roof exit (base Y=5)
+BJS - [22:31:42]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-ramp-view.test.ts > keeps every actual arrow vertex within a narrow offset above the slope instead of floating boxes
+BJS - [22:31:42]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao17-ramp-view.test.ts (6 tests | 6 failed) 66ms
+   × matches true wedge triangles to Surface at foot/mid/top and both sides: {} 37ms
+   × matches true wedge triangles to Surface at foot/mid/top and both sides: {"x":2.7,"y":5} 5ms
+   × matches true wedge triangles to Surface at foot/mid/top and both sides: {"x":-3,"y":5.5,"z":-12.5,"width":3.3,"height":2.35,"depth":7.5} 5ms
+   × covers the complete ROOF at exact support height, with continuous ramp entry/roof exit (base Y=0) 8ms
+   × covers the complete ROOF at exact support height, with continuous ramp entry/roof exit (base Y=5) 5ms
+   × keeps every actual arrow vertex within a narrow offset above the slope instead of floating boxes 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {}
+ FAIL  tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {"x":2.7,"y":5}
+AssertionError: expected 3 to be less than 0.000001
+ ❯ tests/unit/pao17-ramp-view.test.ts:37:84
+     35|   for (const x of [obs.x - obs.width / 2, obs.x, obs.x + obs.width / 2…
+     36|     const z = obs.z - obs.depth / 2 + obs.depth * t; const h = meshHei…
+     37|     expect(h).not.toBeNull(); expect(Math.abs(h! - sampleSurface(surfa…
+       |                                                                                    ^
+     38|   }
+     39|   const normals = mesh.getVerticesData(VertexBuffer.NormalKind)!;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {"x":-3,"y":5.5,"z":-12.5,"width":3.3,"height":2.35,"depth":7.5}
+AssertionError: expected 2.350000190734863 to be less than 0.000001
+ ❯ tests/unit/pao17-ramp-view.test.ts:37:84
+     35|   for (const x of [obs.x - obs.width / 2, obs.x, obs.x + obs.width / 2…
+     36|     const z = obs.z - obs.depth / 2 + obs.depth * t; const h = meshHei…
+     37|     expect(h).not.toBeNull(); expect(Math.abs(h! - sampleSurface(surfa…
+       |                                                                                    ^
+     38|   }
+     39|   const normals = mesh.getVerticesData(VertexBuffer.NormalKind)!;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  tests/unit/pao17-ramp-view.test.ts > covers the complete ROOF at exact support height, with continuous ramp entry/roof exit (base Y=0)
+ FAIL  tests/unit/pao17-ramp-view.test.ts > covers the complete ROOF at exact support height, with continuous ramp entry/roof exit (base Y=5)
+AssertionError: expected null not to be null
+ ❯ tests/unit/pao17-ramp-view.test.ts:48:62
+     46|   const { scene } = setup([slope, roof]); const wedge = scene.getMeshB…
+     47|   for (const x of [-1.2, 0, 1.2]) for (const z of [73, 79, 85]) {
+     48|     const actual = meshHeight(top, x, z); expect(actual).not.toBeNull(…
+       |                                                              ^
+     49|     expect(Math.abs(actual! - sampleSurface(obstacleSurface(roof)!, x,…
+     50|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  tests/unit/pao17-ramp-view.test.ts > keeps every actual arrow vertex within a narrow offset above the slope instead of floating boxes
+AssertionError: expected 0.7249999046325666 to be less than 0.04
+ ❯ tests/unit/pao17-ramp-view.test.ts:58:75
+     56|   for (const arrow of arrows) for (const p of positions(arrow)) {
+     57|     const support = sampleSurface(obstacleSurface(obs)!, p.x, p.z); ex…
+     58|     expect(p.y - support!).toBeGreaterThan(0.005); expect(p.y - suppor…
+       |                                                                           ^
+     59|   }
+     60| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  6 failed (6)
+   Start at  22:31:39
+   Duration  2.80s (transform 111ms, setup 0ms, import 2.41s, tests 66ms, environment 0ms)

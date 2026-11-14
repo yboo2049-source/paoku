@@ -1,0 +1,11 @@
+{
+  "phase": "A-final",
+  "hashes": {
+    "src/main.ts": "05b5d022d5309a57383e11e2b82bd02c3a599e75f3aa20fd44d81476d47cd750",
+    "src/render/babylon.ts": "2b247de7d8877bfae803c58dfaacb96cd96a68fcbed2cb4744344d029fd1a166",
+    "src/render/assets.ts": "eba5ddc2266b6d75b68d205894976bf95f9381e94df670e7296d4644fc19e673",
+    "src/render/environment.ts": "820c222fbe9e0e9f18dab862fe4892c07114b1770559b38505f47ceb6b24ffa3",
+    "src/render/entityViews.ts": "f81a7ac8543a88003aa168531945692dc26a40f91c5e09ebf130fbeafbbcce46",
+    "public/models/player.glb": "002f8d269de68e5dce3d25195caf390d1aa359bbfaae3fcf4c8dc78ec36c3ba5"
+  }
+}

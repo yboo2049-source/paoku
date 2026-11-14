@@ -1,0 +1,20 @@
+import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises';
+import { resolve } from 'node:path';
+const root=resolve('.pao18.local/fact-bridge');
+await mkdir(root+'/suite',{recursive:true});
+await mkdir(root+'/legacy-output',{recursive:true});
+const transforms = s => s.replaceAll("'docs/evidence/", "'.pao18.local/fact-bridge/legacy-output/").replace(/path: '(screenshot_[^']+)'/g,"path: '.pao18.local/fact-bridge/legacy-output/$1'").replaceAll("resolve('.pao18.local/recording')","resolve('.pao18.local/fact-bridge/legacy-output/recording')").replaceAll("'http://127.0.0.1:5188/'","'http://127.0.0.1:5198/'");
+const manifest=[];
+for(const name of await readdir('tests/e2e')) if(name.endsWith('.spec.ts')) {
+ const original=await readFile('tests/e2e/'+name,'utf8');
+ const copy=name==='pao18-fact-bridge.spec.ts'?original:transforms(original);
+ if(name!=='pao18-fact-bridge.spec.ts') {
+  const restored=copy.replaceAll("'.pao18.local/fact-bridge/legacy-output/", "'docs/evidence/").replace(/path: 'docs\/evidence\/(screenshot_[^']+)'/g,"path: '$1'").replaceAll("resolve('docs/evidence/recording')","resolve('.pao18.local/recording')").replaceAll("'http://127.0.0.1:5198/'","'http://127.0.0.1:5188/'");
+  if(restored!==original) throw Error('Mirror reversal failed: '+name);
+ }
+ await writeFile(root+'/suite/'+name.replace('.spec.ts','.pw.ts'),copy);manifest.push(name);
+}
+await writeFile(root+'/mirror-manifest.json',JSON.stringify(manifest,null,2));
+await writeFile(root+'/playwright.config.ts',`import { defineConfig } from '@playwright/test';
+export default defineConfig({testDir:'./suite', testMatch:'**/*.pw.ts', timeout:60000, workers:1, retries:0, reporter:[['list'],['json',{outputFile:'${root.replaceAll('\\','/')}/RESULT.json'}]],outputDir:'./RESULT-artifacts',use:{baseURL:'http://127.0.0.1:5198',launchOptions:{args:['--use-gl=angle','--use-angle=d3d11','--enable-webgl','--ignore-gpu-blocklist']},trace:'retain-on-failure'},webServer:{command:'npm run dev -- --host 127.0.0.1 --port 5198 --strictPort',cwd:'${process.cwd().replaceAll('\\','/')}',url:'http://127.0.0.1:5198',reuseExistingServer:false}});`);
+

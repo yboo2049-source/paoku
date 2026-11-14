@@ -1,0 +1,276 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\worker\\paoku-sessions\\pao-17\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      ".pao17-local/theme-acceptance.config.ts",
+      "--retries=0",
+      "tests/e2e/pao17-theme.spec.ts",
+      "tests/e2e/pao17-ramp-view.spec.ts"
+    ],
+    "configFile": "D:\\worker\\paoku-sessions\\pao-17\\.pao17-local\\theme-acceptance.config.ts",
+    "rootDir": "D:/worker/paoku-sessions/pao-17",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/worker/paoku-sessions/pao-17/.pao17-local/bright-theme/results-preview2",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/worker/paoku-sessions/pao-17",
+        "testIgnore": [],
+        "testMatch": [
+          ".pao17-local/bright-theme/mirror-preview2/*.pw.ts",
+          "tests/e2e/pao17-theme.spec.ts",
+          "tests/e2e/pao17-ramp-view.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\worker\\paoku-sessions\\pao-17\\docs\\evidence\\PAO-17\\bright-theme-preview\\preview2-playwright.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 5187 --strictPort",
+      "cwd": "D:\\worker\\paoku-sessions\\pao-17",
+      "url": "http://127.0.0.1:5187",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "tests\\e2e\\pao17-ramp-view.spec.ts",
+      "file": "tests/e2e/pao17-ramp-view.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F actual wedge-roof walk, triangle support and exit at base Y=0",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7658,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:46:08.156Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b2c909525a8039d9edce-e67a949af44bb1e449fb",
+          "file": "tests/e2e/pao17-ramp-view.spec.ts",
+          "line": 5,
+          "column": 29
+        },
+        {
+          "title": "F actual wedge-roof walk, triangle support and exit at base Y=5",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4965,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:46:16.455Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b2c909525a8039d9edce-a73b0b7a06e2363dfcf7",
+          "file": "tests/e2e/pao17-ramp-view.spec.ts",
+          "line": 5,
+          "column": 29
+        }
+      ]
+    },
+    {
+      "title": "tests\\e2e\\pao17-theme.spec.ts",
+      "file": "tests/e2e/pao17-theme.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F successful legacy GLB and shadows warmed before 20 bounded recycles / 10 resets / full disposal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3308,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:46:21.447Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7e333a8255792597835f-4acd6c4e69da3c89d430",
+          "file": "tests/e2e/pao17-theme.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "N bright desktop keyboard motion pause resume collision and restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28827,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:46:24.768Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7e333a8255792597835f-f5c03c73cc9ba8a052b3",
+          "file": "tests/e2e/pao17-theme.spec.ts",
+          "line": 50,
+          "column": 37
+        },
+        {
+          "title": "N bright 390 touch motion pause resume collision and restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28875,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T14:46:53.608Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7e333a8255792597835f-1714c350f6cee49bfbbe",
+          "file": "tests/e2e/pao17-theme.spec.ts",
+          "line": 50,
+          "column": 37
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-02T14:46:04.846Z",
+    "duration": 78533.204,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

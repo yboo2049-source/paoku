@@ -1,0 +1,12 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/sweptCollision.test.ts tests/unit/surfaces.test.ts tests/unit/physics.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-12
+
+
+ Test Files  3 passed (3)
+      Tests  48 passed (48)
+   Start at  02:54:36
+   Duration  480ms (transform 248ms, setup 0ms, import 339ms, tests 43ms, environment 0ms)

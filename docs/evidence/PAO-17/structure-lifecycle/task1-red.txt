@@ -1,0 +1,72 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao17-assets.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+ ❯ tests/unit/pao17-assets.test.ts (4 tests | 4 failed) 19ms
+     × shares an in-flight resource, rejects old consumer, preserves current consumer and cache 10ms
+     × disposes resources arriving after renderer disposal without mounting 4ms
+     × caches failures and empty resources, keeps fallback consumer unmounted 2ms
+     × reads the latest skin at mount time; independent instances release before shared container 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao17-assets.test.ts > PAO-17 renderer asset ownership > shares an in-flight resource, rejects old consumer, preserves current consumer and cache
+AssertionError: expected {} to have property "AssetCache"
+ ❯ cacheType tests/unit/pao17-assets.test.ts:6:15
+      4| async function cacheType() {
+      5|   const mod = await import('../../src/render/assets').catch(() => ({})…
+      6|   expect(mod).toHaveProperty('AssetCache');
+       |               ^
+      7|   return (mod as typeof import('../../src/render/assets')).AssetCache;
+      8| }
+ ❯ tests/unit/pao17-assets.test.ts:11:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/unit/pao17-assets.test.ts > PAO-17 renderer asset ownership > disposes resources arriving after renderer disposal without mounting
+AssertionError: expected {} to have property "AssetCache"
+ ❯ cacheType tests/unit/pao17-assets.test.ts:6:15
+      4| async function cacheType() {
+      5|   const mod = await import('../../src/render/assets').catch(() => ({})…
+      6|   expect(mod).toHaveProperty('AssetCache');
+       |               ^
+      7|   return (mod as typeof import('../../src/render/assets')).AssetCache;
+      8| }
+ ❯ tests/unit/pao17-assets.test.ts:25:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/unit/pao17-assets.test.ts > PAO-17 renderer asset ownership > caches failures and empty resources, keeps fallback consumer unmounted
+AssertionError: expected {} to have property "AssetCache"
+ ❯ cacheType tests/unit/pao17-assets.test.ts:6:15
+      4| async function cacheType() {
+      5|   const mod = await import('../../src/render/assets').catch(() => ({})…
+      6|   expect(mod).toHaveProperty('AssetCache');
+       |               ^
+      7|   return (mod as typeof import('../../src/render/assets')).AssetCache;
+      8| }
+ ❯ tests/unit/pao17-assets.test.ts:34:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/unit/pao17-assets.test.ts > PAO-17 renderer asset ownership > reads the latest skin at mount time; independent instances release before shared container
+AssertionError: expected {} to have property "AssetCache"
+ ❯ cacheType tests/unit/pao17-assets.test.ts:6:15
+      4| async function cacheType() {
+      5|   const mod = await import('../../src/render/assets').catch(() => ({})…
+      6|   expect(mod).toHaveProperty('AssetCache');
+       |               ^
+      7|   return (mod as typeof import('../../src/render/assets')).AssetCache;
+      8| }
+ ❯ tests/unit/pao17-assets.test.ts:44:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed (4)
+   Start at  20:33:08
+   Duration  307ms (transform 35ms, setup 0ms, import 46ms, tests 19ms, environment 0ms)

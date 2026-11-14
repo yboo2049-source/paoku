@@ -1,0 +1,61 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/sweptCollision.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-12
+
+ ❯ tests/unit/sweptCollision.test.ts (47 tests | 4 failed) 33ms
+     × keeps real descending REAR top-edge departure continuous across the next tick 5ms
+     × keeps real descending LEFT top-edge departure continuous across the next tick 1ms
+     × keeps real descending RIGHT top-edge departure continuous across the next tick 1ms
+     × chooses a single top-edge departure owner stably when equivalent roofs overlap 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > keeps real descending REAR top-edge departure continuous across the next tick
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > keeps real descending LEFT top-edge departure continuous across the next tick
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > keeps real descending RIGHT top-edge departure continuous across the next tick
+AssertionError: expected 'GAMEOVER' to be 'PLAYING' // Object.is equality
+
+Expected: "PLAYING"
+Received: "GAMEOVER"
+
+ ❯ tests/unit/sweptCollision.test.ts:149:23
+    147|     else { ctx.player.x += side === 'LEFT' ? -.30979166666663 : .30979…
+    148|     advance(ctx, 1 / 60, nextFrom);
+    149|     expect(ctx.state).toBe('PLAYING');
+       |                       ^
+    150|     expect(ctx.player.supportDeparture).toBeNull();
+    151|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > chooses a single top-edge departure owner stably when equivalent roofs overlap
+AssertionError: expected [ undefined, undefined ] to deeply equal [ 'a-roof', 'a-roof' ]
+
+- Expected
++ Received
+
+  [
+-   "a-roof",
+-   "a-roof",
++   undefined,
++   undefined,
+  ]
+
+ ❯ tests/unit/sweptCollision.test.ts:174:17
+
+    172|       ids.push(ctx.player.supportDeparture?.ownerEntityId);
+    173|     }
+    174|     expect(ids).toEqual(['a-roof', 'a-roof']);
+       |                 ^
+    175|   });
+    176|   it('passes a high obstacle using the grounded rolling box and a low …
+
+ Test Files  1 failed (1)
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+      Tests  4 failed | 43 passed (47)
+
+   Start at  03:02:59
+   Duration  400ms (transform 126ms, setup 0ms, import 157ms, tests 33ms, environment 0ms)

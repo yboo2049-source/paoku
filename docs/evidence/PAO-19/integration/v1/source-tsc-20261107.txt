@@ -1,0 +1,3 @@
+{"cwd":"D:\\worker\\paoku-sessions\\pao-18-font-diagnosis","exe":"node","args":["node_modules/typescript/bin/tsc","--noEmit"],"start":"2026-11-07T08:54:27.325Z"}
+
+{"label":"source-tsc","code":0,"start":"2026-11-07T08:54:27.325Z","end":"2026-11-07T08:54:30.966Z","file":"D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261107\\source-tsc.txt"}

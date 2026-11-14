@@ -1,0 +1,267 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/simulation.test.ts tests/unit/inputQueue.test.ts tests/unit/snapshot.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-10
+
+ ❯ tests/unit/inputQueue.test.ts (5 tests | 5 failed) 16ms
+     × consumes opposite lane commands in sequence order, never arrival order 10ms
+     × rejects old runs, late ticks, duplicate pending and consumed sequences 2ms
+     × rejects paused actions and clears pending inputs on blur and run reset 1ms
+     × rejects malformed time, action and sequence and diagnoses abandoned future commands 1ms
+     × collects keyboard/touch without mutating player or emitting action facts, clears partial touch on blur 1ms
+ ❯ tests/unit/simulation.test.ts (5 tests | 5 failed) 18ms
+     × same seed and effective inputs at 30/60/120Hz and irregular cadence agree at tick600 9ms
+     × injects explicit versioned RNG, resets run/input state without retaining old snapshots 2ms
+     × does not advance timers, input, distance or score while paused 2ms
+     × rejects negative/nonfinite dt and caps long frames with measured dropped time 1ms
+     × one rAF, idempotent lifecycle, pause/background resets wall clock, stop within callback does not rearm 2ms
+ ❯ tests/unit/snapshot.test.ts (3 tests | 3 failed) 9ms
+   × detaches and freezes every nested object, array and Map mutator 7ms
+   × interpolates position only, takes discrete fields from latest, clamps alpha 1ms
+   × never blends the first frame, a new run, teleport or paused discrete phase 1ms
+node.exe :
+所在位置 行:1 字符: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 13 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/inputQueue.test.ts > PAO-10 tick input > consumes opposite lane commands in sequence order, never arr
+ival order
+AssertionError: tick input queue behavior is not implemented: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ queue tests/unit/inputQueue.test.ts:7:71
+      5| function queue() {
+      6|   const Constructor = (Object.values(modules)[0] as any)?.InputQueue;
+      7|   expect(Constructor, 'tick input queue behavior is not implemented').…
+       |                                                                       ^
+      8|   return new Constructor('run-a');
+      9| }
+ ❯ tests/unit/inputQueue.test.ts:15:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/13]⎯
+
+ FAIL  tests/unit/inputQueue.test.ts > PAO-10 tick input > rejects old runs, late ticks, duplicate pending and consumed
+ sequences
+AssertionError: tick input queue behavior is not implemented: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ queue tests/unit/inputQueue.test.ts:7:71
+      5| function queue() {
+      6|   const Constructor = (Object.values(modules)[0] as any)?.InputQueue;
+      7|   expect(Constructor, 'tick input queue behavior is not implemented').…
+       |                                                                       ^
+      8|   return new Constructor('run-a');
+      9| }
+ ❯ tests/unit/inputQueue.test.ts:21:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/13]⎯
+
+ FAIL  tests/unit/inputQueue.test.ts > PAO-10 tick input > rejects paused actions and clears pending inputs on blur and
+ run reset
+AssertionError: tick input queue behavior is not implemented: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ queue tests/unit/inputQueue.test.ts:7:71
+      5| function queue() {
+      6|   const Constructor = (Object.values(modules)[0] as any)?.InputQueue;
+      7|   expect(Constructor, 'tick input queue behavior is not implemented').…
+       |                                                                       ^
+      8|   return new Constructor('run-a');
+      9| }
+ ❯ tests/unit/inputQueue.test.ts:31:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/13]⎯
+
+ FAIL  tests/unit/inputQueue.test.ts > PAO-10 tick input > rejects malformed time, action and sequence and diagnoses ab
+andoned future commands
+AssertionError: tick input queue behavior is not implemented: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ queue tests/unit/inputQueue.test.ts:7:71
+      5| function queue() {
+      6|   const Constructor = (Object.values(modules)[0] as any)?.InputQueue;
+      7|   expect(Constructor, 'tick input queue behavior is not implemented').…
+       |                                                                       ^
+      8|   return new Constructor('run-a');
+      9| }
+ ❯ tests/unit/inputQueue.test.ts:43:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/13]⎯
+
+ FAIL  tests/unit/inputQueue.test.ts > PAO-10 tick input > collects keyboard/touch without mutating player or emitting
+action facts, clears partial touch on blur
+AssertionError: tick input queue behavior is not implemented: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ queue tests/unit/inputQueue.test.ts:7:71
+      5| function queue() {
+      6|   const Constructor = (Object.values(modules)[0] as any)?.InputQueue;
+      7|   expect(Constructor, 'tick input queue behavior is not implemented').…
+       |                                                                       ^
+      8|   return new Constructor('run-a');
+      9| }
+ ❯ tests/unit/inputQueue.test.ts:52:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/13]⎯
+
+ FAIL  tests/unit/simulation.test.ts > PAO-10 reproducible controlled simulation (legacy spawner excluded) > same seed
+and effective inputs at 30/60/120Hz and irregular cadence agree at tick600
+AssertionError: fixed tick simulation owner is missing: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ api tests/unit/simulation.test.ts:7:67
+      5| function api() {
+      6|   const m = Object.values(modules)[0] as any;
+      7|   expect(m?.Simulation, 'fixed tick simulation owner is missing').toBe…
+       |                                                                   ^
+      8|   return m;
+      9| }
+ ❯ controlled tests/unit/simulation.test.ts:16:26
+ ❯ drive tests/unit/simulation.test.ts:21:15
+ ❯ tests/unit/simulation.test.ts:32:23
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/13]⎯
+
+ FAIL  tests/unit/simulation.test.ts > PAO-10 reproducible controlled simulation (legacy spawner excluded) > injects ex
+plicit versioned RNG, resets run/input state without retaining old snapshots
+AssertionError: fixed tick simulation owner is missing: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ api tests/unit/simulation.test.ts:7:67
+      5| function api() {
+      6|   const m = Object.values(modules)[0] as any;
+      7|   expect(m?.Simulation, 'fixed tick simulation owner is missing').toBe…
+       |                                                                   ^
+      8|   return m;
+      9| }
+ ❯ tests/unit/simulation.test.ts:43:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/13]⎯
+
+ FAIL  tests/unit/simulation.test.ts > PAO-10 reproducible controlled simulation (legacy spawner excluded) > does not a
+dvance timers, input, distance or score while paused
+AssertionError: fixed tick simulation owner is missing: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ api tests/unit/simulation.test.ts:7:67
+      5| function api() {
+      6|   const m = Object.values(modules)[0] as any;
+      7|   expect(m?.Simulation, 'fixed tick simulation owner is missing').toBe…
+       |                                                                   ^
+      8|   return m;
+      9| }
+ ❯ controlled tests/unit/simulation.test.ts:16:26
+ ❯ tests/unit/simulation.test.ts:59:17
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/13]⎯
+
+ FAIL  tests/unit/simulation.test.ts > PAO-10 scheduler > rejects negative/nonfinite dt and caps long frames with measu
+red dropped time
+
+ Test Files  3 failed (3)
+      Tests  13 failed (13)
+   Start at  20:01:48
+   Duration  733ms (transform 201ms, setup 0ms, import 270ms, tests 44ms, environment 0ms)
+
+AssertionError: fixed accumulator API missing: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ tests/unit/simulation.test.ts:69:68
+     67|   it('rejects negative/nonfinite dt and caps long frames with measured…
+     68|     const steps: number[] = []; const loop = new GameLoop(dt => steps.…
+     69|     expect((loop as any).advance, 'fixed accumulator API missing').toB…
+       |                                                                    ^
+     70|     (loop as any).advance(-1); (loop as any).advance(NaN); (loop as an…
+     71|     expect(steps).toHaveLength(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/13]⎯
+
+ FAIL  tests/unit/simulation.test.ts > PAO-10 scheduler > one rAF, idempotent lifecycle, pause/background resets wall c
+lock, stop within callback does not rearm
+TypeError: loop.setPaused is not a function
+ ❯ tests/unit/simulation.test.ts:85:19
+     83|     loop.start(); loop.start(); expect(pending.size).toBe(1);
+     84|     fire(100); fire(100 + 1000 / 30); expect(ticks).toBe(2);
+     85|     (loop as any).setPaused(true); fire(10000); expect(ticks).toBe(2);
+       |                   ^
+     86|     (loop as any).setPaused(false); fire(20000); expect(ticks).toBe(2);
+     87|     fire(20000 + 1000 / 60); expect(ticks).toBe(3);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/13]⎯
+
+ FAIL  tests/unit/snapshot.test.ts > detaches and freezes every nested object, array and Map mutator
+AssertionError: deep immutable committed snapshots are missing: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ api tests/unit/snapshot.test.ts:5:78
+      3| function api() {
+      4|   const m = Object.values(modules)[0] as any;
+      5|   expect(m?.immutableCopy, 'deep immutable committed snapshots are mis…
+       |                                                                              ^
+      6|   return m;
+      7| }
+ ❯ tests/unit/snapshot.test.ts:14:29
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/13]⎯
+
+ FAIL  tests/unit/snapshot.test.ts > interpolates position only, takes discrete fields from latest, clamps alpha
+AssertionError: deep immutable committed snapshots are missing: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ api tests/unit/snapshot.test.ts:5:78
+      3| function api() {
+      4|   const m = Object.values(modules)[0] as any;
+      5|   expect(m?.immutableCopy, 'deep immutable committed snapshots are mis…
+       |                                                                              ^
+      6|   return m;
+      7| }
+ ❯ tests/unit/snapshot.test.ts:24:36
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/13]⎯
+
+ FAIL  tests/unit/snapshot.test.ts > never blends the first frame, a new run, teleport or paused discrete phase
+AssertionError: deep immutable committed snapshots are missing: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ api tests/unit/snapshot.test.ts:5:78
+      3| function api() {
+      4|   const m = Object.values(modules)[0] as any;
+      5|   expect(m?.immutableCopy, 'deep immutable committed snapshots are mis…
+       |                                                                              ^
+      6|   return m;
+      7| }
+ ❯ tests/unit/snapshot.test.ts:34:36
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/13]⎯
+
+EXIT_CODE=1

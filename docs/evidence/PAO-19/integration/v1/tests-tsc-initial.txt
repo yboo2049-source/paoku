@@ -1,0 +1,20 @@
+{"cwd":"D:\\worker\\paoku-sessions\\pao-18-font-diagnosis","exe":"node","args":["node_modules/typescript/bin/tsc","--ignoreConfig","--noEmit","--target","ES2023","--module","ESNext","--moduleResolution","bundler","--lib","ES2023,DOM","--skipLibCheck","--allowImportingTsExtensions","--allowArbitraryExtensions","--typeRoots","C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/@types,./node_modules/@types","--types","node","node_modules/vite/client.d.ts","tests/unit/pao19-ui.test.ts","tests/unit/pao19-hud-safe-area.test.ts","tests/unit/pao19-hud-camera-integration.test.ts","tests/e2e/rebuild-ui.spec.ts","tests/e2e/pao19-hud-safe-area.spec.ts","tests/e2e/pao19-hud-camera-integration.spec.ts","tests/fixtures/pao18-legacy-hud.ts"],"start":"2026-11-06T14:28:04.707Z"}
+tests/e2e/rebuild-ui.spec.ts(10,46): error TS2307: Cannot find module '/src/main.ts' or its corresponding type declarations.
+tests/e2e/rebuild-ui.spec.ts(11,53): error TS2307: Cannot find module '/src/ui/dom.ts' or its corresponding type declarations.
+tests/e2e/rebuild-ui.spec.ts(40,121): error TS18047: 'cdp' is possibly 'null'.
+tests/e2e/rebuild-ui.spec.ts(40,204): error TS18047: 'cdp' is possibly 'null'.
+tests/e2e/rebuild-ui.spec.ts(40,294): error TS18047: 'cdp' is possibly 'null'.
+tests/e2e/rebuild-ui.spec.ts(47,73): error TS2307: Cannot find module '/src/core/eventBus.ts' or its corresponding type declarations.
+tests/e2e/rebuild-ui.spec.ts(67,210): error TS2307: Cannot find module '/src/ui/dom.ts' or its corresponding type declarations.
+tests/e2e/rebuild-ui.spec.ts(69,56): error TS2307: Cannot find module '/src/systems/spawner.ts' or its corresponding type declarations.
+tests/e2e/rebuild-ui.spec.ts(69,132): error TS2307: Cannot find module '/src/core/eventBus.ts' or its corresponding type declarations.
+tests/e2e/rebuild-ui.spec.ts(74,180): error TS2307: Cannot find module '/src/ui/dom.ts' or its corresponding type declarations.
+tests/e2e/rebuild-ui.spec.ts(80,224): error TS2307: Cannot find module '/src/systems/spawner.ts' or its corresponding type declarations.
+tests/e2e/rebuild-ui.spec.ts(89,125): error TS2307: Cannot find module '/src/core/eventBus.ts' or its corresponding type declarations.
+tests/e2e/rebuild-ui.spec.ts(91,58): error TS2307: Cannot find module '/src/ui/dom.ts' or its corresponding type declarations.
+tests/unit/pao19-hud-camera-integration.test.ts(24,53): error TS2345: Argument of type '(width: number, height: number) => boolean' is not assignable to parameter of type '(new (...args: unknown[]) => any) | ((this: any, ...args: unknown[]) => void) | ((...args: unknown[]) => any)'.
+  Type '(width: number, height: number) => boolean' is not assignable to type '(this: any, ...args: unknown[]) => void'.
+    Types of parameters 'width' and 'args' are incompatible.
+      Type 'unknown' is not assignable to type 'number'.
+
+{"label":"tests-tsc-initial","code":2,"start":"2026-11-06T14:28:04.707Z","end":"2026-11-06T14:28:08.646Z","file":"D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\tests-tsc-initial.txt"}

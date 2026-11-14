@@ -1,0 +1,160 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\worker\\paoku-sessions\\pao-17\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      ".pao17-local/acceptance.config.ts",
+      "--retries=0",
+      "--grep",
+      "production main dispose bridge"
+    ],
+    "configFile": "D:\\worker\\paoku-sessions\\pao-17\\.pao17-local\\acceptance.config.ts",
+    "rootDir": "D:/worker/paoku-sessions/pao-17",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/worker/paoku-sessions/pao-17/.pao17-local/.pao17-local/results-B-red",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/worker/paoku-sessions/pao-17",
+        "testIgnore": [],
+        "testMatch": [
+          ".pao17-local/mirror/*.pw.ts",
+          "tests/e2e/pao17-*.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/PAO-17/structure-lifecycle/B-red-playwright.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 5187 --strictPort",
+      "url": "http://127.0.0.1:5187",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "tests\\e2e\\pao17-lifecycle.spec.ts",
+      "file": "tests/e2e/pao17-lifecycle.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F production main dispose bridge releases the actual renderer engine and scene",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4571,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 9\u001b[39m\n\u001b[31m+ Received  + 9\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"animations\": 0,\u001b[39m\n\u001b[32m-   \"disposed\": true,\u001b[39m\n\u001b[32m-   \"engines\": 0,\u001b[39m\n\u001b[32m-   \"materials\": 0,\u001b[39m\n\u001b[32m-   \"meshes\": 0,\u001b[39m\n\u001b[32m-   \"nodes\": 0,\u001b[39m\n\u001b[32m-   \"particles\": 0,\u001b[39m\n\u001b[32m-   \"skeletons\": 0,\u001b[39m\n\u001b[32m-   \"textures\": 0,\u001b[39m\n\u001b[31m+   \"animations\": 7,\u001b[39m\n\u001b[31m+   \"disposed\": false,\u001b[39m\n\u001b[31m+   \"engines\": 1,\u001b[39m\n\u001b[31m+   \"materials\": 37,\u001b[39m\n\u001b[31m+   \"meshes\": 45,\u001b[39m\n\u001b[31m+   \"nodes\": 74,\u001b[39m\n\u001b[31m+   \"particles\": 1,\u001b[39m\n\u001b[31m+   \"skeletons\": 1,\u001b[39m\n\u001b[31m+   \"textures\": 9,\u001b[39m\n\u001b[2m  }\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 9\u001b[39m\n\u001b[31m+ Received  + 9\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"animations\": 0,\u001b[39m\n\u001b[32m-   \"disposed\": true,\u001b[39m\n\u001b[32m-   \"engines\": 0,\u001b[39m\n\u001b[32m-   \"materials\": 0,\u001b[39m\n\u001b[32m-   \"meshes\": 0,\u001b[39m\n\u001b[32m-   \"nodes\": 0,\u001b[39m\n\u001b[32m-   \"particles\": 0,\u001b[39m\n\u001b[32m-   \"skeletons\": 0,\u001b[39m\n\u001b[32m-   \"textures\": 0,\u001b[39m\n\u001b[31m+   \"animations\": 7,\u001b[39m\n\u001b[31m+   \"disposed\": false,\u001b[39m\n\u001b[31m+   \"engines\": 1,\u001b[39m\n\u001b[31m+   \"materials\": 37,\u001b[39m\n\u001b[31m+   \"meshes\": 45,\u001b[39m\n\u001b[31m+   \"nodes\": 74,\u001b[39m\n\u001b[31m+   \"particles\": 1,\u001b[39m\n\u001b[31m+   \"skeletons\": 1,\u001b[39m\n\u001b[31m+   \"textures\": 9,\u001b[39m\n\u001b[2m  }\u001b[22m\n    at D:\\worker\\paoku-sessions\\pao-17\\tests\\e2e\\pao17-lifecycle.spec.ts:71:24",
+                    "location": {
+                      "file": "D:\\worker\\paoku-sessions\\pao-17\\tests\\e2e\\pao17-lifecycle.spec.ts",
+                      "column": 24,
+                      "line": 71
+                    },
+                    "snippet": "  69 |   });\n  70 |   expect(result.before.engines).toBe(1); expect(result.before.meshes).toBeGreaterThan(0);\n> 71 |   expect(result.after).toEqual({ engines: 0, meshes: 0, nodes: 0, materials: 0, textures: 0, animations: 0, skeletons: 0, particles: 0, disposed: true });\n     |                        ^\n  72 |   expect(errors).toEqual([]); await writeFile(resolve(dir, 'F-main-release.json'), JSON.stringify({ result, errors }, null, 2));\n  73 | });\n  74 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\worker\\paoku-sessions\\pao-17\\tests\\e2e\\pao17-lifecycle.spec.ts",
+                        "column": 24,
+                        "line": 71
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 9\u001b[39m\n\u001b[31m+ Received  + 9\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"animations\": 0,\u001b[39m\n\u001b[32m-   \"disposed\": true,\u001b[39m\n\u001b[32m-   \"engines\": 0,\u001b[39m\n\u001b[32m-   \"materials\": 0,\u001b[39m\n\u001b[32m-   \"meshes\": 0,\u001b[39m\n\u001b[32m-   \"nodes\": 0,\u001b[39m\n\u001b[32m-   \"particles\": 0,\u001b[39m\n\u001b[32m-   \"skeletons\": 0,\u001b[39m\n\u001b[32m-   \"textures\": 0,\u001b[39m\n\u001b[31m+   \"animations\": 7,\u001b[39m\n\u001b[31m+   \"disposed\": false,\u001b[39m\n\u001b[31m+   \"engines\": 1,\u001b[39m\n\u001b[31m+   \"materials\": 37,\u001b[39m\n\u001b[31m+   \"meshes\": 45,\u001b[39m\n\u001b[31m+   \"nodes\": 74,\u001b[39m\n\u001b[31m+   \"particles\": 1,\u001b[39m\n\u001b[31m+   \"skeletons\": 1,\u001b[39m\n\u001b[31m+   \"textures\": 9,\u001b[39m\n\u001b[2m  }\u001b[22m\n\n  69 |   });\n  70 |   expect(result.before.engines).toBe(1); expect(result.before.meshes).toBeGreaterThan(0);\n> 71 |   expect(result.after).toEqual({ engines: 0, meshes: 0, nodes: 0, materials: 0, textures: 0, animations: 0, skeletons: 0, particles: 0, disposed: true });\n     |                        ^\n  72 |   expect(errors).toEqual([]); await writeFile(resolve(dir, 'F-main-release.json'), JSON.stringify({ result, errors }, null, 2));\n  73 | });\n  74 |\n    at D:\\worker\\paoku-sessions\\pao-17\\tests\\e2e\\pao17-lifecycle.spec.ts:71:24"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:58:41.667Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\worker\\paoku-sessions\\pao-17\\.pao17-local\\.pao17-local\\results-B-red\\tests-e2e-pao17-lifecycle--5d7aa-l-renderer-engine-and-scene\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\worker\\paoku-sessions\\pao-17\\tests\\e2e\\pao17-lifecycle.spec.ts",
+                    "column": 24,
+                    "line": 71
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "dbc19043a3ca55914840-185c7fe8ff479d469da3",
+          "file": "tests/e2e/pao17-lifecycle.spec.ts",
+          "line": 53,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-02T12:58:36.761Z",
+    "duration": 11944.462,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

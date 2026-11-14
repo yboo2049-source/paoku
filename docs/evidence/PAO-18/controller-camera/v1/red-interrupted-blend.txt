@@ -1,0 +1,32 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao18-character.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18
+
+stdout | tests/unit/pao18-character.test.ts > preserves the actual blended pose when a transition is interrupted back to its outgoing clip
+BJS - [20:29:32]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao18-character.test.ts (8 tests | 1 failed) 27ms
+   × preserves the actual blended pose when a transition is interrupted back to its outgoing clip 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao18-character.test.ts > preserves the actual blended pose when a transition is interrupted back to its outgoing clip
+AssertionError: expected 1 to be close to 2.02, received difference is 1.02, but expected 5e-9
+ ❯ tests/unit/pao18-character.test.ts:108:27
+    106|   const blended = bone.rotation.x;
+    107|   view.sync(context(), 0);
+    108|   expect(bone.rotation.x).toBeCloseTo(blended, 8);
+       |                           ^
+    109|   view.sync(context(), 0.02); expect(view.status.phase).toBe('RUN');
+    110| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  20:29:29
+   Duration  3.36s (transform 58ms, setup 0ms, import 3.15s, tests 27ms, environment 0ms)

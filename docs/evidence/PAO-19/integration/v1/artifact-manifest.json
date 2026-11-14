@@ -1,0 +1,70 @@
+{
+  "rawRoot": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106",
+  "artifacts": [
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/result.json",
+      "bytes": 410815,
+      "sha256": "1b558c910102148977defa6f5ae77a349093317468ca399520a532530f121bd9"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-once.txt",
+      "bytes": 2883404,
+      "sha256": "bb7f927fd8b2d17a1b2dbb88da82c0f1d59603d759404901cc597932bec68205"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/service.log",
+      "bytes": 3092829,
+      "sha256": "b816d5760f7191643999d48c0e47c589a28b8eea8d1c0789712aa784adcf90aa"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/service-owner.json",
+      "bytes": 133,
+      "sha256": "a77412efc12de18836aa0a740a848240389dc4c08dad113a4330f69f45cb9ffd"
+    },
+    {
+      "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao18-fact-bridge.pw.ts-F--80905-pplication-restart-recovers\\error-context.md",
+      "bytes": 17237,
+      "sha256": "96faa7d138e57e2d58ac4fd310222d38cad9feb2279f2e916576860c661c5200"
+    },
+    {
+      "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao18-fact-bridge.pw.ts-F--80905-pplication-restart-recovers\\trace.zip",
+      "bytes": 15452149,
+      "sha256": "a1f02e2cd1c78c3ce96c6215458216283b02c2abea96acc700051909caffe87d"
+    },
+    {
+      "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao19-hud-safe-area.pw.ts--6122d-ad-only-producer-scheduling\\error-context.md",
+      "bytes": 17185,
+      "sha256": "03a02db6bfc53fb11cbeaee48f7bb79dfa94336e729b24ada56a24df013551d0"
+    },
+    {
+      "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao19-hud-safe-area.pw.ts--6122d-ad-only-producer-scheduling\\trace.zip",
+      "bytes": 2851739,
+      "sha256": "6960d19bf083cc0efb5e78623f18ea95e6a1e81b16f66ae14a76f5301ac4541e"
+    },
+    {
+      "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao19-hud-safe-area.pw.ts--e4ab4-only-measurement-scheduling\\error-context.md",
+      "bytes": 17183,
+      "sha256": "ede57a3205cf0ab9f0c761345727521349504863681cc1376936ee9d81d2fd54"
+    },
+    {
+      "path": "D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\full-final\\artifacts\\pao19-hud-safe-area.pw.ts--e4ab4-only-measurement-scheduling\\trace.zip",
+      "bytes": 33001722,
+      "sha256": "1917b9f40d29e338c33cba045876cddd8d4cf318300bd959c05edb2742e68381"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/integration/F-maximal-1440.png",
+      "bytes": 160225,
+      "sha256": "93cc3006c2c862221d7c6cc0a53f9ccf3d6668d328b5681d51a730a6a5519e27"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/integration/F-maximal-390.png",
+      "bytes": 64704,
+      "sha256": "3ecb7c0a364b2255b4ec079d80c6e8f8e3f35aa5d64417c4a5c811380ae9ab7f"
+    },
+    {
+      "path": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/full-final/integration/F-paused-rotation.png",
+      "bytes": 52464,
+      "sha256": "3c8d4c913c8e734112c0652f8b974ff8ac6131cbc824f215246776dd8c2994f7"
+    }
+  ]
+}

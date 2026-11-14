@@ -1,0 +1,33 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/sweptCollision.test.ts -t clears terminal
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-12
+
+ ❯ tests/unit/sweptCollision.test.ts (11 tests | 1 failed | 10 skipped) 8ms
+     × clears terminal and support state at an explicit run or QA boundary 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 swept damage regressions > clears terminal and support state at an explicit run or QA boundary
+AssertionError: expected 'undefined' to be 'function' // Object.is equality
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ tests/unit/sweptCollision.test.ts:31:26
+     29|       supportRampExit: { xMin: -1, xMax: 1, z: 0, y: 3 } });
+     30|     const reset = Reflect.get(physicsModule, 'resetPhysicsContacts');
+     31|     expect(typeof reset).toBe('function');
+       |                          ^
+     32|     reset(p);
+     33|     expect(p).toMatchObject({ collisionEnded: false, supportSurfaceId:…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 10 skipped (11)
+   Start at  02:53:52
+   Duration  357ms (transform 117ms, setup 0ms, import 148ms, tests 8ms, environment 0ms)

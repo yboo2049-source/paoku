@@ -1,0 +1,179 @@
+{
+  "report": {
+    "mode": "committed-motion-v1",
+    "faulted": false,
+    "journal": {
+      "batches": 40,
+      "events": 5,
+      "floorSequence": 0,
+      "floorTick": 0,
+      "faultTick": null
+    },
+    "stamp": {
+      "streamEpoch": 2,
+      "throughTick": 40,
+      "throughSequence": 5
+    },
+    "audio": {
+      "cursor": {
+        "runId": "run-354cfc90-6525-4b66-b965-050fc583b717",
+        "streamEpoch": 2,
+        "throughTick": 40,
+        "throughSequence": 5
+      },
+      "items": [
+        {
+          "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:1:1",
+          "type": "PLAYER_LANDED",
+          "outcome": "handled"
+        },
+        {
+          "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:12:2",
+          "type": "ACTION_STARTED",
+          "outcome": "handled"
+        },
+        {
+          "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:19:3",
+          "type": "ACTION_STARTED",
+          "outcome": "handled"
+        },
+        {
+          "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:35:4",
+          "type": "ACTION_STARTED",
+          "outcome": "handled"
+        },
+        {
+          "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:40:5",
+          "type": "PLAYER_LANDED",
+          "outcome": "handled"
+        }
+      ],
+      "dropped": 0,
+      "factGaps": 0,
+      "failures": 0,
+      "observerFailures": 0
+    },
+    "render": {
+      "cursor": {
+        "runId": "run-354cfc90-6525-4b66-b965-050fc583b717",
+        "streamEpoch": 2,
+        "throughTick": 40,
+        "throughSequence": 5
+      },
+      "items": [
+        {
+          "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:1:1",
+          "outcome": "handled"
+        },
+        {
+          "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:12:2",
+          "outcome": "handled"
+        },
+        {
+          "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:19:3",
+          "outcome": "handled"
+        },
+        {
+          "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:35:4",
+          "outcome": "handled"
+        },
+        {
+          "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:40:5",
+          "outcome": "handled"
+        }
+      ],
+      "failures": 0,
+      "character": {
+        "phase": "SLIDE_ENTER",
+        "playhead": 0.08333333333333326,
+        "blending": true,
+        "landed": false,
+        "board": false,
+        "clip": "sneak_pose",
+        "degraded": true,
+        "factMode": "COMMITTED_MOTION",
+        "actionInstanceId": "run-354cfc90-6525-4b66-b965-050fc583b717/2/action/35/3",
+        "actionTimeSec": 0.5833333333333334,
+        "receipt": {
+          "status": "DEFERRED",
+          "through": {
+            "runId": "run-354cfc90-6525-4b66-b965-050fc583b717",
+            "streamEpoch": 2,
+            "throughTick": 40,
+            "throughSequence": 5
+          },
+          "items": []
+        }
+      },
+      "camera": {
+        "supportHeight": 0,
+        "positionHeight": 0,
+        "targetHeight": 0,
+        "projection": {
+          "safe": true,
+          "reason": null,
+          "actors": [
+            {
+              "name": "player",
+              "front": true,
+              "minX": 58.543239247842685,
+              "maxX": 153.52505903179778,
+              "minY": 232.72991125331234,
+              "maxY": 409.40843753428356,
+              "safe": true
+            },
+            {
+              "name": "officer",
+              "front": true,
+              "minX": 155.51414628238308,
+              "maxX": 260.2969690907906,
+              "minY": 285.0142743897962,
+              "maxY": 493.15630834492435,
+              "safe": true
+            },
+            {
+              "name": "dog",
+              "front": true,
+              "minX": 249.86465351374665,
+              "maxX": 310.10604975940595,
+              "minY": 412.7309474917286,
+              "maxY": 550.882651233761,
+              "safe": true
+            }
+          ]
+        },
+        "landedFacts": 2
+      },
+      "root": {
+        "x": -2.99928567163932,
+        "y": 0,
+        "z": 12.056944444444442
+      },
+      "groupsPaused": true
+    },
+    "committedItems": [
+      {
+        "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:1:1",
+        "type": "PLAYER_LANDED"
+      },
+      {
+        "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:12:2",
+        "type": "ACTION_STARTED"
+      },
+      {
+        "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:19:3",
+        "type": "ACTION_STARTED"
+      },
+      {
+        "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:35:4",
+        "type": "ACTION_STARTED"
+      },
+      {
+        "eventId": "run-354cfc90-6525-4b66-b965-050fc583b717:40:5",
+        "type": "PLAYER_LANDED"
+      }
+    ],
+    "errors": []
+  },
+  "errors": []
+}

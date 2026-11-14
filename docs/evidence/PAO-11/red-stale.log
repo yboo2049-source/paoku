@@ -1,0 +1,24 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/surfaces.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-11
+
+ ❯ tests/unit/surfaces.test.ts (20 tests | 1 failed) 22ms
+   × rejects stale sample after external placement below roof 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/surfaces.test.ts > rejects stale sample after external placement below roof
+AssertionError: expected 8 to be less than 7.9
+ ❯ tests/unit/surfaces.test.ts:69:172
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 19 passed (20)
+   Start at  01:29:43
+   Duration  422ms (transform 90ms, setup 0ms, import 115ms, tests 22ms, environment 0ms)

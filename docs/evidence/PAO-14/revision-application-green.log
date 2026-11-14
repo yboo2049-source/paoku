@@ -1,0 +1,12 @@
+
+> app@0.0.0 test
+> vitest run --run tests/unit/application.test.ts tests/unit/shopTransactions.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-14
+
+
+ Test Files  2 passed (2)
+      Tests  32 passed (32)
+   Start at  13:32:37
+   Duration  322ms (transform 107ms, setup 0ms, import 146ms, tests 22ms, environment 0ms)

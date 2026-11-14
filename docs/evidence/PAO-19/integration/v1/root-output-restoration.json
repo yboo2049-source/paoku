@@ -1,0 +1,65 @@
+{
+  "cause": "Old gameplay dynamic screenshot prefix was missed by docs/evidence-only output rewriting. Original full run is retained; no rerun.",
+  "head": "d303633e2539a26ca595438b51216a02900df92f",
+  "files": [
+    {
+      "path": "screenshot_1_menu.png",
+      "backup": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/root-output-preserved/screenshot_1_menu.png",
+      "generatedSha256": "9a7737f671695a99f288b81d3eac2d5040fcb0ac4d7587ff4a3c2477d36081e8",
+      "baselineSha256": "dc25282f324c46a3202cccdb9ef2280b8102ed61ce7b1493ea1397d73e2c5a3e",
+      "restoredSha256": "dc25282f324c46a3202cccdb9ef2280b8102ed61ce7b1493ea1397d73e2c5a3e",
+      "originalGitBlob": "be0f626ee619cedcca91a65be0ef417595aa84bb"
+    },
+    {
+      "path": "screenshot_2_shop.png",
+      "backup": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/root-output-preserved/screenshot_2_shop.png",
+      "generatedSha256": "37aad8af2fd4c98e1f87c027a0a02b728ef3ce06fdd6092b5a3d712e0cf81f6e",
+      "baselineSha256": "dfc980f031e73d7c2f64a64240c8ed346dccb4314b9ad97488a8fdf4bc60d673",
+      "restoredSha256": "dfc980f031e73d7c2f64a64240c8ed346dccb4314b9ad97488a8fdf4bc60d673",
+      "originalGitBlob": "baf928594b696f94bd9174a9242feba7e1bc47a3"
+    },
+    {
+      "path": "screenshot_3_gameplay_chase.png",
+      "backup": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/root-output-preserved/screenshot_3_gameplay_chase.png",
+      "generatedSha256": "da8884ef37c43731c5c3d0221e517189d0deea8f056b334b5b827d2712677948",
+      "baselineSha256": "af725839311297c3965600a6c2260b7884fbf6d1658c47409ebb74ccd6d27f86",
+      "restoredSha256": "af725839311297c3965600a6c2260b7884fbf6d1658c47409ebb74ccd6d27f86",
+      "originalGitBlob": "0800695b0d2adc6363dd0730bbbe20e1566c7940"
+    },
+    {
+      "path": "screenshot_4_bank_tilt.png",
+      "backup": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/root-output-preserved/screenshot_4_bank_tilt.png",
+      "generatedSha256": "65a9c623f137498bd613356a490acfde8adcb1a8a1231b5682d74f33e116050b",
+      "baselineSha256": "8389127cf44ea58590a75981198dd3caf07a22b3abdb282ca8e90cee435a564a",
+      "restoredSha256": "8389127cf44ea58590a75981198dd3caf07a22b3abdb282ca8e90cee435a564a",
+      "originalGitBlob": "6f5f42c5ac4fc04249e77dfb95b47c8c0871191e"
+    },
+    {
+      "path": "screenshot_5_jump_action.png",
+      "backup": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/root-output-preserved/screenshot_5_jump_action.png",
+      "generatedSha256": "f39bcbc8358b05c5a6e496161e09c7fa0fbfaa6a82895a9697bcdaa8529d957e",
+      "baselineSha256": "4608007083acb86ea1fa5b3f3d9ad08d822ba3521eaf6cdc1b4bf12281c35e41",
+      "restoredSha256": "4608007083acb86ea1fa5b3f3d9ad08d822ba3521eaf6cdc1b4bf12281c35e41",
+      "originalGitBlob": "4b23567a9b6b727e167287a314adb790aba2599b"
+    },
+    {
+      "path": "screenshot_6_paused_screen.png",
+      "backup": "D:/worker/paoku-diagnostics/pao18-pao19-integration-20261106/root-output-preserved/screenshot_6_paused_screen.png",
+      "generatedSha256": "34449972e2fd930aa64c313d61c56d51db3ea690031709ef4927f40fedef7872",
+      "baselineSha256": "edfb9798eba160f2bfe52e44dbb818c54336c2bba7e03a627fae2ec3fee527d8",
+      "restoredSha256": "edfb9798eba160f2bfe52e44dbb818c54336c2bba7e03a627fae2ec3fee527d8",
+      "originalGitBlob": "68b3958f37f8ed978b03fa6d7aa3ed40093eb8ad"
+    }
+  ],
+  "changedTracked": [
+    "index.html",
+    "src/main.ts",
+    "src/render/babylon.ts",
+    "src/style.css",
+    "src/ui/dom.ts",
+    "tests/e2e/pao18-controller-camera.spec.ts"
+  ],
+  "unexpectedTracked": [],
+  "sourceWipKept": true,
+  "fullRunHasOutputIsolationGap": true
+}

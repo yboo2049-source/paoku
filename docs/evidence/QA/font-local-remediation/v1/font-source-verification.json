@@ -1,0 +1,114 @@
+{
+  "repository": "https://github.com/google/fonts",
+  "revision": "2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc",
+  "fonts": [
+    {
+      "family": "Outfit",
+      "binaryURL": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/outfit/Outfit%5Bwght%5D.ttf",
+      "sourceBytes": 110884,
+      "outputBytes": 110884,
+      "sourceSha256": "fc7287273e66929776e2ba54f144fe699080bec29f61bf649d70d871468aeade",
+      "outputSha256": "fc7287273e66929776e2ba54f144fe699080bec29f61bf649d70d871468aeade",
+      "exactOriginalBytes": true,
+      "licenseURL": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/outfit/OFL.txt",
+      "licenseSourceSha256": "c676351bf8576b9aba743cd5eaa8c0e7ee0d51f805d720447b4df4ddb6a2e416",
+      "licenseOutputSha256": "e2a6bbb2589b85bac1690ec8f220b22a9c3af9bfda56df6391f7ab491c7a039f",
+      "licenseNormalization": "trim horizontal line-end whitespace; LF; wording and all notices unchanged",
+      "metadataURL": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/outfit/METADATA.pb",
+      "metadataSha256": "4cd9d2154f15495ca97de561060d535eaba9f7007be4a87e40f3b58ea8111cf2",
+      "embeddedCopyrightMatches": true,
+      "names": [
+        {
+          "id": 0,
+          "text": "Copyright 2021 The Outfit Project Authors (https://github.com/Outfitio/Outfit-Fonts)"
+        },
+        {
+          "id": 1,
+          "text": "Outfit Thin"
+        },
+        {
+          "id": 2,
+          "text": "Regular"
+        },
+        {
+          "id": 5,
+          "text": "Version 1.100;gftools[0.9.27]"
+        },
+        {
+          "id": 6,
+          "text": "Outfit-Thin"
+        },
+        {
+          "id": 16,
+          "text": "Outfit"
+        },
+        {
+          "id": 17,
+          "text": "Thin"
+        }
+      ],
+      "weightRange": [
+        100,
+        900
+      ],
+      "cssWeightRange": [
+        100,
+        900
+      ],
+      "unicodeCodepoints": 360,
+      "license": "SIL-OFL-1.1",
+      "reservedFontNames": []
+    },
+    {
+      "family": "Orbitron",
+      "binaryURL": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/orbitron/Orbitron%5Bwght%5D.ttf",
+      "sourceBytes": 38576,
+      "outputBytes": 38576,
+      "sourceSha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd",
+      "outputSha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd",
+      "exactOriginalBytes": true,
+      "licenseURL": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/orbitron/OFL.txt",
+      "licenseSourceSha256": "ab609b0e110d622435ff337cdf233288556e011bbf9bd0550be98846c0630819",
+      "licenseOutputSha256": "dd6fdb6716fd179d1fe891759efb3f9200753fdf6abf513b55b712c4ae16e512",
+      "licenseNormalization": "trim horizontal line-end whitespace; LF; wording and all notices unchanged",
+      "metadataURL": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/orbitron/METADATA.pb",
+      "metadataSha256": "6e897c83b8fcdeccb78accb132efd7b279267b684484aa0735b78aba711d0b36",
+      "embeddedCopyrightMatches": true,
+      "names": [
+        {
+          "id": 0,
+          "text": "Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron), with Reserved Font Name: \"Orbitron\"."
+        },
+        {
+          "id": 1,
+          "text": "Orbitron"
+        },
+        {
+          "id": 2,
+          "text": "Regular"
+        },
+        {
+          "id": 5,
+          "text": "Version 2.001"
+        },
+        {
+          "id": 6,
+          "text": "Orbitron-Regular"
+        }
+      ],
+      "weightRange": [
+        400,
+        900
+      ],
+      "cssWeightRange": [
+        500,
+        900
+      ],
+      "unicodeCodepoints": 207,
+      "license": "SIL-OFL-1.1",
+      "reservedFontNames": [
+        "Orbitron"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/fact-bridge/playwright.config.ts pao18-fact-bridge.pw.ts --grep N touch
+
+[WebServer] (node:24244) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:25708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:139:1 › N touch input and restart use the same committed bridge at 390 (5.6s)
+
+  1 passed (8.2s)

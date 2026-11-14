@@ -1,0 +1,37 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/font-remediation/update.config.ts
+
+
+[WebServer] (node:8) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:13364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] .pao18.local\font-remediation\update.pw.ts:3:1 › F production artifact A-B-A cache update and rollback with identical licensed font bytes
+  1) .pao18.local\font-remediation\update.pw.ts:3:1 › F production artifact A-B-A cache update and rollback with identical licensed font bytes
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      10 |  async function cacheKeys(){return page.evaluate(async()=>{const result=[];for(const name of await caches.keys()){const c=await caches.open(name);result.push({name,urls:(await c.keys()).map(r=>r.url)});}return result;});}
+      11 |  async function verify(label:string,names:string[],removed:string[],marker:boolean){
+    > 12 |   await page.reload();expect((await page.content()).includes('font-cache-deploy-B')).toBe(marker);
+         |                                                                                      ^
+      13 |   await expect.poll(async()=>{const all=(await cacheKeys()).flatMap(c=>c.urls);return names.every(n=>all.some(u=>u.includes('/fonts/'+n)))&&removed.every(n=>!all.some(u=>u.includes('/fonts/'+n)));}).toBe(true);
+      14 |   const cdp=await context.newCDPSession(page);await cdp.send('Network.clearBrowserCache');await context.setOffline(true);await page.reload();
+      15 |   const faces=await page.evaluate(async()=>{const result=[];for(const family of ['Outfit','Orbitron']){const f=await document.fonts.load(`700 24px "${family}"`,'SUBWAY 123');result.push({family,faces:f.map(x=>({family:x.family,status:x.status}))});}return result;});
+        at verify (D:\worker\paoku-sessions\pao-18-font-diagnosis\.pao18.local\font-remediation\update.pw.ts:12:86)
+        at D:\worker\paoku-sessions\pao-18-font-diagnosis\.pao18.local\font-remediation\update.pw.ts:20:31
+
+    Error Context: .pao18.local\font-remediation\update-results\update.pw.ts-F-production--918d1-entical-licensed-font-bytes\error-context.md
+
+
+  1 failed
+    .pao18.local\font-remediation\update.pw.ts:3:1 › F production artifact A-B-A cache update and rollback with identical licensed font bytes

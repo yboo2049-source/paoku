@@ -1,0 +1,43 @@
+{
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 (0x00002188) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "webGLVersion": 2,
+  "dpr": 2,
+  "canvas": {
+    "width": 390,
+    "height": 844
+  },
+  "projection": {
+    "safe": true,
+    "reason": null,
+    "actors": [
+      {
+        "name": "playerRoot",
+        "front": true,
+        "minX": 34.125186570502265,
+        "maxX": 108.52348571741672,
+        "minY": 231.35777986245694,
+        "maxY": 432.783842646648,
+        "safe": true
+      },
+      {
+        "name": "inspectorRoot",
+        "front": true,
+        "minX": 194.19667767124596,
+        "maxX": 305.8215559626837,
+        "minY": 289.50231506785866,
+        "maxY": 499.4752917105399,
+        "safe": true
+      },
+      {
+        "name": "dogRoot",
+        "front": true,
+        "minX": 268.0727687340998,
+        "maxX": 348.7297126288696,
+        "minY": 408.2278415389739,
+        "maxY": 545.147496702888,
+        "safe": true
+      }
+    ]
+  },
+  "browser": "151.0.7922.34"
+}

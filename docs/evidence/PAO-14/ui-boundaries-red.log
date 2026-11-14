@@ -1,0 +1,57 @@
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-14
+
+ ❯ docs/evidence/PAO-14/ui-boundaries.probe.ts (2 tests | 2 failed) 181ms
+   × isolates input immediately when pause waits behind a durable audio transaction 174ms
+   × defers a reentrant menu command until the same terminal tick has committed 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  docs/evidence/PAO-14/ui-boundaries.probe.ts > isolates input immediately when pause waits behind a durable audio transaction
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ docs/evidence/PAO-14/ui-boundaries.probe.ts:63:24
+     61|   app.releaseLock(); await flush();
+
+     62|   app.main.disposeGame();
+     63|   expect(pending.tick).toBe(before.tick);
+       |                        ^
+     64|   expect(pending.context.player.isJumping).toBe(false);
+     65|   expect(app.sensor.getInputLog()).toEqual([]);
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  12:45:56
+   Duration  474ms (transform 179ms, setup 0ms, import 69ms, tests 181ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  docs/evidence/PAO-14/ui-boundaries.probe.ts > defers a reentrant menu command until the same terminal tick has committed
+AssertionError: expected { …(7) } to match object { scoreInt: 100, …(1) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "endReason": "COLLISION",
+-   "scoreInt": 100,
++   "endReason": "QUIT",
++   "scoreInt": 0,
+  }
+
+ ❯ docs/evidence/PAO-14/ui-boundaries.probe.ts:78:28
+     76|   const snapshot = app.sensor.getAppSnapshot();
+     77|   app.main.disposeGame();
+     78|   expect(snapshot.summary).toMatchObject({ scoreInt: 100, endReason: '…
+       |                            ^
+     79|   expect(snapshot.highScore).toBe(100);
+     80| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯

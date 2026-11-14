@@ -1,0 +1,44 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/font-remediation/target.config.ts
+
+
+[WebServer] (node:8544) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+
+(node:22400) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/2] tests\e2e\font-resources.spec.ts:39:1 › N real application uses local faces and glyphs with Google domains unavailable
+  1) tests\e2e\font-resources.spec.ts:39:1 › N real application uses local faces and glyphs with Google domains unavailable
+
+    Error: Outfit 400 actual custom glyphs
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      46 |   expect(record.local.length, 'real local font requests').toBeGreaterThanOrEqual(2);
+      47 |   for (const item of faces) { expect(item.error).toBeNull(); expect(item.faces.length).toBeGreaterThan(0); expect(item.faces.every(f => f.family === item.family && f.status === 'loaded')).toBe(true); }
+    > 48 |   for (const item of glyphs) expect(item.fonts.some(f => f.isCustomFont && f.familyName === item.family && f.glyphCount > 0), `${item.family} ${item.weight} actual custom glyphs`).toBe(true);
+         |                                                                                                                                                                                     ^
+      49 |   const manifest = JSON.parse(await readFile(resolve('public/fonts/sources.json'), 'utf8'));
+      50 |   for (const item of manifest.fonts) { const response = await request.get('/fonts/' + item.file); expect(response.status()).toBe(200); expect(createHash('sha256').update(await response.body()).digest('hex')).toBe(item.sha256); }
+      51 |   for (const source of ['index.html', 'src/style.css']) { const response = await request.get('/' + source + '?raw'); const body = await response.text(), disk = await readFile(resolve(source), 'utf8'); expect(response.ok() && (body === disk || body.includes(JSON.stringify(disk))), source + ' current checkout identity').toBe(true); }
+        at D:\worker\paoku-sessions\pao-18-font-diagnosis\tests\e2e\font-resources.spec.ts:48:181
+
+    Error Context: .pao18.local\font-remediation\red-results\font-resources-N-real-appl-50a13--Google-domains-unavailable\error-context.md
+
+
+
+(node:20808) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2/2] tests\e2e\font-resources.spec.ts:54:1 › F independent local font 404 remains visible to unchanged error sensors
+  1 failed
+    tests\e2e\font-resources.spec.ts:39:1 › N real application uses local faces and glyphs with Google domains unavailable
+  1 passed (8.9s)

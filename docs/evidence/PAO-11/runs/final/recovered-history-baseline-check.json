@@ -1,0 +1,937 @@
+{
+  "allVerified": true,
+  "checks": [
+    {
+      "path": "docs\\evidence\\PAO-10\\browser-attempt-1-lifecycle.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\browser-F-lifecycle-queue-and-readonly.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\browser-F-portrait-touch-flow.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\browser-history-restoration.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\browser-N-keyboard-playable-flow.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\browser-runner.mjs",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\browser-source-identity.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\build-attempt-1.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\build-attempt-2.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\build.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\core-review-full-unit.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\core-review-green.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\core-review-red.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\e2e-attempt-1.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\e2e-attempt-2.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\e2e.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\F-lifecycle-clears-input-and-hidden-time.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\final-build.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\final-e2e.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\final-unit.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\green-attempt-1.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\green.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\implementation-plan.md",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\main-build.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\main-full-test.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\main-green.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\main-red.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\main-typecheck.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\N-desktop-production-keyboard-flow.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\N-mobile-production-touch.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\playwright.config.ts",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\proposed-pao6-tick-sync.patch",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\README.md",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\red-touch.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\red.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\reentrant-commit-verification.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-double-score.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-failure.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-high-obstacle-result.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-high-obstacle-roll.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-hoverboard.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-low-obstacle-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-low-obstacle-result.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-magnet.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mission-status.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-left.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-paused.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-roll.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-shop.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-mobile-touch-layout.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-obstacles-failure-restart.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-powerups-shield-missions.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-ramp-approach.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-ramp-ascent.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-ramp-roof-jump-land.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-restart.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-roof-contact.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-roof-exit-land.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-roof-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-shield-break.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-super-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\pao6\\fixture-super-sneakers.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_1_menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_2_shop.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_3_gameplay_chase.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_4_bank_tilt.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_5_jump_action.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\regression-screenshots\\screenshot_6_paused_screen.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\browser-final.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\browser-green.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\browser-red.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\browser-report.md",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\browser-runner.mjs",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\browser-summary.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\core-build.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\core-green.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\core-red.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\core-unit.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\final-e2e.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\final-native-menu-slider-and-start-space.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\final-paused-rejects-motion-and-resume-space.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\final-playing-interactive-arrows-do-not-move-player.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\final-source-identity.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\history-restoration.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\playwright.config.ts",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\README.md",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\red-e2e.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\red-native-menu-slider-and-start-space.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\red-paused-rejects-motion-and-resume-space.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\red-playing-interactive-arrows-do-not-move-player.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\red-results\\pao10-review-fixes-native-menu-slider-and-start-space\\error-context.md",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\red-results\\pao10-review-fixes-paused-rejects-motion-and-resume-space\\error-context.md",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\red-results\\pao10-review-fixes-playing-3ca7d-e-arrows-do-not-move-player\\error-context.md",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\F-lifecycle-clears-input-and-hidden-time.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\N-desktop-production-keyboard-flow.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\N-mobile-production-touch.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\F-lifecycle-readonly.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\F-lifecycle-resumed.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-desktop-failure.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-desktop-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-desktop-menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-desktop-paused.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-desktop-restart.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-desktop-return-menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-desktop-roll.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-mobile-centered.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-mobile-gameplay.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-mobile-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-mobile-left.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-mobile-menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-10\\screenshots\\N-mobile-paused.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-double-score.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-failure.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-high-obstacle-result.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-high-obstacle-roll.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-hoverboard.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-low-obstacle-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-low-obstacle-result.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-magnet.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mission-status.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mobile-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mobile-left.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mobile-menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mobile-paused.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mobile-roll.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mobile-shop.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-mobile-touch-layout.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-obstacles-failure-restart.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-powerups-shield-missions.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-ramp-approach.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-ramp-ascent.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-ramp-roof-jump-land.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-restart.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-roof-contact.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-roof-exit-land.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-roof-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-shield-break.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-super-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\docs\\evidence\\PAO-6\\fixture-super-sneakers.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\screenshot_1_menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\screenshot_2_shop.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\screenshot_3_gameplay_chase.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\screenshot_4_bank_tilt.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\screenshot_5_jump_action.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\regression-output\\screenshot_6_paused_screen.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\screenshots\\final-desktop-interactive-arrow.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\screenshots\\final-desktop-native-start.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\screenshots\\final-portrait-native-resume.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes\\screenshots\\final-portrait-stable-paused.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\review-fixes-plan.md",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\desktop-gameover.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\desktop-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\desktop-menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\desktop-paused.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\desktop-restarted.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\desktop-roll.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\F-lifecycle-readonly.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\F-lifecycle-resumed.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-desktop-failure.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-desktop-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-desktop-menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-desktop-paused.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-desktop-restart.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-desktop-return-menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-desktop-roll.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-mobile-centered.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-mobile-gameplay.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-mobile-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-mobile-left.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-mobile-menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\N-mobile-paused.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\portrait-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\portrait-left.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\portrait-menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\portrait-paused.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\screenshots\\portrait-roll.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-10\\unit.log",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\01-menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\02-shop.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\03-natural-left.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\04-natural-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\05-natural-roll.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\06-natural-paused.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\07-natural-gameover.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\08-natural-restart.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-double-score.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-failure.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-high-obstacle-result.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-high-obstacle-roll.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-hoverboard.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-low-obstacle-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-low-obstacle-result.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-magnet.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mission-status.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mobile-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mobile-left.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mobile-menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mobile-paused.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mobile-roll.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mobile-shop.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-mobile-touch-layout.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-obstacles-failure-restart.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-powerups-shield-missions.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-ramp-approach.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-ramp-ascent.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-ramp-roof-jump-land.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-restart.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-results\\.last-run.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-results\\pao6-baseline-mobile-touch-layout\\video.webm",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-results\\pao6-baseline-obstacles-failure-restart\\video.webm",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-results\\pao6-baseline-powerups-shield-missions\\video.webm",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-results\\pao6-baseline-ramp-roof-jump-land\\video.webm",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-roof-contact.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-roof-exit-land.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-roof-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-shield-break.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-super-jump.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-super-sneakers.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\fixture-test-results.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\natural-session.json",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\README.md",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\SHA256SUMS.txt",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\video\\fixture-roof-frame-1s.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\video\\natural-desktop.webm",
+      "sameAsInitial": true
+    },
+    {
+      "path": "docs\\evidence\\PAO-6\\video\\natural-frame-4s.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "screenshot_1_menu.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "screenshot_2_shop.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "screenshot_3_gameplay_chase.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "screenshot_4_bank_tilt.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "screenshot_5_jump_action.png",
+      "sameAsInitial": true
+    },
+    {
+      "path": "screenshot_6_paused_screen.png",
+      "sameAsInitial": true
+    }
+  ]
+}

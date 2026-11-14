@@ -1,0 +1,2405 @@
+{
+  "title": "N-desktop-production-keyboard-flow",
+  "states": [
+    {
+      "name": "N-desktop-menu",
+      "contractVersion": 1,
+      "runId": "podium",
+      "tick": 0,
+      "timeSec": 0,
+      "stepSec": 0.016666666666666666,
+      "phase": "ABANDONED",
+      "seed": 1346457360,
+      "rngState": 1346457360,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "contentRevision": "legacy-unseeded-spawner",
+      "lastInputSequence": 0,
+      "discontinuity": true,
+      "context": {
+        "state": "MENU",
+        "score": 0,
+        "highScore": 0,
+        "coins": 0,
+        "totalCoins": 0,
+        "speed": 18,
+        "distance": 0,
+        "player": {
+          "lane": 1,
+          "x": 0,
+          "targetX": 0,
+          "y": 0,
+          "z": 0,
+          "vy": 0,
+          "isJumping": false,
+          "isRolling": false,
+          "rollTimer": 0,
+          "hasHoverboard": false,
+          "hoverboardActive": false,
+          "invulnerableTimer": 0,
+          "activePowerUps": {}
+        },
+        "obstacles": [],
+        "coinEntities": [],
+        "powerUpEntities": [],
+        "missions": [
+          {
+            "id": "m1",
+            "title": "COIN COLLECTOR",
+            "description": "Collect 30 coins in a single run",
+            "target": 30,
+            "current": 0,
+            "rewardCoins": 50,
+            "completed": false,
+            "type": "COLLECT_COINS"
+          },
+          {
+            "id": "m2",
+            "title": "HIGH JUMPER",
+            "description": "Perform 10 jumps in a single run",
+            "target": 10,
+            "current": 0,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "JUMP_TIMES"
+          },
+          {
+            "id": "m3",
+            "title": "SLIDER PRO",
+            "description": "Perform 8 rolls under obstacles",
+            "target": 8,
+            "current": 0,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "ROLL_TIMES"
+          },
+          {
+            "id": "m4",
+            "title": "SCORE RUNNER",
+            "description": "Reach a score of 500 in a single run",
+            "target": 500,
+            "current": 0,
+            "rewardCoins": 100,
+            "completed": false,
+            "type": "SCORE_REACH"
+          }
+        ],
+        "chase": {
+          "distance": 2.8,
+          "isNear": false
+        }
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 0,
+        "droppedSec": 0
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 0,
+        "invalid": 0,
+        "cleared": 0
+      },
+      "inputs": [],
+      "state": "MENU",
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "score": 0,
+      "coins": 0
+    },
+    {
+      "name": "N-desktop-jump",
+      "contractVersion": 1,
+      "runId": "run-1",
+      "tick": 23,
+      "timeSec": 0.3833333333333333,
+      "stepSec": 0.016666666666666666,
+      "phase": "RUNNING",
+      "seed": 1346457360,
+      "rngState": 1346457360,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "contentRevision": "legacy-unseeded-spawner",
+      "lastInputSequence": 3,
+      "discontinuity": false,
+      "context": {
+        "state": "PLAYING",
+        "score": 0.6919166666666665,
+        "highScore": 0,
+        "coins": 0,
+        "totalCoins": 0,
+        "speed": 18.095833333333328,
+        "distance": 6.919166666666666,
+        "player": {
+          "lane": 1,
+          "x": -0.04944027893041891,
+          "targetX": 0,
+          "y": 1.4200000000000002,
+          "z": 6.919166666666666,
+          "vy": 8.433333333333337,
+          "isJumping": true,
+          "isRolling": false,
+          "rollTimer": 0,
+          "hasHoverboard": false,
+          "hoverboardActive": false,
+          "invulnerableTimer": 0,
+          "activePowerUps": {},
+          "collisionEnded": false,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE",
+          "supportDeparture": null,
+          "supportRampExit": null,
+          "supportSample": {
+            "x": -0.04944027893041891,
+            "y": 1.4200000000000002,
+            "z": 6.919166666666666
+          }
+        },
+        "obstacles": [
+          {
+            "id": "obs_mov_70_0",
+            "type": "MOVING_TRAIN",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 96.33333333333323,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12,
+            "speedZ": -10
+          },
+          {
+            "id": "obs_mov_70_2",
+            "type": "MOVING_TRAIN",
+            "lane": 2,
+            "x": 3,
+            "y": 0,
+            "z": 75.59999999999994,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12,
+            "speedZ": -12
+          },
+          {
+            "id": "obs_ramp_110_0",
+            "type": "RAMP",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 110,
+            "width": 2.4,
+            "height": 3,
+            "depth": 6
+          },
+          {
+            "id": "obs_train_110_0",
+            "type": "STATIC_TRAIN",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 119,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12
+          },
+          {
+            "id": "obs_train_110_1",
+            "type": "STATIC_TRAIN",
+            "lane": 1,
+            "x": 0,
+            "y": 0,
+            "z": 125,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12
+          },
+          {
+            "id": "obs_ramp_110_2",
+            "type": "RAMP",
+            "lane": 2,
+            "x": 3,
+            "y": 0,
+            "z": 130,
+            "width": 2.4,
+            "height": 3,
+            "depth": 6
+          },
+          {
+            "id": "obs_mov_150_0",
+            "type": "MOVING_TRAIN",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 176.33333333333354,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12,
+            "speedZ": -10
+          },
+          {
+            "id": "obs_mov_150_2",
+            "type": "MOVING_TRAIN",
+            "lane": 2,
+            "x": 3,
+            "y": 0,
+            "z": 155.60000000000025,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12,
+            "speedZ": -12
+          }
+        ],
+        "coinEntities": [
+          {
+            "id": "coin_frenzy_30_0_0",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 30,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_0_1",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 34,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_0_2",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 38,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_0_3",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 42,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_0_4",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 46,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_0",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 30,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_1",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 34,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_2",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 38,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_3",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 42,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_4",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 46,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_0",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 30,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_1",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 34,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_2",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 38,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_3",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 42,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_4",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 46,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_0",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 70,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_1",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 75,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_2",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 80,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_3",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 85,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_4",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 90,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_5",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 95,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_0",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 114,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_1",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 117,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_2",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 120,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_3",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 123,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_0",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 150,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_1",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 155,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_2",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 160,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_3",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 165,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_4",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 170,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_5",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 175,
+            "collected": false
+          }
+        ],
+        "powerUpEntities": [],
+        "missions": [
+          {
+            "id": "m1",
+            "title": "COIN COLLECTOR",
+            "description": "Collect 30 coins in a single run",
+            "target": 30,
+            "current": 0,
+            "rewardCoins": 50,
+            "completed": false,
+            "type": "COLLECT_COINS"
+          },
+          {
+            "id": "m2",
+            "title": "HIGH JUMPER",
+            "description": "Perform 10 jumps in a single run",
+            "target": 10,
+            "current": 1,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "JUMP_TIMES"
+          },
+          {
+            "id": "m3",
+            "title": "SLIDER PRO",
+            "description": "Perform 8 rolls under obstacles",
+            "target": 8,
+            "current": 0,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "ROLL_TIMES"
+          },
+          {
+            "id": "m4",
+            "title": "SCORE RUNNER",
+            "description": "Reach a score of 500 in a single run",
+            "target": 500,
+            "current": 0,
+            "rewardCoins": 100,
+            "completed": false,
+            "type": "SCORE_REACH"
+          }
+        ],
+        "chase": {
+          "distance": 2.8,
+          "isNear": false
+        }
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 0,
+        "droppedSec": 0
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 0,
+        "invalid": 0,
+        "cleared": 0
+      },
+      "inputs": [
+        {
+          "runId": "run-1",
+          "tick": 1,
+          "sequence": 1,
+          "action": "LEFT",
+          "source": "KEYBOARD"
+        },
+        {
+          "runId": "run-1",
+          "tick": 10,
+          "sequence": 2,
+          "action": "RIGHT",
+          "source": "KEYBOARD"
+        },
+        {
+          "runId": "run-1",
+          "tick": 16,
+          "sequence": 3,
+          "action": "JUMP",
+          "source": "KEYBOARD"
+        }
+      ],
+      "state": "PLAYING",
+      "player": {
+        "lane": 1,
+        "isJumping": true,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "position": {
+        "x": -0.04944027893041891,
+        "y": 1.4200000000000002,
+        "z": 6.919166666666666
+      },
+      "score": 0.6919166666666665,
+      "coins": 0
+    },
+    {
+      "name": "N-desktop-roll",
+      "contractVersion": 1,
+      "runId": "run-1",
+      "tick": 40,
+      "timeSec": 0.6666666666666666,
+      "stepSec": 0.016666666666666666,
+      "phase": "RUNNING",
+      "seed": 1346457360,
+      "rngState": 1346457360,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "contentRevision": "legacy-unseeded-spawner",
+      "lastInputSequence": 4,
+      "discontinuity": false,
+      "context": {
+        "state": "PLAYING",
+        "score": 1.205694444444444,
+        "highScore": 0,
+        "coins": 0,
+        "totalCoins": 0,
+        "speed": 18.166666666666657,
+        "distance": 12.056944444444442,
+        "player": {
+          "lane": 1,
+          "x": -0.0003716399473976208,
+          "targetX": 0,
+          "y": 0,
+          "z": 12.056944444444442,
+          "vy": 0,
+          "isJumping": false,
+          "isRolling": true,
+          "rollTimer": 0.6666666666666663,
+          "hasHoverboard": false,
+          "hoverboardActive": false,
+          "invulnerableTimer": 0,
+          "activePowerUps": {},
+          "collisionEnded": false,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED",
+          "supportDeparture": null,
+          "supportRampExit": null,
+          "supportSample": {
+            "x": -0.0003716399473976208,
+            "y": 0,
+            "z": 12.056944444444442
+          }
+        },
+        "obstacles": [
+          {
+            "id": "obs_mov_70_0",
+            "type": "MOVING_TRAIN",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 93.49999999999982,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12,
+            "speedZ": -10
+          },
+          {
+            "id": "obs_mov_70_2",
+            "type": "MOVING_TRAIN",
+            "lane": 2,
+            "x": 3,
+            "y": 0,
+            "z": 72.19999999999989,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12,
+            "speedZ": -12
+          },
+          {
+            "id": "obs_ramp_110_0",
+            "type": "RAMP",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 110,
+            "width": 2.4,
+            "height": 3,
+            "depth": 6
+          },
+          {
+            "id": "obs_train_110_0",
+            "type": "STATIC_TRAIN",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 119,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12
+          },
+          {
+            "id": "obs_train_110_1",
+            "type": "STATIC_TRAIN",
+            "lane": 1,
+            "x": 0,
+            "y": 0,
+            "z": 125,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12
+          },
+          {
+            "id": "obs_ramp_110_2",
+            "type": "RAMP",
+            "lane": 2,
+            "x": 3,
+            "y": 0,
+            "z": 130,
+            "width": 2.4,
+            "height": 3,
+            "depth": 6
+          },
+          {
+            "id": "obs_mov_150_0",
+            "type": "MOVING_TRAIN",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 173.50000000000037,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12,
+            "speedZ": -10
+          },
+          {
+            "id": "obs_mov_150_2",
+            "type": "MOVING_TRAIN",
+            "lane": 2,
+            "x": 3,
+            "y": 0,
+            "z": 152.20000000000044,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12,
+            "speedZ": -12
+          }
+        ],
+        "coinEntities": [
+          {
+            "id": "coin_frenzy_30_0_0",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 30,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_0_1",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 34,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_0_2",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 38,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_0_3",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 42,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_0_4",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 46,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_0",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 30,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_1",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 34,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_2",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 38,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_3",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 42,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_4",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 46,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_0",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 30,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_1",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 34,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_2",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 38,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_3",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 42,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_4",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 46,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_0",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 70,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_1",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 75,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_2",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 80,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_3",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 85,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_4",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 90,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_5",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 95,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_0",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 114,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_1",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 117,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_2",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 120,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_3",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 123,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_0",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 150,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_1",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 155,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_2",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 160,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_3",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 165,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_4",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 170,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_5",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 175,
+            "collected": false
+          }
+        ],
+        "powerUpEntities": [],
+        "missions": [
+          {
+            "id": "m1",
+            "title": "COIN COLLECTOR",
+            "description": "Collect 30 coins in a single run",
+            "target": 30,
+            "current": 0,
+            "rewardCoins": 50,
+            "completed": false,
+            "type": "COLLECT_COINS"
+          },
+          {
+            "id": "m2",
+            "title": "HIGH JUMPER",
+            "description": "Perform 10 jumps in a single run",
+            "target": 10,
+            "current": 1,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "JUMP_TIMES"
+          },
+          {
+            "id": "m3",
+            "title": "SLIDER PRO",
+            "description": "Perform 8 rolls under obstacles",
+            "target": 8,
+            "current": 1,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "ROLL_TIMES"
+          },
+          {
+            "id": "m4",
+            "title": "SCORE RUNNER",
+            "description": "Reach a score of 500 in a single run",
+            "target": 500,
+            "current": 1,
+            "rewardCoins": 100,
+            "completed": false,
+            "type": "SCORE_REACH"
+          }
+        ],
+        "chase": {
+          "distance": 2.8,
+          "isNear": false
+        }
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 0,
+        "droppedSec": 0
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 0,
+        "invalid": 0,
+        "cleared": 0
+      },
+      "inputs": [
+        {
+          "runId": "run-1",
+          "tick": 1,
+          "sequence": 1,
+          "action": "LEFT",
+          "source": "KEYBOARD"
+        },
+        {
+          "runId": "run-1",
+          "tick": 10,
+          "sequence": 2,
+          "action": "RIGHT",
+          "source": "KEYBOARD"
+        },
+        {
+          "runId": "run-1",
+          "tick": 16,
+          "sequence": 3,
+          "action": "JUMP",
+          "source": "KEYBOARD"
+        },
+        {
+          "runId": "run-1",
+          "tick": 33,
+          "sequence": 4,
+          "action": "ROLL",
+          "source": "KEYBOARD"
+        }
+      ],
+      "state": "PLAYING",
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": true,
+        "invulnerableTimer": 0
+      },
+      "position": {
+        "x": -0.0003716399473976208,
+        "y": 0,
+        "z": 12.056944444444442
+      },
+      "score": 1.205694444444444,
+      "coins": 0
+    },
+    {
+      "name": "N-desktop-paused",
+      "contractVersion": 1,
+      "runId": "run-1",
+      "tick": 50,
+      "timeSec": 0.8333333333333334,
+      "stepSec": 0.016666666666666666,
+      "phase": "PAUSED",
+      "seed": 1346457360,
+      "rngState": 1346457360,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "contentRevision": "legacy-unseeded-spawner",
+      "lastInputSequence": 4,
+      "discontinuity": true,
+      "context": {
+        "state": "PAUSED",
+        "score": 1.508854166666666,
+        "highScore": 0,
+        "coins": 0,
+        "totalCoins": 0,
+        "speed": 18.20833333333332,
+        "distance": 15.088541666666663,
+        "player": {
+          "lane": 1,
+          "x": -0.000020928351644403564,
+          "targetX": 0,
+          "y": 0,
+          "z": 15.088541666666663,
+          "vy": 0,
+          "isJumping": false,
+          "isRolling": true,
+          "rollTimer": 0.49999999999999917,
+          "hasHoverboard": false,
+          "hoverboardActive": false,
+          "invulnerableTimer": 0,
+          "activePowerUps": {},
+          "collisionEnded": false,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED",
+          "supportDeparture": null,
+          "supportRampExit": null,
+          "supportSample": {
+            "x": -0.000020928351644403564,
+            "y": 0,
+            "z": 15.088541666666663
+          }
+        },
+        "obstacles": [
+          {
+            "id": "obs_mov_70_0",
+            "type": "MOVING_TRAIN",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 91.8333333333331,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12,
+            "speedZ": -10
+          },
+          {
+            "id": "obs_mov_70_2",
+            "type": "MOVING_TRAIN",
+            "lane": 2,
+            "x": 3,
+            "y": 0,
+            "z": 70.19999999999986,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12,
+            "speedZ": -12
+          },
+          {
+            "id": "obs_ramp_110_0",
+            "type": "RAMP",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 110,
+            "width": 2.4,
+            "height": 3,
+            "depth": 6
+          },
+          {
+            "id": "obs_train_110_0",
+            "type": "STATIC_TRAIN",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 119,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12
+          },
+          {
+            "id": "obs_train_110_1",
+            "type": "STATIC_TRAIN",
+            "lane": 1,
+            "x": 0,
+            "y": 0,
+            "z": 125,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12
+          },
+          {
+            "id": "obs_ramp_110_2",
+            "type": "RAMP",
+            "lane": 2,
+            "x": 3,
+            "y": 0,
+            "z": 130,
+            "width": 2.4,
+            "height": 3,
+            "depth": 6
+          },
+          {
+            "id": "obs_mov_150_0",
+            "type": "MOVING_TRAIN",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 171.8333333333338,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12,
+            "speedZ": -10
+          },
+          {
+            "id": "obs_mov_150_2",
+            "type": "MOVING_TRAIN",
+            "lane": 2,
+            "x": 3,
+            "y": 0,
+            "z": 150.20000000000056,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12,
+            "speedZ": -12
+          }
+        ],
+        "coinEntities": [
+          {
+            "id": "coin_frenzy_30_0_0",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 30,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_0_1",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 34,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_0_2",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 38,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_0_3",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 42,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_0_4",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 46,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_0",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 30,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_1",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 34,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_2",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 38,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_3",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 42,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_1_4",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 46,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_0",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 30,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_1",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 34,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_2",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 38,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_3",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 42,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_30_2_4",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 46,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_0",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 70,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_1",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 75,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_2",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 80,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_3",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 85,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_4",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 90,
+            "collected": false
+          },
+          {
+            "id": "coin_70_1_5",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 95,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_0",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 114,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_1",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 117,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_2",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 120,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_3",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 123,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_0",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 150,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_1",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 155,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_2",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 160,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_3",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 165,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_4",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 170,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_5",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 175,
+            "collected": false
+          }
+        ],
+        "powerUpEntities": [],
+        "missions": [
+          {
+            "id": "m1",
+            "title": "COIN COLLECTOR",
+            "description": "Collect 30 coins in a single run",
+            "target": 30,
+            "current": 0,
+            "rewardCoins": 50,
+            "completed": false,
+            "type": "COLLECT_COINS"
+          },
+          {
+            "id": "m2",
+            "title": "HIGH JUMPER",
+            "description": "Perform 10 jumps in a single run",
+            "target": 10,
+            "current": 1,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "JUMP_TIMES"
+          },
+          {
+            "id": "m3",
+            "title": "SLIDER PRO",
+            "description": "Perform 8 rolls under obstacles",
+            "target": 8,
+            "current": 1,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "ROLL_TIMES"
+          },
+          {
+            "id": "m4",
+            "title": "SCORE RUNNER",
+            "description": "Reach a score of 500 in a single run",
+            "target": 500,
+            "current": 1,
+            "rewardCoins": 100,
+            "completed": false,
+            "type": "SCORE_REACH"
+          }
+        ],
+        "chase": {
+          "distance": 2.8,
+          "isNear": false
+        }
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 0,
+        "droppedSec": 0
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 0,
+        "invalid": 0,
+        "cleared": 0
+      },
+      "inputs": [
+        {
+          "runId": "run-1",
+          "tick": 1,
+          "sequence": 1,
+          "action": "LEFT",
+          "source": "KEYBOARD"
+        },
+        {
+          "runId": "run-1",
+          "tick": 10,
+          "sequence": 2,
+          "action": "RIGHT",
+          "source": "KEYBOARD"
+        },
+        {
+          "runId": "run-1",
+          "tick": 16,
+          "sequence": 3,
+          "action": "JUMP",
+          "source": "KEYBOARD"
+        },
+        {
+          "runId": "run-1",
+          "tick": 33,
+          "sequence": 4,
+          "action": "ROLL",
+          "source": "KEYBOARD"
+        }
+      ],
+      "state": "PAUSED",
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": true,
+        "invulnerableTimer": 0
+      },
+      "position": {
+        "x": -0.000020928351644403564,
+        "y": 0,
+        "z": 15.088541666666663
+      },
+      "score": 1.508854166666666,
+      "coins": 0
+    },
+    {
+      "name": "N-desktop-failure",
+      "contractVersion": 1,
+      "runId": "run-1",
+      "tick": 379,
+      "timeSec": 6.316666666666666,
+      "stepSec": 0.016666666666666666,
+      "phase": "ENDED",
+      "seed": 1346457360,
+      "rngState": 1346457360,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "contentRevision": "legacy-unseeded-spawner",
+      "lastInputSequence": 4,
+      "discontinuity": false,
+      "context": {
+        "state": "GAMEOVER",
+        "score": 11.870069444444416,
+        "highScore": 0,
+        "coins": 11,
+        "totalCoins": 0,
+        "speed": 19.579166666666577,
+        "distance": 118.70069444444412,
+        "player": {
+          "lane": 1,
+          "x": -1.6439578552948492e-46,
+          "targetX": 0,
+          "y": 0,
+          "z": 118.70069444444412,
+          "vy": 0,
+          "isJumping": false,
+          "isRolling": false,
+          "rollTimer": 0,
+          "hasHoverboard": false,
+          "hoverboardActive": false,
+          "invulnerableTimer": 0,
+          "activePowerUps": {},
+          "collisionEnded": false,
+          "supportSurfaceId": "ground",
+          "contact": "SUPPORTED",
+          "supportDeparture": null,
+          "supportRampExit": null,
+          "supportSample": {
+            "x": -1.6439578552948492e-46,
+            "y": 0,
+            "z": 118.70069444444412
+          }
+        },
+        "obstacles": [
+          {
+            "id": "obs_ramp_110_0",
+            "type": "RAMP",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 110,
+            "width": 2.4,
+            "height": 3,
+            "depth": 6
+          },
+          {
+            "id": "obs_train_110_0",
+            "type": "STATIC_TRAIN",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 119,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12
+          },
+          {
+            "id": "obs_train_110_1",
+            "type": "STATIC_TRAIN",
+            "lane": 1,
+            "x": 0,
+            "y": 0,
+            "z": 125,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12
+          },
+          {
+            "id": "obs_ramp_110_2",
+            "type": "RAMP",
+            "lane": 2,
+            "x": 3,
+            "y": 0,
+            "z": 130,
+            "width": 2.4,
+            "height": 3,
+            "depth": 6
+          },
+          {
+            "id": "obs_mov_150_0",
+            "type": "MOVING_TRAIN",
+            "lane": 0,
+            "x": -3,
+            "y": 0,
+            "z": 117.00000000000264,
+            "width": 2.4,
+            "height": 3,
+            "depth": 12,
+            "speedZ": -10
+          }
+        ],
+        "coinEntities": [
+          {
+            "id": "coin_110_0_0",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 114,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_1",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 117,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_2",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 120,
+            "collected": false
+          },
+          {
+            "id": "coin_110_0_3",
+            "lane": 0,
+            "x": -3,
+            "y": 3.8,
+            "z": 123,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_0",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 150,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_1",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 155,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_2",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 160,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_3",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 165,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_4",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 170,
+            "collected": false
+          },
+          {
+            "id": "coin_150_1_5",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 175,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_0_0",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 190,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_0_1",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 194,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_0_2",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 198,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_0_3",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 202,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_0_4",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 206,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_1_0",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 190,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_1_1",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 194,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_1_2",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 198,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_1_3",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 202,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_1_4",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 206,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_2_0",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 190,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_2_1",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 194,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_2_2",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 198,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_2_3",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 202,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_190_2_4",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 206,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_0_0",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 230,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_0_1",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 234,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_0_2",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 238,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_0_3",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 242,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_0_4",
+            "lane": 0,
+            "x": -3,
+            "y": 0.8,
+            "z": 246,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_1_0",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 230,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_1_1",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 234,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_1_2",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 238,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_1_3",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 242,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_1_4",
+            "lane": 1,
+            "x": 0,
+            "y": 0.8,
+            "z": 246,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_2_0",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 230,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_2_1",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 234,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_2_2",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 238,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_2_3",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 242,
+            "collected": false
+          },
+          {
+            "id": "coin_frenzy_230_2_4",
+            "lane": 2,
+            "x": 3,
+            "y": 0.8,
+            "z": 246,
+            "collected": false
+          }
+        ],
+        "powerUpEntities": [
+          {
+            "id": "powerup_190_1793473547014",
+            "type": "HOVERBOARD",
+            "lane": 0,
+            "x": -3,
+            "y": 1,
+            "z": 210,
+            "collected": false
+          }
+        ],
+        "missions": [
+          {
+            "id": "m1",
+            "title": "COIN COLLECTOR",
+            "description": "Collect 30 coins in a single run",
+            "target": 30,
+            "current": 11,
+            "rewardCoins": 50,
+            "completed": false,
+            "type": "COLLECT_COINS"
+          },
+          {
+            "id": "m2",
+            "title": "HIGH JUMPER",
+            "description": "Perform 10 jumps in a single run",
+            "target": 10,
+            "current": 1,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "JUMP_TIMES"
+          },
+          {
+            "id": "m3",
+            "title": "SLIDER PRO",
+            "description": "Perform 8 rolls under obstacles",
+            "target": 8,
+            "current": 1,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "ROLL_TIMES"
+          },
+          {
+            "id": "m4",
+            "title": "SCORE RUNNER",
+            "description": "Reach a score of 500 in a single run",
+            "target": 500,
+            "current": 11,
+            "rewardCoins": 100,
+            "completed": false,
+            "type": "SCORE_REACH"
+          }
+        ],
+        "chase": {
+          "distance": 2.8,
+          "isNear": false
+        }
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 0,
+        "droppedSec": 0
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 2,
+        "invalid": 0,
+        "cleared": 0
+      },
+      "inputs": [
+        {
+          "runId": "run-1",
+          "tick": 1,
+          "sequence": 1,
+          "action": "LEFT",
+          "source": "KEYBOARD"
+        },
+        {
+          "runId": "run-1",
+          "tick": 10,
+          "sequence": 2,
+          "action": "RIGHT",
+          "source": "KEYBOARD"
+        },
+        {
+          "runId": "run-1",
+          "tick": 16,
+          "sequence": 3,
+          "action": "JUMP",
+          "source": "KEYBOARD"
+        },
+        {
+          "runId": "run-1",
+          "tick": 33,
+          "sequence": 4,
+          "action": "ROLL",
+          "source": "KEYBOARD"
+        }
+      ],
+      "state": "GAMEOVER",
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "position": {
+        "x": -1.6439578552948492e-46,
+        "y": 0,
+        "z": 118.70069444444412
+      },
+      "score": 11.870069444444416,
+      "coins": 11
+    },
+    {
+      "name": "N-desktop-restart",
+      "contractVersion": 1,
+      "runId": "run-2",
+      "tick": 0,
+      "timeSec": 0,
+      "stepSec": 0.016666666666666666,
+      "phase": "RUNNING",
+      "seed": 1346457360,
+      "rngState": 1346457360,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "contentRevision": "legacy-unseeded-spawner",
+      "lastInputSequence": 0,
+      "discontinuity": true,
+      "context": {
+        "state": "PLAYING",
+        "score": 0,
+        "highScore": 0,
+        "coins": 0,
+        "totalCoins": 0,
+        "speed": 18,
+        "distance": 0,
+        "player": {
+          "lane": 1,
+          "x": 0,
+          "targetX": 0,
+          "y": 0,
+          "z": 0,
+          "vy": 0,
+          "isJumping": false,
+          "isRolling": false,
+          "rollTimer": 0,
+          "hasHoverboard": false,
+          "hoverboardActive": false,
+          "invulnerableTimer": 0,
+          "activePowerUps": {},
+          "collisionEnded": false,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE",
+          "supportDeparture": null,
+          "supportRampExit": null
+        },
+        "obstacles": [],
+        "coinEntities": [],
+        "powerUpEntities": [],
+        "missions": [
+          {
+            "id": "m1",
+            "title": "COIN COLLECTOR",
+            "description": "Collect 30 coins in a single run",
+            "target": 30,
+            "current": 0,
+            "rewardCoins": 50,
+            "completed": false,
+            "type": "COLLECT_COINS"
+          },
+          {
+            "id": "m2",
+            "title": "HIGH JUMPER",
+            "description": "Perform 10 jumps in a single run",
+            "target": 10,
+            "current": 0,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "JUMP_TIMES"
+          },
+          {
+            "id": "m3",
+            "title": "SLIDER PRO",
+            "description": "Perform 8 rolls under obstacles",
+            "target": 8,
+            "current": 0,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "ROLL_TIMES"
+          },
+          {
+            "id": "m4",
+            "title": "SCORE RUNNER",
+            "description": "Reach a score of 500 in a single run",
+            "target": 500,
+            "current": 0,
+            "rewardCoins": 100,
+            "completed": false,
+            "type": "SCORE_REACH"
+          }
+        ],
+        "chase": {
+          "distance": 2.8,
+          "isNear": false
+        }
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 0,
+        "droppedSec": 0
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 2,
+        "invalid": 0,
+        "cleared": 0
+      },
+      "inputs": [],
+      "state": "PLAYING",
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "score": 0,
+      "coins": 0
+    },
+    {
+      "name": "N-desktop-return-menu",
+      "contractVersion": 1,
+      "runId": "run-2",
+      "tick": 10,
+      "timeSec": 0.16666666666666666,
+      "stepSec": 0.016666666666666666,
+      "phase": "ABANDONED",
+      "seed": 1346457360,
+      "rngState": 1346457360,
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "simulationVersion": "pao10-fixed-v1",
+      "configId": "legacy-18-45-v1",
+      "contentRevision": "legacy-unseeded-spawner",
+      "lastInputSequence": 0,
+      "discontinuity": true,
+      "context": {
+        "state": "MENU",
+        "score": 0.30038194444444444,
+        "highScore": 0,
+        "coins": 0,
+        "totalCoins": 0,
+        "speed": 18.041666666666664,
+        "distance": 0,
+        "player": {
+          "lane": 1,
+          "x": 0,
+          "targetX": 0,
+          "y": 0,
+          "z": 0,
+          "vy": 0,
+          "isJumping": false,
+          "isRolling": false,
+          "rollTimer": 0,
+          "hasHoverboard": false,
+          "hoverboardActive": false,
+          "invulnerableTimer": 0,
+          "activePowerUps": {},
+          "collisionEnded": false,
+          "supportSurfaceId": null,
+          "contact": "AIRBORNE",
+          "supportDeparture": null,
+          "supportRampExit": null
+        },
+        "obstacles": [],
+        "coinEntities": [],
+        "powerUpEntities": [],
+        "missions": [
+          {
+            "id": "m1",
+            "title": "COIN COLLECTOR",
+            "description": "Collect 30 coins in a single run",
+            "target": 30,
+            "current": 0,
+            "rewardCoins": 50,
+            "completed": false,
+            "type": "COLLECT_COINS"
+          },
+          {
+            "id": "m2",
+            "title": "HIGH JUMPER",
+            "description": "Perform 10 jumps in a single run",
+            "target": 10,
+            "current": 0,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "JUMP_TIMES"
+          },
+          {
+            "id": "m3",
+            "title": "SLIDER PRO",
+            "description": "Perform 8 rolls under obstacles",
+            "target": 8,
+            "current": 0,
+            "rewardCoins": 40,
+            "completed": false,
+            "type": "ROLL_TIMES"
+          },
+          {
+            "id": "m4",
+            "title": "SCORE RUNNER",
+            "description": "Reach a score of 500 in a single run",
+            "target": 500,
+            "current": 0,
+            "rewardCoins": 100,
+            "completed": false,
+            "type": "SCORE_REACH"
+          }
+        ],
+        "chase": {
+          "distance": 2.8,
+          "isNear": false
+        }
+      },
+      "scheduler": {
+        "invalidDeltas": 0,
+        "droppedSteps": 0,
+        "droppedSec": 0
+      },
+      "input": {
+        "wrongRun": 0,
+        "late": 0,
+        "duplicate": 0,
+        "paused": 2,
+        "invalid": 0,
+        "cleared": 0
+      },
+      "inputs": [],
+      "state": "MENU",
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "score": 0.30038194444444444,
+      "coins": 0
+    }
+  ],
+  "errors": []
+}

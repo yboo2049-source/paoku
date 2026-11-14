@@ -1,0 +1,239 @@
+{"cwd":"D:\\worker\\paoku-sessions\\pao-18-font-diagnosis","exe":"node","args":["C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js","run","test"],"start":"2026-11-07T08:56:30.626Z"}
+
+> app@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18-font-diagnosis
+
+ ✓ tests/unit/pao17-assets.test.ts (4 tests) 458ms
+     ✓ shares an in-flight resource, rejects old consumer, preserves current consumer and cache  443ms
+ ✓ tests/unit/pao19-ui.test.ts (8 tests) 523ms
+   ✓ B I-01 notifies before dispatch and correlates success/failure without duplicate toast  512ms
+ ✓ tests/unit/pao10-main.test.ts (3 tests) 900ms
+   ✓ exposes immutable committed diagnostics/snapshots while real input waits for the next production tick  870ms
+ ✓ tests/unit/simulation.test.ts (7 tests) 123ms
+ ✓ tests/unit/pao18-fact-journal.test.ts (8 tests) 80ms
+stdout | tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {}
+BJS - [16:56:38]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {"x":2.7,"y":5}
+BJS - [16:56:38]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-ramp-view.test.ts > matches true wedge triangles to Surface at foot/mid/top and both sides: {"x":-3,"y":5.5,"z":-12.5,"width":3.3,"height":2.35,"depth":7.5}
+BJS - [16:56:38]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-ramp-view.test.ts > covers the complete ROOF at exact support height, with continuous ramp entry/roof exit (base Y=0)
+BJS - [16:56:38]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-ramp-view.test.ts > covers the complete ROOF at exact support height, with continuous ramp entry/roof exit (base Y=5)
+BJS - [16:56:38]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-ramp-view.test.ts > keeps every actual arrow vertex within a narrow offset above the slope instead of floating boxes
+BJS - [16:56:38]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao17-ramp-view.test.ts (6 tests) 306ms
+stdout | tests/unit/pao17-theme.test.ts > reuses exactly five real track chunks, with continuous world-space coverage through boundaries, jumps, rollback and reset
+BJS - [16:56:38]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-camera.test.ts > projects all three actual actor bounds inside 390x844 safe area without moving actors
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-theme-lifecycle.test.ts > owns a finite bright environment and explicit glow whitelist, with no growth across 20 recycles and 10 resets
+BJS - [16:56:38]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-theme-lifecycle.test.ts > removes and re-adds only owned near casters as an existing entity changes distance
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-camera.test.ts > projects all three actual actor bounds inside 390x667 safe area without moving actors
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao17-theme-lifecycle.test.ts (2 tests) 971ms
+   ✓ owns a finite bright environment and explicit glow whitelist, with no growth across 20 recycles and 10 resets  949ms
+stdout | tests/unit/pao18-camera.test.ts > projects all three actual actor bounds inside 1440x900 safe area without moving actors
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-camera.test.ts > uses separate position and target support buffers and resets discontinuities directly
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-camera.test.ts > has frame-rate invariant support buffers at 30/60/120fps
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-camera.test.ts > freezes the actual camera on pause, removes low-motion feedback and reports infeasible input
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-camera.test.ts > updates world bounds from current mesh transforms and excludes hidden fallback geometry
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao18-camera.test.ts (8 tests) 256ms
+stdout | tests/unit/pao17-theme.test.ts > owns each repeated signal boundary once, using actual merged vertices at world positions
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-lifecycle.test.ts > returns to warmed shared-cache baseline over 20 entity cycles and 10 resets, then disposes all owned resources
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-theme.test.ts > shows independent podium only in MENU/SHOP and does not re-show it on an in-run reset
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > syncs frozen snapshots without modifying map entries or creating duplicate meshes/casters
+BJS - [16:56:40]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-theme.test.ts > covers the existing 360-degree menu orbit with owned backdrop geometry and hides it in-run
+BJS - [16:56:40]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao17-theme.test.ts (4 tests) 1554ms
+   ✓ reuses exactly five real track chunks, with continuous world-space coverage through boundaries, jumps, rollback and reset  605ms
+   ✓ owns each repeated signal boundary once, using actual merged vertices at world positions  346ms
+   ✓ shows independent podium only in MENU/SHOP and does not re-show it on an in-run reset  368ms
+stdout | tests/unit/pao17-frame.test.ts > consumes one discontinuity per run/tick while repeated render frames preserve the instance and exact supplied position
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-facade.test.ts > facade delegates without squash/stretch or root movement beyond presentation
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > removes collected/deleted instances and casters while shared materials survive until cache disposal
+BJS - [16:56:40]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > deduplicates synthetic RAMP/ROOF ownership by explicit root key, at nonzero base, releasing once
+BJS - [16:56:40]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao17-views.test.ts (3 tests) 288ms
+stdout | tests/unit/pao17-lifecycle.test.ts > facade unregisters exact callbacks, invalidates late loads and removes only its own canvas
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/sweptCollision.test.ts (49 tests) 132ms
+stdout | tests/unit/pao19-hud-camera-integration.test.ts > I04/I05/I06/I09 real Babylon numeric boundary > uses third-parameter geometry and real buffer dimensions while preserving reducedMotion
+BJS - [16:56:39]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao18-fact-producers.test.ts (7 tests) 65ms
+stdout | tests/unit/pao17-frame.test.ts > merges explicit reset with the next new-run boundary, invalidates old same-id views and supports legacy no-envelope calls
+BJS - [16:56:40]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-facade.test.ts > delegates one reset for a discontinuity and prevents stale same-id loads from mounting over latest skin
+BJS - [16:56:40]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/surfaces.test.ts (23 tests) 44ms
+stdout | tests/unit/pao17-frame.test.ts > freezes the local effect clock during pause, with no change to supplied snapshots
+BJS - [16:56:41]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao19-hud-camera-integration.test.ts > I04/I05/I06/I09 real Babylon numeric boundary > holds final camera pose on unavailable layout and recomputes modal projection after resize
+BJS - [16:56:41]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-lifecycle.test.ts > preserves host canvas and detaches old skin listener across a real renderer remount
+BJS - [16:56:41]: Babylon.js v9.19.0 - Null engine
+BJS - [16:56:41]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao17-frame.test.ts (3 tests) 2538ms
+   ✓ consumes one discontinuity per run/tick while repeated render frames preserve the instance and exact supplied position  1161ms
+   ✓ merges explicit reset with the next new-run boundary, invalidates old same-id views and supports legacy no-envelope calls  773ms
+   ✓ freezes the local effect clock during pause, with no change to supplied snapshots  593ms
+stdout | tests/unit/pao18-facade.test.ts > settles its own pending asset consumer on dispose even when the external loader never settles
+BJS - [16:56:41]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao18-facade.test.ts (3 tests) 2844ms
+   ✓ facade delegates without squash/stretch or root movement beyond presentation  1235ms
+   ✓ delegates one reset for a discontinuity and prevents stale same-id loads from mounting over latest skin  847ms
+   ✓ settles its own pending asset consumer on dispose even when the external loader never settles  758ms
+stdout | tests/unit/pao17-lifecycle.test.ts > keeps primitives visible for a root-only loaded container rather than accepting an empty character
+BJS - [16:56:42]: Babylon.js v9.19.0 - Null engine
+
+stderr | tests/unit/pao17-lifecycle.test.ts > keeps primitives visible for a root-only loaded container rather than accepting an empty character
+[GLB] empty player geometry; keeping primitives
+
+stdout | tests/unit/pao17-lifecycle.test.ts > rolls back a partially mounted character on setup failure, keeping fallback and no instance/caster leak
+BJS - [16:56:42]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao17-lifecycle.test.ts (5 tests) 3635ms
+   ✓ returns to warmed shared-cache baseline over 20 entity cycles and 10 resets, then disposes all owned resources  491ms
+   ✓ facade unregisters exact callbacks, invalidates late loads and removes only its own canvas  1099ms
+   ✓ preserves host canvas and detaches old skin listener across a real renderer remount  1193ms
+   ✓ keeps primitives visible for a root-only loaded container rather than accepting an empty character  342ms
+   ✓ rolls back a partially mounted character on setup failure, keeping fallback and no instance/caster leak  508ms
+ ✓ tests/unit/application.test.ts (32 tests) 41ms
+stdout | tests/unit/pao17-main.test.ts > executes main render with exactly one presentation sample and one app projection, keeping identity/context paired
+BJS - [16:56:43]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-main.test.ts > executes disposeGame through the renderer release bridge and frees its owned scene resources
+BJS - [16:56:43]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao19-hud-camera-integration.test.ts (7 tests) 3413ms
+     ✓ uses third-parameter geometry and real buffer dimensions while preserving reducedMotion  1465ms
+     ✓ holds final camera pose on unavailable layout and recomputes modal projection after resize  817ms
+     ✓ writes UI, measures once, then draws the same view/app and committed stamp  876ms
+ ✓ tests/unit/pao17-main.test.ts (2 tests) 1120ms
+   ✓ executes main render with exactly one presentation sample and one app projection, keeping identity/context paired  1085ms
+ ✓ tests/unit/saveMigration.test.ts (14 tests) 27ms
+ ✓ tests/unit/runSettlement.test.ts (13 tests) 26ms
+ ✓ tests/unit/shopTransactions.test.ts (7 tests) 23ms
+ ✓ tests/unit/inputQueue.test.ts (9 tests) 33ms
+ ✓ tests/unit/audio.test.ts (7 tests) 24ms
+ ✓ tests/unit/physics.test.ts (14 tests) 30ms
+ ✓ tests/unit/fontResources.test.ts (1 test) 24ms
+ ✓ tests/unit/snapshot.test.ts (6 tests) 19ms
+ ✓ tests/unit/powerups.test.ts (22 tests) 34ms
+ ✓ tests/unit/redteam_fixes.test.ts (5 tests) 31ms
+ ✓ tests/unit/pao19-hud-safe-area.test.ts (18 tests) 20ms
+ ✓ tests/unit/mission.test.ts (8 tests) 14ms
+ ✓ tests/unit/trackSegments.test.ts (25 tests) 12923ms
+     ✓ runs every segment and adjacent ordered pair through real PAO-12 physics at 18m/s  4286ms
+     ✓ runs every segment and adjacent ordered pair through real PAO-12 physics at 30m/s  2645ms
+     ✓ runs every segment and adjacent ordered pair through real PAO-12 physics at 45m/s  2346ms
+     ✓ includes all four power-up variants and physically validates effect-carrying adjacent segments  2072ms
+     ✓ samples 32 seeds across 32 generated segments with bounded metadata and reproducible selection  1002ms
+stdout | tests/unit/pao18-character.test.ts > copies only presentation root position, preserving deep readonly input and unit visual scaling
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-character.test.ts > freezes actual AnimationGroup and bone pose while paused, then resumes without restarting
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-character.test.ts > crossfades real groups, does not restart on repeated selection, and failure interrupts immediately
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-character.test.ts > uses observed contact edges at any height only as degraded engineering feedback
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-character.test.ts > holds slide without ending simulation roll, supports board and clears groups on detach/dispose
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-character.test.ts > rejects a clip targeting the simulation world root instead of allowing double displacement
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-character.test.ts > preserves the actual blended pose when a transition is interrupted back to its outgoing clip
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao18-character.test.ts (8 tests) 80ms
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > keeps the JUMP anchor when lane input is same-after, including duplicate packets
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > keeps the JUMP anchor when lane input is same-before, including duplicate packets
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > keeps the JUMP anchor when lane input is later, including duplicate packets
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > keeps the ROLL anchor when lane input is same-after, including duplicate packets
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > keeps the ROLL anchor when lane input is same-before, including duplicate packets
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > keeps the ROLL anchor when lane input is later, including duplicate packets
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > camera consumes a real intermediate landing once even when the final snapshot is airborne
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao18-fact-lifecycle.test.ts > consumes actual action identity and pauses real groups without root displacement
+BJS - [16:56:47]: Babylon.js v9.19.0 - Null engine
+
+ ✓ tests/unit/pao18-fact-lifecycle.test.ts (12 tests) 47ms
+
+ Test Files  34 passed (34)
+      Tests  353 passed (353)
+   Start at  16:56:31
+   Duration  16.31s (transform 10.79s, setup 0ms, import 91.71s, tests 32.64s, environment 10ms)
+
+
+{"label":"unit-serial","code":0,"start":"2026-11-07T08:56:30.626Z","end":"2026-11-07T08:56:47.864Z","file":"D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261107\\unit-serial.txt"}

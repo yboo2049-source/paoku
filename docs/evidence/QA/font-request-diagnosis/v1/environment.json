@@ -1,0 +1,9 @@
+{
+  "proxyEnvironmentPresence": {
+    "HTTP_PROXY": false,
+    "HTTPS_PROXY": false,
+    "ALL_PROXY": false,
+    "NO_PROXY": false
+  },
+  "note": "values intentionally omitted; Chromium launch has no explicit proxy override; OS/PAC/VPN unknown"
+}

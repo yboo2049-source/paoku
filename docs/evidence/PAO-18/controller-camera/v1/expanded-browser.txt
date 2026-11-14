@@ -1,0 +1,18 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/playwright-red.config.cjs
+
+[WebServer] (node:14196) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:19348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\pao18-controller-camera.spec.ts:8:1 › F actual legacy renderer: 390 framing, actual group pause, support edges and stable resources (16.6s)
+  ok 2 tests\e2e\pao18-controller-camera.spec.ts:84:1 › F runtime modules raw identity and actual legacy GLB HTTP hash (105ms)
+  ok 3 tests\e2e\pao18-controller-camera.spec.ts:98:37 › N desktop keyboard controls, real group pause, HUD profile and restart (4.1s)
+  ok 4 tests\e2e\pao18-controller-camera.spec.ts:98:37 › N 390 touch controls, real group pause, HUD profile and restart (3.8s)
+  ok 5 tests\e2e\pao18-controller-camera.spec.ts:136:1 › F recorded authoritative ramp-to-roof, jump/slide and pause with the production main (6.3s)
+
+  5 passed (33.7s)

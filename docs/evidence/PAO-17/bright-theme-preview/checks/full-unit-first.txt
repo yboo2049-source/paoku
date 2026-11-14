@@ -1,0 +1,30 @@
+
+> app@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+ ❯ tests/unit/pao17-assets.test.ts (4 tests | 1 failed) 6123ms
+     × shares an in-flight resource, rejects old consumer, preserves current consumer and cache 6100ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao17-assets.test.ts > PAO-17 renderer asset ownership > shares an in-flight resource, rejects old consumer, preserves current consumer and cache
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/unit/pao17-assets.test.ts:10:3
+      8| }
+      9| describe('PAO-17 renderer asset ownership', () => {
+     10|   it('shares an in-flight resource, rejects old consumer, preserves cu…
+       |   ^
+     11|     const Cache = await cacheType(); const d = deferred<{ dispose: () …
+     12|     const resource = { dispose: vi.fn() }; const load = vi.fn(() => d.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 23 passed (24)
+      Tests  1 failed | 271 passed (272)
+   Start at  22:36:15
+   Duration  11.21s (transform 4.25s, setup 0ms, import 47.74s, tests 22.43s, environment 4ms)

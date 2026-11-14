@@ -1,0 +1,340 @@
+{
+  "result": {
+    "baseline": {
+      "meshes": 42,
+      "nodes": 4,
+      "materials": 41,
+      "textures": 7,
+      "animations": 0,
+      "skeletons": 0,
+      "particles": 1,
+      "casters": 3
+    },
+    "cycles": [
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      }
+    ],
+    "resets": [
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      },
+      {
+        "meshes": 42,
+        "nodes": 4,
+        "materials": 41,
+        "textures": 7,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 1,
+        "casters": 3
+      }
+    ],
+    "disposed": {
+      "meshes": 0,
+      "nodes": 0,
+      "materials": 0,
+      "textures": 0,
+      "animations": 0,
+      "skeletons": 0,
+      "particles": 0,
+      "casters": 0,
+      "sceneDisposed": true,
+      "cache": {
+        "resources": 0,
+        "leases": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "canvasRemoved": true
+    },
+    "lateDisposed": 1,
+    "hostCanvasPreserved": true,
+    "oldSkinUnchanged": true
+  },
+  "errors": []
+}

@@ -1,0 +1,413 @@
+{
+  "head": "d303633e2539a26ca595438b51216a02900df92f",
+  "branch": "codex/pao18-font-diagnosis",
+  "stop": "Unexpected explicit new-test TypeScript gate failure; no browser or final suite started",
+  "changes": [
+    "index.html",
+    "src/main.ts",
+    "src/render/babylon.ts",
+    "src/style.css",
+    "src/ui/dom.ts",
+    "tests/e2e/pao18-controller-camera.spec.ts"
+  ],
+  "newFiles": [
+    "docs/plans/2026-11-06-pao18-pao19-integration-execution.md",
+    "src/presentation/hudCameraInput.ts",
+    "src/presentation/hudSafeArea.ts",
+    "src/ui/views/models.ts",
+    "src/ui/views/screens.ts",
+    "tests/e2e/pao19-hud-camera-integration.spec.ts",
+    "tests/e2e/pao19-hud-safe-area.spec.ts",
+    "tests/e2e/rebuild-ui.spec.ts",
+    "tests/fixtures/pao18-legacy-hud.ts",
+    "tests/unit/pao19-hud-camera-integration.test.ts",
+    "tests/unit/pao19-hud-safe-area.test.ts",
+    "tests/unit/pao19-ui.test.ts"
+  ],
+  "unexpected": [],
+  "protectedChecks": [
+    {
+      "path": "package-lock.json",
+      "unchanged": true
+    },
+    {
+      "path": "package.json",
+      "unchanged": true
+    },
+    {
+      "path": "playwright.config.ts",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/Orbitron-METADATA.pb",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/Orbitron-OFL.txt",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/Orbitron-f42db2dd16e6.ttf",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/Outfit-METADATA.pb",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/Outfit-OFL.txt",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/Outfit-fc7287273e66.ttf",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "public/fonts/sources.json",
+      "unchanged": true
+    },
+    {
+      "path": "src/application/appService.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/application/saveRepository.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/application/skinCatalog.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/application/types.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/eventBus.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/gameLoop.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/inputQueue.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/simulation.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/snapshot.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/assets.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/cameraRig.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/characterView.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/entityViews.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/environment.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/audio.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/contacts.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/input.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/mission.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/physics.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/runSettlement.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/scoring.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/spawner.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/surfaces.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/systems/track.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/types/contracts.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/types/index.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/font-resources.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/gameplay.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao10-review-fixes.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao10-simulation.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao11-surfaces.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao12-collision.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao13-track.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao14-application.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao14-review.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao14-unknown-commit.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao17-lifecycle.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao17-ramp-view.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao17-structure.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao17-theme.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao18-fact-bridge.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao6-baseline.spec.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/pao6.config.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/application.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/audio.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/fontResources.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/inputQueue.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/mission.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao10-main.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-assets.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-frame.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-lifecycle.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-main.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-ramp-view.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-theme-lifecycle.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-theme.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao17-views.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao18-camera.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao18-character.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao18-facade.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao18-fact-journal.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao18-fact-lifecycle.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/pao18-fact-producers.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/physics.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/powerups.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/redteam_fixes.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/runSettlement.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/saveMigration.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/shopTransactions.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/simulation.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/snapshot.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/surfaces.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/sweptCollision.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/trackSegments.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "tsconfig.json",
+      "unchanged": true
+    },
+    {
+      "path": "vite.config.ts",
+      "unchanged": true
+    }
+  ],
+  "fixed": [
+    {
+      "path": "src/ui/dom.ts",
+      "blob": "3909d2dbdeefc70fb34ebc9f2221bed11c93c9c4",
+      "actual": "3909d2dbdeefc70fb34ebc9f2221bed11c93c9c4"
+    },
+    {
+      "path": "src/ui/views/models.ts",
+      "blob": "67a9c3ecf60ca97329fd88aa4ee0dfe10d9c5d77",
+      "actual": "67a9c3ecf60ca97329fd88aa4ee0dfe10d9c5d77"
+    },
+    {
+      "path": "src/ui/views/screens.ts",
+      "blob": "865ecdd56b9fb6defcfb89ce451020ebf0b0f878",
+      "actual": "865ecdd56b9fb6defcfb89ce451020ebf0b0f878"
+    },
+    {
+      "path": "src/presentation/hudSafeArea.ts",
+      "blob": "e402beb9dd4824d3a1b360a78058099fa8d13db5",
+      "actual": "e402beb9dd4824d3a1b360a78058099fa8d13db5"
+    }
+  ],
+  "staged": "",
+  "commands": {
+    "sourceTsc": 0,
+    "targetUnit": "37/37 in 5 files",
+    "explicitTestTsc": 2,
+    "build": "NOT_RUN",
+    "fullUnit": "NOT_RUN",
+    "targetBrowser": "NOT_RUN",
+    "fullE2E": "NOT_RUN",
+    "visual": "NOT_RUN",
+    "commit": "NOT_ALLOWED",
+    "push": "NOT_ATTEMPTED"
+  }
+}

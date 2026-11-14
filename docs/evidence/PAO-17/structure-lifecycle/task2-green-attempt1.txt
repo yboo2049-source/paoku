@@ -1,0 +1,54 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao17-assets.test.ts tests/unit/pao17-views.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+stdout | tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > syncs frozen snapshots without modifying map entries or creating duplicate meshes/casters
+BJS - [20:35:33]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > removes collected/deleted instances and casters while shared materials survive until cache disposal
+BJS - [20:35:33]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao17-views.test.ts (3 tests | 2 failed) 61ms
+     × syncs frozen snapshots without modifying map entries or creating duplicate meshes/casters 50ms
+     × removes collected/deleted instances and casters while shared materials survive until cache disposal 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > syncs frozen snapshots without modifying map entries or creating duplicate meshes/casters
+ReferenceError: totalTime is not defined
+ ❯ src/render/entityViews.ts:197:31
+    195|       });
+    196|
+    197|       const floatY = Math.sin(totalTime * 3.0 + pu.x) * 0.15;
+       |                               ^
+    198|       node.position.set(pu.x, pu.y + floatY, pu.z);
+    199|       node.rotation.y += dt * 2.0;
+ ❯ EntityViews.syncPowerUps src/render/entityViews.ts:171:25
+ ❯ EntityViews.sync src/render/entityViews.ts:27:71
+ ❯ tests/unit/pao17-views.test.ts:30:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > removes collected/deleted instances and casters while shared materials survive until cache disposal
+ReferenceError: totalTime is not defined
+ ❯ src/render/entityViews.ts:197:31
+    195|       });
+    196|
+    197|       const floatY = Math.sin(totalTime * 3.0 + pu.x) * 0.15;
+       |                               ^
+    198|       node.position.set(pu.x, pu.y + floatY, pu.z);
+    199|       node.rotation.y += dt * 2.0;
+ ❯ EntityViews.syncPowerUps src/render/entityViews.ts:171:25
+ ❯ EntityViews.sync src/render/entityViews.ts:27:71
+ ❯ tests/unit/pao17-views.test.ts:37:89
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  2 failed | 5 passed (7)
+   Start at  20:35:31
+   Duration  2.15s (transform 84ms, setup 0ms, import 1.86s, tests 1.85s, environment 0ms)

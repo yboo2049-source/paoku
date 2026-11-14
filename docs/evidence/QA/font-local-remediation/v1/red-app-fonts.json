@@ -1,0 +1,108 @@
+{
+  "errors": [
+    "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap: net::ERR_CONNECTION_CLOSED",
+    "error: Failed to load resource: net::ERR_CONNECTION_CLOSED",
+    "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap: net::ERR_CONNECTION_CLOSED",
+    "error: Failed to load resource: net::ERR_CONNECTION_CLOSED"
+  ],
+  "google": [
+    "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap",
+    "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap"
+  ],
+  "local": [],
+  "faces": [
+    {
+      "family": "Outfit",
+      "weight": 400,
+      "faces": [],
+      "error": null
+    },
+    {
+      "family": "Outfit",
+      "weight": 600,
+      "faces": [],
+      "error": null
+    },
+    {
+      "family": "Outfit",
+      "weight": 700,
+      "faces": [],
+      "error": null
+    },
+    {
+      "family": "Outfit",
+      "weight": 900,
+      "faces": [],
+      "error": null
+    },
+    {
+      "family": "Orbitron",
+      "weight": 500,
+      "faces": [],
+      "error": null
+    },
+    {
+      "family": "Orbitron",
+      "weight": 700,
+      "faces": [],
+      "error": null
+    },
+    {
+      "family": "Orbitron",
+      "weight": 900,
+      "faces": [],
+      "error": null
+    }
+  ],
+  "glyphs": [
+    {
+      "family": "Outfit",
+      "weight": 400,
+      "fonts": []
+    },
+    {
+      "family": "Outfit",
+      "weight": 600,
+      "fonts": []
+    },
+    {
+      "family": "Outfit",
+      "weight": 700,
+      "fonts": []
+    },
+    {
+      "family": "Outfit",
+      "weight": 900,
+      "fonts": [
+        {
+          "familyName": "Times New Roman",
+          "postScriptName": "TimesNewRomanPS-BoldMT",
+          "isCustomFont": false,
+          "glyphCount": 17
+        }
+      ]
+    },
+    {
+      "family": "Orbitron",
+      "weight": 500,
+      "fonts": [
+        {
+          "familyName": "Times New Roman",
+          "postScriptName": "TimesNewRomanPSMT",
+          "isCustomFont": false,
+          "glyphCount": 17
+        }
+      ]
+    },
+    {
+      "family": "Orbitron",
+      "weight": 700,
+      "fonts": []
+    },
+    {
+      "family": "Orbitron",
+      "weight": 900,
+      "fonts": []
+    }
+  ]
+}

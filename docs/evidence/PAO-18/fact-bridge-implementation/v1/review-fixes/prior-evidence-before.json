@@ -1,0 +1,210 @@
+[
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\disk-http-identity.json",
+    "sha256": "FE5A317E22E5F7B21501A4097CE3C651BEF30E7376D78A7DC1C80705D10DD0C6"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\e2e-full-second-summary.json",
+    "sha256": "78848E7959645735D3FBFE35B728B0C440E0A0B8A4094B4A4C23909257F556F7"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\F-390-multitick.png",
+    "sha256": "6F366FB3CBD817F5E7C316599F9311E6308E8A91319E7A137C45918F9AE7E063"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\F-390-near.png",
+    "sha256": "4A319577CC4CE27F11A9F5F887BF7003FD50A3D51BCD5958B255A11E54749010"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\F-audio-order.json",
+    "sha256": "E50A21D1FE05AA96A2A635583A04CCD059E7F8A83E684E2BD1F661697B5C2863"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\F-consumer-failure-overflow.json",
+    "sha256": "E5E34D1A48FC3C1DB4AA7A9770859F7D281FFEB986AB1C8E0C4B444C26C0A58F"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\F-desktop-high-speed.png",
+    "sha256": "57AE044064A29D150BC0384607FB01641437B1E4E117552BCCDBAA2256692FCA"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\F-fault.json",
+    "sha256": "3692BA6C463FF5078553F927C8DFE16C5B1FF1C806BAF15EAA301685E024ABBB"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\F-high-speed-presentation.webm",
+    "sha256": "93B73D39ECC2F9C554D325EEE5D4C9236FA07F77B118D70B752CC3D352B7789C"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\F-multitick-jump-roll-pause.webm",
+    "sha256": "832EDDB38D49BEE0D0BB2CF9300956055978197AFA5553A019677F1C8D475F7B"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\F-multitick.json",
+    "sha256": "5C516E0DE37C04D0F98197A24C32B69CAEDC099301703073CA7C4FAC56E88A69"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\F-ramp-jump-slide-pause.webm",
+    "sha256": "9992462DEA3448B64A97CA03D50FAA26FD2225D5FBE269343FD920D801B6251C"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\F-roof-HUD.png",
+    "sha256": "120CADC2602FF827A371F5F60E7AACF5979F05907E0F4A38A3DA324F06EBC280"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\first-touch-failure-decoded.json",
+    "sha256": "1B1C545FFC70665773E33559BA883EAFF21154966E62BBEF9461D47F2A8BABCA"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\first-touch-failure-trace.zip",
+    "sha256": "D84A9C547F69B523319E2919BFFFC342DAD7207ADF85682CE756E85936F37493"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\N-390-touch-paused.png",
+    "sha256": "AE37440C42DD3653A25BB79B73D7A2AB8F40BD300973EEE1585C47BEB5D8E9B8"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\N-main.json",
+    "sha256": "4FA9BF49098C462C0ED4111BD133141F7F974ED748E8C3180958401F3C85C052"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\N-paused.png",
+    "sha256": "5B36ED8271E5D04DA3EE1E0E842B9639CCEC773865DEA94E1A02F561156F78CC"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\N-touch.json",
+    "sha256": "421326C7AB797D58183D62BD991FDBDC0DC5DF642AAF0AC21F2203FF0B69A84A"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\old-suite-ECONNRESET-trace.zip",
+    "sha256": "0F4910C7B14F0CB272093D02086F6F4A5EECCAE04FD55A17CE5B9179DF221818"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\protected-after.json",
+    "sha256": "E18F226BF2F7031F465C395A24AB0014C1DA189C6D62F31F727D5B93C23D843A"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\protected-before.json",
+    "sha256": "E18F226BF2F7031F465C395A24AB0014C1DA189C6D62F31F727D5B93C23D843A"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\protection.json",
+    "sha256": "7D356A1A617991D70CFBBC08408BAE0834C0FD6ABCB1A2151EC7E9B2BF668C5E"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\regression-F-delayed.json",
+    "sha256": "61BAD159F806A0E65D60F07E5915A208D185161BC13E1941EE434B2975920233"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\regression-F-dispose.json",
+    "sha256": "3A8BDD60DA7D6A4F8D5323C36DD793B5FEE6BE6A763295766E2C89C20F1B57E0"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\regression-F-lifecycle.json",
+    "sha256": "8F99EEA800DC4D821CB4EC83FCAD7276D6BE623C1AFC05997D4770BF0A10B328"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\regression-F-projection-cases.json",
+    "sha256": "FFEEC48A5FA0C24AF368BCFFECC2BB383A8DAF713E2A9FA003DF5DFAE8E31D3E"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\regression-F-ramp-trace.json",
+    "sha256": "4EF72F023D9C0BE44F0138C93EA3E1CEA8D937E08B264511976C583822D0C737"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\regression-identity.json",
+    "sha256": "9DB0B86F1A96B25A179CD8AE9D72049AC0E093C55FD3EA3B560C8F94AFA3AFF3"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\runtime.json",
+    "sha256": "228EA51AF5C6DAAE828691167398BAB063D881759AF0E1E40848115840D5AA80"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\baseline-build.txt",
+    "sha256": "32952668F919FBC7721F4764AC871E7742DB0D9EA5D12A88C1C4F773BB48DA7F"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\baseline-unit.txt",
+    "sha256": "C0C174A2127BF155993CC8DCFF6C973D4B57409FFF113FED7DD62D0D25EA67F6"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\consumer-red-first.txt",
+    "sha256": "ADF35DF3875CFC378D8DC5B21F51DC447CF8472D78DD32E88B5699CE8382E874"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\final-unit.txt",
+    "sha256": "FAFD613152CD6A725AEC29D1A139B8768C8EC8BC2F12C6047BA856D9EFA0AAE7"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\final2-build.txt",
+    "sha256": "BC67A1EB06AE70DE451EFE9C7CC3FD7E1E678040FE8B9C5F8D57337F0F5CA28C"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\final2-src-tsc.txt",
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\final2-tests-tsc.txt",
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\final2-unit.txt",
+    "sha256": "F065BE06AEDA72870A091388334275670472E6901BE8080C8B2DF6A169E72FB7"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\full-first.txt",
+    "sha256": "564DFFDEACCB33AB74F6AF6FD91F653D8E6F11F0FB2D2AA21F9A1750BDCCE479"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\full-second.txt",
+    "sha256": "672FC15951BFE419759CD5B3105450F914B6127D36010B4C8B4A200940BC1EB5"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\journal-red-first.txt",
+    "sha256": "25E2AC462F16DFB93912BE91AE6A11A8D18114821DD2AA81D7E3E92BE440BAD5"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\main-red-first.txt",
+    "sha256": "76C8998ECE631C3CED2738747B5798FC84531D0C6025081B98FC645393EB377D"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\mirror-manifest.json",
+    "sha256": "70108B08BE21FA2C14F7762D2FD1EC86B9A9827BABF7452340F3F514059B8636"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\packet-order-green.txt",
+    "sha256": "7F34723A5E42D95D631085E8134953124631112C032503C9098AB5BF37FF1CA3"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\packet-order-red-first.txt",
+    "sha256": "7C0A97F8552FC303AB838AFE9D4581FF0A4F159D4FE295EE0A1C160E1727CD86"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\playwright-5198.config.txt",
+    "sha256": "1B07A5A98774C081CE5CB505A65489F017CA911DDDE001FE1D1358E802FFAB25"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\prepare-suite.mjs.txt",
+    "sha256": "A5CD5BF7020F6338C0AA0F558819F9ADBA8C4FD0D08C5E098A381D75BD18307C"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\producers-red-first.txt",
+    "sha256": "A244959BF85200061E6034138D13E402EF4F4990E2D1CC78BD706022C2EBEC2D"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\qa-red-first.txt",
+    "sha256": "3821151CFFB4A23AF65EDF245DAB182F8DA009D52CA00695234F4A3486FC8EA4"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\target-all1.txt",
+    "sha256": "E265666FD559F07B9DC50FC71605FFBEA40684DCF7BC716550B585F8A2472D92"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\target-fix2.txt",
+    "sha256": "70497C0D9B4126CA0EC896D8CC8E51D5B2BDFE545357DA6175312725AD36F0B2"
+  },
+  {
+    "path": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\docs\\evidence\\PAO-18\\fact-bridge-implementation\\v1\\checks\\touch-consumption-fix.txt",
+    "sha256": "57F2489B66565E25602297D017C4DCBA9EEA74B732E07F8A20990D77D5D05A02"
+  }
+]

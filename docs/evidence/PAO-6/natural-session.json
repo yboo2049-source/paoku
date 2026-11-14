@@ -1,0 +1,224 @@
+{
+  "baseline": "fa9d67b",
+  "mode": "normal UI input; no QA mode, no state writes, unseeded random spawner",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "snapshots": [
+    {
+      "label": "start",
+      "time": "2026-10-31T08:34:56.792Z",
+      "state": "PLAYING",
+      "pos": {
+        "x": 0,
+        "y": 0,
+        "z": 1.1997013899999738
+      },
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "score": 0.11997013899999738,
+      "coins": 0,
+      "speed": 18.01665
+    },
+    {
+      "label": "left",
+      "time": "2026-10-31T08:34:56.804Z",
+      "state": "PLAYING",
+      "pos": {
+        "x": 0,
+        "y": 0,
+        "z": 1.4988466699999474
+      },
+      "player": {
+        "lane": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "score": 0.14988466699999475,
+      "coins": 0,
+      "speed": 18.020799999999998
+    },
+    {
+      "label": "jump",
+      "time": "2026-10-31T08:34:57.103Z",
+      "state": "PLAYING",
+      "pos": {
+        "x": -0.517019057739391,
+        "y": 0.9673127000000143,
+        "z": 6.916961677499945
+      },
+      "player": {
+        "lane": 1,
+        "isJumping": true,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "score": 0.6916961677499947,
+      "coins": 0,
+      "speed": 18.095799999999993
+    },
+    {
+      "label": "roll",
+      "time": "2026-10-31T08:34:57.289Z",
+      "state": "PLAYING",
+      "pos": {
+        "x": -0.02180691590359741,
+        "y": 1.3337877199999741,
+        "z": 10.24031807499997
+      },
+      "player": {
+        "lane": 1,
+        "isJumping": true,
+        "isRolling": true,
+        "invulnerableTimer": 0
+      },
+      "score": 1.0240318074999972,
+      "coins": 0,
+      "speed": 18.141649999999988
+    },
+    {
+      "label": "pause",
+      "time": "2026-10-31T08:34:57.508Z",
+      "state": "PAUSED",
+      "pos": {
+        "x": -0.0009216238766740285,
+        "y": 0,
+        "z": 13.570264192499891
+      },
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": true,
+        "invulnerableTimer": 0
+      },
+      "score": 1.357026419249989,
+      "coins": 0,
+      "speed": 18.187474999999985
+    },
+    {
+      "label": "resume",
+      "time": "2026-10-31T08:35:04.670Z",
+      "state": "PLAYING",
+      "pos": {
+        "x": -0.0009216238766740285,
+        "y": 0,
+        "z": 13.570264192499891
+      },
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": true,
+        "invulnerableTimer": 0
+      },
+      "score": 1.357026419249989,
+      "coins": 0,
+      "speed": 18.187474999999985
+    },
+    {
+      "label": "natural-failure",
+      "time": "2026-10-31T08:35:14.221Z",
+      "state": "GAMEOVER",
+      "pos": {
+        "x": -2.387645560643215e-75,
+        "y": 0,
+        "z": 198.67262737249953
+      },
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "score": 19.867262737249956,
+      "coins": 22,
+      "speed": 20.574874999999913
+    },
+    {
+      "label": "restart",
+      "time": "2026-10-31T08:35:24.889Z",
+      "state": "PLAYING",
+      "pos": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "score": 0,
+      "coins": 0,
+      "speed": 18
+    },
+    {
+      "label": "menu-return",
+      "time": "2026-10-31T08:35:25.523Z",
+      "state": "MENU",
+      "pos": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "player": {
+        "lane": 1,
+        "isJumping": false,
+        "isRolling": false,
+        "invulnerableTimer": 0
+      },
+      "score": 0.36054166725000014,
+      "coins": 0,
+      "speed": 18.05000000000001
+    }
+  ],
+  "storageAfterToggles": {
+    "paoku_audio_master_muted": "0",
+    "paoku_high_score": "19",
+    "paoku_audio_bgm_volume": "0.6",
+    "paoku_audio_sfx_volume": "0.9",
+    "paoku_selected_skin": "cyan",
+    "paoku_audio_sfx_enabled": "0",
+    "paoku_total_coins": "22",
+    "paoku_audio_bgm_enabled": "0",
+    "paoku_unlocked_skins": "[\"cyan\"]"
+  },
+  "logs": [
+    {
+      "time": "2026-10-31T08:34:13.284Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "time": "2026-10-31T08:34:13.561Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "time": "2026-10-31T08:34:14.347Z",
+      "type": "log",
+      "text": "BJS - [16:34:14]: Babylon.js v9.19.0 - WebGL2 - Parallel shader compilation"
+    },
+    {
+      "time": "2026-10-31T08:35:26.088Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "time": "2026-10-31T08:35:26.108Z",
+      "type": "log",
+      "text": "BJS - [16:35:26]: Babylon.js v9.19.0 - WebGL2 - Parallel shader compilation"
+    },
+    {
+      "time": "2026-10-31T08:35:26.733Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ]
+}

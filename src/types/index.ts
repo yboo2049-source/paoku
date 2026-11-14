@@ -4,6 +4,13 @@ export type ObstacleType = 'LOW_OBSTACLE' | 'HIGH_OBSTACLE' | 'STATIC_TRAIN' | '
 
 export type PowerUpType = 'MAGNET' | 'DOUBLE_SCORE' | 'SUPER_SNEAKERS' | 'HOVERBOARD';
 
+/** Tick-local foot position captured after input, before forward integration. */
+export interface PhysicsStepStart {
+  readonly x: number;
+  readonly y: number;
+  readonly z: number;
+}
+
 export interface Mission {
   id: string;
   title: string;
@@ -16,6 +23,14 @@ export interface Mission {
 }
 
 export interface PlayerEntity {
+  /** Standalone physics callers' terminal notification latch; reset at run/QA boundaries. */
+  collisionEnded?: boolean;
+  /** Transitional support state owned by physics, included in simulation snapshots. */
+  supportSurfaceId?: string | null;
+  contact?: 'SUPPORTED' | 'AIRBORNE';
+  supportSample?: { x: number; y: number; z: number };
+  supportDeparture?: { ownerEntityId: string; side: 'REAR' | 'LEFT' | 'RIGHT'; y: number } | null;
+  supportRampExit?: { xMin: number; xMax: number; z: number; y: number } | null;
   lane: number;          // 0: 左, 1: 中, 2: 右
   x: number;             // X 世界坐标
   targetX: number;       // 目标 X 坐标
@@ -32,6 +47,11 @@ export interface PlayerEntity {
 }
 
 export interface ObstacleEntity {
+  /** PAO-13 data-only presentation ownership; ignored by the legacy renderer. */
+  definitionId?: string;
+  segmentInstanceId?: string;
+  combinationId?: string;
+  visualRootId?: string;
   id: string;
   type: ObstacleType;
   lane: number;
@@ -45,6 +65,8 @@ export interface ObstacleEntity {
 }
 
 export interface CoinEntity {
+  segmentInstanceId?: string;
+  routeId?: string;
   id: string;
   lane: number;
   x: number;
@@ -54,6 +76,8 @@ export interface CoinEntity {
 }
 
 export interface PowerUpEntity {
+  segmentInstanceId?: string;
+  routeId?: string;
   id: string;
   type: PowerUpType;
   lane: number;
@@ -71,6 +95,8 @@ export interface ChaseState {
 }
 
 export interface GameContext {
+  /** Present on authoritative Simulation runs; absent only for legacy standalone callers. */
+  runLedger?: RunLedger;
   state: GameState;
   score: number;
   highScore: number;
@@ -85,6 +111,23 @@ export interface GameContext {
   missions: Mission[];
   /** 追逐状态（由逻辑层计算，供渲染层与音频层共用，避免跨层读渲染状态） */
   chase: ChaseState;
+}
+
+export interface RunLedger {
+  pickupCount: number;
+  pickupCoins: number;
+  rewardCoins: number;
+  rewardedMissionIds: string[];
+}
+
+export interface RunSummary {
+  readonly runId: string;
+  readonly scoreInt: number;
+  readonly pickupCount: number;
+  readonly pickupCoins: number;
+  readonly rewardCoins: number;
+  readonly earnedCoins: number;
+  readonly endReason: 'COLLISION' | 'QUIT';
 }
 
 export const CONSTANTS = {
@@ -103,3 +146,13 @@ export const CONSTANTS = {
   MAGNET_RADIUS: 15.0,
   MAGNET_SPEED: 25.0,
 };
+
+/** Fixed-tick authoritative generator input, never populated from presentation. */
+export interface TrackGenerationFrame {
+  runId: string; seed: number; rng: import('./contracts').VersionedRng; tick: number; speed: number;
+}
+export interface TrackGenerationState {
+  runId: string; seed: number; contentRevision: string;
+  rngAlgorithmVersion: string; rngState: number; cursor: number; nextZ: number; lastTick: number;
+  stage: string; lastSegmentId: string | null; fallbackCount: number;
+}

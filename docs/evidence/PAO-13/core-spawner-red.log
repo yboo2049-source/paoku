@@ -1,0 +1,26 @@
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-13
+
+ ❯ docs/evidence/PAO-13/core-integration.test.ts (4 tests | 1 failed) 29ms
+     × runs the real spawner inside fixed ticks and reproduces layouts across cadence and restart 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  docs/evidence/PAO-13/core-integration.test.ts > PAO-13 authoritative generation wiring > runs the real spawner inside fixed ticks and reproduces layouts across cadence and restart
+AssertionError: real generator state must be in the initial snapshot: expected undefined to be defined
+ ❯ drive docs/evidence/PAO-13/core-integration.test.ts:89:104
+     87|     const drive = (cadence: number[]) => {
+     88|       const { sim, spawner } = setup();
+     89|       expect((sim.snapshot as any).generation, 'real generator state m…
+       |                                                                                                        ^
+     90|       const loop = new GameLoop(() => { if (sim.tick < 120) sim.step()…
+     91|       let index = 0;
+ ❯ docs/evidence/PAO-13/core-integration.test.ts:102:23
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  12:10:11
+   Duration  365ms (transform 117ms, setup 0ms, import 144ms, tests 29ms, environment 0ms)

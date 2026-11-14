@@ -1,0 +1,33 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/sweptCollision.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-12
+
+ ❯ tests/unit/sweptCollision.test.ts (31 tests | 1 failed) 26ms
+     × uses standing height at a zero-duration expired roll boundary 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 stance, damage and support matrix > uses standing height at a zero-duration expired roll boundary
+AssertionError: expected 'PLAYING' to be 'GAMEOVER' // Object.is equality
+
+Expected: "GAMEOVER"
+Received: "PLAYING"
+
+ ❯ tests/unit/sweptCollision.test.ts:152:23
+    150|     ctx.obstacles = [obstacle({ type: 'HIGH_OBSTACLE', y: 1.2, z: 0 })…
+    151|     advance(ctx, 0);
+    152|     expect(ctx.state).toBe('GAMEOVER');
+       |                       ^
+    153|   });
+    154|   it('detects actual side entry irrespective of target lane', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 30 passed (31)
+   Start at  02:55:30
+   Duration  403ms (transform 123ms, setup 0ms, import 153ms, tests 26ms, environment 0ms)

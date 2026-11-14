@@ -1,0 +1,1033 @@
+{
+  "passed": false,
+  "stats": {
+    "startTime": "2026-11-05T14:28:24.342Z",
+    "duration": 954958.072,
+    "expected": 71,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "file": "font-resources.pw.ts",
+      "title": "N real application uses local faces and glyphs with Google domains unavailable",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 5156,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "font-resources.pw.ts",
+      "title": "F independent local font 404 remains visible to unchanged error sensors",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3008,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "font-resources.pw.ts",
+      "title": "N pages and F typography matrix 1280x720",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 50331,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "font-resources.pw.ts",
+      "title": "N pages and F typography matrix 390x844",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 49438,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "font-resources.pw.ts",
+      "title": "N pages and F typography matrix 844x390",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 49631,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "gameplay.pw.ts",
+      "title": "MENU → PLAYING via start button",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3162,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "gameplay.pw.ts",
+      "title": "PLAYING → 切道（左/右 + 边界钳制）",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3325,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "gameplay.pw.ts",
+      "title": "PLAYING → 跳跃（isJumping=true）",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3214,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "gameplay.pw.ts",
+      "title": "PLAYING → 翻滚（isRolling=true）",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3219,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "gameplay.pw.ts",
+      "title": "PLAYING → PAUSED via Escape，再 resume 回到 PLAYING",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3626,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "gameplay.pw.ts",
+      "title": "捕获 6 张高保真截图（无 GAMEOVER 风险）",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 4953,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao10-review-fixes.pw.ts",
+      "title": "native-menu-slider-and-start-space",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3515,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao10-review-fixes.pw.ts",
+      "title": "paused-rejects-motion-and-resume-space",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 4161,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao10-review-fixes.pw.ts",
+      "title": "playing-interactive-arrows-do-not-move-player",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3495,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao10-simulation.pw.ts",
+      "title": "N-desktop-production-keyboard-flow",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 51892,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao10-simulation.pw.ts",
+      "title": "N-mobile-production-touch",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 5965,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao10-simulation.pw.ts",
+      "title": "F-lifecycle-clears-input-and-hidden-time",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 5214,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao11-surfaces.pw.ts",
+      "title": "F-desktop-keyboard-ground-ramp-roof-jump-ground",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 7098,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao11-surfaces.pw.ts",
+      "title": "F-portrait-touch-ground-ramp-roof-jump-ground",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 7065,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao11-surfaces.pw.ts",
+      "title": "F-high-base-ramp-5-to-8-continuous-roof",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 4875,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao11-surfaces.pw.ts",
+      "title": "N-production-input-and-supported-snapshot",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 4016,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao12-collision.pw.ts",
+      "title": "F-desktop-relative-high-speed-thin-train-terminal-once",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 5975,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao12-collision.pw.ts",
+      "title": "F-portrait-same-tick-shield-multi-hit-single-consumption",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 4493,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao12-collision.pw.ts",
+      "title": "F-desktop-airborne-roll-uses-actual-height-box",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 4626,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao12-collision.pw.ts",
+      "title": "F-browser-isolated-highest-speed-large-step-and-pose-matrix",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3294,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao12-collision.pw.ts",
+      "title": "F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 4758,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao13-track.pw.ts",
+      "title": "N-desktop-seeded-generation-keyboard-and-reset",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 7019,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao13-track.pw.ts",
+      "title": "N-portrait-seeded-generation-touch",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 4536,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao13-track.pw.ts",
+      "title": "F-isolated-browser-real-physics-segment-and-pair-witnesses",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 4409,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-application.pw.ts",
+      "title": "N-desktop-pause-restart-stale-run-and-DOM-tamper",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 14875,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-application.pw.ts",
+      "title": "N-portrait-touch-paused-input-and-return",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 5253,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-application.pw.ts",
+      "title": "F-30-pickups-50-reward-save-failure-retry-and-repeat-finish",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 16822,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-application.pw.ts",
+      "title": "F-legacy-rights-shop-purchase-and-refresh",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 12674,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-application.pw.ts",
+      "title": "F-same-tick-terminal-pickup-and-gameover-shop",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 4953,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-application.pw.ts",
+      "title": "F-two-tabs-conflicting-transactions-do-not-overwrite",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 26822,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-application.pw.ts",
+      "title": "F-pause-isolates-input-while-save-lock-is-held",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 4551,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-application.pw.ts",
+      "title": "F-reentrant-end-command-seals-complete-fatal-tick",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 4258,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-application.pw.ts",
+      "title": "F-native-slider-preserves-draft-while-save-lock-is-held",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3651,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-review.pw.ts",
+      "title": "F-review-audio-different-fields-under-lock",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 15478,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-review.pw.ts",
+      "title": "F-review-audio-repeated-toggle-under-lock",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3990,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-review.pw.ts",
+      "title": "F-review-audio-volume-and-toggle-queue",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 16392,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-review.pw.ts",
+      "title": "F-review-shop-stale-funds-explicit-retry",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 15289,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-unknown-commit.pw.ts",
+      "title": "F-unknown-toggle-1-confirmation-read-failures",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 6532,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao14-unknown-commit.pw.ts",
+      "title": "F-unknown-toggle-2-confirmation-read-failures",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 4058,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao17-lifecycle.pw.ts",
+      "title": "F real renderer fallback, 20 cycles / 10 resets, dispose/remount, late shared load and host canvas",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3497,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao17-lifecycle.pw.ts",
+      "title": "F production main dispose bridge releases the actual renderer engine and scene",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 5403,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao17-ramp-view.pw.ts",
+      "title": "F actual wedge-roof walk, triangle support and exit at base Y=0",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 7946,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao17-ramp-view.pw.ts",
+      "title": "F actual wedge-roof walk, triangle support and exit at base Y=5",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 9278,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao17-structure.pw.ts",
+      "title": "F source raw and legacy HTTP identity",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 6915,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao17-structure.pw.ts",
+      "title": "N desktop keyboard legacy start motion pause resume end restart",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 30109,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao17-structure.pw.ts",
+      "title": "N 390 touch legacy start motion pause resume end restart",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 36977,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao17-theme.pw.ts",
+      "title": "F successful legacy GLB and shadows warmed before 20 bounded recycles / 10 resets / full disposal",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 14897,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao17-theme.pw.ts",
+      "title": "N bright desktop keyboard motion pause resume collision and restart",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 35411,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao17-theme.pw.ts",
+      "title": "N bright 390 touch motion pause resume collision and restart",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 45109,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao18-controller-camera.pw.ts",
+      "title": "F actual legacy renderer: 390 framing, actual group pause, support edges and stable resources",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 42731,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao18-controller-camera.pw.ts",
+      "title": "F runtime modules raw identity and actual legacy GLB HTTP hash",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 17064,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao18-controller-camera.pw.ts",
+      "title": "N desktop keyboard controls, real group pause, HUD profile and restart",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 17274,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao18-controller-camera.pw.ts",
+      "title": "N 390 touch controls, real group pause, HUD profile and restart",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 29581,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao18-controller-camera.pw.ts",
+      "title": "F recorded authoritative ramp-to-roof, jump/slide and pause with the production main",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 25515,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao18-controller-camera.pw.ts",
+      "title": "F real legacy request delayed across reset: same asset ID, latest skin, dispose before completion",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 15939,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao18-controller-camera.pw.ts",
+      "title": "F fixed old HUD five-row profile measured with actual CSS at 390 and desktop",
+      "status": "unexpected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "timedOut",
+          "retry": 0,
+          "duration": 60354,
+          "errors": [
+            {
+              "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+            },
+            {
+              "location": {
+                "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\fact-bridge\\review-fixes\\suite\\pao18-controller-camera.pw.ts",
+                "column": 54,
+                "line": 230
+              },
+              "message": "Error: page.goto: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:5198/\", waiting until \"load\"\u001b[22m\n\n\n  228 |   const measurements = [];\n  229 |   for (const viewport of [{ width: 390, height: 667 }, { width: 390, height: 844 }, { width: 1440, height: 900 }]) {\n> 230 |     await page.setViewportSize(viewport); await page.goto('/'); await page.click('#start-btn'); await page.keyboard.press('Escape');\n      |                                                      ^\n  231 |     const rect = await page.evaluate(() => {\n  232 |       const el = document.querySelector('#hud-buffs')!;\n  233 |       el.innerHTML = ['HOVERBOARD ACTIVE', 'MAGNET (30.0s)', 'DOUBLE_SCORE (30.0s)', 'SUPER_SNEAKERS (30.0s)', 'HOVERBOARD (30.0s)'].map(text => `<div class=\"buff-pill\"><span>${text}</span></div>`).join('');\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\fact-bridge\\review-fixes\\suite\\pao18-controller-camera.pw.ts:230:54"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "pao18-fact-bridge.pw.ts",
+      "title": "N production exposes committed motion delivery and natural input is single-path",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 6226,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao18-fact-bridge.pw.ts",
+      "title": "F actual multi-step production bridge, sound order, duplicate render and reentrant pause",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3362,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao18-fact-bridge.pw.ts",
+      "title": "F failed real step keeps last commit and audio silent; original application restart recovers",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3482,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao18-fact-bridge.pw.ts",
+      "title": "F HTTP raw source identity witnesses (disk hash comparison recorded by the local harness)",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 223,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao18-fact-bridge.pw.ts",
+      "title": "F original audio API ordering and throwing legacy observer do not drain render",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 2905,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao18-fact-bridge.pw.ts",
+      "title": "N touch input and restart use the same committed bridge at 390",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 3791,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao18-fact-bridge.pw.ts",
+      "title": "F bounded audio overflow and render failure receipts remain independent",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 2951,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao6-baseline.pw.ts",
+      "title": "ramp-roof-jump-land",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 6896,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao6-baseline.pw.ts",
+      "title": "obstacles-failure-restart",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 8154,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao6-baseline.pw.ts",
+      "title": "powerups-shield-missions",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 11601,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "pao6-baseline.pw.ts",
+      "title": "mobile-touch-layout",
+      "status": "expected",
+      "expectedStatus": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration": 6337,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

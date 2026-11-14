@@ -1,0 +1,1856 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\worker\\paoku-sessions\\pao-17\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      ".pao17-local/acceptance.config.ts",
+      "--retries=0"
+    ],
+    "configFile": "D:\\worker\\paoku-sessions\\pao-17\\.pao17-local\\acceptance.config.ts",
+    "rootDir": "D:/worker/paoku-sessions/pao-17",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/worker/paoku-sessions/pao-17/.pao17-local/.pao17-local/results-A",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/worker/paoku-sessions/pao-17",
+        "testIgnore": [],
+        "testMatch": [
+          ".pao17-local/mirror/*.pw.ts",
+          "tests/e2e/pao17-*.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/PAO-17/structure-lifecycle/A-playwright.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 5187 --strictPort",
+      "url": "http://127.0.0.1:5187",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": ".pao17-local\\mirror\\gameplay.pw.ts",
+      "file": ".pao17-local/mirror/gameplay.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "状态机（确定性）",
+          "file": ".pao17-local/mirror/gameplay.pw.ts",
+          "line": 49,
+          "column": 6,
+          "specs": [
+            {
+              "title": "MENU → PLAYING via start button",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4073,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T12:41:05.694Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c57b6e9750ec180d513-fb3e48b5dc65466ddb65",
+              "file": ".pao17-local/mirror/gameplay.pw.ts",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → 切道（左/右 + 边界钳制）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2933,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T12:41:10.207Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c57b6e9750ec180d513-2e2c27be4e5f62e1cf72",
+              "file": ".pao17-local/mirror/gameplay.pw.ts",
+              "line": 56,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → 跳跃（isJumping=true）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2673,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T12:41:13.156Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c57b6e9750ec180d513-3b1e39c20a58cb921755",
+              "file": ".pao17-local/mirror/gameplay.pw.ts",
+              "line": 73,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → 翻滚（isRolling=true）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2709,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T12:41:15.845Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c57b6e9750ec180d513-2e2d19eb51aa7efb57d5",
+              "file": ".pao17-local/mirror/gameplay.pw.ts",
+              "line": 79,
+              "column": 3
+            },
+            {
+              "title": "PLAYING → PAUSED via Escape，再 resume 回到 PLAYING",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2671,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T12:41:18.565Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c57b6e9750ec180d513-d1a504018a7423e49cc8",
+              "file": ".pao17-local/mirror/gameplay.pw.ts",
+              "line": 85,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "截图回放（确定性）",
+          "file": ".pao17-local/mirror/gameplay.pw.ts",
+          "line": 97,
+          "column": 6,
+          "specs": [
+            {
+              "title": "捕获 6 张高保真截图（无 GAMEOVER 风险）",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4234,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T12:41:21.249Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c57b6e9750ec180d513-3beb00a0ac115e061ff2",
+              "file": ".pao17-local/mirror/gameplay.pw.ts",
+              "line": 98,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\mirror\\pao10-review-fixes.pw.ts",
+      "file": ".pao17-local/mirror/pao10-review-fixes.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "native-menu-slider-and-start-space",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7586,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:41:25.517Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a4af8183daf079083cab-f35bd6623a8818e4422e",
+          "file": ".pao17-local/mirror/pao10-review-fixes.pw.ts",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "paused-rejects-motion-and-resume-space",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3011,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:41:33.118Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a4af8183daf079083cab-adffce295d8f0d4e7da1",
+          "file": ".pao17-local/mirror/pao10-review-fixes.pw.ts",
+          "line": 48,
+          "column": 1
+        },
+        {
+          "title": "playing-interactive-arrows-do-not-move-player",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2668,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:41:36.142Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a4af8183daf079083cab-56b8da05cc1b8ed48e96",
+          "file": ".pao17-local/mirror/pao10-review-fixes.pw.ts",
+          "line": 67,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\mirror\\pao10-simulation.pw.ts",
+      "file": ".pao17-local/mirror/pao10-simulation.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "N-desktop-production-keyboard-flow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 50506,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:41:38.836Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "94e4e42c2245dab46dfb-9fb891b6ef1ccd78a45e",
+          "file": ".pao17-local/mirror/pao10-simulation.pw.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "N-mobile-production-touch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8892,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:42:29.357Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "94e4e42c2245dab46dfb-cdd8c42dd2d94191a713",
+          "file": ".pao17-local/mirror/pao10-simulation.pw.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "F-lifecycle-clears-input-and-hidden-time",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4759,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:42:38.267Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "94e4e42c2245dab46dfb-3c1db4c68b81da65e810",
+          "file": ".pao17-local/mirror/pao10-simulation.pw.ts",
+          "line": 97,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\mirror\\pao11-surfaces.pw.ts",
+      "file": ".pao17-local/mirror/pao11-surfaces.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F-desktop-keyboard-ground-ramp-roof-jump-ground",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7365,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:42:43.064Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9a6fef932789d22d7c89-52d6e65d47ecf4cbe278",
+          "file": ".pao17-local/mirror/pao11-surfaces.pw.ts",
+          "line": 95,
+          "column": 3
+        },
+        {
+          "title": "F-portrait-touch-ground-ramp-roof-jump-ground",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5639,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:42:50.443Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9a6fef932789d22d7c89-c30f58f48781ca413afa",
+          "file": ".pao17-local/mirror/pao11-surfaces.pw.ts",
+          "line": 95,
+          "column": 3
+        },
+        {
+          "title": "F-high-base-ramp-5-to-8-continuous-roof",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4507,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:42:56.094Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9a6fef932789d22d7c89-57549e0dbdb8c7430ca6",
+          "file": ".pao17-local/mirror/pao11-surfaces.pw.ts",
+          "line": 124,
+          "column": 1
+        },
+        {
+          "title": "N-production-input-and-supported-snapshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3199,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:00.614Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9a6fef932789d22d7c89-0af04a871068f021cf2b",
+          "file": ".pao17-local/mirror/pao11-surfaces.pw.ts",
+          "line": 142,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\mirror\\pao12-collision.pw.ts",
+      "file": ".pao17-local/mirror/pao12-collision.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F-desktop-relative-high-speed-thin-train-terminal-once",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4466,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:03.848Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b0d0c31acd34d2890669-fdad39b49eac5b380c6e",
+          "file": ".pao17-local/mirror/pao12-collision.pw.ts",
+          "line": 79,
+          "column": 1
+        },
+        {
+          "title": "F-portrait-same-tick-shield-multi-hit-single-consumption",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3026,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:08.326Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b0d0c31acd34d2890669-d524fc9d7f81a61d9eae",
+          "file": ".pao17-local/mirror/pao12-collision.pw.ts",
+          "line": 119,
+          "column": 1
+        },
+        {
+          "title": "F-desktop-airborne-roll-uses-actual-height-box",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3334,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:11.366Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b0d0c31acd34d2890669-e0cdfe7aea94f5d4bd6a",
+          "file": ".pao17-local/mirror/pao12-collision.pw.ts",
+          "line": 144,
+          "column": 1
+        },
+        {
+          "title": "F-browser-isolated-highest-speed-large-step-and-pose-matrix",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2005,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:14.713Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b0d0c31acd34d2890669-5a55cc60af3421ac9210",
+          "file": ".pao17-local/mirror/pao12-collision.pw.ts",
+          "line": 167,
+          "column": 1
+        },
+        {
+          "title": "F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4187,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:16.737Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b0d0c31acd34d2890669-95827823be2bcbcd0b31",
+          "file": ".pao17-local/mirror/pao12-collision.pw.ts",
+          "line": 201,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\mirror\\pao13-track.pw.ts",
+      "file": ".pao17-local/mirror/pao13-track.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "N-desktop-seeded-generation-keyboard-and-reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4212,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:20.963Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ac510f6bb7f63a9de534-dc5a6cb724aebcc2a1f2",
+          "file": ".pao17-local/mirror/pao13-track.pw.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "N-portrait-seeded-generation-touch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3233,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:25.187Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ac510f6bb7f63a9de534-92e3c7fcb96e9430ff6f",
+          "file": ".pao17-local/mirror/pao13-track.pw.ts",
+          "line": 109,
+          "column": 1
+        },
+        {
+          "title": "F-isolated-browser-real-physics-segment-and-pair-witnesses",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2699,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:28.432Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ac510f6bb7f63a9de534-955f8372b735c48e0455",
+          "file": ".pao17-local/mirror/pao13-track.pw.ts",
+          "line": 138,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\mirror\\pao14-application.pw.ts",
+      "file": ".pao17-local/mirror/pao14-application.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "N-desktop-pause-restart-stale-run-and-DOM-tamper",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5197,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:31.169Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ff89a8d9d539a7a8b4f7-01bee2ad7642ae5d2dbd",
+          "file": ".pao17-local/mirror/pao14-application.pw.ts",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "N-portrait-touch-paused-input-and-return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4600,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:36.377Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ff89a8d9d539a7a8b4f7-cf83dc048b2c6a59bbfe",
+          "file": ".pao17-local/mirror/pao14-application.pw.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "F-30-pickups-50-reward-save-failure-retry-and-repeat-finish",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4951,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:40.989Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ff89a8d9d539a7a8b4f7-a0f336c163889ab2693c",
+          "file": ".pao17-local/mirror/pao14-application.pw.ts",
+          "line": 94,
+          "column": 1
+        },
+        {
+          "title": "F-legacy-rights-shop-purchase-and-refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4233,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:45.949Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ff89a8d9d539a7a8b4f7-d44df51b48f7e794f0a8",
+          "file": ".pao17-local/mirror/pao14-application.pw.ts",
+          "line": 130,
+          "column": 1
+        },
+        {
+          "title": "F-same-tick-terminal-pickup-and-gameover-shop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4020,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:50.194Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ff89a8d9d539a7a8b4f7-b5d21ac42e76cf566415",
+          "file": ".pao17-local/mirror/pao14-application.pw.ts",
+          "line": 147,
+          "column": 1
+        },
+        {
+          "title": "F-two-tabs-conflicting-transactions-do-not-overwrite",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7178,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:43:54.226Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ff89a8d9d539a7a8b4f7-e20157feff5304cfc741",
+          "file": ".pao17-local/mirror/pao14-application.pw.ts",
+          "line": 171,
+          "column": 1
+        },
+        {
+          "title": "F-pause-isolates-input-while-save-lock-is-held",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2858,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:44:01.417Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ff89a8d9d539a7a8b4f7-26c8e5ac90b44207f618",
+          "file": ".pao17-local/mirror/pao14-application.pw.ts",
+          "line": 190,
+          "column": 1
+        },
+        {
+          "title": "F-reentrant-end-command-seals-complete-fatal-tick",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4090,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:44:04.295Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ff89a8d9d539a7a8b4f7-acce016b8e3503736c9f",
+          "file": ".pao17-local/mirror/pao14-application.pw.ts",
+          "line": 211,
+          "column": 1
+        },
+        {
+          "title": "F-native-slider-preserves-draft-while-save-lock-is-held",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2109,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:44:08.397Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ff89a8d9d539a7a8b4f7-537cf2f7577ae929b029",
+          "file": ".pao17-local/mirror/pao14-application.pw.ts",
+          "line": 231,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\mirror\\pao14-review.pw.ts",
+      "file": ".pao17-local/mirror/pao14-review.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F-review-audio-different-fields-under-lock",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3936,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:44:10.540Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fa1856e89adc5e4bc2b7-407f51c67c5f9f388b26",
+          "file": ".pao17-local/mirror/pao14-review.pw.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "F-review-audio-repeated-toggle-under-lock",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2595,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:44:14.489Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fa1856e89adc5e4bc2b7-998c0d7b00380f438b89",
+          "file": ".pao17-local/mirror/pao14-review.pw.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "F-review-audio-volume-and-toggle-queue",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3757,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:44:17.096Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fa1856e89adc5e4bc2b7-c8808e905af17e9519ec",
+          "file": ".pao17-local/mirror/pao14-review.pw.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "F-review-shop-stale-funds-explicit-retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7576,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:44:20.864Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fa1856e89adc5e4bc2b7-82683a38d3d2ff66b765",
+          "file": ".pao17-local/mirror/pao14-review.pw.ts",
+          "line": 114,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\mirror\\pao14-unknown-commit.pw.ts",
+      "file": ".pao17-local/mirror/pao14-unknown-commit.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F-unknown-toggle-1-confirmation-read-failures",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2055,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:44:28.475Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eeb3926ed843dbff59d-785d57f43e34f0f8be33",
+          "file": ".pao17-local/mirror/pao14-unknown-commit.pw.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "F-unknown-toggle-2-confirmation-read-failures",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2016,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:44:30.540Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eeb3926ed843dbff59d-7588a217bb2101506788",
+          "file": ".pao17-local/mirror/pao14-unknown-commit.pw.ts",
+          "line": 8,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": ".pao17-local\\mirror\\pao6-baseline.pw.ts",
+      "file": ".pao17-local/mirror/pao6-baseline.pw.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ramp-roof-jump-land",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6012,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:44:32.579Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "40c5994a1a4438a6a592-e1ed89b6ee4847c07f32",
+          "file": ".pao17-local/mirror/pao6-baseline.pw.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "obstacles-failure-restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7713,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:44:38.604Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "40c5994a1a4438a6a592-9493c0742683267fd344",
+          "file": ".pao17-local/mirror/pao6-baseline.pw.ts",
+          "line": 76,
+          "column": 1
+        },
+        {
+          "title": "powerups-shield-missions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9512,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:44:46.331Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "40c5994a1a4438a6a592-915f56b8f2432325fcbc",
+          "file": ".pao17-local/mirror/pao6-baseline.pw.ts",
+          "line": 86,
+          "column": 1
+        },
+        {
+          "title": "mobile-touch-layout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4706,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:44:55.855Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "40c5994a1a4438a6a592-6d593e21da2ac1160bdd",
+          "file": ".pao17-local/mirror/pao6-baseline.pw.ts",
+          "line": 98,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "tests\\e2e\\pao17-lifecycle.spec.ts",
+      "file": "tests/e2e/pao17-lifecycle.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F real renderer fallback, 20 cycles / 10 resets, dispose/remount, late shared load and host canvas",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3822,
+                  "error": {
+                    "message": "Error: page.evaluate: Error: Expected cached legacy failure\n    at eval (eval at evaluate (:311:30), <anonymous>:57:51)\n    at async <anonymous>:337:30",
+                    "stack": "Error: page.evaluate: Error: Expected cached legacy failure\n    at eval (eval at evaluate (:311:30), <anonymous>:57:51)\n    at async <anonymous>:337:30\n    at eval (eval at evaluate (:311:30), <anonymous>:57:51)\n    at async <anonymous>:337:30\n    at D:\\worker\\paoku-sessions\\pao-17\\tests\\e2e\\pao17-lifecycle.spec.ts:14:29",
+                    "location": {
+                      "file": "eval at evaluate (:311:30), <anonymous>",
+                      "column": 51,
+                      "line": 57
+                    }
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "eval at evaluate (:311:30), <anonymous>",
+                        "column": 51,
+                        "line": 57
+                      },
+                      "message": "Error: page.evaluate: Error: Expected cached legacy failure\n    at eval (eval at evaluate (:311:30), <anonymous>:57:51)\n    at async <anonymous>:337:30\n    at eval (eval at evaluate (:311:30), <anonymous>:57:51)\n    at async <anonymous>:337:30\n    at D:\\worker\\paoku-sessions\\pao-17\\tests\\e2e\\pao17-lifecycle.spec.ts:14:29"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:45:00.584Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\worker\\paoku-sessions\\pao-17\\.pao17-local\\.pao17-local\\results-A\\tests-e2e-pao17-lifecycle--01822-shared-load-and-host-canvas\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "eval at evaluate (:311:30), <anonymous>",
+                    "column": 51,
+                    "line": 57
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "dbc19043a3ca55914840-5f08eb9770a4a85527c7",
+          "file": "tests/e2e/pao17-lifecycle.spec.ts",
+          "line": 11,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "tests\\e2e\\pao17-structure.spec.ts",
+      "file": "tests/e2e/pao17-structure.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "F source raw and legacy HTTP identity",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 90,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:45:05.289Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "705a02806aa81ac41027-4146dbf459fcd5864217",
+          "file": "tests/e2e/pao17-structure.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "N desktop keyboard legacy start motion pause resume end restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 29726,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:45:05.415Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "705a02806aa81ac41027-08a1f1442adda8b78af0",
+          "file": "tests/e2e/pao17-structure.spec.ts",
+          "line": 23,
+          "column": 37
+        },
+        {
+          "title": "N 390 touch legacy start motion pause resume end restart",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 45170,
+                  "error": {
+                    "message": "TimeoutError: page.waitForFunction: Timeout 40000ms exceeded.",
+                    "stack": "TimeoutError: page.waitForFunction: Timeout 40000ms exceeded.\n    at D:\\worker\\paoku-sessions\\pao-17\\tests\\e2e\\pao17-structure.spec.ts:38:14",
+                    "location": {
+                      "file": "D:\\worker\\paoku-sessions\\pao-17\\tests\\e2e\\pao17-structure.spec.ts",
+                      "column": 14,
+                      "line": 38
+                    },
+                    "snippet": "  36 |   await page.keyboard.press('Escape'); await expect(page.locator('#resume-btn')).toBeVisible();\n  37 |   await page.click('#resume-btn');\n> 38 |   await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getGameState() === 'GAMEOVER', null, { timeout: 40000 });\n     |              ^\n  39 |   await page.click('#restart-btn');\n  40 |   await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getGameState() === 'PLAYING');\n  41 |   const state = await page.evaluate(() => { const s = (window as any).__GAME_SENSOR__; return { state: s.getGameState(), position: s.getPlayerPos(), score: s.getScore(), scroll: document.documentElement.scrollWidth, width: innerWidth }; });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\worker\\paoku-sessions\\pao-17\\tests\\e2e\\pao17-structure.spec.ts",
+                        "column": 14,
+                        "line": 38
+                      },
+                      "message": "TimeoutError: page.waitForFunction: Timeout 40000ms exceeded.\n\n  36 |   await page.keyboard.press('Escape'); await expect(page.locator('#resume-btn')).toBeVisible();\n  37 |   await page.click('#resume-btn');\n> 38 |   await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getGameState() === 'GAMEOVER', null, { timeout: 40000 });\n     |              ^\n  39 |   await page.click('#restart-btn');\n  40 |   await page.waitForFunction(() => (window as any).__GAME_SENSOR__.getGameState() === 'PLAYING');\n  41 |   const state = await page.evaluate(() => { const s = (window as any).__GAME_SENSOR__; return { state: s.getGameState(), position: s.getPlayerPos(), score: s.getScore(), scroll: document.documentElement.scrollWidth, width: innerWidth }; });\n    at D:\\worker\\paoku-sessions\\pao-17\\tests\\e2e\\pao17-structure.spec.ts:38:14"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T12:45:35.480Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\worker\\paoku-sessions\\pao-17\\.pao17-local\\.pao17-local\\results-A\\tests-e2e-pao17-structure--244aa-on-pause-resume-end-restart\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\worker\\paoku-sessions\\pao-17\\tests\\e2e\\pao17-structure.spec.ts",
+                    "column": 14,
+                    "line": 38
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "705a02806aa81ac41027-f980391194873e661255",
+          "file": "tests/e2e/pao17-structure.spec.ts",
+          "line": 23,
+          "column": 37
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-02T12:41:03.240Z",
+    "duration": 318183.098,
+    "expected": 45,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

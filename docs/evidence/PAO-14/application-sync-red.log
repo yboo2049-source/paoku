@@ -1,0 +1,28 @@
+
+> app@0.0.0 test
+> vitest run --run tests/unit/application.test.ts tests/unit/saveMigration.test.ts tests/unit/shopTransactions.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-14
+
+ ❯ tests/unit/application.test.ts (10 tests | 1 failed) 14ms
+     × publishes in-memory start/pause/resume synchronously without storage access 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/application.test.ts > PAO-14 application lifecycle and settlement > publishes in-memory start/pause/resume synchronously without storage access
+AssertionError: expected 'MENU' to be 'PLAYING' // Object.is equality
+
+Expected: "PLAYING"
+Received: "MENU"
+
+ ❯ tests/unit/application.test.ts:10:265
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 26 passed (27)
+   Start at  12:40:39
+   Duration  555ms (transform 130ms, setup 0ms, import 214ms, tests 34ms, environment 0ms)

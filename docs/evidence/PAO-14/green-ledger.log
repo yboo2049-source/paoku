@@ -1,0 +1,12 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/runSettlement.test.ts tests/unit/mission.test.ts tests/unit/physics.test.ts tests/unit/simulation.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-14
+
+
+ Test Files  4 passed (4)
+      Tests  42 passed (42)
+   Start at  12:43:10
+   Duration  664ms (transform 571ms, setup 0ms, import 769ms, tests 104ms, environment 0ms)

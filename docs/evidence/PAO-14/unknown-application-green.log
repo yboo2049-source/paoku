@@ -1,0 +1,12 @@
+
+> app@0.0.0 test
+> vitest run --run tests/unit/application.test.ts tests/unit/saveMigration.test.ts tests/unit/shopTransactions.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-14
+
+
+ Test Files  3 passed (3)
+      Tests  53 passed (53)
+   Start at  13:55:03
+   Duration  419ms (transform 164ms, setup 0ms, import 232ms, tests 40ms, environment 0ms)

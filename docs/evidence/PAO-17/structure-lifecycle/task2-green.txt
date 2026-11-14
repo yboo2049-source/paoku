@@ -1,0 +1,35 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao17-assets.test.ts tests/unit/pao17-views.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+stdout | tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > removes collected/deleted instances and casters while shared materials survive until cache disposal
+BJS - [20:36:18]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao17-views.test.ts (3 tests | 1 failed) 56ms
+     × removes collected/deleted instances and casters while shared materials survive until cache disposal 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao17-views.test.ts > PAO-17 legacy view ownership > removes collected/deleted instances and casters while shared materials survive until cache disposal
+AssertionError: expected [ Array(0) ] to deeply equal []
+
+Compared values have no visual difference.
+
+ ❯ tests/unit/pao17-views.test.ts:41:84
+     39|     f.obstacles = []; f.coinEntities[0].collected = true; f.powerUpEnt…
+     40|     views.sync(immutableCopy(f), 0, 0);
+     41|     expect(scene.meshes.length).toBe(0); expect(shadow.getShadowMap()!…
+       |                                                                                    ^
+     42|     expect(scene.materials).toContain(shared); views.reset(); views.di…
+     43|     materials.dispose(); expect(scene.materials).not.toContain(shared);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 6 passed (7)
+   Start at  20:36:15
+   Duration  2.16s (transform 77ms, setup 0ms, import 1.90s, tests 1.86s, environment 0ms)

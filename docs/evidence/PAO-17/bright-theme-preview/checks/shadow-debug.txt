@@ -1,0 +1,1 @@
+Four controlled shadow variants captured; these are diagnostic frames, not natural-input acceptance.

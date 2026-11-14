@@ -1,0 +1,88 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/sweptCollision.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-12
+
+ ❯ tests/unit/sweptCollision.test.ts (3 tests | 3 failed) 9ms
+     × passes the current tick origin after input and before forward integration 6ms
+     × uses a fresh origin following a QA discontinuity and world replacement 1ms
+     × does not reuse an origin from the previous run when restarted 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 tick-local motion origin > passes the current tick origin after input and before forward integration
+AssertionError: expected undefined to deeply equal { x: +0, y: +0, z: +0 }
+
+- Expected:
+{
+  "x": 0,
+  "y": 0,
+  "z": 0,
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/sweptCollision.test.ts:33:23
+     31|     sim.queue.collect('ROLL', 'REPLAY', sim.tick);
+     32|     sim.step();
+     33|     expect(starts[0]).toEqual({ x: 0, y: 0, z: 0 });
+       |                       ^
+     34|     expect(observed[0]).toEqual({ z: 0.75, rolling: true });
+     35|     sim.step();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 tick-local motion origin > uses a fresh origin following a QA discontinuity and world replacement
+AssertionError: expected undefined to deeply equal { x: 3, y: 8, z: 500 }
+
+- Expected:
+{
+  "x": 3,
+  "y": 8,
+  "z": 500,
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/sweptCollision.test.ts:53:23
+     51|     });
+     52|     sim.step();
+     53|     expect(starts[1]).toEqual({ x: 3, y: 8, z: 500 });
+       |                       ^
+     54|   });
+     55|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/sweptCollision.test.ts > PAO-12 tick-local motion origin > does not reuse an origin from the previous run when restarted
+AssertionError: expected undefined to deeply equal { x: +0, y: +0, z: 900 }
+
+- Expected:
+{
+  "x": 0,
+  "y": 0,
+  "z": 900,
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/sweptCollision.test.ts:67:23
+     65|     sim.restart('second', 13, next);
+     66|     sim.step();
+     67|     expect(starts[2]).toEqual({ x: 0, y: 0, z: 900 });
+       |                       ^
+     68|     expect(sim.snapshot.runId).toBe('second');
+     69|     expect(sim.tick).toBe(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  02:52:49
+   Duration  316ms (transform 76ms, setup 0ms, import 97ms, tests 9ms, environment 0ms)

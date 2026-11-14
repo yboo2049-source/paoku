@@ -1,0 +1,85 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao17-theme.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+stdout | tests/unit/pao17-theme.test.ts > reuses exactly five real track chunks, with continuous world-space coverage through boundaries, jumps, rollback and reset
+BJS - [22:27:10]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-theme.test.ts > owns each repeated signal boundary once, using actual merged vertices at world positions
+BJS - [22:27:10]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-theme.test.ts > shows independent podium only in MENU/SHOP and does not re-show it on an in-run reset
+BJS - [22:27:11]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao17-theme.test.ts (3 tests | 3 failed) 1168ms
+   × reuses exactly five real track chunks, with continuous world-space coverage through boundaries, jumps, rollback and reset 408ms
+   × owns each repeated signal boundary once, using actual merged vertices at world positions 336ms
+   × shows independent podium only in MENU/SHOP and does not re-show it on an in-run reset 422ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao17-theme.test.ts > reuses exactly five real track chunks, with continuous world-space coverage through boundaries, jumps, rollback and reset
+AssertionError: expected +0 to be 5 // Object.is equality
+
+- Expected
++ Received
+
+- 5
++ 0
+
+ ❯ tests/unit/pao17-theme.test.ts:13:25
+     11| it('reuses exactly five real track chunks, with continuous world-space…
+     12|   const { scene, env } = setup(); const tracks = scene.meshes.filter(m…
+     13|   expect(tracks.length).toBe(5); const roots = new Set(tracks.map(m =>…
+       |                         ^
+     14|   const rng = vi.spyOn(Math, 'random').mockImplementation(() => { thro…
+     15|   for (const z of [0, 119.999, 120, 120.001, 120000.5, 17, -120.01, -0…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/pao17-theme.test.ts > owns each repeated signal boundary once, using actual merged vertices at world positions
+AssertionError: expected +0 to be 5 // Object.is equality
+
+- Expected
++ Received
+
+- 5
++ 0
+
+ ❯ tests/unit/pao17-theme.test.ts:29:106
+     27| it('owns each repeated signal boundary once, using actual merged verti…
+     28|   const { scene, env } = setup(); env.sync(120, 'PLAYING');
+     29|   const posts = scene.meshes.filter(m => m.metadata?.themeRole === 'si…
+       |                                                                                                          ^
+     30|   const centers: number[] = [];
+     31|   for (const mesh of posts) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/pao17-theme.test.ts > shows independent podium only in MENU/SHOP and does not re-show it on an in-run reset
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/pao17-theme.test.ts:42:54
+     40|   const { scene, env } = setup(); const podium = scene.getMeshByName('…
+     41|   for (const state of ['MENU', 'SHOP', 'PLAYING', 'PAUSED', 'GAMEOVER'…
+     42|     env.sync(900, state); expect(podium.isEnabled()).toBe(state === 'M…
+       |                                                      ^
+     43|     env.reset(); expect(podium.isEnabled()).toBe(state === 'MENU' || s…
+     44|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  22:27:07
+   Duration  4.48s (transform 89ms, setup 0ms, import 3.00s, tests 1.17s, environment 0ms)

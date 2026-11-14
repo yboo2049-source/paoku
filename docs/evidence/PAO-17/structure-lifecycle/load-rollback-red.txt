@@ -1,0 +1,73 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao17-lifecycle.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+stdout | tests/unit/pao17-lifecycle.test.ts > keeps primitives visible for a root-only loaded container rather than accepting an empty character
+BJS - [21:02:50]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-lifecycle.test.ts > rolls back a partially mounted character on setup failure, keeping fallback and no instance/caster leak
+BJS - [21:02:50]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao17-lifecycle.test.ts (5 tests | 2 failed) 1981ms
+   × keeps primitives visible for a root-only loaded container rather than accepting an empty character 376ms
+   × rolls back a partially mounted character on setup failure, keeping fallback and no instance/caster leak 365ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao17-lifecycle.test.ts > keeps primitives visible for a root-only loaded container rather than accepting an empty character
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/pao17-lifecycle.test.ts:77:40
+     75|   container.meshes.push(root); container.removeAllFromScene(); complet…
+     76|   await new Promise(resolve => setTimeout(resolve, 0));
+     77|   expect(r.playerAssets.counts.failed).toBe(1); expect(root.isDisposed…
+       |                                        ^
+     78|   expect(r.scene.getMeshByName('torso').isVisible).toBe(true); expect(…
+     79| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/pao17-lifecycle.test.ts > rolls back a partially mounted character on setup failure, keeping fallback and no instance/caster leak
+AssertionError: expected { meshes: 44, nodes: 4, …(6) } to deeply equal { meshes: 42, nodes: 4, …(6) }
+
+- Expected
++ Received
+
+  {
+    "animations": 0,
+-   "casters": 3,
+-   "materials": 35,
+-   "meshes": 42,
++   "casters": 4,
++   "materials": 36,
++   "meshes": 44,
+    "nodes": 4,
+    "particles": 1,
+    "skeletons": 0,
+    "textures": 6,
+  }
+
+ ❯ tests/unit/pao17-lifecycle.test.ts:94:46
+     92|   complete(container); await new Promise(resolve => setTimeout(resolve…
+     93|   expect(consoleError).toHaveBeenCalled(); expect(r.playerAssets.count…
+     94|   expect(counts(r.scene, r.shadowGenerator)).toEqual(baseline);
+       |                                              ^
+     95|   expect(r.scene.getMeshByName('torso').isVisible).toBe(true);
+     96| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 3 passed (5)
+   Start at  21:02:45
+   Duration  4.89s (transform 168ms, setup 0ms, import 2.63s, tests 1.98s, environment 0ms)

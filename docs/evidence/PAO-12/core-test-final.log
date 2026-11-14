@@ -1,0 +1,12 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/sweptCollision.test.ts tests/unit/simulation.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-12
+
+
+ Test Files  2 passed (2)
+      Tests  42 passed (42)
+   Start at  02:56:57
+   Duration  385ms (transform 178ms, setup 0ms, import 244ms, tests 61ms, environment 0ms)

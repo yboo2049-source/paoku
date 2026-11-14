@@ -1,0 +1,148 @@
+{
+  "app": {
+    "appState": "SHOP",
+    "activeRunId": null,
+    "walletCoins": 0,
+    "highScore": 0,
+    "revision": 1,
+    "ownedSkinIds": [
+      "cyan"
+    ],
+    "selectedSkinId": "cyan",
+    "audio": {
+      "masterMuted": false,
+      "bgmEnabled": true,
+      "sfxEnabled": true,
+      "bgmVolume": 0.6,
+      "sfxVolume": 0.9
+    },
+    "summary": {
+      "runId": "run-5e107338-70e3-4c01-9da8-f731e5b784cb",
+      "scoreInt": 0,
+      "pickupCount": 0,
+      "pickupCoins": 0,
+      "rewardCoins": 0,
+      "earnedCoins": 0,
+      "endReason": "QUIT"
+    },
+    "settlementStatus": "COMMITTED",
+    "errorCode": null
+  },
+  "sim": {
+    "contractVersion": 1,
+    "runId": "run-5e107338-70e3-4c01-9da8-f731e5b784cb",
+    "tick": 19,
+    "timeSec": 0.31666666666666665,
+    "stepSec": 0.016666666666666666,
+    "phase": "ABANDONED",
+    "seed": 1346457360,
+    "rngState": 714621690,
+    "rngAlgorithmVersion": "mulberry32-v1",
+    "simulationVersion": "pao10-fixed-v1",
+    "configId": "legacy-18-45-v1",
+    "contentRevision": "pao13-track-v1",
+    "generation": {
+      "runId": "run-5e107338-70e3-4c01-9da8-f731e5b784cb",
+      "seed": 1346457360,
+      "contentRevision": "pao13-track-v1",
+      "rngAlgorithmVersion": "mulberry32-v1",
+      "rngState": 1346457360,
+      "cursor": 0,
+      "nextZ": 30,
+      "lastTick": 0,
+      "stage": "INTRO",
+      "lastSegmentId": null,
+      "fallbackCount": 0
+    },
+    "lastInputSequence": 1,
+    "discontinuity": true,
+    "context": {
+      "state": "SHOP",
+      "score": 0.5713194444444444,
+      "highScore": 0,
+      "coins": 0,
+      "totalCoins": 0,
+      "speed": 18.079166666666662,
+      "distance": 0,
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 0,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "collisionEnded": false,
+        "supportSurfaceId": null,
+        "contact": "AIRBORNE",
+        "supportDeparture": null,
+        "supportRampExit": null
+      },
+      "obstacles": [],
+      "coinEntities": [],
+      "powerUpEntities": [],
+      "missions": [
+        {
+          "id": "m1",
+          "title": "COIN COLLECTOR",
+          "description": "Collect 30 coins in a single run",
+          "target": 30,
+          "current": 0,
+          "rewardCoins": 50,
+          "completed": false,
+          "type": "COLLECT_COINS"
+        },
+        {
+          "id": "m2",
+          "title": "HIGH JUMPER",
+          "description": "Perform 10 jumps in a single run",
+          "target": 10,
+          "current": 0,
+          "rewardCoins": 40,
+          "completed": false,
+          "type": "JUMP_TIMES"
+        },
+        {
+          "id": "m3",
+          "title": "SLIDER PRO",
+          "description": "Perform 8 rolls under obstacles",
+          "target": 8,
+          "current": 0,
+          "rewardCoins": 40,
+          "completed": false,
+          "type": "ROLL_TIMES"
+        },
+        {
+          "id": "m4",
+          "title": "SCORE RUNNER",
+          "description": "Reach a score of 500 in a single run",
+          "target": 500,
+          "current": 0,
+          "rewardCoins": 100,
+          "completed": false,
+          "type": "SCORE_REACH"
+        }
+      ],
+      "chase": {
+        "distance": 2.8,
+        "isNear": false
+      },
+      "runLedger": {
+        "pickupCount": 0,
+        "pickupCoins": 0,
+        "rewardCoins": 0,
+        "rewardedMissionIds": []
+      }
+    }
+  },
+  "viewport": {
+    "width": 390,
+    "height": 844
+  }
+}

@@ -1,69 +1,34 @@
-import type { GameContext, GameState } from '../types';
+import { screens } from './views/screens';
+import { speedLabel, powerUps, ToastQueue, Receipts, InteractionScope, errorLabel } from './views/models';
+import type { PendingReceipt } from './views/models';
+import type { CommandResult } from '../application/types';
+import type { GameContext } from '../types';
+import type { DeepReadonly } from '../types/contracts';
+import type { AppSnapshot } from '../application/types';
+import { SKINS } from '../application/skinCatalog';
+import type { SkinConfig } from '../application/skinCatalog';
+export { SKINS } from '../application/skinCatalog';
+export type { SkinConfig } from '../application/skinCatalog';
 import { CONSTANTS } from '../types';
 import { eventBus } from '../core/eventBus';
 import { audioEngine } from '../systems/audio';
-
-export interface SkinConfig {
-  id: string;
-  name: string;
-  color: string;
-  secondaryColor: string;
-  price: number;
-  description: string;
-}
-
-export const SKINS: SkinConfig[] = [
-  {
-    id: 'cyan',
-    name: 'Cyber Cyan',
-    color: '#00f3ff',
-    secondaryColor: '#0066ff',
-    price: 0,
-    description: 'Standard high-speed cyber runner suit.',
-  },
-  {
-    id: 'pink',
-    name: 'Neon Magenta',
-    color: '#ff007f',
-    secondaryColor: '#7928ca',
-    price: 50,
-    description: 'Vibrant neon synthwave pulse color.',
-  },
-  {
-    id: 'gold',
-    name: 'Cyber Gold',
-    color: '#ffd700',
-    secondaryColor: '#ff8800',
-    price: 150,
-    description: 'Luxury gold casing with high-voltage luster.',
-  },
-  {
-    id: 'green',
-    name: 'Matrix Emerald',
-    color: '#00ff66',
-    secondaryColor: '#008833',
-    price: 300,
-    description: 'Hacker-grade green matrix energy grid.',
-  },
-  {
-    id: 'purple',
-    name: 'Quantum Void',
-    color: '#9d4edd',
-    secondaryColor: '#3c096c',
-    price: 500,
-    description: 'Mysterious dark matter quantum armor.',
-  },
-];
-
-const STORAGE_KEYS = {
-  HIGH_SCORE: 'paoku_high_score',
-  TOTAL_COINS: 'paoku_total_coins',
-  SELECTED_SKIN: 'paoku_selected_skin',
-  UNLOCKED_SKINS: 'paoku_unlocked_skins',
-};
+import { LayoutLease, axisAlignedTransform, clipRect } from '../presentation/hudSafeArea';
+import type { LayoutNotice, MeasureBasis, Measurement, Rect, Surface, UiLayoutSnapshot } from '../presentation/hudSafeArea';
 
 export class UIManager {
   private container: HTMLElement;
+  private static layoutOwners = new WeakMap<HTMLElement, UIManager>();
+  private layoutLease = new LayoutLease('pao19-layout-' + crypto.randomUUID());
+  private layoutLayer!: HTMLElement;
+  private layoutProbe: HTMLElement | null = null;
+  private layoutObserver: ResizeObserver | null = null;
+  private layoutCleanup: (() => void)[] = [];
+  private layoutSurfaces = new Map<string, { element: HTMLElement; kind: Surface['kind']; edge: Surface['edge'] }>();
+  private layoutFingerprint = '';
+  private layoutResourceEpoch = 0;
+  private layoutDisposed = false;
+  private layoutResetting = false;
+  private layoutMotion = new Map<EventTarget, Set<string>>();
 
   // DOM Elements
   private menuEl!: HTMLElement;
@@ -90,87 +55,47 @@ export class UIManager {
   private shopCoinsEl!: HTMLElement;
   private skinsGridEl!: HTMLElement;
 
-  // Storage & State
-  private savedHighScore: number = 0;
-  private savedTotalCoins: number = 0;
-  private selectedSkinId: string = 'cyan';
-  private unlockedSkinIds: string[] = ['cyan'];
-  private processedGameOver: boolean = false;
-  private isNewRecord: boolean = false;
+  // Only the application owns wallet, rights and page state.
+  private readApp: () => AppSnapshot;
+  private receipts = new Receipts();
+  private interactionScope = new InteractionScope();
+  private toasts = new ToastQueue();
+  private lastPage = '';
+  private lastRun: string | null = null;
+  private sequence = 0;
+  private requests = new Map<string, {event:string; payload:Record<string,unknown>; key:string}>();
+  private retries = new Map<string, {event:string; payload:Record<string,unknown>; key:string}>();
+  private shopFingerprint = '';
+  private newRecordRunId: string | null = null;
 
-  private pendingState: GameState | null = null;
-  private lastState: GameState = 'MENU';
-
-  constructor(container: HTMLElement) {
+  constructor(container: HTMLElement, readApp: () => AppSnapshot) {
     this.container = container;
-    this.loadPersistence();
+    UIManager.layoutOwners.get(container)?.disposeLayout();
+    UIManager.layoutOwners.set(container, this);
+    this.readApp = readApp;
     this.buildUI();
     this.setupGlobalEvents();
-    this.emitSkinChange();
+    const readings=document.createElement('div');readings.className='hud-readings';
+    const badges=this.hudEl.querySelector('.hud-badge-group')!;badges.replaceWith(readings);readings.append(badges,this.hudEl.querySelector('.speedometer-wrap')!);
+    this.setupFocus();
+    const feedback=document.createElement('div');feedback.className='hud-feedback';feedback.innerHTML='<div class="command-feedback" role="status"></div><div class="command-error" role="alert"></div>';this.hudEl.append(feedback);
+    this.layoutLayer = this.container.querySelector<HTMLElement>('#ui-layer')!;
+    this.setupLayoutResources();
   }
 
-  /**
-   * 加载 localStorage 数据
-   */
-  private loadPersistence(): void {
-    try {
-      const hs = localStorage.getItem(STORAGE_KEYS.HIGH_SCORE);
-      if (hs) this.savedHighScore = parseInt(hs, 10) || 0;
-
-      const tc = localStorage.getItem(STORAGE_KEYS.TOTAL_COINS);
-      if (tc) this.savedTotalCoins = parseInt(tc, 10) || 0;
-
-      const skin = localStorage.getItem(STORAGE_KEYS.SELECTED_SKIN);
-      if (skin) this.selectedSkinId = skin;
-
-      const unlocked = localStorage.getItem(STORAGE_KEYS.UNLOCKED_SKINS);
-      if (unlocked) {
-        const parsed = JSON.parse(unlocked);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          this.unlockedSkinIds = parsed;
-        }
-      }
-      if (!this.unlockedSkinIds.includes('cyan')) {
-        this.unlockedSkinIds.unshift('cyan');
-      }
-    } catch (e) {
-      console.warn('Failed to load persistence from localStorage', e);
-    }
-  }
-
-  /**
-   * 保存 localStorage 数据
-   */
-  private savePersistence(): void {
-    try {
-      localStorage.setItem(STORAGE_KEYS.HIGH_SCORE, this.savedHighScore.toString());
-      localStorage.setItem(STORAGE_KEYS.TOTAL_COINS, this.savedTotalCoins.toString());
-      localStorage.setItem(STORAGE_KEYS.SELECTED_SKIN, this.selectedSkinId);
-      localStorage.setItem(STORAGE_KEYS.UNLOCKED_SKINS, JSON.stringify(this.unlockedSkinIds));
-    } catch (e) {
-      console.warn('Failed to save persistence to localStorage', e);
-    }
-  }
-
-  /**
-   * 获取当前皮肤配置
-   */
   public getSelectedSkin(): SkinConfig {
-    return SKINS.find((s) => s.id === this.selectedSkinId) || SKINS[0];
+    return SKINS.find(s => s.id === this.readApp().selectedSkinId) || SKINS[0];
   }
 
-  private emitSkinChange(): void {
-    eventBus.emit('SKIN_CHANGED', this.getSelectedSkin());
-  }
+  public markNewRecord(runId: string): void { this.newRecordRunId = runId; }
 
   private setupGlobalEvents(): void {
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        if (this.lastState === 'PLAYING' || this.lastState === 'PAUSED') {
-          eventBus.emit('TOGGLE_PAUSE');
-        } else if (this.lastState === 'SHOP') {
-          this.pendingState = 'MENU';
-          eventBus.emit('GO_MENU');
+        if (this.readApp().appState === 'PLAYING' || this.readApp().appState === 'PAUSED') {
+          this.intent('TOGGLE_PAUSE');
+        } else if (this.readApp().appState === 'SHOP') {
+          this.intent('GO_MENU');
         }
       }
     });
@@ -185,152 +110,7 @@ export class UIManager {
       existingUILayer.remove();
     }
 
-    const uiHTML = `
-      <div id="ui-layer">
-        
-        <!-- HUD LAYER (PLAYING / PAUSED) -->
-        <div id="hud-overlay" style="display: none;">
-          <div class="hud-top-bar">
-            <div class="hud-badge-group">
-              <div class="hud-badge" aria-label="Score">
-                <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16"/></svg>
-                <div class="hud-val-container">
-                  <span class="hud-val-title">SCORE</span>
-                  <span id="hud-score" class="hud-val">0</span>
-                </div>
-              </div>
-              <div class="hud-badge" aria-label="Coins">
-                <svg class="icon gold" aria-hidden="true" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,4M11,16H13V18H11V16M12,6C13.66,6 15,7.34 15,9C15,10.66 14.12,11.53 13.06,12.44C12.33,13.08 12,13.67 12,14.5H12V15H10.5V14.5C10.5,13 11.5,12.18 12.44,11.36C13.19,10.71 13.5,10.27 13.5,9C13.5,8.17 12.83,7.5 12,7.5C11.17,7.5 10.5,8.17 10.5,9H9C9,7.34 10.34,6 12,6Z"/></svg>
-                <div class="hud-val-container">
-                  <span class="hud-val-title">COINS</span>
-                  <span id="hud-coins" class="hud-val">0</span>
-                </div>
-              </div>
-            </div>
-            
-            <div style="display: flex; gap: 8px;">
-              <button id="audio-toggle-btn" class="pause-btn-hud" title="Toggle Sound" aria-label="Toggle sound">
-                <svg aria-hidden="true" style="width: 20px; height: 20px; fill: currentColor;" viewBox="0 0 24 24"><path d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16.02C15.5,15.29 16.5,13.77 16.5,12M3,9V15H7L12,20V4L7,9H3Z"/></svg>
-              </button>
-              <button id="hud-pause-btn" class="pause-btn-hud" title="Pause Game (ESC)" aria-label="Pause game">
-                <svg aria-hidden="true" style="width: 22px; height: 22px; fill: currentColor;" viewBox="0 0 24 24"><path d="M14,19H18V5H14M6,19H10V5H6V19Z"/></svg>
-              </button>
-            </div>
-          </div>
-
-          <!-- Speedometer -->
-          <div class="speedometer-wrap">
-            <div class="speed-info">
-              <span>RUN SPEED</span>
-              <span id="hud-speed-text" class="speed-val-text">18 KM/H</span>
-            </div>
-            <div class="speed-track">
-              <div id="hud-speed-fill" class="speed-fill"></div>
-            </div>
-          </div>
-
-          <!-- Active Buffs -->
-          <div id="hud-buffs" class="buffs-wrap">
-            <!-- Dynamic Buffs Injected Here -->
-          </div>
-        </div>
-
-        <!-- MENU SCREEN -->
-        <div id="menu-screen" class="ui-screen animate-pop" role="dialog" aria-label="Main menu" style="display: flex;">
-          <div class="ui-card">
-            <h1 class="cyber-title">SUBWAY SURFERS</h1>
-            <div class="stats-row">
-              <div class="stat-item">
-                <span class="stat-label">BEST SCORE</span>
-                <span id="menu-high-score" class="stat-val">0</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">TOTAL CREDITS</span>
-                <span id="menu-total-coins" class="stat-val gold">0</span>
-              </div>
-            </div>
-            
-            <button id="start-btn" class="cyber-btn">START RUN</button>
-            <button id="open-shop-btn" class="cyber-btn secondary-btn">SHOP & SKINS</button>
-            
-            <div class="controls-hint">
-              <span><span class="key-cap">A</span><span class="key-cap">D</span> / <span class="key-cap">←</span><span class="key-cap">→</span> Move</span>
-              <span><span class="key-cap">W</span> / <span class="key-cap">SPACE</span> Jump</span>
-              <span><span class="key-cap">S</span> Roll</span>
-              <span><span class="key-cap">ESC</span> Pause</span>
-            </div>
-
-            <div class="audio-settings" style="margin-top: 18px; padding: 12px 14px; border: 1px solid var(--panel-border); border-radius: 10px; background: rgba(0,0,0,0.25);">
-              <div style="font-family: var(--font-display); font-size: 0.875rem; letter-spacing: 0.12em; color: var(--primary-cyan); margin-bottom: 10px;">AUDIO SETTINGS</div>
-              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                <button id="bgm-toggle-btn" class="audio-toggle" style="min-width: 92px; text-align: center; padding: 6px 10px; font-family: var(--font-display); font-size: 0.875rem; letter-spacing: 0.06em; color: var(--text-main); background: rgba(0,243,255,0.08); border: 1px solid var(--panel-border); border-radius: 6px; cursor: pointer;">MUSIC</button>
-                <input id="bgm-volume" type="range" min="0" max="100" step="1" aria-label="Background music volume" style="flex: 1; accent-color: var(--primary-cyan);">
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <button id="sfx-toggle-btn" class="audio-toggle" style="min-width: 92px; text-align: center; padding: 6px 10px; font-family: var(--font-display); font-size: 0.875rem; letter-spacing: 0.06em; color: var(--text-main); background: rgba(0,243,255,0.08); border: 1px solid var(--panel-border); border-radius: 6px; cursor: pointer;">SFX</button>
-                <input id="sfx-volume" type="range" min="0" max="100" step="1" aria-label="Sound effects volume" style="flex: 1; accent-color: var(--primary-cyan);">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PAUSED SCREEN -->
-        <div id="paused-screen" class="ui-screen animate-pop" role="dialog" aria-label="Paused" style="display: none;">
-          <div class="ui-card">
-            <h1 class="cyber-title">PAUSED</h1>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Game is currently paused.</p>
-            <button id="resume-btn" class="cyber-btn">RESUME RUN</button>
-            <button id="pause-restart-btn" class="cyber-btn secondary-btn">RESTART</button>
-            <button id="pause-menu-btn" class="cyber-btn secondary-btn">MAIN MENU</button>
-          </div>
-        </div>
-
-        <!-- GAME OVER SCREEN -->
-        <div id="gameover-screen" class="ui-screen animate-pop" role="dialog" aria-label="Game over" style="display: none;">
-          <div class="ui-card">
-            <h1 class="cyber-title danger-title">GAME OVER</h1>
-            <div id="go-new-record" class="new-record-badge" style="display: none;">NEW HIGH SCORE!</div>
-
-            <div class="stats-row">
-              <div class="stat-item">
-                <span class="stat-label">FINAL SCORE</span>
-                <span id="go-final-score" class="stat-val">0</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">COINS EARNED</span>
-                <span id="go-coins-earned" class="stat-val gold">+0</span>
-              </div>
-            </div>
-
-            <div style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 16px;">
-              BEST RECORD: <span id="go-high-score" style="color: var(--primary-cyan); font-weight: bold;">0</span>
-            </div>
-
-            <button id="restart-btn" class="cyber-btn danger-btn">REBOOT & RUN AGAIN</button>
-            <button id="go-shop-btn" class="cyber-btn secondary-btn">CYBER SHOP</button>
-            <button id="go-menu-btn" class="cyber-btn secondary-btn">MAIN MENU</button>
-          </div>
-        </div>
-
-        <!-- SHOP SCREEN -->
-        <div id="shop-screen" class="ui-screen animate-pop" role="dialog" aria-label="Shop" style="display: none;">
-          <div class="ui-card shop-card">
-            <h1 class="cyber-title">CYBER SHOP</h1>
-            <div style="font-size: 0.9rem; color: var(--text-muted);">
-              AVAILABLE CREDITS: <span id="shop-coins" class="stat-val gold" style="font-size: 1.1rem;">0</span>
-            </div>
-
-            <div id="skins-grid" class="skins-grid">
-              <!-- Rendered Dynamically -->
-            </div>
-
-            <button id="close-shop-btn" class="cyber-btn secondary-btn">BACK TO MENU</button>
-          </div>
-        </div>
-
-      </div>
-    `;
-    this.container.insertAdjacentHTML('beforeend', uiHTML);
+    this.container.insertAdjacentHTML('beforeend', screens);
 
     // Query Elements
     this.menuEl = document.getElementById('menu-screen')!;
@@ -362,7 +142,7 @@ export class UIManager {
       (e.currentTarget as HTMLElement)?.blur();
       if (isTransitioning) return;
       isTransitioning = true;
-      eventBus.emit('RESTART');
+      this.intent('RESTART');
       setTimeout(() => { isTransitioning = false; }, 300);
     };
 
@@ -370,7 +150,7 @@ export class UIManager {
       (e.currentTarget as HTMLElement)?.blur();
       if (isTransitioning) return;
       isTransitioning = true;
-      eventBus.emit('START_GAME');
+      this.intent('START_GAME');
       setTimeout(() => { isTransitioning = false; }, 300);
     });
 
@@ -379,29 +159,28 @@ export class UIManager {
 
     document.getElementById('hud-pause-btn')?.addEventListener('click', (e) => {
       (e.currentTarget as HTMLElement)?.blur();
-      eventBus.emit('TOGGLE_PAUSE');
+      this.intent('TOGGLE_PAUSE');
     });
 
     document.getElementById('audio-toggle-btn')?.addEventListener('click', (e) => {
       (e.currentTarget as HTMLElement)?.blur();
-      eventBus.emit('TOGGLE_AUDIO');
+      this.intent('UPDATE_AUDIO', {kind:'TOGGLE',field:'masterMuted'});
     });
 
     // 监听任务完成 Toast 弹出 + 提示音
     eventBus.on('MISSION_COMPLETED', (payload: any) => {
-      this.showToast(`MISSION COMPLETE: ${payload?.title} (+${payload?.reward} ¢)`);
+      this.showToast(`任务完成：${payload?.title}（本局奖励 +${payload?.reward}）`);
       audioEngine.playMissionComplete();
     });
 
     document.getElementById('resume-btn')?.addEventListener('click', (e) => {
       (e.currentTarget as HTMLElement)?.blur();
-      eventBus.emit('TOGGLE_PAUSE');
+      this.intent('TOGGLE_PAUSE');
     });
 
     const openShop = (e: MouseEvent) => {
       (e.currentTarget as HTMLElement)?.blur();
-      this.pendingState = 'SHOP';
-      eventBus.emit('OPEN_SHOP');
+      this.intent('OPEN_SHOP');
     };
 
     document.getElementById('open-shop-btn')?.addEventListener('click', openShop);
@@ -409,15 +188,7 @@ export class UIManager {
 
     const backToMenu = (e: MouseEvent) => {
       (e.currentTarget as HTMLElement)?.blur();
-      if (this.lastState === 'PAUSED' || this.lastState === 'PLAYING') {
-        const hudCoins = parseInt(this.hudCoinsEl.textContent || '0', 10);
-        if (hudCoins > 0) {
-          this.savedTotalCoins += hudCoins;
-          this.savePersistence();
-        }
-      }
-      this.pendingState = 'MENU';
-      eventBus.emit('GO_MENU');
+      this.intent('GO_MENU');
     };
 
     document.getElementById('close-shop-btn')?.addEventListener('click', backToMenu);
@@ -426,46 +197,39 @@ export class UIManager {
 
     this.bindAudioSettings();
 
-    this.shopCoinsEl.textContent = this.savedTotalCoins.toString();
+    this.shopCoinsEl.textContent = this.readApp().walletCoins.toString();
     this.renderShop();
   }
 
   /**
    * 每帧更新 UI 状态与数值
    */
-  public update(ctx: GameContext): void {
-    if (this.pendingState !== null) {
-      ctx.state = this.pendingState;
-      this.pendingState = null;
-    }
-
-    this.lastState = ctx.state;
-
-    // 同步内存持久化值至 ctx
-    ctx.highScore = Math.max(ctx.highScore, this.savedHighScore);
-    ctx.totalCoins = this.savedTotalCoins;
-
-    // 屏幕显隐控制
-    this.menuEl.style.display = ctx.state === 'MENU' ? 'flex' : 'none';
-    this.hudEl.style.display = ctx.state === 'PLAYING' || ctx.state === 'PAUSED' ? 'block' : 'none';
-    this.pausedEl.style.display = ctx.state === 'PAUSED' ? 'flex' : 'none';
-    this.gameOverEl.style.display = ctx.state === 'GAMEOVER' ? 'flex' : 'none';
-    this.shopEl.style.display = ctx.state === 'SHOP' ? 'flex' : 'none';
-
-    // MENU 状态下数据
-    if (ctx.state === 'MENU') {
-      this.menuHighScoreEl.textContent = this.savedHighScore.toString();
-      this.menuTotalCoinsEl.textContent = this.savedTotalCoins.toString();
-      this.processedGameOver = false;
-    }
-
-    // PLAYING 状态重置 GAMEOVER 标记
-    if (ctx.state === 'PLAYING') {
-      this.processedGameOver = false;
-    }
-
-    // HUD 实时更新
-    if (ctx.state === 'PLAYING' || ctx.state === 'PAUSED') {
+  public update(ctx: DeepReadonly<GameContext>): void {
+    const app = this.readApp();
+    const state = app.appState;
+    if(this.lastRun!==app.activeRunId || this.lastPage!==state) this.toasts.clear();
+    this.syncInteractionScope(app);
+    const changed=this.lastPage!==state;
+    this.lastRun=app.activeRunId; this.lastPage=state;
+    const pages=[this.menuEl,this.pausedEl,this.gameOverEl,this.shopEl];
+    const states=['MENU','PAUSED','GAMEOVER','SHOP'];
+    pages.forEach((el,i)=>{el.inert=states[i]!==state;el.setAttribute('aria-modal','true');});
+    if(changed) queueMicrotask(()=>{
+      if(this.readApp().appState!==state)return;
+      const active=pages[states.indexOf(state)];
+      if(active){active.tabIndex=-1;active.focus({preventScroll:true});}
+      else { (document.activeElement as HTMLElement)?.blur?.(); }
+    });
+    this.renderFeedback(app);
+    this.menuEl.style.display = state === 'MENU' ? 'flex' : 'none';
+    this.hudEl.inert=state!=='PLAYING';
+    this.hudEl.style.display = state === 'PLAYING' || state === 'PAUSED' ? 'block' : 'none';
+    this.pausedEl.style.display = state === 'PAUSED' ? 'flex' : 'none';
+    this.gameOverEl.style.display = state === 'GAMEOVER' ? 'flex' : 'none';
+    this.shopEl.style.display = state === 'SHOP' ? 'flex' : 'none';
+    this.menuHighScoreEl.textContent = app.highScore.toString();
+    this.menuTotalCoinsEl.textContent = app.walletCoins.toString();
+    if (state === 'PLAYING' || state === 'PAUSED') {
       this.hudScoreEl.textContent = Math.floor(ctx.score).toString();
       this.hudCoinsEl.textContent = ctx.coins.toString();
 
@@ -478,82 +242,56 @@ export class UIManager {
         )
       );
       this.hudSpeedFillEl.style.width = `${speedPct.toFixed(1)}%`;
-      this.hudSpeedTextEl.textContent = `${Math.floor(ctx.speed)} KM/H`;
+      this.hudSpeedTextEl.textContent = speedLabel(ctx.speed);
 
       // Buffs 渲染
       this.renderBuffs(ctx);
     }
 
-    // GAMEOVER 处理与持久化保存
-    if (ctx.state === 'GAMEOVER') {
-      if (!this.processedGameOver) {
-        this.processedGameOver = true;
-        const finalScore = Math.floor(ctx.score);
-        const coinsEarned = ctx.coins;
-
-        this.isNewRecord = finalScore > this.savedHighScore;
-        if (this.isNewRecord) {
-          this.savedHighScore = finalScore;
-          audioEngine.playNewRecord();
-        }
-
-        this.savedTotalCoins += coinsEarned;
-        this.savePersistence();
-
-        // 更新 UI
-        this.goFinalScoreEl.textContent = finalScore.toString();
-        this.goCoinsEarnedEl.textContent = `+${coinsEarned}`;
-        this.goHighScoreEl.textContent = this.savedHighScore.toString();
-        this.goBadgeEl.style.display = this.isNewRecord ? 'inline-block' : 'none';
-      }
+    if (state === 'GAMEOVER') {
+      this.goFinalScoreEl.textContent = app.summary ? String(app.summary.scoreInt) : '等待结算数据';
+      this.goCoinsEarnedEl.textContent = app.summary ? '+'+app.summary.earnedCoins : '—';
+      this.goHighScoreEl.textContent = String(app.highScore);
+      this.goBadgeEl.style.display = app.summary?.runId === this.newRecordRunId ? 'inline-block' : 'none';
     }
-
-    // SHOP 状态下刷新余额
-    if (ctx.state === 'SHOP') {
-      this.shopCoinsEl.textContent = this.savedTotalCoins.toString();
+    this.shopCoinsEl.textContent = app.walletCoins.toString();
+    const shopFingerprint = JSON.stringify([app.walletCoins, app.ownedSkinIds, app.selectedSkinId]);
+    if (this.shopFingerprint !== shopFingerprint) {
+      this.shopFingerprint = shopFingerprint;
+      this.renderShop(app);
     }
+    this.renderAudioControls(app);
+    this.toasts.advance(performance.now(),document.hidden || state!=='PLAYING');
+    this.renderToast(state==='PLAYING');
+    this.refreshLayoutSurfaces();
+    const fingerprint = JSON.stringify([state, app.activeRunId, [...this.layoutSurfaces].map(([id, s]) => [id, s.element.textContent, s.element.style.display, s.element.hasAttribute('disabled')])]);
+    if (fingerprint !== this.layoutFingerprint) { this.layoutFingerprint = fingerprint; this.invalidateLayout(); }
   }
 
   /**
    * 渲染 Active PowerUps (Buffs)
    */
-  private renderBuffs(ctx: GameContext): void {
-    let html = '';
-
-    if (ctx.player.hoverboardActive) {
-      html += `
-        <div class="buff-pill">
-          <svg aria-hidden="true" style="width:16px;height:16px;fill:currentColor;" viewBox="0 0 24 24"><path d="M19,13H5V11H19V13Z"/></svg>
-          <span>HOVERBOARD ACTIVE</span>
-        </div>
-      `;
-    }
-
-    if (ctx.player.activePowerUps) {
-      ctx.player.activePowerUps.forEach((timer, type) => {
-        if (timer > 0) {
-          html += `
-            <div class="buff-pill">
-              <span>${type}</span>
-              <span style="font-size: 0.875rem; opacity: 0.8;">(${timer.toFixed(1)}s)</span>
-            </div>
-          `;
-        }
-      });
-    }
-
-    this.hudBuffsEl.innerHTML = html;
+  private renderBuffs(ctx: DeepReadonly<GameContext>): void {
+    const views=powerUps(ctx.player);
+    const key=JSON.stringify(views);
+    if(this.hudBuffsEl.dataset.key===key)return;
+    this.hudBuffsEl.dataset.key=key;
+    this.hudBuffsEl.replaceChildren(...views.map(view=>{
+      const pill=document.createElement('div');pill.className='buff-pill';pill.dataset.powerup=view.id;
+      pill.innerHTML='<svg aria-hidden="true" viewBox="0 0 24 24"><path d="'+view.path+'"/></svg>';
+      const label=document.createElement('span');label.textContent=view.label+' '+view.time;pill.append(label);return pill;
+    }));
   }
 
   /**
    * 渲染 Shop 皮肤列表
    */
-  private renderShop(): void {
+  private renderShop(app: AppSnapshot = this.readApp()): void {
     let html = '';
 
     SKINS.forEach((skin) => {
-      const isUnlocked = this.unlockedSkinIds.includes(skin.id);
-      const isSelected = this.selectedSkinId === skin.id;
+      const isUnlocked = app.ownedSkinIds.includes(skin.id);
+      const isSelected = app.selectedSkinId === skin.id;
 
       let btnText = 'EQUIP';
       let btnClass = 'cyber-btn skin-action-btn';
@@ -564,7 +302,7 @@ export class UIManager {
         btnClass += ' secondary-btn disabled';
         isDisabled = true;
       } else if (!isUnlocked) {
-        const canAfford = this.savedTotalCoins >= skin.price;
+        const canAfford = app.walletCoins >= skin.price;
         btnText = `BUY [${skin.price} ¢]`;
         btnClass += canAfford ? '' : ' secondary-btn disabled';
         isDisabled = !canAfford;
@@ -600,85 +338,267 @@ export class UIManager {
    * 处理皮肤解锁或装备
    */
   private handleSkinAction(skinId: string): void {
-    const skin = SKINS.find((s) => s.id === skinId);
-    if (!skin) return;
-
-    const isUnlocked = this.unlockedSkinIds.includes(skinId);
-
-    if (isUnlocked) {
-      this.selectedSkinId = skinId;
-      this.savePersistence();
-      this.emitSkinChange();
-      this.renderShop();
-    } else if (this.savedTotalCoins >= skin.price) {
-      this.savedTotalCoins -= skin.price;
-      this.unlockedSkinIds.push(skinId);
-      this.selectedSkinId = skinId;
-      this.savePersistence();
-      this.emitSkinChange();
-      this.renderShop();
-    }
+    this.intent(this.readApp().ownedSkinIds.includes(skinId) ? 'EQUIP_SKIN' : 'BUY_SKIN', { skinId });
   }
 
-  /**
-   * 绑定音频设置控件（BGM / SFX 独立开关 + 音量滑块）
-   */
   private bindAudioSettings(): void {
-    const bgmToggleBtn = document.getElementById('bgm-toggle-btn');
-    const sfxToggleBtn = document.getElementById('sfx-toggle-btn');
+    document.getElementById('bgm-toggle-btn')?.addEventListener('click', () => {
+      this.intent('UPDATE_AUDIO', { kind: 'TOGGLE', field: 'bgmEnabled' });
+    });
+    document.getElementById('sfx-toggle-btn')?.addEventListener('click', () => {
+      this.intent('UPDATE_AUDIO', { kind: 'TOGGLE', field: 'sfxEnabled' });
+    });
+    for (const [id, field] of [['bgm-volume', 'bgmVolume'], ['sfx-volume', 'sfxVolume']] as const) {
+      document.getElementById(id)?.addEventListener('input', e => {
+        this.intent('UPDATE_AUDIO', { kind: 'SET_VOLUME', field, value: Number((e.currentTarget as HTMLInputElement).value) / 100 });
+      });
+    }
+    this.renderAudioControls();
+  }
+
+  private renderAudioControls(app: AppSnapshot = this.readApp()): void {
+    const audio = app.audio;
+    const bgm = document.getElementById('bgm-toggle-btn');
+    const sfx = document.getElementById('sfx-toggle-btn');
+    if (bgm) bgm.textContent = '音乐: ' + (audio.bgmEnabled ? '开' : '关');
+    if (sfx) sfx.textContent = '音效: ' + (audio.sfxEnabled ? '开' : '关');
     const bgmVolume = document.getElementById('bgm-volume') as HTMLInputElement | null;
     const sfxVolume = document.getElementById('sfx-volume') as HTMLInputElement | null;
-
-    const renderControls = () => {
-      if (bgmToggleBtn) bgmToggleBtn.textContent = `MUSIC: ${audioEngine.getBgmEnabled() ? 'ON' : 'OFF'}`;
-      if (sfxToggleBtn) sfxToggleBtn.textContent = `SFX: ${audioEngine.getSfxEnabled() ? 'ON' : 'OFF'}`;
-      if (bgmVolume) bgmVolume.value = String(Math.round(audioEngine.getBgmVolume() * 100));
-      if (sfxVolume) sfxVolume.value = String(Math.round(audioEngine.getSfxVolume() * 100));
-    };
-
-    bgmToggleBtn?.addEventListener('click', () => {
-      audioEngine.setBgmEnabled(!audioEngine.getBgmEnabled());
-      renderControls();
-    });
-
-    sfxToggleBtn?.addEventListener('click', () => {
-      audioEngine.setSfxEnabled(!audioEngine.getSfxEnabled());
-      renderControls();
-    });
-
-    bgmVolume?.addEventListener('input', () => {
-      audioEngine.setBgmVolume(Number(bgmVolume.value) / 100);
-    });
-
-    sfxVolume?.addEventListener('input', () => {
-      audioEngine.setSfxVolume(Number(sfxVolume.value) / 100);
-    });
-
-    renderControls();
+    // Focused ranges keep their native editing draft while persistence is pending.
+    if (bgmVolume && document.activeElement !== bgmVolume) bgmVolume.value = String(Math.round(audio.bgmVolume * 100));
+    if (sfxVolume && document.activeElement !== sfxVolume) sfxVolume.value = String(Math.round(audio.sfxVolume * 100));
   }
 
   /**
    * 动态显示 Cyber 风格任务 Toast 通知
    */
-  public showToast(message: string): void {
-    const existing = this.container.querySelectorAll('.cyber-toast');
-    const offsetTop = 80 + existing.length * 48;
+  public showToast(message: string): void {this.toasts.add(message,performance.now());}
+  private renderToast(visible:boolean):void {
+    let el=this.container.querySelector<HTMLElement>('.cyber-toast');
+    const text=this.toasts.items[0]?.text;
+    if(!text||!visible){el?.remove();return;}
+    if(!el){el=document.createElement('div');el.className='cyber-toast';el.setAttribute('role','status');el.setAttribute('aria-live','polite');this.container.append(el);}
+    if(el.textContent!==text){el.textContent=text;el.setAttribute('aria-label',text);}
+  }
+  private syncInteractionScope(app:AppSnapshot):void {
+    if(!this.interactionScope.enter(app))return;
+    // Retire presentation leases only. Service idempotency/unknown outcomes stay
+    // authoritative, and terminal retries within one run retain their identity.
+    this.requests.clear();this.retries.clear();
+    this.receipts.pending.clear();this.receipts.error='';
+  }
+  public notifyCommandPending(p:PendingReceipt):void {
+    this.syncInteractionScope(this.readApp());
+    this.receipts.begin(p,performance.now());
+  }
+  public notifyCommandResult(result:Readonly<CommandResult>):boolean {
+    const app=this.readApp();
+    this.syncInteractionScope(app);
+    const accepted=this.receipts.end(result,app.activeRunId);
+    if(result.commandId==='initialize'&&!result.ok)this.receipts.error=errorLabel(result.errorCode);
+    const request=this.requests.get(result.commandId);
+    if(request){this.requests.delete(result.commandId);if(!result.ok)this.retries.set(request.key,request);else this.retries.delete(request.key);}
+    return accepted;
+  }
+  private intent(event:string,payload:Record<string,unknown>={}):void {
+    const app=this.readApp();
+    this.syncInteractionScope(app);
+    const key=event+JSON.stringify(payload);
+    if(event!=='UPDATE_AUDIO'&&[...this.requests.values()].some(x=>x.key===key))return;
+    // Changing a field is a new intention, even when later returning to a value
+    // whose earlier acknowledgement was lost. An unchanged retry keeps its id.
+    if(event==='UPDATE_AUDIO')for(const [oldKey,old] of this.retries){
+      if(oldKey!==key&&old.event===event&&old.payload.field===payload.field)this.retries.delete(oldKey);
+    }
+    const retry=this.retries.get(key);
+    const request=retry&&retry.payload.runId===app.activeRunId?retry:{event,key,payload:{...payload,runId:app.activeRunId,commandId:'pao19-'+crypto.randomUUID()+'-'+(++this.sequence)}};
+    this.requests.set(String(request.payload.commandId),request);
+    eventBus.emit(request.event,request.payload);
+    // Stage A has no lifecycle producer. Avoid creating a fake pending state.
+    if(!this.receipts.pending.has(String(request.payload.commandId)))this.requests.delete(String(request.payload.commandId));
+  }
+  private renderFeedback(app:AppSnapshot):void {
+    const pending=this.receipts.message(performance.now());
+    const busy=[...this.receipts.pending.values()].some(p=>!['UPDATE_AUDIO','BUY_SKIN','EQUIP_SKIN'].includes(p.type));
+    this.container.querySelectorAll<HTMLButtonElement>('#start-btn,#restart-btn,#pause-restart-btn,#pause-menu-btn,#go-menu-btn,#go-shop-btn,#open-shop-btn,#close-shop-btn,#hud-pause-btn,#resume-btn').forEach(button=>{
+      if(busy&&!button.disabled){button.disabled=true;button.dataset.receiptDisabled='true';}
+      if(!busy&&button.dataset.receiptDisabled){button.disabled=false;delete button.dataset.receiptDisabled;}
+    });
+    const error=this.receipts.error || (app.settlementStatus==='FAILED'?errorLabel(app.errorCode):'');
+    this.container.querySelectorAll<HTMLElement>('.command-feedback').forEach(el=>{if(el.textContent!==pending)el.textContent=pending;});
+    this.container.querySelectorAll<HTMLElement>('.command-error').forEach(el=>{if(el.textContent!==error)el.textContent=error;});
+    const status=this.container.querySelector('#settlement-status');
+    if(status)status.textContent=({NONE:'',PENDING:'正在保存本局…',COMMITTED:'本局已保存',FAILED:'保存未完成，请重试原操作'})[app.settlementStatus];
+    const details=this.container.querySelector('#result-details');
+    if(details)details.textContent=app.summary?[(app.summary.endReason==='COLLISION'?'碰撞结束':'主动结束'),'拾取 '+app.summary.pickupCoins,'任务奖励 '+app.summary.rewardCoins].join(' · '):'等待结算数据';
+  }
+  private setupFocus():void {
+    const layer=this.container.querySelector<HTMLElement>('#ui-layer')!;
+    document.addEventListener('visibilitychange',()=>this.toasts.advance(performance.now(),true));
+    let tap:{button:HTMLButtonElement;x:number;y:number}|null=null;
+    const isUI=(target:EventTarget|null)=>(target as Element)?.closest('button,input,summary,.ui-screen,.buffs-wrap');
+    layer.addEventListener('touchstart',e=>{
+      const button=(e.target as Element).closest<HTMLButtonElement>('button');
+      const point=e.touches[0];
+      tap=button&&point&&e.touches.length===1?{button,x:point.clientX,y:point.clientY}:null;
+      if(isUI(e.target))e.stopPropagation();
+    },{passive:true});
+    layer.addEventListener('touchmove',e=>{
+      const point=e.touches[0];
+      if(tap&&(!point||Math.hypot(point.clientX-tap.x,point.clientY-tap.y)>10))tap=null;
+      if(isUI(e.target))e.stopPropagation();
+    },{passive:true});
+    layer.addEventListener('touchend',e=>{
+      const activation=tap;tap=null;
+      if(isUI(e.target))e.stopPropagation();
+      // Cancel the compatibility click before issuing exactly one native button
+      // activation. A scroll never becomes an action; mouse/keyboard stay native.
+      if(activation&&!activation.button.disabled){e.preventDefault();activation.button.click();}
+    },{passive:false});
+    layer.addEventListener('touchcancel',()=>{tap=null;},{passive:true});
+    layer.addEventListener('keydown',e=>{
+      const modal=[this.menuEl,this.pausedEl,this.gameOverEl,this.shopEl].find(el=>!el.inert&&el.style.display!=='none');
+      if(e.key==='Tab'&&modal){const controls=[...modal.querySelectorAll<HTMLElement>('button:not(:disabled),input,summary')].filter(el=>el.getClientRects().length);const first=controls[0],last=controls.at(-1);if(e.shiftKey&&(document.activeElement===first||document.activeElement===modal)){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}
+    });
+  }
 
-    const toast = document.createElement('div');
-    toast.className = 'cyber-toast animate-pop';
-    toast.style.top = `${offsetTop}px`;
-    toast.setAttribute('role', 'status');
-    toast.setAttribute('aria-live', 'polite');
-    toast.innerHTML = `
-      <svg aria-hidden="true" style="width:20px;height:20px;fill:#ffd700;" viewBox="0 0 24 24"><path d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16"/></svg>
-      <span>${message}</span>
-    `;
-    this.container.appendChild(toast);
+  /** Explicit producer read phase. No production main/render consumer is installed here. */
+  public measureOcclusion(basis: MeasureBasis): UiLayoutSnapshot {
+    const app = this.readApp();
+    if (app.appState !== basis.page || app.activeRunId !== basis.runId || this.lastPage !== basis.page) this.invalidateLayout('STALE_LAYOUT');
+    if (!this.container.isConnected || !this.layoutLayer.isConnected) this.invalidateLayout('NOT_MOUNTED');
+    if (this.layoutMotion.size) this.invalidateLayout();
+    return this.layoutLease.sample(basis, () => {
+      if (!this.container.isConnected || !this.layoutLayer.isConnected) return this.emptyLayoutMeasurement('NOT_MOUNTED');
+      if (app.appState !== basis.page || app.activeRunId !== basis.runId || this.lastPage !== basis.page) return this.emptyLayoutMeasurement('STALE_LAYOUT');
+      return this.measureLayoutSurfaces(basis);
+    });
+  }
 
-    setTimeout(() => {
-      toast.classList.add('fade-out');
-      setTimeout(() => toast.remove(), 400);
-    }, 3000);
+  public readOcclusion(): UiLayoutSnapshot | null { return this.layoutLease.read(); }
+  public invalidateLayout(reason = 'DIRTY'): void { this.layoutLease.invalidate(reason); }
+  public subscribeLayoutInvalidation(listener: (notice: LayoutNotice) => void): () => void { return this.layoutLease.subscribe(listener); }
+
+  /** Only this bridge's observers/listeners/probe are reset; business leases stay untouched. */
+  public resetLayout(): void {
+    if (this.layoutDisposed || this.layoutResetting) return;
+    this.layoutResetting = true;
+    try {
+      this.clearLayoutResources(); this.layoutLease.reset();
+      if (!this.layoutDisposed) this.setupLayoutResources();
+    } finally { this.layoutResetting = false; }
+  }
+
+  public disposeLayout(): void {
+    if (this.layoutDisposed) return;
+    this.layoutDisposed = true; this.clearLayoutResources(); this.layoutLease.dispose();
+    if (UIManager.layoutOwners.get(this.container) === this) UIManager.layoutOwners.delete(this.container);
+  }
+
+  private clearLayoutResources(): void {
+    this.layoutResourceEpoch++; this.layoutObserver?.disconnect(); this.layoutObserver = null;
+    this.layoutCleanup.splice(0).forEach(cleanup => cleanup());
+    this.layoutProbe?.remove(); this.layoutProbe = null; this.layoutSurfaces.clear(); this.layoutMotion.clear();
+  }
+
+  private setupLayoutResources(): void {
+    const epoch = this.layoutResourceEpoch;
+    const current = () => !this.layoutDisposed && epoch === this.layoutResourceEpoch;
+    const dirty = () => { if (current()) this.invalidateLayout(); };
+    const probe = document.createElement('div'); probe.dataset.hudSafeAreaProbe = '';
+    probe.setAttribute('aria-hidden', 'true');
+    probe.style.cssText = 'position:fixed;visibility:hidden;pointer-events:none;width:0;height:0;padding-top:env(safe-area-inset-top,0px);padding-right:env(safe-area-inset-right,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px)';
+    this.container.append(probe); this.layoutProbe = probe;
+    if (typeof ResizeObserver !== 'undefined') this.layoutObserver = new ResizeObserver(dirty);
+    const listen = (target: EventTarget, type: string, listener: EventListener, capture = false) => {
+      target.addEventListener(type, listener, capture); this.layoutCleanup.push(() => target.removeEventListener(type, listener, capture));
+    };
+    const owned = (target: EventTarget | null) => target instanceof Node && (this.layoutLayer.contains(target) || this.container.querySelector('.cyber-toast')?.contains(target));
+    for (const type of ['scroll', 'toggle', 'focusin', 'focusout', 'pointerdown', 'pointerup', 'pointercancel', 'pointerover', 'pointerout', 'keydown', 'keyup']) {
+      listen(this.container, type, e => { if (owned(e.target)) dirty(); }, true);
+    }
+    for (const type of ['transitionrun', 'transitionend', 'transitioncancel', 'animationstart', 'animationend', 'animationcancel']) {
+      listen(this.container, type, e => {
+        if (!current() || !owned(e.target)) return;
+        const id = e instanceof TransitionEvent ? e.propertyName : (e as AnimationEvent).animationName;
+        const active = this.layoutMotion.get(e.target!) ?? new Set<string>();
+        if (type === 'transitionrun' || type === 'animationstart') active.add(id); else active.delete(id);
+        if (active.size) this.layoutMotion.set(e.target!, active); else this.layoutMotion.delete(e.target!);
+        dirty();
+      }, true);
+    }
+    if (document.fonts) {
+      void document.fonts.ready.then(dirty);
+      listen(document.fonts, 'loadingdone', dirty); listen(document.fonts, 'loadingerror', dirty);
+    }
+    this.refreshLayoutSurfaces();
+  }
+
+  private refreshLayoutSurfaces(): void {
+    if (this.layoutDisposed) return;
+    const next = new Map<string, { element: HTMLElement; kind: Surface['kind']; edge: Surface['edge'] }>();
+    const add = (id: string, element: HTMLElement | null, kind: Surface['kind'], edge: Surface['edge'] = 'none') => { if (element) next.set(id, { element, kind, edge }); };
+    add('score', this.hudScoreEl.closest<HTMLElement>('.hud-badge'), 'readout', 'top');
+    add('coins', this.hudCoinsEl.closest<HTMLElement>('.hud-badge'), 'readout', 'top');
+    add('speed', this.hudSpeedTextEl.closest<HTMLElement>('.speedometer-wrap'), 'readout', 'top');
+    add('audio', this.hudEl.querySelector('#audio-toggle-btn'), 'control', 'top');
+    add('pause', this.hudEl.querySelector('#hud-pause-btn'), 'control', 'top');
+    for (const element of this.hudBuffsEl.children) add('powerup-' + (element as HTMLElement).dataset.powerup, element as HTMLElement, 'powerup');
+    add('toast', this.container.querySelector('.cyber-toast'), 'toast');
+    add('hud-feedback', this.hudEl.querySelector('.hud-feedback'), 'feedback');
+    for (const [id, page] of [['menu-card', this.menuEl], ['paused-card', this.pausedEl], ['shop-card', this.shopEl], ['gameover-card', this.gameOverEl]] as const) add(id, page.querySelector('.ui-card'), 'card');
+    const changed = next.size !== this.layoutSurfaces.size || [...next].some(([id, s]) => this.layoutSurfaces.get(id)?.element !== s.element);
+    if (!changed) return;
+    this.layoutSurfaces = next; this.layoutObserver?.disconnect();
+    const nodes = new Set([this.layoutLayer, this.hudBuffsEl, ...[...next.values()].map(s => s.element)]);
+    nodes.forEach(el => this.layoutObserver?.observe(el)); this.invalidateLayout();
+  }
+
+  private emptyLayoutMeasurement(reason: string): Measurement {
+    return { deviceInsets: { top: 0, right: 0, bottom: 0, left: 0 }, surfaces: [], reason };
+  }
+
+  private measureLayoutSurfaces(basis: MeasureBasis): Measurement {
+    const styles = new Map<Element, CSSStyleDeclaration>(), rects = new Map<Element, Rect>();
+    const style = (el: Element) => { let value = styles.get(el); if (!value) { value = getComputedStyle(el); styles.set(el, value); } return value; };
+    const rect = (el: Element): Rect => { let value = rects.get(el); if (!value) { const r = el.getBoundingClientRect(); value = { x: r.x, y: r.y, width: r.width, height: r.height }; rects.set(el, value); } return value; };
+    const probe = this.layoutProbe && style(this.layoutProbe);
+    if (!probe) return this.emptyLayoutMeasurement('NOT_MOUNTED');
+    const deviceInsets = { top: parseFloat(probe.paddingTop), right: parseFloat(probe.paddingRight), bottom: parseFloat(probe.paddingBottom), left: parseFloat(probe.paddingLeft) };
+    const surfaces: Surface[] = [];
+    for (const [id, entry] of this.layoutSurfaces) {
+      const el = entry.element;
+      if (!el.isConnected) return this.emptyLayoutMeasurement('NOT_MOUNTED');
+      const ancestors: HTMLElement[] = [];
+      let hidden = false;
+      for (let node: HTMLElement | null = el; node; node = node.parentElement) {
+        const s = style(node);
+        if (s.display === 'none' || s.visibility === 'hidden' || s.visibility === 'collapse' || Number(s.opacity) === 0) { hidden = true; break; }
+        ancestors.push(node);
+      }
+      if (hidden) continue;
+      for (const node of ancestors) {
+        const s = style(node);
+        if (!axisAlignedTransform(s.transform) || (s.rotate !== 'none' && s.rotate !== '0deg') || (s.clipPath && s.clipPath !== 'none') || (s.maskImage && s.maskImage !== 'none')) return this.emptyLayoutMeasurement('UNSUPPORTED_TRANSFORM');
+      }
+      let r: Rect | null = rect(el);
+      if (![r.x, r.y, r.width, r.height].every(Number.isFinite) || r.width <= 0 || r.height <= 0) return this.emptyLayoutMeasurement('INVALID_RECT');
+      const ownStyle = style(el);
+      if (el.matches(':focus-visible') && ownStyle.outlineStyle !== 'none') {
+        const outset = Math.max(0, parseFloat(ownStyle.outlineWidth) + parseFloat(ownStyle.outlineOffset));
+        r = { x: r.x - outset, y: r.y - outset, width: r.width + 2 * outset, height: r.height + 2 * outset };
+      }
+      for (const parent of ancestors.slice(1)) {
+        const s = style(parent), clipX = /^(auto|scroll|hidden|clip)$/.test(s.overflowX), clipY = /^(auto|scroll|hidden|clip)$/.test(s.overflowY);
+        if (!clipX && !clipY) continue;
+        const box = rect(parent), sx = parent.offsetWidth ? box.width / parent.offsetWidth : 1, sy = parent.offsetHeight ? box.height / parent.offsetHeight : 1;
+        r = clipRect(r, { x: box.x + parent.clientLeft * sx, y: box.y + parent.clientTop * sy, width: parent.clientWidth * sx, height: parent.clientHeight * sy }, clipX, clipY);
+        if (!r) break;
+      }
+      if (r) r = clipRect(r, basis.viewport.visual);
+      if (r) r = clipRect(r, basis.canvasRect);
+      if (r) surfaces.push({ id, kind: entry.kind, edge: entry.edge, clientRect: r });
+    }
+    return { surfaces, deviceInsets };
   }
 }
-

@@ -1,0 +1,16 @@
+{"cwd":"D:\\worker\\paoku-sessions\\pao-18-font-diagnosis","exe":"node","args":["C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js","run","test"],"start":"2026-11-06T14:52:22.348Z"}
+
+> app@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18-font-diagnosis
+
+
+ Test Files  34 passed (34)
+      Tests  352 passed (352)
+   Start at  22:52:23
+   Duration  11.68s (transform 5.04s, setup 0ms, import 68.20s, tests 21.52s, environment 6ms)
+
+
+{"label":"unit-serial-followup","code":0,"start":"2026-11-06T14:52:22.348Z","end":"2026-11-06T14:52:35.003Z","file":"D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\unit-serial-followup.txt"}

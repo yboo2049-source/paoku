@@ -1,0 +1,16 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config docs/evidence/PAO-14/playwright.config.ts tests/e2e/pao14-application.spec.ts --grep N-desktop-pause|N-portrait-touch|F-same-tick-terminal
+
+[WebServer] (node:24068) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 3 tests using 1 worker
+
+(node:7480) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\pao14-application.spec.ts:43:1 › N-desktop-pause-restart-stale-run-and-DOM-tamper (9.5s)
+  ok 2 tests\e2e\pao14-application.spec.ts:77:1 › N-portrait-touch-paused-input-and-return (4.5s)
+  ok 3 tests\e2e\pao14-application.spec.ts:147:1 › F-same-tick-terminal-pickup-and-gameover-shop (3.3s)
+
+  3 passed (20.0s)

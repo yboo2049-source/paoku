@@ -1,0 +1,84 @@
+{"cwd":"D:\\worker\\paoku-sessions\\pao-18-font-diagnosis","exe":"node","args":["node_modules/vitest/vitest.mjs","run","tests/unit/pao19-hud-camera-integration.test.ts"],"start":"2026-11-06T14:16:11.634Z"}
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18-font-diagnosis
+
+ ❯ tests/unit/pao19-hud-camera-integration.test.ts (3 tests | 3 failed) 226ms
+     × writes UI, measures once, then draws the same view/app and committed stamp 199ms
+     × accounts UI exceptions separately while still delivering the committed render facts 5ms
+     × notifies pending before application dispatch and preserves original command identity 20ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao19-hud-camera-integration.test.ts > I01/I08/I10 real main host integration > writes UI, measures once, then draws the same view/app and committed stamp
+AssertionError: expected [ 'render', 'update' ] to deeply equal [ 'update', 'measure', 'render' ]
+
+- Expected
++ Received
+
+  [
+-   "update",
+-   "measure",
+    "render",
++   "update",
+  ]
+
+ ❯ tests/unit/pao19-hud-camera-integration.test.ts:64:24
+     62|     const { sensor } = await mount(); const app = sensor.getAppSnapsho…
+     63|     host.loop.options.render(0.5);
+     64|     expect(host.order).toEqual(['update','measure','render']);
+       |                        ^
+     65|     expect(host.draws[0].ctx).toBe(host.views[0].ctx); expect(host.vie…
+     66|     expect(host.draws[0].hud).toMatchObject({frameId:1,page:'MENU',run…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/pao19-hud-camera-integration.test.ts > I01/I08/I10 real main host integration > accounts UI exceptions separately while still delivering the committed render facts
+AssertionError: expected [Function] to not throw an error but 'Error: UI injected' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: UI injected"
+
+ ❯ tests/unit/pao19-hud-camera-integration.test.ts:71:49
+     69|   it('accounts UI exceptions separately while still delivering the com…
+     70|     const { sensor } = await mount(); host.throwUi=true;
+     71|     expect(()=>host.loop.options.render(0)).not.toThrow();
+       |                                                 ^
+     72|     expect(host.draws).toHaveLength(1);
+     73|     expect(host.draws[0].hud).toMatchObject({geometry:null,unavailable…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/pao19-hud-camera-integration.test.ts > I01/I08/I10 real main host integration > notifies pending before application dispatch and preserves original command identity
+AssertionError: expected undefined to match object { Object (commandId, type, ...) }
+
+- Expected:
+{
+  "commandId": "integration-start",
+  "state": "MENU",
+  "type": "START_RUN",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/pao19-hud-camera-integration.test.ts:80:29
+     78|     bus.emit('START_GAME',{commandId:'integration-start'});
+     79|     await new Promise(r=>setTimeout(r,0));
+     80|     expect(host.pending[0]).toMatchObject({commandId:'integration-star…
+       |                             ^
+     81|     expect(host.results).toContainEqual(expect.objectContaining({comma…
+     82|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  22:16:12
+   Duration  527ms (transform 193ms, setup 0ms, import 60ms, tests 226ms, environment 0ms)
+
+
+{"label":"red-main","code":1,"start":"2026-11-06T14:16:11.634Z","end":"2026-11-06T14:16:12.770Z","file":"D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\red-main.txt"}

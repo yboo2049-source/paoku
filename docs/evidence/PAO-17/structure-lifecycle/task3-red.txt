@@ -1,0 +1,56 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao17-lifecycle.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-17
+
+stdout | tests/unit/pao17-lifecycle.test.ts > facade unregisters exact callbacks, invalidates late loads and removes only its own canvas
+BJS - [20:37:10]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao17-lifecycle.test.ts > preserves host canvas and detaches old skin listener across a real renderer remount
+BJS - [20:37:10]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao17-lifecycle.test.ts (3 tests | 2 failed) 1282ms
+   × facade unregisters exact callbacks, invalidates late loads and removes only its own canvas 620ms
+   × preserves host canvas and detaches old skin listener across a real renderer remount 574ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao17-lifecycle.test.ts > facade unregisters exact callbacks, invalidates late loads and removes only its own canvas
+AssertionError: expected 'undefined' to be 'function' // Object.is equality
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ tests/unit/pao17-lifecycle.test.ts:46:44
+     44|   const scene: Scene = internals.scene; const resize = vi.spyOn(intern…
+     45|   cleanup.push(() => scene.isDisposed || scene.dispose());
+     46|   expect(typeof (renderer as any).dispose).toBe('function');
+       |                                            ^
+     47|   h.win.dispatchEvent(new Event('resize')); expect(resize).toHaveBeenC…
+     48|   renderer.reset(); renderer.dispose(); renderer.dispose(); renderer.r…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/pao17-lifecycle.test.ts > preserves host canvas and detaches old skin listener across a real renderer remount
+AssertionError: expected 'undefined' to be 'function' // Object.is equality
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ tests/unit/pao17-lifecycle.test.ts:60:28
+     58|   const h = host(true); vi.spyOn(SceneLoader, 'LoadAssetContainerAsync…
+     59|   const first = new BabylonRenderEngine(h.container); const a = first …
+     60|   expect(typeof a.dispose).toBe('function');
+       |                            ^
+     61|   const applyOld = vi.spyOn(first, 'applySkin'); first.dispose();
+     62|   const second = new BabylonRenderEngine(h.container); const b = secon…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  20:37:07
+   Duration  4.16s (transform 152ms, setup 0ms, import 2.60s, tests 1.28s, environment 0ms)

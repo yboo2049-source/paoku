@@ -1,0 +1,251 @@
+{
+  "mode": "F original CSS from fixed Git commit; real unchanged application; Google import not intercepted or filtered; no disk source writes",
+  "records": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "stress": false,
+      "faces": [
+        {
+          "family": "Outfit",
+          "faces": [
+            {
+              "family": "Outfit",
+              "status": "loaded"
+            }
+          ]
+        },
+        {
+          "family": "Orbitron",
+          "faces": [
+            {
+              "family": "Orbitron",
+              "status": "loaded"
+            }
+          ]
+        }
+      ],
+      "measure": {
+        "x": 400,
+        "y": 40.5,
+        "width": 480,
+        "height": 639,
+        "bottom": 679.5,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "clipped": false,
+        "text": "\n            SUBWAY SURFERS\n            \n              \n                BEST SCORE\n                0\n              \n              \n                TOTAL CREDITS\n                0\n              \n            \n            \n            START RUN\n            SHOP & SKINS\n            \n            \n              AD / ←→ Move\n              W / SPACE Jump\n              S Roll\n              ESC Pause\n            \n\n            \n              AUDIO SETTINGS\n              \n                MUSIC: ON\n                \n              \n              \n                SFX: ON\n                \n              \n            \n          "
+      },
+      "errors": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "stress": true,
+      "faces": [
+        {
+          "family": "Outfit",
+          "faces": [
+            {
+              "family": "Outfit",
+              "status": "loaded"
+            }
+          ]
+        },
+        {
+          "family": "Orbitron",
+          "faces": [
+            {
+              "family": "Orbitron",
+              "status": "loaded"
+            }
+          ]
+        }
+      ],
+      "measure": {
+        "x": 400,
+        "y": 0,
+        "width": 480,
+        "height": 720,
+        "bottom": 720,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "clipped": false,
+        "text": "\n            SUBWAY SURFERS\n            \n              \n                BEST SCORE\n                999999999999 中文 Ω 😀\n              \n              \n                TOTAL CREDITS\n                999999999999 中文 Ω 😀\n              \n            \n            \n            START RUN\n            SHOP & SKINS\n            \n            \n              AD / ←→ Move\n              W / SPACE Jump\n              S Roll\n              ESC Pause\n            \n\n            \n              AUDIO SETTINGS\n              \n                MUSIC: ON\n                \n              \n              \n                SFX: ON\n                \n              \n            \n          "
+      },
+      "errors": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "stress": false,
+      "faces": [
+        {
+          "family": "Outfit",
+          "faces": [
+            {
+              "family": "Outfit",
+              "status": "loaded"
+            }
+          ]
+        },
+        {
+          "family": "Orbitron",
+          "faces": [
+            {
+              "family": "Orbitron",
+              "status": "loaded"
+            }
+          ]
+        }
+      ],
+      "measure": {
+        "x": 18.357725143432617,
+        "y": 74.2512435913086,
+        "width": 353.2845458984375,
+        "height": 695.49755859375,
+        "bottom": 769.7488021850586,
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "clipped": false,
+        "text": "\n            SUBWAY SURFERS\n            \n              \n                BEST SCORE\n                0\n              \n              \n                TOTAL CREDITS\n                0\n              \n            \n            \n            START RUN\n            SHOP & SKINS\n            \n            \n              AD / ←→ Move\n              W / SPACE Jump\n              S Roll\n              ESC Pause\n            \n\n            \n              AUDIO SETTINGS\n              \n                MUSIC: ON\n                \n              \n              \n                SFX: ON\n                \n              \n            \n          "
+      },
+      "errors": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "stress": true,
+      "faces": [
+        {
+          "family": "Outfit",
+          "faces": [
+            {
+              "family": "Outfit",
+              "status": "loaded"
+            }
+          ]
+        },
+        {
+          "family": "Orbitron",
+          "faces": [
+            {
+              "family": "Orbitron",
+              "status": "loaded"
+            }
+          ]
+        }
+      ],
+      "measure": {
+        "x": 19.5,
+        "y": 0,
+        "width": 351,
+        "height": 844,
+        "bottom": 844,
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "clipped": false,
+        "text": "\n            SUBWAY SURFERS\n            \n              \n                BEST SCORE\n                999999999999 中文 Ω 😀\n              \n              \n                TOTAL CREDITS\n                999999999999 中文 Ω 😀\n              \n            \n            \n            START RUN\n            SHOP & SKINS\n            \n            \n              AD / ←→ Move\n              W / SPACE Jump\n              S Roll\n              ESC Pause\n            \n\n            \n              AUDIO SETTINGS\n              \n                MUSIC: ON\n                \n              \n              \n                SFX: ON\n                \n              \n            \n          "
+      },
+      "errors": []
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "stress": false,
+      "faces": [
+        {
+          "family": "Outfit",
+          "faces": [
+            {
+              "family": "Outfit",
+              "status": "loaded"
+            }
+          ]
+        },
+        {
+          "family": "Orbitron",
+          "faces": [
+            {
+              "family": "Orbitron",
+              "status": "loaded"
+            }
+          ]
+        }
+      ],
+      "measure": {
+        "x": 182,
+        "y": 0,
+        "width": 480,
+        "height": 390,
+        "bottom": 390,
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "clipped": false,
+        "text": "\n            SUBWAY SURFERS\n            \n              \n                BEST SCORE\n                0\n              \n              \n                TOTAL CREDITS\n                0\n              \n            \n            \n            START RUN\n            SHOP & SKINS\n            \n            \n              AD / ←→ Move\n              W / SPACE Jump\n              S Roll\n              ESC Pause\n            \n\n            \n              AUDIO SETTINGS\n              \n                MUSIC: ON\n                \n              \n              \n                SFX: ON\n                \n              \n            \n          "
+      },
+      "errors": []
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "stress": true,
+      "faces": [
+        {
+          "family": "Outfit",
+          "faces": [
+            {
+              "family": "Outfit",
+              "status": "loaded"
+            }
+          ]
+        },
+        {
+          "family": "Orbitron",
+          "faces": [
+            {
+              "family": "Orbitron",
+              "status": "loaded"
+            }
+          ]
+        }
+      ],
+      "measure": {
+        "x": 182,
+        "y": 0,
+        "width": 480,
+        "height": 390,
+        "bottom": 390,
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "clipped": false,
+        "text": "\n            SUBWAY SURFERS\n            \n              \n                BEST SCORE\n                999999999999 中文 Ω 😀\n              \n              \n                TOTAL CREDITS\n                999999999999 中文 Ω 😀\n              \n            \n            \n            START RUN\n            SHOP & SKINS\n            \n            \n              AD / ←→ Move\n              W / SPACE Jump\n              S Roll\n              ESC Pause\n            \n\n            \n              AUDIO SETTINGS\n              \n                MUSIC: ON\n                \n              \n              \n                SFX: ON\n                \n              \n            \n          "
+      },
+      "errors": []
+    }
+  ]
+}

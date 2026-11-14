@@ -1,0 +1,12 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/simulation.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-10
+
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  20:07:54
+   Duration  515ms (transform 135ms, setup 0ms, import 167ms, tests 58ms, environment 0ms)

@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
+      includeAssets: ['fonts/*.ttf', 'fonts/*-OFL.txt'],
       workbox: {
         maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
       },

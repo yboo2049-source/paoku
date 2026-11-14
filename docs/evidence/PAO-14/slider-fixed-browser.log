@@ -1,0 +1,15 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config docs/evidence/PAO-14/playwright.config.ts --grep F-native-slider|native-menu-slider
+
+[WebServer] (node:5744) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:23192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\pao10-review-fixes.spec.ts:35:1 › native-menu-slider-and-start-space (7.2s)
+  ok 2 tests\e2e\pao14-application.spec.ts:231:1 › F-native-slider-preserves-draft-while-save-lock-is-held (2.1s)
+
+  2 passed (12.0s)

@@ -1,0 +1,68 @@
+{
+  "errors": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "http://127.0.0.1:5198/fonts/Outfit-fc7287273e66.ttf: net::ERR_ABORTED",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "http://127.0.0.1:5198/fonts/Orbitron-f42db2dd16e6.ttf: net::ERR_ABORTED"
+  ],
+  "google": [],
+  "local": [
+    "http://127.0.0.1:5198/fonts/Outfit-fc7287273e66.ttf",
+    "http://127.0.0.1:5198/fonts/Orbitron-f42db2dd16e6.ttf"
+  ],
+  "statuses": [
+    404,
+    404
+  ],
+  "faces": [
+    {
+      "family": "Outfit",
+      "weight": 400,
+      "faces": [],
+      "error": "NetworkError: A network error occurred."
+    },
+    {
+      "family": "Outfit",
+      "weight": 600,
+      "faces": [],
+      "error": "NetworkError: A network error occurred."
+    },
+    {
+      "family": "Outfit",
+      "weight": 700,
+      "faces": [],
+      "error": "NetworkError: A network error occurred."
+    },
+    {
+      "family": "Outfit",
+      "weight": 900,
+      "faces": [],
+      "error": "NetworkError: A network error occurred."
+    },
+    {
+      "family": "Orbitron",
+      "weight": 400,
+      "faces": [],
+      "error": "NetworkError: A network error occurred."
+    },
+    {
+      "family": "Orbitron",
+      "weight": 500,
+      "faces": [],
+      "error": "NetworkError: A network error occurred."
+    },
+    {
+      "family": "Orbitron",
+      "weight": 700,
+      "faces": [],
+      "error": "NetworkError: A network error occurred."
+    },
+    {
+      "family": "Orbitron",
+      "weight": 900,
+      "faces": [],
+      "error": "NetworkError: A network error occurred."
+    }
+  ],
+  "mode": "F only; no error filtering or success response"
+}

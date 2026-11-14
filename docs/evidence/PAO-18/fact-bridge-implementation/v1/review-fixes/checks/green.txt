@@ -1,0 +1,13 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao18-fact-journal.test.ts tests/unit/pao18-fact-lifecycle.test.ts tests/unit/pao18-fact-producers.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18-font-diagnosis
+
+
+ Test Files  3 passed (3)
+      Tests  27 passed (27)
+   Start at  22:26:02
+   Duration  2.14s (transform 316ms, setup 0ms, import 2.08s, tests 114ms, environment 0ms)
+

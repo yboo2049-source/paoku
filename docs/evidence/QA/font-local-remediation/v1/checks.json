@@ -1,0 +1,1007 @@
+{
+  "cwd": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis",
+  "branch": "codex/pao18-font-diagnosis",
+  "base": "e6a52b1a88db911581c6b88b119d54c356ff9774",
+  "baseline": {
+    "buildExit": 0,
+    "unitExit": 0,
+    "unitFiles": 27,
+    "unitTests": 292
+  },
+  "red": {
+    "unitExit": 1,
+    "browserExit": 1,
+    "reason": "actual application requested Google CSS and no local fonts; independent local-404 fixture had no local font URL"
+  },
+  "green": {
+    "localUnitExit": 0,
+    "targetedBrowserExit": 0,
+    "targetedCount": 2,
+    "explicitTestsTscExit": 0
+  },
+  "finalBuildExit": 0,
+  "finalUnit": {
+    "exit": 0,
+    "files": 28,
+    "tests": 293
+  },
+  "firstFull": {
+    "exit": 1,
+    "stats": {
+      "startTime": "2026-11-03T13:36:51.679Z",
+      "duration": 507419.708,
+      "expected": 63,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "failures": [
+      {
+        "title": "N-mobile-production-touch",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "retry": 0,
+            "startTime": "2026-11-03T13:40:37.442Z",
+            "duration": 1913,
+            "errors": [
+              {
+                "location": {
+                  "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao10-simulation.pw.ts",
+                  "column": 37,
+                  "line": 5
+                },
+                "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation\n\n  3 | import { resolve } from 'node:path';\n  4 | const evidence = resolve('.pao18.local/font-remediation/full/evidence/PAO-10');\n> 5 | const sensor = (page: Page) => page.evaluate(() => {\n    |                                     ^\n  6 |   const s = (window as any).__GAME_SENSOR__;\n  7 |   return { ...s.getSimulationSnapshot(), ...s.getSimulationDiagnostics(), inputs: s.getInputLog(), state: s.getGameState(), player: s.getPlayerState(), position: s.getPlayerPos(), score: s.getScore(), coins: s.getCoins() };\n  8 | });\n    at sensor (D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao10-simulation.pw.ts:5:37)\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao10-simulation.pw.ts:78:73\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao10-simulation.pw.ts:78:36"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "F recorded authoritative ramp-to-roof, jump/slide and pause with the production main",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "retry": 0,
+            "startTime": "2026-11-03T13:44:43.443Z",
+            "duration": 2146,
+            "errors": [
+              {
+                "location": {
+                  "file": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao18-controller-camera.pw.ts",
+                  "column": 14,
+                  "line": 161
+                },
+                "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5188/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:5188/\", waiting until \"load\"\u001b[22m\n\n\n  159 |   const page = await context.newPage(); const video = page.video()!; const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));\n  160 |   await page.addInitScript(() => { (window as any).__QA_MODE__ = true; });\n> 161 |   await page.goto('http://127.0.0.1:5188/');\n      |              ^\n  162 |   await page.evaluate(async () => {\n  163 |     const load = (url: string) => import(/* @vite-ignore */ url);\n  164 |     const { spawnerSystem } = await load('/src/systems/spawner.ts');\n    at D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\suite\\pao18-controller-camera.pw.ts:161:14"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "finalFull": {
+    "exit": 0,
+    "stats": {
+      "startTime": "2026-11-04T13:19:23.726Z",
+      "duration": 502291.093,
+      "expected": 65,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "title": "N real application uses local faces and glyphs with Google domains unavailable",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:19:25.331Z",
+            "duration": 2450,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F independent local font 404 remains visible to unchanged error sensors",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:19:28.094Z",
+            "duration": 1536,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N pages and F typography matrix 1280x720",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:19:29.639Z",
+            "duration": 48376,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N pages and F typography matrix 390x844",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:20:18.024Z",
+            "duration": 47739,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N pages and F typography matrix 844x390",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:21:05.773Z",
+            "duration": 48122,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "MENU → PLAYING via start button",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:21:53.929Z",
+            "duration": 1945,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "PLAYING → 切道（左/右 + 边界钳制）",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:21:55.885Z",
+            "duration": 2500,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "PLAYING → 跳跃（isJumping=true）",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:21:58.398Z",
+            "duration": 2126,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "PLAYING → 翻滚（isRolling=true）",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:22:00.537Z",
+            "duration": 1998,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "PLAYING → PAUSED via Escape，再 resume 回到 PLAYING",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:22:02.544Z",
+            "duration": 2247,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "捕获 6 张高保真截图（无 GAMEOVER 风险）",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:22:04.800Z",
+            "duration": 3267,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "native-menu-slider-and-start-space",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:22:08.086Z",
+            "duration": 1673,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "paused-rejects-motion-and-resume-space",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:22:09.772Z",
+            "duration": 2594,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "playing-interactive-arrows-do-not-move-player",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:22:12.380Z",
+            "duration": 2098,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N-desktop-production-keyboard-flow",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:22:14.501Z",
+            "duration": 49526,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N-mobile-production-touch",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:04.040Z",
+            "duration": 3617,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-lifecycle-clears-input-and-hidden-time",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:07.666Z",
+            "duration": 3752,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-desktop-keyboard-ground-ramp-roof-jump-ground",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:11.446Z",
+            "duration": 4945,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-portrait-touch-ground-ramp-roof-jump-ground",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:16.401Z",
+            "duration": 5075,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-high-base-ramp-5-to-8-continuous-roof",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:21.489Z",
+            "duration": 3166,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N-production-input-and-supported-snapshot",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:24.667Z",
+            "duration": 2365,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-desktop-relative-high-speed-thin-train-terminal-once",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:27.056Z",
+            "duration": 4241,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-portrait-same-tick-shield-multi-hit-single-consumption",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:31.310Z",
+            "duration": 2464,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-desktop-airborne-roll-uses-actual-height-box",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:33.784Z",
+            "duration": 2780,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-browser-isolated-highest-speed-large-step-and-pose-matrix",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:36.574Z",
+            "duration": 1510,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:38.095Z",
+            "duration": 3335,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N-desktop-seeded-generation-keyboard-and-reset",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:41.466Z",
+            "duration": 3084,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N-portrait-seeded-generation-touch",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:44.560Z",
+            "duration": 2594,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-isolated-browser-real-physics-segment-and-pair-witnesses",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:47.163Z",
+            "duration": 1962,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N-desktop-pause-restart-stale-run-and-DOM-tamper",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:49.144Z",
+            "duration": 3741,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N-portrait-touch-paused-input-and-return",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:52.895Z",
+            "duration": 3372,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-30-pickups-50-reward-save-failure-retry-and-repeat-finish",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:56.275Z",
+            "duration": 3607,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-legacy-rights-shop-purchase-and-refresh",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:23:59.893Z",
+            "duration": 3116,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-same-tick-terminal-pickup-and-gameover-shop",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:03.019Z",
+            "duration": 2812,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-two-tabs-conflicting-transactions-do-not-overwrite",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:05.842Z",
+            "duration": 4154,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-pause-isolates-input-while-save-lock-is-held",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:10.007Z",
+            "duration": 1928,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-reentrant-end-command-seals-complete-fatal-tick",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:11.946Z",
+            "duration": 1749,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-native-slider-preserves-draft-while-save-lock-is-held",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:13.706Z",
+            "duration": 1393,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-review-audio-different-fields-under-lock",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:15.116Z",
+            "duration": 2618,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-review-audio-repeated-toggle-under-lock",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:17.744Z",
+            "duration": 2075,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-review-audio-volume-and-toggle-queue",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:19.828Z",
+            "duration": 2553,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-review-shop-stale-funds-explicit-retry",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:22.393Z",
+            "duration": 7062,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-unknown-toggle-1-confirmation-read-failures",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:29.476Z",
+            "duration": 1402,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F-unknown-toggle-2-confirmation-read-failures",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:30.889Z",
+            "duration": 1425,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F real renderer fallback, 20 cycles / 10 resets, dispose/remount, late shared load and host canvas",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:32.329Z",
+            "duration": 1683,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F production main dispose bridge releases the actual renderer engine and scene",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:34.020Z",
+            "duration": 1528,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F actual wedge-roof walk, triangle support and exit at base Y=0",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:35.567Z",
+            "duration": 3805,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F actual wedge-roof walk, triangle support and exit at base Y=5",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:39.381Z",
+            "duration": 4010,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F source raw and legacy HTTP identity",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:43.404Z",
+            "duration": 63,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N desktop keyboard legacy start motion pause resume end restart",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:24:43.476Z",
+            "duration": 27960,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N 390 touch legacy start motion pause resume end restart",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:25:11.445Z",
+            "duration": 28128,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F successful legacy GLB and shadows warmed before 20 bounded recycles / 10 resets / full disposal",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:25:39.597Z",
+            "duration": 2609,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N bright desktop keyboard motion pause resume collision and restart",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:25:42.216Z",
+            "duration": 28048,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N bright 390 touch motion pause resume collision and restart",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:26:10.274Z",
+            "duration": 28074,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F actual legacy renderer: 390 framing, actual group pause, support edges and stable resources",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:26:38.380Z",
+            "duration": 21452,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F runtime modules raw identity and actual legacy GLB HTTP hash",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:26:59.847Z",
+            "duration": 70,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N desktop keyboard controls, real group pause, HUD profile and restart",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:26:59.931Z",
+            "duration": 6055,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "N 390 touch controls, real group pause, HUD profile and restart",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:27:05.994Z",
+            "duration": 3121,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F recorded authoritative ramp-to-roof, jump/slide and pause with the production main",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:27:09.127Z",
+            "duration": 5978,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F real legacy request delayed across reset: same asset ID, latest skin, dispose before completion",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:27:15.113Z",
+            "duration": 1568,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "F fixed old HUD five-row profile measured with actual CSS at 390 and desktop",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:27:16.691Z",
+            "duration": 3253,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "ramp-roof-jump-land",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:27:19.973Z",
+            "duration": 5561,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "obstacles-failure-restart",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:27:25.550Z",
+            "duration": 6135,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "powerups-shield-missions",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:27:31.697Z",
+            "duration": 9427,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "mobile-touch-layout",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "startTime": "2026-11-04T13:27:41.134Z",
+            "duration": 4244,
+            "errors": []
+          }
+        ]
+      }
+    ]
+  },
+  "pwa": {
+    "missingCacheExit": 1,
+    "finalExit": 0,
+    "updateRollbackExit": 0,
+    "firstVisitOffline": "not promised",
+    "fullGameOffline": "not certified: existing player.glb absent from precache; every independent-F offline error retained"
+  },
+  "runtime": {
+    "port": 5198,
+    "strictPort": true,
+    "reuseExistingServer": false,
+    "retries": 0,
+    "workers": 1,
+    "angle": "d3d11"
+  },
+  "approvedExceptions": [
+    "VitePWA includeAssets fonts/*.ttf and fonts/*-OFL.txt",
+    "ignored PAO18 mirror changes only its page.goto literal 5188 to 5198"
+  ],
+  "publicFiles": [
+    {
+      "path": "public/fonts/Orbitron-f42db2dd16e6.ttf",
+      "bytes": 38576,
+      "sha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd"
+    },
+    {
+      "path": "public/fonts/Orbitron-METADATA.pb",
+      "bytes": 679,
+      "sha256": "6e897c83b8fcdeccb78accb132efd7b279267b684484aa0735b78aba711d0b36"
+    },
+    {
+      "path": "public/fonts/Orbitron-OFL.txt",
+      "bytes": 4425,
+      "sha256": "dd6fdb6716fd179d1fe891759efb3f9200753fdf6abf513b55b712c4ae16e512"
+    },
+    {
+      "path": "public/fonts/Outfit-fc7287273e66.ttf",
+      "bytes": 110884,
+      "sha256": "fc7287273e66929776e2ba54f144fe699080bec29f61bf649d70d871468aeade"
+    },
+    {
+      "path": "public/fonts/Outfit-METADATA.pb",
+      "bytes": 835,
+      "sha256": "4cd9d2154f15495ca97de561060d535eaba9f7007be4a87e40f3b58ea8111cf2"
+    },
+    {
+      "path": "public/fonts/Outfit-OFL.txt",
+      "bytes": 4388,
+      "sha256": "e2a6bbb2589b85bac1690ec8f220b22a9c3af9bfda56df6391f7ab491c7a039f"
+    },
+    {
+      "path": "public/fonts/README.md",
+      "bytes": 2645,
+      "sha256": "81e590d6cec4588247b498aa556b9c7dda859386aa9d93ffc6d190cafe7f3e11"
+    },
+    {
+      "path": "public/fonts/sources.json",
+      "bytes": 12022,
+      "sha256": "5a7d48a56e7b60b9374745e29b4dddbe3e66f8ae79fd6393da36a2d38dcd2cf9"
+    }
+  ],
+  "fontBytes": 149460,
+  "fontAndLicensePrecacheBytes": 158273,
+  "publicFontDirectoryBytes": 174454
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "source": "tests/e2e/gameplay.spec.ts",
+    "mirror": ".pao17-local/bright-theme/mirror-full-recheck/gameplay.pw.ts",
+    "sourceHash": "ac860d0781b57ec51735607c8e6d1441a5f02afcb9b27203f2f8e682d607ce64",
+    "reverseHash": "ac860d0781b57ec51735607c8e6d1441a5f02afcb9b27203f2f8e682d607ce64"
+  },
+  {
+    "source": "tests/e2e/pao10-review-fixes.spec.ts",
+    "mirror": ".pao17-local/bright-theme/mirror-full-recheck/pao10-review-fixes.pw.ts",
+    "sourceHash": "21a92efee35f42f42912d8655d62eb1a6d4786494235ee84d9ff1ae8dab45892",
+    "reverseHash": "21a92efee35f42f42912d8655d62eb1a6d4786494235ee84d9ff1ae8dab45892"
+  },
+  {
+    "source": "tests/e2e/pao10-simulation.spec.ts",
+    "mirror": ".pao17-local/bright-theme/mirror-full-recheck/pao10-simulation.pw.ts",
+    "sourceHash": "4cb5069cfcec3a015c768ee5047403b8cd4c0c295529e1eda186866c6a921ebf",
+    "reverseHash": "4cb5069cfcec3a015c768ee5047403b8cd4c0c295529e1eda186866c6a921ebf"
+  },
+  {
+    "source": "tests/e2e/pao11-surfaces.spec.ts",
+    "mirror": ".pao17-local/bright-theme/mirror-full-recheck/pao11-surfaces.pw.ts",
+    "sourceHash": "2e5cb1868763f2ddec33ae472f3497aeac1dffa6d7be0c80c1a41fa6842d868b",
+    "reverseHash": "2e5cb1868763f2ddec33ae472f3497aeac1dffa6d7be0c80c1a41fa6842d868b"
+  },
+  {
+    "source": "tests/e2e/pao12-collision.spec.ts",
+    "mirror": ".pao17-local/bright-theme/mirror-full-recheck/pao12-collision.pw.ts",
+    "sourceHash": "669125de620cfd8c0263b5ee7696cef53a2e48d9fac0548f5f095fd710371f1d",
+    "reverseHash": "669125de620cfd8c0263b5ee7696cef53a2e48d9fac0548f5f095fd710371f1d"
+  },
+  {
+    "source": "tests/e2e/pao13-track.spec.ts",
+    "mirror": ".pao17-local/bright-theme/mirror-full-recheck/pao13-track.pw.ts",
+    "sourceHash": "03211f334c9ff5bf05b058bcb49c1d83d7b0eefe4800b3257453fecd8943a7a3",
+    "reverseHash": "03211f334c9ff5bf05b058bcb49c1d83d7b0eefe4800b3257453fecd8943a7a3"
+  },
+  {
+    "source": "tests/e2e/pao14-application.spec.ts",
+    "mirror": ".pao17-local/bright-theme/mirror-full-recheck/pao14-application.pw.ts",
+    "sourceHash": "06039b20c65000d94d819a45ce5332bd77731779bf851ea2eb9164988bba8f6a",
+    "reverseHash": "06039b20c65000d94d819a45ce5332bd77731779bf851ea2eb9164988bba8f6a"
+  },
+  {
+    "source": "tests/e2e/pao14-review.spec.ts",
+    "mirror": ".pao17-local/bright-theme/mirror-full-recheck/pao14-review.pw.ts",
+    "sourceHash": "b20d8604e98ee5eb1013c458160522c97433475075e9e55bd32d957e5abda413",
+    "reverseHash": "b20d8604e98ee5eb1013c458160522c97433475075e9e55bd32d957e5abda413"
+  },
+  {
+    "source": "tests/e2e/pao14-unknown-commit.spec.ts",
+    "mirror": ".pao17-local/bright-theme/mirror-full-recheck/pao14-unknown-commit.pw.ts",
+    "sourceHash": "2b8545a84b763bf0a0faa9a2a8cf8ac3a10af0040afe42b34754bc2cdc414520",
+    "reverseHash": "2b8545a84b763bf0a0faa9a2a8cf8ac3a10af0040afe42b34754bc2cdc414520"
+  },
+  {
+    "source": "tests/e2e/pao17-lifecycle.spec.ts",
+    "mirror": ".pao17-local/bright-theme/mirror-full-recheck/pao17-lifecycle.pw.ts",
+    "sourceHash": "2332cadba7b28c124d8a0c4e758a2e52cb52aae2c9f191f5c7a888b1bb2d357b",
+    "reverseHash": "2332cadba7b28c124d8a0c4e758a2e52cb52aae2c9f191f5c7a888b1bb2d357b"
+  },
+  {
+    "source": "tests/e2e/pao17-structure.spec.ts",
+    "mirror": ".pao17-local/bright-theme/mirror-full-recheck/pao17-structure.pw.ts",
+    "sourceHash": "f806668c4a8a8c77ba403ff408670214461d09637c9b633cbc7e301e0044e384",
+    "reverseHash": "f806668c4a8a8c77ba403ff408670214461d09637c9b633cbc7e301e0044e384"
+  },
+  {
+    "source": "tests/e2e/pao6-baseline.spec.ts",
+    "mirror": ".pao17-local/bright-theme/mirror-full-recheck/pao6-baseline.pw.ts",
+    "sourceHash": "710cd0dc1d6fd938825b4c741f0c32798a2ada5c507209c48b2f57889f441df9",
+    "reverseHash": "710cd0dc1d6fd938825b4c741f0c32798a2ada5c507209c48b2f57889f441df9"
+  }
+]

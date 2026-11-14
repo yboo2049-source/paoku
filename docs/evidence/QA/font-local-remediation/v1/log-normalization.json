@@ -1,0 +1,142 @@
+[
+  {
+    "tracked": "targeted-green.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\green-e2e.txt",
+    "rawSha256": "cabd3a0431d4e4476418a7fb10032004f721aafd8c58f905a78c39daa6104e0a",
+    "normalizedSha256": "5d22c59b7a46d01ba47518f9a8c1c474d0639ec1d944b4eee6cf025c870f75d6",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "baseline-build.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\baseline-build.txt",
+    "rawSha256": "8c46a22ea246bd6c151994ef3c1cf48566360a923d29748e4703dd12153ca0f8",
+    "normalizedSha256": "707595c591cf72faa1068f20e31d69bd59a1442b715a6bdcea006024c882ce3a",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "baseline-unit.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\baseline-unit.txt",
+    "rawSha256": "41ccfbdfe0b84229f36e7ed5dadde2203730eb61122266ce67e47496efb969ee",
+    "normalizedSha256": "bc1c4af67622f9958fb8c4dc1eaddd27dd0253318852faf9d60ca2e0a0008823",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "red-unit.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\red-unit.txt",
+    "rawSha256": "b9690da69e79e85d75a01d83f9d7c00ef8ae841cde413bf48fb817fa39246f7d",
+    "normalizedSha256": "6fcf335377f45c3daba08add0b71a6e3560b249ab0c84f5f5521f0624737279c",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "red-e2e.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\red-e2e.txt",
+    "rawSha256": "6eba3529d16a48b4246344e1a3074c3c3a2dd0db59abcac633f9c95e08300589",
+    "normalizedSha256": "9fbd54a23071779e72dfd7a2b49350c77c64d5bb6e101dacbf7963f7b61cdcb7",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "first-glyph-probe-failure.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\green-e2e-first.txt",
+    "rawSha256": "06bc8eec7b829a1c7c9859f76f52e0caca21d39cd7871f077a62ecf5d856d463",
+    "normalizedSha256": "264640bb2279b100ddc95399dbd814f8b51707326df8382dc1414b002ee01759",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "pwa-first-qa-error.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\pwa-first.txt",
+    "rawSha256": "3e9cd414064d5fb428b30585167e18e93247525e8b32ad0ea01de76abf8a9e04",
+    "normalizedSha256": "2c5628b0827374ad06a796eb053f246cd23b3f90d5bd05d5b06254d4aa3b3d9d",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "pwa-missing-fonts.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\pwa-cache.txt",
+    "rawSha256": "495e1763c7ca5084003e82a89c8b5da0ebe81531215cb9c1b04b95a956a74738",
+    "normalizedSha256": "4bb89f4d2ac57581de2706180c7461608339c83a38cd5f0235d30672a8765ad0",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "pwa-final.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\pwa-final.txt",
+    "rawSha256": "5d0306394a65e8438cd809da25ad552e596d626f707b4dafc033d7cb6e5ed097",
+    "normalizedSha256": "8385fa0caeabb05d99295924a7252fa9102a9af79e2341c9e506eec1ab9ab2dc",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "update-first-marker-error.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\update.txt",
+    "rawSha256": "76488628a490694e71dbe20ea7112297658fa4dfe565a133bf6635d126d72b9d",
+    "normalizedSha256": "66fb0e296fc16c5d417879547eda8b74d86ef48af6fccd76c74e31d6198573f9",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "update-initial-model-errors.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\update-green.txt",
+    "rawSha256": "de2c6c5a05f6bacd7e603950b5dc3d8d7658b4a1e76bbcd4758d1feb292d4912",
+    "normalizedSha256": "1730fab8944f343c6fe424d41acfe391eb92a1831bd10a2e8e73d2b1a8b03849",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "update-manual-artifact-css-error.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\update-final.txt",
+    "rawSha256": "174363067f0ca0f84fd53ef9b437aec4abd1dbaca031236b33551a2fbd066915",
+    "normalizedSha256": "4ab07785696a2be78e63256ecc2724c1c85cbbfc5b71b714a9f63fc6faca402a",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "update-clean.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\update-clean.txt",
+    "rawSha256": "497130a6e8ae3e394a20b43f702f7b1b8d809c391736b4cc26c1ab7e06fb3abb",
+    "normalizedSha256": "ae0b2c638626677a782d0abb16ca0120f720debbf5722969bb6586c262090eb2",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "original-menu-comparison.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\baseline-visual.txt",
+    "rawSha256": "4a0488bbcf48efeea292ae7e8c191e52c945122821d0f51eb19030e40137866d",
+    "normalizedSha256": "1967d6e1d56d2eac79b59a78d7d7c4b1b9443dd01495e868462834b41d176068",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "full-first.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\full\\full.txt",
+    "rawSha256": "d76a28429e1143194903c4c7ec4ae5c375217be2f330022107e8d10ffe03eccf",
+    "normalizedSha256": "3305e8333c8a455880512d4cd0dca28bc14cf8d538c19bdc12d3f93ea0879a93",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "full-final.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\final-full\\full-text-normalized.txt",
+    "rawSha256": "b7196e7536498a5e13c2948704664e948a5e5280462c0dda9168e75351aeb956",
+    "normalizedSha256": "6c7d5fc5357e3591c8d220bae260d942237d09d7a94adc0efda607c1adb1fac1",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "final-build.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\final-build.txt",
+    "rawSha256": "76cfe21153d3dbe6a974f647410b47104a063a6d53e3e64bd42f72082c24a074",
+    "normalizedSha256": "817518c86d5ef809a071f0a0431dd421fdc7352c028440e0d29dbf4903676674",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "final-unit.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\final-unit.txt",
+    "rawSha256": "58d4b229de1a2d24390c9ac71e5295ca903e584abdb27900c2248978d4cfd25d",
+    "normalizedSha256": "d024f786af5b5b99cc075dad882450afddde0e062e202c595c6b3b2d614006b5",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "new-tests-typecheck.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\tests-tsc-final.txt",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "normalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  },
+  {
+    "tracked": "fallback-check.txt",
+    "rawLocal": "D:\\worker\\paoku-sessions\\pao-18-font-diagnosis\\.pao18.local\\font-remediation\\fallback.txt",
+    "rawSha256": "934f861ee647e52dc3ef4efe1f49dfe43599178f13a7a1925325759a0e9f98ee",
+    "normalizedSha256": "be9b17416c27a00de02db3042f04e720a88301aeca822ed8d5a07d1105b6e543",
+    "normalization": "LF, remove horizontal line-end whitespace and extra EOF blank lines; wording/results retained"
+  }
+]

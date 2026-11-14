@@ -1,0 +1,10 @@
+
+> app@0.0.0 build
+> tsc && vite build
+
+src/core/simulation.ts(42,11): error TS2564: Property 'current' has no initializer and is not definitely assigned in the constructor.
+src/systems/input.ts(119,31): error TS2345: Argument of type 'PlayerEntity | undefined' is not assignable to parameter of type 'PlayerEntity'.
+  Type 'undefined' is not assignable to type 'PlayerEntity'.
+src/systems/input.ts(120,24): error TS2345: Argument of type 'PlayerEntity | undefined' is not assignable to parameter of type 'PlayerEntity'.
+  Type 'undefined' is not assignable to type 'PlayerEntity'.
+EXIT_CODE=2

@@ -101,3 +101,9 @@ graph TD
 6. **视觉验收闭环 (Visual Validation)**：对于涉及 `subagent-3d-render` (3D 渲染/相机取景) 和 `subagent-dom-ui` (前端 DOM 界面布局) 的代码修改，主 Agent 交付前必须启动真实浏览器环境进行验证。必须通过抓取真实页面截图或录屏，自行检查人物取景是否居中合理、UI 布局是否存在溢出或遮挡，确保视觉展示结果符合预期后方可认为任务完成。
 7. **全局 E2E 截图测试 (Global Playwright Validation)**：在每次修改代码后，无论修改涉及哪个模块，主 Agent 交付前都要使用 Playwright 运行测试。必须通过生成并查看真实页面截图，自行检查以找出可能存在的任何明显问题。确保没有明显异常后，才能认为任务最终完成。
 8. **Superpowers 方法论门禁 (Methodology Gate)**：任何"新功能 / 重构"入口必须先经 `brainstorming` 技能；若为 Architectural / Bounded 路径，须产出设计文档（存放于 `docs/superpowers/specs/`）并经用户审批（HARD-GATE）后，方可进入 `writing-plans` 与实现阶段。严禁跳过审批直接写码。
+9. **任务完成后自动提交与推送 (Automatic Commit & Push)**：
+   - 用户已授权：每完成一个任务，必须先运行并通过与改动相适应的全部检查。代码改动至少通过 `npm run build`、`npm run test` 和 `npm run test:e2e`，并按上述规则检查真实页面截图；纯文档改动须完成内容审查及 `git diff --check`，无需仅为文档改动运行浏览器测试。
+   - 验证通过后，自动将本任务相关改动提交为含义明确的 Git commit，并推送至 `origin` 的当前任务分支，无需逐次向用户确认。首次推送使用 `git push -u origin HEAD`，后续使用 `git push`，遵循 `CONTRIBUTING.md` 的任务分支约定。
+   - 提交前检查暂存区，只包含本任务改动，不得捎带用户已有或其他任务未完成的改动；无改动时无需创建空提交。
+   - 检查失败时先修复并重新验证，未通过不得提交或推送；禁止以跳过 hooks、强制推送或重写远程历史来完成任务。
+   - 推送因认证、网络或远程分支冲突失败时，保留本地成果并明确报告原因，不得声称已同步远程。交付时说明验证结果、提交号、推送分支及是否推送成功。

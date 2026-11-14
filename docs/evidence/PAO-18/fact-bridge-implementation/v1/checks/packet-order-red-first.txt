@@ -1,0 +1,34 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao18-fact-lifecycle.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18-font-diagnosis
+
+ ❯ tests/unit/pao18-fact-lifecycle.test.ts (6 tests | 1 failed) 31ms
+   × rejects out-of-order or conflicting identities before any render side effect 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao18-fact-lifecycle.test.ts > rejects out-of-order or conflicting identities before any render side effect
+AssertionError: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ tests/unit/pao18-fact-lifecycle.test.ts:49:20
+     47| it('rejects out-of-order or conflicting identities before any render s…
+     48|   const validate = (renderModule as unknown as { validateMotionRead?: …
+     49|   expect(validate).toBeTypeOf('function');
+       |                    ^
+     50|   const sim = new Simulation(context(), { runId: 'valid', seed: 1, mot…
+     51|   const cursor = sim.motionCursor(); sim.queue.collect('LEFT', 'QA', 0…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  21:16:46
+   Duration  2.94s (transform 192ms, setup 0ms, import 2.71s, tests 31ms, environment 0ms)
+

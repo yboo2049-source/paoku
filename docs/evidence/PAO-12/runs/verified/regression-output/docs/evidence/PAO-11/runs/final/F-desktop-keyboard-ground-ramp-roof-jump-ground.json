@@ -1,0 +1,2143 @@
+{
+  "title": "F-desktop-keyboard-ground-ramp-roof-jump-ground",
+  "browser": {
+    "baseURL": "http://127.0.0.1:5183",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "launchOptions": {
+      "args": [
+        "--use-gl=angle",
+        "--use-angle=d3d11",
+        "--enable-webgl",
+        "--ignore-gpu-blocklist"
+      ]
+    }
+  },
+  "errors": [],
+  "states": [
+    {
+      "name": "F-desktop-ramp",
+      "snapshot": {
+        "contractVersion": 1,
+        "runId": "run-1",
+        "tick": 55,
+        "timeSec": 0.9166666666666666,
+        "stepSec": 0.016666666666666666,
+        "phase": "RUNNING",
+        "seed": 1346457360,
+        "rngState": 1346457360,
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "simulationVersion": "pao10-fixed-v1",
+        "configId": "legacy-18-45-v1",
+        "contentRevision": "legacy-unseeded-spawner",
+        "lastInputSequence": 0,
+        "discontinuity": false,
+        "context": {
+          "state": "PLAYING",
+          "score": 1.6606944444444436,
+          "highScore": 0,
+          "coins": 0,
+          "totalCoins": 0,
+          "speed": 18.229166666666654,
+          "distance": 16.606944444444437,
+          "player": {
+            "lane": 1,
+            "x": 0,
+            "targetX": 0,
+            "y": 1.0767187499999986,
+            "z": 16.306874999999994,
+            "vy": 0,
+            "isJumping": false,
+            "isRolling": false,
+            "rollTimer": 0,
+            "hasHoverboard": false,
+            "hoverboardActive": false,
+            "invulnerableTimer": 0,
+            "activePowerUps": {},
+            "collisionEnded": false,
+            "supportSurfaceId": "route-ramp:ramp",
+            "contact": "SUPPORTED",
+            "supportDeparture": null,
+            "supportRampExit": {
+              "xMin": -1.2,
+              "xMax": 1.2,
+              "z": 24,
+              "y": 3
+            },
+            "godMode": false,
+            "supportSample": {
+              "x": 0,
+              "y": 1.0767187499999986,
+              "z": 16.306874999999994
+            }
+          },
+          "obstacles": [
+            {
+              "id": "route-ramp",
+              "type": "RAMP",
+              "lane": 1,
+              "x": 0,
+              "y": 0,
+              "z": 18,
+              "width": 2.4,
+              "height": 3,
+              "depth": 12
+            },
+            {
+              "id": "route-roof",
+              "type": "STATIC_TRAIN",
+              "lane": 1,
+              "x": 0,
+              "y": 0,
+              "z": 33,
+              "width": 2.4,
+              "height": 3,
+              "depth": 18
+            }
+          ],
+          "coinEntities": [],
+          "powerUpEntities": [],
+          "missions": [
+            {
+              "id": "m1",
+              "title": "COIN COLLECTOR",
+              "description": "Collect 30 coins in a single run",
+              "target": 30,
+              "current": 0,
+              "rewardCoins": 50,
+              "completed": false,
+              "type": "COLLECT_COINS"
+            },
+            {
+              "id": "m2",
+              "title": "HIGH JUMPER",
+              "description": "Perform 10 jumps in a single run",
+              "target": 10,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "JUMP_TIMES"
+            },
+            {
+              "id": "m3",
+              "title": "SLIDER PRO",
+              "description": "Perform 8 rolls under obstacles",
+              "target": 8,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "ROLL_TIMES"
+            },
+            {
+              "id": "m4",
+              "title": "SCORE RUNNER",
+              "description": "Reach a score of 500 in a single run",
+              "target": 500,
+              "current": 1,
+              "rewardCoins": 100,
+              "completed": false,
+              "type": "SCORE_REACH"
+            }
+          ],
+          "chase": {
+            "distance": 2.8,
+            "isNear": false
+          }
+        }
+      }
+    },
+    {
+      "name": "F-desktop-roof",
+      "snapshot": {
+        "contractVersion": 1,
+        "runId": "run-1",
+        "tick": 81,
+        "timeSec": 1.35,
+        "stepSec": 0.016666666666666666,
+        "phase": "RUNNING",
+        "seed": 1346457360,
+        "rngState": 1346457360,
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "simulationVersion": "pao10-fixed-v1",
+        "configId": "legacy-18-45-v1",
+        "contentRevision": "legacy-unseeded-spawner",
+        "lastInputSequence": 0,
+        "discontinuity": false,
+        "context": {
+          "state": "PLAYING",
+          "score": 2.4530624999999984,
+          "highScore": 0,
+          "coins": 0,
+          "totalCoins": 0,
+          "speed": 18.33749999999998,
+          "distance": 24.530624999999983,
+          "player": {
+            "lane": 1,
+            "x": 0,
+            "targetX": 0,
+            "y": 3,
+            "z": 24.23055555555554,
+            "vy": 0,
+            "isJumping": false,
+            "isRolling": false,
+            "rollTimer": 0,
+            "hasHoverboard": false,
+            "hoverboardActive": false,
+            "invulnerableTimer": 0,
+            "activePowerUps": {},
+            "collisionEnded": false,
+            "supportSurfaceId": "route-roof:roof",
+            "contact": "SUPPORTED",
+            "supportDeparture": null,
+            "supportRampExit": null,
+            "godMode": false,
+            "supportSample": {
+              "x": 0,
+              "y": 3,
+              "z": 24.23055555555554
+            }
+          },
+          "obstacles": [
+            {
+              "id": "route-ramp",
+              "type": "RAMP",
+              "lane": 1,
+              "x": 0,
+              "y": 0,
+              "z": 18,
+              "width": 2.4,
+              "height": 3,
+              "depth": 12
+            },
+            {
+              "id": "route-roof",
+              "type": "STATIC_TRAIN",
+              "lane": 1,
+              "x": 0,
+              "y": 0,
+              "z": 33,
+              "width": 2.4,
+              "height": 3,
+              "depth": 18
+            }
+          ],
+          "coinEntities": [],
+          "powerUpEntities": [],
+          "missions": [
+            {
+              "id": "m1",
+              "title": "COIN COLLECTOR",
+              "description": "Collect 30 coins in a single run",
+              "target": 30,
+              "current": 0,
+              "rewardCoins": 50,
+              "completed": false,
+              "type": "COLLECT_COINS"
+            },
+            {
+              "id": "m2",
+              "title": "HIGH JUMPER",
+              "description": "Perform 10 jumps in a single run",
+              "target": 10,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "JUMP_TIMES"
+            },
+            {
+              "id": "m3",
+              "title": "SLIDER PRO",
+              "description": "Perform 8 rolls under obstacles",
+              "target": 8,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "ROLL_TIMES"
+            },
+            {
+              "id": "m4",
+              "title": "SCORE RUNNER",
+              "description": "Reach a score of 500 in a single run",
+              "target": 500,
+              "current": 2,
+              "rewardCoins": 100,
+              "completed": false,
+              "type": "SCORE_REACH"
+            }
+          ],
+          "chase": {
+            "distance": 2.8,
+            "isNear": false
+          }
+        }
+      }
+    },
+    {
+      "name": "F-desktop-jump",
+      "snapshot": {
+        "contractVersion": 1,
+        "runId": "run-1",
+        "tick": 112,
+        "timeSec": 1.8666666666666667,
+        "stepSec": 0.016666666666666666,
+        "phase": "RUNNING",
+        "seed": 1346457360,
+        "rngState": 1346457360,
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "simulationVersion": "pao10-fixed-v1",
+        "configId": "legacy-18-45-v1",
+        "contentRevision": "legacy-unseeded-spawner",
+        "lastInputSequence": 1,
+        "discontinuity": false,
+        "context": {
+          "state": "PLAYING",
+          "score": 3.4039444444444418,
+          "highScore": 0,
+          "coins": 0,
+          "totalCoins": 0,
+          "speed": 18.46666666666664,
+          "distance": 34.03944444444442,
+          "player": {
+            "lane": 1,
+            "x": 0,
+            "targetX": 0,
+            "y": 3.418333333333333,
+            "z": 33.739374999999974,
+            "vy": 12.233333333333334,
+            "isJumping": true,
+            "isRolling": false,
+            "rollTimer": 0,
+            "hasHoverboard": false,
+            "hoverboardActive": false,
+            "invulnerableTimer": 0,
+            "activePowerUps": {},
+            "collisionEnded": false,
+            "supportSurfaceId": null,
+            "contact": "AIRBORNE",
+            "supportDeparture": null,
+            "supportRampExit": null,
+            "godMode": false,
+            "supportSample": {
+              "x": 0,
+              "y": 3.418333333333333,
+              "z": 33.739374999999974
+            }
+          },
+          "obstacles": [
+            {
+              "id": "route-ramp",
+              "type": "RAMP",
+              "lane": 1,
+              "x": 0,
+              "y": 0,
+              "z": 18,
+              "width": 2.4,
+              "height": 3,
+              "depth": 12
+            },
+            {
+              "id": "route-roof",
+              "type": "STATIC_TRAIN",
+              "lane": 1,
+              "x": 0,
+              "y": 0,
+              "z": 33,
+              "width": 2.4,
+              "height": 3,
+              "depth": 18
+            }
+          ],
+          "coinEntities": [],
+          "powerUpEntities": [],
+          "missions": [
+            {
+              "id": "m1",
+              "title": "COIN COLLECTOR",
+              "description": "Collect 30 coins in a single run",
+              "target": 30,
+              "current": 0,
+              "rewardCoins": 50,
+              "completed": false,
+              "type": "COLLECT_COINS"
+            },
+            {
+              "id": "m2",
+              "title": "HIGH JUMPER",
+              "description": "Perform 10 jumps in a single run",
+              "target": 10,
+              "current": 1,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "JUMP_TIMES"
+            },
+            {
+              "id": "m3",
+              "title": "SLIDER PRO",
+              "description": "Perform 8 rolls under obstacles",
+              "target": 8,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "ROLL_TIMES"
+            },
+            {
+              "id": "m4",
+              "title": "SCORE RUNNER",
+              "description": "Reach a score of 500 in a single run",
+              "target": 500,
+              "current": 3,
+              "rewardCoins": 100,
+              "completed": false,
+              "type": "SCORE_REACH"
+            }
+          ],
+          "chase": {
+            "distance": 2.8,
+            "isNear": false
+          }
+        }
+      }
+    },
+    {
+      "name": "F-desktop-land",
+      "snapshot": {
+        "contractVersion": 1,
+        "runId": "run-1",
+        "tick": 163,
+        "timeSec": 2.716666666666667,
+        "stepSec": 0.016666666666666666,
+        "phase": "RUNNING",
+        "seed": 1346457360,
+        "rngState": 1346457360,
+        "rngAlgorithmVersion": "mulberry32-v1",
+        "simulationVersion": "pao10-fixed-v1",
+        "configId": "legacy-18-45-v1",
+        "contentRevision": "legacy-unseeded-spawner",
+        "lastInputSequence": 1,
+        "discontinuity": false,
+        "context": {
+          "state": "PLAYING",
+          "score": 4.982819444444439,
+          "highScore": 0,
+          "coins": 0,
+          "totalCoins": 0,
+          "speed": 18.679166666666628,
+          "distance": 49.828194444444385,
+          "player": {
+            "lane": 1,
+            "x": 0,
+            "targetX": 0,
+            "y": 0,
+            "z": 49.52812499999994,
+            "vy": 0,
+            "isJumping": false,
+            "isRolling": false,
+            "rollTimer": 0,
+            "hasHoverboard": false,
+            "hoverboardActive": false,
+            "invulnerableTimer": 0,
+            "activePowerUps": {},
+            "collisionEnded": false,
+            "supportSurfaceId": "ground",
+            "contact": "SUPPORTED",
+            "supportDeparture": null,
+            "supportRampExit": null,
+            "godMode": false,
+            "supportSample": {
+              "x": 0,
+              "y": 0,
+              "z": 49.52812499999994
+            }
+          },
+          "obstacles": [
+            {
+              "id": "route-ramp",
+              "type": "RAMP",
+              "lane": 1,
+              "x": 0,
+              "y": 0,
+              "z": 18,
+              "width": 2.4,
+              "height": 3,
+              "depth": 12
+            },
+            {
+              "id": "route-roof",
+              "type": "STATIC_TRAIN",
+              "lane": 1,
+              "x": 0,
+              "y": 0,
+              "z": 33,
+              "width": 2.4,
+              "height": 3,
+              "depth": 18
+            }
+          ],
+          "coinEntities": [],
+          "powerUpEntities": [],
+          "missions": [
+            {
+              "id": "m1",
+              "title": "COIN COLLECTOR",
+              "description": "Collect 30 coins in a single run",
+              "target": 30,
+              "current": 0,
+              "rewardCoins": 50,
+              "completed": false,
+              "type": "COLLECT_COINS"
+            },
+            {
+              "id": "m2",
+              "title": "HIGH JUMPER",
+              "description": "Perform 10 jumps in a single run",
+              "target": 10,
+              "current": 1,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "JUMP_TIMES"
+            },
+            {
+              "id": "m3",
+              "title": "SLIDER PRO",
+              "description": "Perform 8 rolls under obstacles",
+              "target": 8,
+              "current": 0,
+              "rewardCoins": 40,
+              "completed": false,
+              "type": "ROLL_TIMES"
+            },
+            {
+              "id": "m4",
+              "title": "SCORE RUNNER",
+              "description": "Reach a score of 500 in a single run",
+              "target": 500,
+              "current": 4,
+              "rewardCoins": 100,
+              "completed": false,
+              "type": "SCORE_REACH"
+            }
+          ],
+          "chase": {
+            "distance": 2.8,
+            "isNear": false
+          }
+        }
+      }
+    }
+  ],
+  "trace": [
+    {
+      "tick": 1,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "vy": 0,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 1,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "vy": 0,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 2,
+      "x": 0,
+      "y": 0,
+      "z": 0.3001388888888889,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 4,
+      "x": 0,
+      "y": 0,
+      "z": 0.9006249999999999,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 4,
+      "x": 0,
+      "y": 0,
+      "z": 0.9006249999999999,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 5,
+      "x": 0,
+      "y": 0,
+      "z": 1.200972222222222,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 7,
+      "x": 0,
+      "y": 0,
+      "z": 1.8018749999999997,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 8,
+      "x": 0,
+      "y": 0,
+      "z": 2.1024305555555554,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 8,
+      "x": 0,
+      "y": 0,
+      "z": 2.1024305555555554,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 10,
+      "x": 0,
+      "y": 0,
+      "z": 2.70375,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 10,
+      "x": 0,
+      "y": 0,
+      "z": 2.70375,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 11,
+      "x": 0,
+      "y": 0,
+      "z": 3.004513888888889,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 13,
+      "x": 0,
+      "y": 0,
+      "z": 3.60625,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 14,
+      "x": 0,
+      "y": 0,
+      "z": 3.9072222222222224,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 14,
+      "x": 0,
+      "y": 0,
+      "z": 3.9072222222222224,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 16,
+      "x": 0,
+      "y": 0,
+      "z": 4.509375,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 17,
+      "x": 0,
+      "y": 0,
+      "z": 4.810555555555556,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 17,
+      "x": 0,
+      "y": 0,
+      "z": 4.810555555555556,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 19,
+      "x": 0,
+      "y": 0,
+      "z": 5.413125,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 20,
+      "x": 0,
+      "y": 0,
+      "z": 5.714513888888889,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 20,
+      "x": 0,
+      "y": 0,
+      "z": 5.714513888888889,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 22,
+      "x": 0,
+      "y": 0,
+      "z": 6.3175,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 23,
+      "x": 0,
+      "y": 0,
+      "z": 6.619097222222222,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 23,
+      "x": 0,
+      "y": 0,
+      "z": 6.619097222222222,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 25,
+      "x": 0,
+      "y": 0,
+      "z": 7.2225,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 25,
+      "x": 0,
+      "y": 0,
+      "z": 7.2225,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 26,
+      "x": 0,
+      "y": 0,
+      "z": 7.524305555555555,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 27,
+      "x": 0,
+      "y": 0,
+      "z": 7.826180555555555,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 28,
+      "x": 0,
+      "y": 0,
+      "z": 8.128124999999999,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 29,
+      "x": 0,
+      "y": 0,
+      "z": 8.430138888888887,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 30,
+      "x": 0,
+      "y": 0,
+      "z": 8.732222222222221,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 32,
+      "x": 0,
+      "y": 0,
+      "z": 9.33659722222222,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 32,
+      "x": 0,
+      "y": 0,
+      "z": 9.33659722222222,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 33,
+      "x": 0,
+      "y": 0,
+      "z": 9.638888888888888,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 35,
+      "x": 0,
+      "y": 0,
+      "z": 10.243680555555553,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 35,
+      "x": 0,
+      "y": 0,
+      "z": 10.243680555555553,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 36,
+      "x": 0,
+      "y": 0,
+      "z": 10.546180555555553,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 37,
+      "x": 0,
+      "y": 0,
+      "z": 10.848749999999997,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 38,
+      "x": 0,
+      "y": 0,
+      "z": 11.151388888888887,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 40,
+      "x": 0,
+      "y": 0,
+      "z": 11.756874999999997,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 41,
+      "x": 0,
+      "y": 0.014930555555555003,
+      "z": 12.05972222222222,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 41,
+      "x": 0,
+      "y": 0.014930555555555003,
+      "z": 12.05972222222222,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 43,
+      "x": 0,
+      "y": 0.1664062499999992,
+      "z": 12.665624999999997,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 43,
+      "x": 0,
+      "y": 0.1664062499999992,
+      "z": 12.665624999999997,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 44,
+      "x": 0,
+      "y": 0.24217013888888816,
+      "z": 12.968680555555553,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 45,
+      "x": 0,
+      "y": 0.3179513888888881,
+      "z": 13.271805555555552,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 47,
+      "x": 0,
+      "y": 0.4695659722222212,
+      "z": 13.878263888888885,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 47,
+      "x": 0,
+      "y": 0.4695659722222212,
+      "z": 13.878263888888885,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 48,
+      "x": 0,
+      "y": 0.5453993055555544,
+      "z": 14.181597222222218,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 50,
+      "x": 0,
+      "y": 0.6971180555555545,
+      "z": 14.788472222222218,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 50,
+      "x": 0,
+      "y": 0.6971180555555545,
+      "z": 14.788472222222218,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 51,
+      "x": 0,
+      "y": 0.773003472222221,
+      "z": 15.092013888888884,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 52,
+      "x": 0,
+      "y": 0.8489062499999989,
+      "z": 15.395624999999995,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 53,
+      "x": 0,
+      "y": 0.9248263888888877,
+      "z": 15.69930555555555,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 55,
+      "x": 0,
+      "y": 1.0767187499999986,
+      "z": 16.306874999999994,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 55,
+      "x": 0,
+      "y": 1.0767187499999986,
+      "z": 16.306874999999994,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 56,
+      "x": 0,
+      "y": 1.1526909722222207,
+      "z": 16.610763888888883,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 57,
+      "x": 0,
+      "y": 1.2286805555555542,
+      "z": 16.914722222222217,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 58,
+      "x": 0,
+      "y": 1.3046874999999982,
+      "z": 17.218749999999993,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 59,
+      "x": 0,
+      "y": 1.3807118055555536,
+      "z": 17.522847222222214,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 61,
+      "x": 0,
+      "y": 1.5328124999999977,
+      "z": 18.13124999999999,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 61,
+      "x": 0,
+      "y": 1.5328124999999977,
+      "z": 18.13124999999999,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 62,
+      "x": 0,
+      "y": 1.6088888888888864,
+      "z": 18.435555555555545,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 63,
+      "x": 0,
+      "y": 1.6849826388888864,
+      "z": 18.739930555555546,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 64,
+      "x": 0,
+      "y": 1.761093749999998,
+      "z": 19.04437499999999,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 65,
+      "x": 0,
+      "y": 1.8372222222222199,
+      "z": 19.34888888888888,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 66,
+      "x": 0,
+      "y": 1.9133680555555532,
+      "z": 19.653472222222213,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 67,
+      "x": 0,
+      "y": 1.989531249999998,
+      "z": 19.958124999999992,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 68,
+      "x": 0,
+      "y": 2.0657118055555532,
+      "z": 20.262847222222213,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 69,
+      "x": 0,
+      "y": 2.14190972222222,
+      "z": 20.56763888888888,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 70,
+      "x": 0,
+      "y": 2.218124999999998,
+      "z": 20.87249999999999,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 71,
+      "x": 0,
+      "y": 2.2943576388888864,
+      "z": 21.177430555555546,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 73,
+      "x": 0,
+      "y": 2.4468749999999977,
+      "z": 21.78749999999999,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 73,
+      "x": 0,
+      "y": 2.4468749999999977,
+      "z": 21.78749999999999,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 74,
+      "x": 0,
+      "y": 2.5231597222222195,
+      "z": 22.092638888888878,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 76,
+      "x": 0,
+      "y": 2.675781249999998,
+      "z": 22.70312499999999,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 76,
+      "x": 0,
+      "y": 2.675781249999998,
+      "z": 22.70312499999999,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 77,
+      "x": 0,
+      "y": 2.7521180555555524,
+      "z": 23.00847222222221,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 78,
+      "x": 0,
+      "y": 2.828472222222219,
+      "z": 23.313888888888876,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 79,
+      "x": 0,
+      "y": 2.9048437499999964,
+      "z": 23.619374999999987,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 80,
+      "x": 0,
+      "y": 2.9812326388888852,
+      "z": 23.92493055555554,
+      "vy": 0,
+      "supportSurfaceId": "route-ramp:ramp",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 81,
+      "x": 0,
+      "y": 3,
+      "z": 24.23055555555554,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 82,
+      "x": 0,
+      "y": 3,
+      "z": 24.536249999999985,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 83,
+      "x": 0,
+      "y": 3,
+      "z": 24.842013888888875,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 84,
+      "x": 0,
+      "y": 3,
+      "z": 25.147847222222207,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 85,
+      "x": 0,
+      "y": 3,
+      "z": 25.453749999999985,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 86,
+      "x": 0,
+      "y": 3,
+      "z": 25.75972222222221,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 88,
+      "x": 0,
+      "y": 3,
+      "z": 26.371874999999985,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 88,
+      "x": 0,
+      "y": 3,
+      "z": 26.371874999999985,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 89,
+      "x": 0,
+      "y": 3,
+      "z": 26.67805555555554,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 90,
+      "x": 0,
+      "y": 3,
+      "z": 26.98430555555554,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 91,
+      "x": 0,
+      "y": 3,
+      "z": 27.290624999999984,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 92,
+      "x": 0,
+      "y": 3,
+      "z": 27.597013888888874,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 93,
+      "x": 0,
+      "y": 3,
+      "z": 27.903472222222206,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 94,
+      "x": 0,
+      "y": 3,
+      "z": 28.209999999999983,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 95,
+      "x": 0,
+      "y": 3,
+      "z": 28.516597222222206,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 97,
+      "x": 0,
+      "y": 3,
+      "z": 29.12999999999998,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 97,
+      "x": 0,
+      "y": 3,
+      "z": 29.12999999999998,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 98,
+      "x": 0,
+      "y": 3,
+      "z": 29.436805555555537,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 99,
+      "x": 0,
+      "y": 3,
+      "z": 29.743680555555535,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 100,
+      "x": 0,
+      "y": 3,
+      "z": 30.05062499999998,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 101,
+      "x": 0,
+      "y": 3,
+      "z": 30.357638888888868,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 102,
+      "x": 0,
+      "y": 3,
+      "z": 30.664722222222203,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 103,
+      "x": 0,
+      "y": 3,
+      "z": 30.97187499999998,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 104,
+      "x": 0,
+      "y": 3,
+      "z": 31.2790972222222,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 105,
+      "x": 0,
+      "y": 3,
+      "z": 31.58638888888887,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 106,
+      "x": 0,
+      "y": 3,
+      "z": 31.89374999999998,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 107,
+      "x": 0,
+      "y": 3,
+      "z": 32.20118055555553,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 108,
+      "x": 0,
+      "y": 3,
+      "z": 32.50868055555553,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 109,
+      "x": 0,
+      "y": 3,
+      "z": 32.816249999999975,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 110,
+      "x": 0,
+      "y": 3,
+      "z": 33.123888888888864,
+      "vy": 0,
+      "supportSurfaceId": "route-roof:roof",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 111,
+      "x": 0,
+      "y": 3.214444444444444,
+      "z": 33.431597222222194,
+      "vy": 12.866666666666667,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 112,
+      "x": 0,
+      "y": 3.418333333333333,
+      "z": 33.739374999999974,
+      "vy": 12.233333333333334,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 113,
+      "x": 0,
+      "y": 3.6116666666666664,
+      "z": 34.047222222222196,
+      "vy": 11.600000000000001,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 114,
+      "x": 0,
+      "y": 3.7944444444444443,
+      "z": 34.35513888888886,
+      "vy": 10.966666666666669,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 115,
+      "x": 0,
+      "y": 3.9666666666666663,
+      "z": 34.66312499999997,
+      "vy": 10.333333333333336,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 116,
+      "x": 0,
+      "y": 4.128333333333333,
+      "z": 34.97118055555553,
+      "vy": 9.700000000000003,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 118,
+      "x": 0,
+      "y": 4.419999999999999,
+      "z": 35.58749999999997,
+      "vy": 8.433333333333337,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 118,
+      "x": 0,
+      "y": 4.419999999999999,
+      "z": 35.58749999999997,
+      "vy": 8.433333333333337,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 119,
+      "x": 0,
+      "y": 4.549999999999999,
+      "z": 35.89576388888886,
+      "vy": 7.800000000000004,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 120,
+      "x": 0,
+      "y": 4.669444444444443,
+      "z": 36.20409722222219,
+      "vy": 7.166666666666671,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 121,
+      "x": 0,
+      "y": 4.778333333333332,
+      "z": 36.51249999999997,
+      "vy": 6.5333333333333385,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 122,
+      "x": 0,
+      "y": 4.876666666666666,
+      "z": 36.82097222222219,
+      "vy": 5.900000000000006,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 123,
+      "x": 0,
+      "y": 4.964444444444444,
+      "z": 37.12951388888885,
+      "vy": 5.266666666666673,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 124,
+      "x": 0,
+      "y": 5.041666666666667,
+      "z": 37.438124999999964,
+      "vy": 4.63333333333334,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 125,
+      "x": 0,
+      "y": 5.108333333333333,
+      "z": 37.74680555555552,
+      "vy": 4.000000000000007,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 126,
+      "x": 0,
+      "y": 5.164444444444444,
+      "z": 38.055555555555515,
+      "vy": 3.366666666666674,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 127,
+      "x": 0,
+      "y": 5.21,
+      "z": 38.36437499999996,
+      "vy": 2.7333333333333405,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 128,
+      "x": 0,
+      "y": 5.245,
+      "z": 38.67326388888885,
+      "vy": 2.100000000000007,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 129,
+      "x": 0,
+      "y": 5.269444444444445,
+      "z": 38.98222222222218,
+      "vy": 1.466666666666674,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 130,
+      "x": 0,
+      "y": 5.283333333333334,
+      "z": 39.291249999999955,
+      "vy": 0.8333333333333406,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 131,
+      "x": 0,
+      "y": 5.286666666666668,
+      "z": 39.600347222222176,
+      "vy": 0.20000000000000728,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 132,
+      "x": 0,
+      "y": 5.2794444444444455,
+      "z": 39.90951388888884,
+      "vy": -0.433333333333326,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 133,
+      "x": 0,
+      "y": 5.261666666666668,
+      "z": 40.21874999999995,
+      "vy": -1.0666666666666593,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 134,
+      "x": 0,
+      "y": 5.233333333333334,
+      "z": 40.528055555555504,
+      "vy": -1.6999999999999926,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 135,
+      "x": 0,
+      "y": 5.1944444444444455,
+      "z": 40.83743055555551,
+      "vy": -2.333333333333326,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 136,
+      "x": 0,
+      "y": 5.145000000000001,
+      "z": 41.14687499999995,
+      "vy": -2.9666666666666592,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 137,
+      "x": 0,
+      "y": 5.085000000000002,
+      "z": 41.45638888888884,
+      "vy": -3.5999999999999925,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 138,
+      "x": 0,
+      "y": 5.014444444444447,
+      "z": 41.765972222222175,
+      "vy": -4.233333333333325,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 139,
+      "x": 0,
+      "y": 4.933333333333335,
+      "z": 42.07562499999995,
+      "vy": -4.866666666666658,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 140,
+      "x": 0,
+      "y": 4.841666666666669,
+      "z": 42.38534722222217,
+      "vy": -5.499999999999991,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 141,
+      "x": 0,
+      "y": 4.739444444444446,
+      "z": 42.69513888888884,
+      "vy": -6.133333333333324,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 142,
+      "x": 0,
+      "y": 4.626666666666669,
+      "z": 43.00499999999995,
+      "vy": -6.766666666666657,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 143,
+      "x": 0,
+      "y": 4.503333333333336,
+      "z": 43.314930555555506,
+      "vy": -7.39999999999999,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 144,
+      "x": 0,
+      "y": 4.369444444444447,
+      "z": 43.62493055555551,
+      "vy": -8.033333333333323,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 145,
+      "x": 0,
+      "y": 4.225000000000003,
+      "z": 43.93499999999995,
+      "vy": -8.666666666666655,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 146,
+      "x": 0,
+      "y": 4.070000000000004,
+      "z": 44.24513888888884,
+      "vy": -9.299999999999988,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 147,
+      "x": 0,
+      "y": 3.9044444444444486,
+      "z": 44.555347222222174,
+      "vy": -9.933333333333321,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 148,
+      "x": 0,
+      "y": 3.728333333333338,
+      "z": 44.86562499999995,
+      "vy": -10.566666666666654,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 149,
+      "x": 0,
+      "y": 3.5416666666666714,
+      "z": 45.17597222222217,
+      "vy": -11.199999999999987,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 150,
+      "x": 0,
+      "y": 3.3444444444444494,
+      "z": 45.48638888888884,
+      "vy": -11.83333333333332,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 151,
+      "x": 0,
+      "y": 3.136666666666672,
+      "z": 45.79687499999995,
+      "vy": -12.466666666666653,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 152,
+      "x": 0,
+      "y": 2.9183333333333388,
+      "z": 46.1074305555555,
+      "vy": -13.099999999999985,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 153,
+      "x": 0,
+      "y": 2.68944444444445,
+      "z": 46.418055555555505,
+      "vy": -13.733333333333318,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 154,
+      "x": 0,
+      "y": 2.450000000000006,
+      "z": 46.72874999999995,
+      "vy": -14.366666666666651,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 155,
+      "x": 0,
+      "y": 2.2000000000000064,
+      "z": 47.039513888888834,
+      "vy": -14.999999999999984,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 156,
+      "x": 0,
+      "y": 1.9394444444444512,
+      "z": 47.35034722222217,
+      "vy": -15.633333333333317,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 157,
+      "x": 0,
+      "y": 1.6683333333333403,
+      "z": 47.661249999999946,
+      "vy": -16.26666666666665,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 158,
+      "x": 0,
+      "y": 1.3866666666666738,
+      "z": 47.972222222222165,
+      "vy": -16.899999999999984,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 159,
+      "x": 0,
+      "y": 1.0944444444444519,
+      "z": 48.28326388888883,
+      "vy": -17.533333333333317,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 160,
+      "x": 0,
+      "y": 0.7916666666666744,
+      "z": 48.59437499999994,
+      "vy": -18.16666666666665,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 161,
+      "x": 0,
+      "y": 0.4783333333333414,
+      "z": 48.905555555555495,
+      "vy": -18.799999999999983,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 162,
+      "x": 0,
+      "y": 0.15444444444445277,
+      "z": 49.216805555555496,
+      "vy": -19.433333333333316,
+      "supportSurfaceId": null,
+      "contact": "AIRBORNE"
+    },
+    {
+      "tick": 163,
+      "x": 0,
+      "y": 0,
+      "z": 49.52812499999994,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 164,
+      "x": 0,
+      "y": 0,
+      "z": 49.839513888888824,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 165,
+      "x": 0,
+      "y": 0,
+      "z": 50.15097222222216,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 166,
+      "x": 0,
+      "y": 0,
+      "z": 50.462499999999935,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 167,
+      "x": 0,
+      "y": 0,
+      "z": 50.77409722222215,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 168,
+      "x": 0,
+      "y": 0,
+      "z": 51.08576388888882,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 169,
+      "x": 0,
+      "y": 0,
+      "z": 51.39749999999993,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 170,
+      "x": 0,
+      "y": 0,
+      "z": 51.70930555555548,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 171,
+      "x": 0,
+      "y": 0,
+      "z": 52.02118055555548,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 172,
+      "x": 0,
+      "y": 0,
+      "z": 52.333124999999924,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 173,
+      "x": 0,
+      "y": 0,
+      "z": 52.645138888888816,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 174,
+      "x": 0,
+      "y": 0,
+      "z": 52.95722222222215,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 175,
+      "x": 0,
+      "y": 0,
+      "z": 53.269374999999926,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 176,
+      "x": 0,
+      "y": 0,
+      "z": 53.58159722222215,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 177,
+      "x": 0,
+      "y": 0,
+      "z": 53.89388888888882,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    },
+    {
+      "tick": 178,
+      "x": 0,
+      "y": 0,
+      "z": 54.206249999999926,
+      "vy": 0,
+      "supportSurfaceId": "ground",
+      "contact": "SUPPORTED"
+    }
+  ]
+}

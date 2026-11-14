@@ -1,0 +1,26 @@
+{
+  "run": "full-final",
+  "source": ".pao17-local/bright-theme/old-output/full-final/PAO-12/runs/final/F-browser-isolated-highest-speed-large-step-and-pose-matrix.json",
+  "sha256": "d14cd782ee9da01b4c97ca59a1df442e6d57bf4b2cd8b91adcf02a7feed2eb3d",
+  "errors": [
+    "https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap: net::ERR_CONNECTION_CLOSED",
+    "error: Failed to load resource: net::ERR_CONNECTION_CLOSED",
+    "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap: net::ERR_CONNECTION_CLOSED",
+    "error: Failed to load resource: net::ERR_CONNECTION_CLOSED"
+  ],
+  "bodyResults": [
+    {
+      "level": "F-isolated-browser-simulation-not-natural-app-run",
+      "maxSpeed": 45,
+      "stepSec": 0.125,
+      "thinPhase": "ENDED",
+      "lowStanding": true,
+      "lowRolling": true,
+      "lowJumpClear": false,
+      "highStanding": true,
+      "highRollingClear": false,
+      "airborneRollingHit": true
+    }
+  ],
+  "classification": "Live external Google Fonts connection closed; physics body assertions succeeded, afterEach network-error assertion failed. No code/old assertion/environment interception changed in response; full recheck preserves first failure."
+}

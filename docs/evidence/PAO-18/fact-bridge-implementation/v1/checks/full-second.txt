@@ -1,0 +1,119 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/fact-bridge/playwright.config.ts
+
+[WebServer] (node:13756) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 72 tests using 1 worker
+
+(node:23612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 .pao18.local\fact-bridge\suite\font-resources.pw.ts:40:1 › N real application uses local faces and glyphs with Google domains unavailable (6.1s)
+  ok  2 .pao18.local\fact-bridge\suite\font-resources.pw.ts:65:1 › F independent local font 404 remains visible to unchanged error sensors (3.7s)
+  ok  3 .pao18.local\fact-bridge\suite\font-resources.pw.ts:79:3 › N pages and F typography matrix 1280x720 (51.4s)
+  ok  4 .pao18.local\fact-bridge\suite\font-resources.pw.ts:79:3 › N pages and F typography matrix 390x844 (49.9s)
+  ok  5 .pao18.local\fact-bridge\suite\font-resources.pw.ts:79:3 › N pages and F typography matrix 844x390 (51.7s)
+  ok  6 .pao18.local\fact-bridge\suite\gameplay.pw.ts:50:3 › 状态机（确定性） › MENU → PLAYING via start button (4.5s)
+  ok  7 .pao18.local\fact-bridge\suite\gameplay.pw.ts:56:3 › 状态机（确定性） › PLAYING → 切道（左/右 + 边界钳制） (5.1s)
+  ok  8 .pao18.local\fact-bridge\suite\gameplay.pw.ts:73:3 › 状态机（确定性） › PLAYING → 跳跃（isJumping=true） (4.7s)
+  ok  9 .pao18.local\fact-bridge\suite\gameplay.pw.ts:79:3 › 状态机（确定性） › PLAYING → 翻滚（isRolling=true） (4.2s)
+  ok 10 .pao18.local\fact-bridge\suite\gameplay.pw.ts:85:3 › 状态机（确定性） › PLAYING → PAUSED via Escape，再 resume 回到 PLAYING (4.6s)
+  ok 11 .pao18.local\fact-bridge\suite\gameplay.pw.ts:98:3 › 截图回放（确定性） › 捕获 6 张高保真截图（无 GAMEOVER 风险） (6.2s)
+  ok 12 .pao18.local\fact-bridge\suite\pao10-review-fixes.pw.ts:35:1 › native-menu-slider-and-start-space (3.8s)
+  ok 13 .pao18.local\fact-bridge\suite\pao10-review-fixes.pw.ts:48:1 › paused-rejects-motion-and-resume-space (4.6s)
+  ok 14 .pao18.local\fact-bridge\suite\pao10-review-fixes.pw.ts:67:1 › playing-interactive-arrows-do-not-move-player (4.0s)
+  ok 15 .pao18.local\fact-bridge\suite\pao10-simulation.pw.ts:29:1 › N-desktop-production-keyboard-flow (52.1s)
+  ok 16 .pao18.local\fact-bridge\suite\pao10-simulation.pw.ts:67:1 › N-mobile-production-touch (8.1s)
+  ok 17 .pao18.local\fact-bridge\suite\pao10-simulation.pw.ts:97:1 › F-lifecycle-clears-input-and-hidden-time (6.9s)
+  ok 18 .pao18.local\fact-bridge\suite\pao11-surfaces.pw.ts:95:3 › F-desktop-keyboard-ground-ramp-roof-jump-ground (8.6s)
+  ok 19 .pao18.local\fact-bridge\suite\pao11-surfaces.pw.ts:95:3 › F-portrait-touch-ground-ramp-roof-jump-ground (9.8s)
+  ok 20 .pao18.local\fact-bridge\suite\pao11-surfaces.pw.ts:124:1 › F-high-base-ramp-5-to-8-continuous-roof (7.3s)
+  x  21 .pao18.local\fact-bridge\suite\pao11-surfaces.pw.ts:142:1 › N-production-input-and-supported-snapshot (783ms)
+(node:7336) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 22 .pao18.local\fact-bridge\suite\pao12-collision.pw.ts:79:1 › F-desktop-relative-high-speed-thin-train-terminal-once (6.7s)
+  ok 23 .pao18.local\fact-bridge\suite\pao12-collision.pw.ts:119:1 › F-portrait-same-tick-shield-multi-hit-single-consumption (5.3s)
+  ok 24 .pao18.local\fact-bridge\suite\pao12-collision.pw.ts:144:1 › F-desktop-airborne-roll-uses-actual-height-box (5.8s)
+  ok 25 .pao18.local\fact-bridge\suite\pao12-collision.pw.ts:167:1 › F-browser-isolated-highest-speed-large-step-and-pose-matrix (3.8s)
+  ok 26 .pao18.local\fact-bridge\suite\pao12-collision.pw.ts:201:1 › F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position (6.2s)
+  ok 27 .pao18.local\fact-bridge\suite\pao13-track.pw.ts:78:1 › N-desktop-seeded-generation-keyboard-and-reset (7.1s)
+  ok 28 .pao18.local\fact-bridge\suite\pao13-track.pw.ts:109:1 › N-portrait-seeded-generation-touch (5.8s)
+  ok 29 .pao18.local\fact-bridge\suite\pao13-track.pw.ts:138:1 › F-isolated-browser-real-physics-segment-and-pair-witnesses (4.7s)
+  ok 30 .pao18.local\fact-bridge\suite\pao14-application.pw.ts:43:1 › N-desktop-pause-restart-stale-run-and-DOM-tamper (13.0s)
+  ok 31 .pao18.local\fact-bridge\suite\pao14-application.pw.ts:77:1 › N-portrait-touch-paused-input-and-return (5.2s)
+  ok 32 .pao18.local\fact-bridge\suite\pao14-application.pw.ts:94:1 › F-30-pickups-50-reward-save-failure-retry-and-repeat-finish (9.6s)
+  ok 33 .pao18.local\fact-bridge\suite\pao14-application.pw.ts:130:1 › F-legacy-rights-shop-purchase-and-refresh (8.7s)
+  ok 34 .pao18.local\fact-bridge\suite\pao14-application.pw.ts:147:1 › F-same-tick-terminal-pickup-and-gameover-shop (4.9s)
+  ok 35 .pao18.local\fact-bridge\suite\pao14-application.pw.ts:171:1 › F-two-tabs-conflicting-transactions-do-not-overwrite (17.9s)
+  ok 36 .pao18.local\fact-bridge\suite\pao14-application.pw.ts:190:1 › F-pause-isolates-input-while-save-lock-is-held (6.6s)
+  ok 37 .pao18.local\fact-bridge\suite\pao14-application.pw.ts:211:1 › F-reentrant-end-command-seals-complete-fatal-tick (4.8s)
+  ok 38 .pao18.local\fact-bridge\suite\pao14-application.pw.ts:231:1 › F-native-slider-preserves-draft-while-save-lock-is-held (5.0s)
+  ok 39 .pao18.local\fact-bridge\suite\pao14-review.pw.ts:54:1 › F-review-audio-different-fields-under-lock (12.5s)
+  ok 40 .pao18.local\fact-bridge\suite\pao14-review.pw.ts:78:1 › F-review-audio-repeated-toggle-under-lock (6.7s)
+  ok 41 .pao18.local\fact-bridge\suite\pao14-review.pw.ts:98:1 › F-review-audio-volume-and-toggle-queue (9.7s)
+  ok 42 .pao18.local\fact-bridge\suite\pao14-review.pw.ts:114:1 › F-review-shop-stale-funds-explicit-retry (13.4s)
+  ok 43 .pao18.local\fact-bridge\suite\pao14-unknown-commit.pw.ts:8:3 › F-unknown-toggle-1-confirmation-read-failures (4.7s)
+  ok 44 .pao18.local\fact-bridge\suite\pao14-unknown-commit.pw.ts:8:3 › F-unknown-toggle-2-confirmation-read-failures (4.0s)
+  ok 45 .pao18.local\fact-bridge\suite\pao17-lifecycle.pw.ts:11:1 › F real renderer fallback, 20 cycles / 10 resets, dispose/remount, late shared load and host canvas (4.5s)
+  ok 46 .pao18.local\fact-bridge\suite\pao17-lifecycle.pw.ts:53:1 › F production main dispose bridge releases the actual renderer engine and scene (6.2s)
+  ok 47 .pao18.local\fact-bridge\suite\pao17-ramp-view.pw.ts:5:29 › F actual wedge-roof walk, triangle support and exit at base Y=0 (7.6s)
+  ok 48 .pao18.local\fact-bridge\suite\pao17-ramp-view.pw.ts:5:29 › F actual wedge-roof walk, triangle support and exit at base Y=5 (8.1s)
+  ok 49 .pao18.local\fact-bridge\suite\pao17-structure.pw.ts:8:1 › F source raw and legacy HTTP identity (3.7s)
+  ok 50 .pao18.local\fact-bridge\suite\pao17-structure.pw.ts:23:37 › N desktop keyboard legacy start motion pause resume end restart (29.9s)
+  ok 51 .pao18.local\fact-bridge\suite\pao17-structure.pw.ts:23:37 › N 390 touch legacy start motion pause resume end restart (34.2s)
+  ok 52 .pao18.local\fact-bridge\suite\pao17-theme.pw.ts:7:1 › F successful legacy GLB and shadows warmed before 20 bounded recycles / 10 resets / full disposal (8.7s)
+  ok 53 .pao18.local\fact-bridge\suite\pao17-theme.pw.ts:50:37 › N bright desktop keyboard motion pause resume collision and restart (30.6s)
+  ok 54 .pao18.local\fact-bridge\suite\pao17-theme.pw.ts:50:37 › N bright 390 touch motion pause resume collision and restart (38.8s)
+  ok 55 .pao18.local\fact-bridge\suite\pao18-controller-camera.pw.ts:8:1 › F actual legacy renderer: 390 framing, actual group pause, support edges and stable resources (37.0s)
+  ok 56 .pao18.local\fact-bridge\suite\pao18-controller-camera.pw.ts:105:1 › F runtime modules raw identity and actual legacy GLB HTTP hash (9.3s)
+  ok 57 .pao18.local\fact-bridge\suite\pao18-controller-camera.pw.ts:119:37 › N desktop keyboard controls, real group pause, HUD profile and restart (11.7s)
+  ok 58 .pao18.local\fact-bridge\suite\pao18-controller-camera.pw.ts:119:37 › N 390 touch controls, real group pause, HUD profile and restart (16.0s)
+  ok 59 .pao18.local\fact-bridge\suite\pao18-controller-camera.pw.ts:157:1 › F recorded authoritative ramp-to-roof, jump/slide and pause with the production main (14.8s)
+  ok 60 .pao18.local\fact-bridge\suite\pao18-controller-camera.pw.ts:188:1 › F real legacy request delayed across reset: same asset ID, latest skin, dispose before completion (10.4s)
+  ok 61 .pao18.local\fact-bridge\suite\pao18-controller-camera.pw.ts:227:1 › F fixed old HUD five-row profile measured with actual CSS at 390 and desktop (39.2s)
+  ok 62 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:4:1 › N production exposes committed motion delivery and natural input is single-path (9.6s)
+  ok 63 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:29:1 › F actual multi-step production bridge, sound order, duplicate render and reentrant pause (10.5s)
+  ok 64 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:75:1 › F failed real step keeps last commit and audio silent; original application restart recovers (11.6s)
+  ok 65 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:97:1 › F HTTP raw source identity witnesses (disk hash comparison recorded by the local harness) (7.9s)
+  ok 66 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:111:1 › F original audio API ordering and throwing legacy observer do not drain render (9.7s)
+  ok 67 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:139:1 › N touch input and restart use the same committed bridge at 390 (12.6s)
+  ok 68 .pao18.local\fact-bridge\suite\pao18-fact-bridge.pw.ts:162:1 › F bounded audio overflow and render failure receipts remain independent (9.3s)
+  ok 69 .pao18.local\fact-bridge\suite\pao6-baseline.pw.ts:64:1 › ramp-roof-jump-land (15.1s)
+  ok 70 .pao18.local\fact-bridge\suite\pao6-baseline.pw.ts:76:1 › obstacles-failure-restart (23.5s)
+  ok 71 .pao18.local\fact-bridge\suite\pao6-baseline.pw.ts:86:1 › powerups-shield-missions (25.1s)
+  ok 72 .pao18.local\fact-bridge\suite\pao6-baseline.pw.ts:98:1 › mobile-touch-layout (20.7s)
+
+
+  1) .pao18.local\fact-bridge\suite\pao11-surfaces.pw.ts:142:1 › N-production-input-and-supported-snapshot 
+
+    Error: apiRequestContext.get: read ECONNRESET
+    Call log:
+      - → GET http://127.0.0.1:5198/src/main.ts?raw
+        - user-agent: Playwright/1.62.1 (x64; windows 10.0) node/24.18
+        - accept: */*
+        - accept-encoding: gzip,deflate,br
+
+
+      46 |   for (const source of ['src/main.ts', 'src/systems/physics.ts']) {
+      47 |     const disk = await readFile(resolve(source), 'utf8');
+    > 48 |     const response = await request.get(`/${source}?raw`), body = await response.text();
+         |                                    ^
+      49 |     const exactRawSourceMatch = response.ok() && body.includes(JSON.stringify(disk));
+      50 |     expect(exactRawSourceMatch, `5182 must serve current checkout ${source}`).toBe(true);
+      51 |     sources.push({ source, sha256: createHash('sha256').update(disk).digest('hex'), exactRawSourceMatch });
+        at D:\worker\paoku-sessions\pao-18-font-diagnosis\.pao18.local\fact-bridge\suite\pao11-surfaces.pw.ts:48:36
+
+    Error Context: .pao18.local\fact-bridge\full-second-artifacts\pao11-surfaces.pw.ts-N-pro-04f00-nput-and-supported-snapshot\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    .pao18.local\fact-bridge\full-second-artifacts\pao11-surfaces.pw.ts-N-pro-04f00-nput-and-supported-snapshot\trace.zip
+    Usage:
+
+        npx playwright show-trace .pao18.local\fact-bridge\full-second-artifacts\pao11-surfaces.pw.ts-N-pro-04f00-nput-and-supported-snapshot\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    .pao18.local\fact-bridge\suite\pao11-surfaces.pw.ts:142:1 › N-production-input-and-supported-snapshot 
+  71 passed (16.0m)

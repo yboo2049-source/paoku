@@ -1,0 +1,57 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao18-character.test.ts tests/unit/pao18-camera.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18
+
+stdout | tests/unit/pao18-character.test.ts > rejects a clip targeting the simulation world root instead of allowing double displacement
+BJS - [00:40:41]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao18-character.test.ts (7 tests | 1 failed) 42ms
+   × rejects a clip targeting the simulation world root instead of allowing double displacement 10ms
+ ❯ tests/unit/pao18-camera.test.ts (8 tests | 1 failed) 60ms
+   × reserves the fixed old HUD maximum five buff rows as well as its speedometer 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao18-camera.test.ts > reserves the fixed old HUD maximum five buff rows as well as its speedometer
+AssertionError: expected 112 to be greater than or equal to 240
+ ❯ tests/unit/pao18-camera.test.ts:19:45
+     17|
+     18| it('reserves the fixed old HUD maximum five buff rows as well as its s…
+     19|   expect(legacyHudProfile(390, 667).bottom).toBeGreaterThanOrEqual(240…
+       |                                             ^
+     20| });
+     21|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/pao18-character.test.ts > rejects a clip targeting the simulation world root instead of allowing double displacement
+AssertionError: expected [ 104.2, 3, 40 ] to deeply equal [ 1.25, 3, 40 ]
+
+- Expected
++ Received
+
+  [
+-   1.25,
++   104.2,
+    3,
+    40,
+  ]
+
+ ❯ tests/unit/pao18-character.test.ts:99:35
+     97|   const bad = new AnimationGroup('run', scene); bad.addTargetedAnimati…
+     98|   view.attach([bad]); view.sync(context(), 0.03);
+     99|   expect(root.position.asArray()).toEqual([1.25, 3, 40]); expect(view.…
+       |                                   ^
+    100|   expect(view.status.clip).toBeNull();
+    101| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 13 passed (15)
+   Start at  00:40:39
+   Duration  2.41s (transform 116ms, setup 0ms, import 4.09s, tests 102ms, environment 0ms)

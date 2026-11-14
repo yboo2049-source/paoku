@@ -1,0 +1,27 @@
+[
+  {
+    "path": "docs/evidence/PAO-13/runs/verified/screenshots/N-desktop-seeded-jump.png",
+    "sha256": "7036c84ecb1100815c16e5e7a6e8ede2f4c7f4efcb4b13ef4bd1057e3f90f3bb",
+    "bytes": 478543
+  },
+  {
+    "path": "docs/evidence/PAO-13/runs/verified/screenshots/N-desktop-seeded-paused.png",
+    "sha256": "79ee26ce468d3c18624640f67b75ddbe5dc76b8c48739903c2a15d8d2c55cbfd",
+    "bytes": 445522
+  },
+  {
+    "path": "docs/evidence/PAO-13/runs/verified/screenshots/N-desktop-seeded-restart.png",
+    "sha256": "c2549315a2322ec3861e3b8a519ff02dc825f8f22a59dc589056b2652d9f9ddf",
+    "bytes": 495332
+  },
+  {
+    "path": "docs/evidence/PAO-13/runs/verified/screenshots/N-portrait-seeded-jump.png",
+    "sha256": "206e67a221b70203e93543175b5119d7013d25e9e651d720aaf3858e72e8f43d",
+    "bytes": 205495
+  },
+  {
+    "path": "docs/evidence/PAO-13/runs/verified/screenshots/N-portrait-seeded-paused.png",
+    "sha256": "d5a548e9969de28ba3fc435f6d86688011a42bafa7cce3c16dab5f5bd43916d9",
+    "bytes": 144941
+  }
+]

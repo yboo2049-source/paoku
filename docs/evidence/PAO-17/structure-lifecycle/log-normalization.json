@@ -1,0 +1,191 @@
+{
+  "note": "Only line-ending/trailing whitespace and extra EOF blank lines normalized. Original raw bytes preserved locally; failures/assertions/timing unchanged. submittedSha256 identifies UTF-8 LF content; later CRLF checkout requires normalization before comparison.",
+  "records": [
+    {
+      "file": "A-build.txt",
+      "originalPath": ".pao17-local/raw-logs/A-build.txt",
+      "rawSha256": "12870633e88fbf8b97d8dd0071dad690cc82ec8d447f2c64e0896e78cf4d606a",
+      "submittedSha256": "38897b4440fb8734df0f11325d949c6654d7b07f3b38f9a72a40e70f65984fa2"
+    },
+    {
+      "file": "A-e2e-first.txt",
+      "originalPath": ".pao17-local/raw-logs/A-e2e-first.txt",
+      "rawSha256": "b0912ca89760bc64a170bc0e1905c7c01e28f3276dffc36bb76fd556ace88eb7",
+      "submittedSha256": "2c743652e0e33fb3068dac54cb4415916a48a6d5b2d5958ce4c2f02f5ef6f0c7"
+    },
+    {
+      "file": "A-final-e2e.txt",
+      "originalPath": ".pao17-local/raw-logs/A-final-e2e.txt",
+      "rawSha256": "aa7840c7e17979a397d78d3e33437b02f89fa440948128041d7ba75dc735b73d",
+      "submittedSha256": "b0460a8c8592c2cfec63dab11acdfacafef30a5519dea379bddeb479571c79ae"
+    },
+    {
+      "file": "A-targeted-e2e.txt",
+      "originalPath": ".pao17-local/raw-logs/A-targeted-e2e.txt",
+      "rawSha256": "c6b3238a5732a11f37cfb613abd24d2dd11867d526c968c94cdf086f7fb91a64",
+      "submittedSha256": "66118bc20886d8facd9a96c7e86b4d4d5f2e927973ba360de61b60af9c543939"
+    },
+    {
+      "file": "A-targeted2-e2e.txt",
+      "originalPath": ".pao17-local/raw-logs/A-targeted2-e2e.txt",
+      "rawSha256": "3eca19ef445bb4a0a47c99cddf8e75f392dfda9b37e09845309d733d2d1bf607",
+      "submittedSha256": "642c7b0c78bef15e7817f2e025661fedc9b2fc8a6030789ac6918c2cabf92dfa"
+    },
+    {
+      "file": "A-unit.txt",
+      "originalPath": ".pao17-local/raw-logs/A-unit.txt",
+      "rawSha256": "9fdba6edae7a22cbeea981b128aff21248d8078da7ce87ed5cc973751a897670",
+      "submittedSha256": "8343cf3c705f3528e3b618750597790c2b422b15e6ab51d570b0634a54030293"
+    },
+    {
+      "file": "B-build.txt",
+      "originalPath": ".pao17-local/raw-logs/B-build.txt",
+      "rawSha256": "47e3396f2eeaf6306e70d02d09a271d1da473e74da702e4fd4ecf33ea4933af2",
+      "submittedSha256": "13cf48de25f5f5bac2c4e478168b6a36e7da1b674bafb2560159153a6658a305"
+    },
+    {
+      "file": "B-final-build.txt",
+      "originalPath": ".pao17-local/raw-logs/B-final-build.txt",
+      "rawSha256": "f2c6ec3e4bead38253c6ec6020f137fed1df7ef6e89b459724410a06c587bf29",
+      "submittedSha256": "fe2b79c8554e4ea5017c3d184a511a3022845540cf3b898bb43a05eee1a745b7"
+    },
+    {
+      "file": "B-final-e2e.txt",
+      "originalPath": ".pao17-local/raw-logs/B-final-e2e.txt",
+      "rawSha256": "8b8197653e1eb315d983d096314806a8bbc25851b55bdeeb26b45d44038fec2b",
+      "submittedSha256": "67549209b81f48be52661d4d1e4dbef63b1db6a0c8534beb9c5140fa59bb2fd8"
+    },
+    {
+      "file": "B-final-unit.txt",
+      "originalPath": ".pao17-local/raw-logs/B-final-unit.txt",
+      "rawSha256": "df89ccc606a22be3f28c062cdc1fce2f8d71ff37a3b3e1d93dfe87636aaffcc4",
+      "submittedSha256": "481495345d69e9fc8926fcbd0ac9dbb3bb507ad503b9ed0acebc280ace2f56a9"
+    },
+    {
+      "file": "B-targeted-e2e.txt",
+      "originalPath": ".pao17-local/raw-logs/B-targeted-e2e.txt",
+      "rawSha256": "2e7b937f484f96b91cb1b501e2fe1c1d93e591c7931532e747513152109255a3",
+      "submittedSha256": "5ba9d1b66c96e9e602ef02582048a8832aae2f424ebf432f1d42dca97ac71f4d"
+    },
+    {
+      "file": "B-unit.txt",
+      "originalPath": ".pao17-local/raw-logs/B-unit.txt",
+      "rawSha256": "0dc5c29f941647f0bd6457a008e48b9d370e664185fa0e9cf17d43d9edf11807",
+      "submittedSha256": "eb2457a620d18900842f6172847fcda8c9c85bdfb3d49057e2ead5055cf5ca6a"
+    },
+    {
+      "file": "load-rollback-green.txt",
+      "originalPath": ".pao17-local/raw-logs/load-rollback-green.txt",
+      "rawSha256": "a82bc030754c1e4381bf624e459ff342a42f777d8a743656dcd0f470e881df29",
+      "submittedSha256": "2a94a2e95ad3314ad6497d5e28209852a363c8a8fa3f0cffeaa77e0fe9e3d90d"
+    },
+    {
+      "file": "load-rollback-red.txt",
+      "originalPath": ".pao17-local/raw-logs/load-rollback-red.txt",
+      "rawSha256": "50afe9e2002836c66fa3055d5ef057fae6f23693546a3c373e0558c7a870f6eb",
+      "submittedSha256": "cb2a13221043b3edf7218242ddc809c817e4b03883d69e496cb04190e3ce9b18"
+    },
+    {
+      "file": "task1-green.txt",
+      "originalPath": ".pao17-local/raw-logs/task1-green.txt",
+      "rawSha256": "890cd1c16534bb2ffa414fad01d7c366a20b7853bfc3f889af77f6244d16bce8",
+      "submittedSha256": "1b742a8ceab64daea8034e2fa9121e35d488cd3546ab2e8dc623e487619d709a"
+    },
+    {
+      "file": "task1-red.txt",
+      "originalPath": ".pao17-local/raw-logs/task1-red.txt",
+      "rawSha256": "15675b182407661d3f47e659960f2fc93defc618a00c13620f8c5d5a11c15fff",
+      "submittedSha256": "da40340574a7e5966d92e748b9a42ee1b87d3c24d513b421c4cd34107587c043"
+    },
+    {
+      "file": "task2-green-attempt1.txt",
+      "originalPath": ".pao17-local/raw-logs/task2-green-attempt1.txt",
+      "rawSha256": "6b0f308d7dde86ef849d308e5c110e034440630bbf6d06c7025f5c1a3b7179d0",
+      "submittedSha256": "e87a78e4be1478e8f99710fa0f42cbab50d96893616470d13141945e7e28229a"
+    },
+    {
+      "file": "task2-green-final.txt",
+      "originalPath": ".pao17-local/raw-logs/task2-green-final.txt",
+      "rawSha256": "6036dc861f5d3678dec081b73a258acab6148b617c0a70b46ffc9d6d96b59d4a",
+      "submittedSha256": "b55dfea44564c1a1526e155e2534261bae2528d57a174b8dac798f62f6685f5a"
+    },
+    {
+      "file": "task2-green.txt",
+      "originalPath": ".pao17-local/raw-logs/task2-green.txt",
+      "rawSha256": "d851a92ca87ed6131615eeec1edf412acc0c64a4293b568047b133cbd5ddb083",
+      "submittedSha256": "06a0c332a589b93fa85611eafaac973b73a55a5334b3a10bd304d1cd393c1c93"
+    },
+    {
+      "file": "task2-red.txt",
+      "originalPath": ".pao17-local/raw-logs/task2-red.txt",
+      "rawSha256": "54281bae54088dcd434c248a7c51c136ed8d5734b4c83066e5da558a269c8601",
+      "submittedSha256": "ec92a703a31e32f5c7ab8c6108d94141341ef21d16c986eab41bcbd0ca228b97"
+    },
+    {
+      "file": "task3-green-attempt1.txt",
+      "originalPath": ".pao17-local/raw-logs/task3-green-attempt1.txt",
+      "rawSha256": "fdae10653ffb04165df0584652a0ef47a9d071e70a92dedd90ed3bc23f6effdb",
+      "submittedSha256": "e8550624c473e145c7a113a267370678543934966d0f77aa00915de6784f742d"
+    },
+    {
+      "file": "task3-green-attempt3.txt",
+      "originalPath": ".pao17-local/raw-logs/task3-green-attempt3.txt",
+      "rawSha256": "c62ac9fec5fb6d3344453b74a285be3344ae6de183e177feca83bf0914c9a498",
+      "submittedSha256": "232a74a45e3c9373a72a4910e155422119c3ff1f034eedce47c315376da17590"
+    },
+    {
+      "file": "task3-green-final.txt",
+      "originalPath": ".pao17-local/raw-logs/task3-green-final.txt",
+      "rawSha256": "d9b671b0f75504506e90308ae277bb05e4c8cb14a0e59105db5cdbc28fd03f04",
+      "submittedSha256": "c0c69570d76aa2c12b78c2c44719a1042deaa7b4cf2bc70bb809d3379f78e6c3"
+    },
+    {
+      "file": "task3-red.txt",
+      "originalPath": ".pao17-local/raw-logs/task3-red.txt",
+      "rawSha256": "e90cfc6ad56a75f25eb3a59f8f18e7705a494342742012229a66a8f1ed05d69a",
+      "submittedSha256": "6571c24dc334598c1da335b6a91cb4077fc3829359740f3e1dde5e0eae6e90a0"
+    },
+    {
+      "file": "task4-5-green.txt",
+      "originalPath": ".pao17-local/raw-logs/task4-5-green.txt",
+      "rawSha256": "d427118ae335b2cc405d7cb98519faa42813ab3b5e993c4a99d7e8284e5e91e9",
+      "submittedSha256": "61b9e755497035d2312a8ea78bbca951379255f3b5b700f459416614b5ea5507"
+    },
+    {
+      "file": "task4-5-red.txt",
+      "originalPath": ".pao17-local/raw-logs/task4-5-red.txt",
+      "rawSha256": "4e29aefc0b5534b3fd0e344f1d2f2ec8e527a1cb0b332f88bd1b4923dd05dc4d",
+      "submittedSha256": "ba5f4c5f6fa8cef09ac928951c20af2308ab42aec8181fe882c707f964a39798"
+    },
+    {
+      "file": "task5-browser-red.txt",
+      "originalPath": ".pao17-local/raw-logs/task5-browser-red.txt",
+      "rawSha256": "bac3ebc1d18cb345e7451a33a79813d7d3d5c2bb32906dc7f17fb5bce8abce92",
+      "submittedSha256": "05b76917556dd56947e2d60240e955affefb209a912bedfee3c401e3d63283f4"
+    },
+    {
+      "file": "visual-acceptance.txt",
+      "originalPath": ".pao17-local/raw-logs/visual-acceptance.txt",
+      "rawSha256": "406f95aa3165377a533ac6e822632c2723523e9e69128a4d9b3cdbc59ce25293",
+      "submittedSha256": "6c25d868cb17e5218e8be45e909c706fd65894b3a7c93fb3455e7ac49a4f51c2"
+    },
+    {
+      "file": "hook-first-failure.txt",
+      "originalPath": ".pao17-local/raw-logs/hook-first-failure.txt",
+      "rawSha256": "81fc98cba0b23e152a812bbe7b34eea67d038556e4c3832000b9152ca36d7c47",
+      "submittedSha256": "710c6c6088d24e3a2295b61f317fa849febe54ca515e90ad23940865c452f4c6"
+    },
+    {
+      "file": "boot-diagnostic.txt",
+      "originalPath": ".pao17-local/raw-logs/boot-diagnostic.txt",
+      "rawSha256": "1973b5460bd5ac952c72a1a1bde2a82d7471e2300bf0a583a9e22b2e82fe9fe6",
+      "submittedSha256": "9ba9f6b975ab29ceabdec4ac9fc7e164fe72a2c68ce5e5635af307aee3de6b7f"
+    },
+    {
+      "file": "boot-diagnostic-fixed.txt",
+      "originalPath": ".pao17-local/raw-logs/boot-diagnostic-fixed.txt",
+      "rawSha256": "cfb04e16b7eed758cc98174e6312fc987fb29aafabf328384b89d7ba0e2bdb7d",
+      "submittedSha256": "ddda35fbe04045bf3ccaec1b9f2ab23e2d6bc91ddd82e5d3226b168058ccc30b"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "http": [
+    {
+      "file": "Outfit-fc7287273e66.ttf",
+      "status": 200,
+      "bytes": 110884,
+      "sha256": "fc7287273e66929776e2ba54f144fe699080bec29f61bf649d70d871468aeade",
+      "contentType": "font/ttf",
+      "cacheControl": "no-cache"
+    },
+    {
+      "file": "Orbitron-f42db2dd16e6.ttf",
+      "status": 200,
+      "bytes": 38576,
+      "sha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd",
+      "contentType": "font/ttf",
+      "cacheControl": "no-cache"
+    }
+  ]
+}

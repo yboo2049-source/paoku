@@ -1,0 +1,116 @@
+{"cwd":"D:\\worker\\paoku-sessions\\pao-18-font-diagnosis","exe":"node","args":["node_modules/vitest/vitest.mjs","run","tests/unit/pao19-hud-camera-integration.test.ts"],"start":"2026-11-06T14:18:45.233Z"}
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18-font-diagnosis
+
+stdout | tests/unit/pao19-hud-camera-integration.test.ts > I04/I05/I06/I09 real Babylon numeric boundary > uses third-parameter geometry and real buffer dimensions while preserving reducedMotion
+BJS - [22:18:48]: Babylon.js v9.19.0 - Null engine
+
+stdout | tests/unit/pao19-hud-camera-integration.test.ts > I04/I05/I06/I09 real Babylon numeric boundary > holds final camera pose on unavailable layout and recomputes modal projection after resize
+BJS - [22:18:48]: Babylon.js v9.19.0 - Null engine
+
+ ❯ tests/unit/pao19-hud-camera-integration.test.ts (5 tests | 5 failed) 2494ms
+     × uses third-parameter geometry and real buffer dimensions while preserving reducedMotion 2218ms
+     × holds final camera pose on unavailable layout and recomputes modal projection after resize 81ms
+     × writes UI, measures once, then draws the same view/app and committed stamp 159ms
+     × accounts UI exceptions separately while still delivering the committed render facts 17ms
+     × notifies pending before application dispatch and preserves original command identity 18ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao19-hud-camera-integration.test.ts > I04/I05/I06/I09 real Babylon numeric boundary > uses third-parameter geometry and real buffer dimensions while preserving reducedMotion
+AssertionError: expected undefined to be defined
+ ❯ tests/unit/pao19-hud-camera-integration.test.ts:37:32
+     35|       r.setPresentationOptions({reducedMotion:true,width:1,height:1});
+     36|       r.render(ctx,frame,hud());
+     37|       expect(r.hudDiagnostics).toBeDefined();
+       |                                ^
+     38|       expect(r.hudDiagnostics.input).toMatchObject({width:390,height:8…
+     39|       expect(r.hudDiagnostics.projection.actors.map((a:any)=>a.name)).…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  tests/unit/pao19-hud-camera-integration.test.ts > I04/I05/I06/I09 real Babylon numeric boundary > holds final camera pose on unavailable layout and recomputes modal projection after resize
+AssertionError: expected undefined to be defined
+ ❯ tests/unit/pao19-hud-camera-integration.test.ts:51:32
+     49|       const before=pose(); ctx.player.z+=2;
+     50|       r.render(ctx,frame,hud(null,2));
+     51|       expect(r.hudDiagnostics).toBeDefined();
+       |                                ^
+     52|       expect(r.hudDiagnostics).toMatchObject({status:'UNREADY',holding…
+     53|       r.engine.setSize(844,390);ctx.state='PAUSED';
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  tests/unit/pao19-hud-camera-integration.test.ts > I01/I08/I10 real main host integration > writes UI, measures once, then draws the same view/app and committed stamp
+AssertionError: expected [ 'render', 'update' ] to deeply equal [ 'update', 'measure', 'render' ]
+
+- Expected
++ Received
+
+  [
+-   "update",
+-   "measure",
+    "render",
++   "update",
+  ]
+
+ ❯ tests/unit/pao19-hud-camera-integration.test.ts:120:24
+    118|     const { sensor } = await mount(); const app = sensor.getAppSnapsho…
+    119|     host.loop.options.render(0.5);
+    120|     expect(host.order).toEqual(['update','measure','render']);
+       |                        ^
+    121|     expect(host.draws[0].ctx).toBe(host.views[0].ctx); expect(host.vie…
+    122|     expect(host.draws[0].hud).toMatchObject({frameId:1,page:'MENU',run…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  tests/unit/pao19-hud-camera-integration.test.ts > I01/I08/I10 real main host integration > accounts UI exceptions separately while still delivering the committed render facts
+AssertionError: expected [Function] to not throw an error but 'Error: UI injected' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: UI injected"
+
+ ❯ tests/unit/pao19-hud-camera-integration.test.ts:127:49
+    125|   it('accounts UI exceptions separately while still delivering the com…
+    126|     const { sensor } = await mount(); host.throwUi=true;
+    127|     expect(()=>host.loop.options.render(0)).not.toThrow();
+       |                                                 ^
+    128|     expect(host.draws).toHaveLength(1);
+    129|     expect(host.draws[0].hud).toMatchObject({geometry:null,unavailable…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  tests/unit/pao19-hud-camera-integration.test.ts > I01/I08/I10 real main host integration > notifies pending before application dispatch and preserves original command identity
+AssertionError: expected undefined to match object { Object (commandId, type, ...) }
+
+- Expected:
+{
+  "commandId": "integration-start",
+  "state": "MENU",
+  "type": "START_RUN",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/pao19-hud-camera-integration.test.ts:136:29
+    134|     bus.emit('START_GAME',{commandId:'integration-start'});
+    135|     await new Promise(r=>setTimeout(r,0));
+    136|     expect(host.pending[0]).toMatchObject({commandId:'integration-star…
+       |                             ^
+    137|     expect(host.results).toContainEqual(expect.objectContaining({comma…
+    138|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed (5)
+   Start at  22:18:45
+   Duration  2.80s (transform 277ms, setup 0ms, import 64ms, tests 2.49s, environment 0ms)
+
+
+{"label":"red-camera","code":1,"start":"2026-11-06T14:18:45.233Z","end":"2026-11-06T14:18:48.653Z","file":"D:\\worker\\paoku-diagnostics\\pao18-pao19-integration-20261106\\red-camera.txt"}

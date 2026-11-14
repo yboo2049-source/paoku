@@ -1,0 +1,49 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao18.local/fact-bridge/playwright.config.ts pao18-fact-bridge.spec.ts
+
+[WebServer] (node:5108) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:19088) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 .pao18.local\fact-bridge\suite\pao18-fact-bridge.spec.ts:8:1 › N production exposes committed motion delivery and natural input is single-path (5.6s)
+  x  2 .pao18.local\fact-bridge\suite\pao18-fact-bridge.spec.ts:34:1 › F actual multi-step production bridge, sound order, duplicate render and reentrant pause (2.8s)
+(node:2944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 3 .pao18.local\fact-bridge\suite\pao18-fact-bridge.spec.ts:81:1 › F failed real step keeps last commit and audio silent; original application restart recovers (3.7s)
+  ok 4 .pao18.local\fact-bridge\suite\pao18-fact-bridge.spec.ts:103:1 › F raw and HTTP source/legacy asset identity (155ms)
+
+
+  1) .pao18.local\fact-bridge\suite\pao18-fact-bridge.spec.ts:34:1 › F actual multi-step production bridge, sound order, duplicate render and reentrant pause 
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      65 |   for (const item of fresh) {
+      66 |     expect(report.facts.audio.items.filter((x: { eventId: string }) => x.eventId === item.eventId)).toHaveLength(1);
+    > 67 |     expect(report.facts.render.items.filter((x: { eventId: string }) => x.eventId === item.eventId)).toHaveLength(1);
+         |                                                                                                      ^
+      68 |   }
+      69 |   expect(report.facts.render.character.phase).toBe('ASCEND');
+      70 |   expect(report.duplicate.render.items).toEqual(report.facts.render.items);
+        at D:\worker\paoku-sessions\pao-18-font-diagnosis\.pao18.local\fact-bridge\suite\pao18-fact-bridge.spec.ts:67:102
+
+    Error Context: .pao18.local\fact-bridge\target-all1-artifacts\pao18-fact-bridge-F-actual-a53a9--render-and-reentrant-pause\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    .pao18.local\fact-bridge\target-all1-artifacts\pao18-fact-bridge-F-actual-a53a9--render-and-reentrant-pause\trace.zip
+    Usage:
+
+        npx playwright show-trace .pao18.local\fact-bridge\target-all1-artifacts\pao18-fact-bridge-F-actual-a53a9--render-and-reentrant-pause\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    .pao18.local\fact-bridge\suite\pao18-fact-bridge.spec.ts:34:1 › F actual multi-step production bridge, sound order, duplicate render and reentrant pause 
+  3 passed (16.3s)

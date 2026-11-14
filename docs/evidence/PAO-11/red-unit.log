@@ -1,0 +1,110 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/surfaces.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-11
+
+ ❯ tests/unit/surfaces.test.ts (10 tests | 9 failed) 11ms
+     × includes nonzero ramp base and connects roof 6ms
+     × does not clamp ramp outside { x: 1.21, z: 100 } 1ms
+     × does not clamp ramp outside { x: +0, z: 106.01 } 0ms
+     × does not lift from below ramp 1ms
+     × does not snap a side hit to roof 0ms
+     × detaches on jump and lands from above 0ms
+     × leaves laterally and clears recycled support 0ms
+     × carries once using speedZ -4 0ms
+     × carries once using speedZ 4 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 9 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > includes nonzero ramp base and connects roof
+AssertionError: expected 5 to be 6.5 // Object.is equality
+
+- Expected
++ Received
+
+- 6.5
++ 5
+
+ ❯ tests/unit/surfaces.test.ts:8:192
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯
+
+ FAIL  tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > does not clamp ramp outside { x: 1.21, z: 100 }
+ FAIL  tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > does not clamp ramp outside { x: +0, z: 106.01 }
+AssertionError: expected undefined to be null
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ tests/unit/surfaces.test.ts:9:211
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/9]⎯
+
+ FAIL  tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > does not lift from below ramp
+AssertionError: expected 1.5 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1.5
+
+ ❯ tests/unit/surfaces.test.ts:10:107
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/9]⎯
+
+ FAIL  tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > does not snap a side hit to roof
+AssertionError: expected 8 to be less than 7.9
+ ❯ tests/unit/surfaces.test.ts:11:112
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/9]⎯
+
+ FAIL  tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > detaches on jump and lands from above
+AssertionError: expected undefined to be null
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ tests/unit/surfaces.test.ts:12:226
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/9]⎯
+
+ FAIL  tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > leaves laterally and clears recycled support
+AssertionError: expected 8 to be less than 8
+ ❯ tests/unit/surfaces.test.ts:13:174
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/9]⎯
+
+ FAIL  tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > carries once using speedZ -4
+AssertionError: expected 110 to be close to 109.6, received difference is 0.4000000000000057, but expected 5e-11
+ ❯ tests/unit/surfaces.test.ts:14:183
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/9]⎯
+
+ FAIL  tests/unit/surfaces.test.ts > PAO-11 real updatePhysics surfaces > carries once using speedZ 4
+AssertionError: expected 110 to be close to 110.4, received difference is 0.4000000000000057, but expected 5e-11
+ ❯ tests/unit/surfaces.test.ts:14:183
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/9]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  9 failed | 1 passed (10)
+   Start at  01:25:57
+   Duration  301ms (transform 52ms, setup 0ms, import 67ms, tests 11ms, environment 0ms)

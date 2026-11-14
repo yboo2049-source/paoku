@@ -1,0 +1,13 @@
+{
+  "base": "536f54b41866e2819d21cd674e64af2cb4d70f80",
+  "note": "Final runtime byte identities under full-final validation; full-first identities retained separately in runtime-under-test.json.",
+  "source": {
+    "src/render/environment.ts": "34fd074d2041390005cfda679897e41c8945fbffb0920e49145495dd82adef36",
+    "src/render/entityViews.ts": "0b11b38359c1c27d64eabab7dd3a591797d7c3379ef028f82fdfde67c531e702",
+    "src/render/babylon.ts": "088c7f5c4b7d0e9ea2053826f01f794f7f1b4599644200b0c74020213ed882a2",
+    "src/render/assets.ts": "421e65af2d07a76afcc631a8c4bbbc2a30abecc073e78038a20391e732a3821a",
+    "src/main.ts": "1bfbbc544bfff54d11ee3f49dda254e259513885e2e85821bde610d9b4ccb8ae",
+    "src/systems/surfaces.ts": "14a734e726e1b2aadcb9add9e96207fbb29e3680a08e762682fa6ece73846484",
+    "public/models/player.glb": "002f8d269de68e5dce3d25195caf390d1aa359bbfaae3fcf4c8dc78ec36c3ba5"
+  }
+}

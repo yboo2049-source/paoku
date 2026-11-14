@@ -1,0 +1,407 @@
+{
+  "before": {
+    "mode": "committed-motion-v1",
+    "faulted": false,
+    "journal": {
+      "batches": 0,
+      "events": 0,
+      "floorSequence": 1,
+      "floorTick": 4,
+      "faultTick": null
+    },
+    "stamp": {
+      "streamEpoch": 4,
+      "throughTick": 4,
+      "throughSequence": 1
+    },
+    "audio": {
+      "cursor": {
+        "runId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736",
+        "streamEpoch": 2,
+        "throughTick": 4,
+        "throughSequence": 1
+      },
+      "items": [
+        {
+          "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:1:1",
+          "type": "PLAYER_LANDED",
+          "outcome": "handled"
+        }
+      ],
+      "dropped": 0,
+      "factGaps": 0,
+      "failures": 0,
+      "observerFailures": 0
+    },
+    "render": {
+      "cursor": {
+        "runId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736",
+        "streamEpoch": 2,
+        "throughTick": 4,
+        "throughSequence": 1
+      },
+      "items": [
+        {
+          "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:1:1",
+          "outcome": "handled"
+        }
+      ],
+      "failures": 0,
+      "character": {
+        "phase": "RUN",
+        "playhead": 0,
+        "blending": false,
+        "landed": false,
+        "board": false,
+        "clip": null,
+        "degraded": true,
+        "factMode": "COMMITTED_MOTION",
+        "actionInstanceId": null,
+        "actionTimeSec": 0,
+        "receipt": {
+          "status": "COMPLETE",
+          "through": {
+            "runId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736",
+            "streamEpoch": 2,
+            "throughTick": 4,
+            "throughSequence": 1
+          },
+          "items": []
+        }
+      },
+      "camera": {
+        "supportHeight": 0,
+        "positionHeight": 0,
+        "targetHeight": 0,
+        "projection": {
+          "safe": true,
+          "reason": null,
+          "actors": [
+            {
+              "name": "player",
+              "front": true,
+              "minX": 499.99380426476944,
+              "maxX": 588.5747469984046,
+              "minY": 194.0997849600829,
+              "maxY": 342.80398548954525,
+              "safe": true
+            },
+            {
+              "name": "officer",
+              "front": true,
+              "minX": 645.9943284706762,
+              "maxX": 734.9127775800235,
+              "minY": 240.1589992526029,
+              "maxY": 415.394967057412,
+              "safe": true
+            },
+            {
+              "name": "dog",
+              "front": true,
+              "minX": 705.6658874292375,
+              "maxX": 774.2103479603638,
+              "minY": 343.1371803962581,
+              "maxY": 458.0811453930677,
+              "safe": true
+            }
+          ]
+        },
+        "landedFacts": 1
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "z": 1.2000938888888757
+      },
+      "groupsPaused": true
+    },
+    "committedItems": [
+      {
+        "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:1:1",
+        "type": "PLAYER_LANDED"
+      }
+    ],
+    "errors": []
+  },
+  "failed": {
+    "mode": "committed-motion-v1",
+    "faulted": false,
+    "journal": {
+      "batches": 1,
+      "events": 1,
+      "floorSequence": 1,
+      "floorTick": 4,
+      "faultTick": null
+    },
+    "stamp": {
+      "streamEpoch": 4,
+      "throughTick": 5,
+      "throughSequence": 2
+    },
+    "audio": {
+      "cursor": {
+        "runId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736",
+        "streamEpoch": 4,
+        "throughTick": 5,
+        "throughSequence": 2
+      },
+      "items": [
+        {
+          "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:1:1",
+          "type": "PLAYER_LANDED",
+          "outcome": "handled"
+        },
+        {
+          "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:5:2",
+          "type": "ACTION_STARTED",
+          "outcome": "handled"
+        }
+      ],
+      "dropped": 2,
+      "factGaps": 0,
+      "failures": 0,
+      "observerFailures": 0
+    },
+    "render": {
+      "cursor": {
+        "runId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736",
+        "streamEpoch": 4,
+        "throughTick": 5,
+        "throughSequence": 2
+      },
+      "items": [
+        {
+          "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:1:1",
+          "outcome": "handled"
+        },
+        {
+          "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:5:2",
+          "outcome": "attempt-failed",
+          "reason": "RENDER_EXCEPTION"
+        }
+      ],
+      "failures": 1,
+      "character": {
+        "phase": "RUN",
+        "playhead": 0,
+        "blending": false,
+        "landed": false,
+        "board": false,
+        "clip": null,
+        "degraded": true,
+        "factMode": "COMMITTED_MOTION",
+        "actionInstanceId": null,
+        "actionTimeSec": 0,
+        "receipt": {
+          "status": "COMPLETE",
+          "through": {
+            "runId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736",
+            "streamEpoch": 2,
+            "throughTick": 4,
+            "throughSequence": 1
+          },
+          "items": []
+        }
+      },
+      "camera": {
+        "supportHeight": 0,
+        "positionHeight": 0,
+        "targetHeight": 0,
+        "projection": {
+          "safe": true,
+          "reason": null,
+          "actors": [
+            {
+              "name": "player",
+              "front": true,
+              "minX": 499.99380426476944,
+              "maxX": 588.5747469984046,
+              "minY": 194.0997849600829,
+              "maxY": 342.80398548954525,
+              "safe": true
+            },
+            {
+              "name": "officer",
+              "front": true,
+              "minX": 645.9943284706762,
+              "maxX": 734.9127775800235,
+              "minY": 240.1589992526029,
+              "maxY": 415.394967057412,
+              "safe": true
+            },
+            {
+              "name": "dog",
+              "front": true,
+              "minX": 705.6658874292375,
+              "maxX": 774.2103479603638,
+              "minY": 343.1371803962581,
+              "maxY": 458.0811453930677,
+              "safe": true
+            }
+          ]
+        },
+        "landedFacts": 1
+      },
+      "root": {
+        "x": 0,
+        "y": 0,
+        "z": 1.2000938888888757
+      },
+      "groupsPaused": true
+    },
+    "committedItems": [
+      {
+        "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:1:1",
+        "type": "PLAYER_LANDED"
+      },
+      {
+        "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:5:2",
+        "type": "ACTION_STARTED"
+      }
+    ],
+    "errors": [
+      "Error: F deliberately failed render attempt"
+    ]
+  },
+  "retry": {
+    "mode": "committed-motion-v1",
+    "faulted": false,
+    "journal": {
+      "batches": 1,
+      "events": 1,
+      "floorSequence": 1,
+      "floorTick": 4,
+      "faultTick": null
+    },
+    "stamp": {
+      "streamEpoch": 4,
+      "throughTick": 5,
+      "throughSequence": 2
+    },
+    "audio": {
+      "cursor": {
+        "runId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736",
+        "streamEpoch": 4,
+        "throughTick": 5,
+        "throughSequence": 2
+      },
+      "items": [
+        {
+          "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:1:1",
+          "type": "PLAYER_LANDED",
+          "outcome": "handled"
+        },
+        {
+          "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:5:2",
+          "type": "ACTION_STARTED",
+          "outcome": "handled"
+        }
+      ],
+      "dropped": 2,
+      "factGaps": 0,
+      "failures": 0,
+      "observerFailures": 0
+    },
+    "render": {
+      "cursor": {
+        "runId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736",
+        "streamEpoch": 4,
+        "throughTick": 5,
+        "throughSequence": 2
+      },
+      "items": [
+        {
+          "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:1:1",
+          "outcome": "handled"
+        },
+        {
+          "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:5:2",
+          "outcome": "attempt-failed",
+          "reason": "RENDER_EXCEPTION"
+        }
+      ],
+      "failures": 1,
+      "character": {
+        "phase": "ASCEND",
+        "playhead": 0,
+        "blending": false,
+        "landed": false,
+        "board": false,
+        "clip": null,
+        "degraded": true,
+        "factMode": "COMMITTED_MOTION",
+        "actionInstanceId": null,
+        "actionTimeSec": 0,
+        "receipt": {
+          "status": "COMPLETE",
+          "through": {
+            "runId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736",
+            "streamEpoch": 4,
+            "throughTick": 5,
+            "throughSequence": 2
+          },
+          "items": []
+        }
+      },
+      "camera": {
+        "supportHeight": 0.21444444444444444,
+        "positionHeight": 0.21444444444444444,
+        "targetHeight": 0.21444444444444444,
+        "projection": {
+          "safe": true,
+          "reason": null,
+          "actors": [
+            {
+              "name": "player",
+              "front": true,
+              "minX": 501.0156049903509,
+              "maxX": 590.499155321774,
+              "minY": 188.96917480106896,
+              "maxY": 339.88610636975625,
+              "safe": true
+            },
+            {
+              "name": "officer",
+              "front": true,
+              "minX": 642.335420813797,
+              "maxX": 735.4272721646635,
+              "minY": 246.6266985647583,
+              "maxY": 423.0515484728316,
+              "safe": true
+            },
+            {
+              "name": "dog",
+              "front": true,
+              "minX": 704.4522047543427,
+              "maxX": 772.3397155082466,
+              "minY": 346.54724314839694,
+              "maxY": 462.6026398627498,
+              "safe": true
+            }
+          ]
+        },
+        "landedFacts": 0
+      },
+      "root": {
+        "x": 0,
+        "y": 0.21444444444444444,
+        "z": 0.3003472222222222
+      },
+      "groupsPaused": true
+    },
+    "committedItems": [
+      {
+        "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:1:1",
+        "type": "PLAYER_LANDED"
+      },
+      {
+        "eventId": "run-7887d48a-06c2-4deb-839d-f2241a7d0736:5:2",
+        "type": "ACTION_STARTED"
+      }
+    ],
+    "errors": [
+      "Error: F deliberately failed render attempt"
+    ]
+  },
+  "attempts": 256
+}

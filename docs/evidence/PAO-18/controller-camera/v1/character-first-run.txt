@@ -1,0 +1,12 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao18-character.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-18
+
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  00:32:04
+   Duration  1.81s (transform 54ms, setup 0ms, import 1.59s, tests 24ms, environment 0ms)

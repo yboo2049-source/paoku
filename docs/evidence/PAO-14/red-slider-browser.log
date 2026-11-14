@@ -1,0 +1,34 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config docs/evidence/PAO-14/playwright.config.ts tests/e2e/pao14-application.spec.ts --grep F-native-slider
+
+[WebServer] (node:14688) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:24224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\pao14-application.spec.ts:231:1 › F-native-slider-preserves-draft-while-save-lock-is-held (5.5s)
+
+
+  1) tests\e2e\pao14-application.spec.ts:231:1 › F-native-slider-preserves-draft-while-save-lock-is-held
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "61"
+    Received: "60"
+
+      243 |   await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+      244 |   try {
+    > 245 |     expect(await slider.inputValue()).toBe('61');
+          |                                       ^
+      246 |     expect((await app(page)).audio.bgmVolume).toBe(.6);
+      247 |   } finally { await page.evaluate(() => (window as any).__pao14ReleaseLock()); }
+      248 |   await expect.poll(async () => (await app(page)).audio.bgmVolume).toBe(.61);
+        at D:\worker\paoku-sessions\pao-14\tests\e2e\pao14-application.spec.ts:245:39
+
+    Error Context: .pao14-local\red-slider\test-results\pao14-application-F-native-51423-aft-while-save-lock-is-held\error-context.md
+
+  1 failed
+    tests\e2e\pao14-application.spec.ts:231:1 › F-native-slider-preserves-draft-while-save-lock-is-held

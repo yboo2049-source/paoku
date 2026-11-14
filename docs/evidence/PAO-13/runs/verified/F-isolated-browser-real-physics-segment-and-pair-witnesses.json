@@ -1,0 +1,19 @@
+{
+  "title": "F-isolated-browser-real-physics-segment-and-pair-witnesses",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "browserVersion": "151.0.7922.34",
+  "errors": [],
+  "states": [
+    {
+      "sampledRoutes": 60,
+      "level": "F-isolated-browser-physics-not-natural-app-run",
+      "applicationState": "MENU"
+    }
+  ],
+  "firstGeneratedRuns": [],
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+  "devicePixelRatio": 1
+}

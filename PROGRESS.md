@@ -488,3 +488,9 @@
 - 独立只读QA复核功能与九键存档盘点；报告明确N/F/S/H以及未测范围。复现坡体遮挡角色的视觉问题，只登记不修实现。
 - build通过（chunk体积提示）；56/56单测；原有6/6 E2E；专用4/4 E2E；真实截图和录像抽帧已查看。提交前检查diff与证据hash。
 - 默认E2E生成的历史截图已恢复；新增仅文档、QA脚本和证据。Linear开始时已设In Progress；连接中断后已恢复，提交推送后回写报告、证据、提交号和分支，再设In Review等待审查。
+
+## 2026-11-14 main consolidation checkpoint
+
+- User approved consolidating all task branches into main and deleting retired branches/worktrees/project entries, with the existing E2E failures recorded for follow-up.
+- Production source stays at final delivery f3ed197; historical planning, asset tools and diagnostics are retained. Normal build and 440 unit tests pass; complete E2E was 101/108, supplemental checks 7/7. This is not a claim of all-green E2E or task completion.
+- Details and preservation/cleanup policy: [main consolidation review](docs/reviews/2026-11-14-main-consolidation.md).

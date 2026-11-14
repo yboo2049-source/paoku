@@ -26,3 +26,13 @@ A complete-history Git bundle and exact refs inventory were created and verified
 The root worktree's pre-existing extra blank line in `docs/reviews/2026-11-07-pao20-pao26-final-delivery-review.md` must remain uncommitted and byte-identical. The roof-diagnosis worktree's uncommitted physics/test/diagnostic WIP must remain untouched; it may be detached after its committed history is merged. Diagnostic directories must be archived before retired worktrees are removed. Shared dependencies must be relocated before their owning old worktree is removed. Codex project cleanup must preserve conversations and the active main project.
 
 Final merge, supplemental checks and cleanup results will be appended below.
+
+## Completed consolidation checks
+
+All local and fetched remote branch tips were proved ancestors of the consolidated history (`branch-ancestry-before-push.json`). Historical UI reconciliation retained the final-delivery `src/main.ts` and PAO-6 test; all production source, public models/fonts, HTML and dependency manifests remain identical to f3ed197. New files are historical documentation, asset sources, isolated tools and their dedicated tests.
+
+Supplemental E2E: 7/7 passed (two corrected-port fact-bridge cases plus five historical asset-tool cases). Per-tool original budgets are retained: motion 120s, rig 90s, calibration 180s; no assertion was relaxed. The first supplemental attempt failed during harness configuration before any test ran, and its original log is retained separately. The complete initial 101/108 result remains unchanged; the remaining five runtime/legacy assertions are deferred under the user's checkpoint approval.
+
+Normal Husky build/unit hooks passed after the asset, dispatcher-document and UI merges: 44 unit files / 440 tests. The new worktree initially lacked generated Husky entry scripts; these were installed before subsequent commits, whose checks cover the consolidated source. No hooks were disabled.
+
+Cleanup follows the successful main push: delete only tips already proved included, archive task-local evidence, reuse the root's identical installed dependency lock, preserve the original GLB reference worktree and the detached roof WIP worktree. Remove retired Codex project entries through the local first-party project API; preserve and reassign their historical chats to the main project and set future working directories to the retained root. The final observed cleanup inventory will be retained beside the external evidence as `cleanup-result.json` and `codex-cleanup-result.json`.

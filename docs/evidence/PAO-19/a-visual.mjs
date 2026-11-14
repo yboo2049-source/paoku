@@ -1,0 +1,3 @@
+import {chromium} from '@playwright/test';import fs from 'node:fs';
+const browser=await chromium.launch({headless:true,args:['--use-gl=angle','--use-angle=d3d11','--enable-webgl','--ignore-gpu-blocklist']});
+for(const [name,width,height] of [['desktop',1440,900],['mobile',390,844]]){const page=await browser.newPage({viewport:{width,height}});await page.goto('http://127.0.0.1:5189');await page.locator('#start-btn').waitFor();await page.screenshot({path:`docs/evidence/PAO-19/A-${name}-menu.png`});await page.click('#start-btn');await page.waitForTimeout(500);await page.screenshot({path:`docs/evidence/PAO-19/A-${name}-hud.png`});await page.close();}await browser.close();

@@ -1,0 +1,20 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao19.playwright.config.ts --grep layout-390|layout-320|unknown|repeated-toggle-under-lock --retries 0
+
+[WebServer] (node:29620) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 7 tests using 1 worker
+
+(node:24004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\.pao19.local\pao14-review.spec.ts:78:1 › F-review-audio-repeated-toggle-under-lock (2.8s)
+  ok 2 tests\e2e\.pao19.local\pao14-unknown-commit.spec.ts:8:3 › F-unknown-toggle-1-confirmation-read-failures (2.1s)
+  ok 3 tests\e2e\.pao19.local\pao14-unknown-commit.spec.ts:8:3 › F-unknown-toggle-2-confirmation-read-failures (1.9s)
+  ok 4 tests\e2e\.pao19.local\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-390x844 (2.9s)
+  ok 5 tests\e2e\.pao19.local\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-320x568 (2.8s)
+  ok 6 tests\e2e\.pao19.local\rebuild-ui.spec.ts:44:1 › R04/R08 F-real-UI-unknown-audio-retry-retains-command (2.9s)
+  ok 7 tests\e2e\.pao19.local\rebuild-ui.spec.ts:59:1 › R08 F-unknown-terminal-retry-keeps-sealed-summary (3.4s)
+
+  7 passed (23.3s)

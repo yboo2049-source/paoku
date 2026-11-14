@@ -1,0 +1,41 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao19.playwright.config.ts rebuild-ui.spec.ts
+
+[WebServer] (node:6668) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:23364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\rebuild-ui.spec.ts:4:1 › R02/R05/R09 desktop UI (8.1s)
+
+
+  1) tests\e2e\rebuild-ui.spec.ts:4:1 › R02/R05/R09 desktop UI ─────────────────────────────────────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  locator('#start-btn')
+    Expected: "开始奔跑"
+    Received: "START RUN"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" with timeout 5000ms
+      - waiting for locator('#start-btn')
+        14 × locator resolved to <button id="start-btn" class="cyber-btn">START RUN</button>
+           - unexpected value "START RUN"
+
+
+      2 | import {mkdir,writeFile} from 'node:fs/promises';
+      3 | const dir='docs/evidence/PAO-19/'+(process.env.PAO19_PHASE||'A');
+    > 4 | test('R02/R05/R09 desktop UI',async({page})=>{await page.goto('/');await expect(page.locator('#start-btn')).toHaveText('开始奔跑');await expect(page.locator('html')).toHaveAttribute('lang','zh-CN');await page.click('#start-btn');await expect(page.locator('#hud-speed-text')).toContainText('m/s');await page.click('#hud-pause-btn');await expect(page.locator('#paused-screen')).toBeVisible();await page.keyboard.press('Tab');await expect(page.locator('#paused-screen')).toContainText('继续');await mkdir(dir,{recursive:true});await page.screenshot({path:dir+'/desktop-paused.png'});});
+        |                                                                                                             ^
+      5 |
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\rebuild-ui.spec.ts:4:109
+
+    Error Context: test-results\rebuild-ui-R02-R05-R09-desktop-UI\error-context.md
+
+  1 failed
+    tests\e2e\rebuild-ui.spec.ts:4:1 › R02/R05/R09 desktop UI ──────────────────────────────────────

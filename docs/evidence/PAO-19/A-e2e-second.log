@@ -1,0 +1,302 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao19.playwright.config.ts
+
+[WebServer] (node:1032) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 48 tests using 1 worker
+
+(node:21904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\gameplay.spec.ts:50:3 › 状态机（确定性） › MENU → PLAYING via start button (2.3s)
+  ok  2 tests\e2e\gameplay.spec.ts:56:3 › 状态机（确定性） › PLAYING → 切道（左/右 + 边界钳制） (2.2s)
+  ok  3 tests\e2e\gameplay.spec.ts:73:3 › 状态机（确定性） › PLAYING → 跳跃（isJumping=true） (2.0s)
+  ok  4 tests\e2e\gameplay.spec.ts:79:3 › 状态机（确定性） › PLAYING → 翻滚（isRolling=true） (2.1s)
+  ok  5 tests\e2e\gameplay.spec.ts:85:3 › 状态机（确定性） › PLAYING → PAUSED via Escape，再 resume 回到 PLAYING (1.9s)
+  ok  6 tests\e2e\gameplay.spec.ts:98:3 › 截图回放（确定性） › 捕获 6 张高保真截图（无 GAMEOVER 风险） (3.6s)
+  ok  7 tests\e2e\pao10-review-fixes.spec.ts:35:1 › native-menu-slider-and-start-space (2.3s)
+  ok  8 tests\e2e\pao10-review-fixes.spec.ts:48:1 › paused-rejects-motion-and-resume-space (2.8s)
+  ok  9 tests\e2e\pao10-review-fixes.spec.ts:67:1 › playing-interactive-arrows-do-not-move-player (2.2s)
+  ok 10 tests\e2e\pao10-simulation.spec.ts:29:1 › N-desktop-production-keyboard-flow (49.5s)
+  x  11 tests\e2e\pao10-simulation.spec.ts:67:1 › N-mobile-production-touch (5.9s)
+(node:25768) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 12 tests\e2e\pao10-simulation.spec.ts:97:1 › F-lifecycle-clears-input-and-hidden-time (4.8s)
+  ok 13 tests\e2e\pao11-surfaces.spec.ts:95:3 › F-desktop-keyboard-ground-ramp-roof-jump-ground (5.1s)
+  ok 14 tests\e2e\pao11-surfaces.spec.ts:95:3 › F-portrait-touch-ground-ramp-roof-jump-ground (5.8s)
+  x  15 tests\e2e\pao11-surfaces.spec.ts:124:1 › F-high-base-ramp-5-to-8-continuous-roof (173ms)
+(node:32304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 16 tests\e2e\pao11-surfaces.spec.ts:142:1 › N-production-input-and-supported-snapshot (6.6s)
+  ok 17 tests\e2e\pao12-collision.spec.ts:79:1 › F-desktop-relative-high-speed-thin-train-terminal-once (3.4s)
+  ok 18 tests\e2e\pao12-collision.spec.ts:119:1 › F-portrait-same-tick-shield-multi-hit-single-consumption (2.8s)
+  ok 19 tests\e2e\pao12-collision.spec.ts:144:1 › F-desktop-airborne-roll-uses-actual-height-box (3.1s)
+  ok 20 tests\e2e\pao12-collision.spec.ts:167:1 › F-browser-isolated-highest-speed-large-step-and-pose-matrix (4.2s)
+  ok 21 tests\e2e\pao12-collision.spec.ts:201:1 › F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position (2.9s)
+  ok 22 tests\e2e\pao13-track.spec.ts:78:1 › N-desktop-seeded-generation-keyboard-and-reset (3.4s)
+  ok 23 tests\e2e\pao13-track.spec.ts:109:1 › N-portrait-seeded-generation-touch (3.2s)
+  ok 24 tests\e2e\pao13-track.spec.ts:138:1 › F-isolated-browser-real-physics-segment-and-pair-witnesses (2.5s)
+  ok 25 tests\e2e\pao14-application.spec.ts:43:1 › N-desktop-pause-restart-stale-run-and-DOM-tamper (4.2s)
+  ok 26 tests\e2e\pao14-application.spec.ts:77:1 › N-portrait-touch-paused-input-and-return (2.8s)
+  ok 27 tests\e2e\pao14-application.spec.ts:94:1 › F-30-pickups-50-reward-save-failure-retry-and-repeat-finish (4.0s)
+  ok 28 tests\e2e\pao14-application.spec.ts:130:1 › F-legacy-rights-shop-purchase-and-refresh (3.6s)
+  ok 29 tests\e2e\pao14-application.spec.ts:147:1 › F-same-tick-terminal-pickup-and-gameover-shop (2.5s)
+  ok 30 tests\e2e\pao14-application.spec.ts:171:1 › F-two-tabs-conflicting-transactions-do-not-overwrite (5.8s)
+  ok 31 tests\e2e\pao14-application.spec.ts:190:1 › F-pause-isolates-input-while-save-lock-is-held (2.3s)
+  ok 32 tests\e2e\pao14-application.spec.ts:211:1 › F-reentrant-end-command-seals-complete-fatal-tick (2.3s)
+  ok 33 tests\e2e\pao14-application.spec.ts:231:1 › F-native-slider-preserves-draft-while-save-lock-is-held (2.0s)
+  x  34 tests\e2e\pao14-review.spec.ts:54:1 › F-review-audio-different-fields-under-lock (170ms)
+(node:8220) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 35 tests\e2e\pao14-review.spec.ts:78:1 › F-review-audio-repeated-toggle-under-lock (3.2s)
+  ok 36 tests\e2e\pao14-review.spec.ts:98:1 › F-review-audio-volume-and-toggle-queue (3.9s)
+  ok 37 tests\e2e\pao14-review.spec.ts:114:1 › F-review-shop-stale-funds-explicit-retry (4.4s)
+  ok 38 tests\e2e\pao14-unknown-commit.spec.ts:8:3 › F-unknown-toggle-1-confirmation-read-failures (2.8s)
+  ok 39 tests\e2e\pao14-unknown-commit.spec.ts:8:3 › F-unknown-toggle-2-confirmation-read-failures (2.2s)
+  x  40 tests\e2e\pao6-baseline.spec.ts:64:1 › ramp-roof-jump-land (2.4s)
+(node:32672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  41 tests\e2e\pao6-baseline.spec.ts:76:1 › obstacles-failure-restart (6.3s)
+(node:25348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  42 tests\e2e\pao6-baseline.spec.ts:86:1 › powerups-shield-missions (3.9s)
+(node:29600) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  43 tests\e2e\pao6-baseline.spec.ts:98:1 › mobile-touch-layout (4.3s)
+(node:32600) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 44 tests\e2e\rebuild-ui.spec.ts:4:1 › R02/R05/R09 desktop UI (2.9s)
+  x  45 tests\e2e\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-1440x900 (2.4s)
+(node:21784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  46 tests\e2e\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-390x844 (2.5s)
+(node:28040) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  47 tests\e2e\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-320x568 (2.4s)
+(node:24876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  48 tests\e2e\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-844x390 (2.2s)
+
+
+  1) tests\e2e\pao10-simulation.spec.ts:67:1 › N-mobile-production-touch ───────────────────────────
+
+    Error: UNKNOWN: unknown error, open 'D:\worker\paoku-sessions\pao-19\docs\evidence\PAO-10\N-mobile-production-touch.json'
+
+      23 | test.afterEach(async () => {
+      24 |   const title = test.info().title;
+    > 25 |   await writeFile(resolve(evidence, `${title}.json`), JSON.stringify({ title, states: traces.get(title), errors: errors.get(title) }, null, 2));
+         |   ^
+      26 |   expect(errors.get(title)).toEqual([]);
+      27 | });
+      28 |
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao10-simulation.spec.ts:25:3
+
+    Error Context: test-results\pao10-simulation-N-mobile-production-touch\error-context.md
+
+  2) tests\e2e\pao11-surfaces.spec.ts:124:1 › F-high-base-ramp-5-to-8-continuous-roof ──────────────
+
+    Error: UNKNOWN: unknown error, open 'D:\worker\paoku-sessions\pao-19\docs\evidence\PAO-11\runs\final\browser-source-identity.json'
+
+      51 |     sources.push({ source, sha256: createHash('sha256').update(disk).digest('hex'), exactRawSourceMatch });
+      52 |   }
+    > 53 |   await writeFile(resolve(evidence, 'browser-source-identity.json'), JSON.stringify({ cwd: resolve('.'), baseURL: 'http://127.0.0.1:5182', sources }, null, 2));
+         |   ^
+      54 | });
+      55 | test.afterEach(async ({ page }) => {
+      56 |   const record = records.get(test.info().title)!;
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao11-surfaces.spec.ts:53:3
+
+    Error: UNKNOWN: unknown error, open 'D:\worker\paoku-sessions\pao-19\docs\evidence\PAO-11\runs\final\F-high-base-ramp-5-to-8-continuous-roof.json'
+
+      56 |   const record = records.get(test.info().title)!;
+      57 |   const trace = await page.evaluate(() => (window as any).__pao11Trace || []).catch(() => []);
+    > 58 |   await writeFile(resolve(evidence, `${test.info().title}.json`), JSON.stringify({ title: test.info().title, browser: test.info().project.use, ...record, trace }, null, 2));
+         |   ^
+      59 |   expect(record.errors).toEqual([]);
+      60 | });
+      61 |
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao11-surfaces.spec.ts:58:3
+
+    Error Context: test-results\pao11-surfaces-F-high-base-ramp-5-to-8-continuous-roof\error-context.md
+
+  3) tests\e2e\pao14-review.spec.ts:54:1 › F-review-audio-different-fields-under-lock ──────────────
+
+    Error: UNKNOWN: unknown error, open 'D:\worker\paoku-sessions\pao-19\docs\evidence\PAO-14\runs\revision-full\revision-browser-source-identity.json'
+
+      61 |     sources.push({ source, exactRawSourceMatch, sha256: createHash('sha256').update(disk).digest('hex') });
+      62 |   }
+    > 63 |   await writeFile(resolve(evidence, 'revision-browser-source-identity.json'), JSON.stringify({ baseURL: 'http://127.0.0.1:5185', cwd: resolve('.'), sources }, null, 2));
+         |   ^
+      64 |   await boot(page); const revision = (await app(page)).revision;
+      65 |   await hold(page);
+      66 |   try {
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao14-review.spec.ts:63:3
+
+    Error Context: test-results\pao14-review-F-review-audio-different-fields-under-lock\error-context.md
+
+  4) tests\e2e\pao6-baseline.spec.ts:64:1 › ramp-roof-jump-land ────────────────────────────────────
+
+    Error: UNKNOWN: unknown error, open 'D:\worker\paoku-sessions\pao-19\docs\evidence\PAO-6\fixture-ramp-approach.png'
+
+      18 |   });
+      19 |   states[test.info().title].push({ name, ...data });
+    > 20 |   await page.screenshot({ animations: 'disabled', path: resolve(dir, `fixture-${name}.png`) });
+         |   ^
+      21 |   return data;
+      22 | }
+      23 | async function world(page: Page, obstacles: unknown[] = [], powerups: unknown[] = [], coins: unknown[] = []) {
+        at snap (D:\worker\paoku-sessions\pao-19\tests\e2e\pao6-baseline.spec.ts:20:3)
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao6-baseline.spec.ts:66:23
+
+    Error: UNKNOWN: unknown error, open 'D:\worker\paoku-sessions\pao-19\docs\evidence\PAO-6\fixture-ramp-roof-jump-land.json'
+
+      59 |   const trace = await page.evaluate(() => (window as any).__paoTrace).catch(() => []);
+      60 |   expect(logs[title].filter((l: any) => l.type === 'pageerror')).toEqual([]);
+    > 61 |   await writeFile(resolve(dir, `fixture-${title}.json`), JSON.stringify({ mode: 'runtime spawner fixture, real input, godMode=false', title, browser: test.info().project.use, logs: logs[title], states: states[title], trace }, null, 2));
+         |   ^
+      62 | });
+      63 |
+      64 | test('ramp-roof-jump-land', async ({ page }) => {
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao6-baseline.spec.ts:61:3
+
+    Error Context: test-results\pao6-baseline-ramp-roof-jump-land\error-context.md
+
+  5) tests\e2e\pao6-baseline.spec.ts:76:1 › obstacles-failure-restart ──────────────────────────────
+
+    Error: UNKNOWN: unknown error, open 'D:\worker\paoku-sessions\pao-19\docs\evidence\PAO-6\fixture-failure.png'
+
+      18 |   });
+      19 |   states[test.info().title].push({ name, ...data });
+    > 20 |   await page.screenshot({ animations: 'disabled', path: resolve(dir, `fixture-${name}.png`) });
+         |   ^
+      21 |   return data;
+      22 | }
+      23 | async function world(page: Page, obstacles: unknown[] = [], powerups: unknown[] = [], coins: unknown[] = []) {
+        at snap (D:\worker\paoku-sessions\pao-19\tests\e2e\pao6-baseline.spec.ts:20:3)
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao6-baseline.spec.ts:82:184
+
+    Error: UNKNOWN: unknown error, open 'D:\worker\paoku-sessions\pao-19\docs\evidence\PAO-6\fixture-obstacles-failure-restart.json'
+
+      59 |   const trace = await page.evaluate(() => (window as any).__paoTrace).catch(() => []);
+      60 |   expect(logs[title].filter((l: any) => l.type === 'pageerror')).toEqual([]);
+    > 61 |   await writeFile(resolve(dir, `fixture-${title}.json`), JSON.stringify({ mode: 'runtime spawner fixture, real input, godMode=false', title, browser: test.info().project.use, logs: logs[title], states: states[title], trace }, null, 2));
+         |   ^
+      62 | });
+      63 |
+      64 | test('ramp-roof-jump-land', async ({ page }) => {
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao6-baseline.spec.ts:61:3
+
+    Error Context: test-results\pao6-baseline-obstacles-failure-restart\error-context.md
+
+  6) tests\e2e\pao6-baseline.spec.ts:86:1 › powerups-shield-missions ───────────────────────────────
+
+    Error: UNKNOWN: unknown error, open 'D:\worker\paoku-sessions\pao-19\docs\evidence\PAO-6\fixture-double-score.png'
+
+      18 |   });
+      19 |   states[test.info().title].push({ name, ...data });
+    > 20 |   await page.screenshot({ animations: 'disabled', path: resolve(dir, `fixture-${name}.png`) });
+         |   ^
+      21 |   return data;
+      22 | }
+      23 | async function world(page: Page, obstacles: unknown[] = [], powerups: unknown[] = [], coins: unknown[] = []) {
+        at snap (D:\worker\paoku-sessions\pao-19\tests\e2e\pao6-baseline.spec.ts:20:3)
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao6-baseline.spec.ts:90:148
+
+    Error: UNKNOWN: unknown error, open 'D:\worker\paoku-sessions\pao-19\docs\evidence\PAO-6\fixture-powerups-shield-missions.json'
+
+      59 |   const trace = await page.evaluate(() => (window as any).__paoTrace).catch(() => []);
+      60 |   expect(logs[title].filter((l: any) => l.type === 'pageerror')).toEqual([]);
+    > 61 |   await writeFile(resolve(dir, `fixture-${title}.json`), JSON.stringify({ mode: 'runtime spawner fixture, real input, godMode=false', title, browser: test.info().project.use, logs: logs[title], states: states[title], trace }, null, 2));
+         |   ^
+      62 | });
+      63 |
+      64 | test('ramp-roof-jump-land', async ({ page }) => {
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao6-baseline.spec.ts:61:3
+
+    Error Context: test-results\pao6-baseline-powerups-shield-missions\error-context.md
+
+  7) tests\e2e\pao6-baseline.spec.ts:98:1 › mobile-touch-layout ────────────────────────────────────
+
+    Error: UNKNOWN: unknown error, open 'D:\worker\paoku-sessions\pao-19\docs\evidence\PAO-6\fixture-mobile-roll.png'
+
+      18 |   });
+      19 |   states[test.info().title].push({ name, ...data });
+    > 20 |   await page.screenshot({ animations: 'disabled', path: resolve(dir, `fixture-${name}.png`) });
+         |   ^
+      21 |   return data;
+      22 | }
+      23 | async function world(page: Page, obstacles: unknown[] = [], powerups: unknown[] = [], coins: unknown[] = []) {
+        at snap (D:\worker\paoku-sessions\pao-19\tests\e2e\pao6-baseline.spec.ts:20:3)
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao6-baseline.spec.ts:106:30
+
+    Error: UNKNOWN: unknown error, open 'D:\worker\paoku-sessions\pao-19\docs\evidence\PAO-6\fixture-mobile-touch-layout.json'
+
+      59 |   const trace = await page.evaluate(() => (window as any).__paoTrace).catch(() => []);
+      60 |   expect(logs[title].filter((l: any) => l.type === 'pageerror')).toEqual([]);
+    > 61 |   await writeFile(resolve(dir, `fixture-${title}.json`), JSON.stringify({ mode: 'runtime spawner fixture, real input, godMode=false', title, browser: test.info().project.use, logs: logs[title], states: states[title], trace }, null, 2));
+         |   ^
+      62 | });
+      63 |
+      64 | test('ramp-roof-jump-land', async ({ page }) => {
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\pao6-baseline.spec.ts:61:3
+
+    Error Context: test-results\pao6-baseline-mobile-touch-layout\error-context.md
+
+  8) tests\e2e\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-1440x900 ────────────────────
+
+    Error: page.evaluate: DataCloneError: Failed to execute 'structuredClone' on 'Window': #<Map> could not be cloned.
+        at eval (eval at evaluate (:311:30), <anonymous>:9:17)
+        at async <anonymous>:337:30
+        at eval (eval at evaluate (:311:30), <anonymous>:9:17)
+        at async <anonymous>:337:30
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\rebuild-ui.spec.ts:9:13
+
+    Error Context: test-results\rebuild-ui-R01-R05-R09-F-readonly-layout-1440x900\error-context.md
+
+  9) tests\e2e\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-390x844 ─────────────────────
+
+    Error: page.evaluate: DataCloneError: Failed to execute 'structuredClone' on 'Window': #<Map> could not be cloned.
+        at eval (eval at evaluate (:311:30), <anonymous>:9:17)
+        at async <anonymous>:337:30
+        at eval (eval at evaluate (:311:30), <anonymous>:9:17)
+        at async <anonymous>:337:30
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\rebuild-ui.spec.ts:9:13
+
+    Error Context: test-results\rebuild-ui-R01-R05-R09-F-readonly-layout-390x844\error-context.md
+
+  10) tests\e2e\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-320x568 ────────────────────
+
+    Error: page.evaluate: DataCloneError: Failed to execute 'structuredClone' on 'Window': #<Map> could not be cloned.
+        at eval (eval at evaluate (:311:30), <anonymous>:9:17)
+        at async <anonymous>:337:30
+        at eval (eval at evaluate (:311:30), <anonymous>:9:17)
+        at async <anonymous>:337:30
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\rebuild-ui.spec.ts:9:13
+
+    Error Context: test-results\rebuild-ui-R01-R05-R09-F-readonly-layout-320x568\error-context.md
+
+  11) tests\e2e\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-844x390 ────────────────────
+
+    Error: page.evaluate: DataCloneError: Failed to execute 'structuredClone' on 'Window': #<Map> could not be cloned.
+        at eval (eval at evaluate (:311:30), <anonymous>:9:17)
+        at async <anonymous>:337:30
+        at eval (eval at evaluate (:311:30), <anonymous>:9:17)
+        at async <anonymous>:337:30
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\rebuild-ui.spec.ts:9:13
+
+    Error Context: test-results\rebuild-ui-R01-R05-R09-F-readonly-layout-844x390\error-context.md
+
+  11 failed
+    tests\e2e\pao10-simulation.spec.ts:67:1 › N-mobile-production-touch ────────────────────────────
+    tests\e2e\pao11-surfaces.spec.ts:124:1 › F-high-base-ramp-5-to-8-continuous-roof ───────────────
+    tests\e2e\pao14-review.spec.ts:54:1 › F-review-audio-different-fields-under-lock ───────────────
+    tests\e2e\pao6-baseline.spec.ts:64:1 › ramp-roof-jump-land ─────────────────────────────────────
+    tests\e2e\pao6-baseline.spec.ts:76:1 › obstacles-failure-restart ───────────────────────────────
+    tests\e2e\pao6-baseline.spec.ts:86:1 › powerups-shield-missions ────────────────────────────────
+    tests\e2e\pao6-baseline.spec.ts:98:1 › mobile-touch-layout ─────────────────────────────────────
+    tests\e2e\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-1440x900 ─────────────────────
+    tests\e2e\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-390x844 ──────────────────────
+    tests\e2e\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-320x568 ──────────────────────
+    tests\e2e\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-844x390 ──────────────────────
+  37 passed (3.6m)

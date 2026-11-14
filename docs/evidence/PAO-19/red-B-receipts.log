@@ -1,0 +1,37 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao19-ui.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-19
+
+ ❯ tests/unit/pao19-ui.test.ts (6 tests | 1 failed) 236ms
+   × B I-01 notifies before dispatch and correlates success/failure without duplicate toast 231ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao19-ui.test.ts > B I-01 notifies before dispatch and correlates success/failure without duplicate toast
+AssertionError: expected undefined to match object { pending: { …(2) }, state: 'MENU' }
+
+- Expected:
+{
+  "pending": {
+    "commandId": "p19-start",
+    "type": "START_RUN",
+  },
+  "state": "MENU",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/pao19-ui.test.ts:29:23
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  18:35:30
+   Duration  634ms (transform 234ms, setup 0ms, import 88ms, tests 236ms, environment 0ms)

@@ -1,0 +1,50 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao19.playwright.config.ts rebuild-ui.spec.ts --grep unknown-terminal --retries 0
+
+[WebServer] (node:25392) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:32800) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 18:38:30 [vite] (client) [Unhandled error] TypeError: Cannot assign to read only property 'summary' of object '#<Object>'
+[WebServer]  > dispatchIntent src/main.ts:207:12
+[WebServer]     205 |    if (terminalCommand && allowedTerminal && app.activeRunId && command.runId === app.activeRunId) {
+[WebServer]     206 |      // Seal before changing phase, clearing the world or resetting any mission.
+[WebServer]     207 |      command.summary = command.summary ?? app.summary ?? createRunSummary(simulation.snapshot, simulation.snapshot.pha...
+[WebServer]         |              ^
+[WebServer]     208 |      inputSystem.clear();
+[WebServer]     209 |      gameLoop.setPaused(true);
+[WebServer]  > src/main.ts:232:25
+[WebServer]  > src/core/eventBus.ts:25:37
+[WebServer]  > EventBus.emit src/core/eventBus.ts:25:21
+[WebServer]  > UIManager.intent src/ui/dom.ts:376:13
+[WebServer]  > HTMLButtonElement.backToMenu src/ui/dom.ts:172:11
+[WebServer]
+  x  1 tests\e2e\.pao19.local\rebuild-ui.spec.ts:56:1 › R08 F-unknown-terminal-retry-keeps-sealed-summary (8.9s)
+
+
+  1) tests\e2e\.pao19.local\rebuild-ui.spec.ts:56:1 › R08 F-unknown-terminal-retry-keeps-sealed-summary
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "MENU"
+    Received: "GAMEOVER"
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      57 |  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await page.waitForFunction(()=>localStorage.getItem('paoku_save_v1')!==null);await page.click('#start-btn');await page.click('#hud-pause-btn');const original=await page.evaluate(()=>(window as any).__GAME_SENSOR__.getAppSnapshot().activeRunId);
+      58 |  await page.evaluate(()=>{const get=Storage.prototype.getItem,set=Storage.prototype.setItem;let armed=true,reads=0;Storage.prototype.getItem=function(k){if(k==='paoku_save_v1'&&reads>0){reads--;throw Error('F unknown terminal confirmation');}return get.call(this,k);};Storage.prototype.setItem=function(k,v){set.call(this,k,v);if(k==='paoku_save_v1'&&armed){armed=false;reads=1;throw Error('F terminal durable write');}};});
+    > 59 |  await page.click('#pause-menu-btn');await expect(page.locator('#gameover-screen .command-error')).toContainText('保存');await page.click('#go-menu-btn');await expect.poll(()=>page.evaluate(()=>(window as any).__GAME_SENSOR__.getGameState())).toBe('MENU');expect(errors).toEqual([]);const app=await page.evaluate(()=>(window as any).__GAME_SENSOR__.getAppSnapshot());await mkdir(dir,{recursive:true});await writeFile(dir+'/F-unknown-terminal.json',JSON.stringify({original,app,errors},null,2));
+         |                                                                                                                                                                                                                                                  ^
+      60 | });
+      61 |
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\.pao19.local\rebuild-ui.spec.ts:59:242
+
+    Error Context: test-results\rebuild-ui-R08-F-unknown-terminal-retry-keeps-sealed-summary\error-context.md
+
+  1 failed
+    tests\e2e\.pao19.local\rebuild-ui.spec.ts:56:1 › R08 F-unknown-terminal-retry-keeps-sealed-summary

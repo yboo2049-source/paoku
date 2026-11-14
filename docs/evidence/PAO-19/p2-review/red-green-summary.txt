@@ -1,0 +1,14 @@
+# P2 RED/GREEN evidence summary (cf9f965 base)
+
+RED unit: 1 new failing case / 7 existing passing cases; InteractionScope was not implemented.
+RED browser: all 4 new P2 cases failed on the unchanged production baseline.
+- Storage unknown commit -> real start/pause/menu -> toggle reused the old null-run commandId.
+- UI acknowledgement loss -> same real navigation -> same stale identity.
+- Late old UI failure after navigation restored the expired retry identity.
+- Loaded portrait model projected bottom=616.77; card top=381.41, expected >620.77.
+
+GREEN targeted: 12 cases passed, including existing same-context unknown retry, repeated audio toggles/queued fields, terminal retry and all four new P2 regressions.
+GREEN unit: 17 files / 252 tests passed. Build exit 0.
+
+First complete run: 58 passed / 2 failed solely on a pre-existing Google Fonts ERR_CONNECTION_CLOSED request (no assertion removed or resource mocked). Full log and all bulk evidence remain in the ignored .pao19-p2.local directory.
+Final complete run is reported in verification.json with actual retry counts.

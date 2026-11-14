@@ -1,0 +1,115 @@
+[
+  {
+    "state": "MENU",
+    "overflow": false,
+    "buttons": [
+      {
+        "id": "start-btn",
+        "width": 350,
+        "height": 48
+      },
+      {
+        "id": "open-shop-btn",
+        "width": 350,
+        "height": 48
+      },
+      {
+        "id": "bgm-toggle-btn",
+        "width": 104,
+        "height": 48
+      },
+      {
+        "id": "sfx-toggle-btn",
+        "width": 104,
+        "height": 48
+      }
+    ],
+    "card": [
+      {
+        "w": 844,
+        "scroll": 844
+      }
+    ]
+  },
+  {
+    "state": "PLAYING",
+    "overflow": false,
+    "buttons": [
+      {
+        "id": "audio-toggle-btn",
+        "width": 48,
+        "height": 48
+      },
+      {
+        "id": "hud-pause-btn",
+        "width": 48,
+        "height": 48
+      }
+    ],
+    "card": []
+  },
+  {
+    "state": "PAUSED",
+    "overflow": false,
+    "buttons": [
+      {
+        "id": "audio-toggle-btn",
+        "width": 48,
+        "height": 48
+      },
+      {
+        "id": "hud-pause-btn",
+        "width": 48,
+        "height": 48
+      },
+      {
+        "id": "resume-btn",
+        "width": 350,
+        "height": 48
+      },
+      {
+        "id": "pause-restart-btn",
+        "width": 350,
+        "height": 48
+      },
+      {
+        "id": "pause-menu-btn",
+        "width": 350,
+        "height": 48
+      }
+    ],
+    "card": [
+      {
+        "w": 844,
+        "scroll": 844
+      }
+    ]
+  },
+  {
+    "state": "GAMEOVER",
+    "overflow": false,
+    "buttons": [
+      {
+        "id": "restart-btn",
+        "width": 390,
+        "height": 48
+      },
+      {
+        "id": "go-shop-btn",
+        "width": 390,
+        "height": 48
+      },
+      {
+        "id": "go-menu-btn",
+        "width": 390,
+        "height": 48
+      }
+    ],
+    "card": [
+      {
+        "w": 844,
+        "scroll": 844
+      }
+    ]
+  }
+]

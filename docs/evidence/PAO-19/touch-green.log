@@ -1,0 +1,37 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao19.playwright.config.ts --grep N-complete-touch --retries 0
+
+[WebServer] (node:30320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:29124) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\.pao19.local\rebuild-ui.spec.ts:34:34 › R06/R07 N-complete-touch (9.3s)
+
+
+  1) tests\e2e\.pao19.local\rebuild-ui.spec.ts:34:34 › R06/R07 N-complete-touch ────────────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "PAUSED"
+    Received: "PLAYING"
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      39 |  if(mobile){for(const [x,y,toX,toY] of [[250,420,100,420],[100,420,250,420],[180,500,180,300],[180,350,180,550]]){await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x,y}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:toX,y:toY}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await page.waitForTimeout(100);}}
+      40 |  else {await page.keyboard.press('a');await page.waitForTimeout(100);await page.keyboard.press('d');await page.keyboard.press('Space');await page.waitForTimeout(100);await page.keyboard.press('s');await page.screenshot({path:dir+'/key-desktop-hud.png'});}
+    > 41 |  await activate('#hud-pause-btn');await expect.poll(state).toBe('PAUSED');const before=await page.evaluate(()=>(window as any).__GAME_SENSOR__.getSimulationSnapshot().tick);await page.waitForTimeout(250);expect(await page.evaluate(()=>(window as any).__GAME_SENSOR__.getSimulationSnapshot().tick)).toBe(before);await activate('#resume-btn');await expect.poll(state).toBe('PLAYING');await expect.poll(state,{timeout:55000}).toBe('GAMEOVER');await expect(page.locator('#settlement-status')).toContainText('已保存');await page.screenshot({path:dir+`/key-${mobile?'mobile':'desktop'}-result.png`});await activate('#restart-btn');await expect.poll(state).toBe('PLAYING');await activate('#hud-pause-btn');await activate('#pause-menu-btn');await expect.poll(state).toBe('MENU');expect(errors).toEqual([]);await writeFile(dir+`/N-${mobile?'touch':'keyboard'}.json`,JSON.stringify({errors,tickPaused:before,state:await state(),qaMode:await page.evaluate(()=>(window as any).__QA_MODE__??false)},null,2));
+         |                                                            ^
+      42 | });
+      43 |
+      44 | test('R04/R08 F-real-UI-unknown-audio-retry-retains-command',async({page})=>{
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\.pao19.local\rebuild-ui.spec.ts:41:60
+
+    Error Context: test-results\rebuild-ui-R06-R07-N-complete-touch\error-context.md
+
+  1 failed
+    tests\e2e\.pao19.local\rebuild-ui.spec.ts:34:34 › R06/R07 N-complete-touch ─────────────────────

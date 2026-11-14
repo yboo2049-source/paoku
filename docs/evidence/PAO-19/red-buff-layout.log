@@ -1,0 +1,36 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao19.playwright.config.ts rebuild-ui.spec.ts --grep layout-390 --retries 0
+
+[WebServer] (node:7052) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:27500) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\.pao19.local\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-390x844 (2.6s)
+
+
+  1) tests\e2e\.pao19.local\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-390x844 ────────
+
+    Error: portrait buffs must leave the central runner clear
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      20 |   const record=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,buttons:[...document.querySelectorAll<HTMLButtonElement>('#ui-layer button')].filter(el=>el.getClientRects().length).map(el=>({id:el.id,width:el.getBoundingClientRect().width,height:el.getBoundingClientRect().height})),card:[...document.querySelectorAll<HTMLElement>('.ui-screen')].filter(el=>el.style.display!=='none').map(el=>({w:el.getBoundingClientRect().width,scroll:el.scrollWidth}))}));
+      21 |   expect(record.overflow).toBe(false);expect(record.buttons.every(x=>x.width>=48&&x.height>=48)).toBe(true);records.push({state,...record});
+    > 22 |   if(state==='PLAYING'&&width<768){const clear=await page.locator('.buff-pill').evaluateAll((els,width)=>els.every(el=>el.getBoundingClientRect().right<=width*.4),width);expect(clear,'portrait buffs must leave the central runner clear').toBe(true);await page.screenshot({path:dir+'/four-buffs-'+width+'.png'});}
+         |                                                                                                                                                                                                                                              ^
+      23 |   if(state==='GAMEOVER'){await expect(page.locator('#go-final-score')).toHaveText('等待结算数据');await expect(page.locator('#go-coins-earned')).toHaveText('—');}
+      24 |  }
+      25 |  await page.evaluate(()=>{const f=(window as any).__pao19Fixture;f.ui.notifyCommandPending({commandId:'f',type:'GO_MENU',runId:'fixture'});});await page.waitForTimeout(350);
+        at D:\worker\paoku-sessions\pao-19\tests\e2e\.pao19.local\rebuild-ui.spec.ts:22:238
+
+    Error Context: test-results\rebuild-ui-R01-R05-R09-F-readonly-layout-390x844\error-context.md
+
+  1 failed
+    tests\e2e\.pao19.local\rebuild-ui.spec.ts:6:73 › R01-R05/R09 F-readonly-layout-390x844 ─────────

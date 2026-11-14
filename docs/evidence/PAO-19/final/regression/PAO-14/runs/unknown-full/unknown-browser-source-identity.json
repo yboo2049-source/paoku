@@ -1,0 +1,16 @@
+{
+  "cwd": "D:\\worker\\paoku-sessions\\pao-19",
+  "baseURL": "http://127.0.0.1:5185",
+  "sources": [
+    {
+      "source": "src/application/appService.ts",
+      "exactRawSourceMatch": true,
+      "sha256": "843d526e1ee1c71b97299d2dffe9013c6fbca175c8bbe3bf315534c9055a189f"
+    },
+    {
+      "source": "src/application/saveRepository.ts",
+      "exactRawSourceMatch": true,
+      "sha256": "9794bddd00971c6a415168c39c557987b0c4b291fc46d912d03ea6d9efabadde"
+    }
+  ]
+}

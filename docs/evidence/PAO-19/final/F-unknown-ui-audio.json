@@ -1,0 +1,45 @@
+{
+  "intents": [
+    {
+      "kind": "TOGGLE",
+      "field": "bgmEnabled",
+      "runId": null,
+      "commandId": "pao19-aa55621c-7d43-4066-9797-a540d6cf141e-1"
+    },
+    {
+      "kind": "TOGGLE",
+      "field": "bgmEnabled",
+      "runId": null,
+      "commandId": "pao19-aa55621c-7d43-4066-9797-a540d6cf141e-1"
+    },
+    {
+      "kind": "TOGGLE",
+      "field": "bgmEnabled",
+      "runId": null,
+      "commandId": "pao19-aa55621c-7d43-4066-9797-a540d6cf141e-1"
+    }
+  ],
+  "writes": 1,
+  "app": {
+    "appState": "MENU",
+    "activeRunId": null,
+    "walletCoins": 0,
+    "highScore": 0,
+    "revision": 1,
+    "ownedSkinIds": [
+      "cyan"
+    ],
+    "selectedSkinId": "cyan",
+    "audio": {
+      "masterMuted": false,
+      "bgmEnabled": false,
+      "sfxEnabled": true,
+      "bgmVolume": 0.6,
+      "sfxVolume": 0.9
+    },
+    "summary": null,
+    "settlementStatus": "NONE",
+    "errorCode": null
+  },
+  "toasts": 0
+}

@@ -1,0 +1,27 @@
+{
+  "app": {
+    "appState": "MENU",
+    "activeRunId": null,
+    "walletCoins": 0,
+    "highScore": 0,
+    "revision": 2,
+    "ownedSkinIds": [
+      "cyan"
+    ],
+    "selectedSkinId": "cyan",
+    "audio": {
+      "masterMuted": false,
+      "bgmEnabled": false,
+      "sfxEnabled": false,
+      "bgmVolume": 0.6,
+      "sfxVolume": 0.9
+    },
+    "summary": null,
+    "settlementStatus": "NONE",
+    "errorCode": null
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}

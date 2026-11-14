@@ -1,0 +1,15 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao19.playwright.config.ts rebuild-ui.spec.ts --grep unknown --retries 0
+
+[WebServer] (node:23100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:33048) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\.pao19.local\rebuild-ui.spec.ts:41:1 › R04/R08 F-real-UI-unknown-audio-retry-retains-command (3.1s)
+  ok 2 tests\e2e\.pao19.local\rebuild-ui.spec.ts:56:1 › R08 F-unknown-terminal-retry-keeps-sealed-summary (2.7s)
+
+  2 passed (9.8s)

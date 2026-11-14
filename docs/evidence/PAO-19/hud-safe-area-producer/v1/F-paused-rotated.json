@@ -1,0 +1,147 @@
+{
+  "sampleFrame": 2,
+  "page": "PAUSED",
+  "runId": "F-layout",
+  "canvasRect": {
+    "x": 0,
+    "y": 0,
+    "width": 844,
+    "height": 390
+  },
+  "viewport": {
+    "layoutWidth": 844,
+    "layoutHeight": 390,
+    "visual": {
+      "x": 0,
+      "y": 0,
+      "width": 844,
+      "height": 390
+    },
+    "visualScale": 1
+  },
+  "producerId": "pao19-layout-5d3dd442-5081-4ed7-8bcd-0e64809f7b40",
+  "epoch": 0,
+  "layoutRevision": 3,
+  "status": "READY",
+  "reason": null,
+  "profile": "modal",
+  "modal": "dimmed",
+  "deviceInsets": {
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "left": 0
+  },
+  "surfaces": [
+    {
+      "id": "audio",
+      "kind": "control",
+      "edge": "top",
+      "clientRect": {
+        "x": 716,
+        "y": 24,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "id": "coins",
+      "kind": "readout",
+      "edge": "top",
+      "clientRect": {
+        "x": 370,
+        "y": 24,
+        "width": 338,
+        "height": 173
+      }
+    },
+    {
+      "id": "pause",
+      "kind": "control",
+      "edge": "top",
+      "clientRect": {
+        "x": 772,
+        "y": 24,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "id": "paused-card",
+      "kind": "card",
+      "edge": "none",
+      "clientRect": {
+        "x": 222,
+        "y": 24,
+        "width": 400,
+        "height": 342
+      }
+    },
+    {
+      "id": "powerup-DOUBLE_SCORE",
+      "kind": "powerup",
+      "edge": "none",
+      "clientRect": {
+        "x": 24,
+        "y": 112,
+        "width": 165,
+        "height": 82
+      }
+    },
+    {
+      "id": "powerup-HOVERBOARD",
+      "kind": "powerup",
+      "edge": "none",
+      "clientRect": {
+        "x": 24,
+        "y": 292,
+        "width": 165,
+        "height": 82
+      }
+    },
+    {
+      "id": "powerup-MAGNET",
+      "kind": "powerup",
+      "edge": "none",
+      "clientRect": {
+        "x": 24,
+        "y": 22,
+        "width": 165,
+        "height": 82
+      }
+    },
+    {
+      "id": "powerup-SUPER_SNEAKERS",
+      "kind": "powerup",
+      "edge": "none",
+      "clientRect": {
+        "x": 24,
+        "y": 202,
+        "width": 165,
+        "height": 82
+      }
+    },
+    {
+      "id": "score",
+      "kind": "readout",
+      "edge": "top",
+      "clientRect": {
+        "x": 24,
+        "y": 24,
+        "width": 338,
+        "height": 173
+      }
+    },
+    {
+      "id": "speed",
+      "kind": "readout",
+      "edge": "top",
+      "clientRect": {
+        "x": 24,
+        "y": 205,
+        "width": 263.453125,
+        "height": 59
+      }
+    }
+  ]
+}

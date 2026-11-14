@@ -1,0 +1,8 @@
+
+> app@0.0.0 build
+> tsc && vite build
+
+src/ui/views/models.ts(14,57): error TS2339: Property '' does not exist on type '{ SAVE_FAILED: string; STORAGE_UNAVAILABLE: string; LOCK_UNAVAILABLE: string; CONFLICT: string; STALE_RUN: string; INVALID_STATE: string; INSUFFICIENT_FUNDS: string; NOT_OWNED: string; UNKNOWN_SKIN: string; FUTURE_SCHEMA: string; CORRUPT_SAVE: string; INVALID_AUDIO: string; }'.
+src/ui/views/models.ts(14,57): error TS2339: Property 'INVALID_COMMAND' does not exist on type '{ SAVE_FAILED: string; STORAGE_UNAVAILABLE: string; LOCK_UNAVAILABLE: string; CONFLICT: string; STALE_RUN: string; INVALID_STATE: string; INSUFFICIENT_FUNDS: string; NOT_OWNED: string; UNKNOWN_SKIN: string; FUTURE_SCHEMA: string; CORRUPT_SAVE: string; INVALID_AUDIO: string; }'.
+src/ui/views/models.ts(14,57): error TS2339: Property 'INVALID_SUMMARY' does not exist on type '{ SAVE_FAILED: string; STORAGE_UNAVAILABLE: string; LOCK_UNAVAILABLE: string; CONFLICT: string; STALE_RUN: string; INVALID_STATE: string; INSUFFICIENT_FUNDS: string; NOT_OWNED: string; UNKNOWN_SKIN: string; FUTURE_SCHEMA: string; CORRUPT_SAVE: string; INVALID_AUDIO: string; }'.
+src/ui/views/models.ts(14,57): error TS2339: Property 'OVERFLOW' does not exist on type '{ SAVE_FAILED: string; STORAGE_UNAVAILABLE: string; LOCK_UNAVAILABLE: string; CONFLICT: string; STALE_RUN: string; INVALID_STATE: string; INSUFFICIENT_FUNDS: string; NOT_OWNED: string; UNKNOWN_SKIN: string; FUTURE_SCHEMA: string; CORRUPT_SAVE: string; INVALID_AUDIO: string; }'.

@@ -1,0 +1,50 @@
+{
+  "protectedCount": 1100,
+  "changed": [],
+  "alteredInputs": [],
+  "missingReferences": [],
+  "validJSON": 14,
+  "observedReplayComparedTicks": 202,
+  "images": [
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-15-roof-diagnosis\\.pao15-local\\roof-diagnosis\\run4\\evidence\\fixture-roof-contact.png",
+      "sha256": "60eb1ce7ac11f9c6c6fccedf3339781575ee4bb22a054f0cf96f445e3c40225b",
+      "visuallyInspected": true
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-15-roof-diagnosis\\.pao15-local\\roof-diagnosis\\run4\\evidence\\fixture-roof-jump.png",
+      "sha256": "adb9195358459c5a75448cc60e163035585822d3bd284a871707fe57850f2db3",
+      "visuallyInspected": true
+    },
+    {
+      "path": "D:\\worker\\paoku-sessions\\pao-15-roof-diagnosis\\.pao15-local\\roof-diagnosis\\run4\\evidence\\fixture-roof-exit-land.png",
+      "sha256": "a7ad8878505707ea7ef782de9bce72619e0869cdb0c9665d1058f4577ccf6bce",
+      "visuallyInspected": true
+    }
+  ],
+  "baseline": {
+    "build": 0,
+    "unit": 0,
+    "files": 18,
+    "tests": 269
+  },
+  "runtime": {
+    "collectionErrors": 4,
+    "executedOriginal": 3,
+    "originalPass": 3,
+    "observed": 1,
+    "observedPass": 1,
+    "retries": 0,
+    "fullSuiteRerun": false
+  },
+  "fixed": {
+    "scans": 31,
+    "failed": [
+      97
+    ],
+    "success": 30,
+    "additionalControls": 2,
+    "replays": 2
+  },
+  "sourceHead": "614179d245d2a87a2a2aa3d61fde2a8de68eb7c1"
+}

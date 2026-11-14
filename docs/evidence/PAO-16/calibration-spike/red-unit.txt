@@ -1,0 +1,27 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao16-calibration.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-16
+
+ ❯ tests/unit/pao16-calibration.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao16-calibration.test.ts [ tests/unit/pao16-calibration.test.ts ]
+Error: Cannot find module '../../tools/pao16-calibration/core' imported from D:/worker/paoku-sessions/pao-16/tests/unit/pao16-calibration.test.ts
+ ❯ tests/unit/pao16-calibration.test.ts:2:1
+      1| import { describe, it, expect } from 'vitest';
+      2| import { identity, multiply, trs, transform, inverse, applyOnce, fitUn…
+       | ^
+      3|
+      4| describe('PAO16 calibration safeguards', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  22:59:16
+   Duration  249ms (transform 27ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)

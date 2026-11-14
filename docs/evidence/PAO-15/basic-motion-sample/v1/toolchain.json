@@ -1,0 +1,22 @@
+{
+  "node": "v24.18.1",
+  "blenderVersion": "4.5.3 LTS",
+  "blenderBuildHash": "67807e1800cc",
+  "executableSha256": "bd9d0d31051b9c54c7651ae65d97bb3cd443624ea8e0691497df591b34805510",
+  "portableArchive": {
+    "version": "4.5.3 LTS",
+    "buildHash": "67807e1800cc",
+    "archiveUrl": "https://download.blender.org/release/Blender4.5/blender-4.5.3-windows-x64.zip",
+    "officialChecksumUrl": "https://download.blender.org/release/Blender4.5/blender-4.5.3.sha256",
+    "sha256": "6b657c8bdd3a7b65b07b9e1ae17eb4be7dd4aa23121da7f3d3354fc2551330a7",
+    "officialChecksumMatched": true,
+    "deployment": ".pao15-local/blender (locally ignored)",
+    "systemInstall": false,
+    "globalPathChanged": false
+  },
+  "newInstallation": false,
+  "globalPathChanged": false,
+  "cloudCalls": false,
+  "sourceCommit": "64c4f3120224f42995bc4b0fae544feae139d380",
+  "executionBase": "8c4b09fc5351778fe8db19858d52924ac70463b9"
+}

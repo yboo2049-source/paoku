@@ -1,0 +1,61 @@
+{
+  "comparisons": [
+    {
+      "pose": "shoulder_l",
+      "babylonMaxDisplacementM": 1.0413592985115971,
+      "dccMaxDisplacementM": 1.041359474376681,
+      "errorM": 1.7586508382905208e-7
+    },
+    {
+      "pose": "elbow_l",
+      "babylonMaxDisplacementM": 0.7927551371200465,
+      "dccMaxDisplacementM": 0.792755077024453,
+      "errorM": 6.009559350150795e-8
+    },
+    {
+      "pose": "hip_l",
+      "babylonMaxDisplacementM": 1.2384226690977507,
+      "dccMaxDisplacementM": 1.2384235803442485,
+      "errorM": 9.112464978144885e-7
+    },
+    {
+      "pose": "knee_l",
+      "babylonMaxDisplacementM": 0.8670980434651966,
+      "dccMaxDisplacementM": 0.8670981249417586,
+      "errorM": 8.147656205270692e-8
+    },
+    {
+      "pose": "shoulder_r",
+      "babylonMaxDisplacementM": 1.041656252524726,
+      "dccMaxDisplacementM": 1.041656304148947,
+      "errorM": 5.162422112015008e-8
+    },
+    {
+      "pose": "elbow_r",
+      "babylonMaxDisplacementM": 0.7931110286922912,
+      "dccMaxDisplacementM": 0.7931110860364641,
+      "errorM": 5.7344172854634223e-8
+    },
+    {
+      "pose": "hip_r",
+      "babylonMaxDisplacementM": 1.2362572610780727,
+      "dccMaxDisplacementM": 1.2362580332239506,
+      "errorM": 7.721458779030854e-7
+    },
+    {
+      "pose": "knee_r",
+      "babylonMaxDisplacementM": 0.8646783977724225,
+      "dccMaxDisplacementM": 0.8646784561561102,
+      "errorM": 5.8383687662200145e-8
+    },
+    {
+      "pose": "combined_squat",
+      "babylonMaxDisplacementM": 0.6490024068940334,
+      "dccMaxDisplacementM": 0.6490024370131888,
+      "errorM": 3.0119155391972185e-8
+    }
+  ],
+  "maxErrorM": 9.112464978144885e-7,
+  "thresholdM": 0.0001,
+  "passed": true
+}

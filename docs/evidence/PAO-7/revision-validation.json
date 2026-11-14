@@ -1,0 +1,482 @@
+{
+  "validatedAt": "2026-10-31T14:25:54.555Z",
+  "timezone": "Asia/Shanghai",
+  "type": "Specification arithmetic and coordinate examples only; not runtime measurements",
+  "source": "docs/art/rebuild-style-guide.md",
+  "textures": {
+    "transitionScope": "Same-tier serial replacement only. Cross-tier activation requires disposal and target-cap check; not runtime tested",
+    "formula": "count*width*height*4*(4/3)/2^20; exact full mip also summed to 1x1",
+    "uniqueResourceCount": 26,
+    "groups": [
+      {
+        "id": "runner＋chaser",
+        "count": 6,
+        "tiers": [
+          {
+            "width": 1024,
+            "height": 1024,
+            "count": 6,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 32,
+            "exactBytes": 33554424
+          },
+          {
+            "width": 512,
+            "height": 512,
+            "count": 6,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 8,
+            "exactBytes": 8388600
+          },
+          {
+            "width": 512,
+            "height": 512,
+            "count": 6,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 8,
+            "exactBytes": 8388600
+          }
+        ]
+      },
+      {
+        "id": "train_family",
+        "count": 3,
+        "tiers": [
+          {
+            "width": 1024,
+            "height": 1024,
+            "count": 3,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 16,
+            "exactBytes": 16777212
+          },
+          {
+            "width": 1024,
+            "height": 1024,
+            "count": 3,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 16,
+            "exactBytes": 16777212
+          },
+          {
+            "width": 512,
+            "height": 512,
+            "count": 3,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 4,
+            "exactBytes": 4194300
+          }
+        ]
+      },
+      {
+        "id": "ramp_obstacles",
+        "count": 3,
+        "tiers": [
+          {
+            "width": 512,
+            "height": 512,
+            "count": 3,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 4,
+            "exactBytes": 4194300
+          },
+          {
+            "width": 512,
+            "height": 512,
+            "count": 3,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 4,
+            "exactBytes": 4194300
+          },
+          {
+            "width": 256,
+            "height": 256,
+            "count": 3,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 1,
+            "exactBytes": 1048572
+          }
+        ]
+      },
+      {
+        "id": "coin_powerups",
+        "count": 3,
+        "tiers": [
+          {
+            "width": 512,
+            "height": 512,
+            "count": 3,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 4,
+            "exactBytes": 4194300
+          },
+          {
+            "width": 512,
+            "height": 512,
+            "count": 3,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 4,
+            "exactBytes": 4194300
+          },
+          {
+            "width": 256,
+            "height": 256,
+            "count": 3,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 1,
+            "exactBytes": 1048572
+          }
+        ]
+      },
+      {
+        "id": "track_platform",
+        "count": 6,
+        "tiers": [
+          {
+            "width": 1024,
+            "height": 1024,
+            "count": 6,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 32,
+            "exactBytes": 33554424
+          },
+          {
+            "width": 512,
+            "height": 512,
+            "count": 6,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 8,
+            "exactBytes": 8388600
+          },
+          {
+            "width": 512,
+            "height": 512,
+            "count": 6,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 8,
+            "exactBytes": 8388600
+          }
+        ]
+      },
+      {
+        "id": "city_mid_far",
+        "count": 3,
+        "tiers": [
+          {
+            "width": 1024,
+            "height": 1024,
+            "count": 3,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 16,
+            "exactBytes": 16777212
+          },
+          {
+            "width": 512,
+            "height": 512,
+            "count": 3,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 4,
+            "exactBytes": 4194300
+          },
+          {
+            "width": 256,
+            "height": 256,
+            "count": 3,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 1,
+            "exactBytes": 1048572
+          }
+        ]
+      },
+      {
+        "id": "ui_atlas",
+        "count": 1,
+        "tiers": [
+          {
+            "width": 1024,
+            "height": 1024,
+            "count": 1,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 5.333333333333333,
+            "exactBytes": 5592404
+          },
+          {
+            "width": 512,
+            "height": 512,
+            "count": 1,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 1.3333333333333333,
+            "exactBytes": 1398100
+          },
+          {
+            "width": 512,
+            "height": 512,
+            "count": 1,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 1.3333333333333333,
+            "exactBytes": 1398100
+          }
+        ]
+      },
+      {
+        "id": "fx_atlas",
+        "count": 1,
+        "tiers": [
+          {
+            "width": 512,
+            "height": 512,
+            "count": 1,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 1.3333333333333333,
+            "exactBytes": 1398100
+          },
+          {
+            "width": 256,
+            "height": 256,
+            "count": 1,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 0.3333333333333333,
+            "exactBytes": 349524
+          },
+          {
+            "width": 256,
+            "height": 256,
+            "count": 1,
+            "format": "RGBA8",
+            "mipChain": "full",
+            "layers": 1,
+            "approxMiB": 0.3333333333333333,
+            "exactBytes": 349524
+          }
+        ]
+      }
+    ],
+    "tiers": [
+      {
+        "tier": "Q2",
+        "limitMiB": 128,
+        "steadyMiB": 110.66666666666666,
+        "exactSteadyMiB": 110.66663360595703,
+        "serialReplacementReserveMiB": 16,
+        "peakMiB": 126.66666666666666,
+        "peakHeadroomMiB": 1.3333333333333428
+      },
+      {
+        "tier": "Q1",
+        "limitMiB": 64,
+        "steadyMiB": 45.66666666666667,
+        "exactSteadyMiB": 45.66663360595703,
+        "serialReplacementReserveMiB": 16,
+        "peakMiB": 61.66666666666667,
+        "peakHeadroomMiB": 2.3333333333333286
+      },
+      {
+        "tier": "Q0",
+        "limitMiB": 32,
+        "steadyMiB": 24.666666666666664,
+        "exactSteadyMiB": 24.66663360595703,
+        "serialReplacementReserveMiB": 4,
+        "peakMiB": 28.666666666666664,
+        "peakHeadroomMiB": 3.3333333333333357
+      }
+    ]
+  },
+  "geometry": {
+    "basis": "source LOD estimates times retained instance counts; one main-pass submission per instance; actual engine counts not measured",
+    "groups": [
+      {
+        "id": "characters",
+        "instances": 2,
+        "lod0Triangles": 12000,
+        "lodScale": 1
+      },
+      {
+        "id": "train_near",
+        "instances": 1,
+        "lod0Triangles": 6000,
+        "lodScale": 1
+      },
+      {
+        "id": "train_other",
+        "instances": 2,
+        "lod0Triangles": 6000,
+        "lodScale": 0.5
+      },
+      {
+        "id": "ramp_obstacles",
+        "instances": 8,
+        "lod0Triangles": 800,
+        "lodScale": 1
+      },
+      {
+        "id": "pickups",
+        "instances": 50,
+        "lod0Triangles": 400,
+        "lodScale": 0.5
+      },
+      {
+        "id": "track",
+        "instances": 20,
+        "lod0Triangles": 1200,
+        "lodScale": 0.5
+      },
+      {
+        "id": "city",
+        "instances": 20,
+        "lod0Triangles": 1000,
+        "lodScale": 0.2
+      },
+      {
+        "id": "fx_allocation",
+        "instances": 1,
+        "lod0Triangles": 2000,
+        "lodScale": 1
+      }
+    ],
+    "mainPassEstimate": 70400,
+    "q0Limit": 80000,
+    "remainingForAdditionalMainPassSubmissions": 9600,
+    "allTrainsLOD0Estimate": 76400
+  },
+  "ramp": {
+    "assetToLogicTranslation": [
+      0,
+      0,
+      -6
+    ],
+    "logicWorldPosition": [
+      0,
+      5,
+      100
+    ],
+    "points": [
+      {
+        "id": "toe",
+        "a": [
+          0,
+          0,
+          0
+        ],
+        "l": [
+          0,
+          0,
+          -6
+        ],
+        "w": [
+          0,
+          5,
+          94
+        ]
+      },
+      {
+        "id": "crest",
+        "a": [
+          0,
+          3,
+          12
+        ],
+        "l": [
+          0,
+          3,
+          6
+        ],
+        "w": [
+          0,
+          8,
+          106
+        ]
+      },
+      {
+        "id": "base_center",
+        "a": [
+          0,
+          0,
+          6
+        ],
+        "l": [
+          0,
+          0,
+          0
+        ],
+        "w": [
+          0,
+          5,
+          100
+        ]
+      },
+      {
+        "id": "slope_mid",
+        "a": [
+          0,
+          1.5,
+          6
+        ],
+        "l": [
+          0,
+          1.5,
+          0
+        ],
+        "w": [
+          0,
+          6.5,
+          100
+        ]
+      }
+    ],
+    "roofEntry": [
+      0,
+      8,
+      106
+    ],
+    "roundTrips": true,
+    "doubleApplicationDetected": true,
+    "importActuallyTested": false
+  },
+  "result": "PASS"
+}

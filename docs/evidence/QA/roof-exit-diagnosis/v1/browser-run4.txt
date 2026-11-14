@@ -1,0 +1,12 @@
+
+[WebServer] (node:23960) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:3136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] .pao15-local\roof-diagnosis\run4\suite\roof.spec.ts:70:1 › ramp-roof-jump-land
+  1 passed (10.4s)

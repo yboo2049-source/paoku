@@ -1,0 +1,10 @@
+{
+  "protectedFiles": 963,
+  "differences": [],
+  "allUnchanged": true,
+  "sourceSha256": "0f475ed22a2abfbbb9b4cb3069f5c9b131110847b23bd68fbcdff4b3baa797d9",
+  "sourceUnchanged": true,
+  "snapshotSha256": "938debae63e74af3afe521b7bd341b402dec9b3e6aeb74f5d325a6ec0d4d332d",
+  "oldEvidenceWrites": "none; all mirror outputs redirected locally, no restoration needed",
+  "finalPostRegressionVerified": true
+}

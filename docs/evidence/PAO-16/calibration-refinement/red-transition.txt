@@ -1,0 +1,29 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao16-calibration-refinement.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-16
+
+ ❯ tests/unit/pao16-calibration-refinement.test.ts (8 tests | 1 failed) 9ms
+   × transition band retains a rounded other zone instead of claiming an exact seam 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao16-calibration-refinement.test.ts > transition band retains a rounded other zone instead of claiming an exact seam
+TypeError: transitionBands is not a function
+ ❯ tests/unit/pao16-calibration-refinement.test.ts:28:10
+     26| });
+     27| it('transition band retains a rounded other zone instead of claiming a…
+     28|  const b=transitionBands(['other','incline','incline','other','other',…
+       |          ^
+     29|  expect(b.footBracket).toEqual([0,1]);expect(b.roofJoinBracket).toEqua…
+     30| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  20:05:42
+   Duration  228ms (transform 46ms, setup 0ms, import 59ms, tests 9ms, environment 0ms)

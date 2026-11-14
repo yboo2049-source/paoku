@@ -1,0 +1,33 @@
+[WebServer] (node:20072) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:9348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\pao15-rig-spike.spec.ts:7:1 › runner diagnostic imports, deforms, replays and disposes in Babylon (10.1s)
+
+
+  1) tests\e2e\pao15-rig-spike.spec.ts:7:1 › runner diagnostic imports, deforms, replays and disposes in Babylon
+
+    Test timeout of 10000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 10000ms exceeded.
+
+      10 |   await mkdir(dir, { recursive: true });
+      11 |   await page.goto('/tools/pao15-rig-spike/');
+    > 12 |   await page.waitForFunction(() => (window as any).__RIG_PROBE__?.ready === true);
+         |              ^
+      13 |   const imported = await page.evaluate(() => (window as any).__RIG_PROBE__.info());
+      14 |   expect(imported.skeletons).toBe(1);
+      15 |   expect(imported.jointCount).toBeLessThanOrEqual(48);
+        at D:\worker\paoku-sessions\pao-15\tests\e2e\pao15-rig-spike.spec.ts:12:14
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    .pao15-local\probe-results\pao15-rig-spike-runner-dia-ebac6-ays-and-disposes-in-Babylon\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .pao15-local\probe-results\pao15-rig-spike-runner-dia-ebac6-ays-and-disposes-in-Babylon\error-context.md
+
+  1 failed
+    tests\e2e\pao15-rig-spike.spec.ts:7:1 › runner diagnostic imports, deforms, replays and disposes in Babylon

@@ -1,0 +1,13 @@
+﻿{
+    "capturedAt":  "2026-10-31T16:57:38.1489665+08:00",
+    "cpu":  "12th Gen Intel(R) Core(TM) i5-12400",
+    "gpu":  {
+                "Name":  "NVIDIA GeForce GTX 1650",
+                "DriverVersion":  "32.0.16.1088"
+            },
+    "os":  {
+               "Caption":  "Microsoft Windows 11 专业版",
+               "Version":  "10.0.26300",
+               "TotalVisibleMemorySize":  33289656
+           }
+}

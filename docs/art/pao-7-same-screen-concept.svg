@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000" role="img" aria-labelledby="title desc">
+  <title id="title">PAO-7 明亮城市轨道同屏风格概念 v0.1</title>
+  <desc id="desc">原创矢量规划概念，展示珊瑚色跑者、青色完整列车、连接车顶的真实楔形坡道、三车道城市环境与HUD。非游戏截图，非3D资产，全部细节待评审。</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#DCECF0"/><stop offset="1" stop-color="#F7F3E9"/></linearGradient>
+    <linearGradient id="railbed" x2="0" y2="1"><stop stop-color="#B8CBD0"/><stop offset="1" stop-color="#CDD4CD"/></linearGradient>
+    <linearGradient id="train" x2="1" y2="0"><stop stop-color="#6FADB3"/><stop offset="1" stop-color="#397C87"/></linearGradient>
+    <pattern id="hazard" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="20" height="20" fill="#F7F3E9"/><rect width="9" height="20" fill="#D94B4B"/></pattern>
+    <clipPath id="scene"><rect x="40" y="140" width="1040" height="658" rx="24"/></clipPath>
+    <g id="coin"><ellipse rx="13" ry="18" fill="#E4AD3F" stroke="#9C6B26" stroke-width="2"/><ellipse rx="8" ry="12" fill="#F8DB86"/><path d="M0 -7V7M-3 -5H2M-3 5H2" stroke="#9C6B26" stroke-width="2"/></g>
+    <g id="tree"><path d="M0 0V-55" stroke="#849391" stroke-width="7"/><circle cy="-65" r="25" fill="#91B7A3"/><circle cx="-13" cy="-59" r="16" fill="#A7C6AD"/></g>
+  </defs>
+  <rect width="1440" height="1000" fill="#F7F3E9"/>
+  <g font-family="Microsoft YaHei, sans-serif" fill="#243F4B">
+    <text x="40" y="44" font-size="13" letter-spacing="3">PAOKU / ART DIRECTION STUDY 01</text>
+    <text x="40" y="96" font-size="36" font-weight="700">晨光轨道 · 路线先于装饰</text>
+    <rect x="1088" y="32" width="312" height="38" rx="19" fill="#E8E0F1"/>
+    <text x="1244" y="57" text-anchor="middle" font-size="15" fill="#67518C">规划概念 v0.1 · 待评审</text>
+    <text x="1400" y="102" text-anchor="end" font-size="13">2026-10-31 / 明亮风格化城市轨道</text>
+  </g>
+  <g clip-path="url(#scene)">
+    <rect x="40" y="140" width="1040" height="658" fill="url(#sky)"/>
+    <!-- Far skyline stays quiet; no emissive city bands. -->
+    <g fill="#BDD3DB"><path d="M40 400V290H116V253H165V321H224V275H281V370H335V305H393V371H446V337H495V404Z"/><path d="M650 403V322H697V280H751V345H804V260H876V315H924V284H1001V332H1080V414Z"/></g>
+    <g fill="#9DC3D4"><path d="M40 422V335H85V305H160V420ZM173 419V352H237V309H272V430ZM886 432V346H943V320H988V430ZM1012 429V290H1080V440Z"/></g>
+    <g fill="#E9EEEA"><rect x="104" y="328" width="27" height="6"/><rect x="104" y="348" width="27" height="6"/><rect x="104" y="368" width="27" height="6"/><rect x="1026" y="316" width="36" height="7"/><rect x="1026" y="339" width="36" height="7"/><rect x="1026" y="362" width="36" height="7"/></g>
+    <path d="M40 491L520 366H610L1080 491V798H40Z" fill="url(#railbed)"/>
+    <!-- Three tracks converge to a shared horizon. -->
+    <path d="M82 798L491 375H515L345 798ZM375 798L534 375H558L658 798ZM693 798L578 375H601L1031 798Z" fill="#AFBFBE"/>
+    <g stroke="#E8E7DA" stroke-width="7"><path d="M127 749H354M175 702H375M225 654H395M267 610H410M305 570H428M337 536H442M365 507H454M392 480H466M413 457H476M430 438H485"/><path d="M394 749H648M412 702H637M432 654H628M449 610H616M465 570H606M478 536H597M488 507H589M498 480H582M506 457H576M513 438H570"/><path d="M707 749H986M696 702H941M685 654H893M673 610H849M663 570H810M653 536H780M645 507H751M636 480H722M630 457H703M624 438H680"/></g>
+    <g stroke="#708C92" stroke-width="4" fill="none"><path d="M135 798L494 375M314 798L511 375M415 798L537 375M624 798L556 375M738 798L581 375M994 798L598 375"/></g>
+    <!-- Station platforms leave the playable lanes uncluttered. -->
+    <path d="M40 526L424 383L428 396L40 594Z" fill="#F2E5CB"/><path d="M40 594L428 396V410L40 618Z" fill="#A9B7B3"/>
+    <path d="M1080 531L665 383L661 398L1080 603Z" fill="#F2E5CB"/><path d="M1080 603L661 398V413L1080 627Z" fill="#A9B7B3"/>
+    <use href="#tree" transform="translate(110 475) scale(1.12)"/><use href="#tree" transform="translate(240 437) scale(.7)"/><use href="#tree" transform="translate(1010 481) scale(1.05)"/>
+    <g stroke="#859EAA" fill="none"><path d="M176 481V326Q176 311 192 311H305" stroke-width="6"/><path d="M958 481V326Q958 311 942 311H835" stroke-width="6"/></g>
+    <g fill="#F7F3E9"><rect x="272" y="306" width="42" height="10" rx="5"/><rect x="827" y="306" width="42" height="10" rx="5"/></g>
+    <!-- Stationary train: a continuous roof plane connects to the ramp. -->
+    <path d="M548 425L568 357H639L709 425V522H548Z" fill="#397C87"/>
+    <path d="M548 425L568 357H639L709 425Z" fill="#D6E9E1" stroke="#6F9C98" stroke-width="2"/>
+    <path d="M548 425H709V516H548Z" fill="url(#train)"/>
+    <path d="M557 438H700V472H557Z" fill="#243F4B"/>
+    <path d="M564 442H610V467H564ZM620 442H650V467H620ZM660 442H693V467H660Z" fill="#A8D3DB"/>
+    <path d="M547 500H711V524H547Z" fill="#48616A"/>
+    <circle cx="567" cy="523" r="11" fill="#243F4B"/><circle cx="690" cy="523" r="11" fill="#243F4B"/>
+    <!-- Actual wedge side triangles, not a tall rectangular box. -->
+    <path d="M493 634L548 425V515L493 654Z" fill="#51947F"/>
+    <path d="M744 634L709 425V516L744 654Z" fill="#438C79"/>
+    <path d="M493 634L548 425H709L744 634Z" fill="#69BDA4" stroke="#3F8A77" stroke-width="2"/>
+    <path d="M500 630L553 430M735 630L704 430" stroke="#D6E9E1" stroke-width="7"/>
+    <g fill="#EAF5E9"><path d="M584 573L615 541L648 573L638 582L615 559L594 582Z"/><path d="M589 527L615 500L642 527L632 536L615 519L599 536Z"/><path d="M595 486L615 465L636 486L627 494L615 482L604 494Z"/></g>
+    <!-- A second complete train shows front, wheel assemblies and body family. -->
+    <ellipse cx="886" cy="609" rx="102" ry="14" fill="#536D70" opacity=".14"/>
+    <path d="M795 440L711 356H777L941 440V587H795Z" fill="#397C87"/>
+    <path d="M795 440L711 356H777L941 440Z" fill="#C8DEDA" stroke="#6F9C98" stroke-width="2"/>
+    <path d="M795 440L711 356V474L795 587Z" fill="#78B0B5"/>
+    <path d="M779 434L724 379V417L779 479Z" fill="#335966"/>
+    <path d="M768 431L748 411M750 406L735 390" stroke="#BCDDE0" stroke-width="7"/>
+    <path d="M803 447H933Q942 447 942 459V575Q942 590 927 590H810Q795 590 795 575V459Q795 447 803 447Z" fill="url(#train)"/>
+    <path d="M812 462H924V510H812Z" fill="#243F4B"/>
+    <path d="M820 469H916V500H820Z" fill="#A4D0D9"/>
+    <path d="M864 469V500" stroke="#397C87" stroke-width="5"/>
+    <path d="M803 531H934V547H803Z" fill="#E2EDE6"/>
+    <rect x="810" y="553" width="21" height="8" rx="3" fill="#F7E9AD"/><rect x="907" y="553" width="21" height="8" rx="3" fill="#F7E9AD"/>
+    <path d="M799 574H938V596H799Z" fill="#48616A"/><rect x="840" y="586" width="58" height="16" rx="3" fill="#243F4B"/>
+    <ellipse cx="815" cy="600" rx="15" ry="9" fill="#243F4B"/><ellipse cx="922" cy="600" rx="15" ry="9" fill="#243F4B"/>
+    <g font-family="Microsoft YaHei, sans-serif" font-size="11" fill="#F7F3E9"><text x="869" y="526" text-anchor="middle">CITY 07</text></g>
+    <!-- Low jump obstacle: striped closed face distinct from navigable chevrons. -->
+    <path d="M273 536L315 515H374L350 544Z" fill="#F0A19A"/>
+    <path d="M273 536H350V571H273Z" fill="url(#hazard)" stroke="#B94443" stroke-width="3"/>
+    <path d="M350 536L374 515V549L350 571Z" fill="#D94B4B"/>
+    <path d="M278 573V582M343 573V582" stroke="#243F4B" stroke-width="7"/>
+    <!-- Reward cadence follows the left lane, with no bloom. -->
+    <use href="#coin" transform="translate(425 498) scale(.5)"/><use href="#coin" transform="translate(403 534) scale(.65)"/><use href="#coin" transform="translate(374 581) scale(.8)"/>
+    <!-- Original runner, rear three-quarter pose, feet wholly visible. -->
+    <ellipse cx="385" cy="743" rx="44" ry="11" fill="#243F4B" opacity=".16"/>
+    <path d="M378 677L360 711L368 733" fill="none" stroke="#243F4B" stroke-width="19" stroke-linecap="round"/>
+    <path d="M397 678L411 707L401 727" fill="none" stroke="#365460" stroke-width="18" stroke-linecap="round"/>
+    <path d="M359 728L379 731L384 743H354Q349 736 359 728ZM397 724L413 729L419 739H392Z" fill="#F7F3E9" stroke="#42616A" stroke-width="2"/>
+    <path d="M361 625Q384 612 407 629L409 680Q385 690 360 678Z" fill="#EF725B" stroke="#C65949" stroke-width="2"/>
+    <path d="M365 632L351 654L337 645M402 635L420 651L433 635" fill="none" stroke="#EF725B" stroke-width="14" stroke-linecap="round"/>
+    <path d="M337 645L329 633M433 635L436 626" stroke="#DDAE90" stroke-width="11" stroke-linecap="round"/>
+    <path d="M373 623V612H393V623" fill="#DDAE90"/>
+    <ellipse cx="361" cy="599" rx="5" ry="8" fill="#E3B392"/><ellipse cx="407" cy="599" rx="5" ry="8" fill="#E3B392"/>
+    <path d="M361 600Q353 571 378 566Q407 562 409 593L404 609Q385 618 366 608Z" fill="#394F56"/>
+    <path d="M368 581Q385 571 400 581M369 587Q385 580 401 587" stroke="#536970" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M366 628L371 659M402 628L397 659" stroke="#763F3D" stroke-width="5" fill="none"/>
+    <rect x="370" y="632" width="29" height="37" rx="8" fill="#F5B091" stroke="#C65949" stroke-width="2"/>
+    <path d="M375 638H394M376 657H393" stroke="#EF725B" stroke-width="3"/>
+    <path d="M364 673H406" stroke="#A64F43" stroke-width="3"/>
+    <!-- HUD: opaque small islands, central route stays open. Values illustrative only. -->
+    <g font-family="Microsoft YaHei, sans-serif" fill="#243F4B">
+      <rect x="64" y="164" width="233" height="78" rx="16" fill="#F7F3E9"/>
+      <text x="83" y="187" font-size="11" letter-spacing="2">本局得分</text><text x="81" y="224" font-size="31" font-weight="700">008 420</text>
+      <rect x="315" y="164" width="142" height="60" rx="16" fill="#F7F3E9"/>
+      <use href="#coin" transform="translate(339 194) scale(.65)"/><text x="362" y="203" font-size="23" font-weight="700">128</text>
+      <rect x="1000" y="164" width="56" height="56" rx="16" fill="#F7F3E9"/><path d="M1020 180V204M1035 180V204" stroke="#243F4B" stroke-width="5"/>
+      <rect x="65" y="704" width="212" height="66" rx="16" fill="#F7F3E9"/>
+      <path d="M89 724V740Q89 750 101 750Q113 750 113 740V724" stroke="#8C6BC4" stroke-width="8" fill="none"/>
+      <text x="132" y="731" font-size="14" font-weight="700">磁铁</text><text x="132" y="751" font-size="12">剩余 08 秒</text>
+      <text x="1049" y="777" text-anchor="end" font-size="11">同屏构图示意 · 非运行画面 · 数值仅占位</text>
+    </g>
+  </g>
+  <g font-family="Microsoft YaHei, sans-serif" fill="#243F4B">
+    <!-- Sidebar is a review overlay, deliberately outside the concept viewport. -->
+    <rect x="1100" y="140" width="300" height="658" rx="24" fill="#E9EDE6"/>
+    <text x="1124" y="177" font-size="17" font-weight="700">同屏评审锚点</text>
+    <text x="1124" y="210" font-size="13">01  暖色主角 / 冷色环境</text>
+    <text x="1124" y="235" font-size="12" fill="#60767B">服装块面明确，四肢与脚底完整。</text>
+    <path d="M1124 253H1376" stroke="#C9D5CF"/>
+    <text x="1124" y="281" font-size="13">02  坡面 → 同高车顶</text>
+    <text x="1124" y="306" font-size="12" fill="#60767B">斜面与侧面组成楔形，不用高盒体。</text>
+    <path d="M1140 369L1250 337H1357V369Z" fill="#69BDA4" stroke="#438C79" stroke-width="2"/>
+    <path d="M1250 337H1357V369H1250Z" fill="#397C87"/><path d="M1250 337H1357" stroke="#D6E9E1" stroke-width="5"/>
+    <path d="M1140 383H1357" stroke="#849A9E" stroke-dasharray="4 4"/>
+    <text x="1124" y="405" font-size="11" fill="#60767B">侧视原理 · 几何与支撑面须同源</text>
+    <path d="M1124 425H1376" stroke="#C9D5CF"/>
+    <text x="1124" y="454" font-size="13">03  颜色 + 形状双重语义</text>
+    <use href="#coin" transform="translate(1142 491) scale(.7)"/>
+    <path d="M1190 480V496Q1190 506 1201 506Q1212 506 1212 496V480" stroke="#8C6BC4" stroke-width="7" fill="none"/>
+    <path d="M1241 493L1256 476L1271 493L1256 510Z" fill="#8C6BC4"/><text x="1256" y="497" text-anchor="middle" font-size="11" fill="#F7F3E9">×2</text>
+    <path d="M1301 477L1313 479L1315 493L1330 500V508H1299L1296 499Z" fill="#8C6BC4"/>
+    <path d="M1140 544Q1152 535 1179 544Q1189 550 1178 555H1145Q1134 553 1140 544Z" fill="#8C6BC4"/>
+    <text x="1195" y="551" font-size="11" fill="#60767B">磁铁 / 倍分 / 跑鞋 / 滑板</text>
+    <path d="M1124 574H1376" stroke="#C9D5CF"/>
+    <text x="1124" y="603" font-size="13">04  柔和日光 / 克制发光</text>
+    <text x="1124" y="628" font-size="12" fill="#60767B">玻璃与金属保留边界，不铺霓虹。</text>
+    <text x="1124" y="672" font-size="13" font-weight="700">本图能评审</text>
+    <text x="1124" y="697" font-size="12" fill="#60767B">色彩、轮廓、同屏层级、风格方向</text>
+    <text x="1124" y="735" font-size="13" font-weight="700">仍须引擎验证</text>
+    <text x="1124" y="760" font-size="12" fill="#60767B">脚底接触、遮挡、动作、性能、响应式</text>
+    <text x="40" y="835" font-size="13" letter-spacing="2">六类色彩语义 / HEX 为待评审提案</text>
+    <g font-size="12">
+      <rect x="40" y="857" width="207" height="38" rx="8" fill="#EF725B"/><text x="40" y="918">主角 · #EF725B</text>
+      <rect x="270" y="857" width="207" height="38" rx="8" fill="#69BDA4"/><text x="270" y="918">可通行 · #69BDA4</text>
+      <rect x="500" y="857" width="207" height="38" rx="8" fill="#D94B4B"/><text x="500" y="918">危险 · #D94B4B</text>
+      <rect x="730" y="857" width="207" height="38" rx="8" fill="#E4AD3F"/><text x="730" y="918">奖励 · #E4AD3F</text>
+      <rect x="960" y="857" width="207" height="38" rx="8" fill="#8C6BC4"/><text x="960" y="918">道具 · #8C6BC4</text>
+      <rect x="1190" y="857" width="210" height="38" rx="8" fill="#9DC3D4"/><text x="1190" y="918">环境 · #9DC3D4</text>
+    </g>
+    <path d="M40 945H1400" stroke="#CFD8D2"/>
+    <text x="40" y="976" font-size="12">原创矢量规划概念 · 非游戏截图 · 非3D资产 · 未获最终美术冻结审批</text>
+    <text x="1400" y="976" text-anchor="end" font-size="12">PAO-7 / 供评审与后续制作对照</text>
+  </g>
+</svg>

@@ -1,0 +1,3854 @@
+[
+  {
+    "file": "docs/evidence/PAO-10/F-lifecycle-clears-input-and-hidden-time.json",
+    "sha256": "636bd72b7d74d9ed381490f7469222f9c72b78b73da77da0a8d17dfe7185e72b"
+  },
+  {
+    "file": "docs/evidence/PAO-10/N-desktop-production-keyboard-flow.json",
+    "sha256": "4ac5be853f12b147ce2311cd964f4dd34ccbd8c0e9fbf1f0f2afc9775831a82a"
+  },
+  {
+    "file": "docs/evidence/PAO-10/N-mobile-production-touch.json",
+    "sha256": "a6eec01da0f7df81c630e53e39ba66b5873654f8740968f29cc1a826a1f879cb"
+  },
+  {
+    "file": "docs/evidence/PAO-10/README.md",
+    "sha256": "17525b30ba71f7baf4195eb1fcaba71691f2544afb953f77576eecf81a727f7e"
+  },
+  {
+    "file": "docs/evidence/PAO-10/browser-F-lifecycle-queue-and-readonly.json",
+    "sha256": "9231dfabdc58ff935c4b9fe7e329a8bf1d42d321b36c71ab24e28a2c96bd29ce"
+  },
+  {
+    "file": "docs/evidence/PAO-10/browser-F-portrait-touch-flow.json",
+    "sha256": "e1cd21ac723c74f24529721a7b3f1eb9e156c51172368f26c74c02a8694c4c8a"
+  },
+  {
+    "file": "docs/evidence/PAO-10/browser-N-keyboard-playable-flow.json",
+    "sha256": "60cb82bc0284b02b54a7d5d1b4aa694b18e3b45150dc22387c1c70622e420ec9"
+  },
+  {
+    "file": "docs/evidence/PAO-10/browser-attempt-1-lifecycle.json",
+    "sha256": "9231dfabdc58ff935c4b9fe7e329a8bf1d42d321b36c71ab24e28a2c96bd29ce"
+  },
+  {
+    "file": "docs/evidence/PAO-10/browser-history-restoration.json",
+    "sha256": "cc729f6e12fb0432a983fecea33e9b4e982327ed62dbe290c70e76a82550f80a"
+  },
+  {
+    "file": "docs/evidence/PAO-10/browser-runner.mjs",
+    "sha256": "77140d9d8d2b20c02cc15fe80838441d55ac7a759c111e79ea03f819e946c767"
+  },
+  {
+    "file": "docs/evidence/PAO-10/browser-source-identity.json",
+    "sha256": "645c3b9704aae88a40059c695addf65a44b7d44ef3edec3e9f551a6d52ed03a6"
+  },
+  {
+    "file": "docs/evidence/PAO-10/build-attempt-1.log",
+    "sha256": "2d6336889af5bf4bb32da9410897a2bfcafe608f789d56f35bc5662225905bb1"
+  },
+  {
+    "file": "docs/evidence/PAO-10/build-attempt-2.log",
+    "sha256": "6bb46c79060688ca4ae21823ccaa2aa96fbd5c466bd797fac9b5948cab8e4c28"
+  },
+  {
+    "file": "docs/evidence/PAO-10/build.log",
+    "sha256": "d41fc8d22f6ed8eb89c9138c910109e0b8c28f1e69caba764ec10ee3b652a9cf"
+  },
+  {
+    "file": "docs/evidence/PAO-10/core-review-full-unit.log",
+    "sha256": "55af4f287c9cb9fa65f982a2948db0410ea94e4b139e5cb02db97a2f2f4295a0"
+  },
+  {
+    "file": "docs/evidence/PAO-10/core-review-green.log",
+    "sha256": "6e0a2a6ac81fb2502d7e23fb847b3fc51843a1557a06e8f35e48b312fd5e2ee0"
+  },
+  {
+    "file": "docs/evidence/PAO-10/core-review-red.log",
+    "sha256": "036fd07a3f15579cba21f1b5dfe778d3f51dc93ebbd88e226f0bfd4552d78ab6"
+  },
+  {
+    "file": "docs/evidence/PAO-10/e2e-attempt-1.log",
+    "sha256": "e74fef557e4352bce0f9adbb9b753c7a32886b11d7ce416ad334b801ea216520"
+  },
+  {
+    "file": "docs/evidence/PAO-10/e2e-attempt-2.log",
+    "sha256": "b3701838584c0ca322e259d2ce4ac01f847bb64a6320dce63f18ba47429750b6"
+  },
+  {
+    "file": "docs/evidence/PAO-10/e2e.log",
+    "sha256": "7327e5c907e9f1885f1671cceb0abc7bae79146d1b94fb3cc151bd2c5caa7f50"
+  },
+  {
+    "file": "docs/evidence/PAO-10/final-build.log",
+    "sha256": "71b779d25f76ef85389aae529b7fd278a15df21e5f9d8f36b339a8137660dfd2"
+  },
+  {
+    "file": "docs/evidence/PAO-10/final-e2e.json",
+    "sha256": "8a740868ce159bdd837337f86901134ee8b524445b0cb0c7c157a68198d4cb48"
+  },
+  {
+    "file": "docs/evidence/PAO-10/final-unit.log",
+    "sha256": "830149d615b56f4801d0489c3d7bba55fba2f608961428b2236b9347c4b583ed"
+  },
+  {
+    "file": "docs/evidence/PAO-10/green-attempt-1.log",
+    "sha256": "647d7f29b39e867a8ea6b507c16f320172e3872d24f5cc3d7aa91bf189757874"
+  },
+  {
+    "file": "docs/evidence/PAO-10/green.log",
+    "sha256": "bfa5ff17d17eb6482b242e6551523d2e02c339588be269a95796b9311ce6bc59"
+  },
+  {
+    "file": "docs/evidence/PAO-10/implementation-plan.md",
+    "sha256": "a772104414be9f5a3ab8cba9dc7007ceaffba23ad2fc8e443efa0e73c3d4ff2b"
+  },
+  {
+    "file": "docs/evidence/PAO-10/main-build.log",
+    "sha256": "833c116f39ee7b53a96c6e475970866170ee85087f522e0aa188c39e267250f6"
+  },
+  {
+    "file": "docs/evidence/PAO-10/main-full-test.log",
+    "sha256": "09acb5a1bdb1ddc6871f97e00e88a8b36f046f2d4c6639c5da85085daaf77223"
+  },
+  {
+    "file": "docs/evidence/PAO-10/main-green.log",
+    "sha256": "8861781615d19d555cd0f0307d9959aef18591cc356d11863da602256f909a46"
+  },
+  {
+    "file": "docs/evidence/PAO-10/main-red.log",
+    "sha256": "2fe0aba0ba202c325891eae8f275d0746f41712e80a16a8bd13f909f1dff8f9f"
+  },
+  {
+    "file": "docs/evidence/PAO-10/main-typecheck.log",
+    "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+    "file": "docs/evidence/PAO-10/playwright.config.ts",
+    "sha256": "36645840c3981ba3e87963cecc3cdd8fedba53b9ec410ed0b9f6ec31fc123cc7"
+  },
+  {
+    "file": "docs/evidence/PAO-10/proposed-pao6-tick-sync.patch",
+    "sha256": "063b580ee5587a17f3b3c21fb3948a9ae3ba4eb271fd61f1e36f6c261d309b31"
+  },
+  {
+    "file": "docs/evidence/PAO-10/red-touch.log",
+    "sha256": "9bf90273fdfdf2f6fee0881498d697b6a337bef7e3dfd9719fedbc8d1739e700"
+  },
+  {
+    "file": "docs/evidence/PAO-10/red.log",
+    "sha256": "a9c198797b74045b0ce5ac1c43c6528107f38fe70d5a4b7f379913c6ebd6ad32"
+  },
+  {
+    "file": "docs/evidence/PAO-10/reentrant-commit-verification.log",
+    "sha256": "fa47beddaf779c19a8c4688d95470eeba471896a4815febee6ecddce2052b62e"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-double-score.png",
+    "sha256": "ebb90320ad848e4ff5ead728ae1543628b5b46736eb6e8a86a2e58c87d45eab7"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-failure.png",
+    "sha256": "dec9d105793c65c4ef85885505e3eed7154196c8600b7bd03b1671dbd07930b3"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-high-obstacle-result.png",
+    "sha256": "159bc80e31bc25de49bbf76cbf6bf2c05846592462f604578e846fbe944e12a7"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-high-obstacle-roll.png",
+    "sha256": "34ac7a0dfece5064ac834092689ddfd8c63ff6a3a89b3149d0ea12bfd356e779"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-hoverboard.png",
+    "sha256": "c431bd73090b98f9d2899a12d3297c9f64c26e31502f337b7f8ffe0ae1fab0fe"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-low-obstacle-jump.png",
+    "sha256": "7a37c7dafd017c2d86e480ad3f5efcd346fa3f4bd96ef97b9e762f93af89220b"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-low-obstacle-result.png",
+    "sha256": "78f3ec3e022f3c998edee1a7e3425b0fac5611d490db7b128a3c08f2f3f0eddd"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-magnet.png",
+    "sha256": "6851cbae6231d9182495148d92946eb715ec84c8254a01c7cd94a7a72ad8eade"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-mission-status.png",
+    "sha256": "0ba435f08e5f446cac459df5e7473da60fb5551f0beda15239f6dcfff55cc9bc"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-mobile-jump.png",
+    "sha256": "412da3c5ff24c0c40b37a7c9842b81beae9954f524b117b46547f8fa65984894"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-mobile-left.png",
+    "sha256": "69f77f685f87f2e6a5a3f79dea8567550f46c431863ce2146835cc173547e5ec"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-mobile-menu.png",
+    "sha256": "ecbda51feac4e96fab193cf777de9d63ec0ea310ab60ec24bc55c3b8b495588c"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-mobile-paused.png",
+    "sha256": "911d3abb62404439aee7ef75cfadad01fcd54e22339593e7587c6bfd410a102d"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-mobile-roll.png",
+    "sha256": "d9e260fb8ac784d2e96ed39abc256bd156879a258eb686f858c33fa82b57b2ba"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-mobile-shop.png",
+    "sha256": "4960524fea7496d8eb19fbdd9a4bb2ddb972a998917dcdac9b5bf800e7fe2736"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-mobile-touch-layout.json",
+    "sha256": "61e7cee324064916e68b1747ec6d186e4644c6ac0ff3c018435d117835bf8e1c"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-obstacles-failure-restart.json",
+    "sha256": "8ea03d33e980c29753fdcae5834c8fda68a0493d1402898a1e09bd5d55d0a9a2"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-powerups-shield-missions.json",
+    "sha256": "66082302382cc4569f4204f6b51df4acfeefe1bc0dd8f464225d2f6b90921228"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-ramp-approach.png",
+    "sha256": "d8ca7f88d55d3a387486755c14cbeaec4f6d90308a00269592895b0aa1ee918a"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-ramp-ascent.png",
+    "sha256": "9bfa16868ddbde1af62f65654110213e231a9abf24e3a098d669a89a59b4c2aa"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-ramp-roof-jump-land.json",
+    "sha256": "0be6c543977ea3742d16e710c2ddaee46ba9df0b1c967245a28f728dcc1b5ff6"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-restart.png",
+    "sha256": "123e034e7b9255f1e3cec951b38f9f82282c7e7c5a637d747f43a00e33ca18cc"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-roof-contact.png",
+    "sha256": "33bd09af11b232f25d3379994781dcff35701de5d7fc205b7fea5f486e946667"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-roof-exit-land.png",
+    "sha256": "735fa4d85d88ed22e9f07ce2d5c12a23248649e80f034f80c6d282f9e53106be"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-roof-jump.png",
+    "sha256": "85f96abad3765db7f88afecba3aad71f13c8de826e4360e8c983728f55c91807"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-shield-break.png",
+    "sha256": "78d45d8e231177df0dc1a0aefbd98bf083676e2677b5ea4fce69d59a7b2c2f71"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-super-jump.png",
+    "sha256": "7cd5fe1c25b91222e15f053c7906266718f0ddfb118e47dad3e713fafdbece20"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/pao6/fixture-super-sneakers.png",
+    "sha256": "b3ba8f736e7623d2300cda10c434017394467b5a9b1783e68fe2a515ca5c1442"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/screenshot_1_menu.png",
+    "sha256": "9486676c0cd7a8999c52e31fb09ef4d3abda58fdaaed7ae1eecae6af113af29a"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/screenshot_2_shop.png",
+    "sha256": "e70a97475df3be7644646a9908271585a90499f206ec5059e80e58a5c864cc1d"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/screenshot_3_gameplay_chase.png",
+    "sha256": "6b65574312cf815834ed62f4fe8c07ca0ca12677ddeb74265b0515f1a9a37c0e"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/screenshot_4_bank_tilt.png",
+    "sha256": "54171cbf412abc94c8ae946f1c780820fe546d4e1d7704b02bc9540acbbdf0b5"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/screenshot_5_jump_action.png",
+    "sha256": "2d4bd36f6e4f7ba8d50381b0c4e4343c54eb78d055babf40b98fc8ae67fa2659"
+  },
+  {
+    "file": "docs/evidence/PAO-10/regression-screenshots/screenshot_6_paused_screen.png",
+    "sha256": "4a8613fb4725f96dae642c5a7855f8009667b4c109b9c37625219847d9d2e4a8"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes-plan.md",
+    "sha256": "f1545e98106bbafb2e948bf9032827fdb698df27d9d526ddaa83f3baf372f8bf"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/README.md",
+    "sha256": "a7736996760076764654713b2480a8c6975d049f5969518caed6447fc20cfa49"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/browser-final.log",
+    "sha256": "f124c4550ed88387b4215ad6d40f396a9bfd5cb2884fcd4664f4bcc70a42542f"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/browser-green.log",
+    "sha256": "f124c4550ed88387b4215ad6d40f396a9bfd5cb2884fcd4664f4bcc70a42542f"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/browser-red.log",
+    "sha256": "01deba16211e828d2c9b708b10984020b4a62d6925250f38077f8b775ca9b7ff"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/browser-report.md",
+    "sha256": "86a9f581e7257580e0652b1247841a986120ed2eaed61affafed0ac475e722f1"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/browser-runner.mjs",
+    "sha256": "d090d4ece3cc4fcd4685cf7e437da153ec744d57e0170863ad3fb96f834e0be5"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/browser-summary.json",
+    "sha256": "6903e5a4941c5607481b9d194519a1075ee9357e381c898a515f2fee4745614c"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/core-build.log",
+    "sha256": "88b510f6c2e8c77b589d927873254627c80b97a0f867e724e2b551dadaa568ee"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/core-green.log",
+    "sha256": "44f6be73600fce92303b12cb49b5113eb818090a0f0963472ded11bd6bd7a922"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/core-red.log",
+    "sha256": "013357ecad461c55bfc2616056deebcea70749400d67f8ee08c56e68e1c81491"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/core-unit.log",
+    "sha256": "28d1275957eb59f6008a89bd7b7b3a3aa6da6a31c59c7d6146163ae64cf1709d"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/final-e2e.json",
+    "sha256": "13f925960d5950d4705074004b723a62493ba9220071d3bdbc69c1b89c9e974a"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/final-native-menu-slider-and-start-space.json",
+    "sha256": "060272bf1f34ad92d3ca78cd2e740fdf79687ca0c350e991edb3abb1a746b852"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/final-paused-rejects-motion-and-resume-space.json",
+    "sha256": "2798c87481db6b42574ce4e1fd4c3a0d168cba4a8aa9867728ab831d91cceaf0"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/final-playing-interactive-arrows-do-not-move-player.json",
+    "sha256": "3672893941a4fdf48bac52338cfea15b378bf5f78a4b34cb1898639cda898436"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/final-source-identity.json",
+    "sha256": "1c60c9e36bd39283ab7fd702d625e5ca1dbe377902d63115a60251c8e9ebad49"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/history-restoration.json",
+    "sha256": "f91be531083def49fe3d8535338f3ccca2c43d3a0dc2c541ff330ad8db845978"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/playwright.config.ts",
+    "sha256": "0b8ad27b901930f5958d1f5e33d951908a8d596fda065a53d9403d991847a119"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/red-e2e.json",
+    "sha256": "127b67e9e21fac8e5e2e852ff5f28546906029559f73565b96868fa6e4e242b9"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/red-native-menu-slider-and-start-space.json",
+    "sha256": "8f346bc43dc8188ef2397a5c4342709130d4e20406e98bef21f0a404dc7bc23b"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/red-paused-rejects-motion-and-resume-space.json",
+    "sha256": "8f346bc43dc8188ef2397a5c4342709130d4e20406e98bef21f0a404dc7bc23b"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/red-playing-interactive-arrows-do-not-move-player.json",
+    "sha256": "8f346bc43dc8188ef2397a5c4342709130d4e20406e98bef21f0a404dc7bc23b"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/red-results/pao10-review-fixes-native-menu-slider-and-start-space/error-context.md",
+    "sha256": "d8c66edb964e8c3eb4e373fbff8ffc363984311bd34be878a5dabd9d7148851a"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/red-results/pao10-review-fixes-paused-rejects-motion-and-resume-space/error-context.md",
+    "sha256": "2b11ca222bd2b07d1d7b54be4ef81711fe7dda351036061cb208606a9ab87431"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/red-results/pao10-review-fixes-playing-3ca7d-e-arrows-do-not-move-player/error-context.md",
+    "sha256": "fc8d0244bb11ed10a92322d7ef732ebb4a618e55a3c74ba0a115c76aba6bd73d"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/F-lifecycle-clears-input-and-hidden-time.json",
+    "sha256": "3d9a5d9eb771194786aabf7b763ec76c3ebbca4ebc3d8a26977c07a87d280a3a"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/N-desktop-production-keyboard-flow.json",
+    "sha256": "fbec4553626e8be4c3c8fb349871f75e7877906fc4a92df3ff56097dffd80ed0"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/N-mobile-production-touch.json",
+    "sha256": "3a79797d9efbf2c1ff29bc7f727c1e004f41575a7534895a9bcd9a8c9310fcba"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/F-lifecycle-readonly.png",
+    "sha256": "134854b36cece0e06fb1133d1cb99e0dca7dd58cd465add3e0319bdcc942ef1e"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/F-lifecycle-resumed.png",
+    "sha256": "41387b52aa9b1a2e9a1ac8adaf05f324f4373f55a265d0c7035c738e23f5bca5"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-failure.png",
+    "sha256": "adeecb6a84f148deafd9dc53abd036171882c682c12ba54b89ea5b733469990a"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-jump.png",
+    "sha256": "517ca9c77967c6a95e9ff165d49b0cb55bc384d899763f50a4ae8c9d2787bbd8"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-menu.png",
+    "sha256": "e61f66768614b5b65085ed577e4cb55669b423dd82973a2a9b8d53e3ec03d72c"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-paused.png",
+    "sha256": "ef96644ac7aff5214ff59fab304c2367defa305caecafe0342db200cce02b317"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-restart.png",
+    "sha256": "d04fa02d9ec6450c2360375b1b5ee98bba42b9e6ea59a486c03037f2b5c635a5"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-return-menu.png",
+    "sha256": "715d09ba43afa0580ba60bbcd7f4be2b535a04faa94bc7a99df41505bf8ac27f"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-roll.png",
+    "sha256": "a83d5c8bb34bf2622bbbf2829874e2a946206c61dbe52839ac616933141a787e"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-centered.png",
+    "sha256": "868f909651df62820e97e71fd0b790122fa2cd83eb3a141c487f5130cb50b4be"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-gameplay.png",
+    "sha256": "3a98331504a393242e35d22c826f0f6b4c644a7a8d08296fb11349c0614f9e97"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-jump.png",
+    "sha256": "76a87d5828b6a98df13bc7525caa524d16c5349047e58e5e5fff78638f1baa50"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-left.png",
+    "sha256": "7c12d426b731bf0e860c398ecb166d4d62a4f7d6303aea2490fb89d417931795"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-menu.png",
+    "sha256": "afd03ed760011a7fb0d575ac54108b638bf62ee0258f4c479f9342a11fad9fc7"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-paused.png",
+    "sha256": "b3386395549bf91f84141f6785c82b6f81613fc056fb8b7acee59df3f3bd45ab"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-double-score.png",
+    "sha256": "362bc90aa9887ca8938e44329098f4b565e8801687cd2a60481021cc09b20915"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-failure.png",
+    "sha256": "091b5ec93d9ad81fa0f0fc9d6fafc2a5aab424afd6c9626df4d29b9efc84a304"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-high-obstacle-result.png",
+    "sha256": "f7424107d3eebbe7a4aab9f8ba4fd6cbecdabba805d1ecd43ee9e611c5affa4a"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-high-obstacle-roll.png",
+    "sha256": "bc2166d3f1184f685ee4280018ec9e1d634f6e151333f7be113de6dca93d0737"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-hoverboard.png",
+    "sha256": "6045a58261b868346adac1e2ed961cd102947523e38de05deb7451bba6686847"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-low-obstacle-jump.png",
+    "sha256": "6d1ae8c36d387c136a302e3915a6e19e10831571af571b03bc8e1fe443a18ce2"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-low-obstacle-result.png",
+    "sha256": "f6bf95425fe619ca30e92887aa22a077d3d9d7dcfa5ca786f266f33818eddd17"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-magnet.png",
+    "sha256": "2adf84e189fd258ea27352669e7ee6bef61bb8b1b4031a554b53d0dd6a48420b"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-mission-status.png",
+    "sha256": "adb8cabae73582c1675aef3e536bcb4de35db47520d3ee9fae7a763eb7c8d08b"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-mobile-jump.png",
+    "sha256": "383991caa4e9c4fddb3970fd1132c08dc56d33122d32aa7816abfe18fd3d9a6c"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-mobile-left.png",
+    "sha256": "d8d692d31b96ddc1941bdde752a92840e8b9e446d4e8206d20b692199b9e17ae"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-mobile-menu.png",
+    "sha256": "fce1bd80b4f5cbf1a60a0c8ece64ec0ed42100545c9daece9b21d119e65316a1"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-mobile-paused.png",
+    "sha256": "35f5bfaeef5a9d44889b5abc03b14bd86e8a7da012486d902be57530da9a1f1f"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-mobile-roll.png",
+    "sha256": "d41203d1ef1af11e9e85ae33d2b574bc2286e7e19d4280fe4ddcfb97c658a8a5"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-mobile-shop.png",
+    "sha256": "a981e0e4fa5f04a63bb6c044e6f05e324d09372fc97d7eee2004b09d1912093e"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-mobile-touch-layout.json",
+    "sha256": "718470acedda78eada7fa48e327b3c0c2b9753198f312e7215c18920f22eebe0"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-obstacles-failure-restart.json",
+    "sha256": "6e3d99a39ba8c57b264d4c192778c6ab34c1e8840d2b4709e2afeed6dfb3dfc3"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-powerups-shield-missions.json",
+    "sha256": "5418cc6efebbeb7dea0a45a786e8d58ae09df3a3ac31ad799f31f2d243519415"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-ramp-approach.png",
+    "sha256": "112da9d952eacb8df7cb9bc08d40d06d6595ca406837f0a4dcd12153809177aa"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-ramp-ascent.png",
+    "sha256": "5c2d206d66f3ed96505061544afd0e023250f44fb5d51327e99a21cde9a143a3"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-ramp-roof-jump-land.json",
+    "sha256": "f7423c0736499a686c54861a5516e111ee0c04237772d2c18a7d2d675d423ed9"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-restart.png",
+    "sha256": "94e4fb1df8d36b7729c15a1fa96bccbb82355c5130ccb1144efe77fe3fb679fb"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-roof-contact.png",
+    "sha256": "a0ff160005e8b8b14036d74dc59963b2e158bfe20a2724a59da71a3ef204a148"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-roof-exit-land.png",
+    "sha256": "f4cca4de50c4aff98d4d73db4c2562d831814189f558be4b1a61a561e668abb8"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-roof-jump.png",
+    "sha256": "f398a927be6ed309ea2f96905cbcd94979cef297ea417d18d1bc7900a562cc6f"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-shield-break.png",
+    "sha256": "8ddd4da0606227f93a71c38f79230d99f58cc08389c10c8b441413d68cff6008"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-super-jump.png",
+    "sha256": "b361a7718cd9ce8335488c75cb1407a9fed476c760ab7ba196525e23539b0f8c"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/docs/evidence/PAO-6/fixture-super-sneakers.png",
+    "sha256": "6ecd71033d0690956d6cae418ec466ed9f9a92d7ee2fc6d2bf08752fc0467064"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/screenshot_1_menu.png",
+    "sha256": "b5176c811172135794798cfd7a2f10fdf82c799b1c142f15670c3cee1c194b76"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/screenshot_2_shop.png",
+    "sha256": "be38f15c27a100daf02275e179940ebd6eb4b3ba9e09fd95ecf4ae8f60483faa"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/screenshot_3_gameplay_chase.png",
+    "sha256": "5d6f3d2d6fa0cefda72ad30fbca858b0c8d6a863b28c3d7ba53fae05f89f38b2"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/screenshot_4_bank_tilt.png",
+    "sha256": "aed81ff5e6e6cee32c8782bc4a294d1d16a5bf6bef21940c1d3d610a772dde6b"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/screenshot_5_jump_action.png",
+    "sha256": "a237c8028a5abb4069f7dca2d71354280945b318f5d234a893f16a09fc54758a"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/regression-output/screenshot_6_paused_screen.png",
+    "sha256": "15fc851685339015cd0b2b10f9269036ec21eb498df5de88ff8383ca334b4aba"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/screenshots/final-desktop-interactive-arrow.png",
+    "sha256": "cc108938a4e023d837019bbfd6088db4196d2d246c6c0b1aa9ffd87d05b623b8"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/screenshots/final-desktop-native-start.png",
+    "sha256": "7b0302a6313a86ec631c43be66beeb350d95f4a1590fdb3ea231109701fb5087"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/screenshots/final-portrait-native-resume.png",
+    "sha256": "904b3bdac8fa2f33061c40efd104d7a4baf16e75ce72830e36c8d22b2993c408"
+  },
+  {
+    "file": "docs/evidence/PAO-10/review-fixes/screenshots/final-portrait-stable-paused.png",
+    "sha256": "def77b6cbe93b4f51b8e753bfa67c44f1653a2a45524388bb1b4e299f7745b1c"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/F-lifecycle-readonly.png",
+    "sha256": "33cdd96c54c5ecf88fca6cee6a3a5acb935ae4970c280b9b7803e2ac54d0f57b"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/F-lifecycle-resumed.png",
+    "sha256": "9547e685a4ac4d16e5dfa08341493f24befad72247e09b482d82469356bcd4f2"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/N-desktop-failure.png",
+    "sha256": "9ee959522c7e7ad8ca7409c75fb684c8a0eee52e033c265c7be66ca5de204a15"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/N-desktop-jump.png",
+    "sha256": "e274e67ec84bf730d2af56dd719777ce9c882b05bd2c65b127f0b657227d8f01"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/N-desktop-menu.png",
+    "sha256": "c25dfa9c714a131665007caf513f970c61a30a2d7a66758e8a5671c1cb05eb3d"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/N-desktop-paused.png",
+    "sha256": "00003a1dc1fd309a3529174aeee3908f35d3f02a5457e6b612210cb7b85b1bab"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/N-desktop-restart.png",
+    "sha256": "7da99edcd4081ff92386989e91dde9a9ca0083106149ea9e8b5df1ede4b9e177"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/N-desktop-return-menu.png",
+    "sha256": "66e31d5cbfe6e27bda2c1165ca233214ae3f96523aa2ab8e914024af44c372f6"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/N-desktop-roll.png",
+    "sha256": "9d59adfc2bfbd4bcd2765531b068966941e3b6f74148cdd6b15419e7ef02a61f"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/N-mobile-centered.png",
+    "sha256": "07d881fd0e819c42fdba9733859049d6c63af96269f79367170e677127e9086e"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/N-mobile-gameplay.png",
+    "sha256": "01212e7327febd44af3a2e5130b74bbed26ccb829a85359c49ee5977d7ae2ec2"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/N-mobile-jump.png",
+    "sha256": "811f9615cc7c0c5757919a0267c5dc42324a00e826fcdb0412dd11405c79a7a2"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/N-mobile-left.png",
+    "sha256": "55cac00d244f9debcf2bb60270cbf52438baa7ff380960d26927d044a8e5e4b8"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/N-mobile-menu.png",
+    "sha256": "4ee92b125b5d362a6bb8939ce8bcd5d4f1196d6182dd98ae0204470714884241"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/N-mobile-paused.png",
+    "sha256": "10544cee764c525cbd5fccbb595bfe0bba5098a65fa6e3b43060e96effee05cf"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/desktop-gameover.png",
+    "sha256": "c3c2686b35ec9a27ac13853c0f364153e4d55cf068f40451e37ebd2fc1e3083e"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/desktop-jump.png",
+    "sha256": "32af8a2a0b04a587edb338b2445c05043278ba4eabfea9c83376458975799194"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/desktop-menu.png",
+    "sha256": "13b24f36ddb501b4580a290cb55068df10b06ed2335ac1c9cc9764297c0d61e5"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/desktop-paused.png",
+    "sha256": "9b1f18cc23ce357f3f4ae44380c2e97fe798ba7e043e5a5ac867b3e2e0067452"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/desktop-restarted.png",
+    "sha256": "f66c7904ffcb8341153dac1c42dc38820b137de0982312efcf28ed5f983fdda0"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/desktop-roll.png",
+    "sha256": "cf624f00ba2af00cda933b5bf733fe0f68d1c5712f1d769d1339c098a62b7f05"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/portrait-jump.png",
+    "sha256": "576e6bf4f95cb7fe373ef1774d434dcad99b53408959eaeb90c1f2a383a4791d"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/portrait-left.png",
+    "sha256": "22a062e824e470acb2c0491f40ca51cd1238585fadbd642be3d9ea50fa39323d"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/portrait-menu.png",
+    "sha256": "c539ee54bd0dead90dc0b0d2937b18aa94f165aded00af77ca4b2924fbb6993a"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/portrait-paused.png",
+    "sha256": "03844ccc6a80af30322439a8b12dd71cfdebfdb26baaf5bbe5051b9d6d4617f7"
+  },
+  {
+    "file": "docs/evidence/PAO-10/screenshots/portrait-roll.png",
+    "sha256": "68e37f1ceb179826faef49903a17114ce13d0b96fe4da902f679c1f5536a94b4"
+  },
+  {
+    "file": "docs/evidence/PAO-10/unit.log",
+    "sha256": "e32ace84f3357265ea5c70d5599b4d321bfba6157586bf190e89d2e0e6ba2590"
+  },
+  {
+    "file": "docs/evidence/PAO-11/.gitignore",
+    "sha256": "604c0321de7ced3492217875c6e3b92dba96ee3e86fce0ca02891e9cc1762169"
+  },
+  {
+    "file": "docs/evidence/PAO-11/README.md",
+    "sha256": "9c6f8b2f2a6e781e80837730ab5104ef1851312c94f8dea98113e350b37797eb"
+  },
+  {
+    "file": "docs/evidence/PAO-11/browser-report.md",
+    "sha256": "7a0b770318dd7e29a0973b4606166756d6eabaf93d66cc4cd3285bc8b49d073d"
+  },
+  {
+    "file": "docs/evidence/PAO-11/browser-runner.mjs",
+    "sha256": "46f487b6ed697e1f5d1c2255bc8a91287506f1ce13f49c28360d51feeaed7c9d"
+  },
+  {
+    "file": "docs/evidence/PAO-11/build.log",
+    "sha256": "a94c9ea0105a59ba4a80b10dc5fe97f7be0238be15c98015f3090854f7fc0673"
+  },
+  {
+    "file": "docs/evidence/PAO-11/green-unit.log",
+    "sha256": "c1bae1dbaec9386396cca36698f0b6f3d585092acd1a6d47e34b30ac5f17ab43"
+  },
+  {
+    "file": "docs/evidence/PAO-11/implementation-plan.md",
+    "sha256": "0a8f6d6f11c6d3a8d9365668fa097aba322756b5168b74fd6e0fc3cf9fbc084a"
+  },
+  {
+    "file": "docs/evidence/PAO-11/playwright.config.ts",
+    "sha256": "484a17e06273b2283dd78ea885321a0078d9748dfee530bba5cb4c7e9360f097"
+  },
+  {
+    "file": "docs/evidence/PAO-11/red-departure.log",
+    "sha256": "1abf426a368334ca15f7535950180089abcd267f066502c9146e01117a75e5ed"
+  },
+  {
+    "file": "docs/evidence/PAO-11/red-normal.log",
+    "sha256": "95e6c2a8b5e373b28f51b8fc2ddeb87a5557013880b311e9f4d20693ef6fd62f"
+  },
+  {
+    "file": "docs/evidence/PAO-11/red-relative.log",
+    "sha256": "2618e8545d67154b4db16b784a616fa5adc1c0bd7da523e9252738acdae151cc"
+  },
+  {
+    "file": "docs/evidence/PAO-11/red-seams.log",
+    "sha256": "c4bc3100ab8a24afd32f701bed7a2fdc66b01dac8fa606609a75e2e9c3652c62"
+  },
+  {
+    "file": "docs/evidence/PAO-11/red-stale.log",
+    "sha256": "958a1fa2459a3f0c16d0dc9e501b4c925e9724561d0ee13f6beaed106d8e831b"
+  },
+  {
+    "file": "docs/evidence/PAO-11/red-unit.log",
+    "sha256": "b713bc0174198ab25a6cd944f10992d784e8189c82c99c026e2b4b2614f71713"
+  },
+  {
+    "file": "docs/evidence/PAO-11/red-zero-time.log",
+    "sha256": "a8ce7d2b42259362a9f9d091f49a30585155d4c4266363239b7fc03ac6295c6a"
+  },
+  {
+    "file": "docs/evidence/PAO-11/review-notes.md",
+    "sha256": "7f20630c02f38d1613407e3dab7475d2278bd456da796bd2cd14ba1ce8f4dd55"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/F-desktop-keyboard-ground-ramp-roof-jump-ground.json",
+    "sha256": "31f467ce1b71e98ecc6a400577d53eed7e82003a47d2e9bd86a8e7986498fd9d"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/F-high-base-ramp-5-to-8-continuous-roof.json",
+    "sha256": "180fba6c92dc6a70afd84a6b0c270d8f8800dc27a7daeaeb0a89adbace7c7e37"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/F-portrait-touch-ground-ramp-roof-jump-ground.json",
+    "sha256": "651fc0fa241ebed83dbc16d5a475927688ddce563ac4edacd44fa9e137094393"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/N-production-input-and-supported-snapshot.json",
+    "sha256": "6dfef67e82feccf54da09a1b028117ac480103cfdb007b52ca835e535f07a40c"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/browser-source-identity.json",
+    "sha256": "c2c48831ece5948062c2793981caa221a250e8ff7932be82a941fdc3a9a54a11"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/e2e-results.json",
+    "sha256": "f9bc02f43a07f50a3476d4272e7acb1cc0806e1580313e46682dea5a2dd38d06"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/e2e-summary.json",
+    "sha256": "8e80a9afcdbacb84cb720a992feb84ca6d80a6322ab39b61c0251568caeb47c2"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/history-restoration.json",
+    "sha256": "8d3eb70ab40ccff4efaa25fb9171d623b2f458e8d4c08e5ea9983be621ccd2a9"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/recovered-history-baseline-check.json",
+    "sha256": "fc6a466cd6efe6d6f7ab63b59076f93fba8be0012c41c202aa27bd110ff5ccc1"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/F-lifecycle-clears-input-and-hidden-time.json",
+    "sha256": "fa5a131ec94a4370661f29fe961077e4c2a4d17ec0bf915a40429054321e430e"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/N-desktop-production-keyboard-flow.json",
+    "sha256": "0963a8cd2c891c57480f20d8983bbfa232efa91b71e6d68e2f07c782939b695c"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/N-mobile-production-touch.json",
+    "sha256": "ae348cd5ab8c2a580c2924e4cba89b3f716fbc1e49631dee63a0d5f5c0dd88bc"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/review-fixes/final-native-menu-slider-and-start-space.json",
+    "sha256": "bacf5d89286e214f45f59ec6aefaf3f655717d68ec9bfbb86c7b314a57846569"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/review-fixes/final-paused-rejects-motion-and-resume-space.json",
+    "sha256": "0af00d9d250dc4b9de40afe1662f571bf36f58f2bdf77489a559250062f55ad2"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/review-fixes/final-playing-interactive-arrows-do-not-move-player.json",
+    "sha256": "8dacee497f163fd62c062e1d76cb8a18f43c914033648f9526f2e98e0ef74295"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/review-fixes/final-source-identity.json",
+    "sha256": "070e1276435776856db7301a9855e789272b89232077897b82b2ee70e0531896"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-desktop-interactive-arrow.png",
+    "sha256": "01b9decaa76b0fdedd0b6b13382aa772041c33cf9461770cb84593924d6395c1"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-desktop-native-start.png",
+    "sha256": "0122cbaeab253d722b8a0ed77da01a89b9f7425b36b4e18815c1218a794ec56f"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-portrait-native-resume.png",
+    "sha256": "9e2890d995c274b30203dd95f68c9f63cccbf266014c03107f6c3a4c60e52eec"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-portrait-stable-paused.png",
+    "sha256": "c86a519fbfe8da1abd249bd9e7f2f07cec4d862b76a0dd8f13ecb2ff07ca5b69"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/screenshots/F-lifecycle-resumed.png",
+    "sha256": "6210ef78e6a38731408b5ba06f4b777b9cec82ba046920abbbb9667934936b87"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-failure.png",
+    "sha256": "84e6afea6aaef6cf57801bd43ad0af32677e094dfc893ce9bbb96b615088be64"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-jump.png",
+    "sha256": "64cc03845d2277c3de7f2d57923dd7da033527dde34e4a7969ef9be6f4528d0d"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-menu.png",
+    "sha256": "1f0bdf4e4f079a1486b0db1ffdc17bee335091d356c4214067d1e3a85aa22f05"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-paused.png",
+    "sha256": "d6f7b9755568d31539e7ddb284239cd2459fef44fcd23d69ffcfed11eba4563c"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-restart.png",
+    "sha256": "d153b74c7e79b37c70e51dcc2570ec3aac3b1b39338ac8c9b05216db47dce5dd"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-return-menu.png",
+    "sha256": "cc3895ad8f7b594888eb75d1807b5d078534a637eda1aa9d3c18d80a3dc9fecc"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-roll.png",
+    "sha256": "eedf5af4c3c287d792c9ceb56b880ee6b1fac9bb039a7b7b2e2139077ed39203"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-centered.png",
+    "sha256": "723ccb73b6d59383e6177ac09d761e62383440866cf980754c632a0e66c4c6a5"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-left.png",
+    "sha256": "3945be32c46ed6b57763986162144bae14ac4c3d3306deaf5b597dfb0c766071"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-menu.png",
+    "sha256": "fd582f282983a685f93b03a44b02c4cf4f29994001ccf1c9eb0d15df378653b4"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-double-score.png",
+    "sha256": "5128155a3d282b351dc6aab4afb6a54c4f9f41d83502292228e0d4dcd9321a7c"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-failure.png",
+    "sha256": "63bab3db893196b68d7610391d73273cf655280c7ead63ae6435c15261285118"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-high-obstacle-result.png",
+    "sha256": "52879057ca44cd317dcac030d47b240585009b904f6c6030aeb890a28521f162"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-high-obstacle-roll.png",
+    "sha256": "98d8719a23f72e2aa5d7940c59d109d85c90a7bcc3506e76fd3e808ca96ffcaa"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-hoverboard.png",
+    "sha256": "9a33bf24d86cc276bf4ab204b6aa47c9ee64aae25ed52833673d1e231d63a859"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-low-obstacle-jump.png",
+    "sha256": "327e0d6ab239c948ae9a7f1f1864c08391e538d9c4cdc9b28c463a3597410366"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-low-obstacle-result.png",
+    "sha256": "27ee72cfc63bda8045d160752f6a419e026a8075081f33b90b3ed2e5d3fc0ab5"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-magnet.png",
+    "sha256": "17b9d2ca85f004d80f394ef83a83428cae3858ad019b17ac6cd690cfb7813959"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-mission-status.png",
+    "sha256": "82590faec04fbc5be3061dddabb73337a40ec1c3f4012a75a2204427eb7ca867"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-mobile-jump.png",
+    "sha256": "1c61fbfe7a9ab7ca319e729c46e410230232d1f8443e2ddcb375afd04cb3b29f"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-mobile-left.png",
+    "sha256": "4002d57bed4c568b07506dd03f0d2efddc88534a0aacb69843a77fc9d40e5da2"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-mobile-menu.png",
+    "sha256": "21af8d29036f1c4d500f69350c509559daf14999328ac56489d634e930a2f3ae"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-mobile-paused.png",
+    "sha256": "6bdc3fecea7c8294741ec118967c65bf81e92a2134fccb8e46d2db58faea3d8b"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-mobile-roll.png",
+    "sha256": "a552682e4c096166beb6b917fd8bea6887ba023ae3530499e9e7782c822ca81c"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-mobile-shop.png",
+    "sha256": "55dbd6b08b66e6e71067ff8d35e08c081f525f021f5e5ac4562a3ae6ee7e8422"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-mobile-touch-layout.json",
+    "sha256": "55aad24c7254c203d216a93631635a0f26e5eb7996eaf6845e3173eaa7481b54"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-obstacles-failure-restart.json",
+    "sha256": "80464cc03af76308c1c4502fbf4fdf579e4f42a5d66b2609c800edd42a76d818"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-powerups-shield-missions.json",
+    "sha256": "ed8c96aaa6cdf22b3019fb8a0bd0d2873e89df6a0bf1ae4e2c1df9c1e2424eed"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-ramp-approach.png",
+    "sha256": "dd3ee2a92269a7e29edbd47464a48a92db2e22c94d812c1b7425523d999e9cf4"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-ramp-ascent.png",
+    "sha256": "e7df23b4a7ae36423fcca8274eaa511df60dda518f22d864a3e3142197ed543c"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-ramp-roof-jump-land.json",
+    "sha256": "fda6557ac3161bfc8ed2260455f202b7ef064bde2a55759bd7f6ea8ccb35335b"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-restart.png",
+    "sha256": "f4eccc27cdc269acd7b4e221624fd9eda830a79369c71ee86a8a6d7b6e5f396e"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-roof-contact.png",
+    "sha256": "81a471708514eb7df6fafbb8c820009e112ffedfa2c160666d953821853a757c"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-roof-exit-land.png",
+    "sha256": "cd2756720bda85c3eea9a6042c7a45131cfa43f2713dc744ba901ccdb9be235f"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-roof-jump.png",
+    "sha256": "4765c601326e2d877e6423703815a50c4e3d3b15a1566b953c4af186da8d1c32"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-shield-break.png",
+    "sha256": "c37c756e988bd601897490b22bae7b20382673cc28e6fa067695e0d20ecbc538"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-super-jump.png",
+    "sha256": "9d41ffcfb739e1772c09f7f8466b5405b36f62080fb121b54265b9a866506a19"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/docs/evidence/PAO-6/fixture-super-sneakers.png",
+    "sha256": "e65b4fe3753e4d994471297d1a3992499125e23cc49e5985f7217b8d39df0673"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/screenshot_1_menu.png",
+    "sha256": "877480f408c2dc46fd3896ef7cc7d8dac51825a6fa896d4fab0e65740c60a098"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/screenshot_2_shop.png",
+    "sha256": "f3fbf53d7c5fce808d41a3451dd9c76ac466eac7de8490108c0f82783edebb24"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/screenshot_3_gameplay_chase.png",
+    "sha256": "075f669879050c3e6f0eeaac14930d188405d6f482cd7aaef40de2567088a9c5"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/screenshot_4_bank_tilt.png",
+    "sha256": "69bd1a0291c65fd892e7d867f6541ae2754f3d78c7190819b20adcfbf5ba3700"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/screenshot_5_jump_action.png",
+    "sha256": "347571b2c21ea14d93cfd9ec2181e33e5863aaae37e7483f211098849d35a874"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/regression-output/screenshot_6_paused_screen.png",
+    "sha256": "d1fba6a8e200484f05efe86f0c2ad5798b0b1a22a02f38fb080a953be6817b2d"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/screenshots/F-desktop-jump.png",
+    "sha256": "2697880ef55c0e085b1a7e8dcb81aed7d056637d1560983db5a84110886eb636"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/screenshots/F-desktop-land.png",
+    "sha256": "50fe858c0e1d59d981adb823c8392bf76448d5957c07860d3af72e7f33394c2f"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/screenshots/F-desktop-ramp.png",
+    "sha256": "d3eb4620ccb19efe0c3661e056ebba36a80a745561592c29082c7e54cef16e1b"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/screenshots/F-desktop-roof.png",
+    "sha256": "1150d84a18f12b84d516e16ea4fef57e4a1663e91f03313f9aeb68dc6d1dc0f1"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/screenshots/F-high-base-ramp.png",
+    "sha256": "8c89d44d07745a2fac880d825e34e5e1c500b99a96fc88c989e9154f482d34f2"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/screenshots/F-high-base-roof.png",
+    "sha256": "268cfba9bf8088d2bbd03860ef5b6c2d0d9aabcf26923767576f44b8d8dc67b6"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/screenshots/F-portrait-jump.png",
+    "sha256": "bef658b8df679fbf6417b2ad2394600f0a80b909f762f01619788317f4775abc"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/screenshots/F-portrait-land.png",
+    "sha256": "e449b50a680bf585ddd5cb15a8337475048ee38a8399a755cf21c548936a7950"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/screenshots/F-portrait-ramp.png",
+    "sha256": "95c1bf0908ec8d57f6ebbde916073445b9d34bfb1b9c341346ea440efc0c18ea"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/screenshots/F-portrait-roof.png",
+    "sha256": "caf664540941446030f4933cd697cc6637c441f64244bf89fbc3f4e32b7e7c59"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/screenshots/N-desktop-jump.png",
+    "sha256": "774a930c5f52213831b875bf159d03e2dcf8894de4c5e8c6132987f857e20c96"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/screenshots/N-desktop-menu.png",
+    "sha256": "8d8627f0dd94a07b113fdaec0026b07fbf12ee6710b46a4114ff6f076a187595"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/screenshots/N-desktop-paused.png",
+    "sha256": "cca228ef54d13da7fbe223f233b5cb4bd66a73496d99eca95eb3273346492244"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/test-results/.last-run.json",
+    "sha256": "68886e9a99a198b474db005791476e52e782ec268c996cfac10871a0cb0697b9"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/final/test-results/pao10-simulation-N-mobile-production-touch/error-context.md",
+    "sha256": "9dbe4c32082a90c140bb704f5fcfa7eab1b330ce3679c77de56510ea08c6caa9"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/F-desktop-keyboard-ground-ramp-roof-jump-ground.json",
+    "sha256": "0469c80f9b0612748010263aa2a32626b77864be05c1b50bd7d19bac485d2dc7"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/F-high-base-ramp-5-to-8-continuous-roof.json",
+    "sha256": "591de3719d61505addf32d2f1352cf60594e1f2216301674590d323b4e74977d"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/F-portrait-touch-ground-ramp-roof-jump-ground.json",
+    "sha256": "5240e989b8396f9d04bcc5fe5d5ac66ae82c0d358055893b8f9a47c455844e16"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/N-production-input-and-supported-snapshot.json",
+    "sha256": "8278051eeb7bf9e4595bbd3dd91583ef30de64513ac877cf806ba35b951b2107"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/browser-source-identity.json",
+    "sha256": "df91e17c945a01d3362816be086771d5fb057828e892708d5da57a477cac2dbc"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/e2e-results.json",
+    "sha256": "05e32171a0e85f70bf291713d5f31b28ea128d11fb82f3723cbd15eee8adbbe4"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/e2e.log",
+    "sha256": "b354395123eeb055a89bc3e73bfafc0f60fae6839ad2387a7f243d3f56b8412a"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/history-restoration.json",
+    "sha256": "793136120fa1b92b5f58c3bfaa421ef7f8062fb603e1de612a70e87b53cebedd"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/screenshots/F-desktop-jump.png",
+    "sha256": "f5a9d03dd185612653e626633c73022662b823aa35db9ff3e66b424772dbeef6"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/screenshots/F-desktop-land.png",
+    "sha256": "3c3a50965f197ccf4740394857c9fbe8d5e73857574062b4c873aa3332cd7472"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/screenshots/F-desktop-ramp.png",
+    "sha256": "fe0111b78b91f5add8ca40ec6af0ef61468f1c310ac24ff6af035969e6d49724"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/screenshots/F-desktop-roof.png",
+    "sha256": "a6ecc093cf2af08bfc67570ad17110ca1babbc2c62e216076dd64983e8567714"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/screenshots/F-high-base-ramp.png",
+    "sha256": "e4e31f64d68df9e6b212184b6500cedb141bbe43a30da3a619dd9c0f3e76ba53"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/screenshots/F-high-base-roof.png",
+    "sha256": "72115498e3c6a26981e12098d1d1fd61f6692a766001081a402e0d35c7107c45"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/screenshots/F-portrait-jump.png",
+    "sha256": "bcd4d56b6fdf1627186a10ac394edfb0be99bf0ea11ee357f14ed917b69276bf"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/screenshots/F-portrait-land.png",
+    "sha256": "3801ccf8cb42352c24e3b3ffaf70893497db01fc683665b31e9b4f269e642c05"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/screenshots/F-portrait-ramp.png",
+    "sha256": "48b0879154f8fc4db3a04c2e8e366d6dc11cc3c74da32e29b70d7b550108868b"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/screenshots/F-portrait-roof.png",
+    "sha256": "f2bc8a9f1df023a6f1b5137de1e1e7d28caa42455e91c0001f30d79286275d12"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/screenshots/N-desktop-jump.png",
+    "sha256": "d9ec0a09971cf361aa216b1a7967742225a6f7c30018c96b6946586cebd900db"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/screenshots/N-desktop-menu.png",
+    "sha256": "1bfc7fd6809023a8c517a60bdc0d15328c5ec34bcd691d333fbb0fd047e477b4"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/screenshots/N-desktop-paused.png",
+    "sha256": "937063740a427da743ac1e04b4270da83be6ff2cfbe4a2c43371bbde7283c091"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/initial/test-results/.last-run.json",
+    "sha256": "d73c748bbd999a5ec3437ec97303e04ac1e89ce51cc1c336c1b9f179ffe82420"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/F-desktop-keyboard-ground-ramp-roof-jump-ground.json",
+    "sha256": "9e662c68443f2bfad7dd81e1f2ceff52cbb106346c9ce973d89335f9f0549bd4"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/F-high-base-ramp-5-to-8-continuous-roof.json",
+    "sha256": "28d62e7350b712cb2cd25fa4fef2d9c688912bd3c3899c82e70a251d4174ff2e"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/F-portrait-touch-ground-ramp-roof-jump-ground.json",
+    "sha256": "0a16b6bcea1c516e44571094ca2843d73c2f66ca3bb32d47957b1bfc86f1d3a5"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/N-production-input-and-supported-snapshot.json",
+    "sha256": "9bff4ab40d2de109932142d31e23c3683e4dae23a55ab565b98d42fccf8fd5d9"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/browser-source-identity.json",
+    "sha256": "c2c48831ece5948062c2793981caa221a250e8ff7932be82a941fdc3a9a54a11"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/browser-summary.json",
+    "sha256": "1319e444400a6c329dc4eb601df621d4db5b04d9c7de518324b93deee5791f25"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/e2e-results.json",
+    "sha256": "25de4c931f23b449ff6a6b12088f9c3a2715c6fab0307cf84c15aa8271283560"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/e2e.log",
+    "sha256": "2304548e73e954364009d1973ada21ebe39f737df7c1463aa929cef126e58db9"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/history-restoration.json",
+    "sha256": "415ac84f46cc05e28050d356d576fe6297b5334fce8f25dfe5c2c228987fda6e"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/F-lifecycle-clears-input-and-hidden-time.json",
+    "sha256": "18f2a09e1d10b2fd17337e85ad727b71b3df788047d2c4f7e8d5bca29bf40be2"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/N-desktop-production-keyboard-flow.json",
+    "sha256": "5c5293e5718f6a2d528e251eb32ebc7ad3676954c5d898a991977ef730557093"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/N-mobile-production-touch.json",
+    "sha256": "f9c2e45a232c6057124c5bf1f7c78e1908eb447c5eaa76271997e74115decf62"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/final-native-menu-slider-and-start-space.json",
+    "sha256": "8a7808329bcb6400d7287ce9288d5a662117940c2d5b70856d1cef0bf971d056"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/final-paused-rejects-motion-and-resume-space.json",
+    "sha256": "942c2541a7d90fd47a2a9ac9771f2b196a6bee8889e7f3225223d4fa451a08aa"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/final-playing-interactive-arrows-do-not-move-player.json",
+    "sha256": "9175096c5b274b4c2535cd99dacc7ef53030731e13dfcd964b7ce8f9ee00e392"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/final-source-identity.json",
+    "sha256": "070e1276435776856db7301a9855e789272b89232077897b82b2ee70e0531896"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-desktop-interactive-arrow.png",
+    "sha256": "95c86d6caff373d77a7eda43a18746aca1fc732f7a77185e17bc5fa510ae29d6"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-desktop-native-start.png",
+    "sha256": "28cb8eafa685f2e7285e8346d70f5b26d70036963bd4f779df554e43c6f14e4d"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-portrait-native-resume.png",
+    "sha256": "dc499c9c38c5bac9a6b27c6a4d6fa3b251f2636260b3a5b0e2c67c6b4a15ece6"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-portrait-stable-paused.png",
+    "sha256": "ac9084c886c7e7f0c2d09326c830240d6de20e3e9ae928ef3aa25a5adab445a4"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/F-lifecycle-readonly.png",
+    "sha256": "50bb04f4ebcaab29c99045efe4140cff5b7c9f581b247a9dad001d172ea46a0f"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/F-lifecycle-resumed.png",
+    "sha256": "d13b510154f999a8f843be925a0cc29747b925bd62deb8d00bb3724507e055f3"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-failure.png",
+    "sha256": "022b266d6058e36746293e25d61aac08510802ebbbdb9a52f554cb114b074387"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-jump.png",
+    "sha256": "8c069df40dc7277e6fcd27979e6c092ec823f05e0068d361ab27b47513ea5295"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-menu.png",
+    "sha256": "2df8ac82f30c9dfb1c618fc2100a75df81608ed3334fefb0dd69d212502bcf2b"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-paused.png",
+    "sha256": "4d7ac6e9f0de0cdf4bb7b1dcb11a134b875365cdea15a00a58bc34e7d2bb1c25"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-restart.png",
+    "sha256": "d99dc773846a677ebc629297978e0d0b627a2a48af82184d30cbae9a80bffae6"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-return-menu.png",
+    "sha256": "f36545f4d31b0e46efd75a4a248a529eb8673ddb7d19e6cbe5f243acf07863ca"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-roll.png",
+    "sha256": "fb48911c3b3b2b89fc00b42a6f0b98a18026e08ca335fa8d253b33c48daba9dc"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-centered.png",
+    "sha256": "d4e959c3229b033b097cd8edfb87ec651b58c34c8bebf58453ea7677db5ca176"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-gameplay.png",
+    "sha256": "506c9873b04edb7f445c1f906c143cb18d75aba0249ad561251d5a8d25a63097"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-jump.png",
+    "sha256": "0b9c7d973316ee721a5405ab89f87d1adf884abe92bfb1faee56e724d078a089"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-left.png",
+    "sha256": "48dfd39d565d0d4dd561126a0c24f0251975c97118ad434af9e16ac14d3f465f"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-menu.png",
+    "sha256": "95c6989ca055ada729a389e493ac0ec5d4c079949ea60356911442d810bc358c"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-paused.png",
+    "sha256": "5c01696d58adcc8aab26e341646542d1c32a8c7955481097b1d82431dcdd69d0"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-double-score.png",
+    "sha256": "6802bbe5cb3f1c0b2ae6be7cc54067e91865f587e38ac9967733c1a2cf35ca1d"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-failure.png",
+    "sha256": "7bfd64024dda63fc7c5fad01823779b22ab3df88a4247cf1b7826909ed363abd"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-high-obstacle-result.png",
+    "sha256": "3ec65ac64452c5d2a06bd758ea240495e89c93a4bb4f2b1070c18358135936c9"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-high-obstacle-roll.png",
+    "sha256": "3025b0ea3d28f2d813da9dca2fc3c16bf64c3fc2cfb0335f55904b403e764549"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-hoverboard.png",
+    "sha256": "23211574a29de6f15f8e341575761db09f32ad8b43ad2e12b861962987671375"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-low-obstacle-jump.png",
+    "sha256": "bc112e0014cb23a136e64b082900b356deb5965fa4c0cbc267ef283d1af38886"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-low-obstacle-result.png",
+    "sha256": "2bd7c3a8a31c0c45b44d415d9920f64fc35b9129a62466b168329cb0cabaeed6"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-magnet.png",
+    "sha256": "ed7228afbdb5b7860243396e77df6ee03244d1afb8d44f50ae5d067553e5ab9f"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mission-status.png",
+    "sha256": "4275604119b24b72581471884b3ee2005b6ac2e9ec16913a08645f9525902ed7"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mobile-jump.png",
+    "sha256": "2e46cc0d9cfc5a1f00b42bd1f7c9d01f02e11e015a4b04c38d776f4f566fd00e"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mobile-left.png",
+    "sha256": "1afa68b00eebd50ba7d06c6328c1cc7bf3d89df623bc242b6272ec9ca37dadb1"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mobile-menu.png",
+    "sha256": "a3d84f4722dfbb12a73f935a38c16622ffb46865aa01fbaf15c9fa372fef07be"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mobile-paused.png",
+    "sha256": "a4d5459fcbe0d012103538488e064c358a23c68d2dfe0214feb5c774736885d9"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mobile-roll.png",
+    "sha256": "1721c8ce3e4101c9c578f1edbf4bc3540ef6b788500027bfc29882dd83155a74"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mobile-shop.png",
+    "sha256": "4973b49d9015007ac6ccfa1e70ba5aeaa2f4e9e5aee256e9aaad9f373d98695c"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mobile-touch-layout.json",
+    "sha256": "8820e18f3527acede0d3ef15c95cc588fce4facf2987c3d4f6c21fb6d00550c4"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-obstacles-failure-restart.json",
+    "sha256": "71fc6c9297fbfffba0785108d4bc3384ba3aa9e08908be062cfbcbb08c8fcfe4"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-powerups-shield-missions.json",
+    "sha256": "d55b1e0683d8c0761bead84f2a9d093a720cd2aea8f65c46b23a04a2162a5e03"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-ramp-approach.png",
+    "sha256": "7c3bbd0154da78e193749c5560fd5f6bacd40ec3e76482a0a45bb6f4a1c095e9"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-ramp-ascent.png",
+    "sha256": "7cc5d2df77f7ed1b85ad0e07d1bc21bb005a2b652fbca6012cda948e7df49c99"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-ramp-roof-jump-land.json",
+    "sha256": "43bfd5975825c0273256b71d4d0c83dc6b5a63e5a424a353aff36df15e66dc49"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-restart.png",
+    "sha256": "e28b0a927d340a4cd77f103da9422ba49b7c9fa6a8e50bb225625c7dad6962a0"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-roof-contact.png",
+    "sha256": "9d478121ed0ff5774e3cf742f8392bf2d76cb86f7cd2c9531a497644d3f7c097"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-roof-exit-land.png",
+    "sha256": "d58c7aba375bed9abc1edb4bd1a2db9a3650d1c28fdd01afd36d6613987a6b6e"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-roof-jump.png",
+    "sha256": "cd16757ae1d2ffdc1407b0f056f813d6b18cf12feb00bef06f102eb3bb70d165"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-shield-break.png",
+    "sha256": "134d09bd071c5436371cc6b7f3cdec265193d8de47e02635dbae23323c888f98"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-super-jump.png",
+    "sha256": "da0c34aed59d5b28e0985b0eb3ad2a7d4231476ef4211d326fd6c6076c7b6a46"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/docs/evidence/PAO-6/fixture-super-sneakers.png",
+    "sha256": "adbde5fbc4f00f7ee7decd0349de94e54ac94d37c65e53cfff4051d00e0fc3a7"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/screenshot_1_menu.png",
+    "sha256": "3844c2aa2b4270025c5e0b6a966fe444fe8edf34b73fbfa824d61c7da2b373dd"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/screenshot_2_shop.png",
+    "sha256": "72c99c6da1ed99ba03acbf0e7b8c68a8e4192500852a5df43fb8ca6347bc172b"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/screenshot_3_gameplay_chase.png",
+    "sha256": "b93ed17c441ad797ac3a906ee206e1a1ede318a5e630f4ff92584661a2d445e5"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/screenshot_4_bank_tilt.png",
+    "sha256": "43c323dccb28b89501152463a10c123f02f797625edb0e59ed79193d98108d0d"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/screenshot_5_jump_action.png",
+    "sha256": "53f9f71bc8b282e42253bbb911152919a8c25422e17a1a5be16f93d7e39ac30c"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/regression-output/screenshot_6_paused_screen.png",
+    "sha256": "6870b043b49f76a90871a8a012109bbce2ad6cb78e66758e2e214ef41e5c3313"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/screenshots/F-desktop-jump.png",
+    "sha256": "863a198d61c6ee90ed06fdc80e2a19851403fa754c97231dd26e3ba1cf494978"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/screenshots/F-desktop-land.png",
+    "sha256": "12d36c59a6606a7e1e1236bbec3867e9f5fe41ef2e5a5c8c033b92f51e9a5242"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/screenshots/F-desktop-ramp.png",
+    "sha256": "d7d1b60c67f7268d8a1e6f3a40a073cc24012deb150b0ffc9777073ec8b2314a"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/screenshots/F-desktop-roof.png",
+    "sha256": "aad59cb269f4a3c805c5479a5faf3c38f98e1a05cb5bde3081e88462c13988d0"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/screenshots/F-high-base-ramp.png",
+    "sha256": "f3c6af9a52325a00e3f51591297306704fd3c4fa8ea565872e2c2d93ef061fa8"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/screenshots/F-high-base-roof.png",
+    "sha256": "c2c50b4f6e476e0bb90d84fdf48cbba7db584b5508e3e448873995449b07fba7"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/screenshots/F-portrait-jump.png",
+    "sha256": "44c14bcce4025675a178bb1056d63e2ddbfb5cd4a5c8a57e63b8ef36716ef5de"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/screenshots/F-portrait-land.png",
+    "sha256": "2603bf1fbfe5130dfd5c24288543da40170dbc117be384d6cd646d4fc82cf608"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/screenshots/F-portrait-ramp.png",
+    "sha256": "48b0879154f8fc4db3a04c2e8e366d6dc11cc3c74da32e29b70d7b550108868b"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/screenshots/F-portrait-roof.png",
+    "sha256": "bf8326c0e9e14737b4998eb8243f996b378a29ca8e04474c385428a848b049f4"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/screenshots/N-desktop-jump.png",
+    "sha256": "b9782a24540aed374a489bc3b279e7c9e2ed3f20bd781d66991baadf66f36304"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/screenshots/N-desktop-menu.png",
+    "sha256": "7a2ed0c0c16aadb8f1361a23efd57779207a5b9fb29dfbd7c845beca72cc7a6e"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/screenshots/N-desktop-paused.png",
+    "sha256": "3c38e05770db9a1af5183d44bed15cfd2a4b5e2a3c82cc06728d4dd7e4b5c4f9"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/source-at-start.json",
+    "sha256": "a339689f55f5267bde7815e601a897571bbe016cd26dfee9de544d92ec29c1aa"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/source-stability.json",
+    "sha256": "5ba359e7ab712c13a9aa2c4646bcab67ad23ac1a51ba5f9eebb635f07f2edfc3"
+  },
+  {
+    "file": "docs/evidence/PAO-11/runs/verified/test-results/.last-run.json",
+    "sha256": "d73c748bbd999a5ec3437ec97303e04ac1e89ce51cc1c336c1b9f179ffe82420"
+  },
+  {
+    "file": "docs/evidence/PAO-11/test.log",
+    "sha256": "745c9f7d734df46816002400c1a4cecb056644795d2c9d9c6081efa25cbd11fd"
+  },
+  {
+    "file": "docs/evidence/PAO-12/.gitignore",
+    "sha256": "604c0321de7ced3492217875c6e3b92dba96ee3e86fce0ca02891e9cc1762169"
+  },
+  {
+    "file": "docs/evidence/PAO-12/README.md",
+    "sha256": "0436c3f76463ab25eb0654ad2e3898fbf4235da23d98de70978f9e0b7cddbcba"
+  },
+  {
+    "file": "docs/evidence/PAO-12/browser-first-run-analysis.md",
+    "sha256": "2abd873622956429c987b75258088a48c99f187653c5abab198ad11bf185185f"
+  },
+  {
+    "file": "docs/evidence/PAO-12/browser-report.md",
+    "sha256": "2c95f948a76cea69cdc411251a297176d333679b04d4a366f312dec0c75e3373"
+  },
+  {
+    "file": "docs/evidence/PAO-12/browser-runner.mjs",
+    "sha256": "c43456626bc643cccd168df637c949c19ade8efae2e8fcb82b39be259db5d2cd"
+  },
+  {
+    "file": "docs/evidence/PAO-12/build-final.log",
+    "sha256": "fffd7895de33197a1bcad44ba2c1d29b6816063ad3eec58755f9eb188424a572"
+  },
+  {
+    "file": "docs/evidence/PAO-12/build.log",
+    "sha256": "112dd04a3e230f917e2a9bbb093727001c88293d579927b78cab0d13c53bc8f2"
+  },
+  {
+    "file": "docs/evidence/PAO-12/core-test-final.log",
+    "sha256": "3ca1d212492cc10130552aaba0237f38b370c6503ed0733de2c3d643e36c50e4"
+  },
+  {
+    "file": "docs/evidence/PAO-12/core-types.log",
+    "sha256": "cc0d7786ddb992754d812646fa4d2dab055f97041a2ed5296f7bbc5ed2120779"
+  },
+  {
+    "file": "docs/evidence/PAO-12/green-airborne-edge-continuity.log",
+    "sha256": "00ab77e6065aeac4ee4177ed0367a5833ddcdccaa9467b62488f5d02f772e506"
+  },
+  {
+    "file": "docs/evidence/PAO-12/green-core-origin.log",
+    "sha256": "5b3ed3e32c9e687c324fcc64eeb52b595a9503d30151f9b4ec8e69200ee49d27"
+  },
+  {
+    "file": "docs/evidence/PAO-12/green-physics-initial.log",
+    "sha256": "0218e7c080427855c1e17cbe8fd1e1733437f8653c4f23498bd35f997c230396"
+  },
+  {
+    "file": "docs/evidence/PAO-12/green-physics.log",
+    "sha256": "da0534f7906fb4f0cacdfd78facd4121f9d5714c4895ed51229fb49bd53ffc1b"
+  },
+  {
+    "file": "docs/evidence/PAO-12/implementation-plan.md",
+    "sha256": "678ff9ef204288ccb5ed0e4276fbd92326f1c9236499da26ad2460550babd880"
+  },
+  {
+    "file": "docs/evidence/PAO-12/physics-report.md",
+    "sha256": "9b93dfcdb3e99423687dbd9f9234ff2a8b7dd06c1cb86d31e9e1c6a592bf0919"
+  },
+  {
+    "file": "docs/evidence/PAO-12/playwright.config.ts",
+    "sha256": "bcca70ea1b33e8d0db552f04dfa5479490f5a2a5cbd5a9cdc0e005571083c396"
+  },
+  {
+    "file": "docs/evidence/PAO-12/red-airborne-edge-continuity.log",
+    "sha256": "8b82148d8348b24c4f5b3405ed2001248c2997317d9eca864a362da2090f23e9"
+  },
+  {
+    "file": "docs/evidence/PAO-12/red-core-origin.log",
+    "sha256": "011634b9cd1cfc4d23a2d9d7f33c00b30e18bc9b62ce3c7285f3d42b0b477925"
+  },
+  {
+    "file": "docs/evidence/PAO-12/red-matrix.log",
+    "sha256": "cf5f7c4350b694a1fd7350605ba36e175bc79930c43c319bd5be8e59ddd05f5a"
+  },
+  {
+    "file": "docs/evidence/PAO-12/red-physics.log",
+    "sha256": "d03d237f17d17636687662e624a007d9de6cbddcacea0250153894affd227b3a"
+  },
+  {
+    "file": "docs/evidence/PAO-12/red-reentrant-relative.log",
+    "sha256": "d5f18c31c9010454a1def8602034ae55880a6c7d4841ba6e26ab0edd0a4da7de"
+  },
+  {
+    "file": "docs/evidence/PAO-12/red-reentry-legacy.log",
+    "sha256": "ca27f734f20d506e5160005c1a849390ea85e451381287e8692b539a084ee49e"
+  },
+  {
+    "file": "docs/evidence/PAO-12/red-reset.log",
+    "sha256": "c45785185045f8af70affb7ce83cb876b3e0d090b59ca6b36493590d289e5b05"
+  },
+  {
+    "file": "docs/evidence/PAO-12/red-roll-endpoint.log",
+    "sha256": "f8d2f80cc65ff605826814ee43e32e2aa118604fd2d46e258be38d00bc247e89"
+  },
+  {
+    "file": "docs/evidence/PAO-12/review-airborne-edge-regressions.log",
+    "sha256": "eba93288f60463a07cb0543224678ae725fdfe612202edef81c9bfce97ac430b"
+  },
+  {
+    "file": "docs/evidence/PAO-12/review-notes.md",
+    "sha256": "ba56e3d5979bc9847f99528587a14ea05dfb55dd4cf71a064fa69aebd048cafd"
+  },
+  {
+    "file": "docs/evidence/PAO-12/review-regressions.log",
+    "sha256": "0e7003636a46429da7ae3e0800df2076b47efcdd5b167dfb0661f9bc9c6b78ba"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/final/e2e-results.json",
+    "sha256": "a0fb20c22c5f2ac598deee92dbebf03a10d81800907017baf532f07f7c8559bf"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/F-browser-isolated-highest-speed-large-step-and-pose-matrix.json",
+    "sha256": "51af9e6723e4a6ff4833ad8a174eeba5f10e8e6313becb3120ad90f33adee5cd"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position.json",
+    "sha256": "b23763b8e54be77549c026ac1de57fd99a820e3f8106d2f0f61e8a8d49eb927d"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/F-desktop-airborne-roll-uses-actual-height-box.json",
+    "sha256": "73ea4949038d87227927c779463a945fe1f1f379e24e9487aec09e298f9f6475"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/F-desktop-relative-high-speed-thin-train-terminal-once.json",
+    "sha256": "ebf6d15a85dff1f3f88f96e18ef1b4c8c544266921a7d12ce3df42f5abcff0e6"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/F-portrait-same-tick-shield-multi-hit-single-consumption.json",
+    "sha256": "ea5870f7ca9cd1db3a1903cb3ab04c399055a98576333828428fecf9711208e7"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/browser-source-identity.json",
+    "sha256": "0926dcd0e31846e2106da589ef03617237669e4a968791f0f01fb7f6449af86f"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/e2e-results.json",
+    "sha256": "2fe5678bba29c18f046aa739febd11de20db7d45c1a0e1ad0d2ef94f8f3e82cb"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/e2e.log",
+    "sha256": "c563cae3abb45f607208dea42d87eee6a17b649d6cc1124df5ddaef00e91a5d6"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/history-restoration.json",
+    "sha256": "4c55b8019485c9c7118fc0d83773d40b77729f8ef42fa037ec778e84df3493f3"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/F-lifecycle-clears-input-and-hidden-time.json",
+    "sha256": "cc7a51044ab8c4d811aa8ace3dc84dc2af3075e429e00ff775a14c3e6001c8c6"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/N-desktop-production-keyboard-flow.json",
+    "sha256": "7a8480e2346f15e0d04920c50da01f477acc1a628cd79af604daa140219238a5"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/N-mobile-production-touch.json",
+    "sha256": "bf193875a058048123398c046d1f65ba771769d3f4419c54d1ec9041b69900b0"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/review-fixes/final-native-menu-slider-and-start-space.json",
+    "sha256": "e2ac76dc380cc099836cd2e0496654dec9a62c3c99728c26efcd6dab6badd9c3"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/review-fixes/final-paused-rejects-motion-and-resume-space.json",
+    "sha256": "6b2a9e4e896525b53067ba918e2121edf9efdeef94472adce63c86915b0af685"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/review-fixes/final-playing-interactive-arrows-do-not-move-player.json",
+    "sha256": "fef2f885deeb4c31727643f060545c4733c9950f111bda890146fae9a0a1a9dc"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/review-fixes/final-source-identity.json",
+    "sha256": "a2dbe3dd4a392a770355f1b3b276ced50e2f3eafb522ab0522ef513010e48b32"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-desktop-interactive-arrow.png",
+    "sha256": "2037a76ef121dd82617b073ff5ca7b0447f4c02f61cfa30db281dbf0fc97bf92"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-desktop-native-start.png",
+    "sha256": "edc67a784fb432e2bc882044b68c376a609b610e9ed3218d71fcb1387bac7658"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-portrait-native-resume.png",
+    "sha256": "d2d991e507e381faa55f88e3287c74fdd84268d2892f82be07257f4cd041a2dd"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-portrait-stable-paused.png",
+    "sha256": "3e5994cc6ece0f486bade675c285845680399796b196a9e4adcd1eef4987563d"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/F-lifecycle-readonly.png",
+    "sha256": "c4043145c15e43e6ad69ca5450230cfbd321e32923b221c8f3897f05ba7fa636"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/F-lifecycle-resumed.png",
+    "sha256": "3dda2e7f8d7130c2a0fe401d0e065bd3cb599f46ea8f2a0717e57d0e4ce7e664"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-failure.png",
+    "sha256": "64183728d8dc34494704fc2109723a239fc8614af1bf1291441eeb56a560b4b9"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-jump.png",
+    "sha256": "5fa5b20ce46e81f40a90591a22ae3b4fdf6e7bcfb2ed7c10f0e2b4735e5a015a"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-menu.png",
+    "sha256": "5396afb37fc1baf8f885dc2d12153118af91e255889e09fdd27f44ba64dab40d"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-paused.png",
+    "sha256": "656f3e526a64fbc537fdf45adbf0aa8c78601b881730f4b3ea3749d3f0c65de7"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-restart.png",
+    "sha256": "bf3addb429615152177b8f064e6e2ef264c6c6dc579f7a96949884c40767439a"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-return-menu.png",
+    "sha256": "12e51f8aeecc3e8f0e31c77eef80d9f2524174f1ea692b6d5d5ea8d9a8c4aeaf"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-roll.png",
+    "sha256": "e66a59cea33fc410a66b1765441802b0a245a9ecbd14e604a4d66c9223fd0f4f"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-centered.png",
+    "sha256": "a3a08052209298b2cd75392da66c286be23b121e9a30af9eba7c6a587f309b05"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-gameplay.png",
+    "sha256": "6679d415f2233d1b8b60faada767a9d1b96cd0bfca5e359f8af16a15df97b123"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-jump.png",
+    "sha256": "78c56bdab091557f35c4e146453a844eb757347927abf149d7a9c3754948bc6b"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-left.png",
+    "sha256": "5d4a1fb42df60626cc71c58c86650ce96aee149ad36d171b24f080b89478809d"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-menu.png",
+    "sha256": "46c63e16dbf6a4eda91395bdf0fad96e87184d614f9a3a463ec22056675646fd"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-paused.png",
+    "sha256": "193f4994756983fb501a96d101a64356d72e6c2154e5c070bbb6fab94f0b9d8c"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/F-desktop-keyboard-ground-ramp-roof-jump-ground.json",
+    "sha256": "08ba7b5dd2366218cc4b4d6bdbfcb2244ff3d02910cb15d63630322e52c81be4"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/F-high-base-ramp-5-to-8-continuous-roof.json",
+    "sha256": "940604d2950c1f46c250b9351df5877dc164a63e2712e63eba3bf833e33a88be"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/F-portrait-touch-ground-ramp-roof-jump-ground.json",
+    "sha256": "48f18670c70120088970670202301fbcab2ba5a2594ccc3317721c0ca7b65db5"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/N-production-input-and-supported-snapshot.json",
+    "sha256": "bc7e8c1dc25eb363c082cf8e45b9c393e52bad58adb3bbb7e2052ad3474b771c"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/browser-source-identity.json",
+    "sha256": "7aeccb03169599854253261ff892e39b32b54225dadf64cce42480612595f08c"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-desktop-jump.png",
+    "sha256": "170cbdcf0327cb1dc99c9c41eb06341df266ee2f7f480b51cb3f7393fb133025"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-desktop-land.png",
+    "sha256": "1b88eb22d5169a59caa1ebeaaee997b45fa4a486bd4ee3b4eccf8b78143b87e5"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-desktop-ramp.png",
+    "sha256": "d7d1b60c67f7268d8a1e6f3a40a073cc24012deb150b0ffc9777073ec8b2314a"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-desktop-roof.png",
+    "sha256": "5f2994fabba7e686bf211d2831a22d8b94f6e43780c3e2ff1659f6a1428da3d5"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-high-base-ramp.png",
+    "sha256": "282b6a8301355a428ea27d2515e9b20bfd3ea33d5320fc9e2ae21af810c32ab1"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-high-base-roof.png",
+    "sha256": "6c548e9244729bd80fa91821985df02336d7fc38c2651031fee3c9bf8b8140a5"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-portrait-jump.png",
+    "sha256": "7b89c0c820b19d4cdbf13fa1d530674f63c9ece0fb2fcf92b3a57b1d7beb3fc0"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-portrait-land.png",
+    "sha256": "2a31c7a384f84516fe2847e221e476338eabd54dfc9c6deaac0d5194ca4ff5a1"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-portrait-ramp.png",
+    "sha256": "8b056ee782dafbf522ce724d165a41c5e3fb54a2217cc3323fb208ab32b50e52"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-portrait-roof.png",
+    "sha256": "4a873a0f29c51fcc52fbeaa485881a906a218f6a9f649667cbedfd29ada577f1"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/screenshots/N-desktop-jump.png",
+    "sha256": "6eaff740c2abc2b10828a8588943c6d8fcdffddb1a3cbdd28dac8dbcfdd28b29"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/screenshots/N-desktop-menu.png",
+    "sha256": "5a5a5a13fa84824ce9ab39a3c82205cb633ce05a8bcd33d9300095769ba653cd"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-11/runs/final/screenshots/N-desktop-paused.png",
+    "sha256": "aa59b30e1fe9455a51cac66fbc5b2674be6c64a839aac792c5e9695918ee4617"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-double-score.png",
+    "sha256": "d8592bcf2b9b92c081db910ba7913aad7c82004fc48d0c028ccffb98640ff14b"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-failure.png",
+    "sha256": "2ed9122a3b1fbff259e91e117c08aaf105e89a223a72cac50eb2568acb7412a1"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-high-obstacle-result.png",
+    "sha256": "e233b7ceb34580e88b71afcf3f7bb1e54dc9293250e44151f62b7a075b636f51"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-high-obstacle-roll.png",
+    "sha256": "e80a8c19e23428e1aa1a47a5f4595b39a6e048338d2b0579b4eb515e65abbcfb"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-hoverboard.png",
+    "sha256": "9deea5d7589eccf0750cf90f2fb6a8c622bcff004175edfe4decfc05a750fa6f"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-low-obstacle-jump.png",
+    "sha256": "bc112e0014cb23a136e64b082900b356deb5965fa4c0cbc267ef283d1af38886"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-low-obstacle-result.png",
+    "sha256": "12b67eadd40c6d228669f6e5bfecef0a0d26b78ca1b9531a08fe1c89c5fc47de"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-magnet.png",
+    "sha256": "86ddb043e202f723f48637b571785ca69437b6b20d283a917a057a0faaa62988"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-mission-status.png",
+    "sha256": "b9b474d381daeacc4875add17b1b1a53558d5093d52798438de3439f897d234b"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-mobile-jump.png",
+    "sha256": "cb61578fe3b317a4f7364a1d2297648ee058155373d89b4349235a07f3be1c6a"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-mobile-left.png",
+    "sha256": "6e33719f6917b380320a94d8af1674dcf32b51089958c32ab6750f4dcf6e541d"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-mobile-menu.png",
+    "sha256": "6ae10929b1de8acfb3366413106355a1f0994581596d081d7f7b287f5a7ed7b8"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-mobile-paused.png",
+    "sha256": "ed9c85ac35bdd644725dfe62b6a8671775fa01d58a7f95771cf99ebd6e5afe41"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-mobile-roll.png",
+    "sha256": "5e151aba8f04a14e67704fe36f934a05907a6242dd6579edc2c57f4f476b3b43"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-mobile-shop.png",
+    "sha256": "c8bf9692adccc74f7a6cbf9efa90cdaea7b2c8a5a6079cd0596b0f12f5ddec95"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-mobile-touch-layout.json",
+    "sha256": "65641ca63fe237e414488be96815f049215cff6e2a2c6eebd3b55510fc47a7d3"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-obstacles-failure-restart.json",
+    "sha256": "9f46c57a5f06bbe5a597669bb31a1b34c14f15e9edb9edcfa3d414b164dd1c81"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-powerups-shield-missions.json",
+    "sha256": "1095fece1d0240bc80d477ea4100fc4c911d213e4f62bce536adae61b4eca229"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-ramp-approach.png",
+    "sha256": "88a0acba635716fd26eb2a049460b1a90e6241c18241099121566201300943e1"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-ramp-ascent.png",
+    "sha256": "f55d4b6dcca72c04c78429f5a006be394a62d84fc601bc001b0a9a6de6608421"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-ramp-roof-jump-land.json",
+    "sha256": "d3c582b72de3a33b78f18ac78c3dcefd8f9eb0821232da2bd24eaefcf5a76f45"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-restart.png",
+    "sha256": "48d813c987675785b8a7c558ec8c3c41b81409a487ba2588536ca5a72e3932d2"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-roof-contact.png",
+    "sha256": "3342ca633f6e326cdaad59a0641dc3ecda04cd1dffb1f3449134112c7b5ca21d"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-roof-exit-land.png",
+    "sha256": "68b05168ed412cff0b9d78367db321be8730146d64f80a614ea03c53ba9f8179"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-roof-jump.png",
+    "sha256": "27401f8a180a27d1332b87690b31606b36f73d1e134fdb7b421eaba90c7a9d2b"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-shield-break.png",
+    "sha256": "7ebdf9984ba07c6dae29fa9a8712be27037fb57939b5036d2a3276c51bc0c36a"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-super-jump.png",
+    "sha256": "0e7227193c03e0b5d98c9b1394e6f0a2e71cc69d5a0ddcad532636868ed50a84"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/docs/evidence/PAO-6/fixture-super-sneakers.png",
+    "sha256": "0adcf2031cb07902cfd5d6f95d7d205db800c22c1cb4ca435180da44e05407fc"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/screenshot_1_menu.png",
+    "sha256": "3d8b77d7cf6375bec9e6622ff8e31056f0d70fab895eb8528b6a826af5f05e73"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/screenshot_2_shop.png",
+    "sha256": "de8e6215a7e774e3ce77690bb366a2d29d4d9eb3878ba83c8cd8da83efaea714"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/screenshot_3_gameplay_chase.png",
+    "sha256": "147c8b086fabeeba870de7d2db06428eeba08171586fd69087c0dac7d0b814d2"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/screenshot_4_bank_tilt.png",
+    "sha256": "745a31ba3cbb22b458d637ea9d05308e0b5c6a3d6b08aedaeb5645e5f87f23fc"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/screenshot_5_jump_action.png",
+    "sha256": "e0dcb6c19b94006131716a4406f6baf030d8fbcc31c67a8cf481783d1f408f01"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/regression-output/screenshot_6_paused_screen.png",
+    "sha256": "2a91a7a629cbd441ab8412e94649e40d7bd3405dc158ad66ea9cbaf344fdb751"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/screenshots/F-desktop-airborne-roll-collision.png",
+    "sha256": "5dc5ac84fc03620c4de313ee4e6e0d355329ee57e68a6dfb12e592464ea785c4"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/screenshots/F-desktop-head-on-before.png",
+    "sha256": "cda7541d2000c05bde6f5bfda0a77ccae4ac7bae76dd9fa2b6b50894265bf1ad"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/screenshots/F-desktop-head-on-ended.png",
+    "sha256": "d1aae5487191021395b4f45a9f95141203fc856c42cc4c099adedb6ba1324269"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/screenshots/F-desktop-teleport-recycled.png",
+    "sha256": "c28fa89c7af30c09b56a6050bf2b4557756005484f232ea2d645cc7fe1f5095a"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/screenshots/F-portrait-shield-consumed.png",
+    "sha256": "881b7613ab5b365c6ece5cbaf679ce1f141829b1a0a69f0677e7071f48f854e0"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/screenshots/F-portrait-shield-paused.png",
+    "sha256": "042ba02d879b190cf2a4c622fb3010d77ba77da73055f763c0e9326dee2d9d5d"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/source-at-start.json",
+    "sha256": "976ac5170d207e00078f6a7e141c2ef49122fdb398e6a5d72e58b911f87f2c37"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/source-stability.json",
+    "sha256": "62d7a20f297be4be74cc221275db757050dd4424f0a2058922bef96f6eb1b413"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified-final/test-results/.last-run.json",
+    "sha256": "d73c748bbd999a5ec3437ec97303e04ac1e89ce51cc1c336c1b9f179ffe82420"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/F-browser-isolated-highest-speed-large-step-and-pose-matrix.json",
+    "sha256": "51af9e6723e4a6ff4833ad8a174eeba5f10e8e6313becb3120ad90f33adee5cd"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/F-desktop-QA-teleport-and-world-recycle-do-not-sweep-old-position.json",
+    "sha256": "4a6718e1eff40f6349b66a77447f7674db46026a061c9565817a938fca4b8420"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/F-desktop-airborne-roll-uses-actual-height-box.json",
+    "sha256": "4511a6479cb80a7703640ed523c4f0524b9ec29512a4d932967a13ded4820d7e"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/F-desktop-relative-high-speed-thin-train-terminal-once.json",
+    "sha256": "b48cbb57143832ff46d0190090c9ca81c6aa74a7e8a2f47fb462df462f01bf20"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/F-portrait-same-tick-shield-multi-hit-single-consumption.json",
+    "sha256": "0fc6e99008b8953f3ba5fb380996999f10a54c5558d43562b5f78aee190c903b"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/browser-source-identity.json",
+    "sha256": "feadbe0d7e00650286b6e73adc7fdd0fef2b3d52f02dac12e8de7303ff6ee38f"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/e2e-results.json",
+    "sha256": "d1a2532ad4551ded38d990fa462dc7e1c341704852952c1be62b5be362058f3b"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/e2e.log",
+    "sha256": "7c78b29e531e91a2f924ca34c6cb32bc5351aa1d259344b66cb4c76679b0205a"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/history-restoration.json",
+    "sha256": "569a112cd4b3bf895dfe62060b090450ef0fd9cdd3487badf58a9a7678ebf8f6"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/F-lifecycle-clears-input-and-hidden-time.json",
+    "sha256": "b003e57e6ce8a6897dc9440462efb5ca48a46f5c015050fd154661a29eb2f491"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/N-desktop-production-keyboard-flow.json",
+    "sha256": "7c832f528478df5b6a271eac33c23aeae146206a0551864795ddc14cb906beeb"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/N-mobile-production-touch.json",
+    "sha256": "3c3e6f6533a99d8797bac92c29b85a6a6bd16dad8d32e0e01776eb78fd642ab0"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/final-native-menu-slider-and-start-space.json",
+    "sha256": "e2ac76dc380cc099836cd2e0496654dec9a62c3c99728c26efcd6dab6badd9c3"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/final-paused-rejects-motion-and-resume-space.json",
+    "sha256": "77c0ee7b882d2923ac602507557a198462baa9478132e13b1ebd98b4286d909f"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/final-playing-interactive-arrows-do-not-move-player.json",
+    "sha256": "1e967e1da30ca3901a2bc64639ff92be85435559f84e548131b23f9589c464dd"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/final-source-identity.json",
+    "sha256": "a2dbe3dd4a392a770355f1b3b276ced50e2f3eafb522ab0522ef513010e48b32"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-desktop-interactive-arrow.png",
+    "sha256": "660d1fa9b8a7376a8d37720a2e9e45a25e3c390e6f7da3c40587d60b86ca6676"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-desktop-native-start.png",
+    "sha256": "e1f21fa26eb78767176d4767fd5bf3980c99b9ac32a9247af78c94d1357a5097"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-portrait-native-resume.png",
+    "sha256": "69f93d4ab14599f56b73553c48ae06efb02fcf9acbd288d73e57e45eea6646b8"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/review-fixes/screenshots/final-portrait-stable-paused.png",
+    "sha256": "358eeabeedd5fd96e8df6c976af175866049e00d17b5197a4e4977f728baf9b6"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/F-lifecycle-readonly.png",
+    "sha256": "03c405f325932a39562766b4d56bbfa98b73cffc80daf6ac1cd2c339d10fadd7"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/F-lifecycle-resumed.png",
+    "sha256": "2f6310fe75b7b7461df3e11ec8bb7c3fe62b5227b3ab5f9414330b85623257c0"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-failure.png",
+    "sha256": "5fc42d541161986d21b1fa2bc66a153d427025cf94c7c3a93a8446f068bcd1bd"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-jump.png",
+    "sha256": "4e9a2a2eca751127dbe0c71a94ce036e28a31de882aed6c5cdba66b2f218cb65"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-menu.png",
+    "sha256": "cfdbeda9472a59ff8f1c1f6116602edd2b6837b9a9c63a6b06a4dcd14f1235b2"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-paused.png",
+    "sha256": "0ae17e707882f9c303b28ac33531471f56b4051d41d06689506505faa3454352"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-restart.png",
+    "sha256": "c27f9318345608f12a8ff6ebfcd25eaabf178ff10fa08813f9d5bcbb7f42fd26"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-return-menu.png",
+    "sha256": "04fc9a3f2d90b3a2a4aad0556670467493a82b3172295173d6ba380f79c650e0"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-desktop-roll.png",
+    "sha256": "96fe92887332a2d33a133d2f4540c139fdec03ae6d9bb2c796ac648036608a8f"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-centered.png",
+    "sha256": "899aada0a6e15c1158195235cc320d12495a08a7a4c1ec4bb929f4ebad7e34a9"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-gameplay.png",
+    "sha256": "5df268cdebec25f42c93364bd982e894def8dbb675ed05497c9038979526702f"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-jump.png",
+    "sha256": "ac7b2fc57b05611d6f259305f3aa21e6d64303041591eb99c49a6d8041a48b30"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-left.png",
+    "sha256": "146345b1d702003b16776248e8158f65f18529a6a988b02582e14a1c3f5cdda0"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-menu.png",
+    "sha256": "0e6419a528edeabb48e6bf3d7b37005eff7684ff4e3ba872853fb04c57a6b2f3"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-10/screenshots/N-mobile-paused.png",
+    "sha256": "15d01f219796840c9eaae4952b5dd585ee19890cfb4a320db1ac8ea9ff436983"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/F-desktop-keyboard-ground-ramp-roof-jump-ground.json",
+    "sha256": "05b7b6859dfd72d415238eca8fe911e39749dd6090aa246be3a2aa3cacb7e44c"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/F-high-base-ramp-5-to-8-continuous-roof.json",
+    "sha256": "9564dca938274a8aa8e78de9d6d575771aaa461a835327f5b0fe51982eee5491"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/F-portrait-touch-ground-ramp-roof-jump-ground.json",
+    "sha256": "1c7d8b0e5c791f94d6c00f1016d9f8e5d32cbef31893f9ba35fbbfa998000e30"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/N-production-input-and-supported-snapshot.json",
+    "sha256": "825a22a6b74e244a92f1ca65885ba0cbe341ce8b8af057d899763198cbb79fd6"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/browser-source-identity.json",
+    "sha256": "77611d41001935bc6dc26cd5af5dd832bbacfc4333f0e201b10631f227e32245"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-desktop-jump.png",
+    "sha256": "61b44d07beb2b16e2cd975cc01bb154a95473fe0820c2c5ef50d00afaf1f6bcf"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-desktop-land.png",
+    "sha256": "ddd4ae9972ddc4375aefe57b5b938279813285529a37761b06de5763c1c12c25"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-desktop-ramp.png",
+    "sha256": "3df308cba3ffcbf5b5e73fb283b61233b59a2b1eb8c61414aad975f3f0d5fb57"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-desktop-roof.png",
+    "sha256": "c1306d0010edac67e6239e30bf9599458b2420ec58a825344dfa9cdc9af81c69"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-high-base-ramp.png",
+    "sha256": "5ab8c589b9f6d4a0a4683b03de999da4872d05a3acdefaf891054ebe0568fbe0"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-high-base-roof.png",
+    "sha256": "b0a9b27bff7a38820b71676ef770f457d79bbd44a97e1751195f2a8b562818fd"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-portrait-jump.png",
+    "sha256": "6a8b77aa74c4ef48d3515f4f34f69bcba334108e97cb57dffdc378fe3cf95a82"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-portrait-land.png",
+    "sha256": "7ad8b75f006bf0695542a7c470ebd0985cc749fd1926eb1bcdb9c3d6f6664e38"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-portrait-ramp.png",
+    "sha256": "48b0879154f8fc4db3a04c2e8e366d6dc11cc3c74da32e29b70d7b550108868b"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/screenshots/F-portrait-roof.png",
+    "sha256": "dd73edf9d730b88bded2e35c8920b0c34e23913ca79a5605508797726f25694d"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/screenshots/N-desktop-jump.png",
+    "sha256": "a60fa511eae3d9ad62a5d3b57abcf2bcf21418f7b7519d6bb1d6d7ecc6a5e740"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/screenshots/N-desktop-menu.png",
+    "sha256": "ab9356c9819d638ff1acf7536854f458e88efff588ad4e77118058037e717d96"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-11/runs/final/screenshots/N-desktop-paused.png",
+    "sha256": "ba8aefef370bad34600b215c70441069d25fc4d081712824197c20adaddd37ff"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-double-score.png",
+    "sha256": "d69843bcd18236d427ced67c20261e949c7cdcd6f67edeaab73f6a4300f1bfa1"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-failure.png",
+    "sha256": "87e2ad84e1ea8fd3364a6291fe13fd6152eb43a05432c2d43cd1f6b01a73902a"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-high-obstacle-result.png",
+    "sha256": "5090412982fadbd4a6b5e88a6314321c37eafe820d85eb2c5027fbceb09349f9"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-high-obstacle-roll.png",
+    "sha256": "ab4fd95c1fcf44821d7cbe19e5e9bcb7961e4271e8a15a4bcabb97fa34baf6c9"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-hoverboard.png",
+    "sha256": "a363cd8d8adaaacb2b75298af3f5ab6dc258cea6f992dae6b938eec85b9d5287"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-low-obstacle-jump.png",
+    "sha256": "2e5a3b507b0f570802b4f9eb47aacd47ae714c0dacb513eafa4f79499a4422fe"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-low-obstacle-result.png",
+    "sha256": "33190b49f939c4d06d41bbf7dd88ca037c1bbb263949fcb1271ecad5eff2860b"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-magnet.png",
+    "sha256": "28263aac0899748b93015aa3a6f70b8b9891067a3c8e8991261492e8513baf4b"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mission-status.png",
+    "sha256": "f34ba14a4ed27f346073b8d3a201670ec5da62f8541306cf65fdb4c47a2c202d"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mobile-jump.png",
+    "sha256": "a86722aa5f8faf1d5c9bf848ca308294f0f5388682056ddd6fc37ca8ba0cded3"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mobile-left.png",
+    "sha256": "960daf10ac48d20685e03c239ce58ed65bb5368eb4f35ce98ae9ba4fb5b14d94"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mobile-menu.png",
+    "sha256": "743b03ce36e1e60286cccc560c90297b4eab856049c03ca73b4e2a23abd7a948"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mobile-paused.png",
+    "sha256": "018ac08e30c47383242ab8b4c96d246898920172c833bc01a0fa80a12a3f3747"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mobile-roll.png",
+    "sha256": "60798970550a1bd057cfe295f86be9fd98459ee06b1e68b457ebe8b0201629c3"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mobile-shop.png",
+    "sha256": "f2d83c2c95e998fbea547923b6f4e71047b33702dc2b240cdddc6145f49df0e6"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-mobile-touch-layout.json",
+    "sha256": "6e3e0a1b316984125e7b499e6a3e693dcd3a95568bdb60cac7074917317d92c4"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-obstacles-failure-restart.json",
+    "sha256": "59cc0da04b6acaa9ce2069f8749818c5d8b5631e91742b0e054ea4e2d12265f2"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-powerups-shield-missions.json",
+    "sha256": "961d74a578611f9d7df3ffe7c768d1a1483cecd54f1de37e2fd886c495ce5356"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-ramp-approach.png",
+    "sha256": "112da9d952eacb8df7cb9bc08d40d06d6595ca406837f0a4dcd12153809177aa"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-ramp-ascent.png",
+    "sha256": "2d196337007f34b9ba88168ed35e176d6c6b2aa66736609560bd63a7a36716b9"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-ramp-roof-jump-land.json",
+    "sha256": "e401662cdd9220c8fb80e19f49b024df5c0ba2e9a704361bfef0dec9477b2c27"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-restart.png",
+    "sha256": "8df107a5c6308b75a26786cef968aac7abb6c02a51ea79c8a5acd58c12b1dfc3"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-roof-contact.png",
+    "sha256": "3ade89c1597c523567ea38b95f6e7f8b7fa4c836307cb0cab0c724e743329c8d"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-roof-exit-land.png",
+    "sha256": "844fe670a7da02ae2b1ef83a5db6ac17c65795abdb1d149971cfb3703fedc04a"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-roof-jump.png",
+    "sha256": "1dfdd089d9541a4fe336c5b4d359fd74ef6f309f577762fa859ea5834397f66f"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-shield-break.png",
+    "sha256": "de9b550fc6cac29f274d3511a9120d317e6728790f6bf287e006a5008493c56a"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-super-jump.png",
+    "sha256": "ee32493566d37862c2425ad0688623c6025d47fbf7ea13248dd6c6a32610cd4f"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/docs/evidence/PAO-6/fixture-super-sneakers.png",
+    "sha256": "da85bde6ca089345cdff07ac19275f702466aff1800298b0aac2f7b40dbd79d3"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/screenshot_1_menu.png",
+    "sha256": "945d3ada2f369c3119b483d402a73429b51397458417704defb6c734913cefc3"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/screenshot_2_shop.png",
+    "sha256": "871f2901ac276a5107262a40e0c67c2fac3048b474960da10f1a3923393f4079"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/screenshot_3_gameplay_chase.png",
+    "sha256": "096e157085e06e3dea01b05902146c5d2b370fde8e6f0ffc791487aea0c457e4"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/screenshot_4_bank_tilt.png",
+    "sha256": "db3d6321a2a8d3dd651e7baf5e6016ca76709d2706e647191d5d94b03f0e35c8"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/screenshot_5_jump_action.png",
+    "sha256": "90391988781d496cf0d6dfafdfa058b221481461fbbd2770f1d62d8bb061d755"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/regression-output/screenshot_6_paused_screen.png",
+    "sha256": "ac885204c5e81e89eca9adb81b226efc5fc6a8efb938d7bde19ccb1ce933bdf0"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/screenshots/F-desktop-airborne-roll-collision.png",
+    "sha256": "e4bd15ee51d22d5dcb92a46501c78130da252e41f79964770841bbc14ead8459"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/screenshots/F-desktop-head-on-before.png",
+    "sha256": "d2e6bf78cd5c71664dbaa38c92fbee3f2fc45e304905c43acee16f6674cb1108"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/screenshots/F-desktop-head-on-ended.png",
+    "sha256": "d1aae5487191021395b4f45a9f95141203fc856c42cc4c099adedb6ba1324269"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/screenshots/F-desktop-teleport-recycled.png",
+    "sha256": "edad9dcf9649d12fbbaa6c5b6a1a54337bf3752c30f44bc111f21e320a3dffb1"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/screenshots/F-portrait-shield-consumed.png",
+    "sha256": "63c48b19adcf57057e6915b831c57df444198122e4377515dbf63b85be277240"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/screenshots/F-portrait-shield-paused.png",
+    "sha256": "69e6fefd2164287dd3b524e4d0bf43674f4cec0ef717babf26ecc3ab06bdade4"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/source-at-start.json",
+    "sha256": "2843332cf7ce49004b2a6d002734adeba064bca9a4850dde3cab869f1b5604ec"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/source-stability.json",
+    "sha256": "d8069fc1f5f408e199094bb3b4908a55dae57ad682393cd23814a557894e298d"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/test-results/.last-run.json",
+    "sha256": "d20233a29e3ce4df01d4ed318c5949ea990c9c65efd83d6eb0dfd4b3bbbcf75e"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/test-results/pao12-collision-F-desktop--b1081-ed-thin-train-terminal-once/error-context.md",
+    "sha256": "5d38d22a73596e6fb42bff35d6d5a2334787a1a4c7f6056a2e7dfccb5394d21c"
+  },
+  {
+    "file": "docs/evidence/PAO-12/runs/verified/test-results/pao6-baseline-ramp-roof-jump-land/error-context.md",
+    "sha256": "8eec8cf4555d9e4f8cc672e21512790bd80f292a75af53127d570dfba6a9da3d"
+  },
+  {
+    "file": "docs/evidence/PAO-12/test-final.log",
+    "sha256": "e613426d0373f7d20bbe6c3b5307204d72afcb967ac8269139d291366f538440"
+  },
+  {
+    "file": "docs/evidence/PAO-12/test.log",
+    "sha256": "9f4372a2afbf920b84fe23539ccbf00c3a0321988f5a4ac08ef588f72a232336"
+  },
+  {
+    "file": "docs/evidence/PAO-13/README.md",
+    "sha256": "75ca3be780ffe8d7145e65e3202c8b6ac1dde84a3a2fc18206470e9253e3dc4d"
+  },
+  {
+    "file": "docs/evidence/PAO-13/acceptance-summary.json",
+    "sha256": "84d301f3ff03afaab31a89a19d4f9e6a918249ca68745b3863550542e47f2c2b"
+  },
+  {
+    "file": "docs/evidence/PAO-13/browser-runner.mjs",
+    "sha256": "5f29b8de16f3f8fc91262ad99e8926f5271f2433fb1e5d0cb41cc8117ec96957"
+  },
+  {
+    "file": "docs/evidence/PAO-13/browser-validation.md",
+    "sha256": "8880e7174be7a3956aba2377c6a36d6bdb86633629520f2b8e1fb081059fa057"
+  },
+  {
+    "file": "docs/evidence/PAO-13/build-final.log",
+    "sha256": "d9c8b14508b8875b0c73af97ee761fc9204703452ef3f8d23ca7372d367a55b0"
+  },
+  {
+    "file": "docs/evidence/PAO-13/core-all-unit-final.log",
+    "sha256": "9599f3148f0d3a1c7d2c01c7911870dfe1da3578723e356e237c57f2dc821bae"
+  },
+  {
+    "file": "docs/evidence/PAO-13/core-all-unit-interim.log",
+    "sha256": "db4e301fa2ca7dcc77da5d940fbca04b87413c18f16affd2d331a53595c6f5a2"
+  },
+  {
+    "file": "docs/evidence/PAO-13/core-consolidated-green.log",
+    "sha256": "57056d01195e12f1cd4ad755e6c195f7086b30744731d5de9b87dbbae56ad26c"
+  },
+  {
+    "file": "docs/evidence/PAO-13/core-green.log",
+    "sha256": "3f00c9e1ff001b42b4931e6e496d0306fa62e9f401ac38558d26b08c1282af6b"
+  },
+  {
+    "file": "docs/evidence/PAO-13/core-main-red.log",
+    "sha256": "071cab3de1541437ca45e1a7ee688138a17fa8ebd8b4421e5b9ef602f1e27ca8"
+  },
+  {
+    "file": "docs/evidence/PAO-13/core-real-green.log",
+    "sha256": "3dd18208ca3b124cb1904d217c9ebf28c29fbb2985abc5221666ff623f9bff19"
+  },
+  {
+    "file": "docs/evidence/PAO-13/core-red.log",
+    "sha256": "ad4acc9152d3f7826d853583c5c1da94578024a1cbc3c819df0f2d35684d0525"
+  },
+  {
+    "file": "docs/evidence/PAO-13/core-review.md",
+    "sha256": "a8221c689ee4b8954b3c0d2b61f2658817c3af137ec10fb580a8f20bdf5398a4"
+  },
+  {
+    "file": "docs/evidence/PAO-13/core-spawner-red.log",
+    "sha256": "a6a12b5a3a6c42f550ea13efccf4f11cfbab28717970fc82b5cf3719e44a2094"
+  },
+  {
+    "file": "docs/evidence/PAO-13/core-types-final.log",
+    "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+    "file": "docs/evidence/PAO-13/core-types.log",
+    "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+    "file": "docs/evidence/PAO-13/failed-seeds.json",
+    "sha256": "4f64217966f4ece43e56f6efd276550bdfc4889ed17ad5eba74c72f8c5e8b0db"
+  },
+  {
+    "file": "docs/evidence/PAO-13/green-all-attempt1.log",
+    "sha256": "dccd69d5c124be1a14b7cf4e1aba24bf690f230dc1342e4533fe19687f41b015"
+  },
+  {
+    "file": "docs/evidence/PAO-13/green-all-track.log",
+    "sha256": "3c5e8a67941217bd9604fbe320b02968b7dedd7dd723d011ab5a8d6af3c51f24"
+  },
+  {
+    "file": "docs/evidence/PAO-13/green-track-attempt1.log",
+    "sha256": "9674335e4deddafe9e86a87827f8f4949cf0fd0d8e1a7a9b511b8a2a005f4445"
+  },
+  {
+    "file": "docs/evidence/PAO-13/green-track-attempt2.log",
+    "sha256": "9a37b7f3493275de426749ee6260d26e77bfcce21a853c747b366bbb937812d3"
+  },
+  {
+    "file": "docs/evidence/PAO-13/implementation-plan.md",
+    "sha256": "9d1959ea7dc3c7f72a0c8d721540d9cfc5fc199e6d77e83e7b0088d57ab7c9bf"
+  },
+  {
+    "file": "docs/evidence/PAO-13/logic-report.md",
+    "sha256": "dc4e04a10b9997d42afeff9ccc89d19d2eb8c9a15451f94dad7df8fbbc4cc484"
+  },
+  {
+    "file": "docs/evidence/PAO-13/playwright.config.ts",
+    "sha256": "757a5110edc70c443aa7e593ee2219de066b103e55d2b3e10295e60d6c4a2d11"
+  },
+  {
+    "file": "docs/evidence/PAO-13/qa-core-review.md",
+    "sha256": "427960f0884ebbef522b171d4bb775e7db9cec804060c0c16c8283f7b92d2fb7"
+  },
+  {
+    "file": "docs/evidence/PAO-13/red-orphan-raw-proxy.log",
+    "sha256": "fc76f5ff6c688a9b022870a2cc95ce0f44327bf4931c31bdc941c173153b7514"
+  },
+  {
+    "file": "docs/evidence/PAO-13/red-track.log",
+    "sha256": "0d729c0df2b7c586a930ce5fcb1fa518d24cb0dea14a8e00b63476a7b5ec8bd4"
+  },
+  {
+    "file": "docs/evidence/PAO-13/red-unique-roots-dynamic-rewards.log",
+    "sha256": "0ba32ad2d196c02be3ba4848ea6e40cecf2f212a16f01647962a58f5b4faae26"
+  },
+  {
+    "file": "docs/evidence/PAO-13/red-variants-immutability.log",
+    "sha256": "eb641014c8d2dfd55994bcaaebe84a45d1ea4877c105644c9d71f524b7152ba8"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/F-browser-route-witnesses.json",
+    "sha256": "8ea030c0374d95775cace415874cc32ea0695db2540483a5a0d5410b06cf31d6"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/F-isolated-browser-real-physics-segment-and-pair-witnesses.json",
+    "sha256": "c029aa3226c79013a2bf70be162708b4817e92be68b56dbbd4b558f5bd6bc379"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/N-desktop-seeded-generation-keyboard-and-reset.json",
+    "sha256": "bb8dc7c80b88f2620ac9b97df3b0f0dab92234941c0b5860f9b06e5c19c3b63d"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/N-portrait-seeded-generation-touch.json",
+    "sha256": "d4629d8a32868a6e9d486143cb6d030a772af4639f235f8ed14618c02ffac963"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/browser-source-identity.json",
+    "sha256": "5420408eb7c64429e5dbca20380c4a019e3b4dcda9cf213535c66ca52ebe78fb"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/e2e-results.json",
+    "sha256": "77bad74775aff426f870f444737392f3bf6004ad933a897fb7d2213074a03ae4"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/e2e.log",
+    "sha256": "4795bf01994b6bebf79d8c1099ac66a460c9ba5ad364f2f6ac60d6291a8406f6"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/history-at-start.json",
+    "sha256": "b5ceb5a71243447cf49bbb3c06157541cf4367b0a399b03350c6aa076206a6cf"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/history-restoration.json",
+    "sha256": "37e77545ead1abdd7434c8483d7d01be39ac0abd4f6ff342bc0e74ea488a2b69"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/screenshot-manifest.json",
+    "sha256": "ac2578a48f36c270a925cc7eda15b622c4ce92d380b83946dd61b15689b4ad17"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/screenshots/N-desktop-seeded-jump.png",
+    "sha256": "7036c84ecb1100815c16e5e7a6e8ede2f4c7f4efcb4b13ef4bd1057e3f90f3bb"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/screenshots/N-desktop-seeded-paused.png",
+    "sha256": "79ee26ce468d3c18624640f67b75ddbe5dc76b8c48739903c2a15d8d2c55cbfd"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/screenshots/N-desktop-seeded-restart.png",
+    "sha256": "c2549315a2322ec3861e3b8a519ff02dc825f8f22a59dc589056b2652d9f9ddf"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/screenshots/N-portrait-seeded-jump.png",
+    "sha256": "206e67a221b70203e93543175b5119d7013d25e9e651d720aaf3858e72e8f43d"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/screenshots/N-portrait-seeded-paused.png",
+    "sha256": "d5a548e9969de28ba3fc435f6d86688011a42bafa7cce3c16dab5f5bd43916d9"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/source-at-start.json",
+    "sha256": "5360f496bcc4e99bf63f34bde59def8f25fcf2a253972976f09361c67aca6154"
+  },
+  {
+    "file": "docs/evidence/PAO-13/runs/verified/source-stability.json",
+    "sha256": "eb45d5abaaed55a2d0a39315a8f1d1a5d35dc58d676b6a64c92b507d4ca54cc8"
+  },
+  {
+    "file": "docs/evidence/PAO-13/test-final.log",
+    "sha256": "554df8f8759790c87977f6b437b216f312eb9ea559377bb1f02b9c0a4a0f32d7"
+  },
+  {
+    "file": "docs/evidence/PAO-13/track-types.log",
+    "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+    "file": "docs/evidence/PAO-14/README.md",
+    "sha256": "89ffc0d208a9be9de984988273a4a77270804560040fb43c624656288512a082"
+  },
+  {
+    "file": "docs/evidence/PAO-14/accepted-browser.log",
+    "sha256": "067abc8698abbb2dacf0d36f5c485737965a7186d77a0a7a25f792c45c405965"
+  },
+  {
+    "file": "docs/evidence/PAO-14/application-green.log",
+    "sha256": "c9089f2c240fbc4e2306c4bdc5959ed567467b5095d125ac73bb436035154f31"
+  },
+  {
+    "file": "docs/evidence/PAO-14/application-independent-review.md",
+    "sha256": "012b13bd6e2767216707f176baf1da3af35a733e1e8c64ddc709035f5b5bf406"
+  },
+  {
+    "file": "docs/evidence/PAO-14/application-integration-review.log",
+    "sha256": "c7df1a91eac6e496df4ea0e3193aef71f56053b22839e753d6c19e14bbda6b89"
+  },
+  {
+    "file": "docs/evidence/PAO-14/application-red.log",
+    "sha256": "5fc24116018a180b90e5066f6ce06d2bd1441cb8a8c1672c11fc47b9ffbe02bf"
+  },
+  {
+    "file": "docs/evidence/PAO-14/application-report.md",
+    "sha256": "0180ab2762607eb7244a576513e132fa3cd88c424ed0771ab8326f189d897a3d"
+  },
+  {
+    "file": "docs/evidence/PAO-14/application-retry-red.log",
+    "sha256": "70149e9e5cf27a5e1becb7b98a5a43fd340e3a2102ff739db7ba25f536bdd6b0"
+  },
+  {
+    "file": "docs/evidence/PAO-14/application-sync-red.log",
+    "sha256": "4aa20048a934bf75a4a7ed3d0164b9b6e5087225f54b4f34a5518deb3a2340b6"
+  },
+  {
+    "file": "docs/evidence/PAO-14/application-types.log",
+    "sha256": "5b7a55ae4160fe8d28516dfa26f2ad4f0576c4d77da31a2c88cc3d9e01101d4a"
+  },
+  {
+    "file": "docs/evidence/PAO-14/authorized-pao13-test-adaptation.md",
+    "sha256": "70b467ff7a1bccbdae1e056cfdf97d656baf814af3b5fb55fb10e66426bf484d"
+  },
+  {
+    "file": "docs/evidence/PAO-14/browser-runner.mjs",
+    "sha256": "cb67d7e9feaf03d67918c215d0b064dcbfb819c3df8590ec36c7d7d177bf08bf"
+  },
+  {
+    "file": "docs/evidence/PAO-14/browser-validation.md",
+    "sha256": "01cfc1c2a7117bfb97538bc1618fef250bf2e5819201e789c5179a0043660771"
+  },
+  {
+    "file": "docs/evidence/PAO-14/build-final.log",
+    "sha256": "3cafe5902b7f25074dc2e32b1616b176da71122f58a959a2021055021ed8d403"
+  },
+  {
+    "file": "docs/evidence/PAO-14/build-integration.log",
+    "sha256": "0f710a9c15cbd12ec77d38eb85d606aeaecf2d07c5807daa3fbe2fcbe3b00f12"
+  },
+  {
+    "file": "docs/evidence/PAO-14/conflict-fixed-browser.log",
+    "sha256": "8dc3d336c39fca132ee9e1a8fb9f60aba31241af245750b8e1acc92394bd542c"
+  },
+  {
+    "file": "docs/evidence/PAO-14/final-browser.log",
+    "sha256": "2d3846a4eb7cc1953bee943a37fbcd642dd38767da6ec2601630bbe4f92b668b"
+  },
+  {
+    "file": "docs/evidence/PAO-14/focused-browser.log",
+    "sha256": "f43a0a60b21e5a4b15f4b01f428fd04dccb8caa6a79e31037fc3021d6163c130"
+  },
+  {
+    "file": "docs/evidence/PAO-14/font-network-preflight.json",
+    "sha256": "35e79abad210e787fe743fd01ad2832434c1caeab98104d7f2829bf4aa785816"
+  },
+  {
+    "file": "docs/evidence/PAO-14/full-browser.log",
+    "sha256": "2cf2307de0db07ae231cb0585b0607f6ee7d447f464f8317c00990b109023453"
+  },
+  {
+    "file": "docs/evidence/PAO-14/green-authorized-pao13-assembly.log",
+    "sha256": "7d91320e02ad14efec30178672a23bd8b9772504873bb93a7573910bb3233aea"
+  },
+  {
+    "file": "docs/evidence/PAO-14/green-ledger.log",
+    "sha256": "febe18a41472093b6ec08555478ab222b0c814860a2d8e982acf43765d5a25a1"
+  },
+  {
+    "file": "docs/evidence/PAO-14/implementation-plan.md",
+    "sha256": "16432a241427b10938844018a90e773933d5210fec27574811d116052d9f9d1e"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ledger-regression.log",
+    "sha256": "71ef0b8991f4d0989b4c962300ddbaa3632eab4eaf6e63c3c5141ecde1593580"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ledger-report.md",
+    "sha256": "2eeca860adf8644ae24a7fca7103e4b11cbc141bd30f050c46b78a23e19000d8"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ledger-types.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "file": "docs/evidence/PAO-14/legacy-test-conflict.md",
+    "sha256": "c0ae97cb7949df2cdbc932cf90b0f2fd8c9349b1ccc54f8f5eb8a7c5eb78bb9e"
+  },
+  {
+    "file": "docs/evidence/PAO-14/playwright.config.ts",
+    "sha256": "0449a83d5f5eb3c050a46393a1d890f8e0075f307502b947f75ada714955cb0a"
+  },
+  {
+    "file": "docs/evidence/PAO-14/prior-runs-summary.json",
+    "sha256": "537c46779e6dc691446ba6dea94a93288dd8c3f3b87f886248d17b2473761a2f"
+  },
+  {
+    "file": "docs/evidence/PAO-14/red-boundaries-browser.log",
+    "sha256": "b98fd417eb7598ccb9307518134cf90b144153e02f6be12f1a61e4d67729c5ea"
+  },
+  {
+    "file": "docs/evidence/PAO-14/red-browser.log",
+    "sha256": "2fe6c89fc11d9f6c63740f16445a20de17305b5afe15a72367cb86cca8e925b8"
+  },
+  {
+    "file": "docs/evidence/PAO-14/red-ledger.log",
+    "sha256": "17d29d0a24bbaed48c16b3bba7c7d78a48b28d189e609d516abca9ed926f0464"
+  },
+  {
+    "file": "docs/evidence/PAO-14/red-quit-phase.log",
+    "sha256": "50e85384bcada875559663483604c7b1b0f490b21c43acdbc25e8efb321a39b5"
+  },
+  {
+    "file": "docs/evidence/PAO-14/red-slider-browser.log",
+    "sha256": "f79335bcff0f4af67aeea3173f9003468308d6ff1d11b6a450dbcf415c5ac7a4"
+  },
+  {
+    "file": "docs/evidence/PAO-14/release-browser.log",
+    "sha256": "75e65b60836926c5969339454563c295655b2492580f1ec4887414c5b2fcdea5"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-adapter-boundaries.log",
+    "sha256": "3d167c4c9ba11dce8fa22653d980804451848eb8a08a317565867aa0c1e474e8"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-adapter-controls.log",
+    "sha256": "9fb528a94e7ea72a21b7a9a64330d54fae36d0a9afae572ce17396b1c3b9f988"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-adapter-report.md",
+    "sha256": "0d3ec0124e6c058c7e3a93a96f8649315029ac77369982f9f35d467df651b3bd"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-adapter-types.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-adapter-unit.log",
+    "sha256": "124f8ee82200aead64b2857afe966bee4b71a96e89e127779479e02b927ab453"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-application-green.log",
+    "sha256": "5fc5ecb39cc2c861a9afff7992912e1f82181113c7d6e4d9c82b349b5b66a17d"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-application-red.log",
+    "sha256": "9dc0f5be0f4e1ca3e357b3ca50e88b3519e546e89d110a61b291dc6d89a3e8ac"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-application-report.md",
+    "sha256": "39e2fb4c3d190f0fcf433e30dd03bc8f933fc877311416b05261c18bb53d24e4"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-application-types.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-browser-focused.log",
+    "sha256": "6ff4d4f66639fe7587fdcd83124f244a69bfde717ea553896fb1421faabd84eb"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-browser-full.log",
+    "sha256": "b8728f0f95c235126c8cfdd73a6d191d424c5ad6afde2ae3c0f35b4d9f70554f"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-browser-red.log",
+    "sha256": "139636ba605718d9861809522107d846c8abeaeeb87cd47465383a6803f394da"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-build.log",
+    "sha256": "2f9425a348eb3c036cf110e13a2d7cc5feae409652f0624f06ae140101093763"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-integration-review.md",
+    "sha256": "fb9a376a901ff72fa467ee44d3a0580f38133a445956c2adf347fdb407f464e3"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-plan.md",
+    "sha256": "d365a8ad45006ca99538461bf90bf0e09a1096a695447b6ae6f4c6527d922b26"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-prior-runs-summary.json",
+    "sha256": "3fe1547ce3b6cac7703efcfbe01b68cf0d5b74805c8298d43f3a3b42ef045b72"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-report.md",
+    "sha256": "8f6ed7f57e2afb314673e76d04c72eb9c374337fa12ff6e1ef4d1eef8da12484"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-test.log",
+    "sha256": "af8e0e8c9fa2c7242b3dd7ef6fc54abd60c64aadf6977075b7a7edf2ce61eb9b"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-toggle-red.log",
+    "sha256": "4b1295b08c475b37741383d9f4106c6c17d5bcf98398f13ade33726ea24ef713"
+  },
+  {
+    "file": "docs/evidence/PAO-14/revision-validation-summary.json",
+    "sha256": "f25735a66d6616264832449172a74c1644a2545b0f09bd536a5a019fe50594a8"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/F-30-pickups-50-reward-save-failure-retry-and-repeat-finish-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/F-desktop-stable-terminal-summary.json",
+    "sha256": "7625f8ceb646401aaa339b7d53fdc1d3a318aea3d3efc3d82a25d809e1bb1d58"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/F-legacy-rights-shop-purchase-and-refresh-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/F-native-slider-preserves-draft-while-save-lock-is-held-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/F-pause-isolates-input-while-save-lock-is-held-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/F-reentrant-end-command-seals-complete-fatal-tick-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/F-same-tick-terminal-pickup-and-gameover-shop-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/F-two-tabs-conflicting-transactions-do-not-overwrite-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/N-desktop-pause-restart-stale-run-and-DOM-tamper-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/N-desktop-stable-paused.json",
+    "sha256": "25b228c6d730c68aa52de8aa3d86738f9a844b934bc0278ace4b34f3d09b818d"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/N-portrait-stable-paused.json",
+    "sha256": "9e41c653c284dbefa466287bee30eebbfba403513979d282e21bdea282f36e7a"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/N-portrait-stable-shop.json",
+    "sha256": "5029929fbcb18d449ab8e7292aa2d728a5e18b2f2277d1afe708b8e5908b75ad"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/N-portrait-touch-paused-input-and-return-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/browser-source-identity.json",
+    "sha256": "12705709441748372286bc61cf447839a235be6c53d3f08d25b8beb683687adc"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/e2e-results.json",
+    "sha256": "63a26e29991974c76c42597bb16cc7ae787f6f90fe389d7ab0de566f33244ad5"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/e2e.log",
+    "sha256": "55e8c497bae39418e585f56368afaa33293c63d74d76964881cb8b80fe2b0cc1"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/history-at-start.json",
+    "sha256": "a03ad46a9ca82d31b92cf85ac515b13865fce1935fba5a3abf156ec684b31797"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/history-restoration.json",
+    "sha256": "0371f22d1a9c38eef5ad8c0ee1c6fd0deddf34197afc2ae1ce453044c9662384"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/screenshot-manifest.json",
+    "sha256": "01b9ad9dc0f812154797db6fcbce99d575720e0b3ed82772963080c26da844f2"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/screenshots/F-desktop-stable-terminal-summary.png",
+    "sha256": "0890a55abce51253473096fc1e245df27ecd749fa0cebc4534cbccc23fc8d9ef"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/screenshots/N-desktop-stable-paused.png",
+    "sha256": "9bee8860bb03a1670ec08e192cdb7355ca08ad0d5b6b8ea35d7dcb607d4b4bc0"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/screenshots/N-portrait-stable-paused.png",
+    "sha256": "a59ab08e869f49f79780c5cd16143042a900bc5f0b54bfd568816a3b72d6e50f"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/screenshots/N-portrait-stable-shop.png",
+    "sha256": "74eacbfda14e010ae3e65b2129599f101985bca1a351770b9af5998fc6aed594"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/source-at-start.json",
+    "sha256": "6283993fbf92281a21b5459ccad82080580f2251ad553892d36061d2a4ee39cb"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/release/source-stability.json",
+    "sha256": "be0167f12579d6e1aef4eda794d107f877321469afb8100a89665a780519bbf9"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/F-30-pickups-50-reward-save-failure-retry-and-repeat-finish-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/F-desktop-stable-terminal-summary.json",
+    "sha256": "eb013c8806a13a0fcbceaf258c8c20f5e315e488994ced28900ae5d31f22e0b7"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/F-legacy-rights-shop-purchase-and-refresh-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/F-native-slider-preserves-draft-while-save-lock-is-held-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/F-pause-isolates-input-while-save-lock-is-held-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/F-reentrant-end-command-seals-complete-fatal-tick-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/F-review-audio-different-fields-under-lock-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/F-review-audio-repeated-toggle-under-lock-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/F-review-audio-volume-and-toggle-queue-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/F-review-desktop-audio-both-off.json",
+    "sha256": "c69c9728433fd9c95cc0e638e7a566eaefdc9b484eaff120dde7819bff2c654e"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/F-review-portrait-shop-retry.json",
+    "sha256": "62e6283168d851ff8464e624c40a3936521e32c1fd6a8d0837cc457fa7068e6e"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/F-review-shop-stale-funds-explicit-retry-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/F-same-tick-terminal-pickup-and-gameover-shop-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/F-two-tabs-conflicting-transactions-do-not-overwrite-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/N-desktop-pause-restart-stale-run-and-DOM-tamper-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/N-desktop-stable-paused.json",
+    "sha256": "ff3459eaca90c9aa971511041d9466de6f0e4cee88bcac7ba1c89d6c8965685f"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/N-portrait-stable-paused.json",
+    "sha256": "767957ea2b5f02a7b75fd7c7088b4311f290ca3dcca9157aa65e3d75f1cca2bd"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/N-portrait-stable-shop.json",
+    "sha256": "e265185bd64bad3184631cf9a24e5dd455ebd90bbd7775493dca0d5262e92683"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/N-portrait-touch-paused-input-and-return-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/browser-source-identity.json",
+    "sha256": "58713bf04788c4ed5b4b66b93af0a15d564f6f96d14b19df3207d655a90fff04"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/e2e-results.json",
+    "sha256": "5526fa4137a99df99c5640c74277cb4f4247bdcae6e445952452c3acbd68ac19"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/e2e.log",
+    "sha256": "b10fe56035645975f0e930d0c6a9832a14eacb80536684ad0509cf9fe5487a4a"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/history-at-start.json",
+    "sha256": "a03ad46a9ca82d31b92cf85ac515b13865fce1935fba5a3abf156ec684b31797"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/history-restoration.json",
+    "sha256": "b54e7bbf9a533520b934f4d2df0813ab34f24a67b427b29bc01607cfa0a5ff1d"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/revision-browser-source-identity.json",
+    "sha256": "bfe5b323c8392c787fcc7a3dec8b28424031e9b0f5ab89f45af817c625a35ecc"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/screenshot-manifest.json",
+    "sha256": "0c876333d2c50656d8168fcfd37937bc395ec6e3f117a99ab786a70323fe4aad"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/screenshots/F-desktop-stable-terminal-summary.png",
+    "sha256": "de7251852bea33eba19002fc688fe44467592b85eab8f6ff9f7f8d1b356af52c"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/screenshots/F-review-desktop-audio-both-off.png",
+    "sha256": "8e2b612b20667986b7f97ffb92e4bcceecd7c3a7cb11519bcac18a37b5f05eee"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/screenshots/F-review-portrait-shop-retry.png",
+    "sha256": "899bf5d7d64acde01c98a4d1dc614a36ffd91bd67a2d5056cc4ce4a980e5b8bb"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/screenshots/N-desktop-stable-paused.png",
+    "sha256": "ec40c36e0e5a0b6a4c566a5b831fe818d5ff9bb20d1e6486d36019a5e6f861b4"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/screenshots/N-portrait-stable-paused.png",
+    "sha256": "a59ab08e869f49f79780c5cd16143042a900bc5f0b54bfd568816a3b72d6e50f"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/screenshots/N-portrait-stable-shop.png",
+    "sha256": "e88119695c29dd9a7e8bdfeea5605375a62a651ad848b50c5c07e2738d955af5"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/source-at-start.json",
+    "sha256": "dd75fe91273bb52acf36372835289ecf126c2cb88783c377cf9ef21ffc63b61c"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/revision-full/source-stability.json",
+    "sha256": "7821b1c899d1388a36cab20df6b073c8926014494cd0298f750e57d9e3271167"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-30-pickups-50-reward-save-failure-retry-and-repeat-finish-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-desktop-stable-terminal-summary.json",
+    "sha256": "de0d35744c70ec30561f862f96bad94e740c777f9b3f38c494f131e9d61859e2"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-legacy-rights-shop-purchase-and-refresh-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-native-slider-preserves-draft-while-save-lock-is-held-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-pause-isolates-input-while-save-lock-is-held-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-reentrant-end-command-seals-complete-fatal-tick-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-review-audio-different-fields-under-lock-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-review-audio-repeated-toggle-under-lock-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-review-audio-volume-and-toggle-queue-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-review-desktop-audio-both-off.json",
+    "sha256": "c69c9728433fd9c95cc0e638e7a566eaefdc9b484eaff120dde7819bff2c654e"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-review-portrait-shop-retry.json",
+    "sha256": "62e6283168d851ff8464e624c40a3936521e32c1fd6a8d0837cc457fa7068e6e"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-review-shop-stale-funds-explicit-retry-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-same-tick-terminal-pickup-and-gameover-shop-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-two-tabs-conflicting-transactions-do-not-overwrite-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-unknown-toggle-1-confirmation-read-failures.json",
+    "sha256": "ef212d4602ba2792974e918d605c641898484157c99892802b4203d3cb0e9ad8"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/F-unknown-toggle-2-confirmation-read-failures.json",
+    "sha256": "3a2f13646a924325cfd85da9078e369353f5963e4814a27282412ee081bc6d52"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/N-desktop-pause-restart-stale-run-and-DOM-tamper-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/N-desktop-stable-paused.json",
+    "sha256": "46fb5e5ec1bfe2bb2101af65c5247bca1c94b5e4e767f4b6bc308236199f8c6a"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/N-portrait-stable-paused.json",
+    "sha256": "77a433712c8c97a7e5162114ec7ff10e3efdad06cec0ef1f90e56f50e5562f7f"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/N-portrait-stable-shop.json",
+    "sha256": "984f5e098d07330aaa7a8b71d2cc19e77f2a47f1d86b8a6312896bb8e46f767b"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/N-portrait-touch-paused-input-and-return-errors.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/browser-source-identity.json",
+    "sha256": "6082123a474cc8ed42aa43d84935bc593777005dd94b6b1ed1bac899042b8cfd"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/e2e-results.json",
+    "sha256": "48e431540267776c15f4ceb410617118747f014189d33dbe0548037092d69a41"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/e2e.log",
+    "sha256": "a2fbd0fd56eca87b2739741fe4d4217abbe9e58d5d31b2c026c06591e61cc9c2"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/history-at-start.json",
+    "sha256": "a03ad46a9ca82d31b92cf85ac515b13865fce1935fba5a3abf156ec684b31797"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/history-restoration.json",
+    "sha256": "d640843d6ca8ea76594a087a4a4815d5de0d2d7f389cbfa6c416696111d1c303"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/revision-browser-source-identity.json",
+    "sha256": "3a339933f1570791e7c60ae6dab72ab3070b61b501ae0c1aae6589d71143648d"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/screenshot-manifest.json",
+    "sha256": "07f29c0496670a3ffc8911229ef2ca45ef22cac6bb5c0c30ad35c66193c0b6b6"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/screenshots/F-desktop-stable-terminal-summary.png",
+    "sha256": "0890a55abce51253473096fc1e245df27ecd749fa0cebc4534cbccc23fc8d9ef"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/screenshots/F-review-desktop-audio-both-off.png",
+    "sha256": "970ad2dfebce85de0257ba127c3892ca9abce2f1a8ffb843db9aa34cf8e72a0c"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/screenshots/F-review-portrait-shop-retry.png",
+    "sha256": "829d418f76181e17b72acdff87d0a0e86d9bc1e58a86acaf2ce9e02902ef6d38"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/screenshots/N-desktop-stable-paused.png",
+    "sha256": "05a948570588514c709c2826e9fcc4a64ae695519f65f6508a7a182d6304d21e"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/screenshots/N-portrait-stable-paused.png",
+    "sha256": "c580db50cd29491cfba71825ef818cd342853533aaad6f69232e1a66c37bdfba"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/screenshots/N-portrait-stable-shop.png",
+    "sha256": "18b8cea0f1d86ef80c04142bb8cf12a114dc0da38d4f4aa5689028696cc3690d"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/source-at-start.json",
+    "sha256": "e2632e051c92c0d4eb595f2ecc0fa4d4fff4b787a0660f70fd7b81d1a7b5ceb4"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/source-stability.json",
+    "sha256": "95bbee9c0f6432a1021a0f79177f61c226f491f7e917c2c6cfb62cd291f31652"
+  },
+  {
+    "file": "docs/evidence/PAO-14/runs/unknown-verified/unknown-browser-source-identity.json",
+    "sha256": "917eaeacc694100cc48f028d2d38a39bf5f7db744e9f0e9c5a276b887430ab1a"
+  },
+  {
+    "file": "docs/evidence/PAO-14/slider-fixed-browser.log",
+    "sha256": "f0eb2a64979cf00d5c681d32cc784ba709684d8bc2e08391b3be55c8fb32e121"
+  },
+  {
+    "file": "docs/evidence/PAO-14/stable-visual-browser.log",
+    "sha256": "d9d6973d0de03c6690d81005abaf85c600378e983decb86e4475dfb45d3d404f"
+  },
+  {
+    "file": "docs/evidence/PAO-14/test-authorized-assembly.log",
+    "sha256": "154eb9280fcb22568e7aea8253a3761ee6affa5bf14001916ebe05c1578d0b0a"
+  },
+  {
+    "file": "docs/evidence/PAO-14/test-final.log",
+    "sha256": "aca22fd448ca7ffdd122b34b85351d354f5ec049a9f7424c6a963438f56045ee"
+  },
+  {
+    "file": "docs/evidence/PAO-14/test-integration.log",
+    "sha256": "4a93a87295d5beaeede4149c629d0940d5c1de25f02e29481cf3984bcaeb3d0d"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ui-adapter-report.md",
+    "sha256": "bcf51cd8f58f32a9f60354d93e5fd26c07fdcd3201455d623ad49b2f45e8ba43"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ui-boundaries-baseline-nondiagnostic.log",
+    "sha256": "4464109808b8dec91e5372e9e24dd2243daba738144c9f268438998741ee7b04"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ui-boundaries-green.log",
+    "sha256": "cae0eb02afb7cc31043eb2cdbe44502f221ec4ef2715c39fdf746607c2c17519"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ui-boundaries-red.log",
+    "sha256": "99e8a4450ee9b7370e9675f58a4b5e29c74a952333991a0b24246209668ce98c"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ui-boundaries.config.ts",
+    "sha256": "27dfbbbf597dd78e8ade3984317e76a60798b26dff4129ac463a00b7242a3f3e"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ui-boundaries.probe.ts",
+    "sha256": "c70dfa2140e4aca3f99761bde5a1dc783dcf09dd24c8d6d6bc9149315293c225"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ui-controls-green.log",
+    "sha256": "95eda174366251c0ab6858024f5513a21559769ce6afb954d80ae273e18d0398"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ui-controls-red.log",
+    "sha256": "29ec278e27b508fb345c4e371e56b8e344e4bf0f96d647ccad7ce08bc7343713"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ui-controls.config.ts",
+    "sha256": "5ada2cafffea9248a4e22aa3114efee285f91067e27479bce8480ab259d1b9db"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ui-controls.probe.ts",
+    "sha256": "6299e9ab34c1e4a52375a155d009cd7a7a4829e3a7f2a17c7781ad90f29dc3bf"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ui-integration-review.md",
+    "sha256": "0863f3d794fcffd80e8fa15a5b63dd5bead6db5172e8279b40afb092364bd0cc"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ui-types.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "file": "docs/evidence/PAO-14/ui-unit.log",
+    "sha256": "cdd07f1576cde46bd58f07b4cb9720dde311b81eddc454883ac7da7430aa340a"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-application-green.log",
+    "sha256": "99079918977d8a341ccdcbab14bcaf7cc282f115d6eb1da363f373e26bb0029e"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-application-red.log",
+    "sha256": "9c4610fc8faf8cd2af10d1c8ca833366e8a426f34529b792785c3f77750ba895"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-application-report.md",
+    "sha256": "38ae545e974666ed540bc6dccb99c937b9ff4dc12859aeed58e466193ce29406"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-application-types.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-browser-focused.log",
+    "sha256": "a29f3f6f0e51de36d855aadae04d434d54722903b9302d8c78b3cd0e17670d12"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-browser-full.log",
+    "sha256": "472469ae492e50ef986b09f686901266593c41a5004277a5a958a1cf2a3ef136"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-browser-red.log",
+    "sha256": "22f9f3ce085b2344c8fa9dbcfb8badcc9155f647bd089ccd858b650c7d09bee2"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-browser-verified.log",
+    "sha256": "f5023ebde9ca20ea3ba3b6c2e1089146a89f186447cd90897387280ef69e936e"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-build.log",
+    "sha256": "c1666c72fdad54c253aad5f0b47e5d7e172f4818297b4f0dfa5adccd800e39dd"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-commit-plan.md",
+    "sha256": "40b260703a0b7fad25ed806408225709853f395c542d1c3d0933af1a686f84e6"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-font-preflight.json",
+    "sha256": "38983e63fe5e595a3b8dc4a0c822c506ac0bcf71c80cbcad5fe79edbbde48f0c"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-identity-guard-red.log",
+    "sha256": "3951178dc56efa39ac36711b17512d37237ab81e2ce2a02552133ea608ece887"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-independent-review.md",
+    "sha256": "6d09a6bceee6d7ffbf90c33c85e268f741d58d917f36cdadd67d8c9a8eeccf9c"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-prior-runs-summary.json",
+    "sha256": "ca30cc459e70e4dd0e130afe7dc135e784c79a58da36663708cc6ed6e0d4186a"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-report.md",
+    "sha256": "d9a8d8561e5e6a5f2f71ebc3c4f50bceb4ac09c43b9a2e38563f8bd7547aeaf5"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-test.log",
+    "sha256": "eaf341339eb7fd784de82e8820ea4e4f1a1d57c470efa1d05d10f37fe2798e9b"
+  },
+  {
+    "file": "docs/evidence/PAO-14/unknown-validation-summary.json",
+    "sha256": "300eeb7d75371df15c04cb05d415a6220fa2c020ad3eb2bf60ce92af62101408"
+  },
+  {
+    "file": "docs/evidence/PAO-14/validation-summary.json",
+    "sha256": "b32e0c713af30b95f371d1857dab9c84418400c0454c5a4e13c541fdebf02318"
+  },
+  {
+    "file": "docs/evidence/PAO-15/README.md",
+    "sha256": "e5b2d66f1098d122b44374a4f72c56cf4e68266dc8ec893ebceab511b83927b0"
+  },
+  {
+    "file": "docs/evidence/PAO-15/build.txt",
+    "sha256": "5284f7f8dbfbd87711b16ef369603c518bc980507d40da86fd5278243a2166e7"
+  },
+  {
+    "file": "docs/evidence/PAO-15/unit.txt",
+    "sha256": "befd00f42d60acac0869c695029c9a77d9018f8b4ffd4036e6da8ebd519dc8d5"
+  },
+  {
+    "file": "docs/evidence/PAO-15/validation.json",
+    "sha256": "0b7c10c1b731dc903044481a499cb95e85bbbbdf8f4ce141c2ef88339441a9e6"
+  },
+  {
+    "file": "docs/evidence/PAO-6/01-menu.png",
+    "sha256": "3cb8ff5a6e8df607ef96ee24bd08cea843141ec33201679a97e55d209589a2f9"
+  },
+  {
+    "file": "docs/evidence/PAO-6/02-shop.png",
+    "sha256": "7661e936215456be0d9402262a79ebb260f19384cce704810d35572c9f9a8d51"
+  },
+  {
+    "file": "docs/evidence/PAO-6/03-natural-left.png",
+    "sha256": "6496b2acf05fe4894d45273537a7d5d940a024b26ea53288cccf638abe153295"
+  },
+  {
+    "file": "docs/evidence/PAO-6/04-natural-jump.png",
+    "sha256": "83ac704f0d69641613ed6813c55fff2621b5bf58ad0b58100e913c09d37321f1"
+  },
+  {
+    "file": "docs/evidence/PAO-6/05-natural-roll.png",
+    "sha256": "f56875e7a4e32e8e83ea224c0a450806286ee164ac961fc050912f3c9d271146"
+  },
+  {
+    "file": "docs/evidence/PAO-6/06-natural-paused.png",
+    "sha256": "823dd369b1a4add800f3aff132dde9e082d65e07a64a35d2e3c6f498b06db082"
+  },
+  {
+    "file": "docs/evidence/PAO-6/07-natural-gameover.png",
+    "sha256": "ff91c2960dc02a9247fa5d44bac6c489b301afc702e8ee70388b0454984ed037"
+  },
+  {
+    "file": "docs/evidence/PAO-6/08-natural-restart.png",
+    "sha256": "762be0ea21e649e75dd58f2fc888820d72c5e3c5dd3432a681f4009df582e06f"
+  },
+  {
+    "file": "docs/evidence/PAO-6/README.md",
+    "sha256": "d2aca8b6bd1887ab9f841fb5746570e0b9bd9683297fdbafcbb805ec80ae267b"
+  },
+  {
+    "file": "docs/evidence/PAO-6/SHA256SUMS.txt",
+    "sha256": "1dc20ef732722aa2d9f8cf4ebd8634af8f71d5391d6a84cb2921fdd3a3032feb"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-double-score.png",
+    "sha256": "fe29c9f6436e4bb70c53b6b3bd34e3c30931e6ef922c25ef3985c6dea2f0adb1"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-failure.png",
+    "sha256": "0459873e3d7494a403091e98162dc25eb9bcc840c0a2f8b12753f30bc0eaa784"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-high-obstacle-result.png",
+    "sha256": "0aff415d60d5b03f4164da40ada9cf0ab22c2ba6ead3061ecbe73620ae0e398d"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-high-obstacle-roll.png",
+    "sha256": "848c23233e89da92d92c40354de17cd8a134516760b436292d047fd0265e9a1d"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-hoverboard.png",
+    "sha256": "1f65073ea1ba7b25ac6a911a003e76cc37828aee9c32786cb1caa8c3adfb946b"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-low-obstacle-jump.png",
+    "sha256": "635820e2389479469e488b537653909731d233aac38f9291ce9be02e90ba2029"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-low-obstacle-result.png",
+    "sha256": "a2e085d36a8d0f57535f2e6b54e1aceba77daadf6190107a802ebe9dd780eefb"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-magnet.png",
+    "sha256": "af34d6143e313793f2b17836a538713b1f14ee22f9110b53e9128355bad2717c"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-mission-status.png",
+    "sha256": "667df9e5ca8b964602664e24ab95df267586bda5fec2938d4fdb143436aadef4"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-mobile-jump.png",
+    "sha256": "18759953ae0d725232a2e048305662c14dda5c78042d3234c2c2a8a528de9952"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-mobile-left.png",
+    "sha256": "62dc4f73d87a541875168d0cbfd76e70142910e00efc2fe7cc027746dd36995f"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-mobile-menu.png",
+    "sha256": "f96cf62f002cdd5ab3906b653f89dcc8600f00afcaf79ebd42b9f21b0c61bae5"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-mobile-paused.png",
+    "sha256": "790e1cd35a4f481607055a75183de8e637171b315a6d0343ca6c0852449ce030"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-mobile-roll.png",
+    "sha256": "024162594b01afbaf029fbe4e82fd01801d8c9d61752a49135f9eb5eb396589a"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-mobile-shop.png",
+    "sha256": "5f53331ddcecb84908d29afed586cca4eef58d6fc876fa52be5d758908cd1b51"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-mobile-touch-layout.json",
+    "sha256": "9973bfef125b8d773860bb851216c4b24894addae49ef2ea0e252e27bc4ad3d3"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-obstacles-failure-restart.json",
+    "sha256": "6325df8efb093035e628e2d3b3e8aa765b65fbff5da4620d4be69e16869d0243"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-powerups-shield-missions.json",
+    "sha256": "3d632f20446a4d28ab31ec7b421c37e3749fb2c66bf87dce84526b1aca932920"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-ramp-approach.png",
+    "sha256": "0abdecce3c7de06aebc92612488a1875863c4e46eb712a97b4964ee738a29404"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-ramp-ascent.png",
+    "sha256": "9d0d579289d985b2aa2afcc9efa1f60a880f2d8d11d558ef46f8c8deb2a1c6d1"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-ramp-roof-jump-land.json",
+    "sha256": "5f04bbea6caf87a5db19f5f7459341b01baaa07eaaf265667180537efefc4afe"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-restart.png",
+    "sha256": "b859db282920591b55f79ae5d03c1383c0286b47f2982a9273da4707f008408c"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-results/.last-run.json",
+    "sha256": "d73c748bbd999a5ec3437ec97303e04ac1e89ce51cc1c336c1b9f179ffe82420"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-results/pao6-baseline-mobile-touch-layout/video.webm",
+    "sha256": "f3f0a81c42cd4e391f9a0f90374601dee72cd884edc434a8e1268ecacd748ec6"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-results/pao6-baseline-obstacles-failure-restart/video.webm",
+    "sha256": "505c89d46a7373b82592c5a157449451f7a5f62e0df6d65dc6ce782c88884d00"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-results/pao6-baseline-powerups-shield-missions/video.webm",
+    "sha256": "b867d3962e8be3d6f3c748026f805a0205c9f74d8f730f72beb07ad51aac5c2f"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-results/pao6-baseline-ramp-roof-jump-land/video.webm",
+    "sha256": "2eff5ca719004ee6c88b9fc2acb285d5c221c8a935adf637df73e71fb7f658e4"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-roof-contact.png",
+    "sha256": "868cd3a7034e5414cfda1bdd09a1282222afe49615c1ebf540f1d52801dcebae"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-roof-exit-land.png",
+    "sha256": "dda1d2a37dadb09622faa185b5cc72a0214dcf4533a77665ed73666994d04fbd"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-roof-jump.png",
+    "sha256": "c3806b185c5e8a688af759bf1a98441e54123c2fcc232b03b2a15ab144dde9d3"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-shield-break.png",
+    "sha256": "d089529c4d0384602a56415c64f6fe96a0a5175aeb4cdd24081aef66e3f2be35"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-super-jump.png",
+    "sha256": "4716756f76b9e9fad8a22dc4cd3fab85fd2e38e8d5798cb80da11c568c11d691"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-super-sneakers.png",
+    "sha256": "2163981fb1a38f3b4c045f0fd241460599926caa7dbbab15e09fa10a6ce9583f"
+  },
+  {
+    "file": "docs/evidence/PAO-6/fixture-test-results.json",
+    "sha256": "31a1ff1e5434f14e2938bfedae38c138b3b98aa4c5366418a3808cb5d7338dbc"
+  },
+  {
+    "file": "docs/evidence/PAO-6/natural-session.json",
+    "sha256": "15f3487e537fac3105e2d736d8e79ae23048f492f9edf31125d717850df1b35b"
+  },
+  {
+    "file": "docs/evidence/PAO-6/video/fixture-roof-frame-1s.png",
+    "sha256": "4928b1ada7017a60e8e506f2c32de2eb1b22782c715a5c308f0f9db3ef97c368"
+  },
+  {
+    "file": "docs/evidence/PAO-6/video/natural-desktop.webm",
+    "sha256": "aa4cdffdb9bfa9b05116df4e21020aceb6a3daaede9c24b167704933546c4dea"
+  },
+  {
+    "file": "docs/evidence/PAO-6/video/natural-frame-4s.png",
+    "sha256": "eebb0fd58adf8b91e00dcd3b1a2d05738969e9176b6986afe7079ce3511d65d5"
+  },
+  {
+    "file": "package-lock.json",
+    "sha256": "707d847448a738130fdfe31a209a7e0595b692c112c349809eb8432c08ccaf7e"
+  },
+  {
+    "file": "package.json",
+    "sha256": "ccec3423d2fc43eb3b8088e545eebbb4fbbc1fdb145a89fe9a2f12209a86b67c"
+  },
+  {
+    "file": "playwright.config.ts",
+    "sha256": "04da21971bc487875843434c7b6df2b9fba2cc2e4b22d637fbce67c09b267c27"
+  },
+  {
+    "file": "public/favicon.svg",
+    "sha256": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66"
+  },
+  {
+    "file": "public/icons.svg",
+    "sha256": "7ca2d67c9c3aebf50cdc8709ee8aacf8cdb8cc7ea6325ea94939caef5da1c53d"
+  },
+  {
+    "file": "public/models/player.glb",
+    "sha256": "002f8d269de68e5dce3d25195caf390d1aa359bbfaae3fcf4c8dc78ec36c3ba5"
+  },
+  {
+    "file": "scratch/screenshot.png",
+    "sha256": "087460206cadfa52c6b465649eb6a08b64700ff183ad2d27b05f0705f0d7a6c5"
+  },
+  {
+    "file": "screenshot_1_menu.png",
+    "sha256": "dc25282f324c46a3202cccdb9ef2280b8102ed61ce7b1493ea1397d73e2c5a3e"
+  },
+  {
+    "file": "screenshot_2_shop.png",
+    "sha256": "dfc980f031e73d7c2f64a64240c8ed346dccb4314b9ad97488a8fdf4bc60d673"
+  },
+  {
+    "file": "screenshot_3_gameplay_chase.png",
+    "sha256": "af725839311297c3965600a6c2260b7884fbf6d1658c47409ebb74ccd6d27f86"
+  },
+  {
+    "file": "screenshot_4_bank_tilt.png",
+    "sha256": "8389127cf44ea58590a75981198dd3caf07a22b3abdb282ca8e90cee435a564a"
+  },
+  {
+    "file": "screenshot_5_jump_action.png",
+    "sha256": "4608007083acb86ea1fa5b3f3d9ad08d822ba3521eaf6cdc1b4bf12281c35e41"
+  },
+  {
+    "file": "screenshot_6_paused_screen.png",
+    "sha256": "edfb9798eba160f2bfe52e44dbb818c54336c2bba7e03a627fae2ec3fee527d8"
+  },
+  {
+    "file": "src/application/appService.ts",
+    "sha256": "843d526e1ee1c71b97299d2dffe9013c6fbca175c8bbe3bf315534c9055a189f"
+  },
+  {
+    "file": "src/application/saveRepository.ts",
+    "sha256": "9794bddd00971c6a415168c39c557987b0c4b291fc46d912d03ea6d9efabadde"
+  },
+  {
+    "file": "src/application/skinCatalog.ts",
+    "sha256": "cfb40ed20eda910d897b86d24c1885056b6fabe8877b3285bc3f5a6001ba2a6f"
+  },
+  {
+    "file": "src/application/types.ts",
+    "sha256": "7b9d24cedb0de02564f18d6eec6c239e7ca299792305b5814177c2088acced2b"
+  },
+  {
+    "file": "src/core/eventBus.ts",
+    "sha256": "68848837bbd9d69fbe41bad07adb27208b0d2cd0e046b46cc8cf7defa4d730eb"
+  },
+  {
+    "file": "src/core/gameLoop.ts",
+    "sha256": "7f3a1db99c20cf61348eeaa246ce7c745359721bbab8148a3ccd55dcfc69b2aa"
+  },
+  {
+    "file": "src/core/inputQueue.ts",
+    "sha256": "6a07ad1407155c949ea62f8076e3106c94150b8ed84a346ac63470eb54f6f03c"
+  },
+  {
+    "file": "src/core/simulation.ts",
+    "sha256": "792c6ec0604d66e4426ce5831a8132089e3573629fc4af767dc072c5b87bea97"
+  },
+  {
+    "file": "src/core/snapshot.ts",
+    "sha256": "10a867da692178fdbe485dca50e4b44d4ce8f90fbbd23260b65f8a54f0d8cc49"
+  },
+  {
+    "file": "src/data/modelBindings.ts",
+    "sha256": "8448dc8ecb19cc440dfa0b5ebc2975f8ec796cef467482a2aa09808480f8773c"
+  },
+  {
+    "file": "src/data/trackSegments.ts",
+    "sha256": "dc3df6c0a25cdd447f34e0d7d1fde8992f247bed37d9ec06e9dafb6b3456765c"
+  },
+  {
+    "file": "src/main.ts",
+    "sha256": "05b5d022d5309a57383e11e2b82bd02c3a599e75f3aa20fd44d81476d47cd750"
+  },
+  {
+    "file": "src/render/babylon.ts",
+    "sha256": "d60e9885dd9d515635488b610877d29894312652f92b753cf8b870ca50fa7571"
+  },
+  {
+    "file": "src/style.css",
+    "sha256": "327f4d98f5011a8c99b663063e785ab8a306a46cc7c9315b7b0f5bad24bc9bcb"
+  },
+  {
+    "file": "src/systems/audio.ts",
+    "sha256": "4bd8788eda9d47141ce2af6beb4ce39f25fb4c0b7ba9da894f7e5642a493a868"
+  },
+  {
+    "file": "src/systems/contacts.ts",
+    "sha256": "ce4cf472f746680a81ead20e8344e16556fb4ddc48059c7aff6a688d9c54f9cd"
+  },
+  {
+    "file": "src/systems/input.ts",
+    "sha256": "407c7cc8e5184f87756de0c2f847779b565976a5d2fe74d54e4ad11cd45853e9"
+  },
+  {
+    "file": "src/systems/mission.ts",
+    "sha256": "479802ad2f8f20c908d9769e284edd9a34fa4f3c84850da955c822d2de66e738"
+  },
+  {
+    "file": "src/systems/physics.ts",
+    "sha256": "2abbc7950295e1c493a98e6fb1f3db4f97442f2a5e9309863c7f469d72dfe34c"
+  },
+  {
+    "file": "src/systems/runSettlement.ts",
+    "sha256": "f945346cbc69b06223533cff5a6a1d0662b0cfc017cd9e54dcf277ad434f9ae6"
+  },
+  {
+    "file": "src/systems/scoring.ts",
+    "sha256": "535070292464bf6c80c07730d585203d7e7da308c5217e94c17cdddd091453ac"
+  },
+  {
+    "file": "src/systems/spawner.ts",
+    "sha256": "105fd376b16c92c8357b57f944a54ff52d829514d8d87776b7d01f3e278d060c"
+  },
+  {
+    "file": "src/systems/surfaces.ts",
+    "sha256": "14a734e726e1b2aadcb9add9e96207fbb29e3680a08e762682fa6ece73846484"
+  },
+  {
+    "file": "src/systems/track.ts",
+    "sha256": "dba5b8e30e37b12c09ff1d28a56be60513360eecf00e425abc5be19d9addc922"
+  },
+  {
+    "file": "src/types/contracts.ts",
+    "sha256": "3b9520d21a06c683d5250a7839c5a9537ae8666723fd0f6a8cace471489558e4"
+  },
+  {
+    "file": "src/types/index.ts",
+    "sha256": "b2842de277d980ba890b0f75dabde2b029aedf4f01f5d0c0cff063c306fa4988"
+  },
+  {
+    "file": "src/ui/dom.ts",
+    "sha256": "51fd9c0fdde4dc29faf0c6e73ed69fe9c4b16dd95ca9d30ee5ae7669b85cb7ee"
+  },
+  {
+    "file": "test-results/.last-run.json",
+    "sha256": "d73c748bbd999a5ec3437ec97303e04ac1e89ce51cc1c336c1b9f179ffe82420"
+  },
+  {
+    "file": "tests/e2e/gameplay.spec.ts",
+    "sha256": "ac860d0781b57ec51735607c8e6d1441a5f02afcb9b27203f2f8e682d607ce64"
+  },
+  {
+    "file": "tests/e2e/pao10-review-fixes.spec.ts",
+    "sha256": "21a92efee35f42f42912d8655d62eb1a6d4786494235ee84d9ff1ae8dab45892"
+  },
+  {
+    "file": "tests/e2e/pao10-simulation.spec.ts",
+    "sha256": "4cb5069cfcec3a015c768ee5047403b8cd4c0c295529e1eda186866c6a921ebf"
+  },
+  {
+    "file": "tests/e2e/pao11-surfaces.spec.ts",
+    "sha256": "2e5cb1868763f2ddec33ae472f3497aeac1dffa6d7be0c80c1a41fa6842d868b"
+  },
+  {
+    "file": "tests/e2e/pao12-collision.spec.ts",
+    "sha256": "669125de620cfd8c0263b5ee7696cef53a2e48d9fac0548f5f095fd710371f1d"
+  },
+  {
+    "file": "tests/e2e/pao13-track.spec.ts",
+    "sha256": "03211f334c9ff5bf05b058bcb49c1d83d7b0eefe4800b3257453fecd8943a7a3"
+  },
+  {
+    "file": "tests/e2e/pao14-application.spec.ts",
+    "sha256": "06039b20c65000d94d819a45ce5332bd77731779bf851ea2eb9164988bba8f6a"
+  },
+  {
+    "file": "tests/e2e/pao14-review.spec.ts",
+    "sha256": "b20d8604e98ee5eb1013c458160522c97433475075e9e55bd32d957e5abda413"
+  },
+  {
+    "file": "tests/e2e/pao14-unknown-commit.spec.ts",
+    "sha256": "2b8545a84b763bf0a0faa9a2a8cf8ac3a10af0040afe42b34754bc2cdc414520"
+  },
+  {
+    "file": "tests/e2e/pao6-baseline.spec.ts",
+    "sha256": "710cd0dc1d6fd938825b4c741f0c32798a2ada5c507209c48b2f57889f441df9"
+  },
+  {
+    "file": "tests/e2e/pao6.config.ts",
+    "sha256": "587a93fd211357f2cfd3f0e06c4b396fd97f86711cd2536798e1551a87cdb547"
+  },
+  {
+    "file": "tests/unit/application.test.ts",
+    "sha256": "49b5ec3f0d4c4e7d38b4ccfefc5e60e9f5c964dbba7f1ba788583f397f94f88d"
+  },
+  {
+    "file": "tests/unit/audio.test.ts",
+    "sha256": "79ad7a9e70b157ac05624409fd481000cc687aad0dd8abe2d0d5d47dbb1bc3cc"
+  },
+  {
+    "file": "tests/unit/inputQueue.test.ts",
+    "sha256": "ad5028ab5457a711c1c79fef45d59f075919695f4575c9385a19993a02b13aaa"
+  },
+  {
+    "file": "tests/unit/mission.test.ts",
+    "sha256": "6c936e0020a7a93822c8a353985e26e7c749639a4fed6313e8828c90c69e1901"
+  },
+  {
+    "file": "tests/unit/pao10-main.test.ts",
+    "sha256": "df6b63d9ccee6aa65a019fd2416eee1214010e7d943b99bc8f34728c557c29e8"
+  },
+  {
+    "file": "tests/unit/physics.test.ts",
+    "sha256": "0d69f18455efe0c006bfb2474f3e38b7548dff35318a8d3f7f3bde7d407fb83c"
+  },
+  {
+    "file": "tests/unit/powerups.test.ts",
+    "sha256": "2232566a5fd0d4b151c1caec488cbf7afa8d9c876a3c866f1db463f673545553"
+  },
+  {
+    "file": "tests/unit/redteam_fixes.test.ts",
+    "sha256": "2e5b6877e5fec412eb929a765e7950e5ad2dbff6bf128f4cdd7c5427a4840d6c"
+  },
+  {
+    "file": "tests/unit/runSettlement.test.ts",
+    "sha256": "33c350754e151fc55fa7614bae532eac4f1384c93861bb9af104dc3cfbb4de51"
+  },
+  {
+    "file": "tests/unit/saveMigration.test.ts",
+    "sha256": "1b0b187419c7a69da65c3203deb239a6bf6585341723bb300158d3c91e452010"
+  },
+  {
+    "file": "tests/unit/shopTransactions.test.ts",
+    "sha256": "00d66761e5e7a034a75f7c3d2fca1a52152937c2a6423a9dcab5b8047b17971d"
+  },
+  {
+    "file": "tests/unit/simulation.test.ts",
+    "sha256": "8daa2210d1d561e508f3a4d2f3a82a274d418535adca528d15ce1163c12d8306"
+  },
+  {
+    "file": "tests/unit/snapshot.test.ts",
+    "sha256": "f46e175a6eb6a91c9e969f347314f9c36c694ea424b751abe9bc551e1d3e14e9"
+  },
+  {
+    "file": "tests/unit/surfaces.test.ts",
+    "sha256": "a63b81f09d946824ca23c551467f5f056d569e981198ded913352143849e6813"
+  },
+  {
+    "file": "tests/unit/sweptCollision.test.ts",
+    "sha256": "7a287436505450a7076e2759ba1f31439f97a8c64a574e10460e12e3c8b24612"
+  },
+  {
+    "file": "tests/unit/trackSegments.test.ts",
+    "sha256": "931767d57254a905a661a3e753c3d264dbe3cfc16bbf52336902ba4192c372f3"
+  },
+  {
+    "file": "vitest.config.ts",
+    "sha256": "1acb0480cfacbb79e080c11bb78c0c698c384c16acbe5ad42a6e4360b9b1af5a"
+  }
+]

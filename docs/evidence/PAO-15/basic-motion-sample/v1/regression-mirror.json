@@ -1,0 +1,105 @@
+{
+  "records": [
+    {
+      "source": "tests/e2e/gameplay.spec.ts",
+      "sourceSha256": "ac860d0781b57ec51735607c8e6d1441a5f02afcb9b27203f2f8e682d607ce64",
+      "mirror": ".pao15-local/basic-motion-regression/gameplay.pw.ts",
+      "mirrorSha256": "0599f5071a60d1632935b7be75cae6dc503f5a31f5494d0a149d59c671795d72",
+      "testAndExpectCalls": 27,
+      "changes": "evidence output paths only"
+    },
+    {
+      "source": "tests/e2e/pao10-review-fixes.spec.ts",
+      "sourceSha256": "21a92efee35f42f42912d8655d62eb1a6d4786494235ee84d9ff1ae8dab45892",
+      "mirror": ".pao15-local/basic-motion-regression/pao10-review-fixes.pw.ts",
+      "mirrorSha256": "577430f77a51c851e66f3d278a61249081f783e56320df27f6b71cd467b15f92",
+      "testAndExpectCalls": 22,
+      "changes": "evidence output paths only"
+    },
+    {
+      "source": "tests/e2e/pao10-simulation.spec.ts",
+      "sourceSha256": "4cb5069cfcec3a015c768ee5047403b8cd4c0c295529e1eda186866c6a921ebf",
+      "mirror": ".pao15-local/basic-motion-regression/pao10-simulation.pw.ts",
+      "mirrorSha256": "02e570ee4ed1a649dbcb009e6296146cf7872a671e564bdb588244fd2de1e8f4",
+      "testAndExpectCalls": 55,
+      "changes": "evidence output paths only"
+    },
+    {
+      "source": "tests/e2e/pao11-surfaces.spec.ts",
+      "sourceSha256": "2e5cb1868763f2ddec33ae472f3497aeac1dffa6d7be0c80c1a41fa6842d868b",
+      "mirror": ".pao15-local/basic-motion-regression/pao11-surfaces.pw.ts",
+      "mirrorSha256": "07b7dfd8b2188c5d417a705e13773b7eddfe9b4c57d2fa9d2ca27fd8f6f49d62",
+      "testAndExpectCalls": 32,
+      "changes": "evidence output paths only"
+    },
+    {
+      "source": "tests/e2e/pao12-collision.spec.ts",
+      "sourceSha256": "669125de620cfd8c0263b5ee7696cef53a2e48d9fac0548f5f095fd710371f1d",
+      "mirror": ".pao15-local/basic-motion-regression/pao12-collision.pw.ts",
+      "mirrorSha256": "dfb0bcc57bfb71b578c05cf443b0112d9afc2b3cc4c8ddfb64c66a7476291172",
+      "testAndExpectCalls": 53,
+      "changes": "evidence output paths only"
+    },
+    {
+      "source": "tests/e2e/pao13-track.spec.ts",
+      "sourceSha256": "03211f334c9ff5bf05b058bcb49c1d83d7b0eefe4800b3257453fecd8943a7a3",
+      "mirror": ".pao15-local/basic-motion-regression/pao13-track.pw.ts",
+      "mirrorSha256": "1d38a240c66f5f4b0b625366e875b0623ac4f87dc0a30b4d2922657b9e132a2e",
+      "testAndExpectCalls": 53,
+      "changes": "evidence output paths only"
+    },
+    {
+      "source": "tests/e2e/pao14-application.spec.ts",
+      "sourceSha256": "06039b20c65000d94d819a45ce5332bd77731779bf851ea2eb9164988bba8f6a",
+      "mirror": ".pao15-local/basic-motion-regression/pao14-application.pw.ts",
+      "mirrorSha256": "95eac7bd2b448b588bfefa9840809a69e8987e23a2429096fcae2a0f299ff54c",
+      "testAndExpectCalls": 86,
+      "changes": "evidence output paths only"
+    },
+    {
+      "source": "tests/e2e/pao14-review.spec.ts",
+      "sourceSha256": "b20d8604e98ee5eb1013c458160522c97433475075e9e55bd32d957e5abda413",
+      "mirror": ".pao15-local/basic-motion-regression/pao14-review.pw.ts",
+      "mirrorSha256": "a13246637e25655a8a1d940d14721f48c424d3185cf055cfd7ec1ba2aa6e2dee",
+      "testAndExpectCalls": 39,
+      "changes": "evidence output paths only"
+    },
+    {
+      "source": "tests/e2e/pao14-unknown-commit.spec.ts",
+      "sourceSha256": "2b8545a84b763bf0a0faa9a2a8cf8ac3a10af0040afe42b34754bc2cdc414520",
+      "mirror": ".pao15-local/basic-motion-regression/pao14-unknown-commit.pw.ts",
+      "mirrorSha256": "fbbc731395d370165e5ccdc6f7b8a922e4a1833d2ec4bc27d2313b7231891600",
+      "testAndExpectCalls": 21,
+      "changes": "evidence output paths only"
+    },
+    {
+      "source": "tests/e2e/pao15-basic-motion-sample.spec.ts",
+      "sourceSha256": "4df0e77f41af8c25dbdd43995b5e364acc5ceae4c920d3c9b38aed861e35fce8",
+      "mirror": ".pao15-local/basic-motion-regression/pao15-basic-motion-sample.pw.ts",
+      "mirrorSha256": "4df0e77f41af8c25dbdd43995b5e364acc5ceae4c920d3c9b38aed861e35fce8",
+      "testAndExpectCalls": 30,
+      "changes": "none"
+    },
+    {
+      "source": "tests/e2e/pao15-rig-spike.spec.ts",
+      "sourceSha256": "cbe8f1b331a60d867c7b0238a53be2be98e24bac651976dce3ee218c79ff333d",
+      "mirror": ".pao15-local/basic-motion-regression/pao15-rig-spike.pw.ts",
+      "mirrorSha256": "bfa20374ac1c53b91357b03727a19db39db49e43bd2f62b5e62ddc769ccded1f",
+      "testAndExpectCalls": 19,
+      "changes": "evidence output paths only"
+    },
+    {
+      "source": "tests/e2e/pao6-baseline.spec.ts",
+      "sourceSha256": "710cd0dc1d6fd938825b4c741f0c32798a2ada5c507209c48b2f57889f441df9",
+      "mirror": ".pao15-local/basic-motion-regression/pao6-baseline.pw.ts",
+      "mirrorSha256": "5cd88c7ec9a8bfc8156c690b9b24f24df044cb28fce67dffc3f46cf4dfe7e39b",
+      "testAndExpectCalls": 31,
+      "changes": "evidence output paths only"
+    }
+  ],
+  "allAssertionsRetained": true,
+  "port": 5185,
+  "strictPort": true,
+  "reuseExistingServer": false,
+  "backend": "ANGLE D3D11"
+}

@@ -1,0 +1,35 @@
+
+> app@0.0.0 test:e2e
+> playwright test --config .pao16-local/refinement-preview.config.ts
+
+[WebServer] (node:20372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:3128) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\pao16-calibration-refinement.spec.ts:6:1 › new refinement regions and labelled source ends render without modifying historical evidence (2.2s)
+
+
+  1) tests\e2e\pao16-calibration-refinement.spec.ts:6:1 › new refinement regions and labelled source ends render without modifying historical evidence
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Matcher error: received value must be a number or bigint
+
+    Received has value: undefined
+
+      15 |   await page.waitForFunction(()=>(window as any).__REFINEMENT__?.ready,undefined,{timeout:60000});
+      16 |   const status=await page.evaluate(()=>(window as any).__REFINEMENT__);
+    > 17 |   expect(status.base5Error).toBeLessThan(1e-4);expect(status.restoreError).toBeLessThan(1e-4);expect(status.loaderMaxError).toBeLessThan(1e-5);expect(status.candidateAppliedError).toBeLessThan(1e-4);expect(status.visualRootCount).toBe(1);
+         |                             ^
+      18 |   expect(status.logicalChildCount).toBe(file==='train_metro.glb'?2:1);expect(status.refinementOverlayCount).toBeGreaterThan(0);
+      19 |   if(file==='train_ramp_or_car.glb')expect(status.cameraCount).toBe(2);
+      20 |   expect(status.continuousCertificate).toBe(false);records.push({...status,httpSHA256:sha(local)});
+        at D:\worker\paoku-sessions\pao-16\tests\e2e\pao16-calibration-refinement.spec.ts:17:29
+
+    Error Context: .pao16-local\refinement\preview-results\pao16-calibration-refineme-4a7a7-difying-historical-evidence\error-context.md
+
+  1 failed
+    tests\e2e\pao16-calibration-refinement.spec.ts:6:1 › new refinement regions and labelled source ends render without modifying historical evidence

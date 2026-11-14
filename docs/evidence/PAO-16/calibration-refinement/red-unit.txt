@@ -1,0 +1,27 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao16-calibration-refinement.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-16
+
+ ❯ tests/unit/pao16-calibration-refinement.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao16-calibration-refinement.test.ts [ tests/unit/pao16-calibration-refinement.test.ts ]
+Error: Cannot find module '../../tools/pao16-calibration/refinement-core' imported from D:/worker/paoku-sessions/pao-16/tests/unit/pao16-calibration-refinement.test.ts
+ ❯ tests/unit/pao16-calibration-refinement.test.ts:2:1
+      1| import {it,expect} from 'vitest';
+      2| import {buildRayIndex,indexHits,normal,sliceY,regions,sampleGrid} from…
+       | ^
+      3| import {rayY} from '../../tools/pao16-calibration/core';
+      4| const tri=(points:number[][],id=0)=>({points,local:points,node:0,mesh:…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  20:02:44
+   Duration  284ms (transform 35ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)

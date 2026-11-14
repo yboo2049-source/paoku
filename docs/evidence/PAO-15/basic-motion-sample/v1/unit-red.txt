@@ -1,0 +1,163 @@
+RUN  v4.1.10 D:/worker/paoku-sessions/pao-15
+
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts (8 tests | 8 failed) 11ms
+     × rejects a wrong immutable source hash 6ms
+     × accepts unchanged rest/skin but rejects renamed bones, changed parents or IBM 1ms
+     × rejects changed normalized weights as well as malformed weights and indexes 1ms
+     × requires exactly four named samples without the old diagnostic clip 1ms
+     × rejects a shortened real sampler despite a correct duration label 0ms
+     × rejects root and parent-wrapper movement, scale or rotation 0ms
+     × detects opposite signed seam velocities even with identical endpoints 0ms
+     × treats q and -q as one orientation and checks signed quaternion log velocity 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao15-basic-motion-sample.test.ts > PAO-15 basic motion file guards > rejects a wrong immutable source hash
+AssertionError: expected [Function] to throw error matching /source/i but got 'not implemented'
+
+- Expected:
+/source/i
+
++ Received:
+"not implemented"
+
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts:13:57
+     11| describe('PAO-15 basic motion file guards', () => {
+     12|   it('rejects a wrong immutable source hash', () => {
+     13|     expect(() => assertSourceHash('wrong', 'approved')).toThrow(/sourc…
+       |                                                         ^
+     14|     expect(() => assertSourceHash('approved', 'approved')).not.toThrow…
+     15|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+ FAIL  tests/unit/pao15-basic-motion-sample.test.ts > PAO-15 basic motion file guards > accepts unchanged rest/skin but rejects renamed bones, changed parents or IBM
+AssertionError: expected [Function] to not throw an error but 'Error: not implemented' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: not implemented"
+
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts:17:75
+     15|   });
+     16|   it('accepts unchanged rest/skin but rejects renamed bones, changed p…
+     17|     const source = rig(); expect(() => assertBoundRig(rig(), source)).…
+       |                                                                           ^
+     18|     for (const field of ['name', 'parent', 'inverseBind']) {
+     19|       const changed = rig();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  tests/unit/pao15-basic-motion-sample.test.ts > PAO-15 basic motion file guards > rejects changed normalized weights as well as malformed weights and indexes
+AssertionError: expected [Function] to throw error matching /weight/i but got 'not implemented'
+
+- Expected:
+/weight/i
+
++ Received:
+"not implemented"
+
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts:29:52
+     27|     for (const weights of [[.4, .6, 0, 0], [.2, .2, 0, 0], [NaN, .5, 0…
+     28|       const changed = rig(); changed.primitives[0].weights[0] = weight…
+     29|       expect(() => assertBoundRig(changed, rig())).toThrow(/weight/i);
+       |                                                    ^
+     30|     }
+     31|     const changed = rig(); changed.primitives[0].joints[0][0] = 3;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  tests/unit/pao15-basic-motion-sample.test.ts > PAO-15 basic motion file guards > requires exactly four named samples without the old diagnostic clip
+AssertionError: expected [Function] to not throw an error but 'Error: not implemented' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: not implemented"
+
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts:36:44
+     34|   it('requires exactly four named samples without the old diagnostic c…
+     35|     const names = ['tech_idle_v1', 'tech_run_v1', 'tech_jump_v1', 'tec…
+     36|     expect(() => assertClipSet(names)).not.toThrow();
+       |                                            ^
+     37|     expect(() => assertClipSet(names.slice(0, 3))).toThrow(/clip/i);
+     38|     expect(() => assertClipSet([...names, 'rig_diagnostic'])).toThrow(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  tests/unit/pao15-basic-motion-sample.test.ts > PAO-15 basic motion file guards > rejects a shortened real sampler despite a correct duration label
+AssertionError: expected [Function] to not throw an error but 'Error: not implemented' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: not implemented"
+
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts:41:42
+     39|   });
+     40|   it('rejects a shortened real sampler despite a correct duration labe…
+     41|     expect(() => assertClip(clip())).not.toThrow();
+       |                                          ^
+     42|     const changed = clip(); changed.timeTracks.push([0, 23 / 30]);
+     43|     expect(() => assertClip(changed)).toThrow(/duration|boundary/i);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  tests/unit/pao15-basic-motion-sample.test.ts > PAO-15 basic motion file guards > rejects root and parent-wrapper movement, scale or rotation
+AssertionError: expected [Function] to throw error matching /root/i but got 'not implemented'
+
+- Expected:
+/root/i
+
++ Received:
+"not implemented"
+
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts:47:33
+     45|   it('rejects root and parent-wrapper movement, scale or rotation', ()…
+     46|     const a = clip(); a.rootSamples[0].translation[1] = .1;
+     47|     expect(() => assertClip(a)).toThrow(/root/i);
+       |                                 ^
+     48|     const b = clip(); b.wrapperSamples[0].translation[2] = 1;
+     49|     expect(() => assertClip(b)).toThrow(/root/i);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  tests/unit/pao15-basic-motion-sample.test.ts > PAO-15 basic motion file guards > detects opposite signed seam velocities even with identical endpoints
+AssertionError: expected [Function] to throw error matching /velocity/i but got 'not implemented'
+
+- Expected:
+/velocity/i
+
++ Received:
+"not implemented"
+
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts:55:33
+     53|   it('detects opposite signed seam velocities even with identical endp…
+     54|     const c = clip(); c.loopChannels[0].previous = [.001, 0, 0];
+     55|     expect(() => assertClip(c)).toThrow(/velocity/i);
+       |                                 ^
+     56|   });
+     57|   it('treats q and -q as one orientation and checks signed quaternion …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+ FAIL  tests/unit/pao15-basic-motion-sample.test.ts > PAO-15 basic motion file guards > treats q and -q as one orientation and checks signed quaternion log velocity
+Error: not implemented
+ ❯ boundaryMetrics tools/pao15-basic-motion-sample/validate.mjs:5:43
+
+      3| export function assertClipSet() { throw Error('not implemented'); }
+      4| export function assertClip() { throw Error('not implemented'); }
+      5| export function boundaryMetrics() { throw Error('not implemented'); }
+       |                                           ^
+      6|
+ Test Files  1 failed (1)
+ ❯ tests/unit/pao15-basic-motion-sample.test.ts:58:18
+      Tests  8 failed (8)
+
+   Start at  00:32:35
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯
+   Duration  327ms (transform 50ms, setup 0ms, import 66ms, tests 11ms, environment 0ms)

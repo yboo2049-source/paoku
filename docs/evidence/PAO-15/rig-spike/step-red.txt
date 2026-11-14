@@ -1,0 +1,33 @@
+RUN  v4.1.10 D:/worker/paoku-sessions/pao-15
+
+ ❯ tests/unit/pao15-rig-spike.test.ts (13 tests | 1 failed) 13ms
+     × keeps STEP tracks constant until the next timestamp 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao15-rig-spike.test.ts > PAO-15 rig structural guard and skin evaluation > keeps STEP tracks constant until the next timestamp
+AssertionError: expected [ 1 ] to deeply equal [ +0 ]
+
+- Expected
++ Received
+
+  [
+-   0,
++   1,
+  ]
+
+ ❯ tests/unit/pao15-rig-spike.test.ts:23:76
+     21|   });
+     22|   it('keeps STEP tracks constant until the next timestamp', () => {
+     23|     expect(interpolateKeys([0, 1], [[0], [2]], .5, 'translation', 'STE…
+       |                                                                            ^
+     24|     expect(interpolateKeys([0, 1], [[0], [2]], 1, 'translation', 'STEP…
+     25|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 passed (13)
+   Start at  20:48:33
+   Duration  313ms (transform 46ms, setup 0ms, import 63ms, tests 13ms, environment 0ms)

@@ -1,0 +1,1132 @@
+{
+  "imported": {
+    "skeletons": 1,
+    "groups": 4,
+    "skinnedMeshes": 34,
+    "meshes": 40,
+    "geometries": 39,
+    "materials": 6,
+    "textures": 4,
+    "renderObservers": 1,
+    "clips": [
+      {
+        "name": "tech_idle_v1",
+        "durationSec": 2
+      },
+      {
+        "name": "tech_jump_v1",
+        "durationSec": 1.2000000476837158
+      },
+      {
+        "name": "tech_run_v1",
+        "durationSec": 0.800000011920929
+      },
+      {
+        "name": "tech_slide_v1",
+        "durationSec": 1.2000000476837158
+      }
+    ],
+    "clip": "tech_idle_v1",
+    "frame": 0,
+    "fps": 60,
+    "loopCount": 0,
+    "markerCount": 0,
+    "playing": false,
+    "markers": []
+  },
+  "parity": {
+    "samples": [
+      {
+        "clip": "tech_idle_v1",
+        "frame": 0,
+        "maxVertexErrorM": 5.058307758654817e-7,
+        "maxBoneMatrixError": 0.0000022565779910756824
+      },
+      {
+        "clip": "tech_idle_v1",
+        "frame": 1,
+        "maxVertexErrorM": 5.058307758654817e-7,
+        "maxBoneMatrixError": 0.0000022565779910756824
+      },
+      {
+        "clip": "tech_idle_v1",
+        "frame": 7.5,
+        "maxVertexErrorM": 5.058307758654817e-7,
+        "maxBoneMatrixError": 0.0000022565779910756824
+      },
+      {
+        "clip": "tech_idle_v1",
+        "frame": 15,
+        "maxVertexErrorM": 5.058307758654817e-7,
+        "maxBoneMatrixError": 0.0000022565779910756824
+      },
+      {
+        "clip": "tech_idle_v1",
+        "frame": 30,
+        "maxVertexErrorM": 5.058307758654817e-7,
+        "maxBoneMatrixError": 0.0000022565779910756824
+      },
+      {
+        "clip": "tech_idle_v1",
+        "frame": 45,
+        "maxVertexErrorM": 6.080331135720958e-7,
+        "maxBoneMatrixError": 0.0000022565779910756824
+      },
+      {
+        "clip": "tech_idle_v1",
+        "frame": 59,
+        "maxVertexErrorM": 5.058307758654817e-7,
+        "maxBoneMatrixError": 0.0000022565779910756824
+      },
+      {
+        "clip": "tech_idle_v1",
+        "frame": 60,
+        "maxVertexErrorM": 5.058307758654817e-7,
+        "maxBoneMatrixError": 0.0000022565779910756824
+      },
+      {
+        "clip": "tech_run_v1",
+        "frame": 0,
+        "maxVertexErrorM": 0.00005982211049412209,
+        "maxBoneMatrixError": 0.000002298189396780781
+      },
+      {
+        "clip": "tech_run_v1",
+        "frame": 1,
+        "maxVertexErrorM": 0.00005783278688281549,
+        "maxBoneMatrixError": 0.0000022731169124750455
+      },
+      {
+        "clip": "tech_run_v1",
+        "frame": 3.5,
+        "maxVertexErrorM": 0.00004649170889296286,
+        "maxBoneMatrixError": 0.0000022529208267337703
+      },
+      {
+        "clip": "tech_run_v1",
+        "frame": 6,
+        "maxVertexErrorM": 0.00006028477427049136,
+        "maxBoneMatrixError": 0.0000022949407553138346
+      },
+      {
+        "clip": "tech_run_v1",
+        "frame": 12,
+        "maxVertexErrorM": 0.00005369178494217658,
+        "maxBoneMatrixError": 0.0000022981893830955474
+      },
+      {
+        "clip": "tech_run_v1",
+        "frame": 18,
+        "maxVertexErrorM": 0.00006082485345925535,
+        "maxBoneMatrixError": 0.0000022968033942458166
+      },
+      {
+        "clip": "tech_run_v1",
+        "frame": 23,
+        "maxVertexErrorM": 0.00006159802643515252,
+        "maxBoneMatrixError": 0.0000023074770796154
+      },
+      {
+        "clip": "tech_run_v1",
+        "frame": 24,
+        "maxVertexErrorM": 0.00005982211049412209,
+        "maxBoneMatrixError": 0.0000022963267441635654
+      },
+      {
+        "clip": "tech_jump_v1",
+        "frame": 0,
+        "maxVertexErrorM": 5.058307758654817e-7,
+        "maxBoneMatrixError": 0.0000022565779910756824
+      },
+      {
+        "clip": "tech_jump_v1",
+        "frame": 4,
+        "maxVertexErrorM": 0.00003558103064113185,
+        "maxBoneMatrixError": 0.000002234896299080358
+      },
+      {
+        "clip": "tech_jump_v1",
+        "frame": 6,
+        "maxVertexErrorM": 0.000010399270475725313,
+        "maxBoneMatrixError": 0.000002243010708002924
+      },
+      {
+        "clip": "tech_jump_v1",
+        "frame": 6.5,
+        "maxVertexErrorM": 0.000009922204237550262,
+        "maxBoneMatrixError": 0.0000022402708008961714
+      },
+      {
+        "clip": "tech_jump_v1",
+        "frame": 15,
+        "maxVertexErrorM": 0.000018487330657845794,
+        "maxBoneMatrixError": 0.00000221769094747859
+      },
+      {
+        "clip": "tech_jump_v1",
+        "frame": 24,
+        "maxVertexErrorM": 0.000008872519297480374,
+        "maxBoneMatrixError": 0.000002230789206969508
+      },
+      {
+        "clip": "tech_jump_v1",
+        "frame": 30,
+        "maxVertexErrorM": 0.000001656676673095712,
+        "maxBoneMatrixError": 0.000002232962194231858
+      },
+      {
+        "clip": "tech_jump_v1",
+        "frame": 36,
+        "maxVertexErrorM": 4.937239540920219e-7,
+        "maxBoneMatrixError": 0.0000022575559242904908
+      },
+      {
+        "clip": "tech_slide_v1",
+        "frame": 0,
+        "maxVertexErrorM": 5.058307758654817e-7,
+        "maxBoneMatrixError": 0.0000022565779910756824
+      },
+      {
+        "clip": "tech_slide_v1",
+        "frame": 6,
+        "maxVertexErrorM": 0.0000793974210710987,
+        "maxBoneMatrixError": 0.0000026517067192588506
+      },
+      {
+        "clip": "tech_slide_v1",
+        "frame": 15,
+        "maxVertexErrorM": 0.0000794111729698856,
+        "maxBoneMatrixError": 0.0000026517067192588506
+      },
+      {
+        "clip": "tech_slide_v1",
+        "frame": 24,
+        "maxVertexErrorM": 0.0000794111729698856,
+        "maxBoneMatrixError": 0.0000026517067192588506
+      },
+      {
+        "clip": "tech_slide_v1",
+        "frame": 25.5,
+        "maxVertexErrorM": 0.00007738976821523615,
+        "maxBoneMatrixError": 0.0000026210114214553215
+      },
+      {
+        "clip": "tech_slide_v1",
+        "frame": 36,
+        "maxVertexErrorM": 4.937239540920219e-7,
+        "maxBoneMatrixError": 0.00000225853417544638
+      }
+    ],
+    "maxVertexErrorM": 0.0000794111729698856,
+    "maxBoneMatrixError": 0.0000026517067192588506
+  },
+  "paused": {
+    "skeletons": 1,
+    "groups": 4,
+    "skinnedMeshes": 34,
+    "meshes": 40,
+    "geometries": 39,
+    "materials": 6,
+    "textures": 4,
+    "renderObservers": 1,
+    "clips": [
+      {
+        "name": "tech_idle_v1",
+        "durationSec": 2
+      },
+      {
+        "name": "tech_jump_v1",
+        "durationSec": 1.2000000476837158
+      },
+      {
+        "name": "tech_run_v1",
+        "durationSec": 0.800000011920929
+      },
+      {
+        "name": "tech_slide_v1",
+        "durationSec": 1.2000000476837158
+      }
+    ],
+    "clip": "tech_run_v1",
+    "frame": 18.011999999997204,
+    "fps": 60,
+    "loopCount": 0,
+    "markerCount": 1,
+    "playing": false,
+    "markers": [
+      {
+        "id": "12:tech_run_v1:0:left_contact_pose_hint",
+        "marker": "left_contact_pose_hint",
+        "clip": "tech_run_v1",
+        "loop": 0
+      }
+    ]
+  },
+  "still": {
+    "skeletons": 1,
+    "groups": 4,
+    "skinnedMeshes": 34,
+    "meshes": 40,
+    "geometries": 39,
+    "materials": 6,
+    "textures": 4,
+    "renderObservers": 1,
+    "clips": [
+      {
+        "name": "tech_idle_v1",
+        "durationSec": 2
+      },
+      {
+        "name": "tech_jump_v1",
+        "durationSec": 1.2000000476837158
+      },
+      {
+        "name": "tech_run_v1",
+        "durationSec": 0.800000011920929
+      },
+      {
+        "name": "tech_slide_v1",
+        "durationSec": 1.2000000476837158
+      }
+    ],
+    "clip": "tech_run_v1",
+    "frame": 18.011999999997204,
+    "fps": 60,
+    "loopCount": 0,
+    "markerCount": 1,
+    "playing": false,
+    "markers": [
+      {
+        "id": "12:tech_run_v1:0:left_contact_pose_hint",
+        "marker": "left_contact_pose_hint",
+        "clip": "tech_run_v1",
+        "loop": 0
+      }
+    ]
+  },
+  "resumed": {
+    "skeletons": 1,
+    "groups": 4,
+    "skinnedMeshes": 34,
+    "meshes": 40,
+    "geometries": 39,
+    "materials": 6,
+    "textures": 4,
+    "renderObservers": 1,
+    "clips": [
+      {
+        "name": "tech_idle_v1",
+        "durationSec": 2
+      },
+      {
+        "name": "tech_jump_v1",
+        "durationSec": 1.2000000476837158
+      },
+      {
+        "name": "tech_run_v1",
+        "durationSec": 0.800000011920929
+      },
+      {
+        "name": "tech_slide_v1",
+        "durationSec": 1.2000000476837158
+      }
+    ],
+    "clip": "tech_run_v1",
+    "frame": 30.983998569496904,
+    "fps": 60,
+    "loopCount": 2,
+    "markerCount": 6,
+    "playing": true,
+    "markers": [
+      {
+        "id": "12:tech_run_v1:0:left_contact_pose_hint",
+        "marker": "left_contact_pose_hint",
+        "clip": "tech_run_v1",
+        "loop": 0
+      },
+      {
+        "id": "12:tech_run_v1:0:right_contact_pose_hint",
+        "marker": "right_contact_pose_hint",
+        "clip": "tech_run_v1",
+        "loop": 0
+      },
+      {
+        "id": "12:tech_run_v1:1:left_contact_pose_hint",
+        "marker": "left_contact_pose_hint",
+        "clip": "tech_run_v1",
+        "loop": 1
+      },
+      {
+        "id": "12:tech_run_v1:1:right_contact_pose_hint",
+        "marker": "right_contact_pose_hint",
+        "clip": "tech_run_v1",
+        "loop": 1
+      },
+      {
+        "id": "12:tech_run_v1:2:left_contact_pose_hint",
+        "marker": "left_contact_pose_hint",
+        "clip": "tech_run_v1",
+        "loop": 2
+      },
+      {
+        "id": "12:tech_run_v1:2:right_contact_pose_hint",
+        "marker": "right_contact_pose_hint",
+        "clip": "tech_run_v1",
+        "loop": 2
+      }
+    ]
+  },
+  "held": {
+    "skeletons": 1,
+    "groups": 4,
+    "skinnedMeshes": 34,
+    "meshes": 40,
+    "geometries": 39,
+    "materials": 6,
+    "textures": 4,
+    "renderObservers": 1,
+    "clips": [
+      {
+        "name": "tech_idle_v1",
+        "durationSec": 2
+      },
+      {
+        "name": "tech_jump_v1",
+        "durationSec": 1.2000000476837158
+      },
+      {
+        "name": "tech_run_v1",
+        "durationSec": 0.800000011920929
+      },
+      {
+        "name": "tech_slide_v1",
+        "durationSec": 1.2000000476837158
+      }
+    ],
+    "clip": "tech_jump_v1",
+    "frame": 72.00000286102295,
+    "fps": 60,
+    "loopCount": 0,
+    "markerCount": 3,
+    "playing": false,
+    "markers": [
+      {
+        "id": "13:tech_jump_v1:0:takeoff_pose",
+        "marker": "takeoff_pose",
+        "clip": "tech_jump_v1",
+        "loop": 0
+      },
+      {
+        "id": "13:tech_jump_v1:0:tuck_peak",
+        "marker": "tuck_peak",
+        "clip": "tech_jump_v1",
+        "loop": 0
+      },
+      {
+        "id": "13:tech_jump_v1:0:landing_pose",
+        "marker": "landing_pose",
+        "clip": "tech_jump_v1",
+        "loop": 0
+      }
+    ]
+  },
+  "heldSlide": {
+    "skeletons": 1,
+    "groups": 4,
+    "skinnedMeshes": 34,
+    "meshes": 40,
+    "geometries": 39,
+    "materials": 6,
+    "textures": 4,
+    "renderObservers": 1,
+    "clips": [
+      {
+        "name": "tech_idle_v1",
+        "durationSec": 2
+      },
+      {
+        "name": "tech_jump_v1",
+        "durationSec": 1.2000000476837158
+      },
+      {
+        "name": "tech_run_v1",
+        "durationSec": 0.800000011920929
+      },
+      {
+        "name": "tech_slide_v1",
+        "durationSec": 1.2000000476837158
+      }
+    ],
+    "clip": "tech_slide_v1",
+    "frame": 72.00000286102295,
+    "fps": 60,
+    "loopCount": 0,
+    "markerCount": 2,
+    "playing": false,
+    "markers": [
+      {
+        "id": "14:tech_slide_v1:0:low_pose_enter",
+        "marker": "low_pose_enter",
+        "clip": "tech_slide_v1",
+        "loop": 0
+      },
+      {
+        "id": "14:tech_slide_v1:0:recovery_pose_begin",
+        "marker": "recovery_pose_begin",
+        "clip": "tech_slide_v1",
+        "loop": 0
+      }
+    ]
+  },
+  "loops": [
+    {
+      "skeletons": 1,
+      "groups": 4,
+      "skinnedMeshes": 34,
+      "meshes": 40,
+      "geometries": 39,
+      "materials": 6,
+      "textures": 4,
+      "renderObservers": 1,
+      "clips": [
+        {
+          "name": "tech_idle_v1",
+          "durationSec": 2
+        },
+        {
+          "name": "tech_jump_v1",
+          "durationSec": 1.2000000476837158
+        },
+        {
+          "name": "tech_run_v1",
+          "durationSec": 0.800000011920929
+        },
+        {
+          "name": "tech_slide_v1",
+          "durationSec": 1.2000000476837158
+        }
+      ],
+      "clip": "tech_idle_v1",
+      "frame": 20.21999999997206,
+      "fps": 60,
+      "loopCount": 11,
+      "markerCount": 0,
+      "playing": true,
+      "markers": []
+    },
+    {
+      "skeletons": 1,
+      "groups": 4,
+      "skinnedMeshes": 34,
+      "meshes": 40,
+      "geometries": 39,
+      "materials": 6,
+      "textures": 4,
+      "renderObservers": 1,
+      "clips": [
+        {
+          "name": "tech_idle_v1",
+          "durationSec": 2
+        },
+        {
+          "name": "tech_jump_v1",
+          "durationSec": 1.2000000476837158
+        },
+        {
+          "name": "tech_run_v1",
+          "durationSec": 0.800000011920929
+        },
+        {
+          "name": "tech_slide_v1",
+          "durationSec": 1.2000000476837158
+        }
+      ],
+      "clip": "tech_run_v1",
+      "frame": 14.219991416973016,
+      "fps": 60,
+      "loopCount": 12,
+      "markerCount": 25,
+      "playing": true,
+      "markers": [
+        {
+          "id": "16:tech_run_v1:0:left_contact_pose_hint",
+          "marker": "left_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 0
+        },
+        {
+          "id": "16:tech_run_v1:0:right_contact_pose_hint",
+          "marker": "right_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 0
+        },
+        {
+          "id": "16:tech_run_v1:1:left_contact_pose_hint",
+          "marker": "left_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 1
+        },
+        {
+          "id": "16:tech_run_v1:1:right_contact_pose_hint",
+          "marker": "right_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 1
+        },
+        {
+          "id": "16:tech_run_v1:2:left_contact_pose_hint",
+          "marker": "left_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 2
+        },
+        {
+          "id": "16:tech_run_v1:2:right_contact_pose_hint",
+          "marker": "right_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 2
+        },
+        {
+          "id": "16:tech_run_v1:3:left_contact_pose_hint",
+          "marker": "left_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 3
+        },
+        {
+          "id": "16:tech_run_v1:3:right_contact_pose_hint",
+          "marker": "right_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 3
+        },
+        {
+          "id": "16:tech_run_v1:4:left_contact_pose_hint",
+          "marker": "left_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 4
+        },
+        {
+          "id": "16:tech_run_v1:4:right_contact_pose_hint",
+          "marker": "right_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 4
+        },
+        {
+          "id": "16:tech_run_v1:5:left_contact_pose_hint",
+          "marker": "left_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 5
+        },
+        {
+          "id": "16:tech_run_v1:5:right_contact_pose_hint",
+          "marker": "right_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 5
+        },
+        {
+          "id": "16:tech_run_v1:6:left_contact_pose_hint",
+          "marker": "left_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 6
+        },
+        {
+          "id": "16:tech_run_v1:6:right_contact_pose_hint",
+          "marker": "right_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 6
+        },
+        {
+          "id": "16:tech_run_v1:7:left_contact_pose_hint",
+          "marker": "left_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 7
+        },
+        {
+          "id": "16:tech_run_v1:7:right_contact_pose_hint",
+          "marker": "right_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 7
+        },
+        {
+          "id": "16:tech_run_v1:8:left_contact_pose_hint",
+          "marker": "left_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 8
+        },
+        {
+          "id": "16:tech_run_v1:8:right_contact_pose_hint",
+          "marker": "right_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 8
+        },
+        {
+          "id": "16:tech_run_v1:9:left_contact_pose_hint",
+          "marker": "left_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 9
+        },
+        {
+          "id": "16:tech_run_v1:9:right_contact_pose_hint",
+          "marker": "right_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 9
+        },
+        {
+          "id": "16:tech_run_v1:10:left_contact_pose_hint",
+          "marker": "left_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 10
+        },
+        {
+          "id": "16:tech_run_v1:10:right_contact_pose_hint",
+          "marker": "right_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 10
+        },
+        {
+          "id": "16:tech_run_v1:11:left_contact_pose_hint",
+          "marker": "left_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 11
+        },
+        {
+          "id": "16:tech_run_v1:11:right_contact_pose_hint",
+          "marker": "right_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 11
+        },
+        {
+          "id": "16:tech_run_v1:12:left_contact_pose_hint",
+          "marker": "left_contact_pose_hint",
+          "clip": "tech_run_v1",
+          "loop": 12
+        }
+      ]
+    }
+  ],
+  "warm": {
+    "switches": [
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      }
+    ],
+    "loaded": [
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      },
+      {
+        "skeletons": 1,
+        "groups": 4,
+        "skinnedMeshes": 34,
+        "meshes": 40,
+        "geometries": 39,
+        "materials": 6,
+        "textures": 4,
+        "renderObservers": 1
+      }
+    ],
+    "released": [
+      {
+        "skeletons": 0,
+        "groups": 0,
+        "skinnedMeshes": 0,
+        "meshes": 5,
+        "geometries": 5,
+        "materials": 5,
+        "textures": 1,
+        "renderObservers": 2
+      },
+      {
+        "skeletons": 0,
+        "groups": 0,
+        "skinnedMeshes": 0,
+        "meshes": 5,
+        "geometries": 5,
+        "materials": 5,
+        "textures": 1,
+        "renderObservers": 2
+      },
+      {
+        "skeletons": 0,
+        "groups": 0,
+        "skinnedMeshes": 0,
+        "meshes": 5,
+        "geometries": 5,
+        "materials": 5,
+        "textures": 1,
+        "renderObservers": 2
+      },
+      {
+        "skeletons": 0,
+        "groups": 0,
+        "skinnedMeshes": 0,
+        "meshes": 5,
+        "geometries": 5,
+        "materials": 5,
+        "textures": 1,
+        "renderObservers": 2
+      },
+      {
+        "skeletons": 0,
+        "groups": 0,
+        "skinnedMeshes": 0,
+        "meshes": 5,
+        "geometries": 5,
+        "materials": 5,
+        "textures": 1,
+        "renderObservers": 2
+      },
+      {
+        "skeletons": 0,
+        "groups": 0,
+        "skinnedMeshes": 0,
+        "meshes": 5,
+        "geometries": 5,
+        "materials": 5,
+        "textures": 1,
+        "renderObservers": 2
+      },
+      {
+        "skeletons": 0,
+        "groups": 0,
+        "skinnedMeshes": 0,
+        "meshes": 5,
+        "geometries": 5,
+        "materials": 5,
+        "textures": 1,
+        "renderObservers": 2
+      },
+      {
+        "skeletons": 0,
+        "groups": 0,
+        "skinnedMeshes": 0,
+        "meshes": 5,
+        "geometries": 5,
+        "materials": 5,
+        "textures": 1,
+        "renderObservers": 2
+      },
+      {
+        "skeletons": 0,
+        "groups": 0,
+        "skinnedMeshes": 0,
+        "meshes": 5,
+        "geometries": 5,
+        "materials": 5,
+        "textures": 1,
+        "renderObservers": 2
+      },
+      {
+        "skeletons": 0,
+        "groups": 0,
+        "skinnedMeshes": 0,
+        "meshes": 5,
+        "geometries": 5,
+        "materials": 5,
+        "textures": 1,
+        "renderObservers": 2
+      }
+    ]
+  },
+  "seekMarkers": {
+    "before": 0,
+    "after": 0
+  },
+  "rest": {
+    "maxDisplacementM": 4.894895366623444e-7,
+    "minHeightM": 1.3310990709669568e-7,
+    "rootPosition": [
+      0,
+      0,
+      0
+    ]
+  },
+  "errors": [],
+  "browser": "151.0.7922.34",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "mode": "F isolated four-clip sample; no new runner game integration"
+}

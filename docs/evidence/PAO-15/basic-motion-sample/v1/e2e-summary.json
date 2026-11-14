@@ -1,0 +1,30 @@
+{
+  "stats": {
+    "startTime": "2026-11-03T12:30:48.719Z",
+    "duration": 249217.609,
+    "expected": 46,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "oldTests": 44,
+  "newMotionTests": 2,
+  "exitCode": 0,
+  "isolatedProbe": {
+    "startTime": "2026-11-03T12:26:18.207Z",
+    "duration": 41739.836,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "config": {
+    "port": 5185,
+    "strictPort": true,
+    "reuseExistingServer": false,
+    "workers": 1,
+    "timeoutMs": 60000,
+    "backend": "ANGLE D3D11"
+  },
+  "fullJson": ".pao15-local/basic-full-results.json"
+}

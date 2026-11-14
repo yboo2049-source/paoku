@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-02",
+  "reviewed": [
+    {
+      "image": "1-train_metro.glb.png",
+      "finding": "Five actual profile traces and 31 lateral samples visible; transition interval, not exact seam. One engineering visual root, source ramp intact."
+    },
+    {
+      "image": "2-obstacle_slide_barrier.glb.png",
+      "finding": "Nested finite clearance grid visible; unknown grey nodes retained. Ground/beam misfit under inherited display candidate persists; no continuous proof."
+    },
+    {
+      "image": "3-train_ramp_or_car.glb.png",
+      "finding": "Labelled source -X and +X views show cab openings and lights on both ends. Destination panel visible on -X end; not seen in +X view. Unique semantic forward remains null."
+    }
+  ],
+  "confidence": "Visible end features high; signed geometric end identity verified through RH loader and inherited yaw. Unique travel direction not established.",
+  "oldGameScreenshot": ".pao16-local/refinement/regression-output/screenshot_3_gameplay_chase.png",
+  "oldGameFinding": "Character centred, HUD visible; old neon presentation retained, no new GLB gameplay claim"
+}

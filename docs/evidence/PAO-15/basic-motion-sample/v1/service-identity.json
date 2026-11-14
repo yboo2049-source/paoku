@@ -1,0 +1,36 @@
+{
+  "cwd": "D:\\worker\\paoku-sessions\\pao-15",
+  "baseURL": "http://127.0.0.1:5185",
+  "strictPort": true,
+  "reuseExistingServer": false,
+  "backend": "ANGLE D3D11",
+  "sources": [
+    {
+      "source": "src/main.ts",
+      "diskSha256": "05b5d022d5309a57383e11e2b82bd02c3a599e75f3aa20fd44d81476d47cd750",
+      "rawResponseSha256": "8043651bb362ce1c47a17d9fa6b33623806fb87a6626a42d1e1f0a94b50d72b0",
+      "exactRawSourceMatch": true
+    },
+    {
+      "source": "tools/pao15-basic-motion-sample/preview.ts",
+      "diskSha256": "d6a3fed72204cba9dde03074f7d8597c9fb7f7ee69e6c6dcdedf1247776d5172",
+      "rawResponseSha256": "508d50c7417ff7120660f249f78313ef26ee77c6e76f5a7f75742dd181374b70",
+      "exactRawSourceMatch": true
+    },
+    {
+      "source": "tools/pao15-basic-motion-sample/playback.mjs",
+      "diskSha256": "8a4d8307468adae3c0477ed79ff4bb92cec84e02a1adf41d760028550ed9e7e9",
+      "rawResponseSha256": "d9f1e906074986a49e4433a2e28f6ebb461d1be6baea681df5c76778ffea93f9",
+      "exactRawSourceMatch": true
+    },
+    {
+      "source": "tools/pao15-basic-motion-sample/validate.mjs",
+      "diskSha256": "f1107ec86ec1b5441d20d55068a2df594d1376a14f3df491c11133929604609b",
+      "rawResponseSha256": "0481cd5a98ef5a28c4f671447aa8b643a04f9537060872e537a654c691fdff59",
+      "exactRawSourceMatch": true
+    }
+  ],
+  "assetHttpSha256": "da2d051918cd3c37c8a1551532b47dcbada842f1198ae39dbcb680d94b0f62dc",
+  "assetDiskSha256": "da2d051918cd3c37c8a1551532b47dcbada842f1198ae39dbcb680d94b0f62dc",
+  "assetMatches": true
+}

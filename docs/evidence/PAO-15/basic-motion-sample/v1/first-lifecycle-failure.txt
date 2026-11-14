@@ -1,0 +1,34 @@
+[WebServer] (node:1552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:22128) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\pao15-basic-motion-sample.spec.ts:6:1 › four real clips: numerical parity, pause, switching, loops and warm disposal (25.5s)
+
+
+  1) tests\e2e\pao15-basic-motion-sample.spec.ts:6:1 › four real clips: numerical parity, pause, switching, loops and warm disposal
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 0.0001
+    Received:   0.003947745037216881
+
+      65 |   expect(seekMarkers.after).toBe(seekMarkers.before);
+      66 |   const rest = await page.evaluate(() => (window as any).__BASIC_MOTION__.rest());
+    > 67 |   expect(rest.maxDisplacementM).toBeLessThan(1e-4);
+         |                                 ^
+      68 |   await page.evaluate(() => (window as any).__BASIC_MOTION__.dispose());
+      69 |   await expect(page.locator('#play')).toBeDisabled();
+      70 |   expect(errors).toEqual([]);
+        at D:\worker\paoku-sessions\pao-15\tests\e2e\pao15-basic-motion-sample.spec.ts:67:33
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    .pao15-local\basic-results\pao15-basic-motion-sample--98cb8-ing-loops-and-warm-disposal\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .pao15-local\basic-results\pao15-basic-motion-sample--98cb8-ing-loops-and-warm-disposal\error-context.md
+
+  1 failed
+    tests\e2e\pao15-basic-motion-sample.spec.ts:6:1 › four real clips: numerical parity, pause, switching, loops and warm disposal

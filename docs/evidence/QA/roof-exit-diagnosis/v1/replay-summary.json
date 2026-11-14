@@ -1,0 +1,104 @@
+[
+  {
+    "label": "inherited-inferred",
+    "jumpTick": 97,
+    "inputs": [
+      {
+        "runId": "inherited-inferred",
+        "tick": 97,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 139,
+      "phase": "ENDED",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 2.68944444444445,
+        "z": 42.42395833333329,
+        "vy": -13.733333333333318,
+        "isJumping": true,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "supportSurfaceId": null,
+        "contact": "AIRBORNE",
+        "supportDeparture": null,
+        "supportSample": {
+          "x": 0,
+          "y": 2.68944444444445,
+          "z": 42.42395833333329
+        },
+        "supportRampExit": null
+      }
+    },
+    "events": [
+      {
+        "targetType": "STATIC_TRAIN",
+        "position": {
+          "x": 0,
+          "y": 2.9183333333333388,
+          "z": 42.11395833333329
+        },
+        "obstacleId": "STATIC_TRAIN33",
+        "time": 0,
+        "normal": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        }
+      }
+    ]
+  },
+  {
+    "label": "observed-replay",
+    "jumpTick": 105,
+    "inputs": [
+      {
+        "runId": "observed-replay",
+        "tick": 98,
+        "sequence": 1,
+        "action": "JUMP",
+        "source": "REPLAY"
+      }
+    ],
+    "terminal": {
+      "tick": 209,
+      "phase": "RUNNING",
+      "player": {
+        "lane": 1,
+        "x": 0,
+        "targetX": 0,
+        "y": 0,
+        "z": 62.122013888888794,
+        "vy": 0,
+        "isJumping": false,
+        "isRolling": false,
+        "rollTimer": 0,
+        "hasHoverboard": false,
+        "hoverboardActive": false,
+        "invulnerableTimer": 0,
+        "activePowerUps": {},
+        "collisionEnded": false,
+        "supportSurfaceId": "ground",
+        "contact": "SUPPORTED",
+        "supportDeparture": null,
+        "supportRampExit": null,
+        "godMode": false,
+        "supportSample": {
+          "x": 0,
+          "y": 0,
+          "z": 62.122013888888794
+        }
+      }
+    },
+    "events": []
+  }
+]

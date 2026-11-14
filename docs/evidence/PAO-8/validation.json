@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-31T09:08:29.164Z",
+  "passed": true,
+  "checks": [
+    "two viewports",
+    "two loading observations per viewport",
+    "six PLAYING long-run checkpoints and >=180s per viewport",
+    "twenty PLAYING restarts per viewport",
+    "nonempty rAF samples and exact >50ms counts",
+    "finite nonnegative resource and heap counts",
+    "zero pageerror",
+    "ten screenshots present",
+    "two additional 10s PLAYING dense-origin runs with z<500 and zero logged pageerror"
+  ]
+}

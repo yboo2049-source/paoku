@@ -1,0 +1,12 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao16-calibration-refinement.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-16
+
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  20:18:24
+   Duration  255ms (transform 45ms, setup 0ms, import 58ms, tests 6ms, environment 0ms)

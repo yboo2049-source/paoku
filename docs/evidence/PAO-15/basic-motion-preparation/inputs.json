@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-03",
+  "timezone": "Asia/Shanghai",
+  "baseCommit": "64c4f3120224f42995bc4b0fae544feae139d380",
+  "branch": "codex/pao-15-character-assets",
+  "initialWorktree": "clean",
+  "readOnlySources": [
+    {
+      "file": "D:/worker/paoku/AGENTS.md",
+      "sha256": "a7ba647a34ebb8d5ec3f53ca1ba9234bb95412c06a344d8caf7cdc7a42cc7490",
+      "basis": "raw file bytes; structure/build read only selected bone/pose data"
+    },
+    {
+      "file": "D:/worker/paoku/docs/plans/2026-11-03-pao15-pao18-preparation-prompts.md",
+      "sha256": "690fee16eefdba808444488e808cbd414124b5b5a0181495fb46f951720dadf1",
+      "basis": "raw file bytes; structure/build read only selected bone/pose data"
+    },
+    {
+      "file": "D:/worker/paoku/docs/reviews/2026-11-01-pao15-rig-spike-review.md",
+      "sha256": "8651f57c431a216c709ea622b3fd62491e168a914ce6866fc46f99ac78a47e2d",
+      "basis": "raw file bytes; structure/build read only selected bone/pose data"
+    },
+    {
+      "file": "D:/worker/paoku/docs/art/pao15-rigging-manual-todo.md",
+      "sha256": "5356361b2b6accbc812e45c89a08bb7e702d8029621fe7b5fede08fb7ccf7316",
+      "basis": "raw file bytes; structure/build read only selected bone/pose data"
+    },
+    {
+      "file": "docs/art/character-spec.md",
+      "sha256": "7728e918b7e5b6a0cf20bf0bf31df7f2748b6bf5e967d0cf71cffa1973f97c44",
+      "basis": "raw file bytes; structure/build read only selected bone/pose data"
+    },
+    {
+      "file": "docs/evidence/PAO-15/rig-spike/README.md",
+      "sha256": "9b3491ba23b629cc1da95ff460baf310f734e77a699a32002f86d98d05962044",
+      "basis": "raw file bytes; structure/build read only selected bone/pose data"
+    },
+    {
+      "file": "docs/evidence/PAO-15/rig-spike/pose-index.json",
+      "sha256": "6f1f3a7ff9e10f7decf238882ba5cd58f17ea46eeb3107ad17823fb3559ba772",
+      "basis": "raw file bytes; structure/build read only selected bone/pose data"
+    },
+    {
+      "file": "docs/evidence/PAO-15/rig-spike/structure.json",
+      "sha256": "64a9e446176e322e0e11ab6ff933e79d50d213c8f1060a505004a36be7c67de7",
+      "basis": "raw file bytes; structure/build read only selected bone/pose data"
+    },
+    {
+      "file": "docs/evidence/PAO-15/rig-spike/toolchain.json",
+      "sha256": "8a878a8842f67c4681b7079780d1e960bcb4127e9daecf5a04443f5ba19cf2d3",
+      "basis": "raw file bytes; structure/build read only selected bone/pose data"
+    },
+    {
+      "file": "tools/pao15-rig-spike/build.py",
+      "sha256": "7d088c5c161a613bf865d38c5c4f7566cae462c01b222c75363472e0052e7bdb",
+      "basis": "raw file bytes; structure/build read only selected bone/pose data"
+    }
+  ],
+  "binaryIdentitySource": "Prior reviewed SHA256SUMS.txt, not DCC reopening or new binary validation",
+  "recordedBinaryHashes": {
+    "originalStaticRunner": "0f475ed22a2abfbbb9b4cb3069f5c9b131110847b23bd68fbcdff4b3baa797d9",
+    "derivedBlend": "a75de312d230d1f7924ec7616b47428515dba4b58f1f2219c1dbb8c7e17875bd",
+    "diagnosticGlb": "cb84cfb9a308c54245ac49627383aa6643c8d40efc9c2a6929334dc60c7348f5"
+  },
+  "newMotionOutputs": {
+    "generated": false,
+    "derivedHash": null,
+    "exportHash": null,
+    "reason": "Design preparation only"
+  }
+}

@@ -1,0 +1,12 @@
+
+> app@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-15-roof-diagnosis
+
+
+ Test Files  18 passed (18)
+      Tests  269 passed (269)
+   Start at  21:09:58
+   Duration  10.58s (transform 9.55s, setup 0ms, import 12.72s, tests 8.71s, environment 3ms)

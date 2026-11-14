@@ -1,0 +1,38 @@
+[
+  {
+    "task": "roof",
+    "path": "D:/worker/paoku/docs/reviews/2026-11-03-pao15-basic-motion-sample-review.md",
+    "sha256": "f13a0bc112d5f7031dd18bf2a751b9cf6c892bcf50cb042e46f9aee0d269015d",
+    "bytes": 4802,
+    "readOnly": true,
+    "actual": "f13a0bc112d5f7031dd18bf2a751b9cf6c892bcf50cb042e46f9aee0d269015d",
+    "matches": true
+  },
+  {
+    "task": "roof",
+    "path": "D:/worker/paoku-sessions/pao-15/.pao15-local/main-review-614179d/full.json",
+    "sha256": "162561f730eb81bca348daac544fcde7721662993f23c57d836a99db70025a1a",
+    "bytes": 56357,
+    "readOnly": true,
+    "actual": "162561f730eb81bca348daac544fcde7721662993f23c57d836a99db70025a1a",
+    "matches": true
+  },
+  {
+    "task": "roof",
+    "path": "D:/worker/paoku-sessions/pao-15/.pao15-local/main-review-614179d/evidence/PAO-6/fixture-ramp-roof-jump-land.json",
+    "sha256": "1432ff96ca74003422e2bdc9ad5f0a1f82f378941babfeaa507d8fcaab0d4528",
+    "bytes": 52190,
+    "readOnly": true,
+    "actual": "1432ff96ca74003422e2bdc9ad5f0a1f82f378941babfeaa507d8fcaab0d4528",
+    "matches": true
+  },
+  {
+    "task": "roof",
+    "path": "D:/worker/paoku-sessions/pao-15/.pao15-local/main-review-614179d/results/pao6-baseline.pw.ts-ramp-roof-jump-land/error-context.md",
+    "sha256": "b78b04f3d8c8f0519c4dde00ae465a9abdd0a032959db6a8af60cc4a20dbe73f",
+    "bytes": 12383,
+    "readOnly": true,
+    "actual": "b78b04f3d8c8f0519c4dde00ae465a9abdd0a032959db6a8af60cc4a20dbe73f",
+    "matches": true
+  }
+]

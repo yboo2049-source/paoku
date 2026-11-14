@@ -1,0 +1,131 @@
+{
+  "checkedAt": "2026-10-31T14:21:54.998Z",
+  "file": "docs/architecture/rebuild-contracts.md",
+  "sha256NormalizedLf": "899bbad1c07ccb756c6c4155a181c4bd1e880c82909efe6e8b8ead549f61decf",
+  "localLinkCount": 4,
+  "missingLocalLinks": [],
+  "missingRequiredTerms": [],
+  "speedExample": {
+    "mps": 18,
+    "kmh": 64.8
+  },
+  "coinExample": {
+    "pickupCount": 30,
+    "pickupCoins": 30,
+    "rewardCoins": 50,
+    "earnedCoins": 80
+  },
+  "rampOriginExample": {
+    "horizontalLengthM": 12,
+    "riseM": 3,
+    "logicWorldOrigin": [
+      0,
+      5,
+      100
+    ],
+    "centerInAsset": [
+      0,
+      0,
+      6
+    ],
+    "assetToLogicTranslation": [
+      0,
+      0,
+      -6
+    ],
+    "points": [
+      {
+        "name": "foot",
+        "asset": [
+          0,
+          0,
+          0
+        ],
+        "logic": [
+          0,
+          0,
+          -6
+        ],
+        "world": [
+          0,
+          5,
+          94
+        ]
+      },
+      {
+        "name": "top",
+        "asset": [
+          0,
+          3,
+          12
+        ],
+        "logic": [
+          0,
+          3,
+          6
+        ],
+        "world": [
+          0,
+          8,
+          106
+        ]
+      },
+      {
+        "name": "bottomCenter",
+        "asset": [
+          0,
+          0,
+          6
+        ],
+        "logic": [
+          0,
+          0,
+          0
+        ],
+        "world": [
+          0,
+          5,
+          100
+        ]
+      },
+      {
+        "name": "slopeMidpoint",
+        "asset": [
+          0,
+          1.5,
+          6
+        ],
+        "logic": [
+          0,
+          1.5,
+          0
+        ],
+        "world": [
+          0,
+          6.5,
+          100
+        ]
+      }
+    ],
+    "roofEntryWorld": [
+      0,
+      8,
+      106
+    ],
+    "surfaceHeights": [
+      5,
+      6.5,
+      8
+    ],
+    "formulaChecks": "PASS",
+    "futureRuntimeAssertions": [
+      "RAMP-01",
+      "RAMP-02",
+      "RAMP-03",
+      "RAMP-04"
+    ],
+    "futureRuntimeAssertionsExecuted": false
+  },
+  "status": "PASS",
+  "limitations": "Static document and arithmetic checks only; no model import, physics, rendering or browser acceptance."
+}

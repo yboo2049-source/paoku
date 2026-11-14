@@ -1,0 +1,29 @@
+
+> app@0.0.0 test
+> vitest run tests/unit/pao16-calibration.test.ts
+
+
+ RUN  v4.1.10 D:/worker/paoku-sessions/pao-16
+
+ ❯ tests/unit/pao16-calibration.test.ts (8 tests | 1 failed) 10ms
+     × rejects invalid diagnostics rather than awarding a candidate 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao16-calibration.test.ts > PAO16 calibration safeguards > rejects invalid diagnostics rather than awarding a candidate
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/pao16-calibration.test.ts:6:40
+      4| describe('PAO16 calibration safeguards', () => {
+      5|   it('rejects invalid diagnostics rather than awarding a candidate', (…
+      6|     expect(() => classify(NaN, false)).toThrow();
+       |                                        ^
+      7|     expect(() => classify(Infinity, false)).toThrow();
+      8|     expect(() => fitUniform([[0,0,0],[NaN,1,0]], [[0,0,0],[1,1,0]])).t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  23:02:45
+   Duration  282ms (transform 52ms, setup 0ms, import 67ms, tests 10ms, environment 0ms)

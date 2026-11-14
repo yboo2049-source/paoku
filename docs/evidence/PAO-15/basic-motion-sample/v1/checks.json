@@ -1,0 +1,144 @@
+{
+  "date": "2026-11-03",
+  "executionBase": "8c4b09fc5351778fe8db19858d52924ac70463b9",
+  "sourceCommit": "64c4f3120224f42995bc4b0fae544feae139d380",
+  "pipelineStatus": "passed_pending_independent_review",
+  "qualityClass": "needs_local_refinement",
+  "formal13ClipsComplete": false,
+  "productionIntegration": false,
+  "manualWeightsTopologyPolish": false,
+  "cloudCalls": false,
+  "build": {
+    "exitCode": 0,
+    "log": "build.txt"
+  },
+  "unit": {
+    "files": 18,
+    "passed": 269,
+    "exitCode": 0,
+    "log": "unit-full.txt"
+  },
+  "dedicatedUnit": {
+    "passed": 12
+  },
+  "dedicatedBrowser": {
+    "passed": 2
+  },
+  "fullBrowser": {
+    "passed": 46,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "exitCode": 0,
+    "durationMs": 249217.609
+  },
+  "typecheck": {
+    "exitCode": 0,
+    "explicitTools": true
+  },
+  "syntax": {
+    "exitCode": 0,
+    "modules": 3
+  },
+  "dccCpu": {
+    "poses": 30,
+    "maxVertexErrorM": 0.00007942141824065662,
+    "maxBoneMatrixError": 0.000002661275590162826
+  },
+  "dccBabylon": {
+    "poses": 30,
+    "maxVertexErrorM": 0.0000794111729698856,
+    "maxBoneMatrixError": 0.0000026517067192588506
+  },
+  "restResidualM": 4.894895366623444e-7,
+  "loopRuns": [
+    {
+      "clip": "tech_idle_v1",
+      "loops": 11
+    },
+    {
+      "clip": "tech_run_v1",
+      "loops": 12
+    }
+  ],
+  "warm": {
+    "switches": 20,
+    "reloads": 10,
+    "loadedSnapshot": {
+      "skeletons": 1,
+      "groups": 4,
+      "skinnedMeshes": 34,
+      "meshes": 40,
+      "geometries": 39,
+      "materials": 6,
+      "textures": 4,
+      "renderObservers": 1
+    },
+    "releasedSnapshot": {
+      "skeletons": 0,
+      "groups": 0,
+      "skinnedMeshes": 0,
+      "meshes": 5,
+      "geometries": 5,
+      "materials": 5,
+      "textures": 1,
+      "renderObservers": 2
+    },
+    "scope": "stable scene snapshots and removed rig/group/mesh; preview environment remains; no general heap/Promise claim"
+  },
+  "localDeformationProof": [
+    {
+      "clip": "tech_idle_v1",
+      "frame": 45,
+      "nonUniformBoneDeformationSpread": 0.02696234919130802,
+      "rootFixed": true
+    },
+    {
+      "clip": "tech_run_v1",
+      "frame": 6,
+      "nonUniformBoneDeformationSpread": 0.8364654779434204,
+      "rootFixed": true
+    },
+    {
+      "clip": "tech_jump_v1",
+      "frame": 15,
+      "nonUniformBoneDeformationSpread": 0.5747862458229065,
+      "rootFixed": true
+    },
+    {
+      "clip": "tech_slide_v1",
+      "frame": 6,
+      "nonUniformBoneDeformationSpread": 0.9388782978057861,
+      "rootFixed": true
+    }
+  ],
+  "sourceProtection": {
+    "protectedFiles": 1052,
+    "protectedGitlinks": 1,
+    "differences": [],
+    "allUnchanged": true,
+    "snapshotSha256": "0a049c498acd7e1cdf40c15c866d061ea1f44aa5a90d27544baba7c1f1c53d00",
+    "oldBlendHash": "a75de312d230d1f7924ec7616b47428515dba4b58f1f2219c1dbb8c7e17875bd",
+    "oldGlbHash": "cb84cfb9a308c54245ac49627383aa6643c8d40efc9c2a6929334dc60c7348f5",
+    "historicalOutputs": "all redirected; no old bytes needed restoration"
+  },
+  "sourceFiles": {
+    "derivedBlendHash": "b7e18628f85fa26a8d9621c25c13e2fcdd53d4f012195540386164316d535193",
+    "exportHash": "da2d051918cd3c37c8a1551532b47dcbada842f1198ae39dbcb680d94b0f62dc"
+  },
+  "visualReview": [
+    "01-run.png",
+    "02-jump.png",
+    "03-slide-side.png"
+  ],
+  "notValidated": [
+    "natural motion/foot contact",
+    "manual skin polish",
+    "formal 13 clips",
+    "runtime/game handedness integration",
+    "production/device budget",
+    "commercial use conditions"
+  ],
+  "localLinksReviewed": 42,
+  "scopeReview": "all changed tracked paths restricted to current approved whitelist"
+}

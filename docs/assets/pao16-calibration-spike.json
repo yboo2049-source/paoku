@@ -1,0 +1,4496 @@
+{
+  "schemaVersion": "pao16-spike-v1",
+  "status": "TECHNICAL_SPIKE_ONLY_NOT_RUNTIME_CONFIG",
+  "sourceReviewCommit": "7a2fb2963deae061d15deae4019910a15f0dfbcf",
+  "baseline": "dd82d2232614c0ad4bdcfbb2222dd3e3fe84549e",
+  "transformConvention": "column-major column-vector pW=logicToWorld*assetToLogic*sourceToAsset*pScene; scene includes node TRS once",
+  "loader": {
+    "scene": "right-handed",
+    "glTFHandednessConversion": "identity in independent RH preview; loader roots observed separately by preview E2E",
+    "gameLeftHandedBoundary": "not applied; no game integration"
+  },
+  "logical": {
+    "base0": {
+      "rampFoot": [
+        0,
+        0,
+        67
+      ],
+      "rampMid": [
+        0,
+        1.5,
+        70
+      ],
+      "rampTop": [
+        0,
+        3,
+        73
+      ],
+      "roofEntry": [
+        0,
+        3,
+        73
+      ],
+      "roofExit": [
+        0,
+        3,
+        85
+      ]
+    },
+    "base5": {
+      "rampFoot": [
+        0,
+        5,
+        67
+      ],
+      "rampMid": [
+        0,
+        6.5,
+        70
+      ],
+      "rampTop": [
+        0,
+        8,
+        73
+      ],
+      "roofEntry": [
+        0,
+        8,
+        73
+      ],
+      "roofExit": [
+        0,
+        8,
+        85
+      ]
+    },
+    "surfaceEpsilonUnchanged": 0.000001
+  },
+  "assets": [
+    {
+      "file": "train_ramp_or_car.glb",
+      "sha256": "b561449fbb1426f2ba38cd54f75818090cf68076b3cb59a50c80dce2beb48fe4",
+      "sourceCommit": "622e7da",
+      "sceneBounds": {
+        "min": [
+          -0.48953214287757874,
+          -0.00006505609053419903,
+          -0.19035987555980682
+        ],
+        "max": [
+          0.48962122201919556,
+          0.4384877383708954,
+          0.19039775431156158
+        ],
+        "size": [
+          0.9791533648967743,
+          0.4385527944614296,
+          0.3807576298713684
+        ]
+      },
+      "triangles": 112516,
+      "nodes": [
+        {
+          "id": 0,
+          "name": "tripo_node_83c94436-c6e2-4fbb-ad55-fd24d04446ee",
+          "localMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "sceneMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "rotation": null
+        }
+      ],
+      "sourceUnits": "normalized; physical metres unknown",
+      "sourceForward": null,
+      "yawAlternatives": [
+        -1.5707963267948966,
+        1.5707963267948966
+      ],
+      "markers": [
+        {
+          "name": "roof_center_outer_hit",
+          "scene": [
+            0,
+            0.419346454,
+            0
+          ],
+          "local": [
+            0,
+            0.419346454,
+            0
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 56355,
+          "indices": [
+            57059,
+            57035,
+            57055
+          ],
+          "barycentric": [
+            0.036190779,
+            0.365208831,
+            0.59860039
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            0,
+            5.140091738,
+            0
+          ],
+          "worldBaseY5": [
+            0,
+            10.140091738,
+            0
+          ]
+        },
+        {
+          "name": "roof_left_outer_hit",
+          "scene": [
+            0,
+            0.413529757,
+            -0.1
+          ],
+          "local": [
+            0,
+            0.413529757,
+            -0.1
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 48306,
+          "indices": [
+            47933,
+            58248,
+            47935
+          ],
+          "barycentric": [
+            0.655176595,
+            0.21530609,
+            0.129517315
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            1.225548564,
+            5.068805291,
+            0
+          ],
+          "worldBaseY5": [
+            1.225548564,
+            10.068805291,
+            0
+          ]
+        },
+        {
+          "name": "roof_right_outer_hit",
+          "scene": [
+            0,
+            0.412620111,
+            0.1
+          ],
+          "local": [
+            0,
+            0.412620111,
+            0.1
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 57221,
+          "indices": [
+            58058,
+            57009,
+            58044
+          ],
+          "barycentric": [
+            0.358127741,
+            0.58421603,
+            0.057656229
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            -1.225548564,
+            5.057657138,
+            0
+          ],
+          "worldBaseY5": [
+            -1.225548564,
+            10.057657138,
+            0
+          ]
+        },
+        {
+          "name": "roof_front_outer_hit",
+          "scene": [
+            -0.4,
+            0.422588503,
+            0
+          ],
+          "local": [
+            -0.4,
+            0.422588503,
+            0
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 12551,
+          "indices": [
+            11426,
+            11436,
+            11438
+          ],
+          "barycentric": [
+            0.301894088,
+            0.601116195,
+            0.096989717
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            0,
+            5.179824623,
+            -4.902194255
+          ],
+          "worldBaseY5": [
+            0,
+            10.179824623,
+            -4.902194255
+          ]
+        },
+        {
+          "name": "roof_back_outer_hit",
+          "scene": [
+            0.4,
+            0.422386987,
+            0
+          ],
+          "local": [
+            0.4,
+            0.422386987,
+            0
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 97391,
+          "indices": [
+            99922,
+            99970,
+            99926
+          ],
+          "barycentric": [
+            0.171829804,
+            0.051568284,
+            0.776601913
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            0,
+            5.177354946,
+            4.902194255
+          ],
+          "worldBaseY5": [
+            0,
+            10.177354946,
+            4.902194255
+          ]
+        },
+        {
+          "name": "wheel_underbody_left_hit",
+          "scene": [
+            -0.32,
+            0.003110197,
+            -0.145
+          ],
+          "local": [
+            -0.32,
+            0.003110197,
+            -0.145
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 21959,
+          "indices": [
+            21322,
+            21333,
+            21329
+          ],
+          "barycentric": [
+            0.473690698,
+            0.335046169,
+            0.191263133
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            1.777045417,
+            0.038914269,
+            -3.921755404
+          ],
+          "worldBaseY5": [
+            1.777045417,
+            5.038914269,
+            -3.921755404
+          ]
+        },
+        {
+          "name": "wheel_underbody_right_hit",
+          "scene": [
+            0.32,
+            0.002274751,
+            0.145
+          ],
+          "local": [
+            0.32,
+            0.002274751,
+            0.145
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 88527,
+          "indices": [
+            90735,
+            90738,
+            90732
+          ],
+          "barycentric": [
+            0.255259283,
+            0.421451751,
+            0.323288966
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            -1.777045417,
+            0.028675472,
+            3.921755404
+          ],
+          "worldBaseY5": [
+            -1.777045417,
+            5.028675472,
+            3.921755404
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "axisPosition": -0.44057447463274,
+          "hits": [
+            {
+              "y": 0.03070405491909707,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 7670
+            },
+            {
+              "y": 0.121732697712539,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 8980
+            },
+            {
+              "y": 0.31587940386108637,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 8525
+            },
+            {
+              "y": 0.410785827672295,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 7293
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.3916168063879013,
+          "hits": [
+            {
+              "y": 0.028777789297172115,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 12013
+            },
+            {
+              "y": 0.12051153967834448,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 11690
+            },
+            {
+              "y": 0.40745448759972946,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 14278
+            },
+            {
+              "y": 0.4236533853381784,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 12374
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.3426591381430626,
+          "hits": [
+            {
+              "y": 0.0847454373717907,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 17126
+            },
+            {
+              "y": 0.12050911506233991,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 11700
+            },
+            {
+              "y": 0.40749616325670857,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 18736
+            },
+            {
+              "y": 0.42374637553646854,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 17784
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.2937014698982239,
+          "hits": [
+            {
+              "y": 0.08474797715813079,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 17142
+            },
+            {
+              "y": 0.12050401185625167,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 21118
+            },
+            {
+              "y": 0.40744716503193407,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 18726
+            },
+            {
+              "y": 0.43166615094782546,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 21619
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.24474380165338516,
+          "hits": [
+            {
+              "y": 0.08474286864533785,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 24914
+            },
+            {
+              "y": 0.12050691496898955,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 26635
+            },
+            {
+              "y": 0.4074212461059926,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 33064
+            },
+            {
+              "y": 0.43045781775681047,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 32399
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.19578613340854645,
+          "hits": [
+            {
+              "y": 0.08473379654984188,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 32098
+            },
+            {
+              "y": 0.12051090568185267,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 26646
+            },
+            {
+              "y": 0.4075499053774382,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 36067
+            },
+            {
+              "y": 0.42597104367302374,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 38119
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.14682846516370773,
+          "hits": [
+            {
+              "y": 0.08474679308542463,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 32111
+            },
+            {
+              "y": 0.12051126794993469,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 31087
+            },
+            {
+              "y": 0.4075140206363873,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 46772
+            },
+            {
+              "y": 0.42378889206371984,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 46875
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.09787079691886902,
+          "hits": [
+            {
+              "y": 0.03561650379501457,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 50505
+            },
+            {
+              "y": 0.12050866479456304,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 50340
+            },
+            {
+              "y": 0.40762339489397387,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 47964
+            },
+            {
+              "y": 0.4238586207969936,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 50722
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.048913128674030304,
+          "hits": [
+            {
+              "y": 0.035532012163602814,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 53909
+            },
+            {
+              "y": 0.12050722268326618,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 51831
+            },
+            {
+              "y": 0.4075331717356411,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 47951
+            },
+            {
+              "y": 0.4237965652871699,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 50731
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.000044539570808410645,
+          "hits": [
+            {
+              "y": 0.03616414147280596,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 57950
+            },
+            {
+              "y": 0.12051144527329472,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 58402
+            },
+            {
+              "y": 0.41048412726936606,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 57874
+            },
+            {
+              "y": 0.4195089554228389,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 56348
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.049002207815647125,
+          "hits": [
+            {
+              "y": 0.035655445629412044,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 57935
+            },
+            {
+              "y": 0.12051286669917503,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 57286
+            },
+            {
+              "y": 0.4075014582602676,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 61804
+            },
+            {
+              "y": 0.4237816334876581,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 61614
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.09795987606048584,
+          "hits": [
+            {
+              "y": 0.035625751197920004,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 64107
+            },
+            {
+              "y": 0.12050718044601501,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 57296
+            },
+            {
+              "y": 0.4075153827282358,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 65748
+            },
+            {
+              "y": 0.4238595267224316,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 63340
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.14691754430532455,
+          "hits": [
+            {
+              "y": 0.08474741931466499,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 67319
+            },
+            {
+              "y": 0.12050603867921988,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 69529
+            },
+            {
+              "y": 0.4076152721812911,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 68690
+            },
+            {
+              "y": 0.42375671405989573,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 70039
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.19587521255016327,
+          "hits": [
+            {
+              "y": 0.08474753333574203,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 68365
+            },
+            {
+              "y": 0.12050658825414268,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 69544
+            },
+            {
+              "y": 0.40753506159961334,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 68710
+            },
+            {
+              "y": 0.4251926947194848,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 72107
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.24483288079500198,
+          "hits": [
+            {
+              "y": 0.08474734425544739,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 67339
+            },
+            {
+              "y": 0.12050630897283554,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 69578
+            },
+            {
+              "y": 0.40753521198499265,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 68714
+            },
+            {
+              "y": 0.4303940773677961,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 84129
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.2937905490398407,
+          "hits": [
+            {
+              "y": 0.08474734425544739,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 85001
+            },
+            {
+              "y": 0.12050640293998828,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 84646
+            },
+            {
+              "y": 0.4074767631531899,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 68734
+            },
+            {
+              "y": 0.43192314136965876,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 91426
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.3427482172846794,
+          "hits": [
+            {
+              "y": 0.08474734425544739,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 94488
+            },
+            {
+              "y": 0.12049868702888489,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 95880
+            },
+            {
+              "y": 0.4075339047492675,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 95723
+            },
+            {
+              "y": 0.4237045097443699,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 97149
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.3917058855295181,
+          "hits": [
+            {
+              "y": 0.028781739257896937,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 100275
+            },
+            {
+              "y": 0.12050743673753084,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 97985
+            },
+            {
+              "y": 0.40763835794857395,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 101171
+            },
+            {
+              "y": 0.42356439128998497,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 97373
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.44066355377435684,
+          "hits": [
+            {
+              "y": 0.030771864834419894,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 103412
+            },
+            {
+              "y": 0.12153452967038929,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 99178
+            },
+            {
+              "y": 0.13745940214545097,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 107592
+            },
+            {
+              "y": 0.13849748414207716,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 107489
+            },
+            {
+              "y": 0.145776608999952,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 107494
+            },
+            {
+              "y": 0.16220928787478417,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 107563
+            },
+            {
+              "y": 0.315797123662711,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 107365
+            },
+            {
+              "y": 0.3948052794131114,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 104448
+            }
+          ]
+        }
+      ],
+      "semanticEndpoints": {
+        "groundContactLine": null,
+        "rampFoot": null,
+        "rampTop": null,
+        "roofEntry": null,
+        "roofExit": null,
+        "fullWidthClearance": null
+      },
+      "clearance": null,
+      "candidate": {
+        "rigidDiagnostic": null,
+        "provisionalCorrespondencesOnly": true,
+        "warning": "Display probe only; no semantic fitting",
+        "sourceToAsset": [
+          2.721264466451872e-15,
+          0,
+          12.255485637089222,
+          0,
+          0,
+          12.255485637089222,
+          0,
+          0,
+          -12.255485637089222,
+          0,
+          2.721264466451872e-15,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "assetToLogic": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0.0007972939831470523,
+          0,
+          1
+        ],
+        "logicToWorld": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "combined": [
+          2.721264466451872e-15,
+          0,
+          12.255485637089222,
+          0,
+          0,
+          12.255485637089222,
+          0,
+          0,
+          -12.255485637089222,
+          0,
+          2.721264466451872e-15,
+          0,
+          0,
+          0.0007972939831470523,
+          0,
+          1
+        ],
+        "scale": 12.255485637089222,
+        "yawRadians": -1.5707963267948966,
+        "kind": "uniform display probe; bounds used only for framing/scale, not support surfaces",
+        "residuals": null,
+        "labels": [],
+        "rms": null,
+        "accepted": false,
+        "appliedCount": 1,
+        "proxyTransformCount": 0
+      },
+      "target": {
+        "width": 2.4,
+        "height": 3,
+        "depth": 12,
+        "origin": [
+          0,
+          0,
+          0
+        ]
+      },
+      "classification": "POINTS_REQUIRE_REVIEW",
+      "classificationIsProvisional": true,
+      "classificationBasis": "Forward/contact/roof semantics unresolved; source proportions also differ substantially",
+      "outerEnvelopeDiagnostic": {
+        "warning": "AABB only diagnoses proportions; never support/collision dimensions",
+        "uniformScale": 12.255485637089222,
+        "scaledSize": [
+          12,
+          5.374677473627393,
+          4.6663696641006895
+        ]
+      },
+      "visualRoot": {
+        "prefab": "train_ramp_or_car.glb",
+        "loadCount": 1,
+        "children": []
+      },
+      "todo": [
+        "Long axis X confirmed; semantic front/back is unresolved by the automatic geometry detector; the rendered cab needs an explicit signed source marker. Both ±90deg remain candidates; displayed -90deg is arbitrary, not forward approval.",
+        "Wheel/rail contact line and certified traversable roof boundary remain null; ray hits include roof attachments."
+      ]
+    },
+    {
+      "file": "train_metro.glb",
+      "sha256": "721bb182e1a323e1a01f65db3bb3602de3c6196ccb5c458a093ca87cd10ed4c8",
+      "sourceCommit": "622e7da",
+      "sceneBounds": {
+        "min": [
+          -0.499755859375,
+          0,
+          -0.160400390625
+        ],
+        "max": [
+          0.499755859375,
+          0.31103515625,
+          0.160400390625
+        ],
+        "size": [
+          0.99951171875,
+          0.31103515625,
+          0.32080078125
+        ]
+      },
+      "triangles": 8968,
+      "nodes": [
+        {
+          "id": 0,
+          "name": "tripo_node_77c6091c-0ce6-4ae0-8e93-6b05990da594",
+          "localMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "sceneMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "rotation": null
+        }
+      ],
+      "sourceUnits": "normalized; physical metres unknown",
+      "sourceForward": {
+        "sourceDirection": [
+          1,
+          0,
+          0
+        ],
+        "yawRadians": -1.5707963267948966,
+        "confidence": "high",
+        "basis": "three upward triangle-ray hits rise monotonically along +X; -90deg RH Y maps +X to game+Z",
+        "heightSamples": [
+          0.072966161,
+          0.170851002,
+          0.268735843
+        ]
+      },
+      "yawAlternatives": [
+        -1.5707963267948966
+      ],
+      "markers": [
+        {
+          "name": "incline_sample_low",
+          "scene": [
+            -0.42,
+            0.072966161,
+            0
+          ],
+          "local": [
+            -0.42,
+            0.072966161,
+            0
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 1617,
+          "indices": [
+            79,
+            1553,
+            840
+          ],
+          "barycentric": [
+            0.006666378,
+            0.104982374,
+            0.888351248
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": [
+            0,
+            0,
+            67
+          ],
+          "targetStatus": "PROVISIONAL interior-to-endpoint correspondence; not measured endpoint error",
+          "world": [
+            0,
+            -1.020976925,
+            66.17538819
+          ],
+          "worldBaseY5": [
+            0,
+            3.979023075,
+            66.17538819
+          ]
+        },
+        {
+          "name": "incline_sample_mid",
+          "scene": [
+            -0.25,
+            0.170851002,
+            0
+          ],
+          "local": [
+            -0.25,
+            0.170851002,
+            0
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 1617,
+          "indices": [
+            79,
+            1553,
+            840
+          ],
+          "barycentric": [
+            0.006666495,
+            0.514101058,
+            0.479232447
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            0,
+            0.885112674,
+            69.485760138
+          ],
+          "worldBaseY5": [
+            0,
+            5.885112674,
+            69.485760138
+          ]
+        },
+        {
+          "name": "incline_sample_high",
+          "scene": [
+            -0.08,
+            0.268735843,
+            0
+          ],
+          "local": [
+            -0.08,
+            0.268735843,
+            0
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 1617,
+          "indices": [
+            79,
+            1553,
+            840
+          ],
+          "barycentric": [
+            0.006666612,
+            0.923219741,
+            0.070113647
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": [
+            0,
+            3,
+            73
+          ],
+          "targetStatus": "PROVISIONAL interior-to-endpoint correspondence; not measured endpoint error",
+          "world": [
+            0,
+            2.791202272,
+            72.796132086
+          ],
+          "worldBaseY5": [
+            0,
+            7.791202272,
+            72.796132086
+          ]
+        },
+        {
+          "name": "incline_left_sample",
+          "scene": [
+            -0.25,
+            0.170307783,
+            -0.09
+          ],
+          "local": [
+            -0.25,
+            0.170307783,
+            -0.09
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 2182,
+          "indices": [
+            1556,
+            841,
+            840
+          ],
+          "barycentric": [
+            0.513497662,
+            0.310016015,
+            0.176486323
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            1.752549855,
+            0.874534692,
+            69.485760138
+          ],
+          "worldBaseY5": [
+            1.752549855,
+            5.874534692,
+            69.485760138
+          ]
+        },
+        {
+          "name": "incline_right_sample",
+          "scene": [
+            -0.25,
+            0.170355531,
+            0.09
+          ],
+          "local": [
+            -0.25,
+            0.170355531,
+            0.09
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 1616,
+          "indices": [
+            79,
+            815,
+            1553
+          ],
+          "barycentric": [
+            0.486297971,
+            0.339568525,
+            0.174133504
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            -1.752549855,
+            0.875464478,
+            69.485760138
+          ],
+          "worldBaseY5": [
+            -1.752549855,
+            5.875464478,
+            69.485760138
+          ]
+        },
+        {
+          "name": "roof_entry_sample",
+          "scene": [
+            0.08,
+            0.311035156,
+            0
+          ],
+          "local": [
+            0.08,
+            0.311035156,
+            0
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 5235,
+          "indices": [
+            5519,
+            10521,
+            10228
+          ],
+          "barycentric": [
+            0.500000042,
+            0.132627734,
+            0.367372225
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": [
+            0,
+            3,
+            73
+          ],
+          "targetStatus": "PROVISIONAL interior-to-endpoint correspondence; not measured endpoint error",
+          "world": [
+            0,
+            3.614887326,
+            75.911776272
+          ],
+          "worldBaseY5": [
+            0,
+            8.614887326,
+            75.911776272
+          ]
+        },
+        {
+          "name": "roof_exit_sample",
+          "scene": [
+            0.45,
+            0.311035156,
+            0
+          ],
+          "local": [
+            0.45,
+            0.311035156,
+            0
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 5572,
+          "indices": [
+            6024,
+            6527,
+            11302
+          ],
+          "barycentric": [
+            0.230952381,
+            0.269047898,
+            0.499999722
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": [
+            0,
+            3,
+            85
+          ],
+          "targetStatus": "PROVISIONAL interior-to-endpoint correspondence; not measured endpoint error",
+          "world": [
+            0,
+            3.614887326,
+            83.116703453
+          ],
+          "worldBaseY5": [
+            0,
+            8.614887326,
+            83.116703453
+          ]
+        },
+        {
+          "name": "roof_left_sample",
+          "scene": [
+            0.25,
+            0.309269862,
+            -0.08
+          ],
+          "local": [
+            0.25,
+            0.309269862,
+            -0.08
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 8398,
+          "indices": [
+            11314,
+            10543,
+            10531
+          ],
+          "barycentric": [
+            0.030020753,
+            0.777640773,
+            0.192338474
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            1.557822093,
+            3.580512151,
+            79.22214822
+          ],
+          "worldBaseY5": [
+            1.557822093,
+            8.580512151,
+            79.22214822
+          ]
+        },
+        {
+          "name": "roof_right_sample",
+          "scene": [
+            0.25,
+            0.309267099,
+            0.08
+          ],
+          "local": [
+            0.25,
+            0.309267099,
+            0.08
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 5441,
+          "indices": [
+            5812,
+            11291,
+            10531
+          ],
+          "barycentric": [
+            0.810490358,
+            0.030020653,
+            0.15948899
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            -1.557822093,
+            3.580458348,
+            79.22214822
+          ],
+          "worldBaseY5": [
+            -1.557822093,
+            8.580458348,
+            79.22214822
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "axisPosition": -0.4497802734375,
+          "hits": [
+            {
+              "y": 0.01943534511746772,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1613
+            },
+            {
+              "y": 0.05581888204230341,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1617
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.3998046875,
+          "hits": [
+            {
+              "y": 0.019865551022238165,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1613
+            },
+            {
+              "y": 0.08459448379918162,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1617
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.3498291015625,
+          "hits": [
+            {
+              "y": 0.020295756927008607,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1613
+            },
+            {
+              "y": 0.11337008555605978,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1617
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.299853515625,
+          "hits": [
+            {
+              "y": 0.020725962831779056,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1613
+            },
+            {
+              "y": 0.142145687312938,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1617
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.2498779296875,
+          "hits": [
+            {
+              "y": 0.021156168736549498,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1613
+            },
+            {
+              "y": 0.1709212890698162,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1617
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.19990234375,
+          "hits": [
+            {
+              "y": 0.02158637464131994,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1613
+            },
+            {
+              "y": 0.1996968908266944,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1617
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.14992675781249998,
+          "hits": [
+            {
+              "y": 0.02197265625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1833
+            },
+            {
+              "y": 0.2284724925835726,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1617
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.09995117187500002,
+          "hits": [
+            {
+              "y": 0.01904296875,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1843
+            },
+            {
+              "y": 0.2572480943404508,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1617
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.04997558593750001,
+          "hits": [
+            {
+              "y": 0.03591552725000549,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1855
+            },
+            {
+              "y": 0.2860230944212043,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1616
+            }
+          ]
+        },
+        {
+          "axisPosition": 0,
+          "hits": [
+            {
+              "y": 0.08642578125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1962
+            },
+            {
+              "y": 0.30396392560714275,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2156
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.049975585937499956,
+          "hits": [
+            {
+              "y": 0.08781960225079935,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3043
+            },
+            {
+              "y": 0.30461520900635786,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5205
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.09995117187500002,
+          "hits": [
+            {
+              "y": 0.08474687500031818,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3071
+            },
+            {
+              "y": 0.31005141306901457,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5221
+            },
+            {
+              "y": 0.31103515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5235
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.14992675781249998,
+          "hits": [
+            {
+              "y": 0.08448033854198485,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3071
+            },
+            {
+              "y": 0.31005141303210115,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5221
+            },
+            {
+              "y": 0.31103515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5234
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.19990234375000004,
+          "hits": [
+            {
+              "y": 0.0842138020836515,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3071
+            },
+            {
+              "y": 0.29887695312499996,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5446
+            },
+            {
+              "y": 0.31000976562500004,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5453
+            },
+            {
+              "y": 0.3100514129951877,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5221
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.2498779296875,
+          "hits": [
+            {
+              "y": 0.08395556337377659,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3647
+            },
+            {
+              "y": 0.310051412958719,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5441
+            },
+            {
+              "y": 0.31103515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5455
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.29985351562499996,
+          "hits": [
+            {
+              "y": 0.08374862512972897,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3647
+            },
+            {
+              "y": 0.3100514129217156,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5441
+            },
+            {
+              "y": 0.31103515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5454
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.3498291015625,
+          "hits": [
+            {
+              "y": 0.08354168688568137,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3647
+            },
+            {
+              "y": 0.3100514128847122,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5441
+            },
+            {
+              "y": 0.31103515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5573
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.3998046875,
+          "hits": [
+            {
+              "y": 0.08333474864163373,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3647
+            },
+            {
+              "y": 0.31005141284770876,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5441
+            },
+            {
+              "y": 0.31103515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5573
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.44978027343750004,
+          "hits": [
+            {
+              "y": 0.08312781039758611,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3647
+            },
+            {
+              "y": 0.3100514128107053,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5441
+            },
+            {
+              "y": 0.31103515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5572
+            }
+          ]
+        }
+      ],
+      "semanticEndpoints": {
+        "groundContactLine": null,
+        "rampFoot": null,
+        "rampTop": null,
+        "roofEntry": null,
+        "roofExit": null,
+        "fullWidthClearance": null
+      },
+      "clearance": null,
+      "candidate": {
+        "rigidDiagnostic": {
+          "rotation": [
+            2.220446049250313e-16,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            -1,
+            0,
+            2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "translation": [
+            -1.6653345369377363e-18,
+            2.009056921,
+            4.492500000000001
+          ],
+          "scale": 1,
+          "residuals": [
+            {
+              "label": "incline interior low → provisional foot",
+              "predictedLogic": [
+                -9.492406860545088e-17,
+                2.082023082,
+                4.072500000000001
+              ],
+              "targetLogic": [
+                0,
+                0,
+                -3
+              ],
+              "distance": 7.372589529058347
+            },
+            {
+              "label": "incline interior high → provisional top",
+              "predictedLogic": [
+                -1.942890293094024e-17,
+                2.277792764,
+                4.4125000000000005
+              ],
+              "targetLogic": [
+                0,
+                3,
+                3
+              ],
+              "distance": 1.5864235064227843
+            },
+            {
+              "label": "roof interior entry → provisional seam",
+              "predictedLogic": [
+                1.609823385706477e-17,
+                2.320092077,
+                4.572500000000001
+              ],
+              "targetLogic": [
+                0,
+                3,
+                3
+              ],
+              "distance": 1.7131932272099888
+            },
+            {
+              "label": "roof interior exit → provisional exit",
+              "predictedLogic": [
+                9.825473767932635e-17,
+                2.320092077,
+                4.942500000000001
+              ],
+              "targetLogic": [
+                0,
+                3,
+                15
+              ],
+              "distance": 10.080455398133466
+            }
+          ],
+          "rms": 6.352606314994419,
+          "warning": "Fixed-axis rigid diagnostic on provisional interior correspondences, not certified endpoint fit"
+        },
+        "provisionalCorrespondencesOnly": true,
+        "warning": "Residuals of assumed correspondences do not prove every rigid/uniform endpoint fit impossible",
+        "sourceToAsset": [
+          4.323824890297016e-15,
+          0,
+          19.472776164756915,
+          0,
+          0,
+          19.472776164756915,
+          0,
+          0,
+          -19.472776164756915,
+          0,
+          4.323824890297016e-15,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "assetToLogic": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          -3.2428686677227647e-17,
+          -2.441830645814342,
+          4.353954178764323,
+          1
+        ],
+        "logicToWorld": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          70,
+          1
+        ],
+        "combined": [
+          4.323824890297016e-15,
+          0,
+          19.472776164756915,
+          0,
+          0,
+          19.472776164756915,
+          0,
+          0,
+          -19.472776164756915,
+          0,
+          4.323824890297016e-15,
+          0,
+          -3.2428686677227647e-17,
+          -2.441830645814342,
+          74.35395417876433,
+          1
+        ],
+        "scale": 19.472776164756915,
+        "yawRadians": -1.5707963267948966,
+        "kind": "uniform diagnostic patch correspondence fit",
+        "residuals": [
+          {
+            "source": [
+              -9.325873406851315e-17,
+              0.072966161,
+              -0.42
+            ],
+            "target": [
+              0,
+              0,
+              -3
+            ],
+            "predicted": [
+              -1.8484351406019744e-15,
+              -1.0209769250597263,
+              -3.8246118104335816
+            ],
+            "delta": [
+              -1.8484351406019744e-15,
+              -1.0209769250597263,
+              -0.8246118104335816
+            ],
+            "distance": 1.3123941936060837,
+            "label": "incline interior low → provisional foot",
+            "space": "logic",
+            "targetWorld": [
+              0,
+              0,
+              67
+            ],
+            "predictedWorld": [
+              -1.8484351406019744e-15,
+              -1.0209769250597263,
+              66.17538818956642
+            ]
+          },
+          {
+            "source": [
+              -1.7763568394002505e-17,
+              0.268735843,
+              -0.08
+            ],
+            "target": [
+              0,
+              3,
+              3
+            ],
+            "predicted": [
+              -3.783346779009889e-16,
+              2.7912022723719137,
+              2.79613208558377
+            ],
+            "delta": [
+              -3.783346779009889e-16,
+              -0.20879772762808635,
+              -0.2038679144162301
+            ],
+            "distance": 0.29181949487838516,
+            "label": "incline interior high → provisional top",
+            "space": "logic",
+            "targetWorld": [
+              0,
+              3,
+              73
+            ],
+            "predictedWorld": [
+              -3.783346779009889e-16,
+              2.7912022723719137,
+              72.79613208558376
+            ]
+          },
+          {
+            "source": [
+              1.7763568394002505e-17,
+              0.311035156,
+              0.08
+            ],
+            "target": [
+              0,
+              3,
+              3
+            ],
+            "predicted": [
+              3.134773045465336e-16,
+              3.614887326343906,
+              5.911776271944877
+            ],
+            "delta": [
+              3.134773045465336e-16,
+              0.6148873263439061,
+              2.911776271944877
+            ],
+            "distance": 2.975991848436343,
+            "label": "roof interior entry → provisional seam",
+            "space": "logic",
+            "targetWorld": [
+              0,
+              3,
+              73
+            ],
+            "predictedWorld": [
+              3.134773045465336e-16,
+              3.614887326343906,
+              75.91177627194487
+            ]
+          },
+          {
+            "source": [
+              9.992007221626409e-17,
+              0.311035156,
+              0.45
+            ],
+            "target": [
+              0,
+              3,
+              15
+            ],
+            "predicted": [
+              1.9132925139564292e-15,
+              3.614887326343906,
+              13.116703452904936
+            ],
+            "delta": [
+              1.9132925139564292e-15,
+              0.6148873263439061,
+              -1.883296547095064
+            ],
+            "distance": 1.9811340965211182,
+            "label": "roof interior exit → provisional exit",
+            "space": "logic",
+            "targetWorld": [
+              0,
+              3,
+              85
+            ],
+            "predictedWorld": [
+              1.9132925139564292e-15,
+              3.614887326343906,
+              83.11670345290494
+            ]
+          }
+        ],
+        "labels": [
+          "incline interior low → provisional foot",
+          "incline interior high → provisional top",
+          "roof interior entry → provisional seam",
+          "roof interior exit → provisional exit"
+        ],
+        "rms": 1.9097746547276295,
+        "accepted": false,
+        "appliedCount": 1,
+        "proxyTransformCount": 0
+      },
+      "target": {
+        "ramp": {
+          "width": 2.4,
+          "height": 3,
+          "depth": 6,
+          "origin": [
+            0,
+            0,
+            70
+          ]
+        },
+        "roof": {
+          "width": 2.4,
+          "height": 3,
+          "depth": 12,
+          "origin": [
+            0,
+            0,
+            79
+          ]
+        }
+      },
+      "classification": "NEEDS_DERIVED_REPAIR",
+      "classificationIsProvisional": true,
+      "classificationBasis": "Diagnostic patch-to-logical correspondence uniform residual is large; exact semantic endpoints still unverified",
+      "outerEnvelopeDiagnostic": {
+        "warning": "AABB only diagnoses proportions; never support/collision dimensions",
+        "uniformScale": 18.008793356130923,
+        "scaledSize": [
+          18,
+          5.601367855398143,
+          5.77723497801661
+        ]
+      },
+      "visualRoot": {
+        "prefab": "ramp-engineering-truck",
+        "children": [
+          "RAMP",
+          "ROOF"
+        ],
+        "loadCount": 1
+      },
+      "todo": [
+        "Exact ramp foot/top and roof seam semantic boundary remain null: rounded transition; measured interior patches cannot certify endpoints.",
+        "Sampled incline interior lies above source ground; exact foot/undercarriage relationship remains unverified; no physics change.",
+        "Obtain editable author source before any repair; this probe performs none."
+      ]
+    },
+    {
+      "file": "obstacle_hurdle_barrier.glb",
+      "sha256": "4f8d4756dcf150b086f8cad14a531305cae61caa0996872af291128d099306c4",
+      "sourceCommit": "622e7da",
+      "sceneBounds": {
+        "min": [
+          -0.499755859375,
+          0,
+          -0.1369629204273224
+        ],
+        "max": [
+          0.499755859375,
+          0.76416015625,
+          0.1369629204273224
+        ],
+        "size": [
+          0.99951171875,
+          0.76416015625,
+          0.2739258408546448
+        ]
+      },
+      "triangles": 8894,
+      "nodes": [
+        {
+          "id": 0,
+          "name": "tripo_node_342f97d3-02fb-4047-8588-0f1edd5101e9",
+          "localMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "sceneMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "rotation": null
+        }
+      ],
+      "sourceUnits": "normalized; physical metres unknown",
+      "sourceForward": null,
+      "yawAlternatives": [
+        0
+      ],
+      "markers": [
+        {
+          "name": "crossbar_low_underside",
+          "scene": [
+            0,
+            0.607910156,
+            0
+          ],
+          "local": [
+            0,
+            0.607910156,
+            0
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 2319,
+          "indices": [
+            1492,
+            8999,
+            6343
+          ],
+          "barycentric": [
+            0.000614251,
+            0.5,
+            0.499385749
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            0,
+            1.338055691,
+            70
+          ],
+          "worldBaseY5": [
+            0,
+            6.338055691,
+            70
+          ]
+        },
+        {
+          "name": "crossbar_top",
+          "scene": [
+            0,
+            0.735351563,
+            0
+          ],
+          "local": [
+            0,
+            0.735351563,
+            0
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 2955,
+          "indices": [
+            9037,
+            2264,
+            6508
+          ],
+          "barycentric": [
+            0.5,
+            0.000612745,
+            0.499387255
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            0,
+            1.618563753,
+            70
+          ],
+          "worldBaseY5": [
+            0,
+            6.618563753,
+            70
+          ]
+        },
+        {
+          "name": "left_foot_hit",
+          "scene": [
+            -0.46,
+            0.002097656,
+            0
+          ],
+          "local": [
+            -0.46,
+            0.002097656,
+            0
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 1227,
+          "indices": [
+            2624,
+            91,
+            2621
+          ],
+          "barycentric": [
+            0.284,
+            0.506503293,
+            0.209496707
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            -1.012494382,
+            0.004617098,
+            70
+          ],
+          "worldBaseY5": [
+            -1.012494382,
+            5.004617098,
+            70
+          ]
+        },
+        {
+          "name": "right_foot_hit",
+          "scene": [
+            0.46,
+            0.001826787,
+            0
+          ],
+          "local": [
+            0.46,
+            0.001826787,
+            0
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 5196,
+          "indices": [
+            7820,
+            5247,
+            5246
+          ],
+          "barycentric": [
+            0.516259018,
+            0.128740982,
+            0.355
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            1.012494382,
+            0.004020895,
+            70
+          ],
+          "worldBaseY5": [
+            1.012494382,
+            5.004020895,
+            70
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "axisPosition": -0.4497802734375,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2161
+            },
+            {
+              "y": 0.7502655029296875,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2710
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.3998046875,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2160
+            },
+            {
+              "y": 0.716943359375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2919
+            },
+            {
+              "y": 0.7202165274784483,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2900
+            },
+            {
+              "y": 0.733740234375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2937
+            },
+            {
+              "y": 0.7454874674479167,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2964
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.3498291015625,
+          "hits": [
+            {
+              "y": 0.5641867897727273,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2401
+            },
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2318
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2328
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2926
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2954
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.299853515625,
+          "hits": [
+            {
+              "y": 0.6046875,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2466
+            },
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2318
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2328
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2926
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2954
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.2498779296875,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2318
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2328
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2926
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2954
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.19990234375,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2318
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2328
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2926
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2954
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.14992675781249998,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2319
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2329
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2927
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2955
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.09995117187500002,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2319
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2329
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2927
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2955
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.04997558593750001,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2319
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2329
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2927
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2955
+            }
+          ]
+        },
+        {
+          "axisPosition": 0,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2319
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2329
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5012
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2927
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2955
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.049975585937499956,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6021
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5012
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6199
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6217
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.09995117187500002,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6021
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5012
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6199
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6217
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.14992675781249998,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6021
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5012
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6199
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6217
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.19990234375000004,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6020
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5013
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6198
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6216
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.2498779296875,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6020
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5013
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6198
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6216
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.29985351562499996,
+          "hits": [
+            {
+              "y": 0.6046875,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6319
+            },
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6020
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5013
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6198
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6216
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.3498291015625,
+          "hits": [
+            {
+              "y": 0.5641867897727273,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6395
+            },
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6020
+            },
+            {
+              "y": 0.63037109375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5013
+            },
+            {
+              "y": 0.71533203125,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6198
+            },
+            {
+              "y": 0.7353515625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6216
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.3998046875,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6481
+            },
+            {
+              "y": 0.716943359375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6756
+            },
+            {
+              "y": 0.7201662856200453,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6795
+            },
+            {
+              "y": 0.733740234375,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6808
+            },
+            {
+              "y": 0.7454874674479166,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6825
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.44978027343750004,
+          "hits": [
+            {
+              "y": 0.60791015625,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 6480
+            },
+            {
+              "y": 0.7502786075367647,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 7063
+            }
+          ]
+        }
+      ],
+      "semanticEndpoints": {
+        "groundContactLine": null,
+        "rampFoot": null,
+        "rampTop": null,
+        "roofEntry": null,
+        "roofExit": null,
+        "fullWidthClearance": null
+      },
+      "clearance": null,
+      "candidate": {
+        "rigidDiagnostic": null,
+        "provisionalCorrespondencesOnly": true,
+        "warning": "Display probe only; no semantic fitting",
+        "sourceToAsset": [
+          2.201074743527113,
+          0,
+          0,
+          0,
+          0,
+          2.201074743527113,
+          0,
+          0,
+          0,
+          0,
+          2.201074743527113,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "assetToLogic": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "logicToWorld": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          70,
+          1
+        ],
+        "combined": [
+          2.201074743527113,
+          0,
+          0,
+          0,
+          0,
+          2.201074743527113,
+          0,
+          0,
+          0,
+          0,
+          2.201074743527113,
+          0,
+          0,
+          0,
+          70,
+          1
+        ],
+        "scale": 2.201074743527113,
+        "yawRadians": 0,
+        "kind": "uniform display probe; bounds used only for framing/scale, not support surfaces",
+        "residuals": null,
+        "labels": [],
+        "rms": null,
+        "accepted": false,
+        "appliedCount": 1,
+        "proxyTransformCount": 0
+      },
+      "target": {
+        "width": 2.2,
+        "height": 1,
+        "depth": 0.5,
+        "origin": [
+          0,
+          0,
+          70
+        ]
+      },
+      "classification": "NEEDS_DERIVED_REPAIR",
+      "classificationIsProvisional": true,
+      "classificationBasis": "Uniform width fit yields height incompatible with current low barrier, evidence is geometry envelope only, not collider",
+      "outerEnvelopeDiagnostic": {
+        "warning": "AABB only diagnoses proportions; never support/collision dimensions",
+        "uniformScale": 2.201074743527113,
+        "scaledSize": [
+          2.2,
+          1.6819736199316073,
+          0.602931249904586
+        ]
+      },
+      "visualRoot": {
+        "prefab": "obstacle_hurdle_barrier.glb",
+        "loadCount": 1,
+        "children": []
+      },
+      "todo": [
+        "Low hurdle contains multiple horizontal bars; effective blocking shape differs from solid logic envelope.",
+        "Foot/rod primitive grouping and usable low-obstacle outline require review; do not shrink logic or jump height."
+      ]
+    },
+    {
+      "file": "obstacle_slide_barrier.glb",
+      "sha256": "471b24a3a1cc6a25cc18bac7cfcfd5cad36e61ce3e7088fd75f9dfbe99379d0a",
+      "sourceCommit": "622e7da",
+      "sceneBounds": {
+        "min": [
+          -0.0627441257238388,
+          -4.03142174365545e-8,
+          -0.31567386797998304
+        ],
+        "max": [
+          0.0627441257238388,
+          0.9995118865345644,
+          0.31567388136338476
+        ],
+        "size": [
+          0.1254882514476776,
+          0.9995119268487818,
+          0.6313477493433678
+        ]
+      },
+      "triangles": 9711,
+      "nodes": [
+        {
+          "id": 0,
+          "name": "a36ab175_e746_47e4_b179_3b1bbc3e490e",
+          "localMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1.3435885648505064e-7,
+            1.0000001343588565,
+            0,
+            0,
+            -1.0000001343588565,
+            -1.3435885648505064e-7,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "sceneMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            -1.3435885648505064e-7,
+            1.0000001343588565,
+            0,
+            0,
+            -1.0000001343588565,
+            -1.3435885648505064e-7,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "rotation": [
+            0.7071068286895752,
+            0,
+            0,
+            0.7071068286895752
+          ]
+        }
+      ],
+      "sourceUnits": "normalized; physical metres unknown",
+      "sourceForward": null,
+      "yawAlternatives": [
+        -1.5707963267948966,
+        1.5707963267948966
+      ],
+      "markers": [
+        {
+          "name": "center_beam_underside",
+          "scene": [
+            0,
+            0.51108878,
+            0
+          ],
+          "local": [
+            0,
+            -6.9e-8,
+            -0.511088711
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 2352,
+          "indices": [
+            3508,
+            3514,
+            3509
+          ],
+          "barycentric": [
+            0.177420098,
+            0.064517343,
+            0.758062559
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": [
+            0,
+            1.2,
+            115
+          ],
+          "targetStatus": "PROVISIONAL interior-to-endpoint correspondence; not measured endpoint error",
+          "world": [
+            0,
+            1.480386832,
+            115
+          ],
+          "worldBaseY5": [
+            0,
+            6.480386832,
+            115
+          ]
+        },
+        {
+          "name": "center_beam_top",
+          "scene": [
+            0,
+            0.999511853,
+            0
+          ],
+          "local": [
+            0,
+            -1.34e-7,
+            -0.999511719
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 3389,
+          "indices": [
+            4400,
+            4399,
+            4365
+          ],
+          "barycentric": [
+            0.202702082,
+            0.791805272,
+            0.005492646
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            0,
+            3.029097772,
+            115
+          ],
+          "worldBaseY5": [
+            0,
+            8.029097772,
+            115
+          ]
+        },
+        {
+          "name": "left_post_ground_hit",
+          "scene": [
+            0,
+            3.5e-8,
+            -0.26
+          ],
+          "local": [
+            0,
+            -0.259999965,
+            0
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 274,
+          "indices": [
+            654,
+            655,
+            646
+          ],
+          "barycentric": [
+            0.019611614,
+            0.049894879,
+            0.930493506
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": [
+            -1.1,
+            0,
+            115
+          ],
+          "targetStatus": "PROVISIONAL interior-to-endpoint correspondence; not measured endpoint error",
+          "world": [
+            -0.824418146,
+            -0.140193305,
+            115
+          ],
+          "worldBaseY5": [
+            -0.824418146,
+            4.859806695,
+            115
+          ]
+        },
+        {
+          "name": "right_post_ground_hit",
+          "scene": [
+            0,
+            -3.5e-8,
+            0.26
+          ],
+          "local": [
+            0,
+            0.259999965,
+            0
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 2,
+          "indices": [
+            2,
+            4,
+            0
+          ],
+          "barycentric": [
+            0.002850956,
+            0.055850986,
+            0.941298057
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": [
+            1.1,
+            0,
+            115
+          ],
+          "targetStatus": "PROVISIONAL interior-to-endpoint correspondence; not measured endpoint error",
+          "world": [
+            0.824418146,
+            -0.140193527,
+            115
+          ],
+          "worldBaseY5": [
+            0.824418146,
+            4.859806473,
+            115
+          ]
+        },
+        {
+          "name": "left_span_underside",
+          "scene": [
+            0,
+            0.509552134,
+            -0.15
+          ],
+          "local": [
+            0,
+            -0.150000048,
+            -0.509552046
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 4832,
+          "indices": [
+            5584,
+            5590,
+            5589
+          ],
+          "barycentric": [
+            0.177418788,
+            0.189214859,
+            0.633366354
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            -0.475625854,
+            1.475514375,
+            115
+          ],
+          "worldBaseY5": [
+            -0.475625854,
+            6.475514375,
+            115
+          ]
+        },
+        {
+          "name": "right_span_underside",
+          "scene": [
+            0,
+            0.51021406,
+            0.15
+          ],
+          "local": [
+            0,
+            0.149999911,
+            -0.510214012
+          ],
+          "node": 0,
+          "mesh": 0,
+          "primitive": 0,
+          "triangle": 2220,
+          "indices": [
+            3406,
+            3419,
+            3410
+          ],
+          "barycentric": [
+            0.177421395,
+            0.031188734,
+            0.791389871
+          ],
+          "confidence": "medium",
+          "method": "Vertical line/actual triangle barycentric intersection; geometric hit, not certified walkable surface",
+          "targetWorld": null,
+          "targetStatus": null,
+          "world": [
+            0.475625854,
+            1.477613236,
+            115
+          ],
+          "worldBaseY5": [
+            0.475625854,
+            6.477613236,
+            115
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "axisPosition": -0.2841064805128146,
+          "hits": [
+            {
+              "y": 3.817221671291871e-8,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 280
+            },
+            {
+              "y": 0.0986328639244104,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3931
+            },
+            {
+              "y": 0.9876860340136497,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5837
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.25253909304564626,
+          "hits": [
+            {
+              "y": 3.3930859200473395e-8,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 271
+            },
+            {
+              "y": 0.9992873579057479,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5459
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.22097170557847787,
+          "hits": [
+            {
+              "y": 2.9689501688028077e-8,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 272
+            },
+            {
+              "y": 0.09799608144357143,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3597
+            },
+            {
+              "y": 0.4388305173328891,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3704
+            },
+            {
+              "y": 0.5807686193327627,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4882
+            },
+            {
+              "y": 0.7235457631495548,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4956
+            },
+            {
+              "y": 0.9995118827327714,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5456
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.18940431811130948,
+          "hits": [
+            {
+              "y": 0.491307868600058,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3730
+            },
+            {
+              "y": 0.5802864335672198,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4843
+            },
+            {
+              "y": 0.7237259720539376,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4908
+            },
+            {
+              "y": 0.9995118784914139,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5419
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.1578369306441411,
+          "hits": [
+            {
+              "y": 0.5078378068498166,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4832
+            },
+            {
+              "y": 0.5805588594248648,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4844
+            },
+            {
+              "y": 0.7237174407955821,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4809
+            },
+            {
+              "y": 0.9995118742500564,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5325
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.1262695431769727,
+          "hits": [
+            {
+              "y": 0.5106871436886873,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4335
+            },
+            {
+              "y": 0.5806967102823988,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4350
+            },
+            {
+              "y": 0.7237174367176906,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4810
+            },
+            {
+              "y": 0.9995118700086988,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5326
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.09470215570980431,
+          "hits": [
+            {
+              "y": 0.5106871400877274,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4336
+            },
+            {
+              "y": 0.5807133646857102,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4344
+            },
+            {
+              "y": 0.723717432633531,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4804
+            },
+            {
+              "y": 0.9995118657673413,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5315
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.06313476824263592,
+          "hits": [
+            {
+              "y": 0.5106871365535465,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4130
+            },
+            {
+              "y": 0.5808120051052575,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4304
+            },
+            {
+              "y": 0.7237113920930821,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4782
+            },
+            {
+              "y": 0.9995118615259838,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5281
+            }
+          ]
+        },
+        {
+          "axisPosition": -0.03156738077546756,
+          "hits": [
+            {
+              "y": 0.5110814186117402,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4124
+            },
+            {
+              "y": 0.5814698054704216,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4275
+            },
+            {
+              "y": 0.606457053981792,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4301
+            },
+            {
+              "y": 0.6994856266166993,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4745
+            },
+            {
+              "y": 0.7231020813303508,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 4773
+            },
+            {
+              "y": 0.9995118572846263,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 5271
+            }
+          ]
+        },
+        {
+          "axisPosition": 6.691700860095295e-9,
+          "hits": [
+            {
+              "y": 0.5110887797979764,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2352
+            },
+            {
+              "y": 0.9995118530432688,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3389
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.03156739415886922,
+          "hits": [
+            {
+              "y": 0.510740103790522,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2346
+            },
+            {
+              "y": 0.5815268288653964,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2449
+            },
+            {
+              "y": 0.6065420435214343,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2466
+            },
+            {
+              "y": 0.6994471384232843,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2930
+            },
+            {
+              "y": 0.7231053254259373,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2938
+            },
+            {
+              "y": 0.9995118488019114,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3389
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.06313478162603764,
+          "hits": [
+            {
+              "y": 0.5106871222410218,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2324
+            },
+            {
+              "y": 0.5807893615980116,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2332
+            },
+            {
+              "y": 0.7237142821821237,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2564
+            },
+            {
+              "y": 0.9995118445605538,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3339
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.09470216909320606,
+          "hits": [
+            {
+              "y": 0.5106871186743929,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2224
+            },
+            {
+              "y": 0.5806966767479043,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2233
+            },
+            {
+              "y": 0.7237142780947049,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2558
+            },
+            {
+              "y": 0.9995118403191963,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3329
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.12626955656037442,
+          "hits": [
+            {
+              "y": 0.5106871151028773,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2222
+            },
+            {
+              "y": 0.5806966719557594,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2234
+            },
+            {
+              "y": 0.723714274007426,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2307
+            },
+            {
+              "y": 0.9995118360778387,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3157
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.15783694402754284,
+          "hits": [
+            {
+              "y": 0.508284940890314,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2210
+            },
+            {
+              "y": 0.5806966671562966,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2230
+            },
+            {
+              "y": 0.7237142699178414,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2308
+            },
+            {
+              "y": 0.9995118318364812,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3158
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.1894043314947112,
+          "hits": [
+            {
+              "y": 0.49121218979380343,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1714
+            },
+            {
+              "y": 0.5804529291731515,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2194
+            },
+            {
+              "y": 0.7237113593470453,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2290
+            },
+            {
+              "y": 0.9995118275951237,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3109
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.22097171896187956,
+          "hits": [
+            {
+              "y": -2.968950348620638e-8,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 15
+            },
+            {
+              "y": 0.09799640314566947,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1612
+            },
+            {
+              "y": 0.43898102506678244,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1688
+            },
+            {
+              "y": 0.5809684767167482,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2177
+            },
+            {
+              "y": 0.7235633173430907,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2288
+            },
+            {
+              "y": 0.9995118233537662,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 3105
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.2525391064290479,
+          "hits": [
+            {
+              "y": -3.3930860998651696e-8,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 14
+            },
+            {
+              "y": 0.9992937249852095,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2141
+            }
+          ]
+        },
+        {
+          "axisPosition": 0.2841064938962164,
+          "hits": [
+            {
+              "y": -3.817221851109703e-8,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 9
+            },
+            {
+              "y": 0.09863278757997516,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 1304
+            },
+            {
+              "y": 0.987348029102744,
+              "node": 0,
+              "primitive": 0,
+              "triangle": 2103
+            }
+          ]
+        }
+      ],
+      "semanticEndpoints": {
+        "groundContactLine": null,
+        "rampFoot": null,
+        "rampTop": null,
+        "roofEntry": null,
+        "roofExit": null,
+        "fullWidthClearance": null
+      },
+      "clearance": {
+        "sourceCenter": 0.51108878,
+        "sourceBeamBottom": 0.51108878,
+        "sourceGround": 0,
+        "confidence": "medium",
+        "method": "Center ray first mesh hit minus two actual post underside hits; local center aperture only, not whole gate certificate"
+      },
+      "candidate": {
+        "rigidDiagnostic": {
+          "rotation": [
+            2.220446049250313e-16,
+            0,
+            -1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            2.220446049250313e-16,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "translation": [
+            0,
+            -0.9703629266666667,
+            0
+          ],
+          "scale": 1,
+          "residuals": [
+            {
+              "label": "left ground→provisional left boundary",
+              "predictedLogic": [
+                -0.26,
+                -0.9703628916666667,
+                -5.773159728050814e-17
+              ],
+              "targetLogic": [
+                -1.1,
+                -1.2,
+                0
+              ],
+              "distance": 0.8708232894931642
+            },
+            {
+              "label": "right ground→provisional right boundary",
+              "predictedLogic": [
+                0.26,
+                -0.9703629616666667,
+                5.773159728050814e-17
+              ],
+              "targetLogic": [
+                1.1,
+                -1.2,
+                0
+              ],
+              "distance": 0.8708232710340859
+            },
+            {
+              "label": "center beam underside→1.2m clearance",
+              "predictedLogic": [
+                0,
+                -0.45927414666666666,
+                0
+              ],
+              "targetLogic": [
+                0,
+                0,
+                0
+              ],
+              "distance": 0.45927414666666666
+            }
+          ],
+          "rms": 0.7588585974331439,
+          "warning": "Fixed-axis rigid diagnostic on provisional interior correspondences, not certified endpoint fit"
+        },
+        "provisionalCorrespondencesOnly": true,
+        "warning": "Residuals of assumed correspondences do not prove every rigid/uniform endpoint fit impossible",
+        "sourceToAsset": [
+          7.04067698321973e-16,
+          0,
+          -3.1708390238064403,
+          0,
+          0,
+          3.1708390238064403,
+          0,
+          0,
+          3.1708390238064403,
+          0,
+          7.04067698321973e-16,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "assetToLogic": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          -1.3401934160845415,
+          0,
+          1
+        ],
+        "logicToWorld": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1.2,
+          115,
+          1
+        ],
+        "combined": [
+          7.04067698321973e-16,
+          0,
+          -3.1708390238064403,
+          0,
+          0,
+          3.1708390238064403,
+          0,
+          0,
+          3.1708390238064403,
+          0,
+          7.04067698321973e-16,
+          0,
+          0,
+          -0.1401934160845415,
+          115,
+          1
+        ],
+        "scale": 3.1708390238064403,
+        "yawRadians": 1.5707963267948966,
+        "kind": "uniform diagnostic patch correspondence fit",
+        "residuals": [
+          {
+            "source": [
+              -0.26,
+              3.5e-8,
+              -5.773159728050814e-17
+            ],
+            "target": [
+              -1.1,
+              -1.2,
+              0
+            ],
+            "predicted": [
+              -0.8244181461896745,
+              -1.3401933051051755,
+              -1.8305760156371297e-16
+            ],
+            "delta": [
+              0.2755818538103256,
+              -0.14019330510517558,
+              -1.8305760156371297e-16
+            ],
+            "distance": 0.30919172198790923,
+            "label": "left ground→provisional left boundary",
+            "space": "logic",
+            "targetWorld": [
+              -1.1,
+              0,
+              115
+            ],
+            "predictedWorld": [
+              -0.8244181461896745,
+              -0.14019330510517558,
+              115
+            ]
+          },
+          {
+            "source": [
+              0.26,
+              -3.5e-8,
+              5.773159728050814e-17
+            ],
+            "target": [
+              1.1,
+              -1.2,
+              0
+            ],
+            "predicted": [
+              0.8244181461896745,
+              -1.3401935270639074,
+              1.8305760156371297e-16
+            ],
+            "delta": [
+              -0.2755818538103256,
+              -0.14019352706390742,
+              1.8305760156371297e-16
+            ],
+            "distance": 0.3091918226282096,
+            "label": "right ground→provisional right boundary",
+            "space": "logic",
+            "targetWorld": [
+              1.1,
+              0,
+              115
+            ],
+            "predictedWorld": [
+              0.8244181461896745,
+              -0.14019352706390742,
+              115
+            ]
+          },
+          {
+            "source": [
+              0,
+              0.51108878,
+              0
+            ],
+            "target": [
+              0,
+              0,
+              0
+            ],
+            "predicted": [
+              0,
+              0.2803868321690832,
+              0
+            ],
+            "delta": [
+              0,
+              0.2803868321690832,
+              0
+            ],
+            "distance": 0.2803868321690832,
+            "label": "center beam underside→1.2m clearance",
+            "space": "logic",
+            "targetWorld": [
+              0,
+              1.2,
+              115
+            ],
+            "predictedWorld": [
+              0,
+              1.4803868321690832,
+              115
+            ]
+          }
+        ],
+        "labels": [
+          "left ground→provisional left boundary",
+          "right ground→provisional right boundary",
+          "center beam underside→1.2m clearance"
+        ],
+        "rms": 0.29989769354443546,
+        "accepted": false,
+        "appliedCount": 1,
+        "proxyTransformCount": 0
+      },
+      "target": {
+        "width": 2.2,
+        "height": 1.8,
+        "depth": 0.5,
+        "origin": [
+          0,
+          1.2,
+          115
+        ]
+      },
+      "classification": "NEEDS_DERIVED_REPAIR",
+      "classificationIsProvisional": true,
+      "classificationBasis": "Ground-post plus center aperture simultaneous uniform fit cannot satisfy target without residual",
+      "outerEnvelopeDiagnostic": {
+        "warning": "AABB only diagnoses proportions; never support/collision dimensions",
+        "uniformScale": 4.230769230769231,
+        "scaledSize": [
+          0.5309118330478668,
+          4.228704305898692,
+          2.6710866318373254
+        ]
+      },
+      "visualRoot": {
+        "prefab": "obstacle_slide_barrier.glb",
+        "loadCount": 1,
+        "children": []
+      },
+      "todo": [
+        "Center underside measured but full width/depth clearance needs continuous aperture analysis; side posts must not become new gameplay obstacles.",
+        "Yaw +90deg maps source Z span to game X; face/sign not semantically approved."
+      ]
+    }
+  ]
+}

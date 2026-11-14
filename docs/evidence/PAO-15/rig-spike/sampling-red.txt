@@ -1,0 +1,37 @@
+RUN  v4.1.10 D:/worker/paoku-sessions/pao-15
+
+ ❯ tests/unit/pao15-rig-spike.test.ts (12 tests | 2 failed) 10ms
+     × samples optimized constant and linear tracks without requiring a key at each diagnostic time 3ms
+     × interpolates quaternion rotations on the shortest path including antipodal keys 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao15-rig-spike.test.ts > PAO-15 rig structural guard and skin evaluation > samples optimized constant and linear tracks without requiring a key at each diagnostic time
+TypeError: interpolateKeys is not a function
+ ❯ tests/unit/pao15-rig-spike.test.ts:18:12
+     16| describe('PAO-15 rig structural guard and skin evaluation', () => {
+     17|   it('samples optimized constant and linear tracks without requiring a…
+     18|     expect(interpolateKeys([0, 5], [[0, 0, 0], [0, 0, 0]], .5, 'transl…
+       |            ^
+     19|     expect(interpolateKeys([0, 1], [[0, 0, 0], [2, 0, 0]], .5, 'transl…
+     20|     expect(interpolateKeys([0, 1], [[0], [2]], 2, 'translation')).toEq…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/pao15-rig-spike.test.ts > PAO-15 rig structural guard and skin evaluation > interpolates quaternion rotations on the shortest path including antipodal keys
+TypeError: interpolateKeys is not a function
+ ❯ tests/unit/pao15-rig-spike.test.ts:23:12
+     21|   });
+     22|   it('interpolates quaternion rotations on the shortest path including…
+     23|     expect(interpolateKeys([0, 1], [[0, 0, 0, 1], [0, 0, 0, -1]], .5, …
+       |            ^
+     24|     const q = interpolateKeys([0, 1], [[0, 0, 0, 1], [0, 0, 1, 0]], .5…
+     25|     expect(q[2]).toBeCloseTo(Math.SQRT1_2); expect(q[3]).toBeCloseTo(M…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 10 passed (12)
+   Start at  20:48:02
+   Duration  323ms (transform 47ms, setup 0ms, import 64ms, tests 10ms, environment 0ms)

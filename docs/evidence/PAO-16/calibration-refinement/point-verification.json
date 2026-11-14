@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "file": "train_ramp_or_car.glb",
+      "checkedHits": 3748,
+      "maxSceneError": 1.2432050435751766e-16,
+      "maxLocalError": 0
+    },
+    {
+      "file": "train_metro.glb",
+      "checkedHits": 3954,
+      "maxSceneError": 1.1210126175528405e-16,
+      "maxLocalError": 0
+    },
+    {
+      "file": "obstacle_hurdle_barrier.glb",
+      "checkedHits": 1770,
+      "maxSceneError": 2.2898349882893854e-16,
+      "maxLocalError": 0
+    },
+    {
+      "file": "obstacle_slide_barrier.glb",
+      "checkedHits": 2794,
+      "maxSceneError": 3.3335590258932494e-16,
+      "maxLocalError": 0
+    }
+  ],
+  "meaning": "Barycentric and full node chain numerical identity only; no semantic or continuous-space certificate"
+}

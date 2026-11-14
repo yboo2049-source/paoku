@@ -1,0 +1,30 @@
+{
+  "sourceForwardHypothesis": {
+    "asset": "train_ramp_or_car.glb",
+    "suggestedYawToPositiveZ": "+90deg hypothesis only",
+    "confidence": "medium single-view inference, requires signed source feature verification",
+    "adopted": false,
+    "sourceAxis": "-X candidate from displayed cab at camera-facing negative Z under RH yaw -90deg"
+  },
+  "images": [
+    {
+      "path": "1-train_metro.glb.png",
+      "review": "One engineering vehicle/root with original yellow ramp; cyan target does not coincide with sampled slope/roof, provisional fit is not accepted."
+    },
+    {
+      "path": "2-obstacle_slide_barrier.glb.png",
+      "review": "Whole gate visible, feet sink below target ground and beam bottom differs. Sign shown on this side is reversed/unreadable; front sign TODO, no art edit."
+    },
+    {
+      "path": "3-train_ramp_or_car.glb.png",
+      "review": "Cab/headlights/windows/doors/bogies visible. Length-only uniform display exceeds width/height target; no fit acceptance. Cab visible is not a signed authored forward marker."
+    }
+  ],
+  "classificationApproval": "none",
+  "sectionAngleDiagnostic": {
+    "sourceDegrees": 29.9330440081,
+    "basis": "engineering center low/high actual triangle ray samples versus M1 H3/D6; not a certified complete surface plane",
+    "confidence": "medium",
+    "targetDegrees": 26.5650511771
+  }
+}

@@ -1,0 +1,168 @@
+RUN  v4.1.10 D:/worker/paoku-sessions/pao-15
+
+ ❯ tests/unit/pao15-rig-spike.test.ts (10 tests | 10 failed) 14ms
+     × accepts a valid normalized soft skin and measures actual joint deformation 4ms
+     × rejects invalid weights NaN 3ms
+     × rejects invalid weights -0.1 1ms
+     × rejects invalid weights 1.5 1ms
+     × rejects unbound vertices and non-normalized weights 1ms
+     × rejects invalid skin joint index even when the matrix list exists 1ms
+     × rejects missing, non-finite and singular inverse bind matrices 1ms
+     × rejects hierarchy cycles and root drift 1ms
+     × rejects a rigid-only impostor with bone nodes but no soft joint transition 1ms
+     × enforces the isolated spike triangle and joint limits 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pao15-rig-spike.test.ts > PAO-15 rig structural guard and skin evaluation > accepts a valid normalized soft skin and measures actual joint deformation
+Error: rig validation not implemented
+ ❯ validateRig tools/pao15-rig-spike/validate.mjs:2:39
+      1| export const identity = () => [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, …
+      2| export function validateRig() { throw new Error('rig validation not im…
+       |                                       ^
+      3| export function skinPositions() { throw new Error('skin evaluation not…
+      4| export function multiply() { throw new Error('matrix composition not i…
+ ❯ tests/unit/pao15-rig-spike.test.ts:19:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  tests/unit/pao15-rig-spike.test.ts > PAO-15 rig structural guard and skin evaluation > rejects invalid weights NaN
+ FAIL  tests/unit/pao15-rig-spike.test.ts > PAO-15 rig structural guard and skin evaluation > rejects invalid weights -0.1
+ FAIL  tests/unit/pao15-rig-spike.test.ts > PAO-15 rig structural guard and skin evaluation > rejects invalid weights 1.5
+AssertionError: expected [Function] to throw error matching /weight/i but got 'rig validation not implemented'
+
+- Expected:
+/weight/i
+
++ Received:
+"rig validation not implemented"
+
+ ❯ tests/unit/pao15-rig-spike.test.ts:27:36
+     25|   it.each([NaN, -0.1, 1.5])('rejects invalid weights %s', value => {
+     26|     const rig = fixture(); rig.primitives[0].weights[0][0] = value;
+     27|     expect(() => validateRig(rig)).toThrow(/weight/i);
+       |                                    ^
+     28|   });
+     29|   it('rejects unbound vertices and non-normalized weights', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  tests/unit/pao15-rig-spike.test.ts > PAO-15 rig structural guard and skin evaluation > rejects unbound vertices and non-normalized weights
+AssertionError: expected [Function] to throw error matching /weight/i but got 'rig validation not implemented'
+
+- Expected:
+/weight/i
+
++ Received:
+"rig validation not implemented"
+
+ ❯ tests/unit/pao15-rig-spike.test.ts:31:36
+     29|   it('rejects unbound vertices and non-normalized weights', () => {
+     30|     const rig = fixture(); rig.primitives[0].weights[0] = [0, 0, 0, 0];
+     31|     expect(() => validateRig(rig)).toThrow(/weight/i);
+       |                                    ^
+     32|     rig.primitives[0].weights[0] = [0.2, 0.2, 0, 0];
+     33|     expect(() => validateRig(rig)).toThrow(/weight/i);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  tests/unit/pao15-rig-spike.test.ts > PAO-15 rig structural guard and skin evaluation > rejects invalid skin joint index even when the matrix list exists
+AssertionError: expected [Function] to throw error matching /joint index/i but got 'rig validation not implemented'
+
+- Expected:
+/joint index/i
+
++ Received:
+"rig validation not implemented"
+
+ ❯ tests/unit/pao15-rig-spike.test.ts:37:36
+     35|   it('rejects invalid skin joint index even when the matrix list exist…
+     36|     const rig = fixture(); rig.primitives[0].joints[0][1] = 4;
+     37|     expect(() => validateRig(rig)).toThrow(/joint index/i);
+       |                                    ^
+     38|   });
+     39|   it('rejects missing, non-finite and singular inverse bind matrices',…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  tests/unit/pao15-rig-spike.test.ts > PAO-15 rig structural guard and skin evaluation > rejects missing, non-finite and singular inverse bind matrices
+AssertionError: expected [Function] to throw error matching /inverse bind/i but got 'rig validation not implemented'
+
+- Expected:
+/inverse bind/i
+
++ Received:
+"rig validation not implemented"
+
+ ❯ tests/unit/pao15-rig-spike.test.ts:42:38
+     40|     for (const bad of [[], Array(16).fill(NaN), Array(16).fill(0)]) {
+     41|       const rig = fixture(); rig.joints[0].inverseBind = bad;
+     42|       expect(() => validateRig(rig)).toThrow(/inverse bind/i);
+       |                                      ^
+     43|     }
+     44|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+ FAIL  tests/unit/pao15-rig-spike.test.ts > PAO-15 rig structural guard and skin evaluation > rejects hierarchy cycles and root drift
+AssertionError: expected [Function] to throw error matching /hierarchy/i but got 'rig validation not implemented'
+
+- Expected:
+/hierarchy/i
+
++ Received:
+"rig validation not implemented"
+
+ ❯ tests/unit/pao15-rig-spike.test.ts:47:36
+     45|   it('rejects hierarchy cycles and root drift', () => {
+     46|     const rig = fixture(); rig.joints[0].parent = 1;
+     47|     expect(() => validateRig(rig)).toThrow(/hierarchy/i);
+       |                                    ^
+     48|     rig.joints[0].parent = -1; rig.rootSamples[0].translation[2] = 0.0…
+     49|     expect(() => validateRig(rig)).toThrow(/root/i);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯
+
+ FAIL  tests/unit/pao15-rig-spike.test.ts > PAO-15 rig structural guard and skin evaluation > rejects a rigid-only impostor with bone nodes but no soft joint transition
+AssertionError: expected [Function] to throw error matching /soft/i but got 'rig validation not implemented'
+
+- Expected:
+/soft/i
+
++ Received:
+"rig validation not implemented"
+
+ ❯ tests/unit/pao15-rig-spike.test.ts:53:36
+     51|   it('rejects a rigid-only impostor with bone nodes but no soft joint …
+     52|     const rig = fixture(); rig.primitives[0].weights = [[1, 0, 0, 0], …
+     53|     expect(() => validateRig(rig)).toThrow(/soft/i);
+       |                                    ^
+     54|   });
+     55|   it('enforces the isolated spike triangle and joint limits', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/10]⎯
+
+ FAIL  tests/unit/pao15-rig-spike.test.ts > PAO-15 rig structural guard and skin evaluation > enforces the isolated spike triangle and joint limits
+AssertionError: expected [Function] to throw error matching /triangle/i but got 'rig validation not implemented'
+
+- Expected:
+/triangle/i
+
++ Received:
+"rig validation not implemented"
+
+ ❯ tests/unit/pao15-rig-spike.test.ts:57:36
+     55|   it('enforces the isolated spike triangle and joint limits', () => {
+     56|     const rig = fixture(); rig.triangles = 30001;
+     57|     expect(() => validateRig(rig)).toThrow(/triangle/i);
+       |                                    ^
+     58|     rig.triangles = 1; while (rig.joints.length < 49) rig.joints.push(…
+     59|     expect(() => validateRig(rig)).toThrow(/joint limit/i);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/10]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  10 failed (10)
+   Start at  20:39:45
+   Duration  430ms (transform 44ms, setup 0ms, import 62ms, tests 14ms, environment 0ms)

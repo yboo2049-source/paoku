@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-03",
+  "scope": "text-only basic-motion sample design; no implementation",
+  "clipCandidates": [
+    {
+      "name": "tech_idle_v1",
+      "fps": 30,
+      "N": 60,
+      "durationSec": 2
+    },
+    {
+      "name": "tech_run_v1",
+      "fps": 30,
+      "N": 24,
+      "durationSec": 0.8
+    },
+    {
+      "name": "tech_jump_v1",
+      "fps": 30,
+      "N": 36,
+      "durationSec": 1.2
+    },
+    {
+      "name": "tech_slide_v1",
+      "fps": 30,
+      "N": 36,
+      "durationSec": 1.2
+    }
+  ],
+  "boneNamesChecked": 23,
+  "referenceLinksExist": 17,
+  "reviewedMatrixRows": 12,
+  "routeComparison": "A local FK keys vs B local IK/constraints then bake; A recommended",
+  "manualContentReview": [
+    "zero-based half-open ranges with explicit boundary keys",
+    "signed velocity continuity and quaternion hemisphere handling",
+    "local rest bone names/axes and parent-space pelvis vs world root",
+    "Jump/Slide demo phases do not create simulation facts",
+    "unknown derived hashes and quality are explicitly unverified",
+    "known manual TODOs deferred without assuming mandatory rebinding or retopology",
+    "future namespace/whitelist only, PAO-18 no direct consumption"
+  ],
+  "allowedPathsOnly": true,
+  "gitDiffCheckExitCode": 0,
+  "files": [
+    {
+      "file": "docs/superpowers/specs/2026-11-03-pao15-basic-motion-sample-design.md",
+      "sha256": "1321acf8965b77c2bafef67d8fcec8105d2e1210c4984ef6937337bdc857db38"
+    },
+    {
+      "file": "docs/art/pao15-basic-motion-sample-spec.md",
+      "sha256": "917bf16cf764a23a7b0a6412c4def3de2c635142bee3fd269cb6a8ed174ec82d"
+    },
+    {
+      "file": "docs/evidence/PAO-15/basic-motion-preparation/README.md",
+      "sha256": "2399f1fe7a39a6c63b9c507a0d552d6687b4d51939781cc49b39cff054e5006b"
+    }
+  ],
+  "notExecuted": [
+    "DCC open/save",
+    "rig validation rerun",
+    "new keyframe/action/GLB generation",
+    "tool install",
+    "cloud upload",
+    "E2E/browser/screenshot",
+    "writing-plans or tests/tool code authoring"
+  ],
+  "oldBinaryAndRuntimeChanges": "Git reports none outside task document whitelist; binaries not opened in DCC",
+  "hookPolicy": {
+    "commands": [
+      "npm run build",
+      "npm run test"
+    ],
+    "bypass": false,
+    "dependenciesAlreadyPresent": true,
+    "noDependencyOrBinaryChanges": true,
+    "executionEvidence": "Normal commit output in chat; these checks do not validate nonexistent motion samples"
+  },
+  "unapproved": [
+    "this concrete motion sample design",
+    "future implementation whitelist",
+    "motion output quality",
+    "formal 13 clips and production budget",
+    "commercial use conditions",
+    "PAO-18 release"
+  ]
+}

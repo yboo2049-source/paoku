@@ -1,0 +1,112 @@
+{
+  "commit": "19aa314",
+  "cases": [
+    {
+      "confirmationFailures": 1,
+      "attempts": [
+        {
+          "result": {
+            "ok": false,
+            "commandId": "same-toggle",
+            "errorCode": "SAVE_FAILED"
+          },
+          "cachedMuted": false,
+          "durableMuted": true,
+          "cachedRevision": 0,
+          "durableRevision": 1,
+          "writes": 1
+        },
+        {
+          "result": {
+            "ok": true,
+            "commandId": "same-toggle"
+          },
+          "cachedMuted": true,
+          "durableMuted": true,
+          "cachedRevision": 1,
+          "durableRevision": 1,
+          "writes": 1
+        },
+        {
+          "result": {
+            "ok": true,
+            "commandId": "same-toggle"
+          },
+          "cachedMuted": true,
+          "durableMuted": true,
+          "cachedRevision": 1,
+          "durableRevision": 1,
+          "writes": 1
+        },
+        {
+          "result": {
+            "ok": true,
+            "commandId": "same-toggle"
+          },
+          "cachedMuted": true,
+          "durableMuted": true,
+          "cachedRevision": 1,
+          "durableRevision": 1,
+          "writes": 1
+        }
+      ],
+      "finalMuted": true,
+      "finalRevision": 1,
+      "writes": 1
+    },
+    {
+      "confirmationFailures": 2,
+      "attempts": [
+        {
+          "result": {
+            "ok": false,
+            "commandId": "same-toggle",
+            "errorCode": "SAVE_FAILED"
+          },
+          "cachedMuted": false,
+          "durableMuted": true,
+          "cachedRevision": 0,
+          "durableRevision": 1,
+          "writes": 1
+        },
+        {
+          "result": {
+            "ok": false,
+            "commandId": "same-toggle",
+            "errorCode": "SAVE_FAILED"
+          },
+          "cachedMuted": false,
+          "durableMuted": true,
+          "cachedRevision": 0,
+          "durableRevision": 1,
+          "writes": 1
+        },
+        {
+          "result": {
+            "ok": true,
+            "commandId": "same-toggle"
+          },
+          "cachedMuted": true,
+          "durableMuted": true,
+          "cachedRevision": 1,
+          "durableRevision": 1,
+          "writes": 1
+        },
+        {
+          "result": {
+            "ok": true,
+            "commandId": "same-toggle"
+          },
+          "cachedMuted": true,
+          "durableMuted": true,
+          "cachedRevision": 1,
+          "durableRevision": 1,
+          "writes": 1
+        }
+      ],
+      "finalMuted": true,
+      "finalRevision": 1,
+      "writes": 1
+    }
+  ]
+}

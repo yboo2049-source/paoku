@@ -1,0 +1,552 @@
+{
+  "commit": "173fbf4",
+  "method": "active scene POSITION vertices with node TRS/matrices; skinned historical player excluded",
+  "results": [
+    {
+      "file": "character_dog.glb",
+      "min": [
+        -0.2756,
+        0,
+        -0.4998
+      ],
+      "max": [
+        0.2756,
+        0.9106,
+        0.4998
+      ],
+      "size": [
+        0.5513,
+        0.9106,
+        0.9995
+      ],
+      "manifestSize": [
+        0.5513,
+        0.9106,
+        0.9995
+      ],
+      "mismatch": false,
+      "vertices": 9551,
+      "triangles": 10396
+    },
+    {
+      "file": "character_police.glb",
+      "min": [
+        -0.2977,
+        -0.0008,
+        -0.1183
+      ],
+      "max": [
+        0.2974,
+        0.9789,
+        0.1175
+      ],
+      "size": [
+        0.5951,
+        0.9798,
+        0.2358
+      ],
+      "manifestSize": [
+        0.5951,
+        0.9798,
+        0.2358
+      ],
+      "mismatch": false,
+      "vertices": 227913,
+      "triangles": 147371
+    },
+    {
+      "file": "character_runner.glb",
+      "min": [
+        -0.3056,
+        0,
+        -0.0947
+      ],
+      "max": [
+        0.3055,
+        0.9791,
+        0.0944
+      ],
+      "size": [
+        0.611,
+        0.9791,
+        0.1891
+      ],
+      "manifestSize": [
+        0.2355,
+        0.4204,
+        0.1982
+      ],
+      "mismatch": true,
+      "vertices": 26372,
+      "triangles": 26268
+    },
+    {
+      "file": "env_gantry.glb",
+      "min": [
+        -0.4902,
+        -0.0006,
+        -0.0691
+      ],
+      "max": [
+        0.4902,
+        0.6672,
+        0.0689
+      ],
+      "size": [
+        0.9803,
+        0.6678,
+        0.138
+      ],
+      "manifestSize": [
+        0.9803,
+        0.6678,
+        0.138
+      ],
+      "mismatch": false,
+      "vertices": 129578,
+      "triangles": 109871
+    },
+    {
+      "file": "env_tunnel_arch.glb",
+      "min": [
+        -0.4315,
+        -0.0032,
+        -0.4227
+      ],
+      "max": [
+        0.4309,
+        0.9806,
+        0.4229
+      ],
+      "size": [
+        0.8624,
+        0.9838,
+        0.8456
+      ],
+      "manifestSize": [
+        0.8624,
+        0.9838,
+        0.8456
+      ],
+      "mismatch": false,
+      "vertices": 231561,
+      "triangles": 130478
+    },
+    {
+      "file": "obstacle_buffer_stop.glb",
+      "min": [
+        -0.5,
+        0,
+        -0.434
+      ],
+      "max": [
+        0.5001,
+        0.8742,
+        0.434
+      ],
+      "size": [
+        1.0001,
+        0.8741,
+        0.8679
+      ],
+      "manifestSize": [
+        1.0001,
+        0.8741,
+        0.8679
+      ],
+      "mismatch": false,
+      "vertices": 98961,
+      "triangles": 115890
+    },
+    {
+      "file": "obstacle_hurdle_barrier.glb",
+      "min": [
+        -0.4998,
+        0,
+        -0.137
+      ],
+      "max": [
+        0.4998,
+        0.7642,
+        0.137
+      ],
+      "size": [
+        0.9995,
+        0.7642,
+        0.2739
+      ],
+      "manifestSize": [
+        0.9995,
+        0.7642,
+        0.2739
+      ],
+      "mismatch": false,
+      "vertices": 10132,
+      "triangles": 8894
+    },
+    {
+      "file": "obstacle_signal_light.glb",
+      "min": [
+        -0.1025,
+        0,
+        -0.1095
+      ],
+      "max": [
+        0.1025,
+        0.9806,
+        0.1095
+      ],
+      "size": [
+        0.205,
+        0.9806,
+        0.2191
+      ],
+      "manifestSize": [
+        0.205,
+        0.9806,
+        0.2191
+      ],
+      "mismatch": false,
+      "vertices": 77834,
+      "triangles": 117376
+    },
+    {
+      "file": "obstacle_slide_barrier.glb",
+      "min": [
+        -0.0627,
+        0,
+        -0.3157
+      ],
+      "max": [
+        0.0627,
+        0.9995,
+        0.3157
+      ],
+      "size": [
+        0.1255,
+        0.9995,
+        0.6313
+      ],
+      "manifestSize": [
+        0.1255,
+        0.6313,
+        0.9995
+      ],
+      "mismatch": true,
+      "vertices": 8716,
+      "triangles": 9711
+    },
+    {
+      "file": "obstacle_traffic_cone.glb",
+      "min": [
+        -0.4879,
+        0,
+        -0.4879
+      ],
+      "max": [
+        0.4879,
+        1,
+        0.4879
+      ],
+      "size": [
+        0.9757,
+        1,
+        0.9758
+      ],
+      "manifestSize": [
+        0.9757,
+        1,
+        0.9758
+      ],
+      "mismatch": false,
+      "vertices": 75206,
+      "triangles": 119424
+    },
+    {
+      "file": "obstacle_utility_box.glb",
+      "min": [
+        -0.3943,
+        0,
+        -0.3259
+      ],
+      "max": [
+        0.3943,
+        0.9995,
+        0.3259
+      ],
+      "size": [
+        0.7886,
+        0.9995,
+        0.6519
+      ],
+      "manifestSize": [
+        0.7886,
+        0.6519,
+        0.9995
+      ],
+      "mismatch": true,
+      "vertices": 8298,
+      "triangles": 9352
+    },
+    {
+      "file": "prop_coin.glb",
+      "min": [
+        -0.4998,
+        0,
+        -0.0813
+      ],
+      "max": [
+        0.4998,
+        0.9995,
+        0.0813
+      ],
+      "size": [
+        0.9995,
+        0.9995,
+        0.1626
+      ],
+      "manifestSize": [
+        0.9995,
+        0.9995,
+        0.1626
+      ],
+      "mismatch": false,
+      "vertices": 8213,
+      "triangles": 9767
+    },
+    {
+      "file": "prop_hoverboard.glb",
+      "min": [
+        -0.4896,
+        0,
+        -0.186
+      ],
+      "max": [
+        0.4896,
+        0.1673,
+        0.186
+      ],
+      "size": [
+        0.9792,
+        0.1673,
+        0.372
+      ],
+      "manifestSize": [
+        0.9792,
+        0.1673,
+        0.372
+      ],
+      "mismatch": false,
+      "vertices": 78708,
+      "triangles": 117165
+    },
+    {
+      "file": "prop_jetpack.glb",
+      "min": [
+        -0.1711,
+        0,
+        -0.4094
+      ],
+      "max": [
+        0.1711,
+        0.9995,
+        0.4094
+      ],
+      "size": [
+        0.3423,
+        0.9995,
+        0.8188
+      ],
+      "manifestSize": [
+        0.3423,
+        0.8188,
+        0.9995
+      ],
+      "mismatch": true,
+      "vertices": 8207,
+      "triangles": 10133
+    },
+    {
+      "file": "prop_magnet.glb",
+      "min": [
+        -0.1152,
+        0,
+        -0.4054
+      ],
+      "max": [
+        0.1152,
+        0.9804,
+        0.4054
+      ],
+      "size": [
+        0.2304,
+        0.9804,
+        0.8108
+      ],
+      "manifestSize": [
+        0.2304,
+        0.9804,
+        0.8108
+      ],
+      "mismatch": false,
+      "vertices": 91306,
+      "triangles": 115095
+    },
+    {
+      "file": "prop_multiplier_2x.glb",
+      "min": [
+        -0.49,
+        0,
+        -0.0743
+      ],
+      "max": [
+        0.49,
+        0.9549,
+        0.0743
+      ],
+      "size": [
+        0.98,
+        0.9549,
+        0.1487
+      ],
+      "manifestSize": [
+        0.98,
+        0.9549,
+        0.1487
+      ],
+      "mismatch": false,
+      "vertices": 93176,
+      "triangles": 118625
+    },
+    {
+      "file": "prop_mystery_box.glb",
+      "min": [
+        -0.4998,
+        0,
+        -0.4719
+      ],
+      "max": [
+        0.4998,
+        0.8774,
+        0.4719
+      ],
+      "size": [
+        0.9995,
+        0.8774,
+        0.9438
+      ],
+      "manifestSize": [
+        0.9995,
+        0.9438,
+        0.8774
+      ],
+      "mismatch": true,
+      "vertices": 8778,
+      "triangles": 9015
+    },
+    {
+      "file": "prop_shield.glb",
+      "min": [
+        -0.3364,
+        -0.0001,
+        -0.3511
+      ],
+      "max": [
+        0.3363,
+        0.9785,
+        0.3512
+      ],
+      "size": [
+        0.6727,
+        0.9786,
+        0.7023
+      ],
+      "manifestSize": [
+        0.6727,
+        0.9786,
+        0.7023
+      ],
+      "mismatch": false,
+      "vertices": 108316,
+      "triangles": 114233
+    },
+    {
+      "file": "prop_sneakers.glb",
+      "min": [
+        -0.4998,
+        0,
+        -0.489
+      ],
+      "max": [
+        0.4998,
+        0.6411,
+        0.489
+      ],
+      "size": [
+        0.9995,
+        0.6411,
+        0.978
+      ],
+      "manifestSize": [
+        0.9995,
+        0.978,
+        0.6411
+      ],
+      "mismatch": true,
+      "vertices": 11467,
+      "triangles": 10034
+    },
+    {
+      "file": "train_metro.glb",
+      "min": [
+        -0.4998,
+        0,
+        -0.1604
+      ],
+      "max": [
+        0.4998,
+        0.311,
+        0.1604
+      ],
+      "size": [
+        0.9995,
+        0.311,
+        0.3208
+      ],
+      "manifestSize": [
+        0.9995,
+        0.311,
+        0.3208
+      ],
+      "mismatch": false,
+      "vertices": 11508,
+      "triangles": 8968
+    },
+    {
+      "file": "train_ramp_or_car.glb",
+      "min": [
+        -0.4895,
+        -0.0001,
+        -0.1904
+      ],
+      "max": [
+        0.4896,
+        0.4385,
+        0.1904
+      ],
+      "size": [
+        0.9792,
+        0.4386,
+        0.3808
+      ],
+      "manifestSize": [
+        0.9792,
+        0.4386,
+        0.3808
+      ],
+      "mismatch": false,
+      "vertices": 114123,
+      "triangles": 112516
+    }
+  ]
+}

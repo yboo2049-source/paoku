@@ -1,0 +1,38 @@
+{
+  "beforeMuted": false,
+  "sameCommandId": "same-toggle",
+  "attempts": [
+    {
+      "result": {
+        "ok": false,
+        "commandId": "same-toggle",
+        "errorCode": "SAVE_FAILED"
+      },
+      "cachedMuted": false,
+      "durableMuted": true,
+      "revision": 1
+    },
+    {
+      "result": {
+        "ok": false,
+        "commandId": "same-toggle",
+        "errorCode": "CONFLICT"
+      },
+      "cachedMuted": false,
+      "durableMuted": true,
+      "revision": 1
+    },
+    {
+      "result": {
+        "ok": true,
+        "commandId": "same-toggle"
+      },
+      "cachedMuted": false,
+      "durableMuted": false,
+      "revision": 2
+    }
+  ],
+  "expectedFinalMuted": true,
+  "actualFinalMuted": false,
+  "fault": "setItem stored then threw once; immediate confirmation getItem threw once; no concurrent writer or reload"
+}

@@ -1,0 +1,271 @@
+{
+  "date": "2026-11-02 Asia/Shanghai",
+  "task": "PAO-17 first structure/lifecycle implementation A+B",
+  "commit": "536f54b41866e2819d21cd674e64af2cb4d70f80",
+  "branch": "codex/pao-17-render",
+  "buildExit": 0,
+  "unit": {
+    "files": 21,
+    "passed": 261
+  },
+  "fullE2E": {
+    "startTime": "2026-11-02T13:32:03.882Z",
+    "duration": 315044.903,
+    "expected": 48,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "tests": 48,
+    "retries": 0,
+    "errors": []
+  },
+  "supplementalE2E": {
+    "startTime": "2026-11-02T13:41:18.996Z",
+    "duration": 7318.058999999999,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "tests": 1,
+    "retries": 0,
+    "errors": []
+  },
+  "protection": {
+    "tracked": 1078,
+    "changed": 0,
+    "initial": 999,
+    "authorizedChanged": [
+      "docs/render/pao17-interface-and-validation.md",
+      "docs/superpowers/specs/2026-11-01-pao17-render-design.md",
+      "src/main.ts",
+      "src/render/babylon.ts"
+    ],
+    "unchangedInitial": 995
+  },
+  "environmentMigration": [
+    {
+      "name": "buildCyberEnvironment",
+      "bodyByteEqualAfterEOL": true
+    },
+    {
+      "name": "mergeStaticEnvironment",
+      "bodyByteEqualAfterEOL": true
+    }
+  ],
+  "mirrors": 12,
+  "sourceHTTPIdentity": [
+    {
+      "path": "src/main.ts",
+      "sha256": "1bfbbc544bfff54d11ee3f49dda254e259513885e2e85821bde610d9b4ccb8ae",
+      "diskMatches": true
+    },
+    {
+      "path": "src/render/babylon.ts",
+      "sha256": "c32f97a5e3075acc291bdb5747b0e9ccc0b089a46b1ffa564a7f51be2d60026b",
+      "diskMatches": true
+    },
+    {
+      "path": "src/render/assets.ts",
+      "sha256": "eba5ddc2266b6d75b68d205894976bf95f9381e94df670e7296d4644fc19e673",
+      "diskMatches": true
+    },
+    {
+      "path": "src/render/environment.ts",
+      "sha256": "820c222fbe9e0e9f18dab862fe4892c07114b1770559b38505f47ceb6b24ffa3",
+      "diskMatches": true
+    },
+    {
+      "path": "src/render/entityViews.ts",
+      "sha256": "f81a7ac8543a88003aa168531945692dc26a40f91c5e09ebf130fbeafbbcce46",
+      "diskMatches": true
+    },
+    {
+      "path": "public/models/player.glb",
+      "sha256": "002f8d269de68e5dce3d25195caf390d1aa359bbfaae3fcf4c8dc78ec36c3ba5",
+      "diskMatches": true
+    }
+  ],
+  "realMainRelease": {
+    "before": {
+      "engines": 1,
+      "meshes": 45
+    },
+    "after": {
+      "engines": 0,
+      "meshes": 0,
+      "nodes": 0,
+      "materials": 0,
+      "textures": 0,
+      "animations": 0,
+      "skeletons": 0,
+      "particles": 0,
+      "disposed": true
+    }
+  },
+  "actualLegacyWarmReset": {
+    "frames": [
+      {
+        "meshes": 45,
+        "nodes": 74,
+        "materials": 37,
+        "textures": 8,
+        "animations": 7,
+        "skeletons": 1,
+        "particles": 1,
+        "casters": 5
+      },
+      {
+        "meshes": 45,
+        "nodes": 74,
+        "materials": 37,
+        "textures": 9,
+        "animations": 7,
+        "skeletons": 1,
+        "particles": 1,
+        "casters": 5
+      },
+      {
+        "meshes": 45,
+        "nodes": 74,
+        "materials": 37,
+        "textures": 9,
+        "animations": 7,
+        "skeletons": 1,
+        "particles": 1,
+        "casters": 5
+      },
+      {
+        "meshes": 45,
+        "nodes": 74,
+        "materials": 37,
+        "textures": 9,
+        "animations": 7,
+        "skeletons": 1,
+        "particles": 1,
+        "casters": 5
+      },
+      {
+        "meshes": 45,
+        "nodes": 74,
+        "materials": 37,
+        "textures": 9,
+        "animations": 7,
+        "skeletons": 1,
+        "particles": 1,
+        "casters": 5
+      },
+      {
+        "meshes": 45,
+        "nodes": 74,
+        "materials": 37,
+        "textures": 9,
+        "animations": 7,
+        "skeletons": 1,
+        "particles": 1,
+        "casters": 5
+      },
+      {
+        "meshes": 45,
+        "nodes": 74,
+        "materials": 37,
+        "textures": 9,
+        "animations": 7,
+        "skeletons": 1,
+        "particles": 1,
+        "casters": 5
+      },
+      {
+        "meshes": 45,
+        "nodes": 74,
+        "materials": 37,
+        "textures": 9,
+        "animations": 7,
+        "skeletons": 1,
+        "particles": 1,
+        "casters": 5
+      }
+    ],
+    "baseline": {
+      "meshes": 45,
+      "nodes": 74,
+      "materials": 37,
+      "textures": 9,
+      "animations": 7,
+      "skeletons": 1,
+      "particles": 1,
+      "casters": 5
+    },
+    "cycles": 20,
+    "allStable": true,
+    "loaded": {
+      "cache": {
+        "resources": 1,
+        "leases": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "animationGroups": 7
+    },
+    "afterDispose": {
+      "meshes": 0,
+      "nodes": 0,
+      "materials": 0,
+      "textures": 0,
+      "animations": 0,
+      "skeletons": 0,
+      "particles": 0,
+      "casters": 0
+    }
+  },
+  "realDelayedHTTP": {
+    "before": {
+      "pending": 1,
+      "meshes": 42,
+      "requests": 1
+    },
+    "after": {
+      "settled": false,
+      "sceneDisposed": true,
+      "activeRequests": 0,
+      "cache": {
+        "resources": 0,
+        "leases": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "resources": {
+        "meshes": 0,
+        "nodes": 0,
+        "materials": 0,
+        "textures": 0,
+        "animations": 0,
+        "skeletons": 0,
+        "particles": 0
+      }
+    },
+    "network": [
+      {
+        "type": "failed",
+        "error": "net::ERR_ABORTED"
+      }
+    ],
+    "pageErrors": [],
+    "limitation": "Engine aborted the in-flight HTTP request. Upstream loader Promise did not settle; this does not certify universal Promise settlement or heap reclamation."
+  },
+  "parentCheckCorrections": [
+    {
+      "record": "adversarial-first-warmup-failure.json",
+      "finding": "First render allocated one additional shadow texture (8→9); baseline corrected to 8 actual warm-up frames, then 20 resets stable."
+    },
+    {
+      "record": "adversarial-upstream-settlement-timeout.json",
+      "finding": "Waiting for loader Promise settlement after engine abort was not a valid release assertion; retained abort/request/resource evidence instead."
+    }
+  ],
+  "taskHistoricalFailuresRetained": true,
+  "parentDone": false,
+  "productionAssetsIntegrated": false,
+  "newThemeAccepted": false,
+  "pao19Integrated": false,
+  "fullLocalEvidence": ".pao17-parent.local"
+}

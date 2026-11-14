@@ -1,0 +1,245 @@
+{
+  "date": "2026-11-01 Asia/Shanghai",
+  "commit": "cf9f965",
+  "source": "Independent main-agent browser review; production source unchanged",
+  "storageFault": {
+    "fixture": "F: actual Storage write lands then throws; confirmation read throws once; subsequent actions are real clicks",
+    "initial": {
+      "appState": "MENU",
+      "activeRunId": null,
+      "walletCoins": 0,
+      "highScore": 0,
+      "revision": 0,
+      "ownedSkinIds": [
+        "cyan"
+      ],
+      "selectedSkinId": "cyan",
+      "audio": {
+        "masterMuted": false,
+        "bgmEnabled": true,
+        "sfxEnabled": true,
+        "bgmVolume": 0.6,
+        "sfxVolume": 0.9
+      },
+      "summary": null,
+      "settlementStatus": "NONE",
+      "errorCode": null
+    },
+    "failedAck": {
+      "appState": "MENU",
+      "activeRunId": null,
+      "walletCoins": 0,
+      "highScore": 0,
+      "revision": 0,
+      "ownedSkinIds": [
+        "cyan"
+      ],
+      "selectedSkinId": "cyan",
+      "audio": {
+        "masterMuted": false,
+        "bgmEnabled": true,
+        "sfxEnabled": true,
+        "bgmVolume": 0.6,
+        "sfxVolume": 0.9
+      },
+      "summary": null,
+      "settlementStatus": "NONE",
+      "errorCode": "SAVE_FAILED"
+    },
+    "returned": {
+      "appState": "MENU",
+      "activeRunId": null,
+      "walletCoins": 0,
+      "highScore": 0,
+      "revision": 2,
+      "ownedSkinIds": [
+        "cyan"
+      ],
+      "selectedSkinId": "cyan",
+      "audio": {
+        "masterMuted": false,
+        "bgmEnabled": false,
+        "sfxEnabled": true,
+        "bgmVolume": 0.6,
+        "sfxVolume": 0.9
+      },
+      "summary": {
+        "runId": "run-c61dd026-23cf-43dd-9747-febfd3903492",
+        "scoreInt": 0,
+        "pickupCount": 0,
+        "pickupCoins": 0,
+        "rewardCoins": 0,
+        "earnedCoins": 0,
+        "endReason": "QUIT"
+      },
+      "settlementStatus": "COMMITTED",
+      "errorCode": null
+    },
+    "after": {
+      "appState": "MENU",
+      "activeRunId": null,
+      "walletCoins": 0,
+      "highScore": 0,
+      "revision": 2,
+      "ownedSkinIds": [
+        "cyan"
+      ],
+      "selectedSkinId": "cyan",
+      "audio": {
+        "masterMuted": false,
+        "bgmEnabled": false,
+        "sfxEnabled": true,
+        "bgmVolume": 0.6,
+        "sfxVolume": 0.9
+      },
+      "summary": {
+        "runId": "run-c61dd026-23cf-43dd-9747-febfd3903492",
+        "scoreInt": 0,
+        "pickupCount": 0,
+        "pickupCoins": 0,
+        "rewardCoins": 0,
+        "earnedCoins": 0,
+        "endReason": "QUIT"
+      },
+      "settlementStatus": "COMMITTED",
+      "errorCode": null
+    },
+    "intents": [
+      {
+        "kind": "TOGGLE",
+        "field": "bgmEnabled",
+        "runId": null,
+        "commandId": "pao19-1875e5ce-ecef-4837-9076-6dd16830b7e8-1"
+      },
+      {
+        "kind": "TOGGLE",
+        "field": "bgmEnabled",
+        "runId": null,
+        "commandId": "pao19-1875e5ce-ecef-4837-9076-6dd16830b7e8-1"
+      }
+    ],
+    "expectedBgmAfterNewClick": true,
+    "actualBgmAfterNewClick": false,
+    "reusedCommandId": true
+  },
+  "uiAckFault": {
+    "fixture": "F: one UI acknowledgement replaced with SAVE_FAILED; service committed normally; subsequent actions are real clicks",
+    "initial": {
+      "appState": "MENU",
+      "activeRunId": null,
+      "walletCoins": 0,
+      "highScore": 0,
+      "revision": 0,
+      "ownedSkinIds": [
+        "cyan"
+      ],
+      "selectedSkinId": "cyan",
+      "audio": {
+        "masterMuted": false,
+        "bgmEnabled": true,
+        "sfxEnabled": true,
+        "bgmVolume": 0.6,
+        "sfxVolume": 0.9
+      },
+      "summary": null,
+      "settlementStatus": "NONE",
+      "errorCode": null
+    },
+    "failedAck": {
+      "appState": "MENU",
+      "activeRunId": null,
+      "walletCoins": 0,
+      "highScore": 0,
+      "revision": 1,
+      "ownedSkinIds": [
+        "cyan"
+      ],
+      "selectedSkinId": "cyan",
+      "audio": {
+        "masterMuted": false,
+        "bgmEnabled": false,
+        "sfxEnabled": true,
+        "bgmVolume": 0.6,
+        "sfxVolume": 0.9
+      },
+      "summary": null,
+      "settlementStatus": "NONE",
+      "errorCode": null
+    },
+    "returned": {
+      "appState": "MENU",
+      "activeRunId": null,
+      "walletCoins": 0,
+      "highScore": 0,
+      "revision": 2,
+      "ownedSkinIds": [
+        "cyan"
+      ],
+      "selectedSkinId": "cyan",
+      "audio": {
+        "masterMuted": false,
+        "bgmEnabled": false,
+        "sfxEnabled": true,
+        "bgmVolume": 0.6,
+        "sfxVolume": 0.9
+      },
+      "summary": {
+        "runId": "run-cd8b88b2-8234-4295-bb74-4f1fc18db8c9",
+        "scoreInt": 0,
+        "pickupCount": 0,
+        "pickupCoins": 0,
+        "rewardCoins": 0,
+        "earnedCoins": 0,
+        "endReason": "QUIT"
+      },
+      "settlementStatus": "COMMITTED",
+      "errorCode": null
+    },
+    "after": {
+      "appState": "MENU",
+      "activeRunId": null,
+      "walletCoins": 0,
+      "highScore": 0,
+      "revision": 2,
+      "ownedSkinIds": [
+        "cyan"
+      ],
+      "selectedSkinId": "cyan",
+      "audio": {
+        "masterMuted": false,
+        "bgmEnabled": false,
+        "sfxEnabled": true,
+        "bgmVolume": 0.6,
+        "sfxVolume": 0.9
+      },
+      "summary": {
+        "runId": "run-cd8b88b2-8234-4295-bb74-4f1fc18db8c9",
+        "scoreInt": 0,
+        "pickupCount": 0,
+        "pickupCoins": 0,
+        "rewardCoins": 0,
+        "earnedCoins": 0,
+        "endReason": "QUIT"
+      },
+      "settlementStatus": "COMMITTED",
+      "errorCode": null
+    },
+    "intents": [
+      {
+        "kind": "TOGGLE",
+        "field": "bgmEnabled",
+        "runId": null,
+        "commandId": "pao19-5098b8c2-1045-4fd9-8623-33cf9d278c1b-1"
+      },
+      {
+        "kind": "TOGGLE",
+        "field": "bgmEnabled",
+        "runId": null,
+        "commandId": "pao19-5098b8c2-1045-4fd9-8623-33cf9d278c1b-1"
+      }
+    ],
+    "expectedBgmAfterNewClick": true,
+    "actualBgmAfterNewClick": false,
+    "reusedCommandId": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "commit": "cf9f965",
+  "buildExit": 0,
+  "unit": {
+    "passed": 251,
+    "files": 17,
+    "exitCode": 0
+  },
+  "e2e": {
+    "startTime": "2026-11-01T11:33:27.256Z",
+    "duration": 357125.125,
+    "expected": 56,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "configuredRetries": 0,
+  "rawSourceFiles": 29,
+  "stability": {
+    "checked": 1170,
+    "sourceFiles": 29,
+    "changed": [],
+    "allUnchanged": true
+  },
+  "imagesReviewed": [
+    "key-desktop-hud.png",
+    "key-mobile-start.png",
+    "key-mobile-result.png"
+  ],
+  "extraForMenuOcclusion": [
+    "mobile-menu-loaded.png",
+    "mobile-menu-hidden-ui.png"
+  ],
+  "notes": "Initial Vitest discovery included review Playwright copies; copies moved under excluded tests/e2e, then unmodified npm run test passed. No production changes."
+}

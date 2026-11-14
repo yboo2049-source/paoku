@@ -1,0 +1,48 @@
+{
+  "staleShop": {
+    "attempts": [
+      {
+        "ok": false,
+        "commandId": "buy-0",
+        "errorCode": "INSUFFICIENT_FUNDS"
+      },
+      {
+        "ok": false,
+        "commandId": "buy-1",
+        "errorCode": "INSUFFICIENT_FUNDS"
+      },
+      {
+        "ok": false,
+        "commandId": "buy-2",
+        "errorCode": "INSUFFICIENT_FUNDS"
+      }
+    ],
+    "cachedWallet": 0,
+    "durableWallet": 100
+  },
+  "audioNativeClicks": {
+    "before": {
+      "masterMuted": false,
+      "bgmEnabled": true,
+      "sfxEnabled": true,
+      "bgmVolume": 0.6,
+      "sfxVolume": 0.9
+    },
+    "after": {
+      "masterMuted": false,
+      "bgmEnabled": true,
+      "sfxEnabled": false,
+      "bgmVolume": 0.6,
+      "sfxVolume": 0.9
+    },
+    "expected": {
+      "masterMuted": false,
+      "bgmEnabled": false,
+      "sfxEnabled": false,
+      "bgmVolume": 0.6,
+      "sfxVolume": 0.9
+    },
+    "revisionBefore": 0,
+    "revisionAfter": 2
+  }
+}

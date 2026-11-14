@@ -1,0 +1,92 @@
+{
+  "date": "2026-11-01 Asia/Shanghai",
+  "commit": "64c4f31",
+  "stage": "local automatic rigging spike only",
+  "automaticPipeline": "accepted",
+  "productionQuality": "needs local manual refinement; deferred",
+  "buildExitCode": 0,
+  "toolTypecheckExitCode": 0,
+  "unit": {
+    "passed": 257,
+    "exitCode": 0,
+    "files": 17
+  },
+  "e2e": {
+    "startTime": "2026-11-01T14:41:48.564Z",
+    "duration": 278425.574,
+    "expected": 44,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "configuredRetries": 0,
+  "structural": {
+    "triangles": 26268,
+    "vertices": 26399,
+    "softVertices": 26399,
+    "maxDccGlbDiscrepancyM": 9.168408634518954E-07,
+    "restIbmMaxError": 2.2505429450454612E-06,
+    "joints": 23,
+    "poses": 11
+  },
+  "reopened": {
+    "success": true,
+    "joints": 23,
+    "meshes": 34,
+    "poses": 11
+  },
+  "rawSourceFiles": 28,
+  "servedAssetMatches": true,
+  "stability": {
+    "checked": 1001,
+    "changed": [],
+    "allUnchanged": true,
+    "sourceSha256": "0f475ed22a2abfbbb9b4cb3069f5c9b131110847b23bd68fbcdff4b3baa797d9",
+    "sourceUnchanged": true
+  },
+  "imagesReviewed": [
+    "01-rest-front.png",
+    "02-combined-front.png",
+    "03-knee-side.png"
+  ],
+  "parallelReloadProbe": {
+    "scenario": "F: GLB request delayed 150ms, actual reload button double-click; production source unchanged",
+    "before": {
+      "skeletons": 1,
+      "jointCount": 23,
+      "groups": [
+        "rig_diagnostic"
+      ],
+      "skinnedMeshes": 34,
+      "materials": [
+        "Material.001"
+      ],
+      "frame": 0,
+      "from": 0,
+      "to": 300,
+      "fps": 60,
+      "handedness": "RH native glTF, Y up, +Z front"
+    },
+    "after": {
+      "skeletons": 1,
+      "jointCount": 23,
+      "groups": [
+        "rig_diagnostic"
+      ],
+      "skinnedMeshes": 34,
+      "materials": [
+        "Material.001"
+      ],
+      "frame": 0,
+      "from": 0,
+      "to": 300,
+      "fps": 60,
+      "handedness": "RH native glTF, Y up, +Z front"
+    },
+    "disposed": {
+      "skeletons": 0,
+      "skinnedMeshes": 0
+    },
+    "errors": []
+  }
+}

@@ -4,17 +4,15 @@
 
 ## 最新进展 (Latest Updates)
 
-### PAO-7 商业级 3D 资产库全量交付与轻量化入库 (2026-11-01)
-*   **全套 21 款标准 3D 模型 (.glb) 100% 交付入库**：全部模型统一部署至 `public/models/`，彻底替换原有的临时几何体占位符：
-    *   **角色系统 (3款)**：主角跑酷少年 (`character_runner.glb`)、追捕警官 (`character_police.glb`)、警犬 (`character_dog.glb`)。
-    *   **核心玩法道具 (8款)**：纯金跑酷币 (`prop_coin.glb`)、吸金马蹄磁铁 (`prop_magnet.glb`)、赛博悬浮滑板 (`prop_hoverboard.glb`)、弹跳厚底跑鞋 (`prop_sneakers.glb`)、双筒喷气背包 (`prop_jetpack.glb`)、2X 双倍得分牌 (`prop_multiplier_2x.glb`)、能量气泡护盾 (`prop_shield.glb`)、神秘问号宝箱 (`prop_mystery_box.glb`)。
-    *   **列车与大型结构 (4款)**：地铁车厢/车头 (`train_metro.glb`)、斜坡工程爬坡车 (`train_ramp_or_car.glb`)、跨轨钢架龙门架 (`env_gantry.glb`)、霓虹通透隧道拱门 (`env_tunnel_arch.glb`)。
-    *   **轨道障碍与环境 (6款)**：矮跨栏木路障 (`obstacle_hurdle_barrier.glb`)、限高下滑警示门架 (`obstacle_slide_barrier.glb`)、铁路三色信号机 (`obstacle_signal_light.glb`)、轨旁电力配电箱 (`obstacle_utility_box.glb`)、铁轨死路防撞缓冲墩 (`obstacle_buffer_stop.glb`)、轨道施工交通警示锥 (`obstacle_traffic_cone.glb`)。
-*   **工业级格式转换与无损减面轻量化**：
-    *   将 5 款 FBX 资产统一转换打包为标准二进制 `.glb`（PBR 纹理内嵌）。
-    *   通过 Blender 批量拓扑减面优化，将 11 款超密高模（原单个 60MB、200 万顶点）优化至游戏运行面数，**总包体积从 684.8 MB 缩减至 149.5 MB（降低 78.2%）**，单文件最大不超过 17MB，杜绝 GitHub 拒推与网页加载卡顿。
-    *   保持 100% 纯原生 glTF 2.0 规范，无需客户端额外依赖 Draco 解码库。
-*   **概念原画归档**：20 张皮克斯/盲盒潮玩级高清参考原画全量归档至 `docs/assets/pao7_visual_assets/`。
+### PAO-20 ~ PAO-26 全量系统闭环与商业化交付 (Full M2-M4 Systems & E2E Delivery) - 2026-11-07
+*   **PAO-20 反馈生命周期与音频 R-08 对齐**：引入 `FeedbackLifecycleController`，实现道具刷新与过期生命周期音效、来向列车单次鸣笛与错车声相反馈；在 `AudioEngine` 中实现 `pauseAll/resumeAll/resetLifecycle/dispose`，彻底消除暂停与跨局残留音效。
+*   **PAO-21 M2 垂直播放证人 (Vertical Slice Witness)**：实现 65s (3900 tick) 覆盖 6 大核心阶段的物理与逻辑垂直播放证人（起跑换道、高低障翻滚跳跃、斜坡车顶穿越、来车规避、道具拾取与护盾破碎、终端碰撞结算与幂等重开）。
+*   **PAO-22 4 大类道具机制与 3D 专属剪影**：构建 `POWERUP_CATALOG` 规范机制；在 `EntityViews` 中构建多部件 3D 网格（磁铁 `HORSESHOE_MAGNET`、双倍得分 `STAR_MULTIPLIER`、跑鞋 `WINGED_BOOT`、滑板 `THRUSTER_BOARD`），零泄漏共享材质复用。
+*   **PAO-23 扩展切片、主题分区与速度曲线**：新增 6 组扩展轨道切片并通过全量 10 个切片、8 个变体及两两组合的物理证人；实现 360m 周期性三大阳光主题分区与 $V(t) = \min(18 + 0.25t, 45)$ 速度难度曲线。
+*   **PAO-24 商店/设置/任务中文化与加载控制**：实现 4 大核心任务中文描述与 `RunLedger` 事实驱动视图；实现 5 套外观商店状态投影与持久化偏好；规范非致命降级不阻塞可交互就绪的加载状态机。
+*   **PAO-25 自适应画质调度 (Quality Manager R-09)**：规范 Q2/Q1/Q0 画质档位与资源预算，支持视口自适应、3 窗口超标降级、12 窗口余量升级、30s 冷却与用户手动锁定优先。
+*   **PAO-26 最终集成与端到端守护**：在 `src/main.ts` 与 `src/render/babylon.ts` 接入全部控制器与 QA 传感器，全量单测 40 文件 / 399 用例全部通过，Playwright 实机 WebGL 运行通过桌面 1440×900 与移动 390×844 端到端验证。
+*   **交付审查报告**：详见 [`docs/reviews/2026-11-07-pao20-pao26-final-delivery-review.md`](reviews/2026-11-07-pao20-pao26-final-delivery-review.md)。
 
 ### Superpowers 驱动重构 + 质量守护闭环 (obra/superpowers Overhaul) - 2026-08-19
 *   **方法论落地**：基于 `obra/superpowers` v6.3.0（14 个 skill 已安装至 `~/.workbuddy/skills/`），按 `brainstorming → writing-plans → TDD → verification` 标准闭环完成本轮全部交付。

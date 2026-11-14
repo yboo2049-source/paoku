@@ -1,0 +1,100 @@
+{
+  "head": "82d2d47b333de2cc0da778591f99df8fe98084ed",
+  "build": true,
+  "unit": {
+    "files": 24,
+    "tests": 273,
+    "seconds": 6.8
+  },
+  "e2e": {
+    "startTime": "2026-11-02T15:42:52.766Z",
+    "duration": 344901.87200000003,
+    "expected": 53,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "resource": {
+    "warmFrames": 9,
+    "baseline": {
+      "meshes": 71,
+      "nodes": 78,
+      "materials": 32,
+      "textures": 8,
+      "animations": 7,
+      "skeletons": 1,
+      "particles": 1,
+      "casters": 5,
+      "glow": 5,
+      "cache": {
+        "resources": 1,
+        "leases": 1,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "cycles": 20,
+    "resets": 10,
+    "disposed": {
+      "meshes": 0,
+      "nodes": 0,
+      "materials": 0,
+      "textures": 0,
+      "animations": 0,
+      "skeletons": 0,
+      "particles": 0,
+      "casters": 0,
+      "glow": 0,
+      "cache": {
+        "resources": 0,
+        "leases": 0,
+        "pending": 0,
+        "failed": 0
+      }
+    }
+  },
+  "protection": {
+    "unchanged": 1074,
+    "changed": [
+      "src/render/assets.ts",
+      "src/render/babylon.ts",
+      "src/render/entityViews.ts",
+      "src/render/environment.ts"
+    ],
+    "localUnchanged": 232,
+    "localBad": []
+  },
+  "http": {
+    "src/main.ts": {
+      "status": 200,
+      "hash": "1bfbbc544bfff54d11ee3f49dda254e259513885e2e85821bde610d9b4ccb8ae",
+      "matches": true
+    },
+    "src/render/babylon.ts": {
+      "status": 200,
+      "hash": "088c7f5c4b7d0e9ea2053826f01f794f7f1b4599644200b0c74020213ed882a2",
+      "matches": true
+    },
+    "src/render/assets.ts": {
+      "status": 200,
+      "hash": "421e65af2d07a76afcc631a8c4bbbc2a30abecc073e78038a20391e732a3821a",
+      "matches": true
+    },
+    "src/render/environment.ts": {
+      "status": 200,
+      "hash": "34fd074d2041390005cfda679897e41c8945fbffb0920e49145495dd82adef36",
+      "matches": true
+    },
+    "src/render/entityViews.ts": {
+      "status": 200,
+      "hash": "0b11b38359c1c27d64eabab7dd3a591797d7c3379ef028f82fdfde67c531e702",
+      "matches": true
+    },
+    "public/models/player.glb": {
+      "status": 200,
+      "hash": "002f8d269de68e5dce3d25195caf390d1aa359bbfaae3fcf4c8dc78ec36c3ba5",
+      "matches": true
+    }
+  },
+  "note": "First review run interrupted after output path mistake; final independent full run shown. Playwright retries=0."
+}

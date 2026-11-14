@@ -494,3 +494,5 @@
 - User approved consolidating all task branches into main and deleting retired branches/worktrees/project entries, with the existing E2E failures recorded for follow-up.
 - Production source stays at final delivery f3ed197; historical planning, asset tools and diagnostics are retained. Normal build and 440 unit tests pass; complete E2E was 101/108, supplemental checks 7/7. This is not a claim of all-green E2E or task completion.
 - Details and preservation/cleanup policy: [main consolidation review](docs/reviews/2026-11-14-main-consolidation.md).
+
+- Cleanup observed: remote/local branches retain only main; 21 remote and 22 local task branches removed. Codex retired 14 project entries and retained all historical chats. Original GLB reference and detached roof WIP are preserved; one empty PAO-18 directory remains locked by another process. Details are in the consolidation review.
